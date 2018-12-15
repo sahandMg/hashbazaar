@@ -4,6 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="keywords"
+          content="Bitcoin mining, scrypt mining, cloud mining, hosted mining"/>
+    <meta name="description"
+          content="Bitcoin is the digital gold of the future & HashBazaar is the most cost effective cloud mining company on the market. Mine bitcoin through the cloud, get started today!"/>
     <title>Hash Bazar</title>
     <link rel="icon" href="img/TabLogo.png">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
@@ -23,7 +27,7 @@
                     <h1 class="text-center">Bitcoin Investment</h1><img src="img/LOGO.svg">
                     <h3>JOIN OUR MINING FARMS</h3>
                     <h3 style="margin: 0px;">FILL YOUR POCKETS WITH BITCOIN</h3>
-                    <a class="btn btn-link btn-circle js-scroll-trigger"
+                    <a class="btn btn-link btn-circle js-scroll-trigger responsive-circle"
                                                                   style="border-color: red;color: red" role="button"
                                                                   href="#sharePlan"><i
                         class="fa fa-angle-down animated"></i></a></div>
@@ -98,10 +102,13 @@
         <h2 class="text-center">You must register first </h2>
         <div class="form">
          <form method="post" action="{{route('subscribe')}}" class="register-form">
-             <input type="hidden" name="_token" value="{{csrf_token()}}">
-           <input type="text" name="email" placeholder="email address"/>
+           <input type="hidden" name="_token" value="{{csrf_token()}}">
            <input type="text"  hidden name="hash" id="hash"/>
+           <!-- <span style="color: #ae5856;">error</span> -->
+           <input type="text" name="email" placeholder="email address"/>
+           <!-- <span style="color: #ae5856;">error</span> -->
            <input type="password" name="password" placeholder="password"/>
+           <!-- <span style="color: #ae5856;">error</span> -->
            <input type="password" name='confirm_password' placeholder="type password again"/>
            <button type="Submit">register</button>
         </form>

@@ -110,7 +110,7 @@
            <input type="password" name="password" placeholder="password"/>
            <!-- <span style="color: #ae5856;">error</span> -->
            <input type="password" name='confirm_password' placeholder="type password again"/>
-           <button type="Submit">register</button>
+           <button type="submit" id="registerButton">register</button>
         </form>
         </div>
     </div>
@@ -167,6 +167,11 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+// document.getElementById("registerButton").addEventListener("click", registerButtonFunction);
+// function registerButtonFunction() {
+//   console.log("registerButton");
+//   document.getElementById("registerButton").disabled = true;
+// }
 </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131063343-1"></script>

@@ -42,11 +42,11 @@ class MessageJob implements ShouldQueue
             'email'=>$this->email
         ];
 
-        Mail::send('messageMailPage',$data,function($message) use($data){
-            $message->from ($data['email']);
-            $message->to ('Admin@HashBazaar');
-            $message->subject ('Subscription Email');
-        });
+        // Mail::send('messageMailPage',$data,function($message) use($data){
+        //     $message->from ($data['email']);
+        //     $message->to ('Admin@HashBazaar');
+        //     $message->subject ('Subscription Email');
+        // });
 
         Log::warning('Job has been finished');
     }

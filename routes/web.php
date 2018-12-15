@@ -14,7 +14,7 @@
 use App\Jobs\subscriptionMailJob;
 use Illuminate\Support\Facades\Mail;
 
-Route::get('/','PageController@index')->name('landing');
+Route::get('/','PageController@index')->name('index');
 
 Route::post('message','PageController@message')->name('message');
 
@@ -24,14 +24,10 @@ Route::get('subscription','AuthController@subscription')->name('subscription');
 
 Route::post('subscription','AuthController@post_subscription')->name('subscription');
 
+Route::get('pricing','PageController@Pricing');
 Route::get('test',function (){
 
 //    subscriptionMailJob::dispatch('sss@gmial.com','dsadsadaxzmczxmczx11231321');
-
-    $coin = new \App\Crawling\CoinMarketCap();
-    $coin->getApi();
-
-
 
 
 });

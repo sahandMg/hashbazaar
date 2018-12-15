@@ -40,7 +40,7 @@ class subscriptionMailJob implements ShouldQueue
             'code'=>$this->code,
             'email'=>$this->email
         ];
-        Mail::send('subscriptionMailPage',$data,function($message) use($data){
+        Mail::send('thanks',$data,function($message) use($data){
             $message->from ('Admin@HashBazaar');
             $message->to ($data['email']);
             $message->subject ('Subscription Email');

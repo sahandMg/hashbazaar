@@ -21,6 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('reset_password')->nullable();
             $table->string('code');
             $table->index('code');
+            $table->integer('hash')->default(0);
+            $table->integer('hashUsd')->default(50);
             $table->float('interest')->nullable();
             $table->unsignedInteger('plan_id')->default(1);
             $table->foreign('plan_id')->references('id')->on('plans');

@@ -9,6 +9,7 @@
 namespace App\Crawling;
 use GuzzleHttp\Client as GuzzleClient;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Symfony\Component\DomCrawler\Crawler;
 use Psr\Http\Message\ResponseInterface;
@@ -67,6 +68,7 @@ class CoinMarketCap
 
         }
 
+        Log::warning('done');
 
     }
 }

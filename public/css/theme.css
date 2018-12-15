@@ -1,0 +1,220 @@
+#header {
+  text-align: center;
+  
+}
+
+.headerTheme {
+  margin: auto;
+  /*background-size: contain;*/
+  background-size:100% auto;
+  /*width: 100%;*/
+  background: black url('../../assets/img/Bitcoin.svg') no-repeat center;
+  padding: 2% 0;
+  max-width: 100%;
+  height: 600px;
+}
+header h1 { font-size: 50px }
+small {font-size: 100%;}
+h3 { font-size: 50px }
+
+header h3 {margin: 0;}
+
+header img { height: 175px;margin-bottom: 4%; }
+
+@media only screen and (max-width: 1024px) {
+    header img { height: 100px; }
+    header h1 { font-size: 40px }
+     h3 { font-size: 40px }
+     .headerTheme {height: 500px;}
+}
+@media only screen and (max-width: 768px) {
+    header img { height: 90px; }
+    header h1 { font-size: 30px }
+     h3 { font-size: 30px }
+}
+
+@media only screen and (max-width: 576px) {
+    header img { height: 80px; }
+    header h1 { font-size: 20px }
+     h3 { font-size: 20px }
+}
+
+@media only screen and (max-width: 400px) {
+    header img { height: 60px; }
+    header h1 { font-size: 20px; }
+     h3 { font-size: 15px; }
+     #priceCompare h2 {
+      font-size: 20px;
+     }
+     #contact h2 {
+      font-size: 15px;
+     }
+     .headerTheme {
+      height: 300px;
+     }
+     #sharePlan h3 { letter-spacing: 0px;margin-top: 2%; }
+}
+/*color for selected text*/
+::selection {
+  background: #ffb7b7;
+}
+
+.backgroundGrey{
+  background-color: #DBDBDB;
+}
+
+.backgroundMoreGrey{
+  background-color: #8B8B8B;
+}
+
+
+.fontTheme{
+  font-family: Helvetica,Arial,sans-serif,Lora,Helvetica Neue;
+  color: #696967;
+}
+
+.round-input{
+  border-radius: 100px 0 0 100px;
+  background-color: #5a6268;
+
+}
+.round-input:focus{
+  background-color: #5a6268;
+}
+
+.round-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #DBDBDB;
+  opacity: 1; /* Firefox */
+}
+
+.round-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #DBDBDB;
+}
+
+.round-input::-ms-input-placeholder { /* Microsoft Edge */
+  color: #DBDBDB;
+}
+
+.round-button{
+  border-radius: 0 100px 100px 0;
+  border: none;
+}
+
+.round-button-com{
+  border-radius: 100px 100px 100px 100px;
+  border: none;
+}
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #15BEA4;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #15BEA4
+;
+  cursor: pointer;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.form {
+  /*position: relative;*/
+  /*z-index: 1;*/
+  /*background: #FFFFFF;*/
+  max-width: 560px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  /*box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);*/
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}

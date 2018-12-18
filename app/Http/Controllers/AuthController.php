@@ -16,8 +16,12 @@ class AuthController extends Controller
    * generate referral code
    */
     public function subscribe(Request $request,User $user){
-        $this->validate($request,['email'=>'required|email|unique:users',
-        'password'=> 'required|same:confirm_password']);
+        $this->validate($request,[
+        'email'=>'required|email|unique:users',
+        'password'=> 'required',
+        'confirm_password' => 'required|same:password'
+
+        ]);
         $user->email = $request->email;
         $user->code = str_random(10);
         $user->password = Hash::make($request->password);

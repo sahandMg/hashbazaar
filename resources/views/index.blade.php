@@ -104,7 +104,12 @@
          <form method="post" action="{{route('subscribe')}}" class="register-form">
            <input type="hidden" name="_token" value="{{csrf_token()}}">
            <input type="text"  hidden name="hash" id="hash"/>
-           <!-- <span style="color: #ae5856;">error</span> -->
+@if($errors->all())
+    @foreach($errors->all() as $error)
+    <span style="color: #ae5856;">{{$error}}</span><br>
+    @endforeach
+@endif
+
            <input type="text" name="email" placeholder="email address"/>
            <!-- <span style="color: #ae5856;">error</span> -->
            <input type="password" name="password" placeholder="password"/>

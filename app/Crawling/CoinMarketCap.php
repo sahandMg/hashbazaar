@@ -19,45 +19,47 @@ class CoinMarketCap
 
     public function getApi(){
         $cryptoName = [];
-        $url = 'https://coinmarketcap.com/';
+        $url = 'https://pay98.cash/%D9%82%DB%8C%D9%85%D8%AA-%D8%A7%D8%B1%D8%B2%D9%87%D8%A7%DB%8C-%D8%AF%DB%8C%D8%AC%DB%8C%D8%AA%D8%A7%D9%84';
+        $config = [
+            'referer' => true,
+             'headers' => [
+                 'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+                 'Accept-Encoding' => 'gzip, deflate, br',
+    ],
+    ];
         $client = new GuzzleClient();
-        $promise1 = $client->requestAsync('GET',$url)->then(function (ResponseInterface $response) {
+        $promise1 = $client->requestAsync('GET',$url,$config)->then(function (ResponseInterface $response) {
             $this->resp = $response->getBody()->getContents();
             return $this->resp;
         });
         $promise1->wait();
-
         $crawler = new Crawler($this->resp);
-        $coins = $crawler->filterXPath('//td[contains(@class,"no-wrap text-right")]');
-        $crawledCoins = $coins->each(
-            function (Crawler $node, $i) {
-                $first = $node->children()->first()->text();
-                return $first;
-            });
-        $names = $crawler->filterXPath('//a[contains(@class,"currency-name-container link-secondary")]');
+        $coinNames = $crawler->filterXPath('//p[contains(@class,"nametop1")]');
+        // $coins = str_replace(' ', '', $coins);
+        // $coins = str_replace("\n", '', $coins);
+        // $coins = str_replace("\r", '', $coins);
 
-//    Gets Just Crypto Names
-        $crawledNames = $names->each(
+        $crawledCoins = $coinNames->each(
             function (Crawler $node, $i) {
-
-                $first = $node->text();
+                $first = $node->children()->eq(1)->text();
                 return $first;
             });
 
-        for($i=0;$i<count($crawledCoins);$i++){
-            $crawledCoins[$i] = str_replace('  ', '', $crawledCoins[$i]);
-            $crawledCoins[$i] = str_replace("\n", '', $crawledCoins[$i]);
-        }
-        for($i=0;$i<count($crawledCoins);$i++) {
-            if(fmod($i,3)==0){
-                $coinPrice = str_replace(',','',preg_replace('/[^0.-9]/','', $crawledCoins[$i]));
-                $coinPrice = str_replace(' ','',$coinPrice);
-                $cryptoPrice[$i] = $coinPrice;
-            }
-        }
-        $cryptoPrice = array_values($cryptoPrice);
-        $CryptoCrawl = array_combine($crawledNames,$cryptoPrice);
-        if($CryptoCrawl['Ethereum'] >= 100){
+        $coinPrices = $crawler->filterXPath('//b[contains(@class,"ltr")]');
+
+    //    Gets Just Crypto Names
+        $crawledPrices = $coinPrices->each(
+            function (Crawler $node, $i) {
+                // $first = $node->eq(4)->text();
+                return $node->text();
+            });
+
+            array_shift($crawledPrices);
+            array_shift($crawledPrices);
+            array_shift($crawledPrices);
+
+        $CryptoCrawl = array_combine($crawledCoins,$crawledPrices);
+        if($CryptoCrawl['Ethereum'] <= 100){
 
             $data = ['CryptoCrawl'=>$CryptoCrawl];
             Mail::send('cryptoMailPage',$data,function($message){

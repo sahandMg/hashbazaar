@@ -76,6 +76,27 @@ Route::get('subscription','AuthController@subscription')->name('subscription');
 Route::post('subscription','AuthController@post_subscription')->name('subscription');
 
 Route::get('pricing','PageController@Pricing');
+/*
+*       Dashboard Routes
+*/
+Route::get('dashboard','PanelController@dashboard')->name('dashboard');
+
+Route::get('activity','PanelController@activity')->name('activity');
+
+Route::get('setting','PanelController@setting')->name('setting');
+
+Route::get('setting/user-info','PanelController@userInfo')->name('userInfo');
+
+Route::get('setting/change-pass','PanelController@changePassword')->name('changePassword');
+
+Route::get('setting/wallet','PanelController@wallet')->name('wallet');
+
+Route::get('setting/wallet-make','PanelController@makeWallet')->name('makeWallet');
+
+Route::get('referral','PanelController@referral')->name('referral');
+
+Route::get('contact','PanelController@contact')->name('contact');
+
 Route::get('test',function (){
 
 //    subscriptionMailJob::dispatch('sss@gmial.com','dsadsadaxzmczxmczx11231321');

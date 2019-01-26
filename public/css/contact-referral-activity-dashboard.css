@@ -1,0 +1,5701 @@
+.mainContainer
+{
+    background-color: #FFFDE8;
+    margin-top: -100px
+}
+body {
+    background-color: #FFFDE8
+
+}
+
+
+.container-contact2 {
+    display: none
+}
+/* Header */
+
+header {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 110px;
+    background-color: black;
+    font-size: 50px;
+    position: relative;
+
+}
+
+header div {
+    border-bottom: 4px solid orange;
+    width: 100%;
+    height: 110px;
+    position: relative;
+    z-index: 2;
+
+}
+
+.Logo_header {
+    width: 700px;
+    height: 90px;
+    position: absolute;
+    left: -120px;
+}
+
+
+
+/* Menu */
+.container-contact {
+    width: 370px;
+    height: 1120px;
+    background: rgb(39, 38, 38);
+    border-top: 4px solid orange;
+
+
+}
+
+.container-contact .mainList {
+    background: white;
+    width: 370px;
+    top: 150px;
+    position: fixed;    /* bottom:500px */
+
+}
+
+.container-contact .navbar {
+    height: 130px;
+    border-bottom: 2px solid #727272;
+    /* background-color: silver */
+    background: rgb(39, 38, 38);
+    font-family: sans-serif;
+}
+
+.Logo_In_NavBar {
+    width: 250px;
+    height: 400px;
+    left: 50px;
+    position: absolute;
+    top: -170px
+}
+
+
+div ul .navbar #welcome {
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    left: 110px;
+    top: 90px;
+    text-decoration: none
+}
+
+.container-contact .mainList .sub {
+    color: orange;
+    height: 60px;
+    border-bottom: 2px solid #727272;
+    font-size: 30px;
+    /* background: silver; */
+    background: rgb(39, 38, 38);
+    padding-bottom: 10px;
+    text-align: center;
+    font-family: sans-serif
+}
+
+.container-contact .mainList .sub a {
+    color: orange;
+    text-decoration: none;
+    padding-top: 20px;
+    position: relative;
+    left: -40px;
+    top: 30%
+}
+
+.container-contact .mainList .sub a:hover {
+    color: white;
+}
+
+.container-contact .mainList .sub {
+    color: orange;
+    height: 60px;
+    border-bottom: 2px solid #727272;
+    font-size: 30px;
+    /* background: silver; */
+    background: rgb(39, 38, 38);
+    padding-bottom: 10px;
+    text-align: center;
+    font-family: sans-serif
+}
+
+
+.sub:after {
+    background-image: url("../img/Arrow.svg");
+    width: 1em;
+    height: 1em;
+    margin-top: 25px;
+    content: "";
+    left: 300px;
+    background-size: 100% 100%;
+    position: absolute;
+}
+
+#dashboard:before {
+    content: "";
+    background-image: url("../img/Dashboard.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -60px;
+    top: 15px
+}
+
+#activity:before {
+    content: '';
+    background-image: url("../img/Activity.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -80px;
+    top: 15px
+}
+
+
+#referral:before {
+    content: "";
+    background-image: url("../img/Referral.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -80px;
+    top: 15px
+}
+
+#setting:before {
+    content: "";
+    background-image: url("../img/Setting.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -85px;
+    top: 15px
+}
+
+.contact {
+    border-bottom: 1px solid transparent !important
+}
+
+#contact {
+    color: white
+}
+
+#contact:before {
+    content: "";
+    background-image: url("../img/contact.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -80px;
+    top: 18px
+}
+
+/* Contact */
+
+#contact-page {
+    position: relative;
+    top: 0px;
+    left: 27.5%;
+    width: 72%;
+}
+
+
+#contact-page h1 {
+    position: absolute;
+    font-size: 30px;
+    font-weight: bolder;
+    color: #2e2d2d;
+    font-family: sans-serif;
+    width: 500px;
+    top: 100px;
+    left: 300px;
+}
+#contact-page input
+{
+    background-color: #FFFDE8
+}
+
+
+#contact-page input:nth-of-type(1){
+    position: absolute;
+    width: 400px;
+    height: 50px;
+    border: 2px solid transparent;
+    border-bottom: 3px solid black !important;
+    top: 200px;
+    left: 300px;
+}
+
+
+#contact-page input:nth-of-type(2){
+    position: absolute;
+    top: 300px;
+    left: 300px;
+    width: 400px;
+    height: 50px;
+    border: 3px solid transparent;
+    border-bottom: 2px solid black !important
+}
+
+
+#contact-page input:nth-of-type(3){
+    position: absolute;
+    top: 410px ;
+    left: 150px;
+    width: 600px;
+    height: 150px;
+    border: 2px solid black;
+}
+/* #contact-page input:nth-of-type(3)::before{
+    content: "Message";
+    position: absolute;
+    color: black;
+    top: -100px;
+    left: -300px;;
+} */
+form.contact-page button {
+    width: 160px;
+    height: 60px;
+    border-radius:10%;
+    background-color: #15BEA4;
+    position: relative;
+    top: 600px;
+    left:370px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-size: 30px;
+    border: thin solid
+}
+
+form.contact-page button p {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-size: 30px;
+    color: white;
+}
+
+form.contact-page p:nth-of-type(1) {
+    position: relative;
+    font-weight: bolder;
+    font-size: 25px;
+    left:180px;
+    top: 380px;
+}
+.contact-hr-footer {
+    top: 830px
+}
+
+/* Footer */
+
+
+.contact-footer-div {
+    top: 1080px;
+    width: 70%;
+    margin-left: 380px;;
+    position: absolute;
+}
+.contact-footer-paragraph {
+    font-size: 20px;
+    font-family: sans-serif;
+    position: absolute;
+    top: -60px;
+    left: 250px
+
+}
+
+#contact-footer-image {
+    width: 200px;
+    height: 100px;
+}
+
+
+
+
+@media screen and (max-width:1024px)
+{
+    /* ---------------=====Media====-------------Main Container--------------------------- */
+
+    .container-contact {
+        width: 270px;
+        /* height: 1850px; */
+
+
+    }
+
+    .container-contact .mainList {
+        width: 270px
+    }
+
+    .container-contact .mainList .navbar .Logo_In_NavBar{
+        width: 210px;
+        height: 370px;
+        left: 30px;
+        position: absolute;
+        top: -170px;
+    }
+
+    div ul .navbar #welcome {
+        font-size: 17px;
+        left: 70px;
+
+    }
+
+
+    .container-contact .mainList .sub {
+        height: 60px;
+        font-size: 25px;
+        padding-bottom: 10px;
+    }
+
+
+    .container-contact .mainList .sub a {
+        left: -10px;
+        top: 30%
+    }
+
+
+    .sub:after {
+        width: 1em;
+        height: 1em;
+        content: "";
+        left: 85%;
+    }
+
+
+    #dashboard:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -40px;
+    }
+
+    #activity:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+
+    #contact:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+
+    #setting:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+
+    #referral:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+
+
+    .contact-hr-footer
+    {
+        top:840px
+    }
+
+    #contact-page h1 {
+        left: 150px;
+        font-size: 30px
+    }
+    #contact-page input:nth-of-type(1) {
+        left: 150px
+    }
+
+    #contact-page input:nth-of-type(2) {
+        left: 150px;
+        top: 300px;
+    }
+    #contact-page input:nth-of-type(3){
+        position: absolute;
+        top: 420px ;
+        left: 100px;
+        width: 500px;
+        height: 150px;
+        border: 2px solid black;
+    }
+
+    form.contact-page button {
+        width: 160px;
+        height: 60px;
+        border-radius:10%;
+        background-color: #15BEA4;
+        position: relative;
+        top: 600px;
+        left:300px;
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        font-size: 30px;
+        border: thin solid
+    }
+
+    .contact-footer-div {
+        left: -100px;
+    }
+
+
+}
+
+
+
+@media screen and (max-width:768px) {
+    body {
+        background-color: #FFFDE8
+    }
+    header {
+        z-index: 2;
+    }
+    .container-contact {
+        display: none;
+    }
+    .container-contact2{
+        display: block;
+    position:  relative;
+    top: 22px;
+    width: 100%;
+    float: left;
+    }
+
+    .container-contact2 .mainList2 {
+        background: #2e2d2d;
+        position: fixed;
+        top: 0;
+        height: 40px;
+        width: 100%;
+        border-bottom: 2px solid orange;
+    }
+
+    .container-contact2 .mainList2 .sub2{
+        float: left;
+        margin-left: 80px;
+        text-align: center;
+        margin-top: 10px;
+        position: sticky;
+        top: 0;
+
+    }
+
+    .container-contact2 .mainList2 .sub2 a {
+        text-decoration: none;
+        color: orange
+    }
+    .container-contact2 .mainList2 .sub2 a:hover {
+        color: white;
+    }
+    .mainList {
+        display: none
+    }
+
+    #dashboard:before {
+        content: "";
+        background-image: url("img/Dashboard.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+    #activity:before {
+        content: "";
+        background-image: url("img/Activity.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+
+    #referral:before {
+        content: "";
+        background-image: url("img/Referral.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+    #setting:before {
+        content: "";
+        background-image: url("img/Setting.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+    #contact:before {
+        content: "";
+        background-image: url("img/contact.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+    /* Contact */
+
+#contact-page {
+    position: relative;
+    top: 0px;
+    left: 0%;
+    width: 100%;
+}
+
+
+#contact-page h1 {
+    font-size: 30px;
+    width: 500px;
+    left: 170px;
+}
+
+#contact-page input:nth-of-type(1){
+    left: 170px;
+    top: 200px;
+}
+
+
+#contact-page input:nth-of-type(2){
+    left: 170px;
+    top: 300px;
+}
+
+
+#contact-page input:nth-of-type(3){
+    position: absolute;
+    top: 430px ;
+    left: 130px;
+    width: 510px;
+    height: 150px;
+}
+
+form.contact-page button {
+    top: 620px;
+    left:310px;
+}
+
+.contact-hr-footer {
+    top: 700px
+}
+
+/* Footer */
+
+
+.contact-footer-div {
+    top:960px;
+    width: 94%;
+    margin-left: 5%;
+}
+.contact-footer-paragraph {
+    font-size: 18px;
+    top: -60px;
+    left: 230px
+
+}
+
+}
+
+
+
+@media screen and (max-width: 414px) {
+
+
+    body {
+        background-color: #FFFDE8
+    }
+    header {
+        z-index: 2;
+    }
+    .Logo_header {
+        width: 300px;
+        height: 90px;
+        position: absolute;
+        left: 20px;
+    }
+    .container-contact {
+        display: none;
+    }
+    .container-contact2{
+        display: block;
+    position:  relative;
+    top: 22px;
+    width: 100%;
+    float: left;
+    }
+
+    .container-contact2 .mainList2 {
+        background: #2e2d2d;
+        position: fixed;
+        top: 0;
+        height: 40px;
+        width: 100%;
+        border-bottom: 2px solid orange;
+    }
+
+    .container-contact2 .mainList2 .sub2{
+        float: left;
+        margin-left: 35px;
+        text-align: center;
+        margin-top: 10px;
+        top: 0;
+        font-size: 13px;
+
+
+    }
+
+    .container-contact2 .mainList2 .sub2 a {
+        text-decoration: none;
+        color: orange
+    }
+    .container-contact2 .mainList2 .sub2 a:hover {
+        color: white;
+    }
+    .mainList {
+        display: none
+    }
+
+    #dashboard:before {
+        content: "";
+        background-image: url("img/Dashboard.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+    #activity:before {
+        content: "";
+        background-image: url("img/Activity.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+
+    #referral:before {
+        content: "";
+        background-image: url("img/Referral.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+    #setting:before {
+        content: "";
+        background-image: url("img/Setting.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+    #contact:before {
+        content: "";
+        background-image: url("img/contact.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+    /* Contact */
+
+#contact-page {
+    position: relative;
+    top: 0px;
+    left: 0%;
+    width: 100%;
+}
+
+
+#contact-page h1 {
+    font-size: 20px;
+    width: 280px;
+    left: 60px;
+    top: 50px
+
+}
+
+#contact-page input:nth-of-type(1){
+    left: 100px;
+    top: 100px;
+    width: 200px;
+    border-bottom: 2px solid
+
+}
+
+
+#contact-page input:nth-of-type(2){
+    left: 100px;
+    top: 160px;
+    width: 200px;
+    border-bottom: 2px solid
+}
+
+
+#contact-page input:nth-of-type(3){
+    position: absolute;
+    top: 250px ;
+    left: 70px;
+    width: 250px;
+    height: 150px;
+}
+
+form.contact-page button {
+    top: 520px;
+    left:130px;
+}
+
+.contact-hr-footer {
+    top: 700px
+}
+
+/* Footer */
+
+    .contact-footer-div {
+        width: 10% !important;
+        left: 0%;
+        position: absolute;
+        top: 960px
+    }
+
+    #contact-footer-image {
+        width: 150px;
+        height: 75px;
+    }
+
+    .contact-footer-paragraph {
+        font-size: 15px;
+        font-family: sans-serif;
+        position: absolute;
+        top: -60px;
+        left: 0px;
+        width: 260px
+    }
+
+}
+
+
+
+@media screen and (max-width: 375px) {
+    .container-contact2 .mainList2 .sub2{
+        float: left;
+        margin-left: 30px;
+        text-align: center;
+        margin-top: 10px;
+        top: 0;
+        font-size: 13px;
+
+
+    }
+    #dashboard:before {
+        content: "";
+        background-image: url("img/Dashboard.svg");
+        width: 17px;
+        height: 17px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -25px;
+        top: 0px
+    }
+
+    #activity:before {
+        content: "";
+        background-image: url("img/Activity.svg");
+        width: 17px;
+        height: 17px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -25px;
+        top: 0px
+    }
+
+
+    #referral:before {
+        content: "";
+        background-image: url("img/Referral.svg");
+        width: 17px;
+        height: 17px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -25px;
+        top: 0px
+    }
+
+    #setting:before {
+        content: "";
+        background-image: url("img/Setting.svg");
+        width: 17px;
+        height: 17px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -25px;
+        top: 0px
+    }
+
+    #contact:before {
+        content: "";
+        background-image: url("img/contact.svg");
+        width: 17px;
+        height: 17px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -25px;
+        top: 0px
+    }
+
+    .contact-footer-paragraph {
+        font-size: 13px;
+        font-family: sans-serif;
+        position: absolute;
+        top: -60px;
+        left: 0px;
+        width: 260px
+    }
+}
+@media screen and (max-width:320px) {
+    .Logo_header {
+        width: 200px;
+        height: 90px;
+        position: absolute;
+        left: 10px;
+    }
+    .container-contact2 .mainList2 {
+        width: 320px;
+    }
+
+    .container-contact2 .mainList2 .sub2{
+        float: left;
+        margin-left: 25px;
+        text-align: center;
+        margin-top: 10px;
+        top: 0;
+        font-size: 11.5px;
+
+    }
+
+    #dashboard:before {
+        content: "";
+        background-image: url("img/Dashboard.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -22px;
+        top: 0px
+    }
+
+    #activity:before {
+        content: "";
+        background-image: url("img/Activity.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -22px;
+        top: 0px
+    }
+
+
+    #referral:before {
+        content: "";
+        background-image: url("img/Referral.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -22px;
+        top: 0px
+    }
+
+    #setting:before {
+        content: "";
+        background-image: url("img/Setting.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -22px;
+        top: 0px
+    }
+
+    #contact:before {
+        content: "";
+        background-image: url("img/contact.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -22px;
+        top: 0px
+    }
+    #contact-page h1 {
+        left: 12px;
+        top: 0;
+        font-size: 15px !important
+
+    }
+    #contact-page input:nth-of-type(1){
+        top: 80px ;
+        left: 72px;
+        width: 150px;
+    }
+    #contact-page input:nth-of-type(2){
+        top: 150px ;
+        left: 72px;
+        width: 150px;
+    }
+    #contact-page input:nth-of-type(3){
+        position: absolute;
+        top: 250px ;
+        left: 52px;
+        width: 210px;
+        height: 110px;
+    }
+
+    form.contact-page button {
+        top: 420px;
+        left:100px;
+        width: 100px;
+        height: 40px;
+    }
+    form.contact-page button span {
+        font-size: 25px
+    }
+    .contact-footer-div {
+        width: 94%;
+        left: 0%;
+        position: absolute;
+        top: 960px
+    }
+
+    .contact-footer-paragraph {
+        font-size: 13px;
+        margin-left: 0;
+        left: 0px;
+        width: 230px
+    }
+
+    #contact-footer-image {
+        width: 100px;
+        height: 50px;
+    }
+
+
+    #contact-page h1 {
+        font-size: 15px;
+        margin: 8% 15%;
+        width: 250px
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+.mainContainer
+{
+    background-color: #FFFDE8
+}
+body {
+    background-color: #FFFDE8
+
+}
+.container-contact2 {
+    display: none
+}
+/* Header */
+
+header {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 110px;
+    background-color: black;
+    font-size: 50px;
+    position: relative;
+
+}
+
+header div {
+    border-bottom: 4px solid orange;
+    width: 100%;
+    height: 110px;
+    position: relative;
+    z-index: 2;
+
+}
+
+.Logo_header {
+    width: 700px;
+    height: 90px;
+    position: absolute;
+    left: -120px;
+}
+
+.mainList2 {display: none}
+
+/* Menu */
+.container-referral {
+    width: 370px;
+    height: 1250px;
+    background: rgb(39, 38, 38);
+    border-top: 4px solid orange;
+}
+
+.container-referral .mainList {
+    background: white;
+    position: fixed;
+    top: 150px;
+    width: 370px;
+
+}
+
+.navbar {
+    height: 130px;
+    border-top: 2px solid rgb(39, 38, 38);
+    border-bottom: 2px solid #727272;
+    /* background-color: silver */
+    background: rgb(39, 38, 38);
+    font-family: sans-serif;
+}
+
+.Logo_In_NavBar {
+    width: 250px;
+    height: 400px;
+    left: 50px;
+    position: absolute;
+    top: -170px
+}
+
+
+div ul .navbar #welcome {
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    left: 110px;
+    top: 90px;
+    text-decoration: none
+}
+
+.container-referral .mainList .sub {
+    color: orange;
+    height: 60px;
+    border-bottom: 2px solid #727272;
+    font-size: 30px;
+    /* background: silver; */
+    background: rgb(39, 38, 38);
+    padding-bottom: 10px;
+    text-align: center;
+    font-family: sans-serif
+}
+
+.container-referral .mainList .sub a {
+    color: orange;
+    text-decoration: none;
+    padding-top: 20px;
+    position: relative;
+    left: -40px;
+    top: 30%
+}
+
+.container-referral .mainList .sub a:hover {
+    color: white;
+}
+
+.sub:after {
+    background-image: url("img/Arrow.svg");
+    width: 1em;
+    height: 1em;
+    margin-top: 25px;
+    content: "";
+    left: 300px;
+    background-size: 100% 100%;
+    position: absolute;
+}
+
+#dashboard:before {
+    content: "";
+    background-image: url("img/Dashboard.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -60px;
+    top: 15px
+}
+
+#activity:before {
+    content: '';
+    background-image: url("img/Activity.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -80px;
+    top: 15px
+}
+
+#referral {
+    color: white;
+}
+#referral:before {
+    content: "";
+    background-image: url("img/Referral.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -80px;
+    top: 15px
+}
+
+#setting:before {
+    content: "";
+    background-image: url("img/Setting.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -85px;
+    top: 15px
+}
+
+.contact {
+    border-bottom: 1px solid transparent !important
+}
+
+#contact:before {
+    content: "";
+    background-image: url("img/contact.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -80px;
+    top: 18px
+}
+
+
+
+
+/* Referral */
+
+#referral-page {
+    position: absolute;
+    top: 100px;
+    /* border: 2px solid red; */
+    left: 27.5%;
+    width: 72%;
+    /* height: 00px; */
+}
+
+
+#referral-page q  {
+    font-size: 30px;
+   color: #2e2d2d;
+   font-weight: bold;
+   font-family: sans-serif;
+   position: absolute;
+   top: 80px;
+   left: 40px
+
+}
+
+.referral-page_firstList {
+    list-style-type:inherit;
+
+    position: absolute;
+    top: 120px;
+    left: 60px;
+    color: #2e2d2d;
+    font-family: sans-serif;
+    line-height: 2;
+    font-size: 25px
+
+}
+
+
+#referral-page blockquote {
+    font-size: 25px;
+    color: #2e2d2d;
+    font-weight: bold;
+    font-family: sans-serif;
+    position: absolute;
+    top: 300px;
+    left: 40px;
+ }
+
+ #referral-page p {
+     font-size: 25px;
+     font-family: sans-serif;
+     color: #2e2d2d;
+     position: absolute;
+     top: 300px;
+     left: 240px;
+
+ }
+
+ #referral-page dl {
+
+ font-size: 25px;
+    color: #2e2d2d;
+    font-weight: bold;
+    font-family: sans-serif;
+    position: absolute;
+    top: 400px;
+     left: 40px;
+}
+
+#referral-page p:nth-of-type(2) {
+    font-size: 25px;
+    font-family: sans-serif;
+    color: #2e2d2d;
+    position: absolute;
+    top: 400px;
+     left: 410px;
+
+}
+
+
+.referral-page_secondList
+ {
+     display: flex;
+     flex-flow: row wrap;
+     position: relative;
+     float: left;
+ }
+
+
+
+ .referral-page_secondList_column
+{
+    flex-grow: 1;
+    position: relative;
+    top: 500px;
+    font-size: 25px;
+    color: #2e2d2d;
+    font-family: sans-serif;
+    left: 50px;;
+    height: 100px;
+    margin-left:40px
+
+
+}
+
+
+.referral-page_secondList_column ul li {
+    width: auto;
+    margin-top: 5%;
+    font-size: 30px;
+    font-weight: bolder !important;
+
+
+
+}
+
+
+.referral-hr-footer
+{
+    top: 950px;
+    width: 100%;
+    position: relative;
+    left: -830px;
+
+}
+
+/* Footer */
+
+.referral-footer-div {
+    width: 70%;
+    left: 30%;
+    position: absolute;
+    top: 1250px
+}
+
+#referral-footer-image {
+    width: 200px;
+    height: 100px;
+}
+
+.referral-footer-paragraph {
+    font-size: 20px;
+    font-family: sans-serif;
+    position: absolute;
+    top: -60px;
+    left: 250px
+}
+@media screen and (max-width:1024px)
+{
+    /* ---------------=====Media====-------------Main Container--------------------------- */
+
+    .container-referral {
+        width: 270px;
+        height: 1000px;
+
+
+    }
+
+    .container-referral .mainList {
+        width: 270px
+    }
+
+    .container-referral .mainList .navbar .Logo_In_NavBar{
+        width: 220px;
+        height: 370px;
+        left: 30px;
+        position: absolute;
+        top: -170px
+    }
+
+    div ul .navbar #welcome {
+        font-size: 17px;
+        left: 70px;
+
+    }
+
+
+    .container-referral .mainList .sub {
+        height: 60px;
+        font-size: 25px;
+        padding-bottom: 10px;
+    }
+
+
+    .container-referral .mainList .sub a {
+        left: -10px;
+        top: 30%
+    }
+
+
+    .sub:after {
+        width: 1em;
+        height: 1em;
+        content: "";
+        left: 85%;
+    }
+
+
+    #dashboard:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -40px;
+    }
+
+    #activity:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+
+    #contact:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+
+    #setting:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+
+    #referral:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+
+
+
+
+/* =======----media----==========================Referral==================================== */
+
+
+#referral-page q  {
+    font-size: 25px;
+   color: #2e2d2d;
+   font-weight: bold;
+   font-family: sans-serif;
+   position: absolute;
+   top: 80px;
+   left: 40px;
+}
+
+.referral-page_firstList {
+    font-size: 20px
+}
+
+
+#referral-page blockquote {
+    font-size: 20px;
+}
+
+ #referral-page p {
+     font-size: 20px;
+ }
+
+ #referral-page dl {
+ font-size: 20px;
+}
+
+#referral-page p:nth-of-type(2) {
+    font-size: 20px;
+
+}
+.referral-page_secondList_column ul li {
+    width: 120px;
+    margin-top: 15%;
+    font-size: 30px;
+
+}
+
+
+ .referral-page_secondList_column
+{
+    flex-grow: 1;
+    position: relative;
+    top: 500px;
+    font-size: 20px;
+    color: #2e2d2d;
+    font-family: sans-serif;
+    margin-left: 5%
+
+
+}
+.referral-hr-footer
+{
+    top: 820px;
+    width: 100%;
+    left: -580px
+}
+
+/* Footer */
+.referral-footer-div {
+    width: 70%;
+    left: 30%;
+    position: absolute;
+    top: 1000px
+}
+
+#referral-footer-image {
+    width: 200px;
+    height: 100px;
+}
+
+.referral-footer-paragraph {
+    font-size: 20px;
+    font-family: sans-serif;
+    position: absolute;
+    top: -60px;
+    left: 250px
+}
+
+
+
+
+}
+
+@media screen and (max-width:768px) {
+
+    .container-referral {
+        display: none;
+    }
+    header div {
+        border-bottom: 4px solid orange;
+        width: 100%;
+        height: 110px;
+        position: relative;
+        z-index: 2;
+
+    }
+    header {
+        z-index: 2;
+    }
+    .Logo_header {
+        height: 90px;
+        position: absolute;
+    }
+    .container-referral2{
+        position:  relative;
+        top: 2px;
+        width: 100%;
+        float: left;
+        z-index: 0;
+        }
+
+        .container-referral2 .mainList2 {
+            background: #2e2d2d;
+            position: fixed;
+            top: 0;
+            z-index: 0;
+            height: 40px;
+            width: 100%;
+            border-bottom: 2px solid orange;
+            display: block
+        }
+
+        .container-referral2 .mainList2 .sub2{
+            float: left;
+            margin-left: 80px;
+            text-align: center;
+            margin-top: 10px;
+            position: sticky;
+            top: 0;
+
+        }
+
+        .container-referral2 .mainList2 .sub2 a {
+            text-decoration: none;
+            color: orange
+        }
+        .container-referral2 .mainList2 .sub2 a:hover {
+            color: white;
+        }
+        .mainList {
+            display: none
+        }
+
+        #dashboard:before {
+            content: "";
+            background-image: url("img/Dashboard.svg");
+            width: 20px;
+            height: 20px;
+            background-size: 100% 100%;
+            position: absolute;
+            left: -30px;
+            top: 0px
+        }
+
+        #activity:before {
+            content: "";
+            background-image: url("img/Activity.svg");
+            width: 20px;
+            height: 20px;
+            background-size: 100% 100%;
+            position: absolute;
+            left: -30px;
+            top: 0px
+        }
+
+
+        #referral:before {
+            content: "";
+            background-image: url("img/Referral.svg");
+            width: 20px;
+            height: 20px;
+            background-size: 100% 100%;
+            position: absolute;
+            left: -30px;
+            top: 0px
+        }
+
+        #setting:before {
+            content: "";
+            background-image: url("img/Setting.svg");
+            width: 20px;
+            height: 20px;
+            background-size: 100% 100%;
+            position: absolute;
+            left: -30px;
+            top: 0px
+        }
+
+        #contact:before {
+            content: "";
+            background-image: url("img/contact.svg");
+            width: 20px;
+            height: 20px;
+            background-size: 100% 100%;
+            position: absolute;
+            left: -30px;
+            top: 0px
+        }
+
+
+
+    /* ==================================Referral================================ */
+
+#referral-page {
+    left: 1.5%;
+    width: 100%;
+}
+
+
+#referral-page q  {
+    font-size: 27px;
+}
+
+#referral-page_firstList {
+    font-size: 22px
+
+}
+
+
+#referral-page blockquote {
+    font-size: 22px;
+ }
+
+ #referral-page p {
+     font-size: 22px;
+ }
+
+ #referral-page dl {
+ font-size: 22px;
+}
+
+#referral-page p:nth-of-type(2) {
+    font-size: 25px;
+    font-family: sans-serif;
+    color: #2e2d2d;
+    position: absolute;
+    top: 400px;
+     left: 410px;
+
+}
+
+ .referral-page_secondList_column
+{
+    top: 480px;
+    font-size: 20px;
+
+
+}
+
+
+.referral-page_secondList_column ul li {
+    width: 100px;
+    margin-top: 15%;
+    font-size: 27px;
+    font-weight: bolder !important;
+}
+
+.referral-hr-footer
+{
+    top: 800px
+}
+
+/* Footer */
+
+.referral-footer-div {
+    width: 94%;
+    left: 0%;
+    position: absolute;
+    top: 1080px
+}
+
+.referral-footer-paragraph {
+    font-size: 18px;
+    left: 200px;
+    width: 320px
+}
+
+
+}
+
+
+
+
+
+@media screen and (max-width:414px) {
+    header div {
+        border-bottom: 4px solid orange;
+        width: 100%;
+        height: 110px;
+        position: relative;
+        z-index: 2;
+
+    }
+    header {
+        z-index: 2;
+    }
+    .Logo_header {
+        width: 300px;
+        height: 90px;
+        position: absolute;
+        left:30px
+    }
+
+    .container-referral {
+        display: none;
+    }
+
+    .container-referral2{
+        position:  relative;
+        top: 2px;
+        width: 100%;
+        float: left;
+        z-index: 0;
+        }
+
+        .container-referral2 .mainList2 {
+            background: #2e2d2d;
+            position: fixed;
+            top: 0;
+            z-index: 0;
+            height: 40px;
+            width: 414px;
+            border-bottom: 2px solid orange;
+            display: block
+        }
+
+        .container-referral2 .mainList2 .sub2{
+            float: left;
+    margin-left: 35px;
+    text-align: center;
+    margin-top: 10px;
+    top: 0;
+    font-size: 13px;
+
+        }
+
+        .container-referral2 .mainList2 .sub2 a {
+            text-decoration: none;
+            color: orange
+        }
+        .container-referral2 .mainList2 .sub2 a:hover {
+            color: white;
+        }
+
+
+
+
+
+    .mainList {
+        display: none
+    }
+
+    #dashboard:before {
+        content: "";
+        background-image: url("img/Dashboard.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
+
+    #activity:before {
+        content: "";
+        background-image: url("img/Activity.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
+
+
+    #referral:before {
+        content: "";
+        background-image: url("img/Referral.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
+
+    #setting:before {
+        content: "";
+        background-image: url("img/Setting.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
+
+    #contact:before {
+        content: "";
+        background-image: url("img/contact.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
+
+
+
+/* Referral */
+
+#referral-page {
+    position: absolute;
+    top: 100px;
+    /* border: 2px solid red; */
+    left: .5%;
+    width: 72%;
+    /* height: 00px; */
+}
+
+
+#referral-page q  {
+    font-size: 20px;
+   color: #2e2d2d;
+   font-weight: bold;
+   font-family: sans-serif;
+   position: absolute;
+   top: 60px;
+   left: 30px
+
+}
+
+.referral-page_firstList {
+    list-style-type:inherit;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    color: #2e2d2d;
+    font-family: sans-serif;
+    line-height: 2;
+    font-size: 17px;
+    width: 350px
+
+}
+
+
+#referral-page blockquote {
+    font-size: 20px;
+    color: #2e2d2d;
+    font-weight: bold;
+    font-family: sans-serif;
+    position: absolute;
+    top: 330px;
+    left: 30px;
+ }
+
+ #referral-page p {
+     font-size: 20px;
+     font-family: sans-serif;
+     color: #2e2d2d;
+     position: absolute;
+     top: 310px;
+     left: 200px;
+
+ }
+
+ #referral-page dl {
+
+ font-size: 17px;
+    color: #2e2d2d;
+    font-weight: bold;
+    font-family: sans-serif;
+    position: absolute;
+    top: 400px;
+     left: 30px;
+}
+
+#referral-page p:nth-of-type(2) {
+    font-size: 17px;
+    font-family: sans-serif;
+    color: #2e2d2d;
+    position: absolute;
+    top: 400px;
+     left: 280px;
+     width: 50px
+
+}
+
+
+.referral-page_secondList
+ {
+     display: flex;
+     flex-flow: row wrap;
+     position: relative;
+     float: left;
+ }
+
+
+
+ .referral-page_secondList_column
+{
+    flex-grow: 1;
+    position: relative;
+    top: 500px;
+    font-size: 20px;
+    color: #2e2d2d;
+    font-family: sans-serif;
+    left: 0px;;
+    height: 100px;
+    margin-left:40px
+
+
+}
+
+
+.referral-page_secondList_column ul li {
+    width: auto;
+    margin-top: 5%;
+    font-size: 30px;
+    font-weight: bolder !important;
+
+
+
+}
+
+
+
+.referral-hr-footer
+{
+    top: 800px;
+    left:-290px;
+    width: 385px;
+}
+
+/* Footer */
+
+.referral-footer-div {
+    width: 94%;
+    left: 0%;
+    position: absolute;
+    top: 1050px
+}
+
+.referral-footer-paragraph {
+    font-size: 14px;
+    margin-left: 0;
+    left: 70px;
+}
+
+#referral-footer-image {
+    width: 100px;
+    height: 50px;
+}
+
+
+
+}
+
+
+
+@media screen and (max-width:375px) {
+    .container-referral2 .mainList2 {
+        width: 375px !important;
+        display: block
+    }
+    .Logo_header {
+        width: 200px;
+        height: 90px;
+        position: absolute;
+        left: 40px;
+    }
+    .container-referral2 .mainList2 .sub2{
+        float: left;
+        margin-left: 30px;
+        text-align: center;
+        margin-top: 10px;
+        top: 0;
+        font-size: 13px;
+
+    }
+
+.referral-page_firstList {
+    list-style-type:inherit;
+    position: absolute;
+    top: 100px;
+    left: 40px;
+    color: #2e2d2d;
+    font-family: sans-serif;
+    line-height: 2;
+    font-size: 17px;
+    width: 300px
+
+}
+#referral-page blockquote {
+    font-size: 18px;
+    color: #2e2d2d;
+    font-weight: bold;
+    font-family: sans-serif;
+    position: absolute;
+    top: 330px;
+    left: 30px;
+ }
+
+ #referral-page p {
+     font-size: 18px;
+     font-family: sans-serif;
+     color: #2e2d2d;
+     position: absolute;
+     top: 310px;
+     left: 180px;
+
+ }
+
+    #referral-page dl {
+
+        font-size: 16px;
+           color: #2e2d2d;
+           font-weight: bold;
+           font-family: sans-serif;
+           position: absolute;
+           top: 400px;
+            left: 30px;
+       }
+
+       #referral-page p:nth-of-type(2) {
+           font-size: 17px;
+           font-family: sans-serif;
+           color: #2e2d2d;
+           position: absolute;
+           top: 400px;
+            left: 280px;
+            width: 50px
+
+       }
+
+
+.referral-hr-footer
+{
+    top: 800px;
+    left:-290px;
+    width: 385px;
+}
+
+/* Footer */
+
+.referral-footer-div {
+    width: 94%;
+    left: 0%;
+    position: absolute;
+    top: 1050px
+}
+
+.referral-footer-paragraph {
+    font-size: 14px;
+    margin-left: 0;
+    left: 70px;
+}
+
+#referral-footer-image {
+    width: 100px;
+    height: 50px;
+}
+}
+
+
+@media screen and (max-width: 320px) {
+  .container-referral2 .mainList2 {
+        width: 320px;
+        display: block
+    }
+
+    .container-referral2 .mainList2 .sub2{
+        float: left;
+        margin-left: 30px;
+        text-align: center;
+        margin-top: 10px;
+        top: 0;
+        font-size: 13px;
+
+    }
+    .referral-page_firstList {
+        list-style-type:inherit;
+        position: absolute;
+        top: 100px;
+        left: 40px;
+        color: #2e2d2d;
+        font-family: sans-serif;
+        line-height: 2;
+        font-size: 15px;
+        width: 300px
+    }
+
+#referral-page blockquote {
+    font-size: 16px;
+    color: #2e2d2d;
+    font-weight: bold;
+    font-family: sans-serif;
+    position: absolute;
+    top: 330px;
+    left: 30px;
+ }
+
+ #referral-page p {
+     font-size: 15px;
+     font-family: sans-serif;
+     color: #2e2d2d;
+     position: absolute;
+     top: 315px;
+     left: 160px;
+
+ }
+
+    #referral-page dl {
+
+        font-size: 15px;
+           color: #2e2d2d;
+           font-weight: bold;
+           font-family: sans-serif;
+           position: absolute;
+           top: 400px;
+            left: 30px;
+            line-height: 1.5
+       }
+
+       #referral-page p:nth-of-type(2) {
+           font-size: 17px;
+           font-family: sans-serif;
+           color: #2e2d2d;
+           position: absolute;
+           top: 425px;
+            left:90px;
+            width: 50px
+
+       }
+
+
+.referral-hr-footer
+{
+    top: 830px;
+    left:-290px;
+    width: 365px;
+}
+
+/* Footer */
+
+.referral-footer-div {
+    width: 94%;
+    left: 0%;
+    position: absolute;
+    top: 1050px
+}
+
+.referral-footer-paragraph {
+    font-size: 14px;
+    margin-left: 0;
+    left: 0px;
+}
+
+#referral-footer-image {
+    width: 100px;
+    height: 50px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mainContainer
+{
+    background-color: #FFFDE8
+}
+body {
+    background-color: #FFFDE8
+
+}
+
+
+/* Header */
+
+header {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 110px;
+    background-color: black;
+    font-size: 50px;
+    position: relative;
+
+}
+
+header div {
+    border-bottom: 4px solid orange;
+    width: 100%;
+    height: 110px;
+    position: relative;
+    z-index: 2;
+
+}
+
+.Logo_header {
+    width: 700px;
+    height: 90px;
+    position: absolute;
+    left: -120px;
+}
+
+
+
+/* Menu */
+.container-activity {
+    width: 370px;
+    height: 1380px;
+    background: rgb(39, 38, 38);
+    border-top: 4px solid orange;
+    /* top: -100px */
+}
+
+.container-activity .mainList {
+    background: white;
+    /* left: 100px; */
+    width: 370px;
+    position: fixed;
+    top: 150px
+
+}
+
+.navbar {
+    height: 130px;
+    border-bottom: 2px solid #727272;
+    /* background-color: silver */
+    background: rgb(39, 38, 38);
+    font-family: helvetica
+/*    font-family: sans-serif*/
+
+}
+
+.Logo_In_NavBar {
+    width: 250px;
+    height: 400px;
+    left: 50px;
+    position: absolute;
+    top: -170px
+}
+
+
+div ul .navbar #welcome {
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    left: 110px;
+    top: 90px;
+    text-decoration: none
+}
+
+.container-activity .mainList .sub {
+    color: orange;
+    height: 60px;
+    border-bottom: 2px solid #727272;
+    font-size: 30px;
+    /* background: silver; */
+    background: rgb(39, 38, 38);
+    padding-bottom: 10px;
+    text-align: center;
+    font-family: sans-serif
+}
+
+.container-activity .mainList .sub a {
+    color: orange;
+    text-decoration: none;
+    padding-top: 20px;
+    position: relative;
+    left: -40px;
+    top: 30%
+}
+
+.container-activity .mainList .sub a:hover {
+    color: white;
+}
+
+.sub:after {
+    background-image: url("img/Arrow.svg");
+    width: 1em;
+    height: 1em;
+    margin-top: 25px;
+    content: "";
+    left: 300px;
+    background-size: 100% 100%;
+    position: absolute;
+}
+
+#dashboard:before {
+    content: "";
+    background-image: url("img/Dashboard.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -60px;
+    top: 15px
+}
+#activity {
+    color: white;
+}
+#activity:before {
+    content: '';
+    background-image: url("img/Activity.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -80px;
+    top: 15px
+}
+
+
+#referral:before {
+    content: "";
+    background-image: url("img/Referral.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -80px;
+    top: 15px
+}
+
+#setting:before {
+    content: "";
+    background-image: url("img/Setting.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -85px;
+    top: 15px
+}
+
+.contact {
+    border-bottom: 1px solid transparent !important
+}
+
+#contact:before {
+    content: "";
+    background-image: url("img/contact.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -80px;
+    top: 18px
+}
+
+
+/* Activity */
+
+ #activity-page {
+     position: absolute;
+     top: 100px;
+     left: 27.5%;
+     width: 72%;
+ }
+
+
+ #activity-page q  {
+     font-size: 30px;
+    color: #2e2d2d;
+    font-weight: bold;
+    font-family: sans-serif;
+    position: absolute;
+    left: 40px;
+    top: 100px
+
+ }
+
+
+ #activity-page_firstList
+ {
+    list-style-type:inherit;
+
+    position: absolute;
+    left: 70px;
+    top: 150px;
+    color: #2e2d2d;
+    font-family: sans-serif;
+    line-height: 2;
+    font-size: 25px
+
+ }
+
+ #activity-page blockquote {
+    font-size: 30px;
+    color: #2e2d2d;
+    font-weight: bold;
+    font-family: sans-serif;
+    position: absolute;
+    top: 350px;
+    left: 40px;
+ }
+
+
+ #activity-page .purchases q {
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    border-bottom: 2px solid #3a393986;
+    font-size: 30px;
+    color: #2e2d2d;
+    font-weight: bold;
+    font-family: sans-serif;
+    position: relative;
+    top: 450px;
+    left: 350px;
+ }
+
+
+ #activity-page_secondList
+ {
+     display: flex;
+     flex-flow: row wrap;
+     position: relative;
+     overflow: scroll;
+     height: 250px;
+     top: 500px;
+     width: 970px;
+ }
+
+
+
+ #activity-page_secondList_column
+{
+    flex-grow: 1;
+    position: relative;
+    top: 100px;
+    font-size: 25px;
+    color: #2e2d2d;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-left: 7%
+
+
+}
+
+
+#activity-page_secondList div ul li {
+    font-weight: normal !important;
+    width: 150px;
+    top: 25px;
+    font-size: 20px;
+    position: relative;
+
+}
+
+.mainList2 {display: none}
+
+#activity-page .Transactions q {
+   width: 220px;
+   height: 40px;
+   text-align: center;
+   border-bottom: 2px solid #3a393986;
+   font-size: 30px;
+   color: #2e2d2d;
+   font-weight: bold;
+   font-family: sans-serif;
+   position: absolute;
+   left: 320px;
+   top: 790px;
+}
+
+#activity-page_thirdList
+ {
+     display: flex;
+     flex-flow: row wrap;
+     position: relative;
+     overflow: scroll;
+     top: 550px;
+     width: 970px;
+     height: 300px;
+ }
+
+
+
+ #activity-page_thirdList_column
+{
+    flex-grow: 1;
+    position: relative;
+    top: 10px;
+    font-size: 25px;
+    color: #2e2d2d;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-left: 7%
+
+}
+
+
+#activity-page_thirdList div ul li {
+    font-weight: normal !important;
+    width: 150px;
+    top: 10px;
+    font-size: 17px;
+    height: 70px;
+    position: relative;
+
+}
+
+#activity-page_thirdList div ul li:nth-of-type(1) {
+    top: 20px;
+    position: relative;
+}
+
+
+.activity-hr-footer
+{
+    top: 620px
+}
+
+/* Footer */
+
+.activity-footer-div {
+    width: 70%;
+    left: 30%;
+    position: relative;
+    top: 1280px;
+    height: 0
+}
+
+#activity-footer-image {
+    width: 200px;
+    height: 100px;
+}
+
+.activity-footer-paragraph {
+    font-size: 20px;
+    font-family: sans-serif;
+    position: absolute;
+    top: -60px;
+    left: 250px
+
+}
+
+
+
+@media screen and (max-width:1024px)
+{
+    /* ---------------=====Media====-------------Main Container--------------------------- */
+
+    .container-activity {
+        width: 270px;
+        height: 1400px;
+
+
+    }
+
+
+
+    .container-activity .mainList {
+        width: 270px
+    }
+
+    .container-activity .mainList .navbar .Logo_In_NavBar{
+        width: 220px;
+        height: 380px;
+        left: 30px;
+        position: absolute;
+        top: -170px
+    }
+
+    div ul .navbar #welcome {
+        font-size: 17px;
+        left: 70px;
+
+    }
+
+
+    .container-activity .mainList .sub {
+        height: 60px;
+        font-size: 25px;
+        padding-bottom: 10px;
+    }
+
+
+    .container-activity .mainList .sub a {
+        left: -10px;
+        top: 30%
+    }
+
+
+    .sub:after {
+        width: 1em;
+        height: 1em;
+        content: "";
+        left: 85%;
+    }
+
+
+    #dashboard:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -40px;
+    }
+
+    #activity:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+
+    #contact:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+
+    #setting:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+
+    #referral:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+
+
+    .activity-hr-footer
+    {
+        top: 780px
+    }
+
+
+
+
+
+
+
+
+    /* =============--media--================Activity=============================== */
+
+
+    #activity-page q  {
+        font-size: 25px;
+    }
+
+
+    #activity-page_firstList
+    {
+       font-size: 20px;
+
+    }
+
+    #activity-page blockquote {
+       font-size: 25px;
+    }
+
+
+    #activity-page .purchases q {
+       width: 170px;
+       height: 30px;
+       font-size: 25px;
+
+    }
+    #activity-page_secondList_column
+    {
+        top: 450px;
+        font-size: 20px;
+        margin-left:7%
+
+
+    }
+    #activity-page_secondList
+  {
+      display: flex;
+      flex-flow: row wrap;
+      position: relative;
+      overflow: scroll;
+      height: 300px;
+      top: 450px;
+      width: 730px
+  }
+    #activity-page_secondList div ul li {
+        font-weight: normal !important;
+        width: 120px;
+        top: 25px;
+        font-size: 20px;
+        position: relative;
+
+    }
+
+
+
+
+
+ #activity-page_secondList_column
+{
+    flex-grow: 1;
+    position: relative;
+    top: 100px;
+    font-size: 25px;
+    color: #2e2d2d;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-left: 7%
+
+
+}
+
+   #activity-page .Transactions q {
+      width: 180px;
+      height: 30px;
+      font-size: 25px;
+   }
+   #activity-page_thirdList_column
+   {
+       top: 450px;
+       font-size: 20px;
+       margin-left:7%
+
+
+   }
+   #activity-page_thirdList
+ {
+     display: flex;
+     flex-flow: row wrap;
+     position: relative;
+     overflow: scroll;
+     height: 300px;
+     top: 480px;
+     width: 730px;
+ }
+    #activity-page_thirdList_column
+   {
+       flex-grow: 1;
+       position: relative;
+       top: 200px;
+       font-size: 20px;
+       color: #2e2d2d;
+       font-weight: bold;
+       font-family: sans-serif;
+       margin-left: 7%
+
+   }
+
+
+   #activity-page_thirdList div ul li {
+       font-weight: normal !important;
+       width: 120px;
+       top: 10px;
+       font-size: 17px;
+       height: 70px;
+       position: relative;
+
+   }
+
+   #activity-page_thirdList div ul li:nth-of-type(1) {
+       top: 20px;
+       position: relative;
+   }
+
+
+
+   /* Footer */
+   .activity-hr-footer {
+       top: 550px
+   }
+   .activity-footer-div {
+       top: 1250px
+   }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .container-activity {
+        display: none;
+    }
+
+    header {
+        z-index: 2;
+    }
+#activity-page {
+    height: 1000px;
+
+    z-index: 0;
+}
+#activity-page_firstList {
+    z-index: 1;
+
+}
+    .container-activity2{
+        position:  relative;
+        top: 2px;
+        width: 95%;
+        float: left;
+        z-index: -0;
+        display: block;
+    }
+
+    .container-activity2 .mainList2 {
+        background: #2e2d2d;
+        position: fixed;
+        top: 0;
+        height: 40px;
+        width: 100%;
+        border-bottom: 2px solid orange;
+        display: block
+    }
+
+    .container-activity2 .mainList2 .sub2{
+        float: left;
+        margin-left: 80px;
+        text-align: center;
+        margin-top: 15px;
+        position: sticky;
+        top: 0;
+
+    }
+
+    .container-activity2 .mainList2 .sub2 a {
+        text-decoration: none;
+        color: orange
+    }
+    .container-activity2 .mainList2 .sub2 a:hover {
+        color: white;
+    }
+    .mainList {
+        display: none
+    }
+
+    #dashboard:before {
+        content: "";
+        background-image: url("img/Dashboard.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+    #activity:before {
+        content: "";
+        background-image: url("img/Activity.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+
+    #referral:before {
+        content: "";
+        background-image: url("img/Referral.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+    #setting:before {
+        content: "";
+        background-image: url("img/Setting.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+    #contact:before {
+        content: "";
+        background-image: url("img/contact.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+
+
+    #activity-page {
+        left: 1.5%;
+        width: 100%;
+    }
+
+
+    #activity-page q  {
+        font-size: 27px;
+
+    }
+
+
+    #activity-page_firstList
+    {
+       font-size: 22px
+
+    }
+
+    #activity-page blockquote {
+       font-size: 27px;
+    }
+
+
+    #activity-page .purchases q {
+       height: 30px;
+       font-size: 27px;
+       top: 420px
+    }
+
+    #activity-page_secondList_column
+   {
+       top: 160px;
+       font-size: 20px;
+   }
+
+
+   #activity-page_secondList div ul li {
+       width: 120px;
+       font-size: 17px;
+   }
+
+   #activity-page .Transactions q {
+      height: 30px;
+      font-size: 27px;
+   }
+
+    #activity-page_thirdList_column
+   {
+       top: 120px;
+       font-size: 22px;
+   }
+
+   #activity-page_thirdList div ul li {
+       width: 120px;
+       font-size: 15px;
+
+   }
+
+   .activity-hr-footer
+   {
+       top: 480px
+   }
+
+   /* Footer */
+
+   .activity-footer-div {
+       width: 100%;
+       left: 0%;
+       position: absolute;
+       top: 1300px
+   }
+
+   #activity-footer-image {
+       width: 200px;
+       height: 100px;
+   }
+
+   .activity-footer-paragraph {
+       font-size: 20px;
+       font-family: sans-serif;
+       position: absolute;
+       top: -60px;
+       left: 150px
+
+   }
+
+}
+
+@media screen and (max-width:414px) {
+
+    .container-activity {
+        display: none;
+    }
+
+    .Logo_header {
+        width: 300px;
+        height: 90px;
+        position: absolute;
+        left: 20px;
+    }
+    header {
+        z-index: 2;
+    }
+    #activity-page {
+    height: 1000px;
+
+    z-index: 0;
+    }
+    #activity-page_firstList {
+    z-index: 1;
+    left: 30px;
+    height: 350px;
+
+    }
+    .container-activity2{
+        position:  relative;
+        top: 2px;
+        width: 95%;
+        float: left;
+        z-index: -0;
+        display: block;
+    }
+
+    .container-activity2 .mainList2 {
+        background: #2e2d2d;
+        position: fixed;display: block;
+        top: 0;
+        height: 40px;
+        width: 414px;
+        border-bottom: 2px solid orange;
+    }
+
+    .container-activity2 .mainList2 .sub2{
+        float: left;
+        margin-left: 35px;
+        text-align: center;
+        margin-top: 10px;
+        top: 0;
+        font-size: 13px;
+
+    }
+
+    .container-activity2 .mainList2 .sub2 a {
+        text-decoration: none;
+        color: orange
+    }
+    .container-activity2 .mainList2 .sub2 a:hover {
+        color: white;
+    }
+    .mainList {
+        display: none
+    }
+
+    #dashboard:before {
+        content: "";
+        background-image: url("img/Dashboard.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
+
+    #activity:before {
+        content: "";
+        background-image: url("img/Activity.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
+
+
+    #referral:before {
+        content: "";
+        background-image: url("img/Referral.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
+
+    #setting:before {
+        content: "";
+        background-image: url("img/Setting.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
+
+    #contact:before {
+        content: "";
+        background-image: url("img/contact.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
+
+
+
+
+
+    #activity-page {
+        left: 1.5%;
+        width: 100%;
+    }
+
+
+    #activity-page q  {
+        font-size: 22px;
+
+    }
+
+
+    #activity-page_firstList
+    {
+    font-size: 12px;
+    width: 380px;
+
+    }
+
+    #activity-page blockquote {
+        top: 250px;
+        left: 30px;
+        font-size: 22px;
+    }
+
+
+    #activity-page .purchases q {
+    height: 20px;
+    font-size: 18px;
+    left: 100px;
+    top: 350px
+    }
+    #activity-page_secondList {
+        top: 360px;
+        width: 390px;
+        height: 300px
+    }
+    #activity-page_secondList_column
+    {
+    top: 00px;
+    font-size: 15px;
+    margin-top: 80px
+    }
+
+
+    #activity-page_secondList div ul li {
+    width: 120px;
+    font-size: 13px;
+    }
+
+    #activity-page .Transactions q {
+        height: 18px;
+        font-size: 18px;
+        left: 100px;
+    }
+    #activity-page_thirdList{
+    top:470px;
+        width: 300px;
+
+    }
+    #activity-page_thirdList_column
+    {
+    font-size: 17px;
+    }
+
+    #activity-page_thirdList div ul li {
+    width: 120px;
+    font-size: 13px;
+
+    }
+
+    .activity-hr-footer
+    {
+        left: 0;
+    top: 600px
+    }
+
+    /* Footer */
+
+    .activity-footer-div {
+    width: 100%;
+    left: 0%;
+    position: absolute;
+    top: 1400px
+    }
+
+    #activity-footer-image {
+    width: 150px;
+    height: 60px;
+    }
+
+    .activity-footer-paragraph {
+    font-size: 15px;
+    font-family: sans-serif;
+    position: absolute;
+    top: -60px;
+    left: 60px
+
+    }
+
+
+
+}
+
+
+
+@media screen and (max-width:375px) {
+
+    .container-activity2 .mainList2 {
+        width: 395px !important;
+        display: block
+    }
+
+    .container-activity {
+        display: none;
+    }
+
+    .Logo_header {
+        width: 300px;
+        height: 90px;
+        position: absolute;
+        left: 20px;
+    }
+    header {
+        z-index: 2;
+        width: 375px;
+    }
+    #activity-page {
+    height: 1000px;
+
+    z-index: 0;
+    }
+    #activity-page_firstList {
+    z-index: 1;
+    left: 30px;
+    top: 100px;
+    height: 350px;
+    width: 300px !important;
+
+    }
+    .container-activity2{
+        position:  relative;
+        top: 2px;
+        width: 95%;
+        float: left;
+        z-index: -0;
+        display: block;
+    }
+
+    .container-activity2 .mainList2 {
+        background: #2e2d2d;
+        position: fixed;display: block;
+        top: 0;
+        height: 40px;
+        width: 414px;
+        border-bottom: 2px solid orange;
+    }
+
+    .container-activity2 .mainList2 .sub2{
+        float: left;
+        margin-left: 30px;
+        text-align: center;
+        margin-top: 10px;
+        top: 0;
+        font-size: 12px;
+
+    }
+
+    .container-activity2 .mainList2 .sub2 a {
+        text-decoration: none;
+        color: orange
+    }
+    .container-activity2 .mainList2 .sub2 a:hover {
+        color: white;
+    }
+    .mainList {
+        display: none
+    }
+
+    #dashboard:before {
+        content: "";
+        background-image: url("img/Dashboard.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
+
+    #activity:before {
+        content: "";
+        background-image: url("img/Activity.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
+
+
+    #referral:before {
+        content: "";
+        background-image: url("img/Referral.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
+
+    #setting:before {
+        content: "";
+        background-image: url("img/Setting.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
+
+    #contact:before {
+        content: "";
+        background-image: url("img/contact.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
+
+
+
+
+
+    #activity-page {
+        left: 1.5%;
+        width: 100%;
+    }
+
+
+    #activity-page q  {
+        font-size: 22px;
+        top: 70px;
+        left: 30px;
+
+    }
+
+
+    #activity-page_firstList
+    {
+       font-size: 12px;
+       width: 300px !important;
+
+    }
+
+    #activity-page blockquote {
+        top: 250px;
+        left: 30px;
+        font-size: 22px;
+    }
+
+
+    #activity-page .purchases q {
+       height: 20px;
+       font-size: 18px;
+       left: 100px;
+       top: 350px
+    }
+    #activity-page_secondList {
+        top: 360px;
+        width: 300px;
+        height: 300px
+    }
+    #activity-page_secondList_column
+    {
+       top: 00px;
+       font-size: 15px;
+       margin-top: 80px
+    }
+
+
+    #activity-page_secondList div ul li {
+       width: 120px;
+       font-size: 13px;
+    }
+
+    #activity-page .Transactions q {
+        height: 18px;
+        font-size: 18px;
+        left: 100px;
+    }
+    #activity-page_thirdList{
+       top:470px;
+        width: 300px;
+
+    }
+    #activity-page_thirdList_column
+    {
+       font-size: 17px;
+    }
+
+    #activity-page_thirdList div ul li {
+       width: 120px;
+       font-size: 13px;
+
+    }
+
+    .activity-hr-footer
+    {
+        left: 0;
+       top: 600px
+    }
+
+    /* Footer */
+
+    .activity-footer-div {
+       width: 100%;
+       left: 0%;
+       position: absolute;
+       top: 1400px
+    }
+
+    #activity-footer-image {
+       width: 150px;
+       height: 60px;
+    }
+
+    .activity-footer-paragraph {
+       font-size: 15px;
+       font-family: sans-serif;
+       position: absolute;
+       top: -60px;
+       left: 20px
+
+}
+
+
+
+
+
+
+@media screen and (max-width: 320px) {
+
+    .Logo_header {
+        width: 300px;
+        height: 90px;
+        position: absolute;
+        left: 10px;
+    }
+    .container-activity2 .mainList2 {
+        width: 320px;
+        display: block
+    }
+
+    .container-activity2 .mainList2 .sub2{
+        float: left;
+        margin-left: 25px;
+        text-align: center;
+        margin-top: 10px;
+        top: 0;
+        font-size: 11.5px;
+
+    }
+    #activity-page_firstList
+    {
+       font-size: 12px;
+       width: 250px !important;
+
+    }
+    #dashboard:before {
+        content: "";
+        background-image: url("img/Dashboard.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -22px;
+        top: 0px
+    }
+
+    #activity:before {
+        content: "";
+        background-image: url("img/Activity.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -22px;
+        top: 0px
+    }
+
+
+    #referral:before {
+        content: "";
+        background-image: url("img/Referral.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -22px;
+        top: 0px
+    }
+
+    #setting:before {
+        content: "";
+        background-image: url("img/Setting.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -22px;
+        top: 0px
+    }
+
+    #contact:before {
+        content: "";
+        background-image: url("img/contact.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -22px;
+        top: 0px
+    }
+    .footer-paragraph {
+        font-size: 12px;
+        font-family: sans-serif;
+        position: absolute;
+        top: -60px;
+        margin-left: 0px;
+        width: 200px
+    }
+
+}
+
+
+}
+
+.mainContainer {
+    background-color: #FFFDE8
+}
+
+.container-dashboard2 {
+    display: none
+}
+
+
+/* --------------------------------------------------------Header----------------------------------------- */
+
+header {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 110px;
+    background-color: black;
+    font-size: 50px;
+    position: relative;
+
+}
+
+header div {
+    border-bottom: 4px solid orange;
+    background-color: black;
+    width: 100%;
+    height: 110px;
+    position: relative;
+    z-index: 2;
+
+}
+
+.Logo_header {
+    width: 700px;
+    height: 90px;
+    position: absolute;
+    left: -120px;
+}
+
+body {
+    background-color: #FFFDE8
+
+}
+
+/* ----------------------------------------------Main Container-------------------------------------------- */
+.container-dashboard {
+    width: 370px;
+    height: 2080px;
+    background: rgb(39, 38, 38);
+    border-top: 4px solid orange
+}
+
+.container-dashboard .mainList {
+    background: white;
+    position: fixed;
+    width: 370px;
+    top: 130px
+}
+
+.container-dashboard .navbar {
+    height: 130px;
+    border-bottom: 2px solid #727272;
+    background: rgb(39, 38, 38);
+    font-family: sans-serif;
+}
+
+.container-dashboard .Logo_In_NavBar {
+    width: 250px;
+    height: 400px;
+    left: 50px;
+    position: absolute;
+    top: -170px
+}
+
+
+div ul .navbar #welcome {
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    left: 110px;
+    top: 90px;
+    text-decoration: none
+}
+
+.container-dashboard .mainList .sub {
+    color: orange;
+    height: 60px;
+    border-bottom: 2px solid #727272;
+    font-size: 30px;
+    background: rgb(39, 38, 38);
+    padding-bottom: 10px;
+    text-align: center;
+    font-family: sans-serif
+}
+
+.container-dashboard .mainList .sub a {
+    color: orange;
+    text-decoration: none;
+    padding-top: 20px;
+    position: relative;
+    left: -40px;
+    top: 30%
+}
+
+.container-dashboard .mainList .sub a:hover {
+    color: white;
+}
+
+.sub:after {
+    background-image: url("img/Arrow.svg");
+    width: 1em;
+    height: 1em;
+    margin-top: 25px;
+    content: "";
+    left: 80%;
+    background-size: 100% 100%;
+    position: absolute;
+}
+#dashboard{
+    color: white
+}
+#dashboard:before {
+    content: "";
+    background-image: url("img/Dashboard.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -60px;
+    top: 15px
+}
+
+#activity:before {
+    content: '';
+    background-image: url("img/Activity.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -80px;
+    top: 15px
+}
+
+
+#referral:before {
+    content: "";
+    background-image: url("img/Referral.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -80px;
+    top: 15px
+}
+
+#setting:before {
+    content: "";
+    background-image: url("img/Setting.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -85px;
+    top: 15px
+}
+
+.contact {
+    border-bottom: 1px solid transparent !important
+}
+
+#contact:before {
+    content: "";
+    background-image: url("img/contact.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -80px;
+    top: 18px
+}
+
+/*  --------------------------------------------------dashboard-page----------------------------------------*/
+
+
+#dashboard-page {
+    width: 72.3%;
+    height: 1800px;
+    right: 0;
+    top: 100px;
+    position: absolute;
+    box-sizing: border-box;
+    display: block;
+}
+
+.mainContainer .container-dashboard .mainList .dashboard:focus,
+#dashboard:focus~#dashboard-page {
+    display: none
+}
+
+/* ======================================Circle=========================================== */
+#dashboard-page-circle {
+    width: 450px;
+    display: block;
+    height: 450px;
+    border: 20px solid #ff9100;
+    border-radius: 50%;
+    position: relative;
+    left: 23%;
+    top: 4%;
+    border-collapse: 2px solid #727272
+}
+
+#circle-span {
+    font-size: 30px;
+    text-align: center;
+    font-family: sans-serif;
+    color: #727272;
+    position: absolute;
+    top: 25%;
+    font-weight: bolder;
+    left: 30%;
+}
+
+
+#dashboard-page-circle p {
+    font-size: 45px;
+    text-align: center;
+    color: rgb(41, 37, 37);
+    position: relative;
+    top: 40%;
+    font-weight: bolder;
+    font-family: sans-serif
+}
+
+/* ==================================================HASH History============================== */
+#dashboard-page #dashboard-title {
+    position: absolute;
+    left: 40%;
+    top: 615px;
+    font-family: sans-serif;
+    font-size: 25px;
+    font-weight: bolder;
+    color: #2e2d2d
+}
+
+#Hash-History-list
+ {
+     display: flex;
+     flex-flow: row wrap;
+     position: relative;
+     height: 300px;
+     top: 130px;
+     overflow:scroll;
+ }
+
+
+
+ #Hash-History_column
+{
+    flex-grow: 1;
+    position: relative;
+    top: 30px;
+    font-size: 15px;
+    color: #2e2d2d;
+    font-weight: bolder;
+    font-family: sans-serif;
+    margin-left: 5%;
+    text-align: left;
+
+}
+
+
+#Hash-History_column ul li {
+    font-weight: normal !important;
+    width: 150px;
+    top: 30px;
+    font-size: 20px;
+    height: 70px;
+    position: relative;
+    color: #2e2d2d;
+    font-weight: bold;
+
+
+}
+
+#Hash-History_column  li:nth-of-type(1) {
+    top: 30px;
+    position: relative;
+}
+
+#Hash-History_column .remain li {
+    width: 150px;
+    border: 1px solid ;
+    height: 35px;
+
+}
+
+.remain li:nth-of-type(1) div {
+    background-color: orange;
+    text-align: center;
+    width: 80%;
+    height: 35px
+
+}
+
+.remain li:nth-of-type(2) div {
+      /* margin-top: 35px; */
+      background-color: orange;
+      text-align: center;
+    width: 40%;
+    height: 35px
+
+}
+
+
+
+.remain li:nth-of-type(1)  {
+    text-align: center;
+
+}
+
+.remain li:nth-of-type(2)  {
+      margin-top: 35px;
+      text-align: center;
+}
+
+/* ==============================================Buy hash power=================================== */
+
+#demo {
+    position: relative;
+    top: 210px;
+    margin-left: 44%;
+    font-size: 25px;
+    font-weight: bolder;
+    color: #242424;
+    font-family: Helvetica, sans-serif
+}
+
+
+
+.slidecontainer {
+    width: 82%;
+    top: 280px;
+    margin-left: 8%;
+    position: relative;
+
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 30px;
+    background: #242424;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #f09300;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #15BEA4;
+    cursor: pointer;
+}
+
+#dashboard-page #dashboard-title2 {
+    position: absolute;
+    left: 38%;
+    top: 1010px;
+    font-family: sans-serif;
+    font-size: 25px;
+    font-weight: bolder;
+    color: #2e2d2d
+}
+
+form.dashboard-page button {
+    width: 160px;
+    height: 60px;
+    border-radius:10%;
+    background-color: #15BEA4;
+    position: relative;
+    top: 50px;
+    left:310px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-size: 30px;
+    border: thin solid
+}
+
+form.dashboard-page button p {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-size: 30px;
+    color: white;
+}
+/*============================================== Mining History ===================================*/
+
+
+#dashboard-page #dashboard-title3 {
+    position: absolute;
+    left: 39%;
+    top: 1375px;
+    font-family: sans-serif;
+    font-size: 25px;
+    font-weight: bolder;
+    color: #2e2d2d;
+}
+
+
+canvas#chart1 {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    position: relative;
+    top: 480px;
+}
+ .dashboard-hr1-1  { display: none}
+
+ .dashboard-hr222-2 {
+     width: 39%;
+     left: 29.5%;
+ }
+.dashboard-hr11 {
+    width: 37%;
+    left: -315px
+}
+
+.dashboard-hr111 {
+    width: 37%;
+    left: -317px
+}
+
+.dashboard-hr22-2 {
+display: block;
+width: 38.5%;
+left: 29.5%
+}
+
+.dashboard-hr1 {
+    width: 38%;
+    left: -310px;
+
+
+}
+
+.dashboard-hr2-2 {
+    width: 41.5%;
+    left: 28.5%;
+    top: 120px;
+    position: relative;
+}
+.dashboard-hr-footer
+{
+    top: 610px
+}
+
+/* ============================================Footer======================================= */
+
+.dashboard-footer-div {
+    width: 70%;
+    left: 30%;
+    position: absolute;
+    top: 2080px
+}
+
+#dashboard-footer-image {
+    width: 200px;
+    height: 100px;
+}
+
+.dashboard-footer-paragraph {
+    font-size: 20px;
+    font-family: sans-serif;
+    position: absolute;
+    top: -60px;
+    left: 250px
+}
+
+
+
+/*  ======================================Media=========================================== */
+
+
+@media screen and (max-width:1024px)
+{
+    /* ---------------=====Media====-------------Main Container--------------------------- */
+
+    .container-dashboard {
+        width: 270px;
+        /* height: 1850px; */
+
+
+    }
+
+    .container-dashboard .mainList {
+        width: 270px
+    }
+
+    .container-dashboard .mainList .navbar .Logo_In_NavBar{
+        width: 220px;
+        height: 380px;
+        left: 30px;
+        position: absolute;
+        top: -170px
+    }
+
+    div ul .navbar #welcome {
+        font-size: 17px;
+        left: 70px;
+
+    }
+
+
+    .container-dashboard .mainList .sub {
+        height: 60px;
+        font-size: 25px;
+        padding-bottom: 10px;
+    }
+
+
+    .container-dashboard .mainList .sub a {
+        left: -10px;
+        top: 30%
+    }
+
+
+    .sub:after {
+        width: 1em;
+        height: 1em;
+        content: "";
+        left: 85%;
+    }
+
+
+    #dashboard:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -40px;
+    }
+
+    #activity:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+
+    #contact:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+
+    #setting:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+
+    #referral:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+    .dashboard-hr222-2 {
+        width: 39%;
+        left: 29.5%;
+    }
+   .dashboard-hr11 {
+       width: 33%;
+       left: -260px
+   }
+
+   .dashboard-hr111 {
+       width: 37%;
+       left: -247px
+   }
+
+   .dashboard-hr22-2 {
+   display: block;
+   width: 37.5%;
+   left: 30.5%
+   }
+
+
+   .dashboard-hr2-2 {
+       width: 41.5%;
+       left: 28.5%;
+       top: 120px;
+       position: relative;
+   }
+
+    /* ================---media--=================Circle================================== */
+
+#dashboard-page-circle {
+    width: 310px;
+    height: 310px;
+}
+
+#circle-span {
+    font-size: 20px;
+}
+
+
+#dashboard-page-circle p {
+    font-size: 30px;
+    top: 40%;
+}
+
+.dashboard-hr1 {
+    width: 35%;
+    left: -250px
+}
+
+.dashboard-hr2 {
+    width: 37%;
+
+}
+
+.dashboard-hr-footer
+{
+    top: 800px;
+}
+/* ==================================================HASH History============================== */
+
+#dashboard-page #dashboard-title {
+    left: 39%;
+    top: 470px;
+    font-size: 22px;
+
+}
+
+#Hash-History_column ul li {
+    font-weight: normal !important;
+    width: 100px;
+    top: 30px;
+    font-size: 16px;
+    height: 70px;
+
+
+}
+
+#Hash-History_column .remain li {
+    width: 100px;
+    border: 1px solid ;
+    height: 35px;
+
+}
+
+
+
+/* ==============================================Buy hash power=================================== */
+
+
+
+
+
+#dashboard-page #dashboard-title2 {
+    left: 35%;
+    top: 870px;
+    font-size: 22px;
+}
+
+form.dashboard-page button {
+    width: 160px;
+    height: 60px;
+    border-radius:10%;
+    background-color: #15BEA4;
+    position: relative;
+    top: 50px;
+    left:220px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-size: 30px;
+    border: thin solid
+}
+
+form.dashboard-page button p {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-size: 30px;
+    color: white;
+}
+/*============================================== Mining History ===================================*/
+
+#dashboard-page #dashboard-title3 {
+    left: 38%;
+    top: 1240px;
+    font-size: 22px;
+    z-index: 2;
+}
+
+
+canvas#chart1 {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    position: relative;
+    top: 600px;
+}
+
+.chart1 {
+    width: 700px
+}
+
+
+
+
+
+
+
+/*========================================= Footer============================== */
+
+.dashboard-footer-div {
+    width: 70%;
+    left: 30%;
+    position: absolute;
+    top: 2050px
+}
+
+
+}
+
+
+
+
+
+
+@media screen and (max-width:768px) {
+
+    .container-dashboard {
+        display: none
+    }
+
+    #dashboard-page {
+        height: 1800px;
+
+        width: 100%;
+        z-index: 0;
+    }
+
+
+.container-dashboard2{
+position:  relative;
+top: 2px;
+width: 100%;
+float: left;
+display: block;
+}
+
+.container-dashboard2 .mainList2 {
+    background: #2e2d2d;
+    position: fixed;
+    top: 0;
+    z-index:0;
+    height: 40px;
+    width: 100%;
+    border-bottom: 2px solid orange;
+}
+
+.container-dashboard2 .mainList2 .sub2{
+    float: left;
+    margin-left: 80px;
+    text-align: center;
+    margin-top: 10px;
+    position: sticky;
+    top: 0;
+
+}
+
+.container-dashboard2 .mainList2 .sub2 a {
+    text-decoration: none;
+    color: orange
+}
+.container-dashboard2 .mainList2 .sub2 a:hover {
+    color: white;
+}
+.mainList {
+    display: none
+}
+
+#dashboard:before {
+    content: "";
+    background-image: url("img/Dashboard.svg");
+    width: 20px;
+    height: 20px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -30px;
+    top: 0px
+}
+
+#activity:before {
+    content: "";
+    background-image: url("img/Activity.svg");
+    width: 20px;
+    height: 20px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -30px;
+    top: 0px
+}
+
+
+#referral:before {
+    content: "";
+    background-image: url("img/Referral.svg");
+    width: 20px;
+    height: 20px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -30px;
+    top: 0px
+}
+
+#setting:before {
+    content: "";
+    background-image: url("img/Setting.svg");
+    width: 20px;
+    height: 20px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -30px;
+    top: 0px
+}
+
+#contact:before {
+    content: "";
+    background-image: url("img/contact.svg");
+    width: 20px;
+    height: 20px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -30px;
+    top: 0px
+}
+
+
+
+
+
+
+
+    /* ======================================Circle=========================================== */
+    #dashboard-page-circle {
+        width: 450px;
+        display: block;
+        height: 450px;
+        border: 20px solid #ff9100;
+        border-radius: 50%;
+        position: relative;
+        left: 19%;
+        top: 4%;
+        border-collapse: 2px solid #727272
+    }
+
+    #circle-span {
+        font-size: 30px;
+        text-align: center;
+        font-family: sans-serif;
+        color: #727272;
+        position: absolute;
+        top: 25%;
+        font-weight: bolder;
+        left: 30%;
+    }
+
+
+    #dashboard-page-circle p {
+        font-size: 45px;
+        text-align: center;
+        color: rgb(41, 37, 37);
+        position: relative;
+        top: 40%;
+        font-weight: bolder;
+        font-family: sans-serif
+    }
+
+    /* ==================================================HASH History============================== */
+    #dashboard-page #dashboard-title {
+        position: absolute;
+        left: 39.9%;
+        top: 620px;
+        font-family: sans-serif;
+        font-size: 25px;
+        font-weight: bolder;
+        color: #2e2d2d
+    }
+
+    .dashboard-hr1  {
+        width: 37%;
+        left: -240px;
+
+
+    }
+
+    .dashboard-hr2-2  {
+        width: 37%;
+        left: 31.5%;
+    }
+
+    #Hash-History-list
+     {
+         display: flex;
+         flex-flow: row wrap;
+         position: relative;
+     }
+
+
+
+     #Hash-History_column
+    {
+        flex-grow: 1;
+        position: relative;
+        top: 200px;
+        font-size: 15px;
+        color: #2e2d2d;
+        font-weight: bolder;
+        font-family: sans-serif;
+        margin-left: 5%;
+        text-align: left;
+
+    }
+
+
+    #Hash-History_column ul li {
+        font-weight: normal !important;
+        width: 150px;
+        top: 30px;
+        font-size: 20px;
+        height: 70px;
+        position: relative;
+        color: #2e2d2d;
+        font-weight: bold;
+
+
+    }
+
+    #Hash-History_column  li:nth-of-type(1) {
+        top: 30px;
+        position: relative;
+    }
+
+    #Hash-History_column .remain li {
+        width: 150px;
+        border: 1px solid ;
+        height: 35px;
+
+    }
+
+    .remain li:nth-of-type(1) div {
+        background-color: orange;
+        text-align: center;
+        width: 80%;
+        height: 35px
+
+    }
+
+    .remain li:nth-of-type(2) div {
+          /* margin-top: 35px; */
+          background-color: orange;
+          text-align: center;
+        width: 40%;
+        height: 35px
+
+    }
+
+
+
+    .remain li:nth-of-type(1)  {
+        text-align: center;
+
+    }
+
+    .remain li:nth-of-type(2)  {
+          margin-top: 35px;
+          text-align: center;
+    }
+
+    /* ==============================================Buy hash power=================================== */
+
+    #dashboard-page #dashboard-title2 {
+        position: absolute;
+        left: 36%;
+        top: 1010px;
+        font-family: sans-serif;
+        font-size: 25px;
+        font-weight: bolder;
+        color: #2e2d2d
+    }
+
+    .dashboard-hr11 {
+        width: 34%;
+        left: -250px;
+
+
+    }
+
+    .dashboard-hr22-2 {
+        width: 36.5%;
+        left: 31.5%;
+    }
+
+    form.dashboard-page button {
+        width: 160px;
+        height: 60px;
+        border-radius:10%;
+        background-color: #15BEA4;
+        position: relative;
+        top: 50px;
+        left:230px;
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        font-size: 30px;
+        border: thin solid
+    }
+
+    form.dashboard-page button p {
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        font-size: 30px;
+        color: white;
+    }
+    /*============================================== Mining History ===================================*/
+
+
+    #dashboard-page #dashboard-title3 {
+        position: absolute;
+        left: 36%;
+        top: 1375px;
+        font-family: sans-serif;
+        font-size: 25px;
+        font-weight: bolder;
+        color: #2e2d2d
+    }
+    .dashboard-hr111{
+        width: 34%;
+        left: -250px;
+    }
+
+    .dashboard-hr222 {
+        width: 35%;
+        left: 32%;
+    }
+
+    .dashboard-hr-footer
+    {
+        top: 730px
+    }
+
+    /* ============================================Footer======================================= */
+
+    .dashboard-footer-div {
+        width: 70%;
+        left: 5%;
+        position: absolute;
+        top: 2130px
+    }
+
+    #dashboard-footer-image {
+        width: 200px;
+        height: 100px;
+    }
+
+    .dashboard-footer-paragraph {
+        font-size: 20px;
+        font-family: sans-serif;
+        position: absolute;
+        top: -60px;
+        left: 200px;
+        width: 400px
+    }
+
+
+}
+
+
+
+
+
+@media screen and (max-width:414px) {
+    .Logo_header {
+        top: 0px;
+        width: 200px;
+        height: 110px;
+        position: absolute;
+        left: 40px;
+    }
+
+    .container-dashboard {
+        display: none
+    }
+
+    #dashboard-page {
+        height: 1800px;
+
+        width: 100%;
+        z-index: 0;
+    }
+
+
+.container-dashboard2{
+    position: relative ;
+    top: 2px;
+    width: 410px;
+    float: left;
+    display: block;
+}
+
+.container-dashboard2 .mainList2 {
+    background: #2e2d2d;
+    position: fixed;
+    top: 0px;
+    z-index:0;
+    height: 40px;
+    width: 414px;
+    border-bottom: 2px solid orange;
+}
+
+.container-dashboard2 .mainList2 .sub2{
+    float: left;
+    margin-left: 35px;
+    text-align: center;
+    margin-top: 10px;
+    top: 0;
+    font-size: 13px;
+
+}
+
+.container-dashboard2 .mainList2 .sub2 a {
+    text-decoration: none;
+    color: orange
+}
+.container-dashboard2 .mainList2 .sub2 a:hover {
+    color: white;
+}
+.mainList {
+    display: none
+}
+
+#dashboard:before {
+    content: "";
+    background-image: url("img/Dashboard.svg");
+    width: 15px;
+    height: 15px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -20px;
+    top: 0px
+}
+
+#activity:before {
+    content: "";
+    background-image: url("img/Activity.svg");
+    width: 15px;
+    height: 15px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -20px;
+    top: 0px
+}
+
+
+#referral:before {
+    content: "";
+    background-image: url("img/Referral.svg");
+    width: 15px;
+    height: 15px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -20px;
+    top: 0px
+}
+
+#setting:before {
+    content: "";
+    background-image: url("img/Setting.svg");
+    width: 15px;
+    height: 15px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -20px;
+    top: 0px
+}
+
+#contact:before {
+    content: "";
+    background-image: url("img/contact.svg");
+    width: 15px;
+    height: 15px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -20px;
+    top: 0px
+}
+
+
+.dashboard-hr1-1 {
+    display: block;
+    top: 135px;
+    width: 30%;
+    left: -145px;
+    position: relative;
+
+}
+
+.dashboard-hr2-2 {
+    display: block;
+    top: 115px;
+    width: 30%;
+    position: relative;
+    left: 142px;
+}
+
+
+.dashboard-hr11 {
+    display: block;
+}
+
+    /* ======================================Circle=========================================== */
+    #dashboard-page-circle {
+        width: 250px;
+        display: block;
+        height: 250px;
+        border: 20px solid #ff9100;
+        border-radius: 50%;
+        position: relative;
+        margin-left: 15%;
+        left: 0%;
+        top: 4%;
+        border-collapse: 2px solid #727272
+    }
+
+    #circle-span {
+        font-size: 20px;
+        text-align: center;
+        font-family: sans-serif;
+        color: #727272;
+        position: absolute;
+        top: 25%;
+        font-weight: bolder;
+        left: 30%;
+    }
+
+
+    #dashboard-page-circle p {
+        font-size: 25px;
+        text-align: center;
+        color: rgb(41, 37, 37);
+        position: relative;
+        top: 40%;
+        font-weight: bolder;
+        font-family: sans-serif
+    }
+
+    /* ==================================================HASH History============================== */
+    #dashboard-page #dashboard-title {
+        position: absolute;
+        left: 35%;
+        top: 420px;
+        font-family: sans-serif;
+        font-size: 20px;
+        font-weight: bolder;
+        color: #2e2d2d
+    }
+
+    .dashboard-hr1  {
+        width: 25%;
+        left: 10px;
+
+
+    }
+
+    .dashboard-hr2  {
+        width: 3%;
+        left: 0%;
+    }
+
+    #Hash-History-list
+     {
+         display: flex;
+         flex-flow: row wrap;
+         position: relative;
+     }
+
+
+
+     #Hash-History_column
+    {
+        flex-grow: 1;
+        position: relative;
+        top: 200px;
+        font-size: 15px;
+        color: #2e2d2d;
+        font-weight: bolder;
+        font-family: sans-serif;
+        margin-left: 5%;
+        text-align: left;
+
+    }
+
+
+    #Hash-History_column ul li {
+        font-weight: normal !important;
+        width: 150px;
+        top: 30px;
+        font-size: 20px;
+        height: 70px;
+        position: relative;
+        color: #2e2d2d;
+        font-weight: bold;
+
+
+    }
+
+    #Hash-History_column  li:nth-of-type(1) {
+        top: 30px;
+        position: relative;
+    }
+
+    #Hash-History_column .remain li {
+        width: 150px;
+        border: 1px solid ;
+        height: 35px;
+
+    }
+
+    .remain li:nth-of-type(1) div {
+        background-color: orange;
+        text-align: center;
+        width: 80%;
+        height: 35px
+
+    }
+
+    .remain li:nth-of-type(2) div {
+          /* margin-top: 35px; */
+          background-color: orange;
+          text-align: center;
+        width: 40%;
+        height: 35px
+
+    }
+
+
+
+    .remain li:nth-of-type(1)  {
+        text-align: center;
+
+    }
+
+    .remain li:nth-of-type(2)  {
+          margin-top: 35px;
+          text-align: center;
+    }
+
+    /* ==============================================Buy hash power=================================== */
+
+    #dashboard-page #dashboard-title2 {
+        position: absolute;
+        left: 30%;
+        top: 825px !important;
+        font-family: sans-serif;
+        font-size: 20px;
+        font-weight: bolder;
+        color: #2e2d2d
+    }
+
+    .dashboard-hr11 {
+        width: 26%;
+        left: -150px;
+
+
+    }
+
+    .dashboard-hr22-2 {
+        display: block;
+        width: 27%;
+        left: 35.2%;
+    }
+
+    form.dashboard-page button {
+        width: 130px;
+        height: 50px;
+        border-radius:10%;
+        background-color: #15BEA4;
+        position: relative;
+        top: 50px;
+        left:120px;
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        font-size: 30px;
+        border: thin solid
+    }
+
+    form.dashboard-page button p {
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        font-size: 28px;
+        color: white;
+    }
+    /*============================================== Mining History ===================================*/
+
+
+    #dashboard-page #dashboard-title3 {
+        position: absolute;
+        left: 32.5%;
+        top: 1185px;
+        font-family: sans-serif;
+        font-size: 20px;
+        font-weight: bolder;
+        color: #2e2d2d
+    }
+    .dashboard-hr111{
+        width: 29%;
+        left: -145px;
+    }
+
+    .dashboard-hr222-2 {
+        display: block;
+        width: 29%;
+        left: 35%;
+    }
+
+    canvas#chart1 {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        position: relative;
+        top: 600px;
+        width: 400px !important;
+    }
+
+
+    .dashboard-hr1 {
+        width: 35%;
+        left: -310px;
+
+
+    }
+
+    .dashboard-hr2 {
+        width: 40%;
+        left: 30%;
+    }
+
+    .dashboard-hr-footer
+    {
+        top: 690px
+    }
+
+    /* ============================================Footer======================================= */
+
+    .dashboard-footer-div {
+        width: 10% !important;
+        left: 0%;
+        position: absolute;
+        top: 1880px
+    }
+
+    #dashboard-footer-image {
+        width: 100px;
+        height: 50px;
+    }
+
+    .dashboard-footer-paragraph {
+        font-size: 15px;
+        font-family: sans-serif;
+        position: absolute;
+        top: -60px;
+        left: 100px;
+        width: 400px
+    }
+
+
+}
+
+
+
+
+
+@media screen and (max-width:375px) {
+
+    .container-dashboard2 .mainList2 {
+        width: 375px;
+    }
+
+    .container-dashboard2 .mainList2 .sub2{
+        float: left;
+        margin-left: 30px;
+        text-align: center;
+        margin-top: 10px;
+        top: 0;
+        font-size: 13px;
+
+    }
+
+
+
+
+    /* ======================================Circle=========================================== */
+    #dashboard-page-circle {
+        width: 250px;
+        display: block;
+        height: 250px;
+        border: 20px solid #ff9100;
+        border-radius: 50%;
+        position: relative;
+        margin-left: 12%;
+        left: 0%;
+        top: 4%;
+        border-collapse: 2px solid #727272
+    }
+
+
+
+    /* ==================================================HASH History============================== */
+    #dashboard-page #dashboard-title {
+        position: absolute;
+        left: 35%;
+        top: 420px;
+        font-family: sans-serif;
+        font-size: 20px;
+        font-weight: bolder;
+        color: #2e2d2d
+    }
+
+    .dashboard-hr1  {
+        width: 25%;
+        left: 10px;
+        display: none;
+
+
+    }
+
+    .dashboard-hr2  {
+        width: 3%;
+        display: none;
+        left: 0%;
+    }
+
+    .dashboard-hr1-1 {
+        left: -130px
+    }
+    .dashboard-hr2-2 {
+        left: 130px;
+        width: 24%;
+        top: 125px
+    }
+    #Hash-History-list
+     {
+         display: flex;
+         flex-flow: row wrap;
+         position: relative;
+     }
+
+
+
+     #Hash-History_column
+    {
+        flex-grow: 1;
+        position: relative;
+        top: 200px;
+        font-size: 15px;
+        color: #2e2d2d;
+        font-weight: bolder;
+        font-family: sans-serif;
+        margin-left: 5%;
+        text-align: left;
+
+    }
+
+
+    #Hash-History_column ul li {
+        font-weight: normal !important;
+        width: 150px;
+        top: 30px;
+        font-size: 20px;
+        height: 70px;
+        position: relative;
+        color: #2e2d2d;
+        font-weight: bold;
+
+
+    }
+
+    #Hash-History_column  li:nth-of-type(1) {
+        top: 30px;
+        position: relative;
+    }
+
+    #Hash-History_column .remain li {
+        width: 150px;
+        border: 1px solid ;
+        height: 35px;
+
+    }
+
+    .remain li:nth-of-type(1) div {
+        background-color: orange;
+        text-align: center;
+        width: 80%;
+        height: 35px
+
+    }
+
+    .remain li:nth-of-type(2) div {
+          /* margin-top: 35px; */
+          background-color: orange;
+          text-align: center;
+        width: 40%;
+        height: 35px
+
+    }
+
+
+
+    .remain li:nth-of-type(1)  {
+        text-align: center;
+
+    }
+
+    .remain li:nth-of-type(2)  {
+          margin-top: 35px;
+          text-align: center;
+    }
+
+    /* ==============================================Buy hash power=================================== */
+
+    #dashboard-page #dashboard-title2 {
+        position: absolute;
+        left: 30% !important;
+        top: 815px !important;
+        font-family: sans-serif;
+        font-size: 18px;
+        font-weight: bolder;
+        color: #2e2d2d
+    }
+
+    .dashboard-hr11 {
+        width: 23%;
+        left: -140px;
+
+
+    }
+
+    .dashboard-hr22-2 {
+        width: 25%;
+        display: block;
+        left: 36.2% !important;
+    }
+
+    form.dashboard-page button {
+        width: 130px;
+        height: 50px;
+        border-radius:10%;
+        background-color: #15BEA4;
+        position: relative;
+        top: 50px;
+        left:100px;
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        font-size: 30px;
+        border: thin solid
+    }
+
+    form.dashboard-page button p {
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        font-size: 28px;
+        color: white;
+    }
+    /*============================================== Mining History ===================================*/
+
+
+    #dashboard-page #dashboard-title3 {
+        position: absolute;
+        left: 30.5%;
+        top: 1175px;
+        font-family: sans-serif;
+        font-size: 20px;
+        font-weight: bolder;
+        color: #2e2d2d
+    }
+    .dashboard-hr111{
+        width: 30%;
+        left: -140px;
+    }
+
+    .dashboard-hr222-2 {
+        display: block;
+        width: 29%;
+        left: 35%;
+    }
+
+    canvas#chart1 {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        position: relative;
+        top: 450px;
+        width: 360px !important;
+    }
+
+
+    .dashboard-hr1 {
+        width: 35%;
+        left: -310px;
+
+
+    }
+
+    .dashboard-hr2 {
+        width: 40%;
+        left: 30%;
+    }
+
+    .dashboard-hr-footer
+    {
+        top: 600px
+    }
+
+    /* ============================================Footer======================================= */
+
+    .dashboard-footer-div {
+        width: 10% !important;
+        left: 0%;
+        position: absolute;
+        top: 1780px
+    }
+
+    #dashboard-footer-image {
+        width: 100px;
+        height: 50px;
+    }
+
+    .dashboard-footer-paragraph {
+        font-size: 15px;
+        font-family: sans-serif;
+        position: absolute;
+        top: -60px;
+        left: 10px;
+        width: 300px
+    }
+
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 320px) {
+
+    .Logo_header {
+        width: 300px;
+        height: 90px;
+        position: absolute;
+        left: 10px;
+    }
+    .container-dashboard2 .mainList2 {
+        width: 320px;
+    }
+
+    .container-dashboard2 .mainList2 .sub2{
+        float: left;
+        margin-left: 25px;
+        text-align: center;
+        margin-top: 10px;
+        top: 0;
+        font-size: 11.5px;
+
+    }
+
+    #dashboard:before {
+        content: "";
+        background-image: url("img/Dashboard.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -22px;
+        top: 0px
+    }
+
+    #activity:before {
+        content: "";
+        background-image: url("img/Activity.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -22px;
+        top: 0px
+    }
+
+
+    #referral:before {
+        content: "";
+        background-image: url("img/Referral.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -22px;
+        top: 0px
+    }
+
+    #setting:before {
+        content: "";
+        background-image: url("img/Setting.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -22px;
+        top: 0px
+    }
+
+    #contact:before {
+        content: "";
+        background-image: url("img/contact.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -22px;
+        top: 0px
+    }
+
+
+    /* ======================================Circle=========================================== */
+    #dashboard-page-circle {
+        width: 250px;
+        display: block;
+        height: 250px;
+        border: 20px solid #ff9100;
+        border-radius: 50%;
+        position: relative;
+        margin-left: 4%;
+        left: 0%;
+        top: 2%;
+        border-collapse: 2px solid #727272
+    }
+
+
+
+    /* ==================================================HASH History============================== */
+    #dashboard-page #dashboard-title {
+        position: absolute;
+        left: 35%;
+        top: 420px;
+        font-family: sans-serif;
+        font-size: 20px;
+        font-weight: bolder;
+        color: #2e2d2d
+    }
+
+    .dashboard-hr1  {
+        width: 25%;
+        left: 10px;
+
+
+    }
+
+    .dashboard-hr2  {
+        width: 3%;
+        left: 0%;
+    }
+
+    #Hash-History-list
+     {
+         display: flex;
+         flex-flow: row wrap;
+         position: relative;
+     }
+
+
+
+     #Hash-History_column
+    {
+        flex-grow: 1;
+        position: relative;
+        top: 50px;
+        font-size: 12px;
+        color: #2e2d2d;
+        font-weight: bolder;
+        font-family: sans-serif;
+        margin-left: 5%;
+        text-align: left;
+
+    }
+
+
+    #Hash-History_column ul li {
+        font-weight: normal !important;
+        width: 100px;
+        top: 30px;
+        font-size: 15px;
+        height: 70px;
+        position: relative;
+        color: #2e2d2d;
+        font-weight: bold;
+
+
+    }
+
+    #Hash-History_column  li:nth-of-type(1) {
+        top: 30px;
+        position: relative;
+    }
+
+    #Hash-History_column .remain li {
+        width: 150px;
+        border: 1px solid ;
+        height: 35px;
+
+    }
+
+    .remain li:nth-of-type(1) div {
+        background-color: orange;
+        text-align: center;
+        width: 80%;
+        height: 35px
+
+    }
+
+    .remain li:nth-of-type(2) div {
+          /* margin-top: 35px; */
+          background-color: orange;
+          text-align: center;
+        width: 40%;
+        height: 35px
+
+    }
+
+
+
+    .remain li:nth-of-type(1)  {
+        text-align: center;
+
+    }
+
+    .remain li:nth-of-type(2)  {
+          margin-top: 35px;
+          text-align: center;
+    }
+
+    /* ==============================================Buy hash power=================================== */
+
+    #dashboard-page #dashboard-title2 {
+        position: absolute;
+        left: 22%;
+        top: 945px;
+        font-family: sans-serif;
+        font-size: 20px;
+        font-weight: bolder;
+        color: #2e2d2d
+    }
+
+    .dashboard-hr11 {
+        width: 29%;
+        left: -140px;
+        display: block
+
+    }
+
+    .dashboard-hr22-2 {
+        width: 25%;
+        left: 35.2%;
+        display: block
+    }
+
+    form.dashboard-page button {
+        width: 130px;
+        height: 50px;
+        border-radius:10%;
+        background-color: #15BEA4;
+        position: relative;
+        top: 50px;
+        left:80px;
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        font-size: 30px;
+        border: thin solid
+    }
+
+    form.dashboard-page button p {
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        font-size: 28px;
+        color: white;
+    }
+    /*============================================== Mining History ===================================*/
+
+
+    #dashboard-page #dashboard-title3 {
+        position: absolute;
+        left: 24.5%;
+        top: 1175px;
+        font-family: sans-serif;
+        font-size: 20px;
+        font-weight: bolder;
+        color: #2e2d2d
+    }
+    .dashboard-hr111{
+        width: 30%;
+        left: -140px;
+    }
+
+    .dashboard-hr222-2 {
+        width: 29%;
+        left: 35%;
+        display: block;
+    }
+
+    canvas#chart1 {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        position: relative;
+        top: 500px;
+        width: 310px !important;
+    }
+
+
+    .dashboard-hr1 {
+        width: 35%;
+        left: -310px;
+
+
+    }
+
+    .dashboard-hr2 {
+        width: 40%;
+        left: 30%;
+    }
+
+    .dashboard-hr-footer
+    {
+        top: 600px
+    }
+
+    /* ============================================Footer======================================= */
+
+    .dashboard-footer-div {
+        width: 10% !important;
+        left: 0%;
+        position: absolute;
+        top: 1800px
+    }
+
+    #dashboard-footer-image {
+        width: 100px;
+        height: 50px;
+    }
+
+    .dashboard-footer-paragraph {
+        font-size: 15px;
+        font-family: sans-serif;
+        position: absolute;
+        top: -60px;
+        left: 10px;
+        width: 250px
+    }
+}

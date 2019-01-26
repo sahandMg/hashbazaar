@@ -1,0 +1,998 @@
+.mainContainer
+{
+    background-color: #FFFDE8
+}
+body {
+    background-color: #FFFDE8
+
+}
+/* Header */
+
+header {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 110px;
+    background-color: black;
+    font-size: 50px;
+    position: relative;
+
+}
+
+header div {
+    border-bottom: 4px solid orange;
+    width: 100%;
+    height: 110px;
+    position: relative;
+    z-index: 2;
+
+}
+
+.Logo_header {
+    width: 700px;
+    height: 90px;
+    position: absolute;
+    left: -120px;
+}
+
+
+.mainList2 {display:none}
+/* Menu */
+.container-setting-wallet {
+    width: 370px;
+    height: 1200px;
+    background: rgb(39, 38, 38);
+    border-top: 4px solid orange
+}
+
+.container-setting-wallet .mainList {
+   background: white;
+    position: fixed;
+    width: 370px;
+    top: 150px;
+}
+
+.navbar {
+    height: 130px;
+    border-bottom: 2px solid #727272;
+    /* background-color: silver */
+    background: rgb(39, 38, 38);
+    font-family: sans-serif;
+}
+
+.Logo_In_NavBar {
+    width: 250px;
+    height: 400px;
+    left: 50px;
+    position: absolute;
+    top: -170px
+}
+
+
+div ul .navbar #welcome {
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    left: 110px;
+    top: 90px;
+    text-decoration: none
+}
+
+.container-setting-wallet .mainList .sub {
+    color: orange;
+    height: 60px;
+    border-bottom: 2px solid #727272;
+    font-size: 30px;
+    /* background: silver; */
+    background: rgb(39, 38, 38);
+    padding-bottom: 10px;
+    text-align: center;
+    font-family: sans-serif
+}
+
+.container-setting-wallet .mainList .sub a {
+    color: orange;
+    text-decoration: none;
+    padding-top: 20px;
+    position: relative;
+    left: -40px;
+    top: 30%
+}
+
+.container-setting-wallet .mainList .sub a:hover {
+    color: white;
+}
+
+.sub:after {
+    background-image: url("img/Arrow.svg");
+    width: 1em;
+    height: 1em;
+    margin-top: 25px;
+    content: "";
+    left: 300px;
+    background-size: 100% 100%;
+    position: absolute;
+}
+
+#dashboard:before {
+    content: "";
+    background-image: url("img/Dashboard.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -60px;
+    top: 15px
+}
+
+#activity:before {
+    content: '';
+    background-image: url("img/Activity.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -80px;
+    top: 15px
+}
+
+
+#referral:before {
+    content: "";
+    background-image: url("img/Referral.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -80px;
+    top: 15px
+}
+#setting {
+    color: white
+}
+#setting:before {
+    content: "";
+    background-image: url("img/Setting.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -85px;
+    top: 15px
+}
+
+.contact {
+    border-bottom: 1px solid transparent !important
+}
+
+#contact:before {
+    content: "";
+    background-image: url("img/contact.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -80px;
+    top: 18px
+}
+
+
+
+/* Setting Page */
+
+#setting-page {
+    position: absolute;
+    /* border: 1px solid red; */
+    width: 72%;
+    /* height: 650px; */
+    left: 27.5%;
+    top: 200px;
+
+}
+
+.setting-flex {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+
+}
+
+.flex-item
+{
+    flex-grow: 1;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    margin-top: 5px
+    
+}
+
+#setting-page .setting-flex .flex-item  {
+    font-family: sans-serif;
+    font-weight: bolder;
+    text-align: center;
+}
+
+#setting-page .setting-flex .flex-item a {
+    text-decoration: none;
+    color: #2e2d2d;    
+    font-size: 20px;
+}
+
+#setting-page .setting-flex .flex-item a:hover {
+    color: orange
+}
+ 
+.flex-item-two  {
+    border-left: 2px solid #727272;
+    border-right: 2px solid #727272;
+    font-size: 20px;
+    font-family: sans-serif;
+    flex-grow: 1;
+    height: 60px;
+
+}
+
+.flex-item-two .change { 
+    position: relative;
+    top: 10px !important
+        
+}
+
+.flex-item-two {
+    position: relative;
+    top: -10px
+}
+
+
+/* Wallet 1 */
+.wallet1 {
+    display: block;
+}
+.wallet1 p {
+    font-size: 19px;
+    margin: 5% 24%;
+    color: dimgrey;
+    font-family: sans-serif;
+}
+
+.wallet1 q {
+    margin: 10% 47%;;
+    font-family: sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #2e2d2d;
+}
+
+.wallet1 blockquote {
+    margin: 7% 37%;;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: #2e2d2d;
+    width: 300px
+}
+
+.wallet1 input{
+    position: absolute;
+    margin: 5% 30%;
+    width: 400px;
+    height: 25px;
+    border: 3px solid transparent;
+    border-bottom: 1px solid black !important;
+    background-color: #FFFDE8
+}
+
+
+
+form#setting-wallet button {
+    width: 160px;
+    height: 60px;
+    border-radius:10%;
+    background-color: #15BEA4;
+    position: relative;
+    top: 200px;
+    left:410px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-size: 30px;
+    border: thin solid
+}
+
+form#setting-wallet button p {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-size: 30px;
+    color: white;
+}
+
+.setting-wallet-hr-footer
+{
+    top: 450px
+}
+/* Footer */
+
+.setting-wallet-footer-div {
+    top: 1200px;
+    width: 70%;
+    left: 30%;
+    position: absolute;
+}
+.setting-wallet-footer-paragraph {
+    font-size: 20px;
+    font-family: sans-serif;
+    position: absolute;
+    top: -60px;
+    left: 250px    
+    
+}
+
+#setting-wallet-footer-image {
+    width: 200px;
+    height: 100px;
+}
+
+@media screen and (max-width:1024px)
+{
+    /* ---------------=====Media====-------------Main Container--------------------------- */
+    
+    .container-setting-wallet {
+        width: 270px;
+        /* height: 1850px; */
+
+
+    }
+
+    .container-setting-wallet .mainList {
+        width: 270px
+    }
+
+    .container-setting-wallet .mainList .navbar .Logo_In_NavBar{
+        left: 30px;
+        width: 200px;
+        height: 80px;
+    }
+
+    div ul .navbar #welcome {
+        font-size: 17px;
+        left: 70px;
+        
+    }
+
+
+    .container-setting-wallet .mainList .sub {
+        height: 60px;
+        font-size: 25px;
+        padding-bottom: 10px;
+    }
+
+
+    .container-setting-wallet .mainList .sub a {
+        left: -10px;
+        top: 30%
+    }
+
+
+    .sub:after {
+        width: 1em;
+        height: 1em;
+        content: "";
+        left: 85%;
+    }
+
+
+    #dashboard:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -40px;
+    }
+
+    #activity:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+
+    #contact:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+
+    #setting:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+
+    #referral:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+    
+    
+    .setting-wallet-hr-footer
+    {
+        top: 700px;
+        left: -10px
+    }
+
+
+
+
+/* Wallet 1 */
+.wallet1 p {
+    font-size: 19px;
+    margin: 5% 28%;
+    width: 350px;
+    text-align: center
+}
+
+.wallet1 q {
+    margin: 10% 46%;;
+    font-family: sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #2e2d2d;
+}
+
+.wallet1 blockquote {
+    margin: 7% 33%;;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: #2e2d2d;
+    width: 300px
+}
+
+.wallet1 input{
+    position: absolute;
+    margin: 5% 25%;
+    width: 400px;
+    height: 25px;
+    border: 3px solid transparent;
+    border-bottom: 1px solid black !important;
+    background-color: #FFFDE8
+}
+
+
+
+    form#setting-wallet button {
+        width: 160px;
+        height: 60px;
+        border-radius:10%;
+        background-color: #15BEA4;
+        position: relative;
+        top: 200px;
+        left:290px;
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        font-size: 30px;
+        border: thin solid
+    }
+}
+
+
+
+
+
+
+
+@media screen and (max-width:768px) {
+    .container-setting-wallet {
+        display: none;
+    }
+
+    .container-contact {
+        display: none;
+    }
+    header 
+    {
+        z-index: 1;
+    }
+    .container-setting-wallet2{
+        display: block;
+    position:  relative;
+    top: 2px;
+    width: 100%;
+    float: left;
+    z-index: 0;
+    }
+
+    .container-setting-wallet2 .mainList2 {
+        background: #2e2d2d;
+    position: fixed;
+    top: 0;
+    z-index:0;
+    height: 40px;
+    width: 100%;
+    border-bottom: 2px solid orange;
+    }
+
+    .container-setting-wallet2 .mainList2 .sub2{
+        float: left;
+        margin-left: 80px;
+        text-align: center;
+        margin-top: 10px;
+        position: sticky;
+        top: 0;
+
+    }
+
+    .container-setting-wallet2 .mainList2 .sub2 a {
+        text-decoration: none;
+        color: orange
+    }
+    .container-setting-wallet2 .mainList2 .sub2 a:hover {
+        color: white;
+    }
+    .mainList {
+        display: none
+    }
+    
+    #dashboard:before {
+        content: "";
+        background-image: url("img/Dashboard.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+    
+    #activity:before {
+        content: "";
+        background-image: url("img/Activity.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+    
+    
+    #referral:before {
+        content: "";
+        background-image: url("img/Referral.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+    
+    #setting:before {
+        content: "";
+        background-image: url("img/Setting.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+    
+    #contact:before {
+        content: "";
+        background-image: url("img/contact.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+    
+    /* =======================================Setting Page=========================================== */
+    
+    #setting-page {
+    width: 99%;
+    left: .5%;
+    }
+    
+    #setting-page .setting-flex .flex-item a {
+    font-size: 18px;
+    }
+    
+    
+    .flex-item-two  {
+    font-size: 18px;
+    }
+    
+    
+    /* Wallet 1 */
+.wallet1 p {
+    font-size: 18px;
+    margin: 5% 28%;
+    width: 350px;
+    text-align: center
+}
+
+.wallet1 q {
+    margin: 10% 46%;;
+    font-family: sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #2e2d2d;
+}
+
+.wallet1 blockquote {
+    margin: 7% 33%;;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: #2e2d2d;
+    width: 300px
+}
+
+.wallet1 input{
+    position: absolute;
+    margin: 5% 25%;
+    width: 400px;
+    height: 25px;
+    border: 3px solid transparent;
+    border-bottom: 1px solid black !important;
+    background-color: #FFFDE8
+}
+
+
+
+    form#setting-wallet button {
+        top: 150px;
+        left:300px;
+    }
+    
+    
+    .setting-wallet-hr-footer
+    {
+        top: 310px;
+        left: 0;
+    }
+    .setting-wallet-footer-div {
+        top: 1000px;
+        width: 94%;
+        left: 5%;
+        position: absolute;
+    }
+    .setting-wallet-footer-paragraph {
+        font-size: 18px;
+        font-family: sans-serif;
+        position: absolute;
+        top: -60px;
+        left: 230px    
+        
+    }
+    }
+
+
+
+@media screen and (max-width:414px) {
+
+
+    .container-setting-wallet {
+        display: none;
+    }
+
+    .container-contact {
+        display: none;
+    }
+    header 
+    {
+        z-index: 1;
+    }
+    .container-setting-wallet2{
+        display: block;
+    position:  relative;
+    top: 2px;
+    width: 100%;
+    float: left;
+    z-index: 0;
+    }
+
+    .container-setting-wallet2 .mainList2 {
+        background: #2e2d2d;
+    position: fixed;
+    top: 0;
+    z-index:0;
+    height: 40px;
+    width: 100%;
+    border-bottom: 2px solid orange;
+    }
+
+    .container-setting-wallet2 .mainList2 .sub2{
+        float: left;
+    margin-left: 35px;
+    text-align: center;
+    margin-top: 10px;
+    top: 0;
+    font-size: 13px;
+
+    }
+
+    .container-setting-wallet2 .mainList2 .sub2 a {
+        text-decoration: none;
+        color: orange
+    }
+    .container-setting-wallet2 .mainList2 .sub2 a:hover {
+        color: white;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    .mainList {
+        display: none
+    }
+    
+    #dashboard:before {
+        content: "";
+        background-image: url("img/Dashboard.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
+    
+    #activity:before {
+        content: "";
+        background-image: url("img/Activity.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
+    
+    
+    #referral:before {
+        content: "";
+        background-image: url("img/Referral.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
+    
+    #setting:before {
+        content: "";
+        background-image: url("img/Setting.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
+    
+    #contact:before {
+        content: "";
+        background-image: url("img/contact.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
+/* =======================================Setting Page=========================================== */
+
+#setting-page {
+    width: 99%;
+    left: 0%;
+}
+
+#setting-page .setting-flex .flex-item a {
+    font-size: 13px;
+}
+
+
+
+    /* Wallet 1 */
+    .wallet1 p {
+        font-size: 14px;
+        margin: 5% 18%;
+        width: 250px;
+        text-align: center
+    }
+    
+    .wallet1 q {
+        margin: 10% 42%;;
+        font-family: sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+        color: #2e2d2d;
+    }
+    
+    .wallet1 blockquote {
+        margin: 7% 20%;;
+        font-family: sans-serif;
+        font-size: 18px;
+        color: #2e2d2d;
+        width: 300px
+    }
+    
+    .wallet1 input{
+        position: absolute;
+        margin: 5% 17%;
+        width: 260px;
+        height: 25px;
+        border: 3px solid transparent;
+        border-bottom: 1px solid black !important;
+        background-color: #FFFDE8
+    }
+    
+    
+    
+        form#setting-wallet button {
+            top: 150px;
+            left:140px;
+        }
+        
+        form#setting-wallet button p {
+            left: 0;
+            position: relative;
+        }
+        
+        .setting-wallet-hr-footer
+        {
+            top: 310px;
+            left: 0;
+        }
+        .setting-wallet-footer-div {
+            top: 900px;
+            width: 94%;
+            left: 5%;
+            position: absolute;
+        }
+        .setting-wallet-footer-paragraph {
+            font-size: 15px;
+            font-family: sans-serif;
+            position: absolute;
+            top: -60px;
+            left: 80px    
+            
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+@media screen and (max-width:375px) {
+
+    .container-setting-wallet2 .mainList2 {
+        width: 375px;
+    }
+
+    .container-setting-wallet2 .mainList2 .sub2{
+        float: left;
+        margin-left: 30px;
+        text-align: center;
+        margin-top: 10px;
+        top: 0;
+        font-size: 13px;
+    
+    }
+
+
+    .setting-wallet-footer-div {
+        width: 10% !important;
+        left: 0%;
+        position: absolute;
+        top: 900px
+    }
+    
+    #setting-wallet-footer-image {
+        width: 100px;
+        height: 50px;
+    }
+    
+    .setting-wallet-footer-paragraph {
+        font-size: 15px;
+        font-family: sans-serif;
+        position: absolute;
+        top: -60px;
+        left: 10px;
+        width: 260px
+    }
+}
+
+
+
+@media screen and (max-width:320px) {
+    .Logo_header {
+        width: 300px;
+        height: 90px;
+        position: absolute;
+        left: 10px;
+    }
+    .container-setting-wallet2 .mainList2 {
+        width: 320px;
+    }
+
+    .container-setting-wallet2 .mainList2 .sub2{
+        float: left;
+        margin-left: 25px;
+        text-align: center;
+        margin-top: 10px;
+        top: 0;
+        font-size: 11px;
+    
+    }
+/* Wallet 1 */
+.wallet1 p {
+    font-size: 14px;
+    margin: 5% 11%;
+    width: 250px;
+    text-align: center
+}
+
+.wallet1 q {
+    margin: 10% 39%;;
+    font-family: sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #2e2d2d;
+}
+
+.wallet1 blockquote {
+    margin: 7% 14%;;
+    font-family: sans-serif;
+    font-size: 18px;
+    color: #2e2d2d;
+    width: 300px
+}
+
+.wallet1 input{
+    position: absolute;
+    margin: 5% 14%;
+    width: 200px;
+    height: 25px;
+    border: 3px solid transparent;
+    border-bottom: 1px solid black !important;
+    background-color: #FFFDE8
+}
+
+
+
+    form#setting-wallet button {
+        top: 110px;
+        left:90px;
+        width: 100px;
+        height: 30px
+    }
+    
+    form#setting-wallet button p {
+        left: 0;
+        position: relative;
+    }
+    
+}

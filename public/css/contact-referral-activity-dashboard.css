@@ -1343,9 +1343,9 @@ div ul .navbar #welcome {
 .referral-hr-footer
 {
     top: 950px;
-    width: 100%;
+    width: 100% !important;
     position: relative;
-    left: -830px;
+    left: -0px;
 
 }
 

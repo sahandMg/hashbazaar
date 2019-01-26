@@ -65,9 +65,10 @@
 
         <div class="setting-changepassword-footer-div">
                 <p class="setting-changepassword-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
-             <img id="setting-changepassword-footer-image" src="img/Logo_footer.svg" alt=""></div>
-
+             <img id="setting-changepassword-footer-image" src="img/Logo_footer.svg" alt="">
         </div>
+
+    </div>
 
     <!-- Container -->
     <div class="mainContainer">
@@ -93,7 +94,7 @@
         <nav class="container-setting-changepassword2">
                 <ul class="mainList2">
 
-                    <   <li class="sub2 dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
+                    <li class="sub2 dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
                     <li class="sub2"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
                     <li class="sub2"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
                     <li class="sub2"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
@@ -102,7 +103,7 @@
 
 
 
-            </nav>
+        </nav>
 
 
 

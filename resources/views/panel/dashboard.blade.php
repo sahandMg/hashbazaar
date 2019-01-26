@@ -40,7 +40,6 @@
             <hr class="dashboard-hr1-1">
             <hr class="dashboard-hr1"  style="position: relative;top: 130px;">
             <p id="dashboard-title">Hash History</p>
-            <!-- <hr class="dashboard-hr2"  style="position: relative;top:120px;"> -->
             <hr class="dashboard-hr2-2">
 
            <div class="Hash-History">
@@ -83,7 +82,6 @@
             <!--   Buy hash power -->
             <hr  class="dashboard-hr11"  style="position: relative;top: 200px;">
             <p id="dashboard-title2">Buy Hash Power</p>
-            <!-- <hr  class="dashboard-hr22"  style="position: relative;top:320px;"> -->
             <hr class="dashboard-hr22-2" style="position: relative;top:190px">
 
             <h5 id="demo"></h5>
@@ -132,7 +130,7 @@
             <nav class="container-dashboard">
                 <ul class="mainList">
                     <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="img/Logo_In_NavBar.svg" alt="Logo_In_NavBar"></a>
-                        <a href="http://hashbazaar.com" id="welcome">Welcome User</a> </li>
+                        <a href="" id="welcome">Welcome User</a> </li>
                     <li class="sub dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
                     <li class="sub"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
                     <li class="sub"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
@@ -181,8 +179,8 @@
             var labels = [];labels.push(moment('April 01 2017', dateFormat));labels.push(moment('April 03 2017', dateFormat));labels.push(moment('April 04 2017', dateFormat));
             data.push({t:moment('April 01 2017', dateFormat).valueOf(),y: 27.96930236878253});data.push({t:moment('April 03 2017', dateFormat).valueOf(),y: 28.96930236878253});data.push({t: moment('April 04 2017', dateFormat).valueOf(), y: 29.96930236878253});
             var ctx = document.getElementById('chart1').getContext('2d');
-            ctx.canvas.width = 1000;
-            ctx.canvas.height = 300;
+            ctx.canvas.parentNode.style.height = '300px';
+            ctx.canvas.parentNode.style.width = '700px';
 
             var color = Chart.helpers.color;
             var cfg = {

@@ -87,7 +87,7 @@
         <nav class="container-referral">
             <ul class="mainList">
                 <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="img/Logo_In_NavBar.svg" alt="Logo_In_NavBar"></a>
-                    <a href="http://hashbazaar.com" id="welcome">Welcome User</a> </li>
+                    <a href="" id="welcome">Welcome User</a> </li>
                     <li class="sub dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
                     <li class="sub"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
                     <li class="sub"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>

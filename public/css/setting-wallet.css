@@ -964,17 +964,17 @@ form#setting-wallet button p {
 }
 
 .wallet1 blockquote {
-    margin: 7% 14%;;
+    margin: 7% 15%;
     font-family: sans-serif;
-    font-size: 18px;
+    font-size: 15px;
     color: #2e2d2d;
-    width: 300px
+    width: 250px
 }
 
 .wallet1 input{
     position: absolute;
-    margin: 5% 14%;
-    width: 200px;
+    margin: 5% 21%;
+    width: 150px;
     height: 25px;
     border: 3px solid transparent;
     border-bottom: 1px solid black !important;
@@ -985,9 +985,10 @@ form#setting-wallet button p {
 
     form#setting-wallet button {
         top: 110px;
-        left:90px;
-        width: 100px;
-        height: 30px
+        left:60px;
+        width: 50px !important;
+        height: 30px;
+        margin-left: 0px;
     }
     
     form#setting-wallet button p {

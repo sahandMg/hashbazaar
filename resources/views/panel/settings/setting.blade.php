@@ -72,7 +72,7 @@
 
             <div class="setting-footer-div">
                     <p class="setting-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
-                 <img id="setting-footer-image" src="img/Logo_footer.svg" alt=""></div>
+                 <img id="setting-footer-image" src="../img/Logo_footer.svg" alt=""></div>
 
         </footer>
 

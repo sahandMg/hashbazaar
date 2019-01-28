@@ -65,7 +65,6 @@ header div {
 .container-contact .navbar {
     height: 130px;
     border-bottom: 2px solid #727272;
-    /* background-color: silver */
     background: rgb(39, 38, 38);
     font-family: sans-serif;
 }
@@ -93,7 +92,6 @@ div ul .navbar #welcome {
     height: 60px;
     border-bottom: 2px solid #727272;
     font-size: 30px;
-    /* background: silver; */
     background: rgb(39, 38, 38);
     padding-bottom: 10px;
     text-align: center;
@@ -118,7 +116,6 @@ div ul .navbar #welcome {
     height: 60px;
     border-bottom: 2px solid #727272;
     font-size: 30px;
-    /* background: silver; */
     background: rgb(39, 38, 38);
     padding-bottom: 10px;
     text-align: center;
@@ -230,9 +227,9 @@ div ul .navbar #welcome {
 #contact-page input:nth-of-type(1){
     position: absolute;
     width: 400px;
-    height: 50px;
+    height: 30px;
     border: 2px solid transparent;
-    border-bottom: 3px solid black !important;
+    border-bottom: 2px solid black !important;
     top: 200px;
     left: 300px;
 }
@@ -243,27 +240,28 @@ div ul .navbar #welcome {
     top: 300px;
     left: 300px;
     width: 400px;
-    height: 50px;
-    border: 3px solid transparent;
+    height: 30px;
+    border: 2px solid transparent;
     border-bottom: 2px solid black !important
 }
 
 
-#contact-page input:nth-of-type(3){
-    position: absolute;
+#contact-page textarea{
+        resize: none;
+        position: absolute;
+    background: #FFFDE8;
     top: 410px ;
     left: 150px;
     width: 600px;
     height: 150px;
     border: 2px solid black;
 }
-/* #contact-page input:nth-of-type(3)::before{
-    content: "Message";
-    position: absolute;
-    color: black;
-    top: -100px;
-    left: -300px;;
-} */
+
+#contact-page input:nth-of-type(3)::placeholder {
+    top: -50px;
+    position: relative;
+}
+
 form.contact-page button {
     width: 160px;
     height: 60px;
@@ -424,8 +422,10 @@ form.contact-page p:nth-of-type(1) {
         left: 150px;
         top: 300px;
     }
-    #contact-page input:nth-of-type(3){
-        position: absolute;
+    #contact-page textarea {
+        resize: none;
+        background: #FFFDE8;
+    position: absolute;
         top: 420px ;
         left: 100px;
         width: 500px;
@@ -450,7 +450,6 @@ form.contact-page p:nth-of-type(1) {
         left: -100px;
     }
 
-
 }
 
 
@@ -466,38 +465,35 @@ form.contact-page p:nth-of-type(1) {
         display: none;
     }
     .container-contact2{
-        display: block;
+    display: block;
     position:  relative;
     top: 22px;
     width: 100%;
     float: left;
     }
 
-    .container-contact2 .mainList2 {
+    .container-activity2 .mainList2 {
         background: #2e2d2d;
         position: fixed;
         top: 0;
         height: 40px;
-        width: 100%;
+        width: 98.5%;
         border-bottom: 2px solid orange;
+        display: block
     }
 
-    .container-contact2 .mainList2 .sub2{
+    .container-activity2 .mainList2 .sub2{
         float: left;
         margin-left: 80px;
         text-align: center;
-        margin-top: 10px;
+        margin-top: 15px;
         position: sticky;
         top: 0;
-
     }
 
-    .container-contact2 .mainList2 .sub2 a {
+    .container-activity2 .mainList2 .sub2 a {
         text-decoration: none;
         color: orange
-    }
-    .container-contact2 .mainList2 .sub2 a:hover {
-        color: white;
     }
     .mainList {
         display: none
@@ -586,8 +582,10 @@ form.contact-page p:nth-of-type(1) {
 }
 
 
-#contact-page input:nth-of-type(3){
-    position: absolute;
+#contact-page textarea{
+    background: #FFFDE8;
+        resize: none;
+        position: absolute;
     top: 430px ;
     left: 130px;
     width: 510px;
@@ -609,7 +607,8 @@ form.contact-page button {
 .contact-footer-div {
     top:960px;
     width: 94%;
-    margin-left: 5%;
+    left: 2%;
+    margin: 0%
 }
 .contact-footer-paragraph {
     font-size: 18px;
@@ -655,6 +654,7 @@ form.contact-page button {
         height: 40px;
         width: 100%;
         border-bottom: 2px solid orange;
+          display: block;
     }
 
     .container-contact2 .mainList2 .sub2{
@@ -769,8 +769,10 @@ form.contact-page button {
 }
 
 
-#contact-page input:nth-of-type(3){
-    position: absolute;
+#contact-page textarea{
+    background: #FFFDE8;
+        resize: none;
+        position: absolute;
     top: 250px ;
     left: 70px;
     width: 250px;
@@ -790,9 +792,10 @@ form.contact-page button {
 
     .contact-footer-div {
         width: 10% !important;
-        left: 0%;
         position: absolute;
-        top: 960px
+        top: 960px;
+        left: 2%;
+        margin: 0%
     }
 
     #contact-footer-image {
@@ -981,12 +984,15 @@ form.contact-page button {
         left: 72px;
         width: 150px;
     }
-    #contact-page input:nth-of-type(3){
+    #contact-page textarea{
+    background: #FFFDE8;
+        resize: none;
         position: absolute;
         top: 250px ;
         left: 52px;
         width: 210px;
         height: 110px;
+        resize: none;
     }
 
     form.contact-page button {
@@ -1098,7 +1104,6 @@ header div {
     height: 130px;
     border-top: 2px solid rgb(39, 38, 38);
     border-bottom: 2px solid #727272;
-    /* background-color: silver */
     background: rgb(39, 38, 38);
     font-family: sans-serif;
 }
@@ -1126,7 +1131,6 @@ div ul .navbar #welcome {
     height: 60px;
     border-bottom: 2px solid #727272;
     font-size: 30px;
-    /* background: silver; */
     background: rgb(39, 38, 38);
     padding-bottom: 10px;
     text-align: center;
@@ -1227,10 +1231,8 @@ div ul .navbar #welcome {
 #referral-page {
     position: absolute;
     top: 100px;
-    /* border: 2px solid red; */
     left: 27.5%;
     width: 72%;
-    /* height: 00px; */
 }
 
 
@@ -1341,9 +1343,9 @@ div ul .navbar #welcome {
 .referral-hr-footer
 {
     top: 950px;
-    width: 100%;
+    width: 100% !important;
     position: relative;
-    left: -830px;
+    left: -0px;
 
 }
 
@@ -1578,7 +1580,7 @@ div ul .navbar #welcome {
             top: 0;
             z-index: 0;
             height: 40px;
-            width: 100%;
+            width: 768px;
             border-bottom: 2px solid orange;
             display: block
         }
@@ -1876,10 +1878,8 @@ div ul .navbar #welcome {
 #referral-page {
     position: absolute;
     top: 100px;
-    /* border: 2px solid red; */
     left: .5%;
     width: 72%;
-    /* height: 00px; */
 }
 
 
@@ -2135,11 +2135,47 @@ div ul .navbar #welcome {
 
     .container-referral2 .mainList2 .sub2{
         float: left;
-        margin-left: 30px;
+        margin-left:18px;
         text-align: center;
         margin-top: 10px;
         top: 0;
         font-size: 13px;
+
+    }
+    #dashboard:before {
+        content: "";
+        background-image: url("img/Dashboard.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
+
+    #activity:before {
+        content: "";
+        background-image: url("img/Activity.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
+
+
+    #referral:before {
+        display: none;
+    }
+
+    #setting:before {
+        display: none;
+
+    }
+
+    #contact:before {
+        display: none;
 
     }
     .referral-page_firstList {
@@ -2234,7 +2270,7 @@ div ul .navbar #welcome {
 
 
 
-
+/* ACTIVITY */
 
 
 
@@ -2287,15 +2323,13 @@ header div {
 /* Menu */
 .container-activity {
     width: 370px;
-    height: 1380px;
+    height: 1480px;
     background: rgb(39, 38, 38);
     border-top: 4px solid orange;
-    /* top: -100px */
 }
 
 .container-activity .mainList {
     background: white;
-    /* left: 100px; */
     width: 370px;
     position: fixed;
     top: 150px
@@ -2305,10 +2339,8 @@ header div {
 .navbar {
     height: 130px;
     border-bottom: 2px solid #727272;
-    /* background-color: silver */
     background: rgb(39, 38, 38);
     font-family: helvetica
-/*    font-family: sans-serif*/
 
 }
 
@@ -2335,7 +2367,6 @@ div ul .navbar #welcome {
     height: 60px;
     border-bottom: 2px solid #727272;
     font-size: 30px;
-    /* background: silver; */
     background: rgb(39, 38, 38);
     padding-bottom: 10px;
     text-align: center;
@@ -2624,7 +2655,7 @@ div ul .navbar #welcome {
 
     .container-activity {
         width: 270px;
-        height: 1400px;
+        height: 1450px;
 
 
     }
@@ -2861,7 +2892,9 @@ div ul .navbar #welcome {
 
     header {
         z-index: 2;
+        width: 768px;
     }
+
 #activity-page {
     height: 1000px;
 
@@ -2885,7 +2918,7 @@ div ul .navbar #welcome {
         position: fixed;
         top: 0;
         height: 40px;
-        width: 100%;
+        width: 98.5%;
         border-bottom: 2px solid orange;
         display: block
     }
@@ -3009,7 +3042,9 @@ div ul .navbar #welcome {
        width: 120px;
        font-size: 17px;
    }
-
+   #activity-page .Transactions  {
+       width: 700px !important
+ }
    #activity-page .Transactions q {
       height: 30px;
       font-size: 27px;
@@ -3097,7 +3132,7 @@ div ul .navbar #welcome {
         position: fixed;display: block;
         top: 0;
         height: 40px;
-        width: 414px;
+        width: 402px;
         border-bottom: 2px solid orange;
     }
 
@@ -3216,14 +3251,16 @@ div ul .navbar #welcome {
     }
     #activity-page_secondList {
         top: 360px;
-        width: 390px;
-        height: 300px
+        width: 400px;
+        height: 300px;
+    overflow: scroll;
+
     }
     #activity-page_secondList_column
     {
     top: 00px;
     font-size: 15px;
-    margin-top: 80px
+    margin-top: 80px;
     }
 
 
@@ -3231,7 +3268,9 @@ div ul .navbar #welcome {
     width: 120px;
     font-size: 13px;
     }
-
+    #activity-page .Transactions {
+        width: 380px !important
+    }
     #activity-page .Transactions q {
         height: 18px;
         font-size: 18px;
@@ -3239,7 +3278,7 @@ div ul .navbar #welcome {
     }
     #activity-page_thirdList{
     top:470px;
-        width: 300px;
+        width: 400px;
 
     }
     #activity-page_thirdList_column
@@ -3457,7 +3496,7 @@ div ul .navbar #welcome {
     }
     #activity-page_secondList {
         top: 360px;
-        width: 300px;
+        width: 360px;
         height: 300px
     }
     #activity-page_secondList_column
@@ -3472,7 +3511,9 @@ div ul .navbar #welcome {
        width: 120px;
        font-size: 13px;
     }
-
+    #activity-page .Transactions {
+        width: 360px !important
+    }
     #activity-page .Transactions q {
         height: 18px;
         font-size: 18px;
@@ -3480,7 +3521,7 @@ div ul .navbar #welcome {
     }
     #activity-page_thirdList{
        top:470px;
-        width: 300px;
+        width: 360px;
 
     }
     #activity-page_thirdList_column
@@ -3611,6 +3652,19 @@ div ul .navbar #welcome {
         left: -22px;
         top: 0px
     }
+
+    #activity-page .Transactions {
+        width: 310px !important
+    }
+    #activity-page_secondList{
+         width: 305px;
+ 
+     }
+    #activity-page_thirdList{
+        top:470px;
+         width: 305px;
+ 
+     }
     .footer-paragraph {
         font-size: 12px;
         font-family: sans-serif;
@@ -4053,6 +4107,7 @@ canvas#chart1 {
     -ms-user-select: none;
     position: relative;
     top: 480px;
+    left: 150px
 }
  .dashboard-hr1-1  { display: none}
 
@@ -4062,12 +4117,12 @@ canvas#chart1 {
  }
 .dashboard-hr11 {
     width: 37%;
-    left: -315px
+    left: -308px
 }
 
 .dashboard-hr111 {
     width: 37%;
-    left: -317px
+    left: -310px
 }
 
 .dashboard-hr22-2 {
@@ -4078,7 +4133,7 @@ left: 29.5%
 
 .dashboard-hr1 {
     width: 38%;
-    left: -310px;
+    left: -300px;
 
 
 }
@@ -4398,6 +4453,7 @@ display: block;
     height: 40px;
     width: 100%;
     border-bottom: 2px solid orange;
+    display: block
 }
 
 .container-dashboard2 .mainList2 .sub2{
@@ -5485,7 +5541,7 @@ display: block;
     /* ==================================================HASH History============================== */
     #dashboard-page #dashboard-title {
         position: absolute;
-        left: 35%;
+        left: 33%;
         top: 420px;
         font-family: sans-serif;
         font-size: 20px;
@@ -5587,7 +5643,7 @@ display: block;
 
     #dashboard-page #dashboard-title2 {
         position: absolute;
-        left: 22%;
+        left: 23% !important;
         top: 945px;
         font-family: sans-serif;
         font-size: 20px;
@@ -5603,8 +5659,8 @@ display: block;
     }
 
     .dashboard-hr22-2 {
-        width: 25%;
-        left: 35.2%;
+        width: 23%;
+        left: 35.8% !important;
         display: block
     }
 

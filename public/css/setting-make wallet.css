@@ -1101,3 +1101,191 @@ color: white;
         width: 260px
     }
 }
+
+
+
+
+
+
+
+
+@media screen and (max-width: 320px) {
+
+.container-setting-make-wallet2 .mainList2 .sub2{
+    float: left;
+    margin-left: 20px;
+    text-align: center;
+    margin-top: 10px;
+    top: 0;
+    font-size: 13px;
+}
+
+
+    #dashboard:before {
+        display: none;
+    }
+    
+    #activity:before {
+        display: none;
+
+    }
+    
+    
+    #referral:before {
+        display: none;
+
+    }
+    
+    #setting:before {
+        display: none;
+
+    }
+    
+    #contact:before {
+        display: none;
+
+    }
+/* =======================================Setting Page=========================================== */
+
+#setting-page {
+    width: 99%;
+    left: 0%;
+}
+
+#setting-page .setting-flex .flex-item a {
+    font-size: 13px;
+}
+
+
+    /*==============---media---============== Make wallet=============================== */
+
+
+    #make-wallet-title {
+        font-size: 12px;
+        margin-left: 26%;
+    }
+
+
+    .address .address-img {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        top: 30px;
+        left: 110px;
+        border: 2px solid;
+        border-radius: 20px
+    }
+
+    .address .address-box .icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .address .address-box div {
+        float: left;
+    }
+
+    .address-box {
+        position: relative;
+        left: 0px;
+        float: left;
+
+    }
+    .address-box-div {
+        top: 200px;
+    }
+    .address-box a {
+        position: relative;
+        top: 80px;
+        left: 80px;
+        margin-left: 20px;
+        
+    }
+
+
+    .address-box input {
+        left: 60px;
+        width: 200px;
+        top: 50px;
+    }
+
+    .address-box input::placeholder {
+        text-align: center;
+        font-size: 12px
+    }
+
+    .change-address {
+        top: 200px;
+        margin-left: 0%;
+    }
+
+    .change-address input {
+        position: absolute;
+        left: 60px;
+        top: 60px;
+        width: 200px;
+
+    }
+
+    .change-address input::placeholder {
+        font-size: 12px
+    }
+
+    form#setting-make-wallet button {
+        top: 420px;
+        left: 100px;
+        width: 100px;
+        height: 40px
+    }
+    form#setting-make-wallet button p {
+        font-size: 17px;
+        
+    }
+
+    #make-wallet-title2 {
+        font-size: 13px;
+        top: 290px;
+        margin-left: 20%;
+
+
+    }
+
+    .make-wallet-hr11 {
+        width: 25.5%;
+        left: -285px;
+        display: none
+    }
+
+
+
+
+.make-wallet-hr2 , .make-wallet-hr22 {
+        display: none;
+    width: 22%;
+    left: 150px
+}
+/* Footer */
+.make-wallet-footer-div {
+    top: 1130px;
+    width: 100%;
+    margin-left: 0%;
+    position: absolute;
+}
+
+.make-wallet-footer-paragraph {
+    font-size: 13px;
+    font-family: sans-serif;
+    position: absolute;
+    top: -60px;
+    width: 240px;
+    left: 20px
+}
+
+#make-wallet-footer-image {
+    width: 150px !important;
+    height: 100px !important;
+    left: 20px;
+    position: relative;
+}
+
+}

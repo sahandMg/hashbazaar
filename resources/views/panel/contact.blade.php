@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>#BAZAAR - Contact</title>
-    <link rel="icon" href="img/Logo_In_NavBar.svg">
     <link rel="stylesheet" href="css/contact-referral-activity-dashboard.css">
     <link rel="stylesheet" href="css/cssreset.css">
     <script>
@@ -32,7 +31,7 @@
 
             <input type="email" name="Email" id="Email" placeholder="Email">
 
-            <input type="text" placeholder="">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
 
              <button><span style="color:white">Send</span></button>
         </form>
@@ -58,7 +57,7 @@
         <nav class="container-contact">
             <ul class="mainList">
                 <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="img/Logo_In_NavBar.svg" alt="Logo_In_NavBar"></a>
-                    <a href="http://hashbazaar.com" id="welcome">Welcome User</a> </li>
+                    <a href="" id="welcome">Welcome User</a> </li>
                     <li class="sub dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
                     <li class="sub"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
                     <li class="sub"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
@@ -68,16 +67,6 @@
             </ul>
 
 
-            <!-- <ul class="mainList2">
-
-                    <li class="sub2"> <a href="file:///E:/Web%20Design/%23BAZAAR%20project/dashboard.html" id="dashboard">Dashboard</a></li>
-                    <li class="sub2"> <a href="file:///E:/Web%20Design/%23BAZAAR%20project/activity.html" id="activity">Activity</a></li>
-                    <li class="sub2"> <a href="file:///E:/Web%20Design/%23BAZAAR%20project/referral.html" id="referral">Referral</a> </li>
-                    <li class="sub2"> <a href="file:///E:/Web%20Design/%23BAZAAR%20project/setting.html" id="setting">Setting</a></li>
-                    <li class="sub2"> <a href="file:///E:/Web%20Design/%23BAZAAR%20project/contact.html" id="contact">Contact</a></li>
-
-            </ul>
-         -->
 
         </nav>
 

@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hash Bazaar - Make Wallet</title>
-    <link rel="stylesheet" href="setting-make wallet.css">
-    <link rel="stylesheet" href="cssreset.css">
+    <link rel="stylesheet" href="../css/setting-make wallet.css">
+    <link rel="stylesheet" href="../css/cssreset.css">
     <script>
 
     </script>
@@ -19,7 +19,7 @@
 
 
         <a href="http://hashbazaar.com">
-               <div> <img class="Logo_header" src="img/Logo_header.svg" alt="Logo_header"> </div>    </a>
+               <div> <img class="Logo_header" src="../img/Logo_header.svg" alt="Logo_header"> </div>    </a>
 
     </header>
 
@@ -29,15 +29,25 @@
     <div id="setting-page">
 
         <div class="setting-flex">
+
             <div class="flex-item one"><a href="{{route('userInfo')}}">User Information</a>
+
+
 
             </div>
 
 
-            <div class="flex-item-two flex-item"><a style="color:orange" href="{{route('changePassword')}}" class="change">Change Password</a></div>
+
+            {{--<div class="flex-item-two flex-item"><a style="color:orange" href="{{route('changePassword')}}" class="change">Change Password</a></div>--}}
 
 
-            <div class="flex-item three"><a href="{{route('wallet')}}">Wallet</a></div>
+            {{--<div class="flex-item three"><a href="{{route('wallet')}}">Wallet</a></div>--}}
+
+            <div class="flex-item-two flex-item"><a href="{{route('changePassword')}}" class="change">Change Password</a></div>
+
+
+            <div class="flex-item three"><a style="color:orange" href="{{route('wallet')}}">Wallet</a></div>
+
 
         </div>
 
@@ -59,9 +69,9 @@
                 <div class="address-box">
                         <input type="text" placeholder="SDKnsdakndnj12n1k1lkmdsalm">
 
-                     <a href="mail-icon"><img class="icon" src="img/Mail.svg" alt=""></a>
-                    <a href="link-icon"><img class="icon" src="img/Link.svg" alt=""></a>
-                     <a href="copy-icon"><img class="icon" src="img/Copy.svg" alt=""></a>
+                     <a href="mail-icon"><img class="icon" src="../img/Mail.svg" alt=""></a>
+                    <a href="link-icon"><img class="icon" src="../img/Link.svg" alt=""></a>
+                     <a href="copy-icon"><img class="icon" src="../img/Copy.svg" alt=""></a>
                 </div>
 
                 <div class="change-address">
@@ -108,16 +118,16 @@
 
         <nav class="container-setting-make-wallet">
             <ul class="mainList">
-                <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="img/Logo_In_NavBar.svg" alt="Logo_In_NavBar"></a>
-                    <a href="http://hashbazaar.com" id="welcome">Welcome User</a> </li>
-
-                <li class="sub dashboard"> <a href="file:///E:/Web%20Design/%23BAZAAR%20project/dashboard.html" id="dashboard">Dashboard</a></li>
-                <li class="sub"> <a href="file:///E:/Web%20Design/%23BAZAAR%20project/activity.html" id="activity">Activity</a></li>
-                <li class="sub"> <a href="file:///E:/Web%20Design/%23BAZAAR%20project/referral.html" id="referral">Referral</a> </li>
-                <li class="sub"> <a href="file:///E:/Web%20Design/%23BAZAAR%20project/setting.html" id="setting">Setting</a></li>
-                <li class="sub"> <a href="file:///E:/Web%20Design/%23BAZAAR%20project/contact.html" id="contact">Contact</a></li>
-
-            </ul>
+                <ul class="mainList">
+                    <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="img/Logo_In_NavBar.svg" alt="Logo_In_NavBar"></a>
+                        <a href="" id="welcome">Welcome User</a> </li>
+                        <li class="sub dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
+                        <li class="sub"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
+                        <li class="sub"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
+                        <li class="sub"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
+                        <li class="sub"> <a href="{{route('contact')}}" id="contact">Contact</a></li>
+    
+                </ul>
 
 
 
@@ -125,14 +135,14 @@
 
 
         <nav class="container-setting-make-wallet2">
-                <ul class="mainList2">
+            <ul class="mainList2">
 
-                    <li class="sub2 dashboard"> <a href="file:///E:/Web%20Design/%23BAZAAR%20project/dashboard.html" id="dashboard">Dashboard</a></li>
-                    <li class="sub2"> <a href="file:///E:/Web%20Design/%23BAZAAR%20project/activity.html" id="activity">Activity</a></li>
-                    <li class="sub2"> <a href="file:///E:/Web%20Design/%23BAZAAR%20project/referral.html" id="referral">Referral</a> </li>
-                    <li class="sub2"> <a href="file:///E:/Web%20Design/%23BAZAAR%20project/setting.html" id="setting">Setting</a></li>
-                    <li class="sub2"> <a href="file:///E:/Web%20Design/%23BAZAAR%20project/contact.html" id="contact">Contact</a></li>
-                </ul>
+                <li class="sub2 dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
+                <li class="sub2"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
+                <li class="sub2"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
+                <li class="sub2"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
+                <li class="sub2"> <a href="{{route('contact')}}" id="contact">Contact</a></li>
+            </ul>
 
 
 

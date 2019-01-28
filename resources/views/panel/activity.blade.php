@@ -130,8 +130,8 @@
         <nav class="container-activity">
             <ul class="mainList">
 
-                <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="img/Logo_In_NavBar.svg" alt="Logo_In_NavBar"></a>
-                    <a href="http://hashbazaar.com" id="welcome">Welcome User</a> </li>
+                <li class="navbar"> <a href=""><img class="Logo_In_NavBar" src="img/Logo_In_NavBar.svg" alt="Logo_In_NavBar"></a>
+                    <a href="" id="welcome">Welcome User</a> </li>
 
 
                     <li class="sub dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>

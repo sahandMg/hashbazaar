@@ -29,15 +29,15 @@
     <div id="setting-page">
 
         <div class="setting-flex">
-            <div class="flex-item one"><a href="file:///E:/Web%20Design/%23BAZAAR%20project/setting-information.html">User Information</a>
+            <div class="flex-item one"><a href="{{route('userInfo')}}">User Information</a>
 
             </div>
 
 
-            <div class="flex-item-two flex-item"><a href="file:///E:/Web%20Design/%23BAZAAR%20project/setting-changepassword.html" class="change">Change Password</a></div>
+            <div class="flex-item-two flex-item"><a style="color:orange" href="{{route('changePassword')}}" class="change">Change Password</a></div>
 
 
-            <div class="flex-item three"><a style="color:orange" href="file:///E:/Web%20Design/%23BAZAAR%20project/setting-wallet.html">Wallet</a></div>
+            <div class="flex-item three"><a href="{{route('wallet')}}">Wallet</a></div>
 
         </div>
 

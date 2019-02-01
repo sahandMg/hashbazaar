@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\CryptpBox\lib\Cryptobox;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\DB;
 use Stevebauman\Location\Facades\Location;
 use App\Http\Helpers;
 
@@ -160,6 +161,63 @@ class PaymentController extends Controller
         return redirect()->route('payment');
     }
 
+    public function confirmPayment(Request $request){
+
+        if(!$request->has('orderid')){
+
+            return 'Cant find transaction !';
+        }
+
+        $trans = DB::table('crypto_payments')->where('orderID',$request->orderid)->first();
+
+        if(is_null($trans)){
+
+            return 'Transaction not found';
+        }
+
+        $all_keys = array(
+            "bitcoin" => array(
+                "public_key" => "37917AAhw0Q9Speedcoin77SPDPUBUR2avCPSe9Rbpq8pX41HD",
+                "private_key" => "37917AAhw0Q9Speedcoin77SPDPRVxAI38mYYRe0eD3JKPEwvW"
+            )
+        );
+        $orderID = $trans->orderID;
+        $userFormat = 'SESSION';
+        $userID = $trans->userID;
+        $amount = $trans->amount;
+        $public_key  = $all_keys['bitcoin']["public_key"];
+        $private_key = $all_keys['bitcoin']["private_key"];
+        $period			= "NOEXPIRY";	  // one time payment, not expiry
+        $def_language	= "en";			  // default Language in payment box
+        $options = array(
+            "public_key"  	=> $public_key,	    // your public key from gourl.io
+            "private_key" 	=> $private_key,	// your private key from gourl.io
+            "webdev_key"  	=> "", 			    // optional, gourl affiliate key
+            "orderID"     	=> $orderID, 		// order id or product name
+            "userID"      	=> $userID, 	// unique identifier for every user
+            "userFormat"  	=> $userFormat, 	// save userID in COOKIE, IPADDRESS, SESSION  or MANUAL
+            "amount"   	  	=> $amount, // product price in btc/bch/bsv/ltc/doge/etc OR setup price in USD below
+            "amountUSD"   	=> 0,	    // we use product price in USD
+            "period"      	=> $period, 	// payment valid period
+            "language"	  	=> $def_language    // text on EN - english, FR - french, etc
+        );
+
+        $box = new Cryptobox ($options);
+        $response = $box->get_json_values();
+        if($response['confirmed'] == 1){
+
+            DB::table('crypto_payments')->where('orderID',$request->orderid)->update(['txConfirmed'=>1]);
+            // send email to user that transaction has been confirmed
+            // change transaction status in admin panel
+            return 1;
+        }else{
+
+            return 0;
+        }
+
+
+
+    }
     public function cryptobox_new_payment($paymentID = 0, $payment_details = array(), $box_status = ""){
 
             /** .............

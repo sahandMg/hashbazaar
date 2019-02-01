@@ -139,6 +139,7 @@
     @endforeach
 @endif
 
+            <input type="text" name="name" placeholder="name">
            <input type="text" name="email" placeholder="email address"/>
            <!-- <span style="color: #ae5856;">error</span> -->
            <input type="password" name="password" placeholder="password"/>

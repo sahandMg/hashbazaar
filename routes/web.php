@@ -114,3 +114,12 @@ Route::get('payment','PaymentController@payment')->name('payment');
 Route::post('payment','PaymentController@postPayment')->name('payment');
 
 Route::post('cryptobox.callback.php','PaymentController@paymentCallback')->name('paymentCallback');
+
+Route::get('payment/confirm','PaymentController@confirmPayment')->name('confirmPayment');
+
+Route::group(['prefix'=>'admin'],function (){
+
+    Route::get('main',['as'=>'main','uses'=>'AdminController@index']);
+    Route::get('transactions',['as'=>'adminTransactions','uses'=>'AdminController@transactions']);
+    Route::get('get-transactions',['as'=>'adminGetTransactions','uses'=>'AdminController@getTransactions']);
+});

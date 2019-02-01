@@ -19,11 +19,13 @@ class AuthController extends Controller
    */
     public function subscribe(Request $request,User $user){
         $this->validate($request,[
+         'name' => 'required',
         'email'=>'required|email|unique:users',
         'password'=> 'required',
         'confirm_password' => 'required|same:password'
 
         ]);
+        $user->name = $request->name;
         $user->email = $request->email;
         $user->code = str_random(10);
         $user->password = Hash::make($request->password);

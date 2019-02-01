@@ -9,6 +9,7 @@
 namespace App\Crawling;
 use GuzzleHttp\Client as GuzzleClient;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Symfony\Component\DomCrawler\Crawler;
@@ -59,14 +60,15 @@ class CoinMarketCap
             array_shift($crawledPrices);
 
         $CryptoCrawl = array_combine($crawledCoins,$crawledPrices);
+        Config::push('constants.coinPrices',$CryptoCrawl);
         if($CryptoCrawl['Ethereum'] <= 100){
 
             $data = ['CryptoCrawl'=>$CryptoCrawl];
-            Mail::send('cryptoMailPage',$data,function($message){
-                $message->from('Admin@HashBazaar');
-                $message->to('s23.moghadam@gmail.com');
-                $message->subject('Crypto Prices');
-            });
+//            Mail::send('cryptoMailPage',$data,function($message){
+//                $message->from('Admin@HashBazaar');
+//                $message->to('s23.moghadam@gmail.com');
+//                $message->subject('Crypto Prices');
+//            });
 
         }
 

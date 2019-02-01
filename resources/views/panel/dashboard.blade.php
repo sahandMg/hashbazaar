@@ -86,9 +86,10 @@
 
             <h5 id="demo"></h5>
             <div class="slidecontainer">
-                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-
-                <form class="dashboard-page" action=""><button><p>Order</p></button></form>
+                <form class="dashboard-page" method="post" action="{{route('payment')}}">
+                    <input type="hidden" name="_token" value="{{csrf_token()}}">
+                    <input type="range" min="1" max="100" value="50" name="hash" class="slider" id="myRange">
+                    <button type="submit"><p>Order</p></button></form>
             </div>
 
 

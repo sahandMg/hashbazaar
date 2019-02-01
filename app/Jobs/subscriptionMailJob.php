@@ -36,15 +36,7 @@ class subscriptionMailJob implements ShouldQueue
     public function handle()
     {
         Log::warning('Job has been started');
-        $data = [
-            'code'=>$this->code,
-            'email'=>$this->email
-        ];
-        Mail::send('thanks',$data,function($message) use($data){
-            $message->from ('Admin@HashBazaar');
-            $message->to ($data['email']);
-            $message->subject ('Subscription Email');
-        });
+
 
         Log::warning('Job has been finished');
     }

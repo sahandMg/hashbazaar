@@ -34,7 +34,7 @@
                 <li class="navbar-list small"><a href="#">Gallery</a></li>
                 <li class="navbar-list small"><a href="#">Blog</a></li>
                 <li class="navbar-list small signup"><a href="#" >Sign Up</a></li>
-                <li class="navbar-list small login"><a href="#" >Log In</a></li>
+                <li class="navbar-list small login"><a href="{{route('login')}}" >Log In</a></li>
             </ul>
             
         </div>

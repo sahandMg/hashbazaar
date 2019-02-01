@@ -12,6 +12,7 @@
 */
 
 use App\Jobs\subscriptionMailJob;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Mail;
 use GuzzleHttp\Client as GuzzleClient;
 use Illuminate\Support\Facades\Cache;
@@ -75,11 +76,20 @@ Route::get('subscription','AuthController@subscription')->name('subscription');
 
 Route::post('subscription','AuthController@post_subscription')->name('subscription');
 
+Route::get('login','AuthController@login')->name('login');
+
+Route::post('login','AuthController@post_login')->name('login');
+
 Route::get('pricing','PageController@Pricing');
 /*
 *       Dashboard Routes
 */
+
 Route::get('dashboard','PanelController@dashboard')->name('dashboard');
+
+Route::post('dashboard','PanelController@postDashboard')->name('dashboard');
+
+Route::get('invoice','PanelController@makeInvoice')->name('invoice');
 
 Route::get('activity','PanelController@activity')->name('activity');
 
@@ -97,9 +107,10 @@ Route::get('referral','PanelController@referral')->name('referral');
 
 Route::get('contact','PanelController@contact')->name('contact');
 
-Route::get('test',function (){
-
-//    subscriptionMailJob::dispatch('sss@gmial.com','dsadsadaxzmczxmczx11231321');
 
 
-});
+Route::get('payment','PaymentController@payment')->name('payment');
+
+Route::post('payment','PaymentController@postPayment')->name('payment');
+
+Route::post('cryptobox.callback.php','PaymentController@paymentCallback')->name('paymentCallback');

@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Jobs\subscriptionMailJob;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
 
@@ -26,15 +28,28 @@ class AuthController extends Controller
         $user->code = str_random(10);
         $user->password = Hash::make($request->password);
         $user->reset_password = str_random(10);
-        $user->hash= $request->hash;
         // $user->plan_id = DB::table('plans')->where('name',$request->plan)->first()->id;
         // $user->period_id = DB::table('periods')->where('name',$request->period)->first()->id;
         $user->save();
-        subscriptionMailJob::dispatch($user->email,$user->code);
+//        subscriptionMailJob::dispatch($user->email,$user->code);
+        Auth::guard('user')->login($user);
+        $data = [
+            'code'=> $user->code,
+            'email'=>$user->email
+        ];
+        Mail::send('thanks',$data,function($message) use($data){
+            $message->from ('Admin@HashBazaar');
+            $message->to ($data['email']);
+            $message->subject ('Subscription Email');
+        });
+
         Session::put('code',$user->code);
         return redirect()->route('subscription');
     }
 
+    /*
+     * Subscription page after filling the form
+     */
     public function subscription(){
 
         if(session()->has('code')){
@@ -53,6 +68,29 @@ class AuthController extends Controller
      */
     public function post_subscription(Request $request){
 
+
+    }
+
+
+    public function login(){
+
+        return view('auth.login');
+    }
+
+    public function post_login(Request $request){
+
+        $this->validate($request,[
+            'email'=> 'required|email',
+            'password'=>'required'
+        ]);
+
+        if(Auth::guard('user')->attempt(['email'=>$request->email,'password'=>$request->password])){
+
+            return redirect()->route('dashboard');
+        }else{
+
+            return redirect()->back();
+        }
 
     }
 }

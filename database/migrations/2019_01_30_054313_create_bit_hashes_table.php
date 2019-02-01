@@ -18,7 +18,8 @@ class CreateBitHashesTable extends Migration
             $table->string('hash')->nullable();
             $table->unsignedInteger('user_id')->nullable();
             $table->unsignedInteger('life')->nullable();
-            $table->unsignedInteger('trans_id')->nullable();
+            $table->unsignedInteger('order_id')->nullable();
+            $table->boolean('confirmed')->default(false);
             $table->timestamps();
         });
     }

@@ -1,3 +1,6 @@
+
+/* CONCTACT */
+
 .mainContainer
 {
     background-color: #FFFDE8;
@@ -58,7 +61,7 @@ header div {
     background: white;
     width: 370px;
     top: 150px;
-    position: fixed;    /* bottom:500px */
+    position: fixed;    
 
 }
 
@@ -184,9 +187,11 @@ div ul .navbar #welcome {
 }
 
 #contact {
-    color: white
-}
+color: orange !important}
 
+#contact:hover {
+    color: white !important
+}
 #contact:before {
     content: "";
     background-image: url("../img/contact.svg");
@@ -247,8 +252,8 @@ div ul .navbar #welcome {
 
 
 #contact-page textarea{
-        resize: none;
-        position: absolute;
+    resize: none;
+    position: absolute;
     background: #FFFDE8;
     top: 410px ;
     left: 150px;
@@ -317,9 +322,8 @@ form.contact-page p:nth-of-type(1) {
 
 
 
-
-@media screen and (max-width:1024px)
-{
+/* Contact - Media - 1024 */
+@media screen and (max-width:1024px){
     /* ---------------=====Media====-------------Main Container--------------------------- */
 
     .container-contact {
@@ -453,7 +457,7 @@ form.contact-page p:nth-of-type(1) {
 }
 
 
-
+/* Contact - Media - 768 */
 @media screen and (max-width:768px) {
     body {
         background-color: #FFFDE8
@@ -465,11 +469,11 @@ form.contact-page p:nth-of-type(1) {
         display: none;
     }
     .container-contact2{
-    display: block;
-    position:  relative;
-    top: 22px;
-    width: 100%;
-    float: left;
+        display: block;
+        position:  relative;
+        top: 22px;
+        width: 100%;
+        float: left;
     }
 
     .container-activity2 .mainList2 {
@@ -556,71 +560,71 @@ form.contact-page p:nth-of-type(1) {
     }
     /* Contact */
 
-#contact-page {
-    position: relative;
-    top: 0px;
-    left: 0%;
-    width: 100%;
+    #contact-page {
+        position: relative;
+        top: 0px;
+        left: 0%;
+        width: 100%;
+    }
+
+
+    #contact-page h1 {
+        font-size: 30px;
+        width: 500px;
+        left: 170px;
+    }
+
+    #contact-page input:nth-of-type(1){
+        left: 170px;
+        top: 200px;
+    }
+
+
+    #contact-page input:nth-of-type(2){
+        left: 170px;
+        top: 300px;
+    }
+
+
+    #contact-page textarea{
+        background: #FFFDE8;
+            resize: none;
+            position: absolute;
+        top: 430px ;
+        left: 130px;
+        width: 510px;
+        height: 150px;
+    }
+
+    form.contact-page button {
+        top: 620px;
+        left:310px;
+    }
+
+    .contact-hr-footer {
+        top: 700px
+    }
+
+    /* Footer */
+
+
+    .contact-footer-div {
+        top:960px;
+        width: 94%;
+        left: 2%;
+        margin: 0%
+    }
+    .contact-footer-paragraph {
+        font-size: 18px;
+        top: -60px;
+        left: 230px
+
+    }
+
 }
 
 
-#contact-page h1 {
-    font-size: 30px;
-    width: 500px;
-    left: 170px;
-}
-
-#contact-page input:nth-of-type(1){
-    left: 170px;
-    top: 200px;
-}
-
-
-#contact-page input:nth-of-type(2){
-    left: 170px;
-    top: 300px;
-}
-
-
-#contact-page textarea{
-    background: #FFFDE8;
-        resize: none;
-        position: absolute;
-    top: 430px ;
-    left: 130px;
-    width: 510px;
-    height: 150px;
-}
-
-form.contact-page button {
-    top: 620px;
-    left:310px;
-}
-
-.contact-hr-footer {
-    top: 700px
-}
-
-/* Footer */
-
-
-.contact-footer-div {
-    top:960px;
-    width: 94%;
-    left: 2%;
-    margin: 0%
-}
-.contact-footer-paragraph {
-    font-size: 18px;
-    top: -60px;
-    left: 230px
-
-}
-
-}
-
-
-
+/* Contact - Media - 414 */
 @media screen and (max-width: 414px) {
 
 
@@ -641,10 +645,10 @@ form.contact-page button {
     }
     .container-contact2{
         display: block;
-    position:  relative;
-    top: 22px;
-    width: 100%;
-    float: left;
+        position:  relative;
+        top: 22px;
+        width: 100%;
+        float: left;
     }
 
     .container-contact2 .mainList2 {
@@ -736,57 +740,57 @@ form.contact-page button {
     }
     /* Contact */
 
-#contact-page {
-    position: relative;
-    top: 0px;
-    left: 0%;
-    width: 100%;
-}
+    #contact-page {
+        position: relative;
+        top: 0px;
+        left: 0%;
+        width: 100%;
+    }
 
 
-#contact-page h1 {
-    font-size: 20px;
-    width: 280px;
-    left: 60px;
-    top: 50px
+    #contact-page h1 {
+        font-size: 20px;
+        width: 280px;
+        left: 60px;
+        top: 50px
 
-}
+    }
 
-#contact-page input:nth-of-type(1){
-    left: 100px;
-    top: 100px;
-    width: 200px;
-    border-bottom: 2px solid
+    #contact-page input:nth-of-type(1){
+        left: 100px;
+        top: 100px;
+        width: 200px;
+        border-bottom: 2px solid
 
-}
-
-
-#contact-page input:nth-of-type(2){
-    left: 100px;
-    top: 160px;
-    width: 200px;
-    border-bottom: 2px solid
-}
+    }
 
 
-#contact-page textarea{
-    background: #FFFDE8;
-        resize: none;
-        position: absolute;
-    top: 250px ;
-    left: 70px;
-    width: 250px;
-    height: 150px;
-}
+    #contact-page input:nth-of-type(2){
+        left: 100px;
+        top: 160px;
+        width: 200px;
+        border-bottom: 2px solid
+    }
 
-form.contact-page button {
-    top: 520px;
-    left:130px;
-}
 
-.contact-hr-footer {
-    top: 700px
-}
+    #contact-page textarea{
+        background: #FFFDE8;
+            resize: none;
+            position: absolute;
+        top: 250px ;
+        left: 70px;
+        width: 250px;
+        height: 150px;
+    }
+
+    form.contact-page button {
+        top: 520px;
+        left:130px;
+    }
+
+    .contact-hr-footer {
+        top: 700px
+    }
 
 /* Footer */
 
@@ -815,7 +819,7 @@ form.contact-page button {
 }
 
 
-
+/* Contact - Media - 375 */
 @media screen and (max-width: 375px) {
     .container-contact2 .mainList2 .sub2{
         float: left;
@@ -892,6 +896,8 @@ form.contact-page button {
         width: 260px
     }
 }
+
+/* Contact - Media - 320 */
 @media screen and (max-width:320px) {
     .Logo_header {
         width: 200px;
@@ -1037,7 +1043,7 @@ form.contact-page button {
 
 
 
-
+/* REFERRAL */
 
 
 
@@ -1183,8 +1189,8 @@ div ul .navbar #welcome {
     top: 15px
 }
 
-#referral {
-    color: white;
+#referral:hover {
+    color: white !important;
 }
 #referral:before {
     content: "";
@@ -1227,6 +1233,7 @@ div ul .navbar #welcome {
 
 
 /* Referral */
+#referral {color: orange !important}
 
 #referral-page {
     position: absolute;
@@ -1370,13 +1377,14 @@ div ul .navbar #welcome {
     top: -60px;
     left: 250px
 }
-@media screen and (max-width:1024px)
-{
+
+/* Referral - Media - 1024 */
+@media screen and (max-width:1024px){
     /* ---------------=====Media====-------------Main Container--------------------------- */
 
     .container-referral {
         width: 270px;
-        height: 1000px;
+        height: 1100px;
 
 
     }
@@ -1462,90 +1470,91 @@ div ul .navbar #welcome {
 /* =======----media----==========================Referral==================================== */
 
 
-#referral-page q  {
-    font-size: 25px;
-   color: #2e2d2d;
-   font-weight: bold;
-   font-family: sans-serif;
-   position: absolute;
-   top: 80px;
-   left: 40px;
-}
-
-.referral-page_firstList {
-    font-size: 20px
-}
-
-
-#referral-page blockquote {
-    font-size: 20px;
-}
-
- #referral-page p {
-     font-size: 20px;
- }
-
- #referral-page dl {
- font-size: 20px;
-}
-
-#referral-page p:nth-of-type(2) {
-    font-size: 20px;
-
-}
-.referral-page_secondList_column ul li {
-    width: 120px;
-    margin-top: 15%;
-    font-size: 30px;
-
-}
-
-
- .referral-page_secondList_column
-{
-    flex-grow: 1;
-    position: relative;
-    top: 500px;
-    font-size: 20px;
+    #referral-page q  {
+        font-size: 25px;
     color: #2e2d2d;
+    font-weight: bold;
     font-family: sans-serif;
-    margin-left: 5%
-
-
-}
-.referral-hr-footer
-{
-    top: 820px;
-    width: 100%;
-    left: -580px
-}
-
-/* Footer */
-.referral-footer-div {
-    width: 70%;
-    left: 30%;
     position: absolute;
-    top: 1000px
-}
+    top: 80px;
+    left: 40px;
+    }
 
-#referral-footer-image {
-    width: 200px;
-    height: 100px;
-}
+    .referral-page_firstList {
+        font-size: 20px
+    }
 
-.referral-footer-paragraph {
+
+    #referral-page blockquote {
+        font-size: 20px;
+    }
+
+    #referral-page p {
+        font-size: 20px;
+    }
+
+    #referral-page dl {
     font-size: 20px;
-    font-family: sans-serif;
-    position: absolute;
-    top: -60px;
-    left: 250px
-}
+    }
+
+    #referral-page p:nth-of-type(2) {
+        font-size: 20px;
+
+    }
+    .referral-page_secondList_column ul li {
+        width: 120px;
+        margin-top: 15%;
+        font-size: 30px;
+
+    }
+
+
+    .referral-page_secondList_column
+    {
+        flex-grow: 1;
+        position: relative;
+        top: 500px;
+        font-size: 20px;
+        color: #2e2d2d;
+        font-family: sans-serif;
+        margin-left: 5%
+
+
+    }
+    .referral-hr-footer
+    {
+        top: 820px;
+        width: 100%;
+        left: -580px
+    }
+
+    /* Footer */
+    .referral-footer-div {
+        width: 70%;
+        left: 30%;
+        position: absolute;
+        top: 1000px
+    }
+
+    #referral-footer-image {
+        width: 200px;
+        height: 100px;
+    }
+
+    .referral-footer-paragraph {
+        font-size: 20px;
+        font-family: sans-serif;
+        position: absolute;
+        top: -60px;
+        left: 250px
+    }
 
 
 
 
 }
 
+/* Referral - Media - 768 */
 @media screen and (max-width:768px) {
 
     .container-referral {
@@ -1664,89 +1673,86 @@ div ul .navbar #welcome {
 
 
 
-    /* ==================================Referral================================ */
+        /* ==================================Referral================================ */
 
-#referral-page {
-    left: 1.5%;
-    width: 100%;
-}
-
-
-#referral-page q  {
-    font-size: 27px;
-}
-
-#referral-page_firstList {
-    font-size: 22px
-
-}
+    #referral-page {
+        left: 1.5%;
+        width: 100%;
+    }
 
 
-#referral-page blockquote {
+    #referral-page q  {
+        font-size: 27px;
+    }
+
+    #referral-page_firstList {
+        font-size: 22px
+
+    }
+
+
+    #referral-page blockquote {
+        font-size: 22px;
+    }
+
+    #referral-page p {
+        font-size: 22px;
+    }
+
+    #referral-page dl {
     font-size: 22px;
- }
+    }
 
- #referral-page p {
-     font-size: 22px;
- }
+    #referral-page p:nth-of-type(2) {
+        font-size: 25px;
+        font-family: sans-serif;
+        color: #2e2d2d;
+        position: absolute;
+        top: 400px;
+        left: 410px;
 
- #referral-page dl {
- font-size: 22px;
-}
+    }
 
-#referral-page p:nth-of-type(2) {
-    font-size: 25px;
-    font-family: sans-serif;
-    color: #2e2d2d;
-    position: absolute;
-    top: 400px;
-     left: 410px;
-
-}
-
- .referral-page_secondList_column
-{
-    top: 480px;
-    font-size: 20px;
+    .referral-page_secondList_column
+    {
+        top: 480px;
+        font-size: 20px;
 
 
-}
+    }
 
 
-.referral-page_secondList_column ul li {
-    width: 100px;
-    margin-top: 15%;
-    font-size: 27px;
-    font-weight: bolder !important;
-}
+    .referral-page_secondList_column ul li {
+        width: 100px;
+        margin-top: 15%;
+        font-size: 27px;
+        font-weight: bolder !important;
+    }
 
-.referral-hr-footer
-{
-    top: 800px
-}
+    .referral-hr-footer
+    {
+        top: 800px
+    }
 
-/* Footer */
+    /* Footer */
 
-.referral-footer-div {
-    width: 94%;
-    left: 0%;
-    position: absolute;
-    top: 1080px
-}
+    .referral-footer-div {
+        width: 94%;
+        left: 0%;
+        position: absolute;
+        top: 1080px
+    }
 
-.referral-footer-paragraph {
-    font-size: 18px;
-    left: 200px;
-    width: 320px
-}
+    .referral-footer-paragraph {
+        font-size: 18px;
+        left: 200px;
+        width: 320px
+    }
 
 
 }
 
-
-
-
-
+/* Referral - Media - 414 */
 @media screen and (max-width:414px) {
     header div {
         border-bottom: 4px solid orange;
@@ -1776,9 +1782,9 @@ div ul .navbar #welcome {
         width: 100%;
         float: left;
         z-index: 0;
-        }
+    }
 
-        .container-referral2 .mainList2 {
+    .container-referral2 .mainList2 {
             background: #2e2d2d;
             position: fixed;
             top: 0;
@@ -1787,17 +1793,17 @@ div ul .navbar #welcome {
             width: 414px;
             border-bottom: 2px solid orange;
             display: block
-        }
+    }
 
-        .container-referral2 .mainList2 .sub2{
+    .container-referral2 .mainList2 .sub2{
             float: left;
-    margin-left: 35px;
-    text-align: center;
-    margin-top: 10px;
-    top: 0;
-    font-size: 13px;
+            margin-left: 35px;
+            text-align: center;
+            margin-top: 10px;
+            top: 0;
+            font-size: 13px;
 
-        }
+    }
 
         .container-referral2 .mainList2 .sub2 a {
             text-decoration: none;
@@ -1873,155 +1879,155 @@ div ul .navbar #welcome {
 
 
 
-/* Referral */
+    /* Referral */
 
-#referral-page {
-    position: absolute;
-    top: 100px;
-    left: .5%;
-    width: 72%;
-}
-
-
-#referral-page q  {
-    font-size: 20px;
-   color: #2e2d2d;
-   font-weight: bold;
-   font-family: sans-serif;
-   position: absolute;
-   top: 60px;
-   left: 30px
-
-}
-
-.referral-page_firstList {
-    list-style-type:inherit;
-    position: absolute;
-    top: 100px;
-    left: 50px;
-    color: #2e2d2d;
-    font-family: sans-serif;
-    line-height: 2;
-    font-size: 17px;
-    width: 350px
-
-}
+    #referral-page {
+        position: absolute;
+        top: 100px;
+        left: .5%;
+        width: 72%;
+    }
 
 
-#referral-page blockquote {
-    font-size: 20px;
+    #referral-page q  {
+        font-size: 20px;
     color: #2e2d2d;
     font-weight: bold;
     font-family: sans-serif;
     position: absolute;
-    top: 330px;
-    left: 30px;
- }
+    top: 60px;
+    left: 30px
 
- #referral-page p {
-     font-size: 20px;
-     font-family: sans-serif;
-     color: #2e2d2d;
-     position: absolute;
-     top: 310px;
-     left: 200px;
+    }
 
- }
+    .referral-page_firstList {
+        list-style-type:inherit;
+        position: absolute;
+        top: 100px;
+        left: 50px;
+        color: #2e2d2d;
+        font-family: sans-serif;
+        line-height: 2;
+        font-size: 17px;
+        width: 350px
 
- #referral-page dl {
+    }
 
- font-size: 17px;
-    color: #2e2d2d;
-    font-weight: bold;
-    font-family: sans-serif;
-    position: absolute;
-    top: 400px;
-     left: 30px;
-}
 
-#referral-page p:nth-of-type(2) {
+    #referral-page blockquote {
+        font-size: 20px;
+        color: #2e2d2d;
+        font-weight: bold;
+        font-family: sans-serif;
+        position: absolute;
+        top: 330px;
+        left: 30px;
+    }
+
+    #referral-page p {
+        font-size: 20px;
+        font-family: sans-serif;
+        color: #2e2d2d;
+        position: absolute;
+        top: 310px;
+        left: 200px;
+
+    }
+
+    #referral-page dl {
+
     font-size: 17px;
-    font-family: sans-serif;
-    color: #2e2d2d;
-    position: absolute;
-    top: 400px;
-     left: 280px;
-     width: 50px
+        color: #2e2d2d;
+        font-weight: bold;
+        font-family: sans-serif;
+        position: absolute;
+        top: 400px;
+        left: 30px;
+    }
+
+    #referral-page p:nth-of-type(2) {
+        font-size: 17px;
+        font-family: sans-serif;
+        color: #2e2d2d;
+        position: absolute;
+        top: 400px;
+        left: 280px;
+        width: 50px
+
+    }
+
+
+    .referral-page_secondList
+    {
+        display: flex;
+        flex-flow: row wrap;
+        position: relative;
+        float: left;
+    }
+
+
+
+    .referral-page_secondList_column
+    {
+        flex-grow: 1;
+        position: relative;
+        top: 500px;
+        font-size: 20px;
+        color: #2e2d2d;
+        font-family: sans-serif;
+        left: 0px;;
+        height: 100px;
+        margin-left:40px
+
+
+    }
+
+
+    .referral-page_secondList_column ul li {
+        width: auto;
+        margin-top: 5%;
+        font-size: 30px;
+        font-weight: bolder !important;
+
+
+
+    }
+
+
+
+    .referral-hr-footer
+    {
+        top: 800px;
+        left:-310px;
+        width: 414px !important;
+    }
+
+    /* Footer */
+
+    .referral-footer-div {
+        width: 94%;
+        left: 0%;
+        position: absolute;
+        top: 1050px
+    }
+
+    .referral-footer-paragraph {
+        font-size: 14px;
+        margin-left: 0;
+        left: 70px;
+    }
+
+    #referral-footer-image {
+        width: 100px;
+        height: 50px;
+    }
+
+
 
 }
 
 
-.referral-page_secondList
- {
-     display: flex;
-     flex-flow: row wrap;
-     position: relative;
-     float: left;
- }
-
-
-
- .referral-page_secondList_column
-{
-    flex-grow: 1;
-    position: relative;
-    top: 500px;
-    font-size: 20px;
-    color: #2e2d2d;
-    font-family: sans-serif;
-    left: 0px;;
-    height: 100px;
-    margin-left:40px
-
-
-}
-
-
-.referral-page_secondList_column ul li {
-    width: auto;
-    margin-top: 5%;
-    font-size: 30px;
-    font-weight: bolder !important;
-
-
-
-}
-
-
-
-.referral-hr-footer
-{
-    top: 800px;
-    left:-290px;
-    width: 385px;
-}
-
-/* Footer */
-
-.referral-footer-div {
-    width: 94%;
-    left: 0%;
-    position: absolute;
-    top: 1050px
-}
-
-.referral-footer-paragraph {
-    font-size: 14px;
-    margin-left: 0;
-    left: 70px;
-}
-
-#referral-footer-image {
-    width: 100px;
-    height: 50px;
-}
-
-
-
-}
-
-
-
+/* Referral - Media - 375 */
 @media screen and (max-width:375px) {
     .container-referral2 .mainList2 {
         width: 375px !important;
@@ -2043,93 +2049,94 @@ div ul .navbar #welcome {
 
     }
 
-.referral-page_firstList {
-    list-style-type:inherit;
-    position: absolute;
-    top: 100px;
-    left: 40px;
-    color: #2e2d2d;
-    font-family: sans-serif;
-    line-height: 2;
-    font-size: 17px;
-    width: 300px
+    .referral-page_firstList {
+        list-style-type:inherit;
+        position: absolute;
+        top: 100px;
+        left: 40px;
+        color: #2e2d2d;
+        font-family: sans-serif;
+        line-height: 2;
+        font-size: 17px;
+        width: 300px
 
-}
-#referral-page blockquote {
-    font-size: 18px;
-    color: #2e2d2d;
-    font-weight: bold;
-    font-family: sans-serif;
-    position: absolute;
-    top: 330px;
-    left: 30px;
- }
+    }
+    #referral-page blockquote {
+        font-size: 18px;
+        color: #2e2d2d;
+        font-weight: bold;
+        font-family: sans-serif;
+        position: absolute;
+        top: 330px;
+        left: 30px;
+    }
 
- #referral-page p {
-     font-size: 18px;
-     font-family: sans-serif;
-     color: #2e2d2d;
-     position: absolute;
-     top: 310px;
-     left: 180px;
+    #referral-page p {
+        font-size: 18px;
+        font-family: sans-serif;
+        color: #2e2d2d;
+        position: absolute;
+        top: 310px;
+        left: 180px;
 
- }
+    }
 
     #referral-page dl {
 
         font-size: 16px;
-           color: #2e2d2d;
-           font-weight: bold;
-           font-family: sans-serif;
-           position: absolute;
-           top: 400px;
-            left: 30px;
-       }
+        color: #2e2d2d;
+        font-weight: bold;
+        font-family: sans-serif;
+        position: absolute;
+        top: 400px;
+        left: 30px;
+    }
 
-       #referral-page p:nth-of-type(2) {
-           font-size: 17px;
-           font-family: sans-serif;
-           color: #2e2d2d;
-           position: absolute;
-           top: 400px;
-            left: 280px;
-            width: 50px
+    #referral-page p:nth-of-type(2) {
+        font-size: 17px;
+        font-family: sans-serif;
+        color: #2e2d2d;
+        position: absolute;
+        top: 400px;
+        left: 280px;
+        width: 50px
 
-       }
+    }
 
 
-.referral-hr-footer
-{
-    top: 800px;
-    left:-290px;
-    width: 385px;
+    .referral-hr-footer
+    {
+        top: 800px;
+        left:-312px;
+        width: 375px;
+    }
+
+    /* Footer */
+
+    .referral-footer-div {
+        width: 94%;
+        left: 0%;
+        position: absolute;
+        top: 1050px
+    }
+
+    .referral-footer-paragraph {
+        font-size: 14px;
+        margin-left: 0;
+        left: 70px;
+    }
+
+    #referral-footer-image {
+        width: 100px;
+        height: 50px;
+    }
 }
 
-/* Footer */
 
-.referral-footer-div {
-    width: 94%;
-    left: 0%;
-    position: absolute;
-    top: 1050px
-}
-
-.referral-footer-paragraph {
-    font-size: 14px;
-    margin-left: 0;
-    left: 70px;
-}
-
-#referral-footer-image {
-    width: 100px;
-    height: 50px;
-}
-}
-
-
+/* Referral - Media - 320 */
 @media screen and (max-width: 320px) {
   .container-referral2 .mainList2 {
-        width: 320px;
+        width: 320px !important;
         display: block
     }
 
@@ -2190,91 +2197,83 @@ div ul .navbar #welcome {
         width: 300px
     }
 
-#referral-page blockquote {
-    font-size: 16px;
-    color: #2e2d2d;
-    font-weight: bold;
-    font-family: sans-serif;
-    position: absolute;
-    top: 330px;
-    left: 30px;
- }
+    #referral-page blockquote {
+        font-size: 16px;
+        color: #2e2d2d;
+        font-weight: bold;
+        font-family: sans-serif;
+        position: absolute;
+        top: 330px;
+        left: 30px;
+    }
 
- #referral-page p {
-     font-size: 15px;
-     font-family: sans-serif;
-     color: #2e2d2d;
-     position: absolute;
-     top: 315px;
-     left: 160px;
+    #referral-page p {
+        font-size: 15px;
+        font-family: sans-serif;
+        color: #2e2d2d;
+        position: absolute;
+        top: 315px;
+        left: 160px;
 
- }
+    }
 
     #referral-page dl {
 
         font-size: 15px;
-           color: #2e2d2d;
-           font-weight: bold;
-           font-family: sans-serif;
-           position: absolute;
-           top: 400px;
-            left: 30px;
-            line-height: 1.5
-       }
+        color: #2e2d2d;
+        font-weight: bold;
+        font-family: sans-serif;
+        position: absolute;
+        top: 400px;
+        left: 30px;
+        line-height: 1.5
+    }
 
-       #referral-page p:nth-of-type(2) {
-           font-size: 17px;
-           font-family: sans-serif;
-           color: #2e2d2d;
-           position: absolute;
-           top: 425px;
-            left:90px;
-            width: 50px
+     #referral-page p:nth-of-type(2) {
+        font-size: 17px;
+        font-family: sans-serif;
+        color: #2e2d2d;
+        position: absolute;
+        top: 425px;
+        left:90px;
+        width: 50px
 
-       }
+    }
 
 
-.referral-hr-footer
-{
-    top: 830px;
-    left:-290px;
-    width: 365px;
+    .referral-hr-footer
+    {
+        top: 830px;
+        left:-235px;
+        width: 315px !important;
+    }
+
+    /* Footer */
+
+    .referral-footer-div {
+        width: 94%;
+        left: 0%;
+        position: absolute;
+        top: 1050px
+    }
+
+    .referral-footer-paragraph {
+        font-size: 14px;
+        margin-left: 0;
+        left: 0px;
+    }
+
+    #referral-footer-image {
+        width: 100px;
+        height: 50px;
+    }
+
 }
-
-/* Footer */
-
-.referral-footer-div {
-    width: 94%;
-    left: 0%;
-    position: absolute;
-    top: 1050px
-}
-
-.referral-footer-paragraph {
-    font-size: 14px;
-    margin-left: 0;
-    left: 0px;
-}
-
-#referral-footer-image {
-    width: 100px;
-    height: 50px;
-}
-
-}
-
-
-
-
 
 
 
 
 /* ACTIVITY */
-
-
-
-
 
 
 
@@ -2407,8 +2406,8 @@ div ul .navbar #welcome {
     left: -60px;
     top: 15px
 }
-#activity {
-    color: white;
+#activity:hover{
+    color: white !important;
 }
 #activity:before {
     content: '';
@@ -2469,6 +2468,7 @@ div ul .navbar #welcome {
      width: 72%;
  }
 
+ #activity {color: orange !important}
 
  #activity-page q  {
      font-size: 30px;
@@ -2648,7 +2648,7 @@ div ul .navbar #welcome {
 }
 
 
-
+/* Activity-Media-1024 */
 @media screen and (max-width:1024px)
 {
     /* ---------------=====Media====-------------Main Container--------------------------- */
@@ -2784,7 +2784,7 @@ div ul .navbar #welcome {
 
     }
     #activity-page_secondList
-  {
+    {
       display: flex;
       flex-flow: row wrap;
       position: relative;
@@ -2792,7 +2792,7 @@ div ul .navbar #welcome {
       height: 300px;
       top: 450px;
       width: 730px
-  }
+    }
     #activity-page_secondList div ul li {
         font-weight: normal !important;
         width: 120px;
@@ -2806,8 +2806,8 @@ div ul .navbar #welcome {
 
 
 
- #activity-page_secondList_column
-{
+    #activity-page_secondList_column
+    {
     flex-grow: 1;
     position: relative;
     top: 100px;
@@ -2818,23 +2818,23 @@ div ul .navbar #welcome {
     margin-left: 7%
 
 
-}
+    }
 
    #activity-page .Transactions q {
       width: 180px;
       height: 30px;
       font-size: 25px;
-   }
+    }
    #activity-page_thirdList_column
-   {
+    {
        top: 450px;
        font-size: 20px;
        margin-left:7%
 
 
-   }
+    }
    #activity-page_thirdList
- {
+    {
      display: flex;
      flex-flow: row wrap;
      position: relative;
@@ -2842,7 +2842,7 @@ div ul .navbar #welcome {
      height: 300px;
      top: 480px;
      width: 730px;
- }
+    }
     #activity-page_thirdList_column
    {
        flex-grow: 1;
@@ -2884,7 +2884,7 @@ div ul .navbar #welcome {
 }
 
 
-
+/* Activity-Media-768 */
 @media screen and (max-width: 768px) {
     .container-activity {
         display: none;
@@ -2895,15 +2895,15 @@ div ul .navbar #welcome {
         width: 768px;
     }
 
-#activity-page {
-    height: 1000px;
+    #activity-page {
+        height: 1000px;
 
-    z-index: 0;
-}
-#activity-page_firstList {
-    z-index: 1;
+        z-index: 0;
+    }
+    #activity-page_firstList {
+        z-index: 1;
 
-}
+    }
     .container-activity2{
         position:  relative;
         top: 2px;
@@ -3044,7 +3044,7 @@ div ul .navbar #welcome {
    }
    #activity-page .Transactions  {
        width: 700px !important
- }
+    }
    #activity-page .Transactions q {
       height: 30px;
       font-size: 27px;
@@ -3092,6 +3092,7 @@ div ul .navbar #welcome {
 
 }
 
+/* Activity-Media-414 */
 @media screen and (max-width:414px) {
 
     .container-activity {
@@ -3326,7 +3327,7 @@ div ul .navbar #welcome {
 }
 
 
-
+/* Activity-Media-375 */
 @media screen and (max-width:375px) {
 
     .container-activity2 .mainList2 {
@@ -3562,13 +3563,13 @@ div ul .navbar #welcome {
        top: -60px;
        left: 20px
 
+    }
 }
 
 
 
 
-
-
+/* Activity-Media-320 */
 @media screen and (max-width: 320px) {
 
     .Logo_header {
@@ -3659,7 +3660,7 @@ div ul .navbar #welcome {
     #activity-page_secondList{
          width: 305px;
  
-     }
+    }
     #activity-page_thirdList{
         top:470px;
          width: 305px;
@@ -3677,7 +3678,7 @@ div ul .navbar #welcome {
 }
 
 
-}
+/* DASHBOARD */
 
 .mainContainer {
     background-color: #FFFDE8
@@ -3798,8 +3799,8 @@ div ul .navbar #welcome {
     background-size: 100% 100%;
     position: absolute;
 }
-#dashboard{
-    color: white
+#dashboard:hover{
+    color: white !important
 }
 #dashboard:before {
     content: "";
@@ -3867,7 +3868,8 @@ div ul .navbar #welcome {
 #dashboard-page {
     width: 72.3%;
     height: 1800px;
-    right: 0;
+    /* right: 0; */
+    left: 27.7%;
     top: 100px;
     position: absolute;
     box-sizing: border-box;
@@ -3878,6 +3880,8 @@ div ul .navbar #welcome {
 #dashboard:focus~#dashboard-page {
     display: none
 }
+
+#dashboard {color: orange !important}
 
 /* ======================================Circle=========================================== */
 #dashboard-page-circle {
@@ -4173,17 +4177,13 @@ left: 29.5%
 
 
 
-/*  ======================================Media=========================================== */
-
-
-@media screen and (max-width:1024px)
-{
+/* Dashboard-Media-1024 */
+@media screen and (max-width:1024px){
     /* ---------------=====Media====-------------Main Container--------------------------- */
 
     .container-dashboard {
         width: 270px;
-        /* height: 1850px; */
-
+        height: 2150px;
 
     }
 
@@ -4318,7 +4318,7 @@ left: 29.5%
 
 .dashboard-hr-footer
 {
-    top: 800px;
+    top: 700px;
 }
 /* ==================================================HASH History============================== */
 
@@ -4387,20 +4387,20 @@ form.dashboard-page button p {
     z-index: 2;
 }
 
-
+/* 
 canvas#chart1 {
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
     position: relative;
     top: 600px;
+} */
+
+
+canvas#chart1 {
+    top: 450px;
+    left: 0px
 }
-
-.chart1 {
-    width: 700px
-}
-
-
 
 
 
@@ -4419,10 +4419,7 @@ canvas#chart1 {
 }
 
 
-
-
-
-
+/* Dashboard-Media-768 */
 @media screen and (max-width:768px) {
 
     .container-dashboard {
@@ -4431,7 +4428,7 @@ canvas#chart1 {
 
     #dashboard-page {
         height: 1800px;
-
+        left: 0;
         width: 100%;
         z-index: 0;
     }
@@ -4771,9 +4768,7 @@ display: block;
 }
 
 
-
-
-
+/* Dashboard-Media-414 */
 @media screen and (max-width:414px) {
     .Logo_header {
         top: 0px;
@@ -5121,8 +5116,8 @@ display: block;
         -webkit-user-select: none;
         -ms-user-select: none;
         position: relative;
-        top: 600px;
-        width: 400px !important;
+        top: 450px;
+        width: 390px !important;
     }
 
 
@@ -5140,7 +5135,7 @@ display: block;
 
     .dashboard-hr-footer
     {
-        top: 690px
+        top: 590px
     }
 
     /* ============================================Footer======================================= */
@@ -5171,8 +5166,7 @@ display: block;
 
 
 
-
-
+/* Dashboard-Media-375 */
 @media screen and (max-width:375px) {
 
     .container-dashboard2 .mainList2 {
@@ -5418,7 +5412,7 @@ display: block;
         width: 10% !important;
         left: 0%;
         position: absolute;
-        top: 1780px
+        top: 1880px
     }
 
     #dashboard-footer-image {
@@ -5438,11 +5432,7 @@ display: block;
 }
 
 
-
-
-
-
-
+/* Dashboard-Media-320 */
 @media screen and (max-width: 320px) {
 
     .Logo_header {
@@ -5710,7 +5700,7 @@ display: block;
         -webkit-user-select: none;
         -ms-user-select: none;
         position: relative;
-        top: 500px;
+        top: 450px;
         width: 310px !important;
     }
 
@@ -5738,7 +5728,7 @@ display: block;
         width: 10% !important;
         left: 0%;
         position: absolute;
-        top: 1800px
+        top: 1900px
     }
 
     #dashboard-footer-image {

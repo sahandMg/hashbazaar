@@ -468,9 +468,9 @@ form.setting button p {
     
     .setting-hr-footer
     {
-        top: 670px;
-        left: -120px;
-    width: 400px
+        top: 650px;
+        left: -10px;
+    width: 100%
 
     }
 
@@ -532,9 +532,6 @@ form.setting button p {
     }
 
 }
-
-
-
 
 
 @media screen and (max-width:768px) {
@@ -718,6 +715,8 @@ form.setting button {
     top: 870px;
     width: 94%;
     left: 4%;
+    height: 100px
+
 }
 .setting--paragraph {
     font-size: 18px;
@@ -729,9 +728,6 @@ form.setting button {
     height: 110px !important;
 }
 }
-
-
-
 
 
 @media screen and (max-width:414px) {
@@ -931,6 +927,8 @@ form.setting button {
     top: 610px;
     width: 94%;
     left: 4%;
+    height: 100px
+
 }
 .setting-footer-paragraph {
     font-size: 15px;
@@ -1038,7 +1036,7 @@ form.setting button {
 }
 .setting-hr-footer
 {
-    top: 330px;
+    top: 300px;
     width: 100%;
     left: 0
 }
@@ -1047,13 +1045,14 @@ form.setting button {
 .setting-footer-div {
     top: 610px;
     width: 80%;
+    height: 100px;
     left: 2%;
 }
 .setting-footer-paragraph {
     font-size: 15px;
     left: 10px;
-    width: 350px
-    
+    width: 350px;
+    top: 0px
 }
 
 #setting-footer-image {
@@ -1062,8 +1061,6 @@ form.setting button {
 }
    
 }
-
-
 
 
 @media screen and (max-width: 320px) {
@@ -1121,9 +1118,10 @@ form.setting button {
 
     .setting-footer-div {
         width: 94%;
-        left: 5%;
+        left: 4%;
         position: absolute;
-        top: 620px
+        top: 620px;
+        height: 100px
     }
     
     .setting-footer-paragraph {
@@ -1135,6 +1133,7 @@ form.setting button {
     
     #setting-footer-image {
         width: 100px;
+        display: block !important;
         height: 50px;
     }
     .Logo_header {

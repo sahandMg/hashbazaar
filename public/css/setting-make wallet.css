@@ -544,20 +544,20 @@ form#setting-make-wallet button p {
     }
 
     .make-wallet-hr111
-{
-    position:   relative;
-    top: 310px;
+    {
+        position:   relative;
+        top: 310px;
+        width: 25%;
+        left: -95px;
+
+    }
+
+    .make-wallet-hr222 {
+    position: relative;
+    top: 270px;
+    left: 480px;
     width: 25%;
-    left: -95px;
-
-}
-
-.make-wallet-hr222 {
-position: relative;
-top: 270px;
-left: 480px;
-width: 25%;
-}
+    }
 
 
     /*==============---media---============== Make wallet=============================== */
@@ -661,146 +661,146 @@ width: 25%;
     .container-setting-make-wallet {
         display: none;
     }
-header {
-    z-index: 1;
-}
-.wallet1 {
-    height: 1000px;
-    width: 100%;
-    z-index: 0;
-}
+    header {
+        z-index: 1;
+    }
+    .wallet1 {
+        height: 1000px;
+        width: 100%;
+        z-index: 0;
+    }
 
 
-.container-setting-make-wallet2{
-    position:  relative;
-    top: 2px;
-    width: 100%;
+    .container-setting-make-wallet2{
+        position:  relative;
+        top: 2px;
+        width: 100%;
+        float: left;
+        display: block;
+        z-index: 0;
+    }
+
+    .container-setting-make-wallet2 .mainList2 {
+        background: #2e2d2d;
+        position: fixed;
+        top: 0;
+        z-index:0;
+        height: 40px;
+        width: 100%;
+        border-bottom: 2px solid orange;
+    }
+
+    .container-setting-make-wallet2 .mainList2 .sub2{
     float: left;
-    display: block;
-    z-index: 0;
-}
-
-.container-setting-make-wallet2 .mainList2 {
-    background: #2e2d2d;
-    position: fixed;
+    margin-left: 80px;
+    text-align: center;
+    margin-top: 10px;
+    position: sticky;
     top: 0;
-    z-index:0;
-    height: 40px;
-    width: 100%;
-    border-bottom: 2px solid orange;
-}
 
-.container-setting-make-wallet2 .mainList2 .sub2{
-float: left;
-margin-left: 80px;
-text-align: center;
-margin-top: 10px;
-position: sticky;
-top: 0;
+    }
 
-}
+    .container-setting-make-wallet2 .mainList2 .sub2 a {
+    text-decoration: none;
+    color: orange
+    }
+    .container-setting-make-wallet2 .mainList2 .sub2 a:hover {
+    color: white;
+    }
+    .mainList {
+    display: none
+    }
 
-.container-setting-make-wallet2 .mainList2 .sub2 a {
-text-decoration: none;
-color: orange
-}
-.container-setting-make-wallet2 .mainList2 .sub2 a:hover {
-color: white;
-}
-.mainList {
-display: none
-}
+    #dashboard:before {
+    content: "";
+    background-image: url("img/Dashboard.svg");
+    width: 20px;
+    height: 20px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -30px;
+    top: 0px
+    }
 
-#dashboard:before {
-content: "";
-background-image: url("img/Dashboard.svg");
-width: 20px;
-height: 20px;
-background-size: 100% 100%;
-position: absolute;
-left: -30px;
-top: 0px
-}
-
-#activity:before {
-content: "";
-background-image: url("img/Activity.svg");
-width: 20px;
-height: 20px;
-background-size: 100% 100%;
-position: absolute;
-left: -30px;
-top: 0px
-}
+    #activity:before {
+    content: "";
+    background-image: url("img/Activity.svg");
+    width: 20px;
+    height: 20px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -30px;
+    top: 0px
+    }
 
 
-#referral:before {
-content: "";
-background-image: url("img/Referral.svg");
-width: 20px;
-height: 20px;
-background-size: 100% 100%;
-position: absolute;
-left: -30px;
-top: 0px
-}
+    #referral:before {
+    content: "";
+    background-image: url("img/Referral.svg");
+    width: 20px;
+    height: 20px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -30px;
+    top: 0px
+    }
 
-#setting:before {
-content: "";
-background-image: url("img/Setting.svg");
-width: 20px;
-height: 20px;
-background-size: 100% 100%;
-position: absolute;
-left: -30px;
-top: 0px
-}
+    #setting:before {
+    content: "";
+    background-image: url("img/Setting.svg");
+    width: 20px;
+    height: 20px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -30px;
+    top: 0px
+    }
 
-#contact:before {
-content: "";
-background-image: url("img/contact.svg");
-width: 20px;
-height: 20px;
-background-size: 100% 100%;
-position: absolute;
-left: -30px;
-top: 0px
-}
+    #contact:before {
+    content: "";
+    background-image: url("img/contact.svg");
+    width: 20px;
+    height: 20px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -30px;
+    top: 0px
+    }
     /* =======================================Setting Page=========================================== */
 
-#setting-page {
-    width: 99%;
-    left: .5%;
-}
+    #setting-page {
+        width: 99%;
+        left: .5%;
+    }
 
-#setting-page .setting-flex .flex-item a {
-    font-size: 18px;
-}
+    #setting-page .setting-flex .flex-item a {
+        font-size: 18px;
+    }
 
- .address-box a {
-     left: 330px;
-     margin-left: 25px;
-     position: relative;
- }
-.flex-item-two  {
-    font-size: 18px;
-}
+    .address-box a {
+        left: 330px;
+        margin-left: 25px;
+        position: relative;
+    }
+    .flex-item-two  {
+        font-size: 18px;
+    }
 
-.make-wallet-hr2 , .make-wallet-hr22 {
-    width: 27%
-}
-/* Footer */
+    .make-wallet-hr2 , .make-wallet-hr22 {
+        width: 27%
+    }
+    /* Footer */
 
-.make-wallet-footer-div {
-    top: 1190px;
-    width: 98%;
-    left: -28%;
-}
-.make-wallet-footer-paragraph {
-    font-size: 18px;
-    left: 230px;
-    
-}
+    .make-wallet-footer-div {
+        top: 1190px;
+        width: 98%;
+        left: -28%;
+    }
+    .make-wallet-footer-paragraph {
+        font-size: 18px;
+        left: 230px;
+        
+    }
 
     
 }   
@@ -812,51 +812,54 @@ top: 0px
     .container-setting-make-wallet {
         display: none;
     }
-header {
-    z-index: 1;
-}
-.wallet1 {
-    height: 1000px;
-    width: 100%;
-    z-index: 0;
-}
+    header {
+        z-index: 1;
+    }
+    .wallet1 {
+        height: 1000px;
+        width: 100%;
+        z-index: 0;
+    }
 
+    .Logo_header {
+        width: 300px;
+        left: 30px
+    }
+    .container-setting-make-wallet2{
+        position:  relative;
+        top: 2px;
+        width: 100%;
+        float: left;
+        display: block;
+        z-index: 0;
+    }
 
-.container-setting-make-wallet2{
-    position:  relative;
-    top: 2px;
-    width: 100%;
-    float: left;
-    display: block;
-    z-index: 0;
-}
+    .container-setting-make-wallet2 .mainList2 {
+        background: #2e2d2d;
+        position: fixed;
+        top: 0;
+        z-index:0;
+        height: 40px;
+        width: 100%;
+        border-bottom: 2px solid orange;
+    }
 
-.container-setting-make-wallet2 .mainList2 {
-    background: #2e2d2d;
-    position: fixed;
-    top: 0;
-    z-index:0;
-    height: 40px;
-    width: 100%;
-    border-bottom: 2px solid orange;
-}
+    .container-setting-make-wallet2 .mainList2 .sub2{
+        float: left;
+        margin-left: 35px;
+        text-align: center;
+        margin-top: 10px;
+        top: 0;
+        font-size: 13px;
+    }
 
-.container-setting-make-wallet2 .mainList2 .sub2{
-    float: left;
-    margin-left: 35px;
-    text-align: center;
-    margin-top: 10px;
-    top: 0;
-    font-size: 13px;
-}
-
-.container-setting-make-wallet2 .mainList2 .sub2 a {
-text-decoration: none;
-color: orange
-}
-.container-setting-make-wallet2 .mainList2 .sub2 a:hover {
-color: white;
-}
+    .container-setting-make-wallet2 .mainList2 .sub2 a {
+    text-decoration: none;
+    color: orange
+    }
+    .container-setting-make-wallet2 .mainList2 .sub2 a:hover {
+    color: white;
+    }
 
     .mainList {
         display: none
@@ -919,14 +922,14 @@ color: white;
     }
 /* =======================================Setting Page=========================================== */
 
-#setting-page {
-    width: 99%;
-    left: 0%;
-}
+    #setting-page {
+        width: 99%;
+        left: 0%;
+    }
 
-#setting-page .setting-flex .flex-item a {
-    font-size: 13px;
-}
+    #setting-page .setting-flex .flex-item a {
+        font-size: 13px;
+    }
 
 
     /*==============---media---============== Make wallet=============================== */
@@ -943,7 +946,9 @@ color: white;
         height: 100px;
         position: relative;
         top: 30px;
-        left: 160px
+        left: 160px;
+        border: 2px solid;
+        border-radius: 10px
     }
 
     .address .address-box .icon {
@@ -1023,36 +1028,34 @@ color: white;
     }
 
 
-
-
-.make-wallet-hr2 , .make-wallet-hr22 {
+    .make-wallet-hr2 , .make-wallet-hr22 {
         display: none;
-    width: 22%;
-    left: 150px
-}
-/* Footer */
-.make-wallet-footer-div {
-    top: 1130px;
-    width: 100%;
-    margin-left: 0%;
-    position: absolute;
-}
+        width: 22%;
+        left: 150px
+    }
+    /* Footer */
+    .make-wallet-footer-div {
+        top: 1130px;
+        width: 100%;
+        margin-left: 0%;
+        position: absolute;
+    }
 
-.make-wallet-footer-paragraph {
-    font-size: 15px;
-    font-family: sans-serif;
-    position: absolute;
-    top: -60px;
-    width: 300px;
-    left: 180px
-}
+    .make-wallet-footer-paragraph {
+        font-size: 15px;
+        font-family: sans-serif;
+        position: absolute;
+        top: -60px;
+        width: 300px;
+        left: 180px
+    }
 
-#make-wallet-footer-image {
-    width: 150px;
-    height: 100px;
-    left: 120px;
-    position: relative;
-}
+    #make-wallet-footer-image {
+        width: 150px;
+        height: 100px;
+        left: 120px;
+        position: relative;
+    }
 
 
 
@@ -1103,22 +1106,16 @@ color: white;
 }
 
 
-
-
-
-
-
-
 @media screen and (max-width: 320px) {
 
-.container-setting-make-wallet2 .mainList2 .sub2{
-    float: left;
-    margin-left: 20px;
-    text-align: center;
-    margin-top: 10px;
-    top: 0;
-    font-size: 13px;
-}
+    .container-setting-make-wallet2 .mainList2 .sub2{
+        float: left;
+        margin-left: 20px;
+        text-align: center;
+        margin-top: 10px;
+        top: 0;
+        font-size: 13px;
+    }
 
 
     #dashboard:before {
@@ -1145,16 +1142,16 @@ color: white;
         display: none;
 
     }
-/* =======================================Setting Page=========================================== */
+    /* =======================================Setting Page=========================================== */
 
-#setting-page {
-    width: 99%;
-    left: 0%;
-}
+    #setting-page {
+        width: 99%;
+        left: 0%;
+    }
 
-#setting-page .setting-flex .flex-item a {
-    font-size: 13px;
-}
+    #setting-page .setting-flex .flex-item a {
+        font-size: 13px;
+    }
 
 
     /*==============---media---============== Make wallet=============================== */
@@ -1259,33 +1256,33 @@ color: white;
 
 
 
-.make-wallet-hr2 , .make-wallet-hr22 {
-        display: none;
-    width: 22%;
-    left: 150px
-}
-/* Footer */
-.make-wallet-footer-div {
-    top: 1130px;
-    width: 100%;
-    margin-left: 0%;
-    position: absolute;
-}
+    .make-wallet-hr2 , .make-wallet-hr22 {
+            display: none;
+        width: 22%;
+        left: 150px
+    }
+    /* Footer */
+    .make-wallet-footer-div {
+        top: 1130px;
+        width: 100%;
+        margin-left: 0%;
+        position: absolute;
+    }
 
-.make-wallet-footer-paragraph {
-    font-size: 13px;
-    font-family: sans-serif;
-    position: absolute;
-    top: -60px;
-    width: 240px;
-    left: 20px
-}
+    .make-wallet-footer-paragraph {
+        font-size: 13px;
+        font-family: sans-serif;
+        position: absolute;
+        top: -60px;
+        width: 240px;
+        left: 20px
+    }
 
-#make-wallet-footer-image {
-    width: 150px !important;
-    height: 100px !important;
-    left: 20px;
-    position: relative;
-}
+    #make-wallet-footer-image {
+        width: 150px !important;
+        height: 100px !important;
+        left: 20px;
+        position: relative;
+    }
 
 }

@@ -25,9 +25,9 @@ class CreateUsersTable extends Migration
             $table->integer('hashUsd')->default(50);
             $table->float('interest')->nullable();
             $table->unsignedInteger('plan_id')->default(1);
-            $table->foreign('plan_id')->references('id')->on('plans');
+//            $table->foreign('plan_id')->references('id')->on('plans');
             $table->unsignedInteger('period_id')->default(1);
-            $table->foreign('period_id')->references('id')->on('periods');
+//            $table->foreign('period_id')->references('id')->on('periods');
             $table->rememberToken();
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();

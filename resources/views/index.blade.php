@@ -34,7 +34,7 @@
                 <li class="navbar-list small"><a href="#">Gallery</a></li>
                 <li class="navbar-list small"><a href="#">Blog</a></li>
                 <li class="navbar-list small signup"><a href="#" >Sign Up</a></li>
-                <li class="navbar-list small login"><a href="#" >Log In</a></li>
+                <li class="navbar-list small login"><a href="{{route('login')}}" >Log In</a></li>
             </ul>
             
         </div>
@@ -139,6 +139,7 @@
     @endforeach
 @endif
 
+            <input type="text" name="name" placeholder="name">
            <input type="text" name="email" placeholder="email address"/>
            <!-- <span style="color: #ae5856;">error</span> -->
            <input type="password" name="password" placeholder="password"/>

@@ -13,6 +13,7 @@
 
 use App\Jobs\subscriptionMailJob;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use GuzzleHttp\Client as GuzzleClient;
 use Illuminate\Support\Facades\Cache;
@@ -64,6 +65,11 @@ Route::get('job',function(){
 
     $CryptoCrawl = array_combine($crawledCoins,$crawledPrices);
     return view('cryptoMailPage',compact('CryptoCrawl'));
+});
+
+Route::get('test',function (){
+    $transactions = DB::table('crypto_payments')->orderBy('paymentID','desc')->get()->toArray();
+    dd($transactions);
 });
 
 Route::get('/','PageController@index')->name('index');
@@ -123,3 +129,7 @@ Route::group(['prefix'=>'admin'],function (){
     Route::get('transactions',['as'=>'adminTransactions','uses'=>'AdminController@transactions']);
     Route::get('get-transactions',['as'=>'adminGetTransactions','uses'=>'AdminController@getTransactions']);
 });
+
+Route::get('blog',['as'=>'blog','uses'=>'BlogController@index']);
+
+Route::get('customer-service',['as'=>'customerService','uses'=>'PageController@customerService']);

@@ -301,6 +301,7 @@ class Cryptobox {
 		{
 			$cryptobox_html .= "<form action='".$_SERVER["REQUEST_URI"]."#".($anchor?$anchor:"c".$this->iframeID)."' method='post'>";
             $cryptobox_html .= "<input  name ='_token' value=".csrf_token()." type='hidden'> ";
+            $cryptobox_html .= "<input  name ='amount' value=".$this->amount." type='hidden'> ";
             $cryptobox_html .= "<input type='hidden' id='cryptobox_live_' name='cryptobox_live_' value='$val'>";
 			$cryptobox_html .= "<div align='center'>";
 			$cryptobox_html .= "<button".(in_array($this->language, array("ar", "fa"))?' dir="rtl"':'')." style='color:#555;border-color:#ccc;background:#f7f7f7;-webkit-box-shadow:inset 0 1px 0 #fff,0 1px 0 rgba(0,0,0,.08);box-shadow:inset 0 1px 0 #fff,0 1px 0 rgba(0,0,0,.08);vertical-align:top;display:inline-block;text-decoration:none;font-size:13px;line-height:26px;min-height:28px;margin:20px 0 25px 0;padding:0 10px 1px;cursor:pointer;border-width:1px;border-style:solid;-webkit-appearance:none;-webkit-border-radius:3px;border-radius:3px;white-space:nowrap;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;font-family:\"Open Sans\",sans-serif;font-size: 13px;font-weight: normal;text-transform: none;'>&#160; ".str_replace(array("%coinName%", "%coinNames%", "%coinLabel%"), array($this->coinName, (in_array($this->coinLabel, array('BCH', 'BSV', 'DASH'))?$this->coinName:$this->coinName.'s'), $this->coinLabel), $this->localisation["button"]).($this->language!="ar"?" &#187;":"")." &#160;</button>";
@@ -927,13 +928,12 @@ class Cryptobox {
 	    // Payment Box Ajax Loading ...
 	    // ------------------------------
 	    $tmp .= "<div class='".$ext."loader' style='height:700px'>";
-
 	    $tmp .= "<form action='" . $page_url. "' method='post'>";
 	    $tmp .= "<input  name ='_token' value=".csrf_token()." type='hidden'> ";
+        $tmp .= "<input  name ='amount' value=".$this->amount." type='hidden'> ";
 	    $tmp .= "<div class='container text-center ".$ext."loader_button pt-5 mt-5'><br><br><br><br><br>";
 	    $tmp .= "<button type='submit' title='Click to Reload Page' class='btn btn-outline-secondary btn-lg'><i class='fas fa-spinner fa-spin'></i> &#160; " . $this->coin_name() . " " . $this->localisation["loading"] . "</button>";
 	    $tmp .= "</div>";
-
 	    $tmp .= "<div class='container'>";
 	    $tmp .= "<div class='row'>";
 	    $tmp .= "<div class='col-12 text-center col-sm-10 offset-sm-1 col-md-8 offset-md-2'>";
@@ -1045,7 +1045,6 @@ class Cryptobox {
     	     $tmp .= "</div>";
 	     }
 	     // End - A3. Box Language
-	     
 
 	     // A4. Logo
 	     // --------------------
@@ -1091,13 +1090,13 @@ class Cryptobox {
 	           
 	     $tmp .= "<div class='col-12 ".(CRYPTOBOX_WORDPRESS?"col-md-10 offset-md-1":"text-center col-sm-10 offset-sm-1 col-md-8 offset-md-2")."'>";
 	           
-	     $tmp .= "<form action='" . $page_url . "' method='post'>";
-         $tmp .= "<input  name ='_token' value=".csrf_token()." type='hidden'> ";
+	     $tmp .= "<form action='" . route('payment') . "' method='get'>";
+//         $tmp .= "<input  name ='_token' value=".csrf_token()." type='hidden'> ";
+         $tmp .= "<input  name ='amount' value=".$this->amount." type='hidden'> ";
 	     $tmp .= "<div class='card box-shadow'>";
 	     $tmp .= "<div class='card-header'>";
-	                 
 	     $tmp .= "<h4 class='my-0 font-weight-normal ".$ext."addr_title'><span class='".$ext."texts_coin_address'>&#160;</span>";
-//	     $tmp .= "<button type='submit' class='".$ext."refresh btn btn-sm btn-outline-secondary float-right'><i class='fas fa-sync-alt'></i></button>";
+	     $tmp .= "<button type='submit' class='".$ext."refresh btn btn-sm btn-outline-secondary float-right'><i class='fas fa-sync-alt'></i></button>";
 	     $tmp .= "<span class='".$ext."loading_icon mr-3 float-left' " . $hide . "> <i class='fas fa-laptop'></i></span>";
 	     $tmp .= "<span class='".$ext."loading_icon mr-3 float-left' " . $hide . "> <i class='fas fa-sync-alt fa-spin'></i></span>";
 	     $tmp .= "</h4>";
@@ -1141,6 +1140,7 @@ class Cryptobox {
 	         $tmp .= "<div class='col-12 text-center ".(CRYPTOBOX_WORDPRESS?"col-md-10 offset-md-1":"col-sm-10 offset-sm-1 col-md-8 offset-md-2")."'>";
 	         $tmp .= "<form action='" . $page_url . "' method='post'>";
              $tmp .= "<input  name ='_token' value=".csrf_token()." type='hidden'> ";
+             $tmp .= "<input  name ='amount' value=".$this->amount." type='hidden'> ";
 	         $tmp .= "<input type='hidden' id='".$ext."refresh2_' name='".$ext."refresh2_' value='1'>";
 	         $tmp .= "<br><button type='submit' class='".$ext."button_confirm btn btn-lg btn-block btn-primary my-2' style='white-space:normal'><i class='fas fa-angle-double-right'></i> &#160; ".str_replace(array("%coinName%", "%coinNames%", "%coinLabel%"), array($this->coinName, (in_array($this->coinLabel, array('BCH', 'BSV', 'DASH'))?$this->coinName:$this->coinName.'s'), $this->coinLabel), $this->localisation["button"])." &#160; <i class='fas fa-angle-double-right'></i></button>";
 	         $tmp .= "</form>";
@@ -1675,7 +1675,7 @@ class Cryptobox {
 		if (isset($arr[$id])) unset($arr[$id]);
 		
 		$lan = cryptobox_sellanguage($default);
-		
+
 		$url = $_SERVER["REQUEST_URI"];
 		if (mb_strpos($url, "?")) $url = mb_substr($url, 0, mb_strpos($url, "?"));
 		

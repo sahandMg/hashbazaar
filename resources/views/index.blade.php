@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html style="font-size: 100%">
 
 <head>
@@ -8,6 +8,7 @@
           content="Bitcoin mining, scrypt mining, cloud mining, hosted mining"/>
     <meta name="description"
           content="Bitcoin is the digital gold of the future & HashBazaar is the most cost effective cloud mining company on the market. Mine bitcoin through the cloud, get started today!"/>
+    <meta name="google-site-verification" content="roNqWp-CmbNsSN2R6ggCv2ubJwFNikEs_WJ7E2P3WDw" />    
     <title>Hash Bazar</title>
     <link rel="icon" href="img/TabLogo.png">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">

@@ -189,8 +189,23 @@
             var labels = [];labels.push(moment('April 01 2017', dateFormat));labels.push(moment('April 03 2017', dateFormat));labels.push(moment('April 04 2017', dateFormat));
             data.push({t:moment('April 01 2017', dateFormat).valueOf(),y: 27.96930236878253});data.push({t:moment('April 03 2017', dateFormat).valueOf(),y: 28.96930236878253});data.push({t: moment('April 04 2017', dateFormat).valueOf(), y: 29.96930236878253});
             var ctx = document.getElementById('chart1').getContext('2d');
-            ctx.canvas.parentNode.style.height = '300px';
-            ctx.canvas.parentNode.style.width = '700px';
+            if(window.screen.availWidth > 1024) {
+                ctx.canvas.parentNode.style.height = '300px';
+                ctx.canvas.parentNode.style.width = '700px';
+            } else if(window.screen.availWidth > 726) {
+                ctx.canvas.parentNode.style.height = '200px';
+                ctx.canvas.parentNode.style.width = '600px';
+            } else if(window.screen.availWidth > 400) {
+                ctx.canvas.parentNode.style.height = '300px';
+                ctx.canvas.parentNode.style.width = '400px';
+            } else if(window.screen.availWidth > 300) {
+                ctx.canvas.parentNode.style.height = '200px';
+                ctx.canvas.parentNode.style.width = '300px';
+            } else {
+                ctx.canvas.parentNode.style.height = '300px';
+                ctx.canvas.parentNode.style.width = '700px';
+            }
+            
 
             var color = Chart.helpers.color;
             var cfg = {

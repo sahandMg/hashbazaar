@@ -18,7 +18,8 @@ class PanelController extends Controller
 
     public function dashboard(){
 
-        return view('panel.dashboard');
+        $hashes = BitHash::where('user_id',Auth::guard('user')->id())->get();
+        return view('panel.dashboard',compact('hashes'));
     }
 
     /*

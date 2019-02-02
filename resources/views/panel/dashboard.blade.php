@@ -73,9 +73,18 @@
                      </div>
 
                     <div id="Hash-History_column"> Remain
-                             <ul class="remain">
+                             <ul> 
                                  @foreach($hashes as $hash)
-                                     <li style="top: 25px"><div>{{floor(\Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($hash->created_at)->addYears(2))/730*100)}}</div></li>
+                                    <li>
+                                     <div style="width: 180px; margin: 0px auto">
+                                      <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="{{floor(\Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($hash->created_at)->addYears(2))/730*100)}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{floor(\Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($hash->created_at)->addYears(2))/730*100)}}%">
+                                          <span class="title">{{floor(\Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($hash->created_at)->addYears(2))/730*100)}}%</span>
+                                        </div>
+                                      </div>
+                                     </div>
+                                     
+                                     </li>
                                  @endforeach
 
                             </ul>
@@ -165,6 +174,57 @@
 
 
         </div>
+        <style type="text/css">
+.progress {    border: 1px solid;}
+.progress-bar {
+    background-color: #ff9100;
+    text-align: center;
+    color: white;   
+  width: 0;
+  -webkit-animation: progress 1.5s ease-in-out forwards;
+          animation: progress 1.5s ease-in-out forwards;
+}
+.progress-bar .title {
+  opacity: 0;
+  -webkit-animation: show 0.35s forwards ease-in-out 0.5s;
+          animation: show 0.35s forwards ease-in-out 0.5s;
+}
+
+@-webkit-keyframes progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@-webkit-keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+</style>
                 <script>
                 axios.get({!! json_encode('totalEarn') !!}).then(function (response) {
                     // console.log("totalEarn");

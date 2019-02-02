@@ -33,9 +33,9 @@
             <!-- Circle -->
             <div id="dashboard-page-circle">
                 <span id="circle-span">Total Mining</span>
-                <p id="mining">&nbsp;0 &nbsp; <span style="color: orange; font-size: 30px">BTC</span> </p>
+                <p>&nbsp;<span id="miningBTC">0</span> &nbsp; <span style="color: orange; font-size: 30px">BTC</span> </p>
                 <hr style="width: 84%; text-align:center; top: 40%; position: relative;">
-                <p>36000.321 &nbsp; &nbsp; <span style="color: aqua; font-size: 30px">USD</span></p>
+                <p><span id="miningDollar">36000.321</span> &nbsp; &nbsp; <span style="color: aqua; font-size: 30px">USD</span></p>
 
             </div>
             <!-- Hash History -->
@@ -163,10 +163,12 @@
         </div>
                 <script>
                 axios.get({!! json_encode('totalEarn') !!}).then(function (response) {
-                    console.log("totalEarn");
-                    console.log(document.getElementById('mining').innerHTML);
-                    document.getElementById('mining').InnerHTML = response.data;
-                    console.log(response.data);
+                    // console.log("totalEarn");
+                    // console.log(response.data);
+                    // console.log("response.data");
+                    document.getElementById('miningBTC').innerHTML = response.data[0].toFixed(6);
+                    document.getElementById('miningDollar').innerHTML = response.data[1];
+                    // console.log(response.data);
                 });
                     var slider = document.getElementById("myRange");
                     var output = document.getElementById("demo");

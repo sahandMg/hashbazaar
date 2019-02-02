@@ -33,9 +33,9 @@
             <!-- Circle -->
             <div id="dashboard-page-circle">
                 <span id="circle-span">Total Mining</span>
-                <p>&nbsp;<span id="miningBTC">0</span> &nbsp; <span style="color: orange; font-size: 30px">BTC</span> </p>
+                <p>&nbsp;<span id="miningBTC"><img src="/img/ajax-loader.gif" height="40" width="40"></span> &nbsp; <span style="color: orange; font-size: 30px">BTC</span> </p>
                 <hr style="width: 84%; text-align:center; top: 40%; position: relative;">
-                <p><span id="miningDollar">36000.321</span> &nbsp; &nbsp; <span style="color: aqua; font-size: 30px">USD</span></p>
+                <p><span id="miningDollar"><img src="/img/ajax-loader.gif" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua; font-size: 30px">USD</span></p>
 
             </div>
             <!-- Hash History -->
@@ -48,32 +48,36 @@
                 <div id="Hash-History-list">
                     <div id="Hash-History_column"> Hash Power
                         <ul>
-                            <li>14 TH/S</li>
-                            <li>5 TH/S</li>
-
+                           @foreach($hashes as $hash)
+                            <li>{{$hash->hash}} TH/S</li>
+                            @endforeach
                         </ul>
                     </div>
 
                     <div id="Hash-History_column"> Started at
                             <ul>
-                                <li>12 Sep 2018</li>
-                                <li>12 Sep 2038</li>
+                                @foreach($hashes as $hash)
+                                    <li>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}} </li>
+                                @endforeach
 
                             </ul>
                     </div>
 
                     <div id="Hash-History_column"> Ends at
                             <ul>
-                                <li>12 Sep 2020</li>
-                                <li>12 Sep 2040</li>
+                                @foreach($hashes as $hash)
+                                    <li>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}</li>
+                                @endforeach
 
                             </ul>
                      </div>
 
                     <div id="Hash-History_column"> Remain
                              <ul class="remain">
-                                <li style="top: 25px"><div>80%</div></li>
-                                <li style="top: 15px"><div>40%</div></li>
+                                 @foreach($hashes as $hash)
+                                     <li style="top: 25px"><div>{{floor(\Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($hash->created_at)->addYears(2))/730*100)}}</div></li>
+                                 @endforeach
+
                             </ul>
                      </div>
                 </div>
@@ -166,8 +170,9 @@
                     // console.log("totalEarn");
                     // console.log(response.data);
                     // console.log("response.data");
+                    var sum = response.data[0].toFixed(6) *  response.data[1];
                     document.getElementById('miningBTC').innerHTML = response.data[0].toFixed(6);
-                    document.getElementById('miningDollar').innerHTML = response.data[1];
+                    document.getElementById('miningDollar').innerHTML = sum.toFixed(6);
                     // console.log(response.data);
                 });
                     var slider = document.getElementById("myRange");

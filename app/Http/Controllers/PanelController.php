@@ -20,6 +20,60 @@ class PanelController extends Controller
 
         return view('panel.dashboard');
     }
+
+    /*
+     * Get Total mining Ajax
+     */
+
+    public function totalEarn(){
+
+        $options = array( 'http' => array( 'method'  => 'GET') );
+        $context = stream_context_create($options);
+        $contents = file_get_contents('https://www.blockonomics.co/api/price?currency=USD', false, $context);
+        $bitCoinPrice = json_decode($contents);
+        if($bitCoinPrice->price == 0){
+
+            return 'bitcoin api failed';
+        }
+
+        $hashes = BitHash::where('user_id',Auth::guard('user')->id())->get();
+        if(!$hashes->isEmpty()){
+
+            $hashPower =  $hashes->sum('hash');
+            $userId = '13741374';
+            $apiKey = '7b07bc4b507b4d7584770f8ddddd02f1';
+            $nonce = rand(0,1000);
+            $secret = '0585329bf8eb48509b1ad13b709d9390';
+            $url = 'https://antpool.com/api/account.htm';
+            $signature = strtoupper(hash_hmac('sha256',$userId.$apiKey.$nonce, $secret,false));
+
+            $fields = [
+                'key'       => $apiKey,
+                'nonce'     =>  $nonce ,
+                'signature' =>  $signature,
+                'coin'      =>  'BTC'
+            ];
+
+            $ch = curl_init();
+            curl_setopt($ch,CURLOPT_URL, "$url?key=$apiKey&nonce=$nonce&signature=$signature&coin=BTC");
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $result = curl_exec($ch);
+            curl_close($ch);
+
+
+            $totalEarn = json_decode($result)->data->earnTotal;
+            $userEarn = $totalEarn/$hashPower;
+
+            return [$userEarn,$bitCoinPrice->price];
+        }else{
+            return $userEarn = 0;
+        }
+
+
+
+
+    }
+
     /*
      * Submit new HashPower Orders
      */

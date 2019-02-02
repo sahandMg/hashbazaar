@@ -68,8 +68,32 @@ Route::get('job',function(){
 });
 
 Route::get('test',function (){
-    $transactions = DB::table('crypto_payments')->orderBy('paymentID','desc')->get()->toArray();
-    dd($transactions);
+
+    $userId = '13741374';
+    $apiKey = '7b07bc4b507b4d7584770f8ddddd02f1';
+    $nonce = rand(0,1000);
+    $secret = '0585329bf8eb48509b1ad13b709d9390';
+    $url = 'https://antpool.com/api/account.htm';
+    $signature = strtoupper(hash_hmac('sha256',$userId.$apiKey.$nonce, $secret,false));
+
+    $fields = [
+        'key'       => $apiKey,
+        'nonce'     =>  $nonce ,
+        'signature' =>  $signature,
+        'coin'      =>  'BTC'
+    ];
+
+    $ch = curl_init();
+    curl_setopt($ch,CURLOPT_URL, "$url?key=$apiKey&nonce=$nonce&signature=$signature&coin=BTC");
+//    curl_setopt($ch,CURLOPT_POST, count($fields));
+//    curl_setopt($ch,CURLOPT_POSTFIELDS, $fields);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $result = curl_exec($ch);
+    curl_close($ch);
+
+
+    return $result;
+
 });
 
 Route::get('/','PageController@index')->name('index');
@@ -87,11 +111,16 @@ Route::get('login','AuthController@login')->name('login');
 Route::post('login','AuthController@post_login')->name('login');
 
 Route::get('pricing','PageController@Pricing');
+
 /*
-*       Dashboard Routes
+===============================================================================
+                                User Panel Routes
+===============================================================================
 */
 
 Route::get('dashboard','PanelController@dashboard')->name('dashboard');
+
+Route::get('totalEarn','PanelController@totalEarn')->name('totalEarn');
 
 Route::post('dashboard','PanelController@postDashboard')->name('dashboard');
 

@@ -10,6 +10,8 @@
         <link rel="stylesheet" href="css/cssreset.css">
         <title>Hash Bazaar - Dashboard</title>
 
+         <script  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" ></script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
         <script src="js/utils.js"></script>
@@ -31,7 +33,7 @@
             <!-- Circle -->
             <div id="dashboard-page-circle">
                 <span id="circle-span">Total Mining</span>
-                <p>10.00321 &nbsp; &nbsp; <span style="color: orange; font-size: 30px">BTC</span> </p>
+                <p id="mining">&nbsp;0 &nbsp; <span style="color: orange; font-size: 30px">BTC</span> </p>
                 <hr style="width: 84%; text-align:center; top: 40%; position: relative;">
                 <p>36000.321 &nbsp; &nbsp; <span style="color: aqua; font-size: 30px">USD</span></p>
 
@@ -160,7 +162,12 @@
 
         </div>
                 <script>
-
+                axios.get({!! json_encode('totalEarn') !!}).then(function (response) {
+                    console.log("totalEarn");
+                    console.log(document.getElementById('mining').innerHTML);
+                    document.getElementById('mining').InnerHTML = response.data;
+                    console.log(response.data);
+                });
                     var slider = document.getElementById("myRange");
                     var output = document.getElementById("demo");
                     output.innerHTML = slider.value+' Th';

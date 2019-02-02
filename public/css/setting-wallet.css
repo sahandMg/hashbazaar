@@ -330,8 +330,7 @@ form#setting-wallet button p {
     height: 100px;
 }
 
-@media screen and (max-width:1024px)
-{
+@media screen and (max-width:1024px){
     /* ---------------=====Media====-------------Main Container--------------------------- */
     
     .container-setting-wallet {
@@ -417,46 +416,46 @@ form#setting-wallet button p {
     
     .setting-wallet-hr-footer
     {
-        top: 700px;
+        top: 500px;
         left: -10px
     }
 
 
 
 
-/* Wallet 1 */
-.wallet1 p {
-    font-size: 19px;
-    margin: 5% 28%;
-    width: 350px;
-    text-align: center
-}
+    /* Wallet 1 */
+    .wallet1 p {
+        font-size: 19px;
+        margin: 5% 28%;
+        width: 350px;
+        text-align: center
+    }
 
-.wallet1 q {
-    margin: 10% 46%;;
-    font-family: sans-serif;
-    font-size: 30px;
-    font-weight: bold;
-    color: #2e2d2d;
-}
+    .wallet1 q {
+        margin: 10% 46%;;
+        font-family: sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+        color: #2e2d2d;
+    }
 
-.wallet1 blockquote {
-    margin: 7% 33%;;
-    font-family: sans-serif;
-    font-size: 20px;
-    color: #2e2d2d;
-    width: 300px
-}
+    .wallet1 blockquote {
+        margin: 7% 33%;;
+        font-family: sans-serif;
+        font-size: 20px;
+        color: #2e2d2d;
+        width: 300px
+    }
 
-.wallet1 input{
-    position: absolute;
-    margin: 5% 25%;
-    width: 400px;
-    height: 25px;
-    border: 3px solid transparent;
-    border-bottom: 1px solid black !important;
-    background-color: #FFFDE8
-}
+    .wallet1 input{
+        position: absolute;
+        margin: 5% 25%;
+        width: 400px;
+        height: 25px;
+        border: 3px solid transparent;
+        border-bottom: 1px solid black !important;
+        background-color: #FFFDE8
+    }
 
 
 
@@ -474,12 +473,6 @@ form#setting-wallet button p {
     }
 }
 
-
-
-
-
-
-
 @media screen and (max-width:768px) {
     .container-setting-wallet {
         display: none;
@@ -494,21 +487,21 @@ form#setting-wallet button p {
     }
     .container-setting-wallet2{
         display: block;
-    position:  relative;
-    top: 2px;
-    width: 100%;
-    float: left;
-    z-index: 0;
+        position:  relative;
+        top: 2px;
+        width: 100%;
+        float: left;
+        z-index: 0;
     }
 
     .container-setting-wallet2 .mainList2 {
         background: #2e2d2d;
-    position: fixed;
-    top: 0;
-    z-index:0;
-    height: 40px;
-    width: 100%;
-    border-bottom: 2px solid orange;
+        position: fixed;
+        top: 0;
+        z-index:0;
+        height: 40px;
+        width: 100%;
+        border-bottom: 2px solid orange;
     }
 
     .container-setting-wallet2 .mainList2 .sub2{
@@ -604,41 +597,41 @@ form#setting-wallet button p {
     .flex-item-two  {
     font-size: 18px;
     }
-    
-    
-    /* Wallet 1 */
-.wallet1 p {
-    font-size: 18px;
-    margin: 5% 28%;
-    width: 350px;
-    text-align: center
-}
+        
+        
+        /* Wallet 1 */
+    .wallet1 p {
+        font-size: 18px;
+        margin: 5% 28%;
+        width: 350px;
+        text-align: center
+    }
 
-.wallet1 q {
-    margin: 10% 46%;;
-    font-family: sans-serif;
-    font-size: 30px;
-    font-weight: bold;
-    color: #2e2d2d;
-}
+    .wallet1 q {
+        margin: 10% 46%;;
+        font-family: sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+        color: #2e2d2d;
+    }
 
-.wallet1 blockquote {
-    margin: 7% 33%;;
-    font-family: sans-serif;
-    font-size: 20px;
-    color: #2e2d2d;
-    width: 300px
-}
+    .wallet1 blockquote {
+        margin: 7% 33%;;
+        font-family: sans-serif;
+        font-size: 20px;
+        color: #2e2d2d;
+        width: 300px
+    }
 
-.wallet1 input{
-    position: absolute;
-    margin: 5% 25%;
-    width: 400px;
-    height: 25px;
-    border: 3px solid transparent;
-    border-bottom: 1px solid black !important;
-    background-color: #FFFDE8
-}
+    .wallet1 input{
+        position: absolute;
+        margin: 5% 25%;
+        width: 400px;
+        height: 25px;
+        border: 3px solid transparent;
+        border-bottom: 1px solid black !important;
+        background-color: #FFFDE8
+    }
 
 
 
@@ -667,8 +660,7 @@ form#setting-wallet button p {
         left: 230px    
         
     }
-    }
-
+}
 
 
 @media screen and (max-width:414px) {
@@ -685,6 +677,12 @@ form#setting-wallet button p {
     {
         z-index: 1;
     }
+        
+    .Logo_header {
+        width: 300px !important;
+        left: 30px;
+    }
+
     .container-setting-wallet2{
         display: block;
     position:  relative;
@@ -721,15 +719,6 @@ form#setting-wallet button p {
     .container-setting-wallet2 .mainList2 .sub2 a:hover {
         color: white;
     }
-
-
-
-
-
-
-
-
-
 
 
     .mainList {
@@ -793,14 +782,14 @@ form#setting-wallet button p {
     }
 /* =======================================Setting Page=========================================== */
 
-#setting-page {
-    width: 99%;
-    left: 0%;
-}
+    #setting-page {
+        width: 99%;
+        left: 0%;
+    }
 
-#setting-page .setting-flex .flex-item a {
-    font-size: 13px;
-}
+    #setting-page .setting-flex .flex-item a {
+        font-size: 13px;
+    }
 
 
 
@@ -874,16 +863,7 @@ form#setting-wallet button p {
 
 
 
-
-
-
-
-
-
-
-
 }
-
 
 
 @media screen and (max-width:375px) {
@@ -903,6 +883,14 @@ form#setting-wallet button p {
     }
 
 
+
+    form#setting-wallet button {
+        top: 110px;
+        left:150px;
+        width: 70px !important;
+        height: 30px;
+        margin-left: 0px;
+    }
     .setting-wallet-footer-div {
         width: 10% !important;
         left: 0%;
@@ -925,11 +913,10 @@ form#setting-wallet button p {
     }
 }
 
-
-
 @media screen and (max-width:320px) {
+
     .Logo_header {
-        width: 300px;
+        width: 250px !important;
         height: 90px;
         position: absolute;
         left: 10px;
@@ -947,45 +934,45 @@ form#setting-wallet button p {
         font-size: 11px;
     
     }
-/* Wallet 1 */
-.wallet1 p {
-    font-size: 14px;
-    margin: 5% 11%;
-    width: 250px;
-    text-align: center
-}
+    /* Wallet 1 */
+    .wallet1 p {
+        font-size: 14px;
+        margin: 5% 11%;
+        width: 250px;
+        text-align: center
+    }
 
-.wallet1 q {
-    margin: 10% 39%;;
-    font-family: sans-serif;
-    font-size: 30px;
-    font-weight: bold;
-    color: #2e2d2d;
-}
+    .wallet1 q {
+        margin: 10% 39%;;
+        font-family: sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+        color: #2e2d2d;
+    }
 
-.wallet1 blockquote {
-    margin: 7% 15%;
-    font-family: sans-serif;
-    font-size: 15px;
-    color: #2e2d2d;
-    width: 250px
-}
+    .wallet1 blockquote {
+        margin: 7% 15%;
+        font-family: sans-serif;
+        font-size: 15px;
+        color: #2e2d2d;
+        width: 250px
+    }
 
-.wallet1 input{
-    position: absolute;
-    margin: 5% 21%;
-    width: 150px;
-    height: 25px;
-    border: 3px solid transparent;
-    border-bottom: 1px solid black !important;
-    background-color: #FFFDE8
-}
+    .wallet1 input{
+        position: absolute;
+        margin: 5% 21%;
+        width: 150px;
+        height: 25px;
+        border: 3px solid transparent;
+        border-bottom: 1px solid black !important;
+        background-color: #FFFDE8
+    }
 
 
 
     form#setting-wallet button {
         top: 110px;
-        left:60px;
+        left:120px;
         width: 50px !important;
         height: 30px;
         margin-left: 0px;
@@ -995,5 +982,6 @@ form#setting-wallet button p {
         left: 0;
         position: relative;
     }
+    
     
 }

@@ -20,6 +20,35 @@
 <body id="page-top" style="background: white">
 <!-- class="masthead pb-3" -->
 <header id="header" >
+    {{-- navbar  ../../public/img/Logo_header.svg.svg.svg   --}}
+    <div class="header-navbar">
+        <div id="header-navbar-logo"> 
+            <ul>
+                <li class="navbar-list big"><img class="navbar-small-logo" src="{{asset('img/Logo_header.svg')}}" alt="Logo">
+            </ul>
+        </div>
+        <div id="header-navbar-menu"> 
+            <ul>
+                <li class="navbar-list small"><a href="#">Home</a></li>
+                <li class="navbar-list small"><a href="#">About</a></li>
+                <li class="navbar-list small"><a href="#">Gallery</a></li>
+                <li class="navbar-list small"><a href="#">Blog</a></li>
+                <li class="navbar-list small signup"><a href="#" >Sign Up</a></li>
+                <li class="navbar-list small login"><a href="{{route('login')}}" >Log In</a></li>
+            </ul>
+            
+        </div>
+
+            
+            <div class="navigation-menu">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+            </div>
+    </div>
+
+
+    {{--  --}}
     <div class="intro-body headerTheme">
         <div class="container">
             <div class="row">
@@ -110,6 +139,7 @@
     @endforeach
 @endif
 
+            <input type="text" name="name" placeholder="name">
            <input type="text" name="email" placeholder="email address"/>
            <!-- <span style="color: #ae5856;">error</span> -->
            <input type="password" name="password" placeholder="password"/>
@@ -122,6 +152,12 @@
   </div>
 
 </div>
+
+{{-- -------------- --}}
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="792f282f-edde-46b8-8b02-d38ca5cb92c2";
+(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";
+s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+
 <script src="js/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
@@ -188,6 +224,25 @@ window.onclick = function(event) {
 
   gtag('config', 'UA-131063343-1');
 </script>
+
+<script>
+        $(document).ready(function(){
+        
+        $('.navigation-menu').click(function(){
+            
+            $('#header-navbar-menu').toggle();
+            $('.login').show();
+            $('.signup').show();
+            $('.navigation-menu').toggleClass('change');
+
+        
+        })
+        
+
+
+        })
+        
+        </script>
 </body>
 
 </html>

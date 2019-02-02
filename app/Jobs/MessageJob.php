@@ -37,16 +37,6 @@ class MessageJob implements ShouldQueue
     public function handle()
     {
         Log::warning('Job has been started');
-        $data = [
-            'UserMessage'=>$this->UserMessage,
-            'email'=>$this->email
-        ];
-
-        // Mail::send('messageMailPage',$data,function($message) use($data){
-        //     $message->from ($data['email']);
-        //     $message->to ('Admin@HashBazaar');
-        //     $message->subject ('Subscription Email');
-        // });
 
         Log::warning('Job has been finished');
     }

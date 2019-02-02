@@ -59,7 +59,7 @@
                 <input type="text">
 
 
-                <button><p style="color:white;font-size:25px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Submit</p></button>
+                <button></button>
                 </form>
 
 

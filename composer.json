@@ -11,6 +11,7 @@
         "kevinrob/guzzle-cache-middleware": "^3.2",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
+        "stevebauman/location": "3.0",
         "symfony/dom-crawler": "^4.0",
         "symfony/psr-http-message-bridge": "^1.0"
     },
@@ -42,6 +43,9 @@
             ]
         }
     },
+    "files": [
+        "app/Http/helpers.php"
+    ],
     "scripts": {
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""

@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Crawling\CoinMarketCap;
 use App\Jobs\MessageJob;
 use App\Message;
+
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class PageController extends Controller
 {
@@ -31,7 +33,18 @@ Gets user message for form
         $message->email = $request->email;
         $message->message = $request->message;
         $message->save();
-        MessageJob::dispatch($request->email,$request->message);
+//        MessageJob::dispatch($request->email,$request->message);
+        $data = [
+            'UserMessage'=> $request->message,
+            'email'=> $request->email
+        ];
+
+         Mail::send('messageMailPage',$data,function($message) use($data){
+             $message->from ($data['email']);
+             $message->to ('Admin@HashBazaar');
+             $message->subject ('Form Email');
+         });
+
         return redirect()->back()->with(['message'=>'Your message has been sent!']);
     }
 
@@ -42,4 +55,5 @@ Gets user message for form
 
 
     }
+
 }

@@ -17,7 +17,7 @@ class AdminController extends Controller
 
     public function transactions(){
 
-        $transactions = DB::table('crypto_payments')->get();
+        $transactions = DB::table('crypto_payments')->orderBy('PaymentID','desc')->get()->toArray();
         return view('admin.transactions',compact('transactions'));
     }
     /*
@@ -28,7 +28,7 @@ class AdminController extends Controller
 
         $this->getConfirmedPayment();
 
-        $transactions = DB::table('crypto_payments')->get()->toArray();
+        $transactions = DB::table('crypto_payments')->orderBy('PaymentID','desc')->get()->toArray();
         return $transactions;
     }
 

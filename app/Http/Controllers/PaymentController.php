@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\BitHash;
 use App\Crawling\CoinMarketCap;
 use function App\CryptpBox\lib\cryptobox_selcoin;
+use function App\CryptpBox\lib\run_sql;
 use App\Transaction;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\CryptpBox\lib\Cryptobox;
 use Illuminate\Support\Facades\Auth;
@@ -36,13 +38,20 @@ class PaymentController extends Controller
 
             return 'bitcoin api failed';
         }
-        $userID = Auth::guard('user')->id();	  // place your registered userID or md5(userID) here (user1, user7, uo43DC, etc).
+        $userID = Auth::guard('user')->user()->name;	  // place your registered userID or md5(userID) here (user1, user7, uo43DC, etc).
         // You can use php $_SESSION["userABC"] for store userID, amount, etc
         // You don't need to use userID for unregistered website visitors - $userID = "";
         // if userID is empty, system will autogenerate userID and save it in cookies
         $userFormat		= "SESSION";       // save userID in cookies (or you can use IPADDRESS, SESSION, MANUAL)
         $orderID		= str_random(10);	  // invoice #000383
-        $amount          = $request->hash * Config::get('const.hashPowerUsd')/$bitCoinPrice->price;
+
+        if(!$request->has('hash')){
+
+            $amount = $request->amount;
+
+        }else{
+            $amount = $request->hash * Config::get('const.hashPowerUsd')/$bitCoinPrice->price;
+        }
         $period			= "NOEXPIRY";	  // one time payment, not expiry
         $def_language	= "en";			  // default Language in payment box
         $def_coin		= "bitcoin";      // default Coin in payment box
@@ -53,19 +62,6 @@ class PaymentController extends Controller
         //$coins = array('bitcoin', 'bitcoincash', 'bitcoinsv', 'litecoin', 'dash', 'dogecoin', 'speedcoin', 'reddcoin', 'potcoin', 'feathercoin', 'vertcoin', 'peercoin', 'monetaryunit', 'universalcurrency');
         $coins = ['bitcoin'];  // for example, accept payments in bitcoin, bitcoincash, litecoin, dash, speedcoin
 
-        // Create record for each your coin - https://gourl.io/editrecord/coin_boxes/0 ; and get free gourl keys
-        // It is not bitcoin wallet private keys! Place GoUrl Public/Private keys below for all coins which you accept
-
-
-//        $all_keys = array(
-//            "bitcoin"  =>
-//                array(
-//                    "public_key" => "37905AAMU6s6Bitcoin77BTCPUBvcBJk5qAm8oayz3MwFYeh6L",
-//                    "private_key" => "37905AAMU6s6Bitcoin77BTCPRVaGHpTpmfrIrnSZBdhLIISVz"
-//                )
-//        );
-
-
         // Demo Keys; for tests	(example - 5 coins)
         $all_keys = array(
             "bitcoin" => array(
@@ -73,20 +69,6 @@ class PaymentController extends Controller
                 "private_key" => "37917AAhw0Q9Speedcoin77SPDPRVxAI38mYYRe0eD3JKPEwvW"
             )
         );
-
-
-        //  IMPORTANT: Add in file /lib/cryptobox.config.php your database settings and your gourl.io coin private keys (need for Instant Payment Notifications) -
-        /* if you use demo keys above, please add to /lib/cryptobox.config.php -
-            $cryptobox_private_keys = array("25654AAo79c3Bitcoin77BTCPRV0JG7w3jg0Tc5Pfi34U8o5JE",
-                        "25656AAeOGaPBitcoincash77BCHPRV8quZcxPwfEc93ArGB6D", "25657AAOwwzoLitecoin77LTCPRV7hmp8s3ew6pwgOMgxMq81F",
-                        "25658AAo79c3Dash77DASHPRVG7w3jg0Tc5Pfi34U8o5JEiTss", "20116AA36hi8Speedcoin77SPDPRVNOwjzYNqVn4Sn5XOwMI2c",
-                        "36306AAQUmatBitcoinsv77BSVPRVJQJx21y8kvd7xxEWzK3zA");
-             Also create table "crypto_payments" in your database, sql code - https://github.com/cryptoapi/Payment-Gateway#mysql-table
-             Instruction - https://gourl.io/api-php.html
-         */
-
-
-
 
         // Re-test - all gourl public/private keys
         $def_coin = strtolower($def_coin);
@@ -131,8 +113,10 @@ class PaymentController extends Controller
             "language"	  	=> $def_language    // text on EN - english, FR - french, etc
         );
 
+
         // Initialise Payment Class
         $box = new Cryptobox ($options);
+
 //        $trans = new Transaction();
 //        $trans->order_id = $orderID;
 //        $trans->user_id = Auth::guard('user')->id();
@@ -153,10 +137,19 @@ class PaymentController extends Controller
             $hash->order_id = $orderID;
             $hash->confirmed = false;
             $hash->life = 2;
-            $hash->save();
-
+//            $hash->save();
+//        return view('payment.makePayment',compact('box','coins','def_coin','def_language'));
         session()->put('paymentData',['box'=>$box,'coins'=>$coins,'def_coin'=>$def_coin,'def_language'=>$def_language]);
         return redirect()->route('payment');
+    }
+
+    public function payment(){
+
+        if(!session()->has('paymentData')){
+
+            return 'Invalid Transaction';
+        }
+        return view('payment.makePayment');
     }
 
     /*
@@ -219,14 +212,7 @@ class PaymentController extends Controller
 
 
     }
-    public function payment(){
 
-        if(!session()->has('paymentData')){
-
-            return 'Invalid Transaction';
-        }
-        return view('payment.makePayment');
-    }
 
     public function paymentCallback(){
 
@@ -301,7 +287,8 @@ class PaymentController extends Controller
             if (!$_POST["confirmed"] || !is_numeric($_POST["confirmed"]))	$_POST["confirmed"] = 0;
 
 
-            $dt			= gmdate('Y-m-d H:i:s');
+            $dt			= Carbon::now();
+//            $dt			= gmdate('Y-m-d H:i:s');
             $obj 		= run_sql("select paymentID, txConfirmed from crypto_payments where boxID = ".$_POST["box"]." && orderID = '".$_POST["order"]."' && userID = '".$_POST["user"]."' && txID = '".$_POST["tx"]."' && amount = ".$_POST["amount"]." && addr = '".$_POST["addr"]."' limit 1");
 
 
@@ -347,6 +334,7 @@ class PaymentController extends Controller
 
 
         echo $box_status; // don'
+
     }
 /*
  * this function will executed after callback function

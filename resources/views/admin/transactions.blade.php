@@ -32,21 +32,33 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($transactions as $key=>$transaction)
 
-                <tr>
-                    <td>{{$transaction->paymentID}}</td>
-                    <td>{{$transaction->orderID}}</td>
-                    <td>{{DB::table('users')->where('id',$transaction->userID)->first()->name}}</td>
-                    <td>{{$transaction->countryID}}</td>
-                    <td>{{$transaction->amount}}</td>
-                    <td id="confirmed{{$key}}">{{$transaction->txConfirmed}}</td>
-                    <td id="unrecognised{{$key}}">{{$transaction->unrecognised}}</td>
-                    <td id="processed{{$key}}">{{$transaction->processed}}</td>
-                    <td>{{$transaction->recordCreated}}</td>
+
+                {{--<tr v-for="item in transactions">--}}
+                    {{--<td>{{$transaction->paymentID}}</td>--}}
+                    {{--<td>{{$transaction->orderID}}</td>--}}
+                    {{--<td>{{DB::table('users')->where('id',$transaction->userID)->first()->name}}</td>--}}
+                    {{--<td>{{$transaction->countryID}}</td>--}}
+                    {{--<td>{{$transaction->amount}}</td>--}}
+                    {{--<td id="confirmed{{$key}}">{{$transaction->txConfirmed}}</td>--}}
+                    {{--<td id="unrecognised{{$key}}">{{$transaction->unrecognised}}</td>--}}
+                    {{--<td id="processed{{$key}}">{{$transaction->processed}}</td>--}}
+                    {{--<td>{{$transaction->recordCreated}}</td>--}}
+                {{--</tr>--}}
+
+                <tr v-for="(transaction, index) in transactions">
+                    <td>@{{transaction.paymentID}}</td>
+                    <td>@{{transaction.orderID}}</td>
+                    <td>@{{transaction.userID}}</td>
+                    <td>@{{transaction.countryID}}</td>
+                    <td>@{{transaction.amount}}</td>
+                    <td id="confirmed">@{{transaction.txConfirmed}}</td>
+                    <td id="unrecognised">@{{transaction.unrecognised}}</td>
+                    <td id="processed">@{{transaction.processed}}</td>
+                    <td>@{{transaction.recordCreated}}</td>
                 </tr>
 
-            @endforeach
+
         </tbody>
     </table>
 
@@ -79,18 +91,17 @@
 
                 });
 
-
                 setTimeout(function () {
 
                     vm.getTrans()
                 },10000);
-
-                for(i=0 ; i< vm.transactions.length; i++){
-
-                    document.getElementById('confirmed'+i).innerHTML = vm.transactions[i]['txConfirmed'];
-                    document.getElementById('unrecognised'+i).innerHTML = vm.transactions[i]['unrecognised'];
-                    document.getElementById('processed'+i).innerHTML = vm.transactions[i]['processed'];
-                }
+//
+//                for(i=0 ; i< vm.transactions.length; i++){
+//
+//                    document.getElementById('confirmed'+i).innerHTML = vm.transactions[i]['txConfirmed'];
+//                    document.getElementById('unrecognised'+i).innerHTML = vm.transactions[i]['unrecognised'];
+//                    document.getElementById('processed'+i).innerHTML = vm.transactions[i]['processed'];
+//                }
             }
         }
     });

@@ -56,4 +56,9 @@ Gets user message for form
 
     }
 
+    public function customerService(){
+
+        return view('faq.index');
+    }
+
 }

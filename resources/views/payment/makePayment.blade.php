@@ -46,7 +46,7 @@ $custom_text .= "<p class='lead'>Please contact us for any questions on aaa@exam
 $box = $data['box'];
 // Display payment box
 echo $box->display_cryptobox_bootstrap($data['coins'], $data['def_coin'],$data['def_language'] , $custom_text, 70, 200, true, "default", "default", 250, "", "curl", true);
-
+//echo $box->display_cryptobox_bootstrap($coins, $def_coin, $def_language, $custom_text, 70, 200, true, "default", "default", 250, "", "curl", true);
 
 // You can setup method='curl' in function above and use code below on this webpage -
 // if successful bitcoin payment received .... allow user to access your premium data/files/products, etc.

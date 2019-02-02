@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
     <link rel="stylesheet" href="fonts/font-awesome.min.css">
     <link rel="stylesheet" href="css/theme.css">
+
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+
 </head>
 
 <body id="page-top" style="background: white">

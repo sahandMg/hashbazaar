@@ -31,10 +31,9 @@ class PanelController extends Controller
 
     public function totalEarn(Request $request){
 // getting bitcoin price in usd
-
         $mining = DB::table('minings')->where('user_id',$request->id)->first();
         if(is_null($mining)) {
-            return 404;
+            return [0,0];
         }
         else{
             return $userEarn = [$mining->mined_btc,$mining->mined_usd];

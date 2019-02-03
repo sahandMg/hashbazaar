@@ -122,7 +122,7 @@ class PaymentController extends Controller
          $hash = new BitHash();
          $hash->hash = $request->hash;
          $hash->user_id = Auth::guard('user')->id();
-         $hash->order_id = $request->orderid;
+         $hash->order_id = $orderID;
          $hash->confirmed = 0;
          $hash->life = $settings->hash_life;
          $hash->remained_day = Carbon::now()->diffInDays(Carbon::now()->addYears($hash->life));
@@ -132,8 +132,9 @@ class PaymentController extends Controller
 
         $mining = new Mining();
         $mining->mined_btc = 0;
+        $mining->mined_usd = 0;
         $mining->user_id = Auth::guard('user')->id();
-        $mining->order_id = $request->orderid;
+        $mining->order_id = $orderID;
         $mining->block = 1;
         $mining->save();
 

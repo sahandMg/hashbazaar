@@ -121,7 +121,7 @@ Route::get('pricing','PageController@Pricing');
 
 Route::get('dashboard','PanelController@dashboard')->name('dashboard');
 
-Route::get('totalEarn','PanelController@totalEarn')->name('totalEarn');
+Route::post('totalEarn','PanelController@totalEarn')->name('totalEarn');
 
 Route::post('dashboard','PanelController@postDashboard')->name('dashboard');
 

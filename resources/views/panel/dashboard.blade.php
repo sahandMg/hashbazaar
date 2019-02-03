@@ -18,6 +18,15 @@
     </head>
 
     <body>
+    <?php
+    $settings = DB::table('settings')->first();
+            foreach ($hashes as $key=> $hash){
+
+                $remainedLife[$key] = floor((\Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($hash->created_at)->addYears($hash->life)))/($hash->life * 365) * 100) ;
+            }
+
+
+    ?>
         <!-- Header -->
         <header>
 
@@ -45,51 +54,57 @@
             <hr class="dashboard-hr2-2">
 
            <div class="Hash-History">
-                <div id="Hash-History-list">
-                    <div id="Hash-History_column"> Hash Power
-                        <ul>
-                           @foreach($hashes as $hash)
-                            <li>{{$hash->hash}} TH/S</li>
-                            @endforeach
-                        </ul>
-                    </div>
 
-                    <div id="Hash-History_column"> Started at
-                            <ul>
-                                @foreach($hashes as $hash)
-                                    <li>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}} </li>
-                                @endforeach
+                        <div id="Hash-History-list">
+                            @if(!$hashes->isEmpty())
+                            <div id="Hash-History_column"> Hash Power
+                                <ul>
+                                   @foreach($hashes as $hash)
+                                    <li>{{$hash->hash}} TH/S</li>
+                                    @endforeach
+                                </ul>
+                            </div>
 
-                            </ul>
-                    </div>
+                            <div id="Hash-History_column"> Started at
+                                    <ul>
+                                        @foreach($hashes as $hash)
+                                            <li>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}} </li>
+                                        @endforeach
 
-                    <div id="Hash-History_column"> Ends at
-                            <ul>
-                                @foreach($hashes as $hash)
-                                    <li>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}</li>
-                                @endforeach
+                                    </ul>
+                            </div>
 
-                            </ul>
-                     </div>
+                            <div id="Hash-History_column"> Ends at
+                                    <ul>
+                                        @foreach($hashes as $hash)
+                                            <li>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}</li>
+                                        @endforeach
 
-                    <div id="Hash-History_column"> Remain
-                             <ul> 
-                                 @foreach($hashes as $hash)
-                                    <li>
-                                     <div style="width: 180px; margin: 0px auto">
-                                      <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="{{floor(\Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($hash->created_at)->addYears(2))/730*100)}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{floor(\Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($hash->created_at)->addYears(2))/730*100)}}%">
-                                          <span class="title">{{floor(\Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($hash->created_at)->addYears(2))/730*100)}}%</span>
-                                        </div>
-                                      </div>
-                                     </div>
-                                     
-                                     </li>
-                                 @endforeach
+                                    </ul>
+                             </div>
 
-                            </ul>
-                     </div>
-                </div>
+                            <div id="Hash-History_column"> Remain
+                                     <ul>
+                                         @foreach($hashes as $key => $hash)
+                                            <li>
+                                             <div style="width: 180px; margin: 0px auto">
+                                              <div class="progress">
+                                                <div class="progress-bar" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%">
+                                                  <span class="title">{{$remainedLife[$key]}}%</span>
+                                                </div>
+                                              </div>
+                                             </div>
+
+                                             </li>
+                                         @endforeach
+
+                                    </ul>
+                             </div>
+                            @else
+                                <p> NO Hash History</p>
+                            @endif
+                        </div>
+
              </div>
 
 
@@ -103,7 +118,7 @@
             <div class="slidecontainer">
                 <form class="dashboard-page" method="post" action="{{route('payment')}}">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
-                    <input type="range" min="1" max="100" value="50" name="hash" class="slider" id="myRange">
+                    <input type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="myRange">
                     <button type="submit"><p>Order</p></button></form>
             </div>
 
@@ -227,13 +242,21 @@
 </style>
                 <script>
                 axios.get({!! json_encode('totalEarn') !!}).then(function (response) {
-                    // console.log("totalEarn");
-                    // console.log(response.data);
+//                     console.log("totalEarn");
+//                     console.log(response.data);
                     // console.log("response.data");
-                    var sum = response.data[0].toFixed(6) *  response.data[1];
-                    document.getElementById('miningBTC').innerHTML = response.data[0].toFixed(6);
-                    document.getElementById('miningDollar').innerHTML = sum.toFixed(6);
-                    // console.log(response.data);
+                    if(response.data[0] == 0){
+
+                        document.getElementById('miningBTC').innerHTML = 0;
+                        document.getElementById('miningDollar').innerHTML = 0;
+                    }else{
+
+                        var sum = response.data[0].toFixed(6) *  response.data[1];
+                        document.getElementById('miningBTC').innerHTML = response.data[0].toFixed(6);
+                        document.getElementById('miningDollar').innerHTML = sum.toFixed(6);
+                        // console.log(response.data);
+                    }
+
                 });
                     var slider = document.getElementById("myRange");
                     var output = document.getElementById("demo");

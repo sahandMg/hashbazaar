@@ -23,6 +23,9 @@
 
 <body id="page-top" style="background: white">
 <!-- class="masthead pb-3" -->
+<?php
+    $settings = DB::table('settings')->first();
+?>
 <header id="header" >
     {{-- navbar  ../../public/img/Logo_header.svg.svg.svg   --}}
     <div class="header-navbar">
@@ -75,13 +78,13 @@
     <div class="container">
     <h5 id="demo"></h5>
     <div class="slidecontainer">
-        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        <input type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" class="slider" id="myRange">
     </div>
     <div style="text-align: left;font-weight: 700;">
       <p>Hash allocation cost : <span id="cost"></span> dollar</p>
-      <p>Maitanace fee: 0.5 dollar per Th/day</p>
+      <p>Maitanace fee: {{$settings->maintenance_fee_per_th_per_day}} dollar per Th/day</p>
       <small>(include all electricity, cooling, development, and servicing costs )</small>
-      <p>Income : At this time We predict 0.1 BTC/month for every Th.</p>
+      <p>Income : At this time We predict {{$settings->bitcoin_income_per_month_per_th}} BTC/month for every Th.</p>
       <small>(Changes may happen depends on bitcoin price and bitcoin network difficulty changes.)</small>
     </div>
        <div class="form-group fontTheme" style="margin-top: 2%;">

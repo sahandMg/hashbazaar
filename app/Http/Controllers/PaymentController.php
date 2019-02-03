@@ -131,13 +131,6 @@ class PaymentController extends Controller
 //        $trans->amount_usd = $request->hash * Config::get('const.hashPowerUsd');
 //        $trans->save();
 
-            $hash = new BitHash();
-            $hash->hash = $request->hash;
-            $hash->user_id = Auth::guard('user')->id();
-            $hash->order_id = $orderID;
-            $hash->confirmed = false;
-            $hash->life = 2;
-//            $hash->save();
 //        return view('payment.makePayment',compact('box','coins','def_coin','def_language'));
         session()->put('paymentData',['box'=>$box,'coins'=>$coins,'def_coin'=>$def_coin,'def_language'=>$def_language]);
         return redirect()->route('payment');
@@ -201,6 +194,18 @@ class PaymentController extends Controller
         if($response['confirmed'] == 1){
 
             DB::table('crypto_payments')->where('orderID',$request->orderid)->update(['txConfirmed'=>1]);
+
+
+            $hash = new BitHash();
+            $hash->hash = $request->hash;
+            $hash->user_id = Auth::guard('user')->id();
+            $hash->order_id = $request->orderid;
+            $hash->confirmed = false;
+            $hash->life = 2;
+            $hash->save();
+
+            DB::table('settings')->update(['available_th'=> DB::table('settings')->first()->total_th - $request->hash]);
+
             // send email to user that transaction has been confirmed
             // change transaction status in admin panel
             return 1;

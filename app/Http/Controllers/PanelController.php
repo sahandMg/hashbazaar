@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\BitHash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -27,7 +29,8 @@ class PanelController extends Controller
      */
 
     public function totalEarn(){
-
+// getting bitcoin price in usd
+        $settings = DB::table('settings')->first();
         $options = array( 'http' => array( 'method'  => 'GET') );
         $context = stream_context_create($options);
         $contents = file_get_contents('https://www.blockonomics.co/api/price?currency=USD', false, $context);
@@ -39,7 +42,7 @@ class PanelController extends Controller
 
         $hashes = BitHash::where('user_id',Auth::guard('user')->id())->get();
         if(!$hashes->isEmpty()){
-
+        $mainTHash = $settings->total_th;
             $hashPower =  $hashes->sum('hash');
             $userId = '13741374';
             $apiKey = '7b07bc4b507b4d7584770f8ddddd02f1';
@@ -63,11 +66,11 @@ class PanelController extends Controller
 
 
             $totalEarn = json_decode($result)->data->earnTotal;
-            $userEarn = $totalEarn/$hashPower;
+            $userEarn = $totalEarn * ($hashPower/$mainTHash);
 
             return [$userEarn,$bitCoinPrice->price];
         }else{
-            return $userEarn = 0;
+            return $userEarn = [0,0];
         }
 
 

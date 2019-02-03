@@ -21,6 +21,7 @@ class CreateSettingsTable extends Migration
             $table->float('maintenance_fee_per_th_per_day')->nullable();
             $table->float('bitcoin_income_per_month_per_th')->nullable();
             $table->float('available_th')->nullable();
+            $table->integer('hash_life')->nullable();
             $table->timestamps();
         });
 
@@ -30,6 +31,7 @@ class CreateSettingsTable extends Migration
             'usd_per_hash'=>50,
             'maintenance_fee_per_th_per_day'=> 0.5,
             'bitcoin_income_per_month_per_th'=> 0.1,
+            'hash_life'=> 2,
             'created_at'=>\Carbon\Carbon::now(),
             'updated_at'=>\Carbon\Carbon::now(),
         ]);

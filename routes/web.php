@@ -70,9 +70,28 @@ Route::get('job',function(){
 Route::get('test',function (){
 
 
-    $hash = \App\BitHash::first();
-    return (\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y'));
-    return \Carbon\Carbon::createFromTimestamp($hash->created_at)->addYears(2);
+    $userId = '13741374';
+    $apiKey = '7b07bc4b507b4d7584770f8ddddd02f1';
+    $nonce = rand(0,1000);
+    $secret = '0585329bf8eb48509b1ad13b709d9390';
+    $url = 'https://antpool.com/api/account.htm';
+    $signature = strtoupper(hash_hmac('sha256',$userId.$apiKey.$nonce, $secret,false));
+
+    $fields = [
+        'key'       => $apiKey,
+        'nonce'     =>  $nonce ,
+        'signature' =>  $signature,
+        'coin'      =>  'BTC'
+    ];
+
+    $ch = curl_init();
+    curl_setopt($ch,CURLOPT_URL, "$url?key=$apiKey&nonce=$nonce&signature=$signature&coin=BTC");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $result = curl_exec($ch);
+    curl_close($ch);
+
+    dd($result);
+    $totalEarn = json_decode($result)->data->earnTotal;
 
 
 

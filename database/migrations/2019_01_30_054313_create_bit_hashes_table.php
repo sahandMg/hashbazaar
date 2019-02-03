@@ -20,6 +20,7 @@ class CreateBitHashesTable extends Migration
             $table->unsignedInteger('life')->nullable();
             $table->unsignedInteger('order_id')->nullable();
             $table->boolean('confirmed')->default(false);
+            $table->unsignedInteger('remained_day')->nullable();
             $table->timestamps();
         });
     }

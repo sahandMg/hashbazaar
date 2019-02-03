@@ -6,6 +6,7 @@ use App\BitHash;
 use App\Crawling\CoinMarketCap;
 use function App\CryptpBox\lib\cryptobox_selcoin;
 use function App\CryptpBox\lib\run_sql;
+use App\Mining;
 use App\Transaction;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -28,7 +29,7 @@ class PaymentController extends Controller
         // cryptobox.newpayment.php will be automatically call through ajax/php two times - payment received/confirmed
         DEFINE("CRYPTOBOX_IMG_FILES_PATH", app_path()."images/");      // path to directory with coin image files (directory 'images' by default)
         DEFINE("CRYPTOBOX_JS_FILES_PATH", app_path()."js/");			// path to directory with files: ajax.min.js/support.min.js
-
+        $settings = DB::table('settings')->first();
         // updating bitcoin price
         $options = array( 'http' => array( 'method'  => 'GET') );
         $context = stream_context_create($options);
@@ -116,20 +117,25 @@ class PaymentController extends Controller
 
         // Initialise Payment Class
         $box = new Cryptobox ($options);
+        // new bitcoin hashpower query
 
-//        $trans = new Transaction();
-//        $trans->order_id = $orderID;
-//        $trans->user_id = Auth::guard('user')->id();
-//        $trans->txConfirmed = 0;
-//        try{
-//
-//
-//        }catch (\Exception $exception){
-//            $trans->country = 'FR';
-//        }
-//        $trans->amount = $amount;
-//        $trans->amount_usd = $request->hash * Config::get('const.hashPowerUsd');
-//        $trans->save();
+         $hash = new BitHash();
+         $hash->hash = $request->hash;
+         $hash->user_id = Auth::guard('user')->id();
+         $hash->order_id = $request->orderid;
+         $hash->confirmed = 0;
+         $hash->life = $settings->hash_life;
+         $hash->remained_day = Carbon::now()->diffInDays(Carbon::now()->addYears($hash->life));
+         $hash->save();
+
+
+
+        $mining = new Mining();
+        $mining->mined_btc = 0;
+        $mining->user_id = Auth::guard('user')->id();
+        $mining->order_id = $request->orderid;
+        $mining->block = 1;
+        $mining->save();
 
 //        return view('payment.makePayment',compact('box','coins','def_coin','def_language'));
         session()->put('paymentData',['box'=>$box,'coins'=>$coins,'def_coin'=>$def_coin,'def_language'=>$def_language]);
@@ -194,15 +200,6 @@ class PaymentController extends Controller
         if($response['confirmed'] == 1){
 
             DB::table('crypto_payments')->where('orderID',$request->orderid)->update(['txConfirmed'=>1]);
-
-
-            $hash = new BitHash();
-            $hash->hash = $request->hash;
-            $hash->user_id = Auth::guard('user')->id();
-            $hash->order_id = $request->orderid;
-            $hash->confirmed = false;
-            $hash->life = 2;
-            $hash->save();
 
             DB::table('settings')->update(['available_th'=> DB::table('settings')->first()->total_th - $request->hash]);
 
@@ -331,7 +328,9 @@ class PaymentController extends Controller
              *  Read more - https://gourl.io/api-php.html#ipn
              */
 
-            if (in_array($box_status, array("cryptobox_newrecord", "cryptobox_updated")) && function_exists('cryptobox_new_payment')) cryptobox_new_payment($paymentID, $_POST, $box_status);
+            if (in_array($box_status, array("cryptobox_newrecord", "cryptobox_updated")) && function_exists('cryptobox_new_payment'))
+                $this->cryptobox_new_payment($paymentID, $_POST, $box_status);
+
         }
 
         else
@@ -347,18 +346,20 @@ class PaymentController extends Controller
     public function cryptobox_new_payment($paymentID = 0, $payment_details = array(), $box_status = ""){
 
 
-
-
         if($payment_details['confirmed'] == 1){
 
             $hashPower = BitHash::where('order_id',$paymentID)->first();
-
             $hashPower->update(['confirmed'=>1]);
+            $hashPower->save();
 
-            Mail::send('thanks',[],function($message){
+            $mining = Mining::where('order_id',$paymentID)->first();
+            $mining->update(['block' => 0]);
+            $mining->save();
+
+            Mail::send('email.paymentConfirmed',[],function($message){
                 $message->from ('Admin@HashBazaar');
                 $message->to ('sahand.mg.ne@gmail.com');
-                $message->subject ('Subscription Email');
+                $message->subject ('Payment Confirmed !');
             });
         }
 

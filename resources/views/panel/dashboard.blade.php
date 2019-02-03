@@ -251,9 +251,9 @@
                         document.getElementById('miningDollar').innerHTML = 0;
                     }else{
 
-                        var sum = response.data[0].toFixed(6) *  response.data[1];
+
                         document.getElementById('miningBTC').innerHTML = response.data[0].toFixed(6);
-                        document.getElementById('miningDollar').innerHTML = sum.toFixed(6);
+                        document.getElementById('miningDollar').innerHTML = response.data[1].toFixed(6);
                         // console.log(response.data);
                     }
 

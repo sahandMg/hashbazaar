@@ -39,7 +39,7 @@ class AuthController extends Controller
             'code'=> $user->code,
             'email'=>$user->email
         ];
-        Mail::send('thanks',$data,function($message) use($data){
+        Mail::send('email.thanks',$data,function($message) use($data){
             $message->from ('Admin@HashBazaar');
             $message->to ($data['email']);
             $message->subject ('Subscription Email');

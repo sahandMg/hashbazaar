@@ -69,6 +69,12 @@ Route::get('job',function(){
 
 Route::get('test',function (){
 
+    $mining = \App\BitHash::first();
+    dd($mining->user);
+});
+
+Route::get('antpool',function (){
+
 
     $userId = '13741374';
     $apiKey = '7b07bc4b507b4d7584770f8ddddd02f1';

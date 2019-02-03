@@ -31,12 +31,12 @@ class PanelController extends Controller
 
     public function totalEarn(Request $request){
 // getting bitcoin price in usd
-        $mining = DB::table('minings')->where('user_id',$request->id)->first();
-        if(is_null($mining)) {
+        $mining = DB::table('minings')->where('user_id',$request->id)->where('block',0)->get();
+        if( ! $mining->isEmpty()) {
             return [0,0];
         }
         else{
-            return $userEarn = [$mining->mined_btc,$mining->mined_usd];
+            return $userEarn = [$mining->sum('mined_btc'),$mining->sum('mined_usd')];
         }
     }
 
@@ -47,38 +47,6 @@ class PanelController extends Controller
 
     }
 
-    public function makeInvoice(){
-
-        /*Blockonomics Configurations*/
-        $BASE_URL = 'https://www.blockonomics.co';
-        $NEW_ADDRESS_URL = $BASE_URL.'/api/new_address';
-        $PRICE_URL = $BASE_URL.'/api/price?currency=USD';
-        $API_KEY = 'hMXF2TdBtgFSCi4lbdNtz7mQiXdQcozDPL32BXrncUg';
-
-        $data = '';
-        $order_id = uniqid();
-
-        $options = array(
-            'http' => array(
-                'header'  => 'Authorization: Bearer '.$API_KEY,
-                'method'  => 'POST',
-                'content' => $data
-            )
-        );
-//Generate new address for this invoice
-        $context = stream_context_create($options);
-        $contents = file_get_contents($NEW_ADDRESS_URL, false, $context);
-        $new_address = json_decode($contents);
-
-//Getting price
-        $options = array( 'http' => array( 'method'  => 'GET') );
-        $context = stream_context_create($options);
-        $contents = file_get_contents('https://www.blockonomics.co/api/price?currency=USD', false, $context);
-        $price = json_decode($contents);
-
-        dd($price);
-
-    }
 
 
     public function activity(){

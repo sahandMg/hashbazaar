@@ -243,8 +243,8 @@
                 <script>
                     var id = {!! json_encode(\Illuminate\Support\Facades\Auth::guard('user')->id()) !!}
                 axios.post({!! json_encode('totalEarn') !!},{'id':id}).then(function (response) {
-                     console.log(id);
-                     console.log(response.data);
+//                     console.log(id);
+//                     console.log(response.data);
                     // console.log("response.data");
                     if(response.data[0] == 0){
 

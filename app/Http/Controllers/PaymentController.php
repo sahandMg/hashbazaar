@@ -6,6 +6,7 @@ use App\BitHash;
 use App\Crawling\CoinMarketCap;
 use function App\CryptpBox\lib\cryptobox_selcoin;
 use function App\CryptpBox\lib\run_sql;
+use App\Log;
 use App\Mining;
 use App\Setting;
 use App\Transaction;
@@ -348,29 +349,35 @@ class PaymentController extends Controller
  */
     public function cryptobox_new_payment($paymentID = 0, $payment_details = array(), $box_status = ""){
 
+        $orderID = DB::table('crypto_payments')->where('PaymentID',$paymentID)->first()->orderID;
+        $hashPower = BitHash::where('order_id',$orderID)->first();
+        $mining = Mining::where('order_id',$orderID)->first();
+        if(is_null($hashPower) || is_null($mining)){
 
-        $hashPower = BitHash::where('order_id',$paymentID)->first();
-        $user = $hashPower->user;
-        if($payment_details['confirmed'] == 1){
-            $hashPower->update(['confirmed'=>1]);
-            $hashPower->save();
+            \Log::warning('PaymentID : '.$orderID);
+        }else{
 
-            $mining = Mining::where('order_id',$paymentID)->first();
-            $mining->update(['block' => 0]);
-            $mining->save();
+            $user = $hashPower->user;
+            if($payment_details['confirmed'] == 1){
+                $hashPower->update(['confirmed'=>1]);
+                $hashPower->save();
+                $mining->update(['block' => 0]);
+                $mining->save();
 
-            Mail::send('email.paymentConfirmed',[],function($message) use($user){
+                Mail::send('email.paymentConfirmed',[],function($message) use($user){
+                    $message->from ('Admin@HashBazaar');
+                    $message->to ($user->email);
+                    $message->subject ('Payment Confirmed !');
+                });
+            }
+
+            Mail::send('email.paymentReceived',[],function($message)use($user){
                 $message->from ('Admin@HashBazaar');
                 $message->to ($user->email);
                 $message->subject ('Payment Confirmed !');
             });
         }
 
-        Mail::send('email.paymentReceived',[],function($message)use($user){
-            $message->from ('Admin@HashBazaar');
-            $message->to ($user->email);
-            $message->subject ('Payment Confirmed !');
-        });
 
         /** .............
         .............

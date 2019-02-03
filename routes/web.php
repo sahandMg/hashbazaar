@@ -69,6 +69,7 @@ Route::get('job',function(){
 
 Route::get('test',function (){
 
+    \Log::warning('PaymentID : 2');
     $mining = \App\BitHash::first();
     dd($mining->user);
 });

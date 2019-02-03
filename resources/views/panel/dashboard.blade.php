@@ -253,8 +253,8 @@
                     }else{
 
 
-                        document.getElementById('miningBTC').innerHTML = response.data[0].toFixed(6);
-                        document.getElementById('miningDollar').innerHTML = response.data[1].toFixed(6);
+                        document.getElementById('miningBTC').innerHTML = response.data[0].toFixed(8);
+                        document.getElementById('miningDollar').innerHTML = response.data[1].toFixed(8);
                         // console.log(response.data);
                     }
 

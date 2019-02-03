@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\BitHash;
 use App\Mining;
+use App\MiningReport;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Auth;
@@ -39,6 +40,8 @@ class UpdateMinings extends Command
      * Execute the console command.
      *
      * @return mixed
+     *
+     * This Command update mining histories & hashPower life
      */
     public function handle()
     {
@@ -52,7 +55,7 @@ class UpdateMinings extends Command
 
             return 'bitcoin api failed';
         }
-
+// getting total minings from antpool
         $userId = '13741374';
         $apiKey = '7b07bc4b507b4d7584770f8ddddd02f1';
         $nonce = rand(0, 1000);
@@ -76,7 +79,6 @@ class UpdateMinings extends Command
                     $remainedDay = Carbon::now()->diffInDays(Carbon::parse($hash->created_at)->addYears($hash->life));
                     $hash->update(['remained_day'=>$remainedDay]);
                     $hash->save();
-                    // getting total minings from antpool
                     $hashPower = $hash->hash;
                     $userEarn = $mining24 * ($hashPower / $mainTHash);
                     $minings = Mining::where('user_id',$user->id)->where('block',0)->orderBy('id','desc')->get();
@@ -86,12 +88,12 @@ class UpdateMinings extends Command
                                 $mining->update(['mined_btc'=>$userEarn,'mined_usd'=> $userEarn * $bitCoinPrice->price]);
                                 $mining->save();
                                 // creating new record in database for tomorrow mining record
-                                $newMining = new Mining();
-                                $newMining->order_id = $mining->order_id;
-                                $newMining->mined_btc = 0;
-                                $newMining->mined_usd = 0;
-                                $newMining->block = $mining->block;
-                                $newMining->save();
+                                $miningReport = new MiningReport();
+                                $miningReport->order_id = $mining->order_id;
+                                $miningReport->mined_btc = $mining->mined_btc;
+                                $miningReport->mined_usd = $mining->mined_usd;
+                                $miningReport->user_id = $user->id;
+                                $miningReport->save();
                             }
                         }
                     }

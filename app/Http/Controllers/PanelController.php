@@ -21,7 +21,7 @@ class PanelController extends Controller
 
     public function dashboard(){
 
-        $hashes = BitHash::where('user_id',Auth::guard('user')->id())->get();
+        $hashes = BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->get();
         return view('panel.dashboard',compact('hashes'));
     }
 
@@ -32,7 +32,7 @@ class PanelController extends Controller
     public function totalEarn(Request $request){
 // getting bitcoin price in usd
         $mining = DB::table('minings')->where('user_id',$request->id)->where('block',0)->get();
-        if( ! $mining->isEmpty()) {
+        if( $mining->isEmpty()) {
             return [0,0];
         }
         else{

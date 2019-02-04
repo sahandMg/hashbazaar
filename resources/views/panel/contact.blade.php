@@ -18,7 +18,7 @@
     <header>
 
 
-               <div> <img class="Logo_header" src="img/Logo_header.svg" alt="Logo_header"> </div>
+               <div id="header-div"> <img class="Logo_header" src="img/Logo_header.svg" alt="Logo_header"> </div>
 
     </header>
 

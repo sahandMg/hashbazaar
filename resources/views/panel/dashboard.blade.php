@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="css/contact-referral-activity-dashboard.css">
         <link rel="stylesheet" href="css/cssreset.css">
         <title>Hash Bazaar - Dashboard</title>
+        <script src="../../../public/js/jquery-3.3.1.js"></script>
 
          <script  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" ></script>
 
@@ -23,8 +24,23 @@
 
 
             <a href="http://hashbazaar.com">
-                   <div> <img class="Logo_header" src="img/Logo_header.svg" alt="Logo_header"> </div>    </a>
+                   <div id="header-div"> <img class="Logo_header" src="img/Logo_header.svg" alt="Logo_header"> </div>    </a>
+                  
+                   <div class="useraccount">
 
+                        <img class="user-img" src="../img/user-circle-solid.svg" alt="">
+            
+                        <div class="list">
+
+                            <ul>
+
+                                <li class="user-account-list" id="usericon">User Account</li>
+                                <li class="user-account-list" id="logouticon">Log Out</li>
+            
+                            </ul>
+                        </div>
+
+                    </div>
         </header>
 
 
@@ -126,9 +142,7 @@
 
         <!-- Main Container -->
         <div class="mainContainer">
-
-                <!-- <a href="#" class="icon-menu"><img src="img/menu.png" alt=""></a>
-                <a href="#" class="icon-menu-times"><img class="times-solid" src="img/times-solid.svg" alt=""></a> -->
+            
 
             <nav class="container-dashboard">
                 <ul class="mainList">
@@ -162,6 +176,18 @@
 
         </div>
                 <script>
+
+                    
+                // ------------user account--------------------
+                $(document).ready(function(){
+            
+                    $('.user-img').click(function(){
+                        $('.list').toggle(500);
+                    })
+                })
+                
+                // --------------------------------------------
+                
                 axios.get({!! json_encode('totalEarn') !!}).then(function (response) {
                     console.log("totalEarn");
                     console.log(document.getElementById('mining').innerHTML);

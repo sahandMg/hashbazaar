@@ -17,7 +17,7 @@
 
 
         <a href="http://hashbazaar.com">
-               <div> <img class="Logo_header" src="img/Logo_header.svg" alt="Logo_header"> </div>    </a>
+               <div id="header-div"> <img class="Logo_header" src="img/Logo_header.svg" alt="Logo_header"> </div>    </a>
 
     </header>
 

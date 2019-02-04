@@ -31,8 +31,8 @@
         <header>
 
 
-            <a href="http://hashbazaar.com">
-                   <div id="header-div"> <img class="Logo_header" src="img/Logo_header.svg" alt="Logo_header"> </div>    </a>
+            
+                   <div id="header-div"><a href="http://hashbazaar.com"> <img class="Logo_header" src="img/Logo_header.svg" alt="Logo_header"> </a> </div>   
                   
                    <div class="useraccount">
 

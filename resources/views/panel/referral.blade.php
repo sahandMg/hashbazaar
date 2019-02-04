@@ -19,8 +19,8 @@
     <header>
 
 
-        <a href="http://hashbazaar.com">
-               <div id="header-div"> <img class="Logo_header" src="img/Logo_header.svg" alt="Logo_header"> </div>    </a>
+        
+               <div id="header-div"><a href="http://hashbazaar.com"> <img class="Logo_header" src="img/Logo_header.svg" alt="Logo_header"></a> </div>    
                <div class="useraccount">
 
                 <img class="user-img" src="../img/user-circle-solid.svg" alt="">
@@ -77,7 +77,7 @@
 
 
 
-        <hr class="referral-hr-footer" style="position: relative;">
+        <hr class="referral-hr-footer" style="position: absolute;;">
 
 
     </div>

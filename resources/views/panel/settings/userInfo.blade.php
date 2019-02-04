@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hash Bazaar - Setting</title>
+        <title>Hash Bazaar - Setting</title>
     <link rel="stylesheet" href="../css/setting2.css">
     <link rel="stylesheet" href="../css/cssreset.css">
+    <script src="../js/jquery-3.3.1.js"></script>
+
     <script>
 
     </script>
@@ -18,9 +20,23 @@
     <header>
 
 
-        <a href="http://hashbazaar.com">
-               <div> <img class="Logo_header" src="../img/Logo_header.svg" alt="Logo_header"> </div>    </a>
+        
+               <div><a href="http://hashbazaar.com"> <img class="Logo_header" src="../img/Logo_header.svg" alt="Logo_header"></a> </div>    
+               <div class="useraccount">
 
+                <img class="user-img" src="../img/user-circle-solid.svg" alt="">
+    
+                <div class="list">
+
+                    <ul>
+
+                        <li class="user-account-list" id="usericon">User Account</li>
+                        <li class="user-account-list" id="logouticon">Log Out</li>
+    
+                    </ul>
+                </div>
+
+            </div>
     </header>
 
     <!-- Setting Page -->
@@ -128,6 +144,20 @@
 
 
     </div>
+
+
+    <script>
+
+        // ------------user account--------------------
+        $(document).ready(function(){
+    
+            $('.user-img').click(function(){
+                $('.list').toggle(500);
+            })
+        })
+    
+    // =---------------------------------------
+    </script>
 </body>
 
 </html>

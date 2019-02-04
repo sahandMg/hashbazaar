@@ -51,7 +51,7 @@
                     <td>@{{transaction.orderID}}</td>
                     <td>@{{transaction.userID}}</td>
                     <td>@{{transaction.countryID}}</td>
-                    <td>@{{transaction.amount}}</td>
+                    <td>@{{transaction.amount.toFixed(6)}}</td>
                     <td id="confirmed">@{{transaction.txConfirmed}}</td>
                     <td id="unrecognised">@{{transaction.unrecognised}}</td>
                     <td id="processed">@{{transaction.processed}}</td>

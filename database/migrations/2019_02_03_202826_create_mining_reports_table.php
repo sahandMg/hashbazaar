@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHashesTable extends Migration
+class CreateMiningReportsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateHashesTable extends Migration
      */
     public function up()
     {
-        Schema::create('hashes', function (Blueprint $table) {
+        Schema::create('mining_reports', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('hash')->nullable();
+            $table->string('mined_btc')->nullable();
+            $table->string('mined_usd')->nullable();
             $table->unsignedInteger('user_id')->nullable();
-            $table->unsignedInteger('life')->nullable();
+            $table->string('order_id')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateHashesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hashes');
+        Schema::dropIfExists('mining_reports');
     }
 }

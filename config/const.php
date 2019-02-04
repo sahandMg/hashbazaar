@@ -3,5 +3,5 @@
 return [
 
 'hashPowerUsd' => 1,
-'coinPrices' => []
+'mainTHash' => 14
 ];

@@ -69,6 +69,14 @@ Route::get('job',function(){
 
 Route::get('test',function (){
 
+    \Log::warning('PaymentID : 2');
+    $mining = \App\BitHash::first();
+    dd($mining->user);
+});
+
+Route::get('antpool',function (){
+
+
     $userId = '13741374';
     $apiKey = '7b07bc4b507b4d7584770f8ddddd02f1';
     $nonce = rand(0,1000);
@@ -85,14 +93,14 @@ Route::get('test',function (){
 
     $ch = curl_init();
     curl_setopt($ch,CURLOPT_URL, "$url?key=$apiKey&nonce=$nonce&signature=$signature&coin=BTC");
-//    curl_setopt($ch,CURLOPT_POST, count($fields));
-//    curl_setopt($ch,CURLOPT_POSTFIELDS, $fields);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $result = curl_exec($ch);
     curl_close($ch);
 
+    dd($result);
+    $totalEarn = json_decode($result)->data->earnTotal;
 
-    return $result;
+
 
 });
 
@@ -120,7 +128,7 @@ Route::get('pricing','PageController@Pricing');
 
 Route::get('dashboard','PanelController@dashboard')->name('dashboard');
 
-Route::get('totalEarn','PanelController@totalEarn')->name('totalEarn');
+Route::post('totalEarn','PanelController@totalEarn')->name('totalEarn');
 
 Route::post('dashboard','PanelController@postDashboard')->name('dashboard');
 

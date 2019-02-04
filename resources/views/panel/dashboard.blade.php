@@ -19,6 +19,15 @@
     </head>
 
     <body>
+    <?php
+    $settings = DB::table('settings')->first();
+            foreach ($hashes as $key=> $hash){
+
+                $remainedLife[$key] = floor((\Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($hash->created_at)->addYears($hash->life)))/($hash->life * 365) * 100) ;
+            }
+
+
+    ?>
         <!-- Header -->
         <header>
 
@@ -49,9 +58,9 @@
             <!-- Circle -->
             <div id="dashboard-page-circle">
                 <span id="circle-span">Total Mining</span>
-                <p id="mining">&nbsp;0 &nbsp; <span style="color: orange; font-size: 30px">BTC</span> </p>
+                <p>&nbsp;<span id="miningBTC"><img src="/img/ajax-loader.gif" height="40" width="40"></span> &nbsp; <span style="color: orange; font-size: 30px">BTC</span> </p>
                 <hr style="width: 84%; text-align:center; top: 40%; position: relative;">
-                <p>36000.321 &nbsp; &nbsp; <span style="color: aqua; font-size: 30px">USD</span></p>
+                <p><span id="miningDollar"><img src="/img/ajax-loader.gif" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua; font-size: 30px">USD</span></p>
 
             </div>
             <!-- Hash History -->
@@ -61,38 +70,57 @@
             <hr class="dashboard-hr2-2">
 
            <div class="Hash-History">
-                <div id="Hash-History-list">
-                    <div id="Hash-History_column"> Hash Power
-                        <ul>
-                            <li>14 TH/S</li>
-                            <li>5 TH/S</li>
 
-                        </ul>
-                    </div>
+                        <div id="Hash-History-list">
+                            @if(!$hashes->isEmpty())
+                            <div id="Hash-History_column"> Hash Power
+                                <ul>
+                                   @foreach($hashes as $hash)
+                                    <li>{{$hash->hash}} TH/S</li>
+                                    @endforeach
+                                </ul>
+                            </div>
 
-                    <div id="Hash-History_column"> Started at
-                            <ul>
-                                <li>12 Sep 2018</li>
-                                <li>12 Sep 2038</li>
+                            <div id="Hash-History_column"> Started at
+                                    <ul>
+                                        @foreach($hashes as $hash)
+                                            <li>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}} </li>
+                                        @endforeach
 
-                            </ul>
-                    </div>
+                                    </ul>
+                            </div>
 
-                    <div id="Hash-History_column"> Ends at
-                            <ul>
-                                <li>12 Sep 2020</li>
-                                <li>12 Sep 2040</li>
+                            <div id="Hash-History_column"> Ends at
+                                    <ul>
+                                        @foreach($hashes as $hash)
+                                            <li>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}</li>
+                                        @endforeach
 
-                            </ul>
-                     </div>
+                                    </ul>
+                             </div>
 
-                    <div id="Hash-History_column"> Remain
-                             <ul class="remain">
-                                <li style="top: 25px"><div>80%</div></li>
-                                <li style="top: 15px"><div>40%</div></li>
-                            </ul>
-                     </div>
-                </div>
+                            <div id="Hash-History_column"> Remain
+                                     <ul>
+                                         @foreach($hashes as $key => $hash)
+                                            <li>
+                                             <div style="width: 180px; margin: 0px auto">
+                                              <div class="progress">
+                                                <div class="progress-bar" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%">
+                                                  <span class="title">{{$remainedLife[$key]}}%</span>
+                                                </div>
+                                              </div>
+                                             </div>
+
+                                             </li>
+                                         @endforeach
+
+                                    </ul>
+                             </div>
+                            @else
+                                <p> NO Hash History</p>
+                            @endif
+                        </div>
+
              </div>
 
 
@@ -106,7 +134,7 @@
             <div class="slidecontainer">
                 <form class="dashboard-page" method="post" action="{{route('payment')}}">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
-                    <input type="range" min="1" max="100" value="50" name="hash" class="slider" id="myRange">
+                    <input type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="myRange">
                     <button type="submit"><p>Order</p></button></form>
             </div>
 
@@ -175,7 +203,59 @@
 
 
         </div>
+        <style type="text/css">
+.progress {    border: 1px solid;}
+.progress-bar {
+    background-color: #ff9100;
+    text-align: center;
+    color: white;   
+  width: 0;
+  -webkit-animation: progress 1.5s ease-in-out forwards;
+          animation: progress 1.5s ease-in-out forwards;
+}
+.progress-bar .title {
+  opacity: 0;
+  -webkit-animation: show 0.35s forwards ease-in-out 0.5s;
+          animation: show 0.35s forwards ease-in-out 0.5s;
+}
+
+@-webkit-keyframes progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@-webkit-keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+</style>
                 <script>
+
 
                     
                 // ------------user account--------------------
@@ -186,13 +266,24 @@
                     })
                 })
                 
-                // --------------------------------------------
-                
-                axios.get({!! json_encode('totalEarn') !!}).then(function (response) {
-                    console.log("totalEarn");
-                    console.log(document.getElementById('mining').innerHTML);
-                    document.getElementById('mining').InnerHTML = response.data;
-                    console.log(response.data);
+        
+                    var id = {!! json_encode(\Illuminate\Support\Facades\Auth::guard('user')->id()) !!}
+                axios.post({!! json_encode('totalEarn') !!},{'id':id}).then(function (response) {
+//                     console.log(id);
+//                     console.log(response.data);
+                    // console.log("response.data");
+                    if(response.data[0] == 0){
+
+                        document.getElementById('miningBTC').innerHTML = 0;
+                        document.getElementById('miningDollar').innerHTML = 0;
+                    }else{
+
+
+                        document.getElementById('miningBTC').innerHTML = response.data[0].toFixed(8);
+                        document.getElementById('miningDollar').innerHTML = response.data[1].toFixed(8);
+                        // console.log(response.data);
+                    }
+
                 });
                     var slider = document.getElementById("myRange");
                     var output = document.getElementById("demo");
@@ -213,8 +304,23 @@
             var labels = [];labels.push(moment('April 01 2017', dateFormat));labels.push(moment('April 03 2017', dateFormat));labels.push(moment('April 04 2017', dateFormat));
             data.push({t:moment('April 01 2017', dateFormat).valueOf(),y: 27.96930236878253});data.push({t:moment('April 03 2017', dateFormat).valueOf(),y: 28.96930236878253});data.push({t: moment('April 04 2017', dateFormat).valueOf(), y: 29.96930236878253});
             var ctx = document.getElementById('chart1').getContext('2d');
-            ctx.canvas.parentNode.style.height = '300px';
-            ctx.canvas.parentNode.style.width = '700px';
+            if(window.screen.availWidth > 1024) {
+                ctx.canvas.parentNode.style.height = '300px';
+                ctx.canvas.parentNode.style.width = '700px';
+            } else if(window.screen.availWidth > 726) {
+                ctx.canvas.parentNode.style.height = '200px';
+                ctx.canvas.parentNode.style.width = '600px';
+            } else if(window.screen.availWidth > 400) {
+                ctx.canvas.parentNode.style.height = '300px';
+                ctx.canvas.parentNode.style.width = '400px';
+            } else if(window.screen.availWidth > 300) {
+                ctx.canvas.parentNode.style.height = '200px';
+                ctx.canvas.parentNode.style.width = '300px';
+            } else {
+                ctx.canvas.parentNode.style.height = '300px';
+                ctx.canvas.parentNode.style.width = '700px';
+            }
+            
 
             var color = Chart.helpers.color;
             var cfg = {

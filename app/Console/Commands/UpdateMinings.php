@@ -75,31 +75,33 @@ class UpdateMinings extends Command
         foreach ($users as $index => $user) {
             $hashes = BitHash::where('user_id', $user->id)->where('confirmed',1)->get();
             if (!$hashes->isEmpty()) {
-                foreach ($hashes as $index => $hash) {
+                foreach ($hashes as $item => $hash) {
                     $remainedDay = Carbon::now()->diffInDays(Carbon::parse($hash->created_at)->addYears($hash->life));
                     $hash->update(['remained_day'=>$remainedDay]);
                     $hash->save();
-                    $hashPower = $hash->hash;
-                    $userEarn = $mining24 * ($hashPower / $mainTHash);
-                    $minings = Mining::where('user_id',$user->id)->where('block',0)->orderBy('id','desc')->get();
-                    if(! $minings ->isEmpty()){
-                        foreach ($minings as $mining){
-                            if($mining->block == 0){
-                                $mining->update(['mined_btc'=>$userEarn,'mined_usd'=> $userEarn * $bitCoinPrice->price]);
-                                $mining->save();
-                                // creating new record in database for tomorrow mining record
-                                $miningReport = new MiningReport();
-                                $miningReport->order_id = $mining->order_id;
-                                $miningReport->mined_btc = $mining->mined_btc;
-                                $miningReport->mined_usd = $mining->mined_usd;
-                                $miningReport->user_id = $user->id;
-                                $miningReport->save();
-                            }
+                    $hashPower[$item] = $hash->hash;
+                    $userEarn[$item] = $mining24 * ($hashPower[$item] / $mainTHash);
+                }
+                $minings = Mining::where('user_id',$user->id)->where('block',0)->orderBy('id','desc')->get();
+                if(! $minings ->isEmpty()){
+                    foreach ($minings as $key => $mining){
+                        if($mining->block == 0){
+
+                            $miningReport = new MiningReport();
+                            $miningReport->order_id = $mining->order_id;
+                            $miningReport->mined_btc = $mining->mined_btc;
+                            $miningReport->mined_usd = $mining->mined_usd;
+                            $miningReport->user_id = $user->id;
+                            $miningReport->save();
+
+
+                            $mining->update(['mined_btc'=>$userEarn[$key] + $mining->mined_btc ,'mined_usd'=> $mining->mined_usd + $userEarn[$key] * $bitCoinPrice->price]);
+                            $mining->save();
+                            // creating new record in database for tomorrow mining record
+
                         }
                     }
-
                 }
-
             }
         }
     }

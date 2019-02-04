@@ -15,8 +15,8 @@ class CreateMiningReportsTable extends Migration
     {
         Schema::create('mining_reports', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('mined_btc')->nullable();
-            $table->string('mined_usd')->nullable();
+            $table->float('mined_btc')->nullable();
+            $table->float('mined_usd')->nullable();
             $table->unsignedInteger('user_id')->nullable();
             $table->string('order_id')->nullable();
             $table->timestamps();

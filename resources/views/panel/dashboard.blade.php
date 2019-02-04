@@ -34,18 +34,18 @@
 
             <a href="http://hashbazaar.com">
                    <div id="header-div"> <img class="Logo_header" src="img/Logo_header.svg" alt="Logo_header"> </div>    </a>
-                  
+
                    <div class="useraccount">
 
                         <img class="user-img" src="../img/user-circle-solid.svg" alt="">
-            
+
                         <div class="list">
 
                             <ul>
 
-                                <li class="user-account-list" id="usericon">User Account</li>
+                                <li class="user-account-list" id="usericon">{{Auth::guard('user')->user()->name}}</li>
                                 <li class="user-account-list" id="logouticon">Log Out</li>
-            
+
                             </ul>
                         </div>
 
@@ -170,7 +170,7 @@
 
         <!-- Main Container -->
         <div class="mainContainer">
-            
+
 
             <nav class="container-dashboard">
                 <ul class="mainList">
@@ -208,7 +208,7 @@
 .progress-bar {
     background-color: #ff9100;
     text-align: center;
-    color: white;   
+    color: white;
   width: 0;
   -webkit-animation: progress 1.5s ease-in-out forwards;
           animation: progress 1.5s ease-in-out forwards;
@@ -257,7 +257,7 @@
                 <script>
 
 
-                    
+
                 // ------------user account--------------------
                 $(document).ready(function(){
             

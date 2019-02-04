@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\BitHash;
 use App\Mining;
+use App\MiningReport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
@@ -38,6 +39,19 @@ class PanelController extends Controller
         else{
             return $userEarn = [$mining->sum('mined_btc'),$mining->sum('mined_usd')];
         }
+    }
+    /*
+     *  bitcoin mining chart data
+     */
+    public function chartData(Request $request){
+
+        $report = MiningReport::where('user_id',$request->id)->get();
+
+        if($report->isEmpty()){
+            return 404;
+        }
+
+
     }
 
     /*

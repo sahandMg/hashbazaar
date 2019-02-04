@@ -69,9 +69,9 @@ Route::get('job',function(){
 
 Route::get('test',function (){
 
-    \Log::warning('PaymentID : 2');
-    $mining = \App\BitHash::first();
-    dd($mining->user);
+   $query = json_encode(['message'=>'Good','status'=>1]);
+    dd(json_decode($query)->message);
+
 });
 
 Route::get('antpool',function (){

@@ -3,7 +3,7 @@
 .useraccount {
     position: absolute;
     top: 0px;
-    margin-left:93%;
+    margin-left:90%;
     width: 0px;
     left: 0;
     background-color: transparent;
@@ -178,7 +178,7 @@ header {
 /* Menu */
 .container-contact {
     width: 370px;
-    height: 1120px;
+    height: 1070px;
     background: rgb(39, 38, 38);
     border-top: 4px solid orange;
 
@@ -189,7 +189,8 @@ header {
     background: white;
     width: 370px;
     top: 150px;
-    position: fixed;    
+    position: sticky;    
+    bottom: 150px
 
 }
 
@@ -422,7 +423,7 @@ form.contact-page p:nth-of-type(1) {
     top: 380px;
 }
 .contact-hr-footer {
-    top: 930px
+    top: 980px
 }
 
 /* Footer */
@@ -430,22 +431,22 @@ form.contact-page p:nth-of-type(1) {
 
 .contact-footer-div {
     top: 1080px;
-    width: 70%;
-    margin-left: 380px;;
+    width: 100%;
+    margin-left: 0px;;
     position: absolute;
 }
 .contact-footer-paragraph {
     font-size: 20px;
     font-family: sans-serif;
     position: absolute;
-    top: -60px;
-    left: 250px
+    top: -20px;
+    left: 40%
 
 }
 
 #contact-footer-image {
-    width: 200px;
-    height: 100px;
+    width: 250px;
+    height: 120px;
 }
 
 
@@ -454,6 +455,10 @@ form.contact-page p:nth-of-type(1) {
 @media screen and (max-width:1024px){
     /* ---------------=====Media====-------------Main Container--------------------------- */
 
+    .useraccount .list {
+        
+        display: none;
+    }
     .container-contact {
         width: 270px;
         /* height: 1850px; */
@@ -539,7 +544,7 @@ form.contact-page p:nth-of-type(1) {
 
     .contact-hr-footer
     {
-        top:840px
+        top:980px
     }
 
     #contact-page h1 {
@@ -579,7 +584,8 @@ form.contact-page p:nth-of-type(1) {
     }
 
     .contact-footer-div {
-        left: -100px;
+        left: 0px;
+        /* width: 1024px */
     }
 
 }
@@ -604,6 +610,10 @@ form.contact-page p:nth-of-type(1) {
         float: left;
     }
 
+    .useraccount .list {
+        
+        display: none;
+    }
     .container-activity2 .mainList2 {
         background: #2e2d2d;
         position: fixed;
@@ -730,7 +740,7 @@ form.contact-page p:nth-of-type(1) {
     }
 
     .contact-hr-footer {
-        top: 700px
+        top: 800px
     }
 
     /* Footer */
@@ -749,12 +759,15 @@ form.contact-page p:nth-of-type(1) {
 
     }
 
+    .useraccount .list {
+        
+        display: none;
+    }
 }
 
 
 /* Contact - Media - 414 */
 @media screen and (max-width: 414px) {
-
 
     body {
         background-color: #FFFDE8
@@ -905,10 +918,10 @@ form.contact-page p:nth-of-type(1) {
         background: #FFFDE8;
             resize: none;
             position: absolute;
-        top: 250px ;
-        left: 70px;
-        width: 250px;
-        height: 150px;
+            top: 250px ;
+            left: 70px;
+            width: 250px;
+            height: 150px;
     }
 
     form.contact-page button {
@@ -917,7 +930,7 @@ form.contact-page p:nth-of-type(1) {
     }
 
     .contact-hr-footer {
-        top: 700px
+        top: 800px
     }
 
 /* Footer */
@@ -1221,14 +1234,14 @@ header {
 /* Menu */
 .container-referral {
     width: 370px;
-    height: 1250px;
+    height: 1300px;
     background: rgb(39, 38, 38);
     border-top: 4px solid orange;
 }
 
 .container-referral .mainList {
     background: white;
-    position: fixed;
+    position: sticky;
     top: 150px;
     width: 370px;
 
@@ -1477,24 +1490,25 @@ div ul .navbar #welcome {
 
 .referral-hr-footer
 {
-    top: 950px;
+    top: 1100px;
     width: 100% !important;
-    position: relative;
-    left: -0px;
+    position: absolute;
+    left:0px !important;
+    margin: 0
 
 }
 
 /* Footer */
 
 .referral-footer-div {
-    width: 70%;
-    left: 30%;
+    width: 100%;
+    left: 0%;
     position: absolute;
     top: 1250px
 }
 
 #referral-footer-image {
-    width: 200px;
+    width: 250px;
     height: 100px;
 }
 
@@ -1502,8 +1516,8 @@ div ul .navbar #welcome {
     font-size: 20px;
     font-family: sans-serif;
     position: absolute;
-    top: -60px;
-    left: 250px
+    top: -20px;
+    left: 40%
 }
 
 /* Referral - Media - 1024 */
@@ -1512,7 +1526,7 @@ div ul .navbar #welcome {
 
     .container-referral {
         width: 270px;
-        height: 1100px;
+        height: 1050px;
 
 
     }
@@ -1651,15 +1665,15 @@ div ul .navbar #welcome {
     }
     .referral-hr-footer
     {
-        top: 820px;
+        top: 850px;
         width: 100%;
         left: -580px
     }
 
     /* Footer */
     .referral-footer-div {
-        width: 70%;
-        left: 30%;
+        width: 100%;
+        left: 0%;
         position: absolute;
         top: 1000px
     }
@@ -1673,8 +1687,8 @@ div ul .navbar #welcome {
         font-size: 20px;
         font-family: sans-serif;
         position: absolute;
-        top: -60px;
-        left: 250px
+        top: -20px;
+        left: 40%
     }
 
 
@@ -1859,7 +1873,7 @@ div ul .navbar #welcome {
 
     .referral-hr-footer
     {
-        top: 800px
+        top: 940px
     }
 
     /* Footer */
@@ -2125,7 +2139,7 @@ div ul .navbar #welcome {
 
     .referral-hr-footer
     {
-        top: 800px;
+        top: 900px;
         left:-310px;
         width: 414px !important;
     }
@@ -2142,11 +2156,11 @@ div ul .navbar #welcome {
     .referral-footer-paragraph {
         font-size: 14px;
         margin-left: 0;
-        left: 70px;
+        left: 80px;
     }
 
     #referral-footer-image {
-        width: 100px;
+        width: 150px;
         height: 50px;
     }
 
@@ -2234,7 +2248,7 @@ div ul .navbar #welcome {
 
     .referral-hr-footer
     {
-        top: 800px;
+        top: 900px;
         left:-312px;
         width: 375px;
     }
@@ -2371,7 +2385,7 @@ div ul .navbar #welcome {
 
     .referral-hr-footer
     {
-        top: 830px;
+        top: 900px;
         left:-235px;
         width: 315px !important;
     }
@@ -2388,11 +2402,11 @@ div ul .navbar #welcome {
     .referral-footer-paragraph {
         font-size: 14px;
         margin-left: 0;
-        left: 0px;
+        left: 30px;
     }
 
     #referral-footer-image {
-        width: 100px;
+        width: 150px;
         height: 50px;
     }
 
@@ -2451,7 +2465,7 @@ header {
 /* Menu */
 .container-activity {
     width: 370px;
-    height: 1480px;
+    height: 1380px;
     background: rgb(39, 38, 38);
     border-top: 4px solid orange;
 }
@@ -2459,7 +2473,7 @@ header {
 .container-activity .mainList {
     background: white;
     width: 370px;
-    position: fixed;
+    position: sticky;
     top: 150px
 
 }
@@ -2749,16 +2763,16 @@ div ul .navbar #welcome {
 
 .activity-hr-footer
 {
-    top: 620px
+    top: 590px
 }
 
 /* Footer */
 
 .activity-footer-div {
-    width: 70%;
-    left: 30%;
+    width: 100%;
+    left: 0%;
     position: relative;
-    top: 1280px;
+    top: 1320px;
     height: 0
 }
 
@@ -2771,8 +2785,8 @@ div ul .navbar #welcome {
     font-size: 20px;
     font-family: sans-serif;
     position: absolute;
-    top: -60px;
-    left: 250px
+    top: -20px;
+    left: 40%
 
 }
 
@@ -2784,12 +2798,8 @@ div ul .navbar #welcome {
 
     .container-activity {
         width: 270px;
-        height: 1450px;
-
-
+        height: 1400px;
     }
-
-
 
     .container-activity .mainList {
         width: 270px
@@ -2806,9 +2816,7 @@ div ul .navbar #welcome {
     div ul .navbar #welcome {
         font-size: 17px;
         left: 70px;
-
     }
-
 
     .container-activity .mainList .sub {
         height: 60px;
@@ -2816,12 +2824,10 @@ div ul .navbar #welcome {
         padding-bottom: 10px;
     }
 
-
     .container-activity .mainList .sub a {
         left: -10px;
         top: 30%
     }
-
 
     .sub:after {
         width: 1em;
@@ -2829,7 +2835,6 @@ div ul .navbar #welcome {
         content: "";
         left: 85%;
     }
-
 
     #dashboard:before {
         content: "";
@@ -2865,18 +2870,6 @@ div ul .navbar #welcome {
         height: 30px;
         left: -55px;
     }
-
-
-    .activity-hr-footer
-    {
-        top: 780px
-    }
-
-
-
-
-
-
 
 
     /* =============--media--================Activity=============================== */
@@ -3005,10 +2998,10 @@ div ul .navbar #welcome {
 
    /* Footer */
    .activity-hr-footer {
-       top: 550px
+       top: 567px
    }
    .activity-footer-div {
-       top: 1250px
+       top: 1350px
    }
 }
 
@@ -3859,14 +3852,14 @@ body {
 /* ----------------------------------------------Main Container-------------------------------------------- */
 .container-dashboard {
     width: 370px;
-    height: 2080px;
+    height: 2150px;
     background: rgb(39, 38, 38);
     border-top: 4px solid orange
 }
 
 .container-dashboard .mainList {
     background: white;
-    position: fixed;
+    position: sticky;
     width: 370px;
     top: 130px
 }
@@ -4281,20 +4274,20 @@ left: 29.5%
 }
 .dashboard-hr-footer
 {
-    top: 610px
+    top: 650px
 }
 
 /* ============================================Footer======================================= */
 
 .dashboard-footer-div {
-    width: 70%;
-    left: 30%;
+    width: 100%;
+    left: 0%;
     position: absolute;
     top: 2080px
 }
 
 #dashboard-footer-image {
-    width: 200px;
+    width: 250px;
     height: 100px;
 }
 
@@ -4302,8 +4295,8 @@ left: 29.5%
     font-size: 20px;
     font-family: sans-serif;
     position: absolute;
-    top: -60px;
-    left: 250px
+    top: -20px;
+    left: 40%
 }
 
 
@@ -4314,7 +4307,7 @@ left: 29.5%
 
     .container-dashboard {
         width: 270px;
-        height: 2150px;
+        height: 2100px;
 
     }
 
@@ -4449,7 +4442,7 @@ left: 29.5%
 
 .dashboard-hr-footer
 {
-    top: 700px;
+    top: 740px;
 }
 /* ==================================================HASH History============================== */
 
@@ -4540,8 +4533,8 @@ canvas#chart1 {
 /*========================================= Footer============================== */
 
 .dashboard-footer-div {
-    width: 70%;
-    left: 30%;
+    width: 100%;
+    left: 0%;
     position: absolute;
     top: 2050px
 }
@@ -4869,7 +4862,7 @@ display: block;
 
     .dashboard-hr-footer
     {
-        top: 730px
+        top:650px
     }
 
     /* ============================================Footer======================================= */
@@ -5038,6 +5031,55 @@ display: block;
 .dashboard-hr11 {
     display: block;
 }
+/* User Account */
+
+.useraccount {
+    top: 10px;
+    margin-left:80%;
+}
+.useraccount .list {
+    width: 170px;
+    height: 110px;
+    display: block;
+}
+.useraccount .list  {
+    margin-left: -105px
+}
+.useraccount .list:after {
+    margin-left: 110px;
+}
+
+.useraccount .list ul li {
+    width: 170px;
+    font-size: 15px
+
+}
+
+#usericon:before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/user-solid.svg");
+    background-size: 100% 100%;
+    position: relative;
+    left: 2.5vh;
+    top: 3vh
+    
+}
+
+
+
+#usericon:hover::before ,#logouticon:hover::before{
+    border: 1px solid white;
+    border-radius: 15%;
+    background-color: white
+}
+
+#logouticon:before{
+    left: 3vh;
+}
+
 
     /* ======================================Circle=========================================== */
     #dashboard-page-circle {
@@ -5315,6 +5357,10 @@ display: block;
     }
 
 
+    .useraccount {
+        top: 10px;
+        margin-left:75%;
+    }
 
 
     /* ======================================Circle=========================================== */
@@ -5567,7 +5613,7 @@ display: block;
 @media screen and (max-width: 320px) {
 
     .Logo_header {
-        width: 300px;
+        width: 200px;
         height: 90px;
         position: absolute;
         left: 10px;
@@ -5863,7 +5909,7 @@ display: block;
     }
 
     #dashboard-footer-image {
-        width: 100px;
+        width: 150px;
         height: 50px;
     }
 
@@ -5873,6 +5919,6 @@ display: block;
         position: absolute;
         top: -60px;
         left: 10px;
-        width: 250px
+        width: 270px
     }
 }

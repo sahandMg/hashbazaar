@@ -7,11 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>#BAZAAR - Contact</title>
     <link rel="stylesheet" href="css/contact-referral-activity-dashboard.css">
-        <script src="js/jquery-3.3.1.js"></script>
         <link rel="stylesheet" href="css/cssreset.css">
-    <script>
+        <script src="js/jquery-3.3.1.js"></script>
 
-    </script>
+    
 </head>
 
 <body>
@@ -19,8 +18,8 @@
     <header>
 
 
-               <div id="header-div"> <img class="Logo_header" src="img/Logo_header.svg" alt="Logo_header"> </div>
-               <div class="useraccount">
+               <div id="header-div"> <a href="http://hashbazaar.com"> <img class="Logo_header" src="img/Logo_header.svg" alt="Logo_header"></a> </div>
+            <div class="useraccount">
 
                 <img class="user-img" src="../img/user-circle-solid.svg" alt="">
     
@@ -65,9 +64,7 @@
 
     <!-- Container -->
     <div class="mainContainer">
-            <!-- <a href="#" class="icon-menu"><img src="img/menu.png" alt=""></a>
-            <a href="#" class="icon-menu-times"><img class="times-solid" src="img/times-solid.svg" alt=""></a> -->
-
+          
 
         <nav class="container-contact">
             <ul class="mainList">
@@ -105,7 +102,11 @@
 
     </div>
 
-    <script>// ------------user account--------------------
+    <script>
+    
+        // ------------user account--------------------
+
+    
         $(document).ready(function(){
     
             $('.user-img').click(function(){
@@ -113,7 +114,8 @@
             })
         })
         
-         // =---------------------------------------</script>
+         // =---------------------------------------
+    </script>
 </body>
 
 </html>

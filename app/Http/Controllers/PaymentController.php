@@ -432,4 +432,47 @@ class PaymentController extends Controller
 
     }
 
+    /*
+     * Send Users their daily shares
+     */
+
+    public function redeem(Request $request){
+
+
+        $user = DB::table('users')->where('email',$request->email)->first();
+        if(is_null($user)){
+            return 404;
+        }
+        $btcSum = Mining::where('user_id',$user->id)->where('block',0)->sum('mined_btc');
+        $wallet = DB::table('wallets')->where('user_id',$user->id)->where('active',1)->first();
+        if(is_null($wallet)){
+            return 'wallet not found';
+        }
+
+        $trans = new Transaction();
+        $trans->addr = $wallet->addr;
+        $trans->code = strtoupper(uniqid());
+        $trans->country = 'IR';
+        $trans->amount_btc = $btcSum;
+        $trans->status = 'unpaid';
+        $trans->user_id = $user->id;
+        $trans->save();
+        $data = [
+            'amount'=>$btcSum,
+            'user'=> $user->name,
+            'email'=> $user->email,
+            'user_wallet' => $wallet->addr,
+            'country' =>  $trans->country,
+            'transId' => $trans->code
+        ];
+        Mail::send('email.newTrans',$data,function ($message) use($user){
+            $message->to('sahand.moghadam.mg@gmail.com');
+            $message->from($user->email);
+            $message->subject('New Redeem Request');
+        });
+
+        return 200;
+
+    }
+
 }

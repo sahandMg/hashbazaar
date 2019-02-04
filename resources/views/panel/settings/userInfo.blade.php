@@ -60,7 +60,7 @@
         <div class="User-Information">
 
                 <hr class="setting-hr1" style="position: relative;top: 40px;">
-                <p id="User-Information-title">Update Your Informations</p>
+                <p id="User-Information-title">Update Your Information</p>
                 <hr class="setting-hr2" style="position: relative;">
 
                 <form class="setting" action="">

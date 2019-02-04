@@ -59,10 +59,17 @@
 
         <!-- Change Password -->
         <div class="change-password">
-            <form id="change-password" action="">
+            <form id="change-password" method="post" action="{{route('changePassword')}}">
+                <input type="hidden" name="_token" value="{{csrf_token()}}">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+
+                </ul>
                 <input type="password" name="passowrd" id="password" placeholder="New Password">
 
-                <input type="password" name="passowrd" id="password-confirm" placeholder="Confirm">
+                <input type="password" name="confirm_passowrd" id="password-confirm" placeholder="Confirm">
 
 
                 <button><p>Submit</p></button>

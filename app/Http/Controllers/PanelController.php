@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\BitHash;
 use App\Mining;
 use App\MiningReport;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
@@ -32,7 +33,11 @@ class PanelController extends Controller
 
     public function totalEarn(Request $request){
 // getting bitcoin price in usd
-        $mining = DB::table('minings')->where('user_id',$request->id)->where('block',0)->get();
+        $user = DB::table('users')->where('email',$request->email)->first();
+        if(is_null($user)){
+            return 404;
+        }
+        $mining = DB::table('minings')->where('user_id',$user->id)->where('block',0)->get();
         if( $mining->isEmpty()) {
             return [0,0];
         }
@@ -45,12 +50,36 @@ class PanelController extends Controller
      */
     public function chartData(Request $request){
 
-        $report = MiningReport::where('user_id',$request->id)->get();
+        $user = DB::table('users')->where('email',$request->email)->first();
+        $reports = MiningReport::where('user_id',$user->id)->get();
 
-        if($report->isEmpty()){
+        if($reports->isEmpty()){
             return 404;
         }
+        $data = [];
+        foreach ($reports as $key => $report) {
 
+           $time = Carbon::parse($report->created_at)->format('M d Y');
+            $data[$key] = ['time'=>$time,'mined'=>$report->mined_btc];
+        }
+
+        return $data;
+
+
+    }
+
+    public function post_changePassword(Request $request){
+
+        $this->validate($request,[
+            'password'=>'required|min:8',
+            'confirm_password'=>'required|same:password'
+        ]);
+
+        $user = Auth::user();
+        $user->password = $request->password;
+        $user->save();
+
+        return redirect()->back()->with(['message'=>'New password has been set!']);
 
     }
 

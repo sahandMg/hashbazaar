@@ -146,6 +146,8 @@ Route::get('setting/user-info','PanelController@userInfo')->name('userInfo');
 
 Route::get('setting/change-pass','PanelController@changePassword')->name('changePassword');
 
+Route::post('setting/change-pass','PanelController@post_changePassword')->name('changePassword');
+
 Route::get('setting/wallet','PanelController@wallet')->name('wallet');
 
 Route::get('setting/wallet-make','PanelController@makeWallet')->name('makeWallet');
@@ -163,6 +165,10 @@ Route::post('payment','PaymentController@postPayment')->name('payment');
 Route::post('cryptobox.callback.php','PaymentController@paymentCallback')->name('paymentCallback');
 
 Route::get('payment/confirm','PaymentController@confirmPayment')->name('confirmPayment');
+
+Route::get('redeem','PaymentController@redeem')->name('redeem');
+
+Route::get('chart','PanelController@chartData')->name('chartData');
 
 Route::group(['prefix'=>'admin'],function (){
 

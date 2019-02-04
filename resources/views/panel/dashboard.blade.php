@@ -15,6 +15,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
         <script src="js/utils.js"></script>
+                    <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.js"></script>
+                     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     </head>
 
     <body>
@@ -25,11 +28,9 @@
                 $remainedLife[$key] = floor((\Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($hash->created_at)->addYears($hash->life)))/($hash->life * 365) * 100) ;
             }
 
-
     ?>
         <!-- Header -->
         <header>
-
 
             <a href="http://hashbazaar.com">
                    <div id="header-div"> <img class="Logo_header" src="img/Logo_header.svg" alt="Logo_header"> </div>    </a>
@@ -61,6 +62,9 @@
                 <hr style="width: 84%; text-align:center; top: 40%; position: relative;">
                 <p><span id="miningDollar"><img src="/img/ajax-loader.gif" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua; font-size: 30px">USD</span></p>
 
+                <button id="redeem" disabled onclick="redeem()"> Redeem ! </button>
+
+
             </div>
             <!-- Hash History -->
             <hr class="dashboard-hr1-1">
@@ -79,6 +83,7 @@
                                     @endforeach
                                 </ul>
                             </div>
+
 
                             <div id="Hash-History_column"> Started at
                                     <ul>
@@ -259,15 +264,28 @@
 
                 // ------------user account--------------------
                 $(document).ready(function(){
-            
+
                     $('.user-img').click(function(){
                         $('.list').toggle(500);
+                    });
+
+
+                });
+
+                var email = {!! json_encode(\Illuminate\Support\Facades\Auth::guard('user')->user()->email) !!}
+
+                function redeem(id) {
+
+                    axios.get('{{route('redeem')}}'+'?email='+email).then(function (response) {
+
+                        console.log(response.data)
                     })
-                })
-                
+                }
+
+
                  // =---------------------------------------
-                    var id = {!! json_encode(\Illuminate\Support\Facades\Auth::guard('user')->id()) !!}
-                axios.post({!! json_encode('totalEarn') !!},{'id':id}).then(function (response) {
+
+                axios.post({!! json_encode('totalEarn') !!},{'email':email}).then(function (response) {
 //                     console.log(id);
 //                     console.log(response.data);
                     // console.log("response.data");
@@ -280,6 +298,10 @@
 
                         document.getElementById('miningBTC').innerHTML = response.data[0].toFixed(8);
                         document.getElementById('miningDollar').innerHTML = response.data[1].toFixed(8);
+                        var minimum_redeem = {!! json_encode($settings->minimum_redeem) !!}
+                        if(response.data[0] >= minimum_redeem){
+                            document.getElementById('redeem').disabled = false;
+                        }
                         // console.log(response.data);
                     }
 
@@ -294,70 +316,92 @@
                             console.log("input change");
                         output.innerHTML = this.value+' Th';
                         // cost.innerHTML = slider.value * 50 ;
-                        }
+                        };
 
                     //    ==================================chart==============
-                    var dateFormat = 'MMMM DD YYYY';
-            var date = moment('April 01 2017', dateFormat);
+                var dateFormat = 'MMMM DD YYYY';
+                var date = moment('April 01 2017', dateFormat);
+                var dateTime = [];
+                var data = [];
+                var labels = [];
+            axios.get('{{route('chartData').'?email='. Auth::guard('user')->user()->email}}').then(function (response) {
 
-            var data = [];
-            var labels = [];labels.push(moment('April 01 2017', dateFormat));labels.push(moment('April 03 2017', dateFormat));labels.push(moment('April 04 2017', dateFormat));
-            data.push({t:moment('April 01 2017', dateFormat).valueOf(),y: 27.96930236878253});data.push({t:moment('April 03 2017', dateFormat).valueOf(),y: 28.96930236878253});data.push({t: moment('April 04 2017', dateFormat).valueOf(), y: 29.96930236878253});
-            var ctx = document.getElementById('chart1').getContext('2d');
-            if(window.screen.availWidth > 1024) {
-                ctx.canvas.parentNode.style.height = '300px';
-                ctx.canvas.parentNode.style.width = '700px';
-            } else if(window.screen.availWidth > 726) {
-                ctx.canvas.parentNode.style.height = '200px';
-                ctx.canvas.parentNode.style.width = '600px';
-            } else if(window.screen.availWidth > 400) {
-                ctx.canvas.parentNode.style.height = '300px';
-                ctx.canvas.parentNode.style.width = '400px';
-            } else if(window.screen.availWidth > 300) {
-                ctx.canvas.parentNode.style.height = '200px';
-                ctx.canvas.parentNode.style.width = '300px';
-            } else {
-                ctx.canvas.parentNode.style.height = '300px';
-                ctx.canvas.parentNode.style.width = '700px';
-            }
-            
+                dateTime = response.data;
 
-            var color = Chart.helpers.color;
-            var cfg = {
-                type: 'bar',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Your revenue',
-                        backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
-                        borderColor: window.chartColors.red,
-                        data: data,
-                        type: 'line',
-                        pointRadius: 0,
-                        fill: false,
-                        lineTension: 0,
-                        borderWidth: 2
-                    }]
-                },
-                options: {
-                    scales: {
-                        xAxes: [{
-                            type: 'time',
-                            distribution: 'series',
-                            ticks: {
-                                source: 'labels'
-                            }
-                        }],
-                        yAxes: [{
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'USD ($)'
-                            }
-                        }]
+                if(dateTime !== 404){
+
+                    for(i=0 ; i < dateTime.length ; i++){
+
+                        data.push({t:moment(dateTime[i].time, dateFormat).valueOf(),y: dateTime[i].mined});
+
+                        labels.push(moment(dateTime[i].time, dateFormat));
+
                     }
                 }
-            };
-            var chart = new Chart(ctx, cfg);
+
+
+//            labels.push(moment('April 01 2017', dateFormat));labels.push(moment('April 03 2017', dateFormat));labels.push(moment('April 04 2017', dateFormat));
+
+//                data.push({t:moment('April 01 2017', dateFormat).valueOf(),y: 22});data.push({t:moment('April 03 2017', dateFormat).valueOf(),y: 28.96930236878253});data.push({t: moment('April 04 2017', dateFormat).valueOf(), y: 29.96930236878253});
+                var ctx = document.getElementById('chart1').getContext('2d');
+                if(window.screen.availWidth > 1024) {
+                    ctx.canvas.parentNode.style.height = '300px';
+                    ctx.canvas.parentNode.style.width = '700px';
+                } else if(window.screen.availWidth > 726) {
+                    ctx.canvas.parentNode.style.height = '200px';
+                    ctx.canvas.parentNode.style.width = '600px';
+                } else if(window.screen.availWidth > 400) {
+                    ctx.canvas.parentNode.style.height = '300px';
+                    ctx.canvas.parentNode.style.width = '400px';
+                } else if(window.screen.availWidth > 300) {
+                    ctx.canvas.parentNode.style.height = '200px';
+                    ctx.canvas.parentNode.style.width = '300px';
+                } else {
+                    ctx.canvas.parentNode.style.height = '300px';
+                    ctx.canvas.parentNode.style.width = '700px';
+                }
+
+
+                var color = Chart.helpers.color;
+                var cfg = {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Your revenue',
+                            backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
+                            borderColor: window.chartColors.red,
+                            data: data,
+                            type: 'line',
+                            pointRadius: 0,
+                            fill: false,
+                            lineTension: 0,
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            xAxes: [{
+                                type: 'time',
+                                distribution: 'series',
+                                ticks: {
+                                    source: 'labels'
+                                }
+                            }],
+                            yAxes: [{
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'USD ($)'
+                                }
+                            }]
+                        }
+                    }
+                };
+                var chart = new Chart(ctx, cfg);
+
+
+            });
+
                     </script>
     </body>
 

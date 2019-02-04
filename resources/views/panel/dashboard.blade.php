@@ -9,10 +9,9 @@
         <link rel="stylesheet" href="css/contact-referral-activity-dashboard.css">
         <link rel="stylesheet" href="css/cssreset.css">
         <title>Hash Bazaar - Dashboard</title>
-        <script src="../../../public/js/jquery-3.3.1.js"></script>
+        <script src="js/jquery-3.3.1.js"></script>
 
-         <script  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" ></script>
-
+        <script  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" ></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
         <script src="js/utils.js"></script>
@@ -266,7 +265,7 @@
                     })
                 })
                 
-        
+                 // =---------------------------------------
                     var id = {!! json_encode(\Illuminate\Support\Facades\Auth::guard('user')->id()) !!}
                 axios.post({!! json_encode('totalEarn') !!},{'id':id}).then(function (response) {
 //                     console.log(id);

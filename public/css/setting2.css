@@ -429,11 +429,12 @@ div ul .navbar #welcome {
 }
 
 .User-Information input:nth-of-type(3){
-    position: relative;
-    top: 220px;
-    left: -270px;
+    position: absolute;
+    top: 280px;
+    left: 350px;
     width: 300px;
     height: 25px;
+    margin: 0;
     border: 3px solid transparent;
     border-bottom: 2px solid silver !important
 }
@@ -449,8 +450,8 @@ form.setting button {
     height: 60px;
     border-radius:10%;
     background-color: #15BEA4;
-    position: relative;
-    top: 320px;
+    position: absolute;
+    top: 370px;
     left:440px;
     font-family: 'Segoe UI', Tahoma, sans-serif;
     font-size: 30px;

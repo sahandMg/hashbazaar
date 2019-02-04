@@ -73,6 +73,45 @@ class AuthController extends Controller
 
     }
 
+    public function signup(){
+
+        return view('auth.signup');
+    }
+
+    public function post_signup(Request $request){
+
+        $this->validate($request,[
+            'name' => 'required',
+            'email'=>'required|email|unique:users',
+            'password'=> 'required',
+            'confirm_password' => 'required|same:password'
+
+        ]);
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->code = str_random(10);
+        $user->password = Hash::make($request->password);
+        $user->reset_password = str_random(10);
+        // $user->plan_id = DB::table('plans')->where('name',$request->plan)->first()->id;
+        // $user->period_id = DB::table('periods')->where('name',$request->period)->first()->id;
+        $user->save();
+//        subscriptionMailJob::dispatch($user->email,$user->code);
+        Auth::guard('user')->login($user);
+        $data = [
+            'code'=> $user->code,
+            'email'=>$user->email
+        ];
+
+        Mail::send('email.thanks',$data,function($message) use($data){
+            $message->from ('Admin@HashBazaar');
+            $message->to ($data['email']);
+            $message->subject ('Subscription Email');
+        });
+
+
+        return redirect()->route('dashboard');
+    }
 
     public function login(){
 
@@ -94,5 +133,11 @@ class AuthController extends Controller
             return redirect()->back();
         }
 
+    }
+
+    public function logout(){
+
+        Auth::guard('user')->logout();
+        return redirect()->route('index');
     }
 }

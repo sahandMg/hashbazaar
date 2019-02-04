@@ -22,14 +22,14 @@
                <div class="useraccount">
 
                 <img class="user-img" src="../img/user-circle-solid.svg" alt="">
-    
+
                 <div class="list">
 
                     <ul>
 
                         <li class="user-account-list" id="usericon">User Account</li>
                         <li class="user-account-list" id="logouticon">Log Out</li>
-    
+
                     </ul>
                 </div>
 
@@ -51,30 +51,42 @@
 
       <div class="purchases">
         <q>Purchases</q>
+        @if(!$hashes->isEmpty())
+            <div id="activity-page_secondList">
 
-        <div id="activity-page_secondList">
+                <div    id="activity-page_secondList_column"> Hash Power
+                    <ul>
+                        @foreach($hashes as $hash)
+                        <li>{{$hash->hash}} TH/S</li>
+                        @endforeach
+                    </ul>
+                </div><br><br>
 
-            <div    id="activity-page_secondList_column">Hash Power
-                <ul><li>14 TH/S</li></ul>
-            </div><br><br>
+                <div id="activity-page_secondList_column">Started At
+                    <ul>
+                        @foreach($hashes as $hash)
+                            <li>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}} </li>
+                        @endforeach
 
-            <div id="activity-page_secondList_column">Started At
-                    <ul><li>0.01</li></ul>
+                    </ul>
 
-            </div><br><br>
+                </div><br><br>
 
-            <div id="activity-page_secondList_column">Ends At
-                    <ul><li>778dsadDSAB
-                            Hhbjbdsa89dsax</li></ul>
-            </div><br> <br>
+                <div id="activity-page_secondList_column">Ends At
+                        <ul><li>778dsadDSAB
+                                Hhbjbdsa89dsax</li></ul>
+                </div><br> <br>
 
-            <div id="activity-page_secondList_column">Remains
+                <div id="activity-page_secondList_column">Remains
 
-                <ul><li>Pending</li></ul>
-            </div><br> <br>
+                    <ul><li>Pending</li></ul>
+                </div><br> <br>
 
 
-        </div>
+            </div>
+            @else
+          <p>No Purchase !</p>
+            @endif
 
     </div>
 

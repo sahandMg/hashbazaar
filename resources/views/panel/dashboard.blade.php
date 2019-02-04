@@ -42,8 +42,8 @@
 
                             <ul>
 
-                                <li class="user-account-list" id="usericon">{{Auth::guard('user')->user()->name}}</li>
-                                <li class="user-account-list" id="logouticon">Log Out</li>
+                                <a style="text-decoration: none;color: black" href="{{route('setting')}}"> <li class="user-account-list" id="usericon"> {{Auth::guard('user')->user()->name}}</li></a>
+                                <a style="text-decoration: none;color:black" href="{{route('logout')}}"> <li class="user-account-list" id="logouticon"> Log Out </li></a>
 
                             </ul>
                         </div>
@@ -299,6 +299,7 @@
                     //    ==================================chart==============
                     var dateFormat = 'MMMM DD YYYY';
             var date = moment('April 01 2017', dateFormat);
+
             var data = [];
             var labels = [];labels.push(moment('April 01 2017', dateFormat));labels.push(moment('April 03 2017', dateFormat));labels.push(moment('April 04 2017', dateFormat));
             data.push({t:moment('April 01 2017', dateFormat).valueOf(),y: 27.96930236878253});data.push({t:moment('April 03 2017', dateFormat).valueOf(),y: 28.96930236878253});data.push({t: moment('April 04 2017', dateFormat).valueOf(), y: 29.96930236878253});

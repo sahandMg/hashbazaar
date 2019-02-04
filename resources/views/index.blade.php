@@ -40,7 +40,7 @@
                 <li class="navbar-list small"><a href="#">About</a></li>
                 <li class="navbar-list small"><a href="{{route('customerService')}}">Customer Service</a></li>
                 <li class="navbar-list small"><a href="{{route('blog')}}">Blog</a></li>
-                <li class="navbar-list small signup"><a href="#" >Sign Up</a></li>
+                <li class="navbar-list small signup"><a href="{{route('signup')}}" >Sign Up</a></li>
                 <li class="navbar-list small login"><a href="{{route('login')}}" >Log In</a></li>
             </ul>
             

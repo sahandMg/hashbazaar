@@ -12,6 +12,8 @@
 */
 
 use App\Jobs\subscriptionMailJob;
+use App\MiningReport;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -69,9 +71,16 @@ Route::get('job',function(){
 
 Route::get('test',function (){
 
-   $query = json_encode(['message'=>'Good','status'=>1]);
-    dd(json_decode($query)->message);
+    $unpaids = \App\BitHash::where('confirmed',0)->get();
+    $settings = \App\Setting::first();
+    foreach ($unpaids as $unpaid){
 
+        if(Carbon::parse($unpaid->created_at)->diffInHours(Carbon::now()) > 24){
+
+            $settings->update(['available_th'=> $settings + $unpaid->hash]);
+            $unpaid->delete();
+        }
+    }
 });
 
 Route::get('antpool',function (){

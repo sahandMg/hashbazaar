@@ -136,10 +136,14 @@
 
             <h5 id="demo"></h5>
             <div class="slidecontainer">
+                @if($settings->available_th > 0)
                 <form class="dashboard-page" method="post" action="{{route('payment')}}">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <input type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="myRange">
                     <button type="submit"><p>Order</p></button></form>
+                    @else
+                    <p> TH Noy Available !</p>
+                    @endif
             </div>
 
 
@@ -272,11 +276,11 @@
 
                 });
 
-                var email = {!! json_encode(\Illuminate\Support\Facades\Auth::guard('user')->user()->email) !!}
+                var user = {!! json_encode(\Illuminate\Support\Facades\Auth::guard('user')->user()->code) !!}
 
                 function redeem(id) {
 
-                    axios.get('{{route('redeem')}}'+'?email='+email).then(function (response) {
+                    axios.get('{{route('redeem')}}'+'?user='+user).then(function (response) {
 
                         console.log(response.data)
                     })
@@ -285,7 +289,7 @@
 
                  // =---------------------------------------
 
-                axios.post({!! json_encode('totalEarn') !!},{'email':email}).then(function (response) {
+                axios.post({!! json_encode('totalEarn') !!},{'user':user}).then(function (response) {
 //                     console.log(id);
 //                     console.log(response.data);
                     // console.log("response.data");
@@ -319,14 +323,15 @@
                         };
 
                     //    ==================================chart==============
-                var dateFormat = 'MMMM DD YYYY';
+                var dateFormat = 'YYYY DD MMMM';
                 var date = moment('April 01 2017', dateFormat);
                 var dateTime = [];
                 var data = [];
                 var labels = [];
-            axios.get('{{route('chartData').'?email='. Auth::guard('user')->user()->email}}').then(function (response) {
+            axios.get('{{route('chartData').'?user='. Auth::guard('user')->user()->code}}').then(function (response) {
 
                 dateTime = response.data;
+                console.log(dateTime);
 
                 if(dateTime !== 404){
 

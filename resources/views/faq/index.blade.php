@@ -9,91 +9,140 @@
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/jquery.animate-colors.js"></script>
 
-  
+
 </head>
 <body>
-    <div class="customerservice-container">
-
-        <div class="customerservice-banner"> 
-            <h1>Lorem ipsum dolor sit amet.</h1>
-            <h2>
-            Lorem ipsum dolor sit amet 
-            consectetur adipisicing elit. Distinctio, sequi?
-            </h2>
-        </div>
-
-        <div class="customerservice-grid-item">
-            <div class="top-questions-list">
-            <blockquote>Top questions</blockquote>
-
-                <ul class="top-questions-list-ul">
-
-                    <li class="question-list question1">
-                        Lorem ipsum dolor sit amet.
-
-                    
-
-                    </li>
-
-                    <li class="question-list answer1" >
-                                    Lorem ipsum dolor, sit amet co.
-                                    nsectetur adipisicing elit. Placeat, perspiciatis.
-                                    nsectetur adipisicing elit. Placeat, perspiciatis.
-                                    nsectetur adipisicing elit. Placeat, perspiciatis.
-                                    nsectetur adipisicing elit. Placeat, perspiciatis.
-                                    nsectetur adipisicing elit. Placeat, perspiciatis.
-                                    nsectetur adipisicing elit. Placeat, perspiciatis.
-            
-                    </li>
-                </ul>
-            </div>
+<div class="customerservice-container">
 
 
+    <div class="customerservice-category">
 
-            <div class="customerservice-category">
-                <div class="category-bar">
-    
-                        <div class="category-button-flex"><a href="">Bitcoin</a></div>
-                        <div class="category-button-flex"><a href="">Bitcoin</a></div>
-                        <div class="category-button-flex"><a href="">Bitcoin</a></div>
+        <div class="category-button" onclick="changeColor()"><p>Lorem, ipsum.</p></div>
+        <div class="category-button" onclick="changeColor()"><p>Lorem, ipsum.</p></div>
+        <div class="category-button" onclick="changeColor()"><p>Lorem, ipsum.</p></div>
+        <div class="category-button" onclick="changeColor()"><p>Lorem, ipsum.</p></div>
 
-                    
-                </div>
-                <p class="p1">Frequently asked questions</p>
-
-                <ul class="category-list">
-
-                        <li class="category-list-ul-li question2">
-                            Lorem ipsum dolor sit 
-        
-                        </li>
-        
-                        <li class="category-list-ul-li answer2" >
-                                Lorem ipsum dolor, sit amet co.
-                                nsectetur adipisicing elit. Placeat, perspiciatis.
-                                nsectetur adipisicing elit. Placeat, perspiciatis.
-                                nsectetur adipisicing elit. Placeat, perspiciatis.
-                                nsectetur adipisicing elit. Placeat, perspiciatis.
-                                nsectetur adipisicing elit. Placeat, perspiciatis.
-                                nsectetur adipisicing elit. Placeat, perspiciatis.
-        
-                        </li>
-
-
-                        
-                    </ul>
-
-
-
-            </div>
-        </div>
     </div>
-   
-    <script>
-    
+
+
+    <div class="customerservice-questions">
+        <ul class="question-list1">
+
+            <li class="question-list100"><p class="question" id="1">Lorem ipsum dolor sit amet.</p>
+                <p class="answer" id="answer1">Lorem ipsum dolor sit amet consectetur.
+
+                </p>
+            </li>
+            <!-- --- -->
+            <li class="question-list100"><p class="question" id="2">Lorem ipsum dolor sit amet.</p>
+                <p class="answer" id="answer2">Lorem ipsum dolor sit amet consectetur.
+
+                </p>
+            </li>
+            <!-- --- -->
+            <li class="question-list100"><p class="question" id="3">Lorem ipsum dolor sit amet.</p>
+                <p class="answer" id="answer3">Lorem ipsum dolor sit amet consectetur.
+
+                </p>
+            </li>
+            <!-- --- -->
+            <li class="question-list100"><p class="question" id="4">Lorem ipsum dolor sit amet.</p>
+                <p class="answer" id="answer4">Lorem ipsum dolor sit amet consectetur.
+
+                </p>
+            </li>
+        </ul>
+
+
+
+    </div>
+
+    <!-- --------------------------------------- -->
+
+    <!-- <div class="customerservice-questions2">
+           <ul class="question-list1">
+
+               <li class="question-list100"><p class="question" id="1">Lorem ipsum dolor sit amet.</p>
+                   <p class="answer" id="answer1">Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                   </p>
+               </li>
+
+               <li class="question-list100"><p class="question" id="2">Lorem ipsum dolor sit amet.</p>
+                   <p class="answer" id="answer2">Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                   </p>
+               </li>
+
+               <li class="question-list100"><p class="question" id="3">Lorem ipsum dolor sit amet.</p>
+                   <p class="answer" id="answer3">Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                   </p>
+               </li>
+
+               <li class="question-list100"><p class="question" id="4">Lorem ipsum dolor sit amet.</p>
+                   <p class="answer" id="answer4">Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                           Lorem ipsum dolor sit amet consectetur.
+                   </p>
+               </li>
+           </ul>
+
+
+
+       </div>  -->
+
+</div>
+
+<script>
+
+
     $.noConflict();
 
-    jQuery(document).ready(function ($) { 
+    jQuery(document).ready(function ($) {
         $('.question1').click(function(){
 
             $('.answer1').toggle(500);
@@ -106,13 +155,36 @@
 
         })
 
+        $('.category-button').click(function(){
 
-     })
-    
-    
-    
-    
-    </script>
+            $(this).css('background-color' , 'rgb(26, 26, 122)');
+
+        })
+
+        $('.category-button').mouseleave(function(){
+            $(this).css('background-color' , 'rgb(235, 233, 233)');
+
+        })
+
+
+        $('.question-list100').click(function(){
+            var id = $(this).attr("id");
+            var answer = document.getElementById('#answer')
+            $('#answer').toggle(300);
+            $(this).css('height' , '150px');
+            $(this).css('transition' , 'all .5s');
+            $(this).css('color' , 'aqua')
+
+
+
+        })
+
+    })
+
+
+
+
+</script>
 </body>
 
 </html>

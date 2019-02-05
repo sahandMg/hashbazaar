@@ -439,7 +439,7 @@ class PaymentController extends Controller
     public function redeem(Request $request){
 
 
-        $user = DB::table('users')->where('email',$request->email)->first();
+        $user = DB::table('users')->where('code',$request->user)->first();
         if(is_null($user)){
             return 404;
         }

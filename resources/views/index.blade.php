@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="fonts/font-awesome.min.css">
     <link rel="stylesheet" href="css/theme.css">
 
+
     <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
 
 </head>
@@ -40,8 +41,12 @@
                 <li class="navbar-list small"><a href="#">About</a></li>
                 <li class="navbar-list small"><a href="{{route('customerService')}}">Customer Service</a></li>
                 <li class="navbar-list small"><a href="{{route('blog')}}">Blog</a></li>
-                <li class="navbar-list small signup"><a href="{{route('signup')}}" >Sign Up</a></li>
-                <li class="navbar-list small login"><a href="{{route('login')}}" >Log In</a></li>
+                @if(Auth::guard('user')->check())
+                    <li class="navbar-list small signup"><a href="{{route('dashboard')}}" >Dashboard</a></li>
+                @else
+                    <li class="navbar-list small signup"><a href="{{route('signup')}}" >Sign Up</a></li>
+                    <li class="navbar-list small login"><a href="{{route('login')}}" >Log In</a></li>
+                @endif
             </ul>
             
         </div>

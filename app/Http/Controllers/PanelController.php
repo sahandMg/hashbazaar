@@ -6,6 +6,7 @@ use App\BitHash;
 use App\Mining;
 use App\MiningReport;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
@@ -33,7 +34,7 @@ class PanelController extends Controller
 
     public function totalEarn(Request $request){
 // getting bitcoin price in usd
-        $user = DB::table('users')->where('email',$request->email)->first();
+        $user = DB::table('users')->where('code',$request->user)->first();
         if(is_null($user)){
             return 404;
         }
@@ -50,19 +51,24 @@ class PanelController extends Controller
      */
     public function chartData(Request $request){
 
-        $user = DB::table('users')->where('email',$request->email)->first();
+        $user = DB::table('users')->where('code',$request->user)->first();
         $reports = MiningReport::where('user_id',$user->id)->get();
 
-        if($reports->isEmpty()){
+        if(count($reports) == 0){
             return 404;
         }
         $data = [];
-        foreach ($reports as $key => $report) {
+        for($i = 0 ; $i <= date('t') ; $i++){
+            $time = Carbon::now()->subDay($i);
+            $reports = MiningReport::whereDate('created_at',$time)->where('user_id',1)->get();
+            if(count($reports) > 0){
+                $totalUsd =  $reports->sum('mined_usd');
+                $data[$i] = ['time'=>$time->format('Y d M') , 'mined'=>$totalUsd];
+            }
 
-           $time = Carbon::parse($report->created_at)->format('M d Y');
-            $data[$key] = ['time'=>$time,'mined'=>$report->mined_btc];
         }
 
+        $data = array_reverse( array_values($data)) ;
         return $data;
 
 

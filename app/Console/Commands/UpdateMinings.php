@@ -92,6 +92,8 @@ class UpdateMinings extends Command
                             $miningReport->mined_btc = $mining->mined_btc;
                             $miningReport->mined_usd = $mining->mined_usd;
                             $miningReport->user_id = $user->id;
+                            $miningReport->created_at = Carbon::now()->subDay(1);
+                            $miningReport->updated_at = Carbon::now()->subDay(1);
                             $miningReport->save();
 
 

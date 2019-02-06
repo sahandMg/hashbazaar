@@ -39,28 +39,21 @@
     </div>
 </header>
 
+
+
 @yield('content')
 
 
 
-
-
-
-<!-- Footer -->
-<div id="footer-div">
-
-    <div class="footer-div">
-        <p class="footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
-        <img id="footer-image" src="{{URL::asset('img/Logo_footer.svg')}}" alt=""></div>
-
-</div>
 
 <!-- Container -->
 <div class="mainContainer">
 
 
     <nav class="container">
+
         <ul class="mainList">
+            
             <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="{{URL::asset('img/Logo_In_NavBar.svg')}}" alt="Logo_In_NavBar"></a>
                 <a href="" id="welcome">Welcome User</a> </li>
             <li class="sub dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
@@ -71,13 +64,21 @@
 
         </ul>
 
-
-
     </nav>
 
 
 
 
 </div>
+
+
+<!-- Footer -->
+<footer id="footer" >
+        <hr class="hr-footer">
+        <p class="footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
+        <img id="footer-image" src="{{URL::asset('img/Logo_footer.svg')}}" alt="">
+
+</footer>
+
 </body>
 </html>

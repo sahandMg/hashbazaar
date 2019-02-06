@@ -192,7 +192,7 @@ Route::group(['prefix' => '@admin'], function () {
     Route::get('users/list',['as'=>'adminGetUsersList','uses'=>'AdminController@adminGetUsersList']);
     Route::get('block-user',['as'=>'blockUser','uses'=>'AdminController@blockUser']);
 
-//    Voyager::routes();
+   Voyager::routes();
 });
 
 

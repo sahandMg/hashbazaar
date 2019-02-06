@@ -39,6 +39,7 @@
     </div>
 </header>
 
+<<<<<<< HEAD
 <div>
   <div>
    @yield('content')
@@ -50,6 +51,17 @@
         </div>
 
      </div>
+=======
+
+
+@yield('content')
+
+
+
+
+<!-- Container -->
+<div class="mainContainer">
+>>>>>>> 87e4accab20480bb432fe1f168bacfab3711fd93
 
   </div>
 
@@ -57,7 +69,9 @@
    <!-- Container -->
    <div class="mainContainer">
     <nav class="container">
+
         <ul class="mainList">
+            
             <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="{{URL::asset('img/Logo_In_NavBar.svg')}}" alt="Logo_In_NavBar"></a>
                 <a href="" id="welcome">Welcome User</a> </li>
             <li class="sub dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
@@ -73,11 +87,29 @@
 
 </div>
 
+<<<<<<< HEAD
+
+
+=======
+    </nav>
+>>>>>>> 87e4accab20480bb432fe1f168bacfab3711fd93
 
 
 
 
+<<<<<<< HEAD
+=======
+</div>
 
 
+<!-- Footer -->
+<footer id="footer" >
+        <hr class="hr-footer">
+        <p class="footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
+        <img id="footer-image" src="{{URL::asset('img/Logo_footer.svg')}}" alt="">
+
+</footer>
+
+>>>>>>> 87e4accab20480bb432fe1f168bacfab3711fd93
 </body>
 </html>

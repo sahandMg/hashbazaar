@@ -446,13 +446,18 @@ class PaymentController extends Controller
         $btcSum = Mining::where('user_id',$user->id)->where('block',0)->sum('mined_btc');
         $wallet = DB::table('wallets')->where('user_id',$user->id)->where('active',1)->first();
         if(is_null($wallet)){
-            return 'wallet not found';
+            return 'wallet not found or is not active';
         }
 
         $trans = new Transaction();
         $trans->addr = $wallet->addr;
         $trans->code = strtoupper(uniqid());
-        $trans->country = 'IR';
+        try{
+
+            $trans->country = strtolower(Location::get(Helpers::userIP())->countryCode);
+        }catch (\Exception $exception){
+            $trans->country = 'fr';
+        }
         $trans->amount_btc = $btcSum;
         $trans->status = 'unpaid';
         $trans->user_id = $user->id;

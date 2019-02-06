@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>#BAZAAR - Contact</title>
-    <link rel="stylesheet" href="css/contact-referral-activity-dashboard.css">
-        <link rel="stylesheet" href="css/cssreset.css">
-        <script src="js/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="{{URL::asset('css/contact-referral-activity-dashboard.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('css/cssreset.css')}}">
+        <script src="{{URL::asset('js/jquery-3.3.1.js')}}"></script>
 
     
 </head>
@@ -18,10 +18,10 @@
     <header>
 
 
-               <div id="header-div"> <a href="http://hashbazaar.com"> <img class="Logo_header" src="img/Logo_header.svg" alt="Logo_header"></a> </div>
+               <div id="header-div"> <a href="{{env('APP_URL')}}"> <img class="Logo_header" src="{{URL::asset('img/Logo_header.svg')}}" alt="Logo_header"></a> </div>
             <div class="useraccount">
 
-                <img class="user-img" src="../img/user-circle-solid.svg" alt="">
+                <img class="user-img" src="{{URL::asset('../img/user-circle-solid.svg')}}" alt="">
     
                 <div class="list">
 
@@ -58,7 +58,7 @@
 
         <div class="contact-footer-div">
                 <p class="contact-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
-             <img id="contact-footer-image" src="img/Logo_footer.svg" alt=""></div>
+             <img id="contact-footer-image" src="{{URL::asset('img/Logo_footer.svg')}}" alt=""></div>
 
     </div>
 
@@ -68,7 +68,7 @@
 
         <nav class="container-contact">
             <ul class="mainList">
-                <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="img/Logo_In_NavBar.svg" alt="Logo_In_NavBar"></a>
+                <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="{{URL::asset('img/Logo_In_NavBar.svg')}}" alt="Logo_In_NavBar"></a>
                     <a href="" id="welcome">Welcome User</a> </li>
                     <li class="sub dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
                     <li class="sub"> <a href="{{route('activity')}}" id="activity">Activity</a></li>

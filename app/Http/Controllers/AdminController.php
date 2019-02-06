@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\CryptpBox\lib\Cryptobox;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 require_once(app_path()."/CryptoBox/lib/cryptobox.class.php" );
@@ -20,9 +21,23 @@ class AdminController extends Controller
         $transactions = DB::table('crypto_payments')->orderBy('PaymentID','desc')->get()->toArray();
         return view('admin.transactions',compact('transactions'));
     }
-    /*
+
+    public function adminGetUsersList(){
+
+        $users = User::get();
+        return view('admin.users.list',compact('users'));
+    }
+    /*==================================================================================
      * Ajax request to admin transaction page
      */
+
+    public function blockUser(Request $request){
+
+        $user = User::where('code',$request->code)->first();
+        $user->update(['block'=> !$user->block]);
+        $user->save();
+    }
+
     public function getTransactions(){
 
 

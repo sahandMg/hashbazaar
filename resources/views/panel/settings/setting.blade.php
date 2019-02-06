@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <script src="js/jquery-3.3.1.js"></script>
+        <script src="{{URL::asset('js/jquery-3.3.1.js')}}"></script>
         <title>Hash Bazaar - Setting</title>
-    <link rel="stylesheet" href="css/setting2.css">
-    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="{{URL::asset('css/setting2.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('css/cssreset.css')}}">
     <script>
 
     </script>
@@ -20,10 +20,10 @@
 
 
 
-               <div> <a href="http://hashbazaar.com"><img class="Logo_header" src="img/Logo_header.svg" alt="Logo_header"> </a></div>
+               <div> <a href="http://hashbazaar.com"><img class="Logo_header" src="{{URL::asset('img/Logo_header.svg')}}" alt="Logo_header"> </a></div>
                <div class="useraccount">
 
-                <img class="user-img" src="../img/user-circle-solid.svg" alt="">
+                <img class="user-img" src="{{URL::asset('../img/user-circle-solid.svg')}}" alt="">
     
                 <div class="list">
 
@@ -87,7 +87,7 @@
 
             <div class="setting-footer-div">
                     <p class="setting-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
-                 <img id="setting-footer-image" src="../img/Logo_footer.svg" alt=""></div>
+                 <img id="setting-footer-image" src="{{URL::asset('../img/Logo_footer.svg')}}" alt=""></div>
 
         </footer>
 
@@ -101,7 +101,7 @@
 
         <nav class="container-setting">
             <ul class="mainList">
-                <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="img/Logo_In_NavBar.svg" alt="Logo_In_NavBar"></a>
+                <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="{{URL::asset('img/Logo_In_NavBar.svg')}}" alt="Logo_In_NavBar"></a>
                     <a href="http://hashbazaar.com" id="welcome">Welcome User</a> </li>
 
                     <li class="sub dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>

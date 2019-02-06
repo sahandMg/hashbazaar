@@ -1,7 +1,10 @@
 {
     "name": "laravel/laravel",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "type": "project",
     "require": {
@@ -11,9 +14,10 @@
         "kevinrob/guzzle-cache-middleware": "^3.2",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
-        "stevebauman/location": "3.0",
+        "stevebauman/location": "^3.0",
         "symfony/dom-crawler": "^4.0",
-        "symfony/psr-http-message-bridge": "^1.0"
+        "symfony/psr-http-message-bridge": "^1.0",
+        "tcg/voyager": "^1.1"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -39,8 +43,7 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": [
-            ]
+            "dont-discover": []
         }
     },
     "files": [
@@ -64,5 +67,11 @@
         "optimize-autoloader": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": {
+        "hooks": {
+            "type": "composer",
+            "url": "https://larapack.io"
+        }
+    }
 }

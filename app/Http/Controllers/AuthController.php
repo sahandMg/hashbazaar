@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Helpers;
 use App\Jobs\subscriptionMailJob;
 use App\User;
+use Stevebauman\Location\Facades\Location;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -30,6 +32,13 @@ class AuthController extends Controller
         $user->code = str_random(10);
         $user->password = Hash::make($request->password);
         $user->reset_password = str_random(10);
+        $user->ip = Helpers::userIP();
+        try{
+
+            $user->country = strtolower(Location::get(Helpers::userIP())->countryCode);
+        }catch (\Exception $exception){
+            $user->country = 'fr';
+        }
         // $user->plan_id = DB::table('plans')->where('name',$request->plan)->first()->id;
         // $user->period_id = DB::table('periods')->where('name',$request->period)->first()->id;
         $user->save();
@@ -90,6 +99,14 @@ class AuthController extends Controller
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->ip = Helpers::userIP();
+        try{
+
+            $user->country = strtolower(Location::get(Helpers::userIP())->countryCode);
+        }catch (\Exception $exception){
+            $user->country = 'fr';
+        }
+
         $user->code = str_random(10);
         $user->password = Hash::make($request->password);
         $user->reset_password = str_random(10);
@@ -126,7 +143,14 @@ class AuthController extends Controller
         ]);
 
         if(Auth::guard('user')->attempt(['email'=>$request->email,'password'=>$request->password])){
+            try{
 
+                $country = strtolower(Location::get(Helpers::userIP())->countryCode);
+            }catch (\Exception $exception){
+                $country = 'fr';
+            }
+
+            Auth::guard('user')->user()->update(['ip'=>Helpers::userIP(),'country'=>$country]);
             return redirect()->route('dashboard');
         }else{
 

@@ -20,8 +20,11 @@ use Illuminate\Support\Facades\Mail;
 use GuzzleHttp\Client as GuzzleClient;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
+use Stevebauman\Location\Facades\Location;
 use Symfony\Component\DomCrawler\Crawler;
 use Psr\Http\Message\ResponseInterface;
+use TCG\Voyager\Facades\Voyager;
 
 Route::get('job',function(){
 
@@ -71,16 +74,7 @@ Route::get('job',function(){
 
 Route::get('test',function (){
 
-    $unpaids = \App\BitHash::where('confirmed',0)->get();
-    $settings = \App\Setting::first();
-    foreach ($unpaids as $unpaid){
-
-        if(Carbon::parse($unpaid->created_at)->diffInHours(Carbon::now()) > 24){
-
-            $settings->update(['available_th'=> $settings + $unpaid->hash]);
-            $unpaid->delete();
-        }
-    }
+    dd(Storage::disk('public'));
 });
 
 Route::get('antpool',function (){
@@ -138,54 +132,72 @@ Route::get('pricing','PageController@Pricing');
                                 User Panel Routes
 ===============================================================================
 */
+Route::group(['middleware'=>'block','prefix'=>'panel'],function(){
 
-Route::get('dashboard','PanelController@dashboard')->name('dashboard');
 
-Route::post('totalEarn','PanelController@totalEarn')->name('totalEarn');
+    Route::get('dashboard','PanelController@dashboard')->name('dashboard');
 
-Route::post('dashboard','PanelController@postDashboard')->name('dashboard');
+    Route::post('totalEarn','PanelController@totalEarn')->name('totalEarn');
 
-Route::get('invoice','PanelController@makeInvoice')->name('invoice');
+    Route::post('dashboard','PanelController@postDashboard')->name('dashboard');
 
-Route::get('activity','PanelController@activity')->name('activity');
+    Route::get('invoice','PanelController@makeInvoice')->name('invoice');
 
-Route::get('setting','PanelController@setting')->name('setting');
+    Route::get('activity','PanelController@activity')->name('activity');
 
-Route::get('setting/user-info','PanelController@userInfo')->name('userInfo');
+    Route::get('setting','PanelController@setting')->name('setting');
 
-Route::get('setting/change-pass','PanelController@changePassword')->name('changePassword');
+    Route::get('setting/user-info','PanelController@userInfo')->name('userInfo');
 
-Route::post('setting/change-pass','PanelController@post_changePassword')->name('changePassword');
+    Route::get('setting/change-pass','PanelController@changePassword')->name('changePassword');
 
-Route::get('setting/wallet','PanelController@wallet')->name('wallet');
+    Route::post('setting/change-pass','PanelController@post_changePassword')->name('changePassword');
 
-Route::get('setting/wallet-make','PanelController@makeWallet')->name('makeWallet');
+    Route::get('setting/wallet','PanelController@wallet')->name('wallet');
 
-Route::get('referral','PanelController@referral')->name('referral');
+    Route::get('setting/wallet-make','PanelController@makeWallet')->name('makeWallet');
 
-Route::get('contact','PanelController@contact')->name('contact');
+    Route::get('referral','PanelController@referral')->name('referral');
 
-Route::get('logout',['as'=> 'logout','uses'=>'AuthController@logout']);
+    Route::get('contact','PanelController@contact')->name('contact');
 
-Route::get('payment','PaymentController@payment')->name('payment');
+    Route::get('logout',['as'=> 'logout','uses'=>'AuthController@logout']);
 
-Route::post('payment','PaymentController@postPayment')->name('payment');
+    Route::get('payment','PaymentController@payment')->name('payment');
 
-Route::post('cryptobox.callback.php','PaymentController@paymentCallback')->name('paymentCallback');
+    Route::post('payment','PaymentController@postPayment')->name('payment');
 
-Route::get('payment/confirm','PaymentController@confirmPayment')->name('confirmPayment');
+    Route::post('cryptobox.callback.php','PaymentController@paymentCallback')->name('paymentCallback');
 
-Route::get('redeem','PaymentController@redeem')->name('redeem');
+    Route::get('payment/confirm','PaymentController@confirmPayment')->name('confirmPayment');
 
-Route::get('chart','PanelController@chartData')->name('chartData');
+    Route::get('redeem','PaymentController@redeem')->name('redeem');
 
-Route::group(['prefix'=>'admin'],function (){
+    Route::get('chart','PanelController@chartData')->name('chartData');
 
-    Route::get('main',['as'=>'main','uses'=>'AdminController@index']);
-    Route::get('transactions',['as'=>'adminTransactions','uses'=>'AdminController@transactions']);
-    Route::get('get-transactions',['as'=>'adminGetTransactions','uses'=>'AdminController@getTransactions']);
 });
+
 
 Route::get('blog',['as'=>'blog','uses'=>'BlogController@index']);
 
 Route::get('customer-service',['as'=>'customerService','uses'=>'PageController@customerService']);
+
+
+Route::group(['prefix' => '@admin'], function () {
+
+    Route::get('/',['uses'=>'AdminController@index']);
+    Route::get('transactions',['as'=>'adminTransactions','uses'=>'AdminController@transactions']);
+    Route::get('get-transactions',['as'=>'adminGetTransactions','uses'=>'AdminController@getTransactions']);
+    Route::get('users/list',['as'=>'adminGetUsersList','uses'=>'AdminController@adminGetUsersList']);
+    Route::get('block-user',['as'=>'blockUser','uses'=>'AdminController@blockUser']);
+
+    Voyager::routes();
+});
+
+
+Route::group(['prefix' => 'admin'], function () {
+
+
+
+
+});

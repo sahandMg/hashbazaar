@@ -62,7 +62,7 @@
         </tbody>
     </table>
 
-    <a href="{{route('main')}}"><button class="btn btn-primary">Back</button></a>
+    <a href="{{url('@admin/')}}"><button class="btn btn-primary">Back</button></a>
 </div>
 
 <script>

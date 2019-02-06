@@ -1090,13 +1090,13 @@ class Cryptobox {
 	           
 	     $tmp .= "<div class='col-12 ".(CRYPTOBOX_WORDPRESS?"col-md-10 offset-md-1":"text-center col-sm-10 offset-sm-1 col-md-8 offset-md-2")."'>";
 	           
-	     $tmp .= "<form action='" . route('payment') . "' method='get'>";
+	     $tmp .= "<form id='refreshForm' action='" . route('payment') . "' method='get'>";
 //         $tmp .= "<input  name ='_token' value=".csrf_token()." type='hidden'> ";
          $tmp .= "<input  name ='amount' value=".$this->amount." type='hidden'> ";
 	     $tmp .= "<div class='card box-shadow'>";
 	     $tmp .= "<div class='card-header'>";
 	     $tmp .= "<h4 class='my-0 font-weight-normal ".$ext."addr_title'><span class='".$ext."texts_coin_address'>&#160;</span>";
-	     $tmp .= "<button type='submit' class='".$ext."refresh btn btn-sm btn-outline-secondary float-right'><i class='fas fa-sync-alt'></i></button>";
+	     $tmp .= "<button  type='submit' class='".$ext."refresh btn btn-sm btn-outline-secondary float-right'><i class='fas fa-sync-alt'></i></button>";
 	     $tmp .= "<span class='".$ext."loading_icon mr-3 float-left' " . $hide . "> <i class='fas fa-laptop'></i></span>";
 	     $tmp .= "<span class='".$ext."loading_icon mr-3 float-left' " . $hide . "> <i class='fas fa-sync-alt fa-spin'></i></span>";
 	     $tmp .= "</h4>";

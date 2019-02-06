@@ -45,7 +45,7 @@ class DeleteTh extends Command
         $settings = Setting::first();
         foreach ($unpaids as $unpaid){
 
-            if(Carbon::parse($unpaid->created_at)->diffInHours(Carbon::now()) > 24){
+            if(Carbon::parse($unpaid->created_at)->diffInHours(Carbon::now()) > 10){
 
                 $settings->update(['available_th'=> $settings->available_th + $unpaid->hash]);
 

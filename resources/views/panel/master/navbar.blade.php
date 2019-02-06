@@ -1,45 +1,30 @@
-<div class="mainContainer">
-
-    <!-- <a href="#" class="icon-menu"><img src="img/menu.png" alt=""></a>
-    <a href="#" class="icon-menu-times"><img class="times-solid" src="img/times-solid.svg" alt=""></a> -->
-
-    <nav class="container-activity">
-        <ul class="mainList">
-
-            <li class="navbar"> <a href=""><img class="Logo_In_NavBar" src="img/Logo_In_NavBar.svg" alt="Logo_In_NavBar"></a>
-                <a href="" id="welcome">Welcome User</a> </li>
+<header>
 
 
-            <li class="sub dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
-            <li class="sub"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
-            <li class="sub"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
-            <li class="sub"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
-            <li class="sub"> <a href="{{route('contact')}}" id="contact">Contact</a></li>
+    <div id="header-div"> <a href="http://hashbazaar.com"> <img class="Logo_header" src="{{URL::asset('img/Logo_header.svg')}}" alt="Logo_header"></a> </div>
+    <div class="useraccount">
+
+        <img class="user-img" src="{{URL::asset('../img/user-circle-solid.svg')}}" alt="">
+
+        <div class="list">
+
+            <ul>
+
+                <li class="user-account-list" id="usericon">User Account</li>
+                <li class="user-account-list" id="logouticon">Log Out</li>
+
+            </ul>
+        </div>
+
+    </div>
+</header>
 
 
-        </ul>
+<!-- Footer -->
+<div id="footer-div">
 
-
-
-    </nav>
-
-    <nav class="container-activity2">
-        <ul class="mainList2">
-
-            <li class="sub2 dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
-            <li class="sub2"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
-            <li class="sub2"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
-            <li class="sub2"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
-            <li class="sub2"> <a href="{{route('contact')}}" id="contact">Contact</a></li>
-        </ul>
-
-
-
-    </nav>
-
-
-
-
-
+    <div class="footer-div">
+        <p class="footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
+        <img id="footer-image" src="{{URL::asset('img/Logo_footer.svg')}}" alt=""></div>
 
 </div>

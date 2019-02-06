@@ -142,7 +142,7 @@ class PaymentController extends Controller
         $mining->save();
 
 //        return view('payment.makePayment',compact('box','coins','def_coin','def_language'));
-        session()->put('paymentData',['box'=>$box,'coins'=>$coins,'def_coin'=>$def_coin,'def_language'=>$def_language]);
+        session()->put('paymentData',['orderID'=>$orderID,'box'=>$box,'coins'=>$coins,'def_coin'=>$def_coin,'def_language'=>$def_language]);
         return redirect()->route('payment');
     }
 
@@ -480,4 +480,14 @@ class PaymentController extends Controller
 
     }
 
+    public function checkPaymentReceived(Request $request){
+
+        $query = DB::table('crypto_payments')->where('orderID',$request->orderID)->first();
+
+        if(is_null($query)){
+            return 404;
+        }else{
+            return 200;
+        }
+    }
 }

@@ -1,0 +1,851 @@
+
+
+/* User Account */
+
+.useraccount {
+    position: absolute;
+    top: 0px;
+    margin-left:90%;
+    width: 0px;
+    left: 0;
+    background-color: transparent;
+    border-bottom: transparent;
+    cursor: unset;
+}
+.useraccount .list {
+    width: 200px;
+    height: 110px;
+    border-radius: 10px;
+    margin-top: 100px;
+    margin-left:0%;
+    background-color: white;
+    box-shadow: 2px 3px 10px 1px silver;
+    display: none;
+}
+.useraccount .list  {
+    margin-left: -135px
+}
+.useraccount .list:after {
+    content: '';
+    position: absolute;
+    /* border-top:20px solid rgba(0, 0, 0, 0.53); */
+    border-left:18px solid transparent;
+    border-right:18px solid transparent;
+    border-bottom: 18px solid white;
+    margin-left: 140px;
+    top:-18px;
+    transition: all 1s
+
+}
+
+.useraccount .list ul li {
+    list-style-type: none;
+    width: 200px;
+    /* height: 50%; */
+    padding-bottom: 20px;
+    text-align: center;
+    left: 0;
+    margin-left: 0px;
+    position: relative; 
+    font-family: sans-serif;
+    font-weight: bold;
+    transition: all .5s ease-in;
+    cursor: pointer;
+
+}
+
+#usericon:before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/user-solid.svg");
+    background-size: 100% 100%;
+    position: relative;
+    left: 3vh;
+    top: 3vh
+    
+}
+
+#usericon {
+    border-bottom: 1px solid;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#usericon:hover{
+    background-color: black;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
+
+#logouticon {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+#logouticon:hover {
+    background-color: black;
+    height: 33px;
+    color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+
+#usericon:hover::before ,#logouticon:hover::before{
+    border: 1px solid white;
+    border-radius: 15%;
+    background-color: white
+}
+
+#logouticon:before{
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/sign-out-alt-solid.svg");
+    background-size: 100% 100%;
+    position: relative;
+    left: 3vh;
+    top: 3vh;
+}
+
+.user-img
+{
+    width: 40px;
+    height: 40px;
+    margin-left: 30%;
+    margin-top: 20px;
+    border:2px solid rgb(224, 210, 210);
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    cursor: pointer;
+}
+
+/* CONTACT */
+
+.mainContainer
+{
+    background-color: #FFFDE8;
+    margin-top: -100px
+}
+body {
+    background-color: #FFFDE8
+
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* Header */
+
+header {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 110px;
+    background-color: black;
+    font-size: 50px;
+    position: fixed;
+    z-index: 2000;
+}
+
+#header-div {
+    border-bottom: 4px solid orange;
+    width: 100%;
+    height: 110px;
+    position: fixed;
+    z-index: 2000;
+
+}
+
+.Logo_header {
+    width: 700px;
+    height: 90px;
+    position: fixed;
+    left: -120px;
+    z-index: 2000;
+
+}
+
+
+
+/* Menu */
+.container {
+    width: 370px;
+    background: rgb(39, 38, 38);
+    border-top: 4px solid orange;
+    position: fixed;
+    top: 110px;
+    height: 100%;
+    left: 0
+}
+
+.container .mainList {
+    background: white;
+    width: 370px;
+}
+
+.container .navbar {
+    height: 130px;
+    border-bottom: 2px solid #727272;
+    background: rgb(39, 38, 38);
+    font-family: sans-serif;
+}
+
+.Logo_In_NavBar {
+    width: 250px;
+    height: 400px;
+    left: 50px;
+    position: absolute;
+    top: -170px
+}
+
+
+div ul .navbar #welcome {
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    left: 110px;
+    top: 90px;
+    text-decoration: none
+}
+
+.container .mainList .sub {
+    color: orange;
+    height: 60px;
+    border-bottom: 2px solid #727272;
+    font-size: 30px;
+    background: rgb(39, 38, 38);
+    padding-bottom: 10px;
+    text-align: center;
+    font-family: sans-serif
+}
+
+.container .mainList .sub a {
+    color: orange;
+    text-decoration: none;
+    padding-top: 20px;
+    position: relative;
+    left: -40px;
+    top: 30%
+}
+
+.container .mainList .sub a:hover {
+    color: white;
+}
+
+.container .mainList .sub {
+    color: orange;
+    height: 60px;
+    border-bottom: 2px solid #727272;
+    font-size: 30px;
+    background: rgb(39, 38, 38);
+    padding-bottom: 10px;
+    text-align: center;
+    font-family: sans-serif
+}
+
+
+.sub:after {
+    background-image: url("../img/Arrow.svg");
+    width: 1em;
+    height: 1em;
+    margin-top: 25px;
+    content: "";
+    left: 300px;
+    background-size: 100% 100%;
+    position: absolute;
+}
+
+#dashboard:before {
+    content: "";
+    background-image: url("../img/Dashboard.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -60px;
+    top: 15px
+}
+
+#activity:before {
+    content: '';
+    background-image: url("../img/Activity.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -80px;
+    top: 15px
+}
+
+
+#referral:before {
+    content: "";
+    background-image: url("../img/Referral.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -80px;
+    top: 15px
+}
+
+#setting:before {
+    content: "";
+    background-image: url("../img/Setting.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -85px;
+    top: 15px
+}
+
+.contact {
+    border-bottom: 1px solid transparent !important
+}
+
+#contact {
+color: orange !important}
+
+#contact:hover {
+    color: white !important
+}
+#contact:before {
+    content: "";
+    background-image: url("../img/contact.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -80px;
+    top: 18px
+}
+
+.contact-hr-footer {
+    top: 980px
+}
+
+/* Footer */
+
+
+.footer-div {
+    top: 1080px;
+    width: 100%;
+    margin-left: 0px;;
+    position: absolute;
+}
+.footer-paragraph {
+    font-size: 20px;
+    font-family: sans-serif;
+    position: absolute;
+    top: -20px;
+    left: 60%
+
+}
+
+#footer-image {
+    width: 250px;
+    height: 120px;
+    position: absolute;
+    left: 30%
+}
+
+
+
+/* Contact - Media - 1024 */
+@media screen and (max-width:1024px){
+    /* ---------------=====Media====-------------Main Container--------------------------- */
+
+    .useraccount .list {
+        
+        display: none;
+    }
+    .container-contact {
+        width: 270px;
+        /* height: 1850px; */
+
+
+    }
+
+    .container .mainList {
+        width: 270px
+    }
+
+    .container .mainList .navbar .Logo_In_NavBar{
+        width: 210px;
+        height: 370px;
+        left: 30px;
+        position: absolute;
+        top: -170px;
+    }
+
+    div ul .navbar #welcome {
+        font-size: 17px;
+        left: 70px;
+
+    }
+
+
+    .container .mainList .sub {
+        height: 60px;
+        font-size: 25px;
+        padding-bottom: 10px;
+    }
+
+
+    .container .mainList .sub a {
+        left: -10px;
+        top: 30%
+    }
+
+
+    .sub:after {
+        width: 1em;
+        height: 1em;
+        content: "";
+        left: 85%;
+    }
+
+
+    #dashboard:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -40px;
+    }
+
+    #activity:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+
+    #contact:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+
+    #setting:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+
+    #referral:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: -55px;
+    }
+
+
+    .hr-footer
+    {
+        top:980px
+    }
+
+
+
+    .footer-div {
+        left: 0px;
+        /* width: 1024px */
+    }
+
+}
+
+
+/* Contact - Media - 768 */
+@media screen and (max-width:768px) {
+    body {
+        background-color: #FFFDE8
+    }
+    header {
+        z-index: 2;
+    }
+    .container {
+        display: none;
+    }
+    .container{
+        display: block;
+        position:  relative;
+        top: 22px;
+        width: 100%;
+        float: left;
+    }
+
+    .useraccount .list {
+        
+        display: none;
+    }
+
+    .mainList {
+        display: none
+    }
+
+    #dashboard:before {
+        content: "";
+        background-image: url("img/Dashboard.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+    #activity:before {
+        content: "";
+        background-image: url("img/Activity.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+
+    #referral:before {
+        content: "";
+        background-image: url("img/Referral.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+    #setting:before {
+        content: "";
+        background-image: url("img/Setting.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+    #contact:before {
+        content: "";
+        background-image: url("img/contact.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+
+    .hr-footer {
+        top: 800px
+    }
+
+    /* Footer */
+
+
+    .footer-div {
+        top:960px;
+        width: 94%;
+        left: 2%;
+        margin: 0%
+    }
+    .footer-paragraph {
+        font-size: 18px;
+        top: -60px;
+        left: 230px
+
+    }
+
+    #footer-image {
+        left: 0%;
+    }
+
+    .useraccount .list {
+        
+        display: none;
+    }
+}
+
+
+/* Contact - Media - 414 */
+@media screen and (max-width: 414px) {
+
+    body {
+        background-color: #FFFDE8
+    }
+    header {
+        z-index: 2;
+    }
+    .Logo_header {
+        width: 300px;
+        height: 90px;
+        position: absolute;
+        left: 20px;
+    }
+    .container {
+        display: none;
+    }
+  
+    .mainList {
+        display: none
+    }
+
+    #dashboard:before {
+        content: "";
+        background-image: url("img/Dashboard.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+    #activity:before {
+        content: "";
+        background-image: url("img/Activity.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+
+    #referral:before {
+        content: "";
+        background-image: url("img/Referral.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+    #setting:before {
+        content: "";
+        background-image: url("img/Setting.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+    #contact:before {
+        content: "";
+        background-image: url("img/contact.svg");
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -30px;
+        top: 0px
+    }
+
+    .hr-footer {
+        top: 800px
+    }
+
+/* Footer */
+
+    .footer-div {
+        width: 10% !important;
+        position: absolute;
+        top: 960px;
+        left: 2%;
+        margin: 0%
+    }
+
+    #footer-image {
+        width: 150px;
+        height: 75px;
+    }
+
+    .footer-paragraph {
+        font-size: 15px;
+        font-family: sans-serif;
+        position: absolute;
+        top: -60px;
+        left: 0px;
+        width: 260px
+    }
+
+}
+
+
+/* Contact - Media - 375 */
+@media screen and (max-width: 375px) {
+    
+    #dashboard:before {
+        content: "";
+        background-image: url("img/Dashboard.svg");
+        width: 17px;
+        height: 17px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -25px;
+        top: 0px
+    }
+
+    #activity:before {
+        content: "";
+        background-image: url("img/Activity.svg");
+        width: 17px;
+        height: 17px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -25px;
+        top: 0px
+    }
+
+
+    #referral:before {
+        content: "";
+        background-image: url("img/Referral.svg");
+        width: 17px;
+        height: 17px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -25px;
+        top: 0px
+    }
+
+    #setting:before {
+        content: "";
+        background-image: url("img/Setting.svg");
+        width: 17px;
+        height: 17px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -25px;
+        top: 0px
+    }
+
+    #contact:before {
+        content: "";
+        background-image: url("img/contact.svg");
+        width: 17px;
+        height: 17px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -25px;
+        top: 0px
+    }
+
+    .footer-paragraph {
+        font-size: 13px;
+        font-family: sans-serif;
+        position: absolute;
+        top: -60px;
+        left: 0px;
+        width: 260px
+    }
+}
+
+/* Contact - Media - 320 */
+@media screen and (max-width:320px) {
+    .Logo_header {
+        width: 200px;
+        height: 90px;
+        position: absolute;
+        left: 10px;
+    }
+   
+
+    #dashboard:before {
+        content: "";
+        background-image: url("img/Dashboard.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -22px;
+        top: 0px
+    }
+
+    #activity:before {
+        content: "";
+        background-image: url("img/Activity.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -22px;
+        top: 0px
+    }
+
+
+    #referral:before {
+        content: "";
+        background-image: url("img/Referral.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -22px;
+        top: 0px
+    }
+
+    #setting:before {
+        content: "";
+        background-image: url("img/Setting.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -22px;
+        top: 0px
+    }
+
+    #contact:before {
+        content: "";
+        background-image: url("img/contact.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -22px;
+        top: 0px
+    }
+
+    .footer-div {
+        width: 94%;
+        left: 0%;
+        position: absolute;
+        top: 960px
+    }
+
+    .footer-paragraph {
+        font-size: 13px;
+        margin-left: 0;
+        left: 0px;
+        width: 230px
+    }
+
+    #footer-image {
+        width: 100px;
+        height: 50px;
+    }
+
+}

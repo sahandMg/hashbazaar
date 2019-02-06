@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hash Bazaar - Setting</title>
-    <script src="../js/jquery-3.3.1.js"></script>
-        <link rel="stylesheet" href="../css/setting-changepassword.css">
-    <link rel="stylesheet" href="../css/cssreset.css">
+    <script src="{{URL::asset('../js/jquery-3.3.1.js')}}"></script>
+        <link rel="stylesheet" href="{{URL::asset('../css/setting-changepassword.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('../css/cssreset.css')}}">
     <script>
 
     </script>
@@ -20,10 +20,10 @@
 
 
         
-               <div> <a href="http://hashbazaar.com"><img class="Logo_header"   src="../img/Logo_header.svg" alt="Logo_header"> </a></div>    
+               <div> <a href="http://hashbazaar.com"><img class="Logo_header"   src="{{URL::asset('../img/Logo_header.svg')}}" alt="Logo_header"> </a></div>
              <div class="useraccount">
 
-                <img class="user-img" src="../img/user-circle-solid.svg" alt="">
+                <img class="user-img" src="{{URL::asset('../img/user-circle-solid.svg')}}" alt="">
     
                 <div class="list">
 

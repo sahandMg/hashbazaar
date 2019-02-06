@@ -127,6 +127,7 @@ Route::post('signup','AuthController@post_signup')->name('signup');
 
 Route::get('pricing','PageController@Pricing');
 
+Route::get('received/{orderID?}','PaymentController@checkPaymentReceived')->name('checkPaymentReceived');
 /*
 ===============================================================================
                                 User Panel Routes
@@ -191,7 +192,7 @@ Route::group(['prefix' => '@admin'], function () {
     Route::get('users/list',['as'=>'adminGetUsersList','uses'=>'AdminController@adminGetUsersList']);
     Route::get('block-user',['as'=>'blockUser','uses'=>'AdminController@blockUser']);
 
-    Voyager::routes();
+//    Voyager::routes();
 });
 
 

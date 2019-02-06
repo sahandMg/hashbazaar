@@ -1,26 +1,5 @@
-
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="{{URL::asset('css/contact-referral-activity-dashboard.css')}}">
-        <link rel="stylesheet" href="{{URL::asset('css/cssreset.css')}}">
-        <title>Hash Bazaar - Dashboard</title>
-        <script src="{{URL::asset('js/jquery-3.3.1.js')}}"></script>
-
-        <script  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" ></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-        <script src="{{URL::asset('js/utils.js')}}"></script>
-                    <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.js"></script>
-                     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-    </head>
-
-    <body>
+@extends('panel.master.layout')
+@section('content')
     <?php
     $settings = DB::table('settings')->first();
             foreach ($hashes as $key=> $hash){
@@ -29,38 +8,18 @@
             }
 
     ?>
-        <!-- Header -->
-        <header>
-
-            <a href="http://hashbazaar.com">
-                   <div id="header-div"> <img class="Logo_header" src="{{URL::asset('img/Logo_header.svg')}}" alt="Logo_header"> </div>    </a>
-
-                   <div class="useraccount">
-
-                        <img class="user-img" src="{{URL::asset('../img/user-circle-solid.svg')}}" alt="">
-
-                        <div class="list">
-
-                            <ul>
-
-                                <a style="text-decoration: none;color: black" href="{{route('setting')}}"> <li class="user-account-list" id="usericon"> {{Auth::guard('user')->user()->name}}</li></a>
-                                <a style="text-decoration: none;color:black" href="{{route('logout')}}"> <li class="user-account-list" id="logouticon"> Log Out </li></a>
-
-                            </ul>
-                        </div>
-
-                    </div>
-        </header>
 
 
-        <!-- Dashboard Page -->
+
+
+    <!-- Dashboard Page -->
         <div id="dashboard-page">
             <!-- Circle -->
             <div id="dashboard-page-circle">
                 <span id="circle-span">Total Mining</span>
-                <p>&nbsp;<span id="miningBTC"><img src="/img/ajax-loader.gif" height="40" width="40"></span> &nbsp; <span style="color: orange; font-size: 30px">BTC</span> </p>
+                <p>&nbsp;<span id="miningBTC"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; <span style="color: orange; font-size: 30px">BTC</span> </p>
                 <hr style="width: 84%; text-align:center; top: 40%; position: relative;">
-                <p><span id="miningDollar"><img src="/img/ajax-loader.gif" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua; font-size: 30px">USD</span></p>
+                <p><span id="miningDollar"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua; font-size: 30px">USD</span></p>
 
                 <button id="redeem" disabled onclick="redeem()"> Redeem ! </button>
 
@@ -142,7 +101,7 @@
                     <input type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="myRange">
                     <button type="submit"><p>Order</p></button></form>
                     @else
-                    <p> TH Noy Available !</p>
+                    <p> TH Not Available !</p>
                     @endif
             </div>
 
@@ -166,51 +125,10 @@
     </div>
 
 
-        <!-- Footer -->
-        <div id="footer-div">
-
-            <div class="dashboard-footer-div">
-                    <p class="dashboard-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
-                 <img id="dashboard-footer-image" src="img/Logo_footer.svg" alt=""></div>
-
-        </div>
 
 
         <!-- Main Container -->
-        <div class="mainContainer">
 
-
-            <nav class="container-dashboard">
-                <ul class="mainList">
-                    <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="img/Logo_In_NavBar.svg" alt="Logo_In_NavBar"></a>
-                        <a href="" id="welcome">Welcome User</a> </li>
-                    <li class="sub dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
-                    <li class="sub"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
-                    <li class="sub"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
-                    <li class="sub"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
-                    <li class="sub"> <a href="{{route('contact')}}" id="contact">Contact</a></li>
-
-                </ul>
-
-
-
-            </nav><!-- .container -->
-
-            <nav class="container-dashboard2">
-                    <ul class="mainList2">
-                        <li class="sub2 dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
-                        <li class="sub2"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
-                        <li class="sub2"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
-                        <li class="sub2"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
-                        <li class="sub2"> <a href="{{route('contact')}}" id="contact">Contact</a></li>
-                    </ul>
-
-
-
-                </nav>
-
-
-        </div>
         <style type="text/css">
 .progress {    border: 1px solid;}
 .progress-bar {
@@ -448,6 +366,4 @@
             });
 
                     </script>
-    </body>
-
-    </html>
+@endsection

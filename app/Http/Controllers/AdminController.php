@@ -87,6 +87,9 @@ class AdminController extends Controller
             if($response['confirmed'] == 1){
 
                 DB::table('crypto_payments')->where('orderID',$transaction->orderID)->update(['txConfirmed'=>1]);
+                $mining = Mining::where('order_id',$transaction->orderID)->first();
+                $mining->update(['block' => 0]);
+                $mining->save();
                 // send email to user that transaction has been confirmed
                 // change transaction status in admin panel
                 return 1;

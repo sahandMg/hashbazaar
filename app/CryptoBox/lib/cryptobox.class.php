@@ -1096,7 +1096,7 @@ class Cryptobox {
 	     $tmp .= "<div class='card box-shadow'>";
 	     $tmp .= "<div class='card-header'>";
 	     $tmp .= "<h4 class='my-0 font-weight-normal ".$ext."addr_title'><span class='".$ext."texts_coin_address'>&#160;</span>";
-	     $tmp .= "<button  type='submit' class='".$ext."refresh btn btn-sm btn-outline-secondary float-right'><i class='fas fa-sync-alt'></i></button>";
+	     $tmp .= "<button id='refresh2' type='submit' class='".$ext."refresh btn btn-sm btn-outline-secondary float-right'><i class='fas fa-sync-alt'></i></button>";
 	     $tmp .= "<span class='".$ext."loading_icon mr-3 float-left' " . $hide . "> <i class='fas fa-laptop'></i></span>";
 	     $tmp .= "<span class='".$ext."loading_icon mr-3 float-left' " . $hide . "> <i class='fas fa-sync-alt fa-spin'></i></span>";
 	     $tmp .= "</h4>";
@@ -1194,6 +1194,7 @@ class Cryptobox {
 	     $tmp .= "<br>";
 	     $tmp .= "<br>";
 	     $tmp .= "<a href='#a' class='".$ext."button_details btn btn-lg btn-block btn-outline-primary' style='white-space:normal'></a>";
+	     $tmp .= "<a href=' ".route('dashboard')."'"."class='button_details btn btn-lg btn-block btn-outline-primary' style='white-space:normal'>Return Dashboard</a>";
 	     $tmp .= "</div>";
 	                 
 	     $tmp .= "</div>";

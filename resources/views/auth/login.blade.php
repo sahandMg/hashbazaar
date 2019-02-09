@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V8</title>
+	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -52,7 +52,7 @@
 						</span>
 
 						<a href="#" class="txt2">
-							Username / Password?
+							Password?
 						</a>
 					</div>
 
@@ -72,7 +72,7 @@
 
 					</div>
 
-					<div class="flex-col-c p-t-170 p-b-40">
+					<div class="flex-col-c p-t-0 p-b-40">
 						<span class="txt1 p-b-9">
 							Don’t have an account?
 						</span>

@@ -109,7 +109,7 @@ foreach ($hashes as $key=> $hash){
                     </ul>
                 </div><br> <br>
             @else
-                <p> No Purchase !</p>
+                <p id="nopur"> No Purchase !</p>
             @endif
 
         </div>
@@ -166,7 +166,7 @@ foreach ($hashes as $key=> $hash){
 
 
 <!-- Footer -->
-<div>
+<div id="footer-div">
 
     <div class="activity-footer-div">
         <p class="activity-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>

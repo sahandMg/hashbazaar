@@ -1,42 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="../js/jquery-3.3.1.js"></script>
-        <title>Hash Bazaar - Wallet</title>
-    <link rel="stylesheet" href="../css/setting-wallet.css">
-    <link rel="stylesheet" href="../css/cssreset.css">
-    <script>
-
-    </script>
-</head>
-
-<body>
-    <!-- Header -->
-    <header>
-
-
-               <div> <a href="http://hashbazaar.com"><img class="Logo_header" src="../img/Logo_header.svg" alt="Logo_header"> </a></div>
-               <div class="useraccount">
-
-                <img class="user-img" src="../img/user-circle-solid.svg" alt="">
-    
-                <div class="list">
-
-                    <ul>
-
-                        <li class="user-account-list" id="usericon">User Account</li>
-                        <li class="user-account-list" id="logouticon">Log Out</li>
-    
-                    </ul>
-                </div>
-
-            </div>
-    </header>
-
+@extends('panel.master.layout')
+@section('content')
 
 
     <!-- Setting Page -->
@@ -89,56 +52,6 @@
 
 
         <!-- Footer -->
-    <div>
-
-            <div class="setting-wallet-footer-div">
-                    <p class="setting-wallet-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
-                 <img id="setting-wallet-footer-image" src="img/Logo_footer.svg" alt=""></div>
-
-            </div>
-
-
-    <!-- Container -->
-    <div class="mainContainer">
-
-
-        <nav class="container-setting-wallet">
-            <ul class="mainList">
-                <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="img/Logo_In_NavBar.svg" alt="Logo_In_NavBar"></a>
-                    <a href="http://hashbazaar.com" id="welcome">Welcome User</a> </li>
-
-                    <li class="sub dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
-                    <li class="sub"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
-                    <li class="sub"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
-                    <li class="sub"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
-                    <li class="sub"> <a href="{{route('contact')}}" id="contact">Contact</a></li>
-
-            </ul>
-
-
-        </nav>
-
-
-
-        <nav class="container-setting-wallet2">
-                <ul class="mainList2">
-
-                    <li class="sub2 dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
-                    <li class="sub2"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
-                    <li class="sub2"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
-                    <li class="sub2"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
-                    <li class="sub2"> <a href="{{route('contact')}}" id="contact">Contact</a></li>
-                </ul>
-
-
-
-            </nav>
-
-
-
-
-
-
 
 
     </div>
@@ -155,6 +68,4 @@
     
     // =---------------------------------------
     </script>
-</body>
-
-</html>
+@endsection

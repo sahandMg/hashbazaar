@@ -1,41 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>#BAZAAR - Contact</title>
-    <link rel="stylesheet" href="{{URL::asset('css/contact-referral-activity-dashboard.css')}}">
-        <link rel="stylesheet" href="{{URL::asset('css/cssreset.css')}}">
-        <script src="{{URL::asset('js/jquery-3.3.1.js')}}"></script>
-
-    
-</head>
-
-<body>
-    <!-- Header -->
-    <header>
-
-
-               <div id="header-div"> <a href="{{env('APP_URL')}}"> <img class="Logo_header" src="{{URL::asset('img/Logo_header.svg')}}" alt="Logo_header"></a> </div>
-            <div class="useraccount">
-
-                <img class="user-img" src="{{URL::asset('../img/user-circle-solid.svg')}}" alt="">
-    
-                <div class="list">
-
-                    <ul>
-
-                        <li class="user-account-list" id="usericon">User Account</li>
-                        <li class="user-account-list" id="logouticon">Log Out</li>
-    
-                    </ul>
-                </div>
-
-            </div>
-    </header>
-
+@extends('panel.master.layout')
+@section('content')
     <!-- Contact Page -->
     <div id="contact-page">
 
@@ -53,14 +17,6 @@
 
     </div>
 
-    <!-- Footer -->
-    <div id="footer-div">
-
-        <div class="contact-footer-div">
-                <p class="contact-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
-             <img id="contact-footer-image" src="{{URL::asset('img/Logo_footer.svg')}}" alt=""></div>
-
-    </div>
 
     <!-- Container -->
     <div class="mainContainer">
@@ -116,6 +72,4 @@
         
          // =---------------------------------------
     </script>
-</body>
-
-</html>
+@endsection

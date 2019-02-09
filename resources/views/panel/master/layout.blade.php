@@ -70,15 +70,7 @@
 
 
 </div>
-{{-- 
 
-<!-- Footer -->
-<footer id="footer" >
-        <hr class="hr-footer">
-        <p class="footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
-        <img id="footer-image" src="{{URL::asset('img/Logo_footer.svg')}}" alt="">
-
-</footer> --}}
 
 </body>
 </html>

@@ -11,8 +11,11 @@
 |
 */
 
+use App\BitHash;
 use App\Jobs\subscriptionMailJob;
+use App\Mining;
 use App\MiningReport;
+use App\Setting;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
@@ -74,7 +77,38 @@ Route::get('job',function(){
 
 Route::get('test',function (){
 
-    dd(Storage::disk('public'));
+    $unpaids = BitHash::where('confirmed',0)->get();
+    $unpaidMining = Mining::where('block',1)->get();
+    $settings = Setting::first();
+    foreach ($unpaids as $key => $unpaid){
+
+        if(Carbon::parse($unpaid->created_at)->diffInHours(Carbon::now()) > 10){
+
+
+            $settings->update(['available_th'=> $settings->available_th + $unpaid->hash]);
+//                $unpaidMining[$key]->delete();
+//                $unpaid->delete();
+
+            $user = DB::table('users')->where('id',$unpaid->user_id)->first();
+            $trans = DB::table('crypto_payments')->where('orderID',$unpaid->order_id)->first();
+            if(! is_null($user)){
+
+                $data = [
+                    'orderID' => $unpaid->order_id,
+                    'email'=> $user->email,
+                    'amount' => $trans->amount,
+                    'created_at' => $trans->txDate
+                ];
+
+                Mail::send('email.unconfirmedPayment',$data,function ($message) use($data){
+
+                    $message->to($data['email']);
+                    $message->from('admin@hashbazaar.com');
+                    $message->subject('Unsuccessful Payment');
+                });
+            }
+        }
+    }
 });
 
 Route::get('antpool',function (){
@@ -192,7 +226,7 @@ Route::group(['prefix' => '@admin'], function () {
     Route::get('users/list',['as'=>'adminGetUsersList','uses'=>'AdminController@adminGetUsersList']);
     Route::get('block-user',['as'=>'blockUser','uses'=>'AdminController@blockUser']);
 
-   Voyager::routes();
+//   Voyager::routes();
 });
 
 

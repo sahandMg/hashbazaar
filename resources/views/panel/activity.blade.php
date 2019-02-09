@@ -1,19 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>#BAZAAR - Activity</title>
-    <link rel="stylesheet" href="{{URL::asset('css/contact-referral-activity-dashboard.css')}}">
-    <script src="{{URL::asset('js/jquery-3.3.1.js')}}"></script>
-    <link rel="stylesheet" href="{{URL::asset('css/cssreset.css')}}">
-
-</head>
-
-<body>
-
+@extends('panel.master.layout')
+@section('content')
 <?php
 $settings = DB::table('settings')->first();
 foreach ($hashes as $key=> $hash){
@@ -23,41 +9,11 @@ foreach ($hashes as $key=> $hash){
 
 ?>
 
-<!-- Header -->
-<header>
 
-
-
-    <div id="header-div"> <a href="http://hashbazaar.com"><img class="Logo_header" src="{{URL::asset('img/Logo_header.svg')}}" alt="Logo_header"> </a></div>
-    <div class="useraccount">
-
-        <img class="user-img" src="{{URL::asset('../img/user-circle-solid.svg')}}" alt="">
-
-        <div class="list">
-
-            <ul>
-
-                <li class="user-account-list" id="usericon">User Account</li>
-                <li class="user-account-list" id="logouticon">Log Out</li>
-
-            </ul>
-        </div>
-
-    </div>
-</header>
 
 <div id="activity-page">
-    <q>Notice :</q>
-
-    <ul id="activity-page_firstList">
-
-        <li>Appropriately harness low-risk high-yield “outside the box” thinking.</li>
-        <li>Appropriately harness low-risk high-yield “outside the box” thinking.</li>
-        <li>Appropriately harness low-risk high-yield “outside the box” thinking.</li>
-    </ul>
 
     <blockquote>Recent Activities</blockquote>
-
 
     <div class="purchases">
         <q>Purchases</q>
@@ -170,7 +126,7 @@ foreach ($hashes as $key=> $hash){
 
     <div class="activity-footer-div">
         <p class="activity-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
-        <img id="activity-footer-image" src="img/Logo_footer.svg" alt=""></div>
+        <img id="activity-footer-image" src="img/Logo_footer.svg" alt="" ></div>
 
 </div>
 
@@ -187,6 +143,4 @@ foreach ($hashes as $key=> $hash){
     })
 
     // =---------------------------------------</script>
-</body>
-
-</html>
+@endsection

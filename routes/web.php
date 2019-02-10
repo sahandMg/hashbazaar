@@ -24,6 +24,7 @@ use GuzzleHttp\Client as GuzzleClient;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use Psr\Log\LoggerInterface;
 use Stevebauman\Location\Facades\Location;
 use Symfony\Component\DomCrawler\Crawler;
 use Psr\Http\Message\ResponseInterface;
@@ -77,65 +78,10 @@ Route::get('job',function(){
 
 Route::get('test',function (){
 
-    $unpaids = BitHash::where('confirmed',0)->get();
-    $unpaidMining = Mining::where('block',1)->get();
-    $settings = Setting::first();
-    foreach ($unpaids as $key => $unpaid){
-
-        if(Carbon::parse($unpaid->created_at)->diffInHours(Carbon::now()) > 10){
 
 
-            $settings->update(['available_th'=> $settings->available_th + $unpaid->hash]);
-//                $unpaidMining[$key]->delete();
-//                $unpaid->delete();
+    dd(BitHash::find(100));
 
-            $user = DB::table('users')->where('id',$unpaid->user_id)->first();
-            $trans = DB::table('crypto_payments')->where('orderID',$unpaid->order_id)->first();
-            if(! is_null($user)){
-
-                $data = [
-                    'orderID' => $unpaid->order_id,
-                    'email'=> $user->email,
-                    'amount' => $trans->amount,
-                    'created_at' => $trans->txDate
-                ];
-
-                Mail::send('email.unconfirmedPayment',$data,function ($message) use($data){
-
-                    $message->to($data['email']);
-                    $message->from('admin@hashbazaar.com');
-                    $message->subject('Unsuccessful Payment');
-                });
-            }
-        }
-    }
-});
-
-Route::get('antpool',function (){
-
-
-    $userId = '13741374';
-    $apiKey = '7b07bc4b507b4d7584770f8ddddd02f1';
-    $nonce = rand(0,1000);
-    $secret = '0585329bf8eb48509b1ad13b709d9390';
-    $url = 'https://antpool.com/api/account.htm';
-    $signature = strtoupper(hash_hmac('sha256',$userId.$apiKey.$nonce, $secret,false));
-
-    $fields = [
-        'key'       => $apiKey,
-        'nonce'     =>  $nonce ,
-        'signature' =>  $signature,
-        'coin'      =>  'BTC'
-    ];
-
-    $ch = curl_init();
-    curl_setopt($ch,CURLOPT_URL, "$url?key=$apiKey&nonce=$nonce&signature=$signature&coin=BTC");
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $result = curl_exec($ch);
-    curl_close($ch);
-
-    dd($result);
-    $totalEarn = json_decode($result)->data->earnTotal;
 
 
 
@@ -220,9 +166,13 @@ Route::get('customer-service',['as'=>'customerService','uses'=>'PageController@c
 
 Route::group(['prefix' => '@admin'], function () {
 
-    Route::get('/',['uses'=>'AdminController@index']);
+    Route::get('home',['as'=>'adminHome','uses'=>'AdminController@index']);
     Route::get('transactions',['as'=>'adminTransactions','uses'=>'AdminController@transactions']);
-    Route::get('get-transactions',['as'=>'adminGetTransactions','uses'=>'AdminController@getTransactions']);
+    Route::get('get-transactions',['as'=>'adminGetTransactions','uses'=>'AdminController@getTransactions']);Route::get('redeems',['as'=>'adminRedeems','uses'=>'AdminController@adminRedeems']);
+
+    Route::get('redeems',['as'=>'adminRedeems','uses'=>'AdminController@adminRedeems']);
+    Route::get('get-redeems',['as'=>'adminGetRedeems','uses'=>'AdminController@adminGetRedeems']);
+
     Route::get('users/list',['as'=>'adminGetUsersList','uses'=>'AdminController@adminGetUsersList']);
     Route::get('block-user',['as'=>'blockUser','uses'=>'AdminController@blockUser']);
 

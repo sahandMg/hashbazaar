@@ -16,4 +16,8 @@ class Helpers{
 
         return $ip;
     }
+
+    public static function addLog($ex){
+
+    }
 }

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\CryptpBox\lib\Cryptobox;
+use App\Mining;
+use App\Transaction;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -13,12 +15,13 @@ class AdminController extends Controller
 
     public function index(){
 
-
+        return view('admin.index');
     }
 
     public function transactions(){
 
-        $transactions = DB::table('crypto_payments')->orderBy('PaymentID','desc')->get()->toArray();
+        $transactions = DB::table('crypto_payments')->orderBy('PaymentID','desc')->paginate(20);
+
         return view('admin.transactions',compact('transactions'));
     }
 
@@ -37,7 +40,20 @@ class AdminController extends Controller
         $user->update(['block'=> !$user->block]);
         $user->save();
     }
+    /*
+     * gets redeem requests
+     */
+    public function adminRedeems(){
 
+        return view('admin.redeem');
+    }
+    public function adminGetRedeems(){
+
+        return   $trans = Transaction::get();
+    }
+/*
+ * gets latest user buying
+ */
     public function getTransactions(){
 
 
@@ -84,15 +100,19 @@ class AdminController extends Controller
 
             $box = new Cryptobox ($options);
             $response = $box->get_json_values();
-            if($response['confirmed'] == 1){
+            if($response['confirmed'] == 1) {
 
-                DB::table('crypto_payments')->where('orderID',$transaction->orderID)->update(['txConfirmed'=>1]);
-                $mining = Mining::where('order_id',$transaction->orderID)->first();
-                $mining->update(['block' => 0]);
-                $mining->save();
-                // send email to user that transaction has been confirmed
-                // change transaction status in admin panel
-                return 1;
+                DB::table('crypto_payments')->where('orderID', $transaction->orderID)->update(['txConfirmed' => 1]);
+                $mining = Mining::where('order_id', $transaction->orderID)->first();
+                if (!is_null($mining)) {
+
+
+                    $mining->update(['block' => 0]);
+                    $mining->save();
+                    // send email to user that transaction has been confirmed
+                    // change transaction status in admin panel
+                    return 1;
+                }
             }
         }
     }

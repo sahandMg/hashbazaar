@@ -16,9 +16,10 @@ class CreateTransactionsTable extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('addr')->nullable();
-            $table->unsignedInteger('country')->nullable();
+            $table->string('country')->nullable();
             $table->string('amount_btc')->nullable();
             $table->string('status')->nullable();
+            $table->string('code')->nullable();
             $table->unsignedInteger('user_id')->nullable();
             $table->timestamps();
         });

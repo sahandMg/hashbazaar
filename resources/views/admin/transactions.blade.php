@@ -1,100 +1,95 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
-    <script  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" ></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Document</title>
-</head>
-<body>
-<div id="app" class="container">
-
+@extends('admin.master.header')
+@section('content')
     <table class="table table-striped">
         <thead>
-            <tr>
-                <th>ID</th>
-                <th>OrderID</th>
-                <th>User</th>
-                <th>Country</th>
-                <th>Amount</th>
-                <th>Confirmed</th>
-                <th>UnRecognised</th>
-                <th>Processed</th>
-                <th>Record Created</th>
+        <tr>
+            <th>ID</th>
+            <th>OrderID</th>
+            <th>TH/S</th>
+            <th>User</th>
+            <th>Country</th>
+            <th>Amount(BTC)</th>
+            <th>Confirmed</th>
+            <th>UnRecognised</th>
+            <th>Processed</th>
+            <th>Record Created</th>
 
-            </tr>
+        </tr>
         </thead>
         <tbody>
 
-
-                {{--<tr v-for="item in transactions">--}}
-                    {{--<td>{{$transaction->paymentID}}</td>--}}
-                    {{--<td>{{$transaction->orderID}}</td>--}}
-                    {{--<td>{{DB::table('users')->where('id',$transaction->userID)->first()->name}}</td>--}}
-                    {{--<td>{{$transaction->countryID}}</td>--}}
-                    {{--<td>{{$transaction->amount}}</td>--}}
-                    {{--<td id="confirmed{{$key}}">{{$transaction->txConfirmed}}</td>--}}
-                    {{--<td id="unrecognised{{$key}}">{{$transaction->unrecognised}}</td>--}}
-                    {{--<td id="processed{{$key}}">{{$transaction->processed}}</td>--}}
-                    {{--<td>{{$transaction->recordCreated}}</td>--}}
-                {{--</tr>--}}
-
-                <tr v-for="(transaction, index) in transactions">
-                    <td>@{{transaction.paymentID}}</td>
-                    <td>@{{transaction.orderID}}</td>
-                    <td>@{{transaction.userID}}</td>
-                    <td>@{{transaction.countryID}}</td>
-                    <td>@{{transaction.amount.toFixed(6)}}</td>
-                    <td id="confirmed">@{{transaction.txConfirmed}}</td>
-                    <td id="unrecognised">@{{transaction.unrecognised}}</td>
-                    <td id="processed">@{{transaction.processed}}</td>
-                    <td>@{{transaction.recordCreated}}</td>
-                </tr>
+        @foreach($transactions as $transaction)
+            <tr>
+                <td>{{$transaction->paymentID}}</td>
+                <td>{{$transaction->orderID}}</td>
+                <?php
+                $query = DB::table('bit_hashes')->where('order_id',$transaction->orderID)->first();
+                if(!is_null($query)){
+                    $query = $query->hash;
+                }else{
+                    $query ='Deleted';
+                }
+                ?>
+                <td> {{$query}} </td>
+                <td>{{$transaction->userID}}</td>
+                <td><img width="25" height="20" src="../flags/{{strtolower(substr($transaction->countryID,0,2))}}.svg" alt="{{$transaction->countryID}}"></td>
+                <td>{{$transaction->amount}}</td>
+                <td>{{$transaction->txConfirmed}}</td>
+                <td>{{$transaction->unrecognised}}</td>
+                <td>{{$transaction->processed}}</td>
+                <td>{{$transaction->recordCreated}}</td>
+            </tr>
+        @endforeach
+        {{--<tr v-for="(transaction, index) in transactions">--}}
+        {{--<td>@{{transaction.paymentID}}</td>--}}
+        {{--<td>@{{transaction.orderID}}</td>--}}
+        {{--<td>@{{transaction.userID}}</td>--}}
+        {{--<td><img width="25" height="20" :src="flag" alt="">@{{ readFlag(transaction.countryID) }}</td>--}}
+        {{--<td>@{{transaction.amount.toFixed(6)}}</td>--}}
+        {{--<td id="confirmed">@{{transaction.txConfirmed}}</td>--}}
+        {{--<td id="unrecognised">@{{transaction.unrecognised}}</td>--}}
+        {{--<td id="processed">@{{transaction.processed}}</td>--}}
+        {{--<td>@{{transaction.recordCreated}}</td>--}}
+        {{--</tr>--}}
 
 
         </tbody>
     </table>
+    {{ $transactions->links() }}
+    </div>
+    {{ $transactions->links() }}
+    <script>
 
-    <a href="{{url('@admin/')}}"><button class="btn btn-primary">Back</button></a>
-</div>
+        new Vue({
+            el:'.app',
+            data:{
+                transactions:[],
+                flag:''
 
-<script>
+            },
 
-    new Vue({
-        el:'#app',
-        data:{
-            transactions:[]
-        },
+            created:function () {
 
-        created:function () {
+                this.getTrans()
 
-            this.getTrans()
+            },
+            methods:{
 
-        },
-        methods:{
+                getTrans:function () {
 
-            getTrans:function () {
-
-                vm = this;
+                    vm = this;
 
 
-                axios.get({!! json_encode(route('adminGetTransactions')) !!}).then(function (response) {
+                    axios.get({!! json_encode(route('adminGetTransactions')) !!}).then(function (response) {
 
-                    vm.transactions = response.data;
+                        vm.transactions = response.data;
 
-                });
+                    });
 
-                setTimeout(function () {
+                    setTimeout(function () {
 
-                    vm.getTrans()
-                },10000);
+                        vm.getTrans()
+                    },10000);
 //
 //                for(i=0 ; i< vm.transactions.length; i++){
 //
@@ -102,11 +97,16 @@
 //                    document.getElementById('unrecognised'+i).innerHTML = vm.transactions[i]['unrecognised'];
 //                    document.getElementById('processed'+i).innerHTML = vm.transactions[i]['processed'];
 //                }
-            }
-        }
-    });
+                },
+                readFlag: function (country) {
 
-</script>
+                    this.flag = '../flags/'+country.substr(0,2).toLowerCase()+'.svg'
 
-</body>
-</html>
+                }
+            },
+
+        });
+
+    </script>
+
+@endsection

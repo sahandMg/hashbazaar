@@ -60,7 +60,7 @@ class DeleteTh extends Command
                 if(! is_null($user) && !is_null($trans)){
 
                     $data = [
-                        'orderID' => $unpaid->order_id,
+                        'orderID' => $trans->orderID,
                         'email'=> $user->email,
                         'amount' => $trans->amount,
                         'created_at' => $trans->txDate

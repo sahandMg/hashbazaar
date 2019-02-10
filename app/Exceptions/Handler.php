@@ -2,8 +2,10 @@
 
 namespace App\Exceptions;
 
+use App\Log;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Psr\Log\LoggerInterface;
 
 class Handler extends ExceptionHandler
 {
@@ -34,7 +36,16 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $exception)
     {
+
+        $log = new Log();
+        $log->message = $exception->getMessage();
+        $log->extra = $exception->getFile(). $exception->getLine();
+        $log->level = 'error';
+        $log->context = $this->context();
+        $log->env = env('LOG_CHANNEL');
+        $log->save();
         parent::report($exception);
+
     }
 
     /**
@@ -44,8 +55,9 @@ class Handler extends ExceptionHandler
      * @param  \Exception  $exception
      * @return \Illuminate\Http\Response
      */
-    public function render($request, Exception $exception)
+    public function render($request, Exception $e)
     {
-        return parent::render($request, $exception);
+
+        return parent::render($request, $e);
     }
 }

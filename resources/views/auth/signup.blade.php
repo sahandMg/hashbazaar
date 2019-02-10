@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V8</title>
+	<title>Sign Up</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -77,17 +77,20 @@
 
 					<div class="container-socialnet">
 						
-						<a href="https://facebook.com" class="socialnet-flex" id="fb"><img src="images/icons/facebook.svg" alt=""></a>
+						<a href="https://facebook.com" class="socialnet-flex" id="fb">
+							<img src="/public/img/facebook.svg" alt=""></a>
 						
-						<a href="https://twitter.com" class="socialnet-flex" id="twttr"><img src="images/icons/twitter.svg" alt=""></a>
+						<a href="https://twitter.com" class="socialnet-flex" id="twttr">
+							<img src="/public/img/twitter.svg" alt=""></a>
 						
-						<a href="https://plus.google.com/+googleplus" class="socialnet-flex" id="gp"><img src="images/icons/google-plus.svg" alt=""></a>
+						<a href="https://plus.google.com/+googleplus" class="socialnet-flex" id="gp">
+							<img src="/public/img/google-plus.svg" alt=""></a>
 
 					</div>
 
-					<div class="flex-col-c p-t-170 p-b-40">
+					<div class="flex-col-c p-t-0 p-b-40">
 						<span class="txt1 p-b-9">
-                                do you have account?
+                                do you have an account?
 						</span>
 
 						<a href="#" class="txt3">

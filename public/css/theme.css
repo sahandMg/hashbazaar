@@ -25,7 +25,9 @@ a {
   box-shadow: 0px 1.5px 0px 0px #c0c0bc
 
 }
-
+.small {
+  padding-left: 10px
+}
 #header-navbar-logo {
   flex: 1
 }
@@ -159,6 +161,7 @@ header img { height: 175px;margin-bottom: 4%; }
     header img { height: 90px; }
     header h1 { font-size: 30px }
      h3 { font-size: 30px }
+
      #header-navbar-menu {
        background: black;;
        height: 360px;
@@ -260,7 +263,7 @@ header img { height: 175px;margin-bottom: 4%; }
       font-size: 15px;
      }
      .headerTheme {
-      height: 300px;
+      height: 380px;
      }
      #sharePlan h3 { letter-spacing: 0px;margin-top: 2%; }
      #myModal h2 {font-size: 20px;}

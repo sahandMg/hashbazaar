@@ -46,6 +46,14 @@
     </div>
 
 
+<!-- Footer -->
+    <div id="footer-div">
+
+        <div class="referral-footer-div">
+                <p class="referral-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
+             <img id="referral-footer-image" src="{{URL::asset('img/Logo_footer.svg')}}" alt=""></div>
+
+    </div>
 
 
     <!-- Container -->

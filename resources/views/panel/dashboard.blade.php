@@ -86,7 +86,7 @@
                                     </ul>
                              </div>
                             @else
-                                <p> NO Hash History</p>
+                                <p id="no-hash"> NO Hash History</p>
                             @endif
                         </div>
 
@@ -130,7 +130,13 @@
             <hr class="dashboard-hr-footer" style="position: relative;left: -10px">
     </div>
 
+    {{-- Footer --}}
+    <div class="dashboard-footer-div" >
+        {{-- <hr class="dashboard-hr-footer"> --}}
+        <p class="dashboard-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
+        <img id="dashboard-footer-image" src="{{URL::asset('img/Logo_footer.svg')}}" alt="">
 
+    </div>
     <!-- Container -->
     <div class="mainContainer">
 
@@ -157,13 +163,7 @@
     </div>
 
 
-    <!-- Footer -->
-    <footer id="footer" >
-        <hr class="hr-footer">
-        <p class="footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
-        <img id="footer-image" src="{{URL::asset('img/Logo_footer.svg')}}" alt="">
-
-    </footer>
+    
 
         <!-- Main Container -->
 

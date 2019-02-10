@@ -65,7 +65,7 @@ foreach ($hashes as $key=> $hash){
                     </ul>
                 </div><br> <br>
             @else
-                <p> No Purchase !</p>
+                <p id="nopur"> No Purchase !</p>
             @endif
 
         </div>
@@ -119,6 +119,19 @@ foreach ($hashes as $key=> $hash){
 
 
 </div>
+
+
+<!-- Footer -->
+<div id="footer-div">
+
+    <div class="activity-footer-div">
+        <p class="activity-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
+        <img id="activity-footer-image" src="img/Logo_footer.svg" alt="" ></div>
+
+</div>
+
+<!-- Container -->
+@include('panel.master.sidebar')
 
 
 <script>// ------------user account--------------------

@@ -174,14 +174,17 @@ header div {
 /* Menu */
 .container-setting {
     width: 370px;
-    height: 1220px;
+    /* height: 1220px; */
     background: rgb(39, 38, 38);
-    border-top: 4px solid orange
+    border-top: 4px solid orange;
+    position: fixed;
+    top: 110px;
+    height: 100%;
+
 }
 
 .container-setting .mainList {
     background: white;
-    position: fixed;
     top: 150px;
     width: 370px;
     
@@ -474,22 +477,21 @@ form.setting button p {
 }
 .setting-hr-footer
 {
-    top: 670px;
+    top: 750px;
 }
 /* Footer */
 
 .setting-footer-div {
     top: 1000px;
-    width: 70%;
-    left: 1%;
+    width: 69%;
+    left: 30%;
     position: absolute;
 }
 .setting-footer-paragraph {
     font-size: 20px;
     font-family: sans-serif;
     position: absolute;
-    top: -10px;
-    left: 250px;
+    top: 0px;
     width: 380px    
     
 }
@@ -599,7 +601,7 @@ form.setting button p {
     {
         top: 650px;
         left: -10px;
-    width: 100%
+        width: 100%
 
     }
 
@@ -616,8 +618,8 @@ form.setting button p {
 
 
     .User-Information input:nth-of-type(1){
-        left: 200px;
-        top: 100px
+        left: 16.5em;
+        top: 6em
     }
     
     .User-Information input::placeholder {
@@ -627,13 +629,13 @@ form.setting button p {
     }
     
     .User-Information input:nth-of-type(2){
-        left: -110px;
-        top: 180px;
+        left: -6.875em;
+        top: 10em;
     }
     
     .User-Information input:nth-of-type(3){
-        left: 200px;
-        top: 220px;
+        left: 16.5em;
+        top: 18.25em;
     }
     
     
@@ -643,8 +645,8 @@ form.setting button p {
         border-radius:10%;
         background-color: #15BEA4;
         position: relative;
-        top: 330px;
-        left:-30px;
+        top: 270px;
+        left:280px;
         font-family: 'Segoe UI', Tahoma, sans-serif;
         font-size: 30px;
         border: thin solid

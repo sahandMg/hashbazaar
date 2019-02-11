@@ -12,6 +12,9 @@
     border-bottom: transparent;
     cursor: unset;
 }
+.sub2 {
+    display: none
+}
 .useraccount .list {
     width: 200px;
     height: 110px;
@@ -469,10 +472,58 @@ color: orange !important}
         width: 100%;
         float: left;
     }
-
-    .useraccount .list {
         
-        display: none;
+    .useraccount {
+        margin-left:89%;
+    }
+    
+    .useraccount .list {
+        width: 200px !important;
+        height: 360px;
+        display: none ;
+        margin-top: 110px;
+    }
+
+    .useraccount .list ul li {
+        padding-top: 8px;
+        border-bottom: #727272 1px solid
+    }
+
+    #usericon {
+        border-bottom: 1px solid;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+
+    #usericon:hover{
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+   
+    .sub2 {
+        display: block !important;}
+    .sub2 a{
+        display: block !important;
+        list-style-type: none !important;
+        text-decoration: none !important;
+        transition: all .1s;
+    }
+
+    .sub2 #contact:hover , #dashboard:hover , #activity:hover , #referral:hover , 
+    #setting:hover{
+        color: black !important;
+    }
+        
+    #usericon:before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-image: url("../img/user-solid.svg");
+        background-size: 100% 100%;
+        position: relative;
+        left: 2vh;
+        top: 2vh
     }
 
     .mainList {
@@ -486,9 +537,22 @@ color: orange !important}
         height: 20px;
         background-size: 100% 100%;
         position: absolute;
-        left: -30px;
-        top: 0px
-    }
+        left: 10px;
+        top: 10px;
+        /* filter: blur(5px);
+        filter: brightness(0.4);
+        filter: contrast(200%);
+        filter: drop-shadow(16px 16px 20px blue);
+        filter: grayscale(50%);
+        filter: hue-rotate(90deg);
+        filter: invert(75%);
+        filter: opacity(25%);
+        filter: saturate(30%);
+        filter: sepia(60%); */
+        /* border: 2px solid black;
+        filter: invert(-75%);
+        filter: sepia(-60%); */
+        }
 
     #activity:before {
         content: "";
@@ -512,7 +576,7 @@ color: orange !important}
         left: -30px;
         top: 0px
     }
-
+    #setting {color:orange !important}
     #setting:before {
         content: "";
         background-image: url("img/Setting.svg");
@@ -577,7 +641,7 @@ color: orange !important}
         z-index: 2;
     }
     .Logo_header {
-        width: 300px;
+        width: 200px;
         height: 90px;
         position: absolute;
         left: 20px;
@@ -590,6 +654,17 @@ color: orange !important}
         display: none
     }
 
+    .useraccount {
+        margin-left: 82%
+    }
+    .useraccount .list {
+        height: 345px
+    } 
+    #logouticon {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom: transparent
+    }
     #dashboard:before {
         content: "";
         background-image: url("img/Dashboard.svg");
@@ -680,6 +755,22 @@ color: orange !important}
 /* Contact - Media - 375 */
 @media screen and (max-width: 375px) {
     
+    
+    .useraccount {
+        margin-left: 78%
+    }
+    
+    .useraccount .list {
+        height: 250px
+    } 
+        
+    
+    .useraccount .list ul li {
+        width: 200px;
+        padding-bottom: 10px;
+        padding-top: 4px;
+    }
+
     #dashboard:before {
         content: "";
         background-image: url("img/Dashboard.svg");

@@ -1,162 +1,172 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('panel.master.layout')
+@section('content')
+<!-- ---------------------------------------------------------------------------------------------- -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <script src="{{URL::asset('js/jquery-3.3.1.js')}}"></script>
-        <title>Hash Bazaar - Setting</title>
-    <link rel="stylesheet" href="{{URL::asset('css/setting2.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('css/cssreset.css')}}">
-    <script>
+<div id="setting-page">
 
-    </script>
-</head>
+    <div class="setting-flex">
 
-<body>
-    <!-- Header -->
-    <header>
+        <div class="flex-item one"><a href="#">User Information</a></div> 
+        
+
+        <div class="flex-item two"><a href="#">Wallet</a></div>
+
+    </div>
 
 
+    <div class="setting-information">
+        <form action="">
+            <q>User Information </q> <br>
 
-               <div> <a href="http://hashbazaar.com"><img class="Logo_header" src="{{URL::asset('img/Logo_header.svg')}}" alt="Logo_header"> </a></div>
-               <div class="useraccount">
+            <p id="textbefore">Name</p>
+            <input type="text" name="text" id="text" placeholder="Name"> <br>
+            <p id="textbefore">Email</p>
 
-                <img class="user-img" src="{{URL::asset('../img/user-circle-solid.svg')}}" alt="">
-    
-                <div class="list">
+            <input type="email" name="email" id="email" placeholder="user@example.com"> <br> <br> <br>
 
-                    <ul>
+            <q>Password</q> <br>
+            <p id="textbefore">Current Password</p>
+            
+            <input type="password" name="curpass" id="cur-password" placeholder="Current Password"> <br>
+            <p id="textbefore">New Password</p>
 
-                        <li class="user-account-list" id="usericon">User Account</li>
-                        <li class="user-account-list" id="logouticon">Log Out</li>
-    
-                    </ul>
-                </div>
+            <input type="password" name="newpass" id="newpassword" placeholder="Current Password"> <br>
+            <p id="textbefore">Confirm Password</p>
 
-            </div>
-    </header>
+            <input type="password" name="Confirmpassword" id="Confirmpassword" placeholder="confirm Password"> 
 
-    <!-- Setting Page -->
+            <input type="button" value="Submit" id="submit">  
+        </form>
 
-    <div id="setting-page">
+    </div>
 
-        <div class="setting-flex">
-            <div class="flex-item one"><a style="color:orange" href="{{route('userInfo')}}">User Information</a>
+    <div class="wallet1">
 
-            </div> <br>
+            <p>Still Don’t Have a Bitcoin Wallet? Click <a href="#" id="clickhear"
+                style="color:orange;text-decoration: none;font-weight: bold;">Hear</a> To Make One!
+                </p>
 
+                <q>OR</q>
 
-            <div class="flex-item-two flex-item"><a href="{{route('changePassword')}}" class="change">Change Password</a></div>
+                <blockquote>Change Your Wallet Address</blockquote>
+                <form id="setting-wallet" action="">
+                <input type="text" id="textwallet">
 
-
-            <div class="flex-item three"><a href="{{route('wallet')}}">Wallet</a></div>
-
-        </div>
-
-        <!-- User-Information -->
-        <div class="User-Information">
-
-                <hr class="setting-hr1" style="position: relative;top: 40px;">
-                <p id="User-Information-title">Update Your Informations</p>
-                <hr class="setting-hr2" style="position: relative;top: 4px;">
-
-                <form class="setting" action="">
-                    <input type="email" name="email" id="email" placeholder="user@example.com">
-
-                    <input type="password" name="passowrd" id="password" placeholder="New Password">
-
-                    <input type="password" name="passowrd" id="password-confirm" placeholder="Confirm">
-
-
-
-                    <button><span>Submit</span></button>
-
+                <input type="button" id="buttonwallet" value="Submit">
                 </form>
 
 
 
-                <hr class="setting-hr-footer" style="position: relative;">
-
-        </div>
+        </div><!-- Wallet 1 -->
 
 
-        <!-- Footer -->
-        <footer>
+    <div class="make-wallet">
 
-            <div class="setting-footer-div">
-                    <p class="setting-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
-                 <img id="setting-footer-image" src="{{URL::asset('../img/Logo_footer.svg')}}" alt=""></div>
+                <p id="make-wallet-title">Current Bitcoin Wallet Address</p>
+    
+    
+                <div class="address">
+    
+                    <div class="address-img"><img  src="img/SampleQR.svg" alt=""></div>
+    
+                    <div class="address-box">
+                            <input type="text" placeholder="SDKnsdakndnj12n1k1lkmdsalm">
+    
+                         <a href="mail-icon"><img class="icon" src="../img/Mail.svg" alt=""></a>
+                        <a href="link-icon"><img class="icon" src="../img/Link.svg" alt=""></a>
+                         <a href="copy-icon"><img class="icon" src="../img/Copy.svg" alt=""></a>
+                    </div>
+    
+                    <div class="change-address">
+                        
+                        <form action="">
+                        <input type="text" placeholder="SDKnsdakndnj12n1k1lkmdsalm"><br>
 
-        </footer>
-
-
-
-
-    </div> <!-- id="setting-page" -->
-
-    <!-- Container -->
-    <div class="mainContainer">
-
-        <nav class="container-setting">
-            <ul class="mainList">
-                <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="{{URL::asset('img/Logo_In_NavBar.svg')}}" alt="Logo_In_NavBar"></a>
-                    <a href="http://hashbazaar.com" id="welcome">Welcome User</a> </li>
-
-                    <li class="sub dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
-                    <li class="sub"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
-                    <li class="sub"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
-                    <li class="sub"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
-                    <li class="sub"> <a href="{{route('contact')}}" id="contact">Contact</a></li>
-
-            </ul>
-
-
-
-        </nav>
-
-
-
-        <nav class="container-setting2">
-                <ul class="mainList2">
-
-                    <li class="sub2 dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
-                    <li class="sub2"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
-                    <li class="sub2"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
-                    <li class="sub2"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
-                    <li class="sub2"> <a href="{{route('contact')}}" id="contact">Contact</a></li>
-                </ul>
-
-
-
-            </nav>
-
-
-
-
-
-
-
-
-
-
-
+                        <input type="submit" value="Submit" id="makewalletsubmit">
+                        </form>
+                    </div>
+    
+    
+    
+                </div><!-- address -->
+    
+                <p id="make-wallet-title2">Need To Change Your Address ?</p>
     </div>
-      <script>
-      
-      // ------------user account--------------------
-            $(document).ready(function(){
 
-                $('.user-img').click(function(){
-                    $('.list').toggle(500);
-                })
+
+<!-- ---------------------------------------------------------------------------------------------- -->
+
+<!-- Container -->
+<div class="mainContainer">
+
+
+    <nav class="container">
+
+        <ul class="mainList">
+            
+            <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="{{URL::asset('img/Logo_In_NavBar.svg')}}" alt="Logo_In_NavBar"></a>
+                <a href="" id="welcome">Welcome User</a> </li>
+            <li class="sub dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
+            <li class="sub"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
+            <li class="sub"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
+            <li class="sub"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
+            <li class="sub"> <a href="{{route('contact')}}" id="contact">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+
+
+
+</div>
+<!-- Footer -->
+<footer id="footer-div" >
+        <hr id="setting-hr-footer">
+        <p class="setting-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
+        <img id="setting-footer-image" src="img/Logo_footer.svg" alt="">
+
+</footer> 
+
+<script>
+    $.noConflict();
+
+    jQuery(document).ready(function($){
+
+        $('.one').click(function(){
+            $('.setting-information').show();
+            $('.wallet1').hide();
+            $('.make-wallet').hide()
+
+            $('.one a').css('color','orange');
+            $('.two a').css('color','#2e2d2d')
+
+
         })
 
-    // =---------------------------------------
-      
-      </script>    
-    
-</body>
 
-</html>
+        $('.two').click(function(){
+            $('.setting-information').hide();
+            $('.wallet1').show();
+            $('.make-wallet').hide()
+            
+            $('.two a').css('color','orange');
+            $('.one a').css('color','#2e2d2d');
+
+        })
+
+        
+
+        $('#clickhear').click(function(){
+            $('.setting-information').hide();
+            $('.wallet1').hide();
+            $('.make-wallet').show()
+
+            $('.two a').css('color','orange');
+            $('.one a').css('color','#2e2d2d');
+
+        })
+    })
+
+</script>
+@endsection

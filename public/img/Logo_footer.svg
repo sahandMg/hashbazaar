@@ -1,37 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 221.2 52" style="enable-background:new 0 0 221.2 52;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#EAAE0D;stroke:#000000;stroke-width:0.5;}
-	.st1{fill:url(#Path_91_1_);stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
-	.st2{fill:#4E4E4E;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
-	.st3{font-family:'RobotoMonoForPowerline-Medium';}
-	.st4{font-size:37.1467px;}
-</style>
-<g id="Group_370" transform="translate(-376.5 -1077.033)">
-	<path id="Path_92" class="st0" d="M432.2,1098.7L432.2,1098.7c0-1.3-1-2.3-2.3-2.3h-35.7c-1.3,0-2.3,1-2.3,2.3l0,0
-		c0,1.3,1,2.3,2.3,2.3h35.7C431.2,1101,432.2,1099.9,432.2,1098.7z"/>
-	<path id="Path_93" class="st0" d="M432.2,1111.5L432.2,1111.5c0-1.3-1-2.3-2.3-2.3h-35.7c-1.3,0-2.3,1-2.3,2.3l0,0
-		c0,1.3,1,2.3,2.3,2.3h35.7C431.2,1113.8,432.2,1112.8,432.2,1111.5z"/>
-	<g id="Layer_1-2_1_" transform="translate(431.524 1081.254)">
-		
-			<linearGradient id="Path_91_1_" gradientUnits="userSpaceOnUse" x1="-1755.3749" y1="24.142" x2="-1754.5112" y2="24.142" gradientTransform="matrix(33.617 0 0 43.414 59017.9375 -1026.0029)">
-			<stop  offset="0" style="stop-color:#E9A300"/>
-			<stop  offset="1" style="stop-color:#FFE300"/>
-		</linearGradient>
-		<path id="Path_91" class="st1" d="M36.2,25.5c-0.4-0.8-0.9-1.6-1.5-2.2c-1-1-2.3-1.8-3.7-2.1c0,0,2.4-1.3,3.1-3.2
-			c0.8-1.8,0.8-3.9-0.1-5.7c-0.4-0.8-0.9-1.6-1.5-2.3c-1.1-1-2.4-1.6-3.9-1.8C27.6,8,26.5,8,25.3,8V3.3h-3.6V8h-3.2V3.3h-3.7v4.8
-			L7.5,8v4.2c1-0.1,2-0.1,3,0c0.8,0.1,1.5,0.7,1.7,1.5c0.1,0.6,0.1,1.1,0,1.7V30c-0.1,1-0.8,1.8-1.8,1.9C10.1,32,7.5,32,7.5,32v4.1
-			h7.4v4.7h3.8v-4.6h3v4.7h3.8v-4.6c0,0,4.1,0,5.9-0.7c1.8-0.4,3.4-1.6,4.2-3.2c0.2-0.4,0.4-0.8,0.5-1.2
-			C36.3,29.4,36.9,27.1,36.2,25.5z M24.6,12.1c2.2,0,3.1,3.3,2.6,5.1c-0.2,1-0.8,1.8-1.6,2.4c-0.6,0.3-1.4,0.4-2.1,0.3h-4.9V12
-			C20.6,12.1,22.6,12.1,24.6,12.1z M29.2,27.8c-0.2,2.1-1.8,3.8-3.9,4c-1.4,0.1-2.8,0.1-4.3,0h-2.5v-8.1H23c2.1,0,4.2,0,5.5,2
-			C29,26.4,29.2,27.1,29.2,27.8L29.2,27.8z"/>
-	</g>
-	<text transform="matrix(1 0 0 1 469.3745 1116.3181)" class="st2 st3 st4">AZAAR</text>
-	<path id="Path_94" class="st0" d="M406.6,1124.6L406.6,1124.6c1.3,0,2.3-1,2.3-2.3v-35.5c0-1.3-1.1-2.3-2.3-2.3l0,0
-		c-1.3,0-2.3,1-2.3,2.3v35.5C404.3,1123.5,405.3,1124.6,406.6,1124.6z"/>
-	<path id="Path_95" class="st0" d="M420.3,1124.6L420.3,1124.6c1.3,0,2.3-1,2.3-2.3v-35.5c0-1.3-1.1-2.3-2.3-2.3l0,0
-		c-1.3,0-2.3,1-2.3,2.3v35.5C417.9,1123.5,419,1124.6,420.3,1124.6z"/>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 221.198 52">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #eaae0d;
+        stroke: #707070;
+      }
+
+      .cls-2 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 0.75px;
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        fill: #4e4e4e;
+        stroke: rgba(0,0,0,0);
+        font-size: 43px;
+        font-family: RobotoMonoForPowerline-Medium, Roboto Mono Medium for Powerline;
+        font-weight: 500;
+      }
+    </style>
+    <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e9a300"/>
+      <stop offset="1" stop-color="#ffe300"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_370" data-name="Group 370" transform="translate(-376.5 -1077.033)">
+    <path id="Path_92" data-name="Path 92" class="cls-1" d="M46.7,47.947h0a2.706,2.706,0,0,0-2.7-2.7H2.7a2.706,2.706,0,0,0-2.7,2.7H0a2.706,2.706,0,0,0,2.7,2.7H44.007A2.708,2.708,0,0,0,46.7,47.947Z" transform="translate(377 1049.652)"/>
+    <path id="Path_93" data-name="Path 93" class="cls-1" d="M46.7,98.907h0a2.706,2.706,0,0,0-2.7-2.7H2.7a2.706,2.706,0,0,0-2.7,2.7H0a2.706,2.706,0,0,0,2.7,2.7H44.007A2.706,2.706,0,0,0,46.7,98.907Z" transform="translate(377 1013.558)"/>
+    <g id="Layer_1-2_1_" transform="translate(431.524 1081.254)">
+      <path id="Path_91" data-name="Path 91" class="cls-2" d="M215.116,26.076a8.97,8.97,0,0,0-1.7-2.563,9.291,9.291,0,0,0-4.287-2.459s2.793-1.552,3.626-3.654a8.188,8.188,0,0,0-.06-6.622,10.177,10.177,0,0,0-1.712-2.64,8.235,8.235,0,0,0-4.5-2.123,28.259,28.259,0,0,0-3.934-.161V.38h-4.206V5.827h-3.688V.38h-4.278V5.949l-8.506-.1v4.882a21.179,21.179,0,0,1,3.416.048,2.524,2.524,0,0,1,2.009,1.775,9.236,9.236,0,0,1,.03,1.974V31.288a2.424,2.424,0,0,1-2.063,2.248c-.377.089-3.4.086-3.4.068v4.8h8.524v5.385h4.383V38.409h3.419v5.385h4.371V38.43s4.691,0,6.772-.809a6.944,6.944,0,0,0,4.844-3.746,6.292,6.292,0,0,0,.6-1.409C215.272,30.589,215.885,27.9,215.116,26.076ZM201.643,10.585c2.6-.006,3.542,3.821,2.97,5.947a4.809,4.809,0,0,1-1.9,2.795,4.02,4.02,0,0,1-2.377.363H194.7v-9.1Q198.172,10.595,201.643,10.585Zm5.41,18.2a5.136,5.136,0,0,1-4.569,4.671,42.61,42.61,0,0,1-4.931.033H194.7v-9.4h5.146c2.377,0,4.883,0,6.389,2.289A4.3,4.3,0,0,1,207.053,28.785Z" transform="translate(-181.86 -0.38)"/>
+    </g>
+    <text id="AZAAR" class="cls-3" transform="translate(466.698 1118.033)"><tspan x="0" y="0">AZAAR</tspan></text>
+    <path id="Path_94" data-name="Path 94" class="cls-1" d="M50.557,48.765h0a2.7,2.7,0,0,0,2.7-2.68V5.04a2.7,2.7,0,0,0-2.7-2.68h0a2.7,2.7,0,0,0-2.7,2.68V46.085A2.7,2.7,0,0,0,50.557,48.765Z" transform="translate(343.469 1078.823)"/>
+    <path id="Path_95" data-name="Path 95" class="cls-1" d="M103.387,48.765h0a2.7,2.7,0,0,0,2.7-2.68V5.04a2.7,2.7,0,0,0-2.7-2.68h0a2.7,2.7,0,0,0-2.7,2.68V46.085A2.7,2.7,0,0,0,103.387,48.765Z" transform="translate(306.455 1078.823)"/>
+  </g>
 </svg>

@@ -308,15 +308,15 @@
                 if(window.screen.availWidth > 1024) {
                     ctx.canvas.parentNode.style.height = '300px';
                     ctx.canvas.parentNode.style.width = '700px';
-                } else if(window.screen.availWidth > 726) {
+                } else if(window.screen.availWidth > 768) {
                     ctx.canvas.parentNode.style.height = '200px';
                     ctx.canvas.parentNode.style.width = '600px';
-                } else if(window.screen.availWidth > 400) {
+                } else if(window.screen.availWidth > 414) {
                     ctx.canvas.parentNode.style.height = '300px';
-                    ctx.canvas.parentNode.style.width = '400px';
-                } else if(window.screen.availWidth > 300) {
-                    ctx.canvas.parentNode.style.height = '200px';
                     ctx.canvas.parentNode.style.width = '300px';
+                } else if(window.screen.availWidth > 320) {
+                    ctx.canvas.parentNode.style.height = '200px';
+                    ctx.canvas.parentNode.style.width = '280px';
                 } else {
                     ctx.canvas.parentNode.style.height = '300px';
                     ctx.canvas.parentNode.style.width = '700px';

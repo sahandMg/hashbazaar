@@ -279,67 +279,27 @@
                         };
 
                     //    ==================================chart==============
-                var dateFormat = 'YYYY DD MMM';
-                // var dateFormat = 'MMMM DD YYYY';
-                var date = moment('2019 03 Feb', dateFormat);
-                var date2 = moment('2019 04 Feb', dateFormat);
+                var dateFormat = 'YYYY DD MMMM';
+                var date = moment('April 01 2017', dateFormat);
                 var dateTime = [];
                 var data = [];
                 var labels = [];
-                
-
-                // data.push({t: date.valueOf(),y: 0.52});
-                //         labels.push(date);
-                //         data.push({t: date2.valueOf(),y: 2.5});
-                //         labels.push(date2);
             axios.get('{{route('chartData').'?user='. Auth::guard('user')->user()->code}}').then(function (response) {
-               
+
                 dateTime = response.data;
-                console.log("data time");console.log(dateTime);
-                console.log("template data");console.log(date.valueOf());
+                console.log(dateTime);
+
                 if(dateTime !== 404){
-                    // labels.push(moment('2019 05 Jan', dateFormat));
-                    // data.push({t:moment('2019 05 Jan ', dateFormat).valueOf(),y: 0});
-                    // labels.push(moment('2019 03 Feb', dateFormat));
-                    // data.push({t:moment('2019 03 Feb', dateFormat).valueOf(),y: 0.442335});
-                    // labels.push(moment('2019 04 Feb', dateFormat));
-                    // data.push({t: moment('2019 04 Feb', dateFormat).valueOf(), y: 2.589362});
-                        // data.push({t: date.valueOf(),y: dateTime[0].mined});
-                        // labels.push(date);
-                        // data.push({t: date2.valueOf(),y: dateTime[1].mined});
-                        // labels.push(date2);
-                        // var date5 = moment('2019 05 Jan ', dateFormat);
-                        // var duration = moment.duration(2, 'days');
-                        // console.log("date5");console.log(date5);
-                        // console.log(date5.subtract(duration));
-                        // console.log(date.add(duration) === moment('2013-06-19', 'YYYY-MM-DD')); // returns false, should be true
-                    if(dateTime.length > 0) { 
-                     var temp = moment(dateTime[0].time, dateFormat) ;
-                     console.log(dateTime.length);console.log(moment().format('YYYY DD MMM'));
-                     console.log("time");
-                     for(var j=dateTime.length ; j < 31; j++) {
-                        // console.log(moment('2019 05 Jan ', dateFormat).subtract(j, "days"));
-                        console.log(moment().subtract('days', j).format('YYYY DD MMM'));
-                        data.push({t: moment().subtract('days', j).format('YYYY DD MMM').valueOf(),y: 0});
-                        labels.push(moment().subtract('days', j).format('YYYY DD MMM')); 
-                     }   
-                     for(var i=0 ; i < dateTime.length ; i++) {
-                        // labels.push(moment('2019 03 Feb', dateFormat));
-                        // data.push({t:moment('2019 03 Feb', dateFormat).valueOf(),y: 0.442335 });
-                        // data.push({t:moment('2019 03 Feb', dateFormat).valueOf(), y: 27.96930236878253 });
-                        // labels.push(moment('2019 04 Feb', dateFormat));
-                        // data.push({t:moment('2019 04 Feb', dateFormat).valueOf(),y: 2.589362 });
-                        // data.push({t:moment('2019 04 Feb', dateFormat).valueOf(), y: 28.96930236878253 });
-                        // labels.push(moment('2019 05 Feb', dateFormat));
-                        // data.push({t:moment('2019 05 Feb', dateFormat).valueOf(), y: 30.96930236878253 });
-                        // console.log("real date");
-                        console.log(moment(dateTime[i].time, dateFormat).format('YYYY DD MMM'));
+
+                    for(i=0 ; i < dateTime.length ; i++){
+
                         data.push({t:moment(dateTime[i].time, dateFormat).valueOf(),y: dateTime[i].mined});
-                        labels.push(moment(dateTime[i].time, dateFormat)); 
-                     }
+
+                        labels.push(moment(dateTime[i].time, dateFormat));
+
                     }
                 }
-            // });
+
 
 //            labels.push(moment('April 01 2017', dateFormat));labels.push(moment('April 03 2017', dateFormat));labels.push(moment('April 04 2017', dateFormat));
 

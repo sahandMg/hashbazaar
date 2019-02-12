@@ -43,19 +43,6 @@
     </div>
 </header>
 
-<<<<<<< HEAD
-<div>
-  <div>
-   @yield('content')
-   <!-- Footer -->
-    <div id="footer-div">
-      <div class="footer-div">
-        <p class="footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
-        <img id="footer-image" src="{{URL::asset('img/Logo_footer.svg')}}" alt="">
-        </div>
-
-     </div>
-=======
 
 
 @yield('content')
@@ -65,13 +52,8 @@
 
 <!-- Container -->
 <div class="mainContainer">
->>>>>>> 87e4accab20480bb432fe1f168bacfab3711fd93
 
-  </div>
 
-  <div>
-   <!-- Container -->
-   <div class="mainContainer">
     <nav class="container">
 
         <ul class="mainList">
@@ -83,40 +65,16 @@
             <li class="sub"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
             <li class="sub"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
             <li class="sub"> <a href="{{route('contact')}}" id="contact">Contact</a></li>
+
         </ul>
+
     </nav>
-   </div> 
-     
-  </div>
+
+
+
 
 </div>
 
-<<<<<<< HEAD
 
-
-=======
-    </nav>
->>>>>>> 87e4accab20480bb432fe1f168bacfab3711fd93
-
-
-
-
-<<<<<<< HEAD
-=======
-</div>
-
-
-<<<<<<< HEAD
-<!-- Footer -->
-<footer id="footer" >
-        <hr class="hr-footer">
-        <p class="footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
-        <img id="footer-image" src="{{URL::asset('img/Logo_footer.svg')}}" alt="">
-
-</footer>
-
->>>>>>> 87e4accab20480bb432fe1f168bacfab3711fd93
-=======
->>>>>>> 68a8d37cdd411eee8ea8ac967e50ef5895ed97a8
 </body>
 </html>

@@ -911,8 +911,6 @@ class Cryptobox {
 	    }
 	    $tmp .= "</div>";
 
-
-
 	     // Coin selection list (bitcoin/litecoin/etc)
 	     // --------------------
 	     $coins_list_html = "";

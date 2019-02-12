@@ -42,13 +42,13 @@
 <body>
 
 <?php
-$data = session('paymentData');
+use Illuminate\Support\Facades\URL;$data = session('paymentData');
 // Text above payment box
-$custom_text  = "<p class='lead'>Demo Text - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>";
-$custom_text .= "<p id='orderID' class='lead'>Your Transaction ID : </p>".$data['orderID'];
+$custom_text  = "<p class='lead'>Use This Code to Follow Up Your Transaction</p>";
+$custom_text .= "<p id='orderID' class='lead'>"."Transaction ID :  ".$data['orderID']."</p>";
 $box = $data['box'];
 // Display payment box
-echo $box->display_cryptobox_bootstrap($data['coins'], $data['def_coin'],$data['def_language'] , $custom_text, 70, 200, true, "default", "default", 250, "", "curl", true);
+echo $box->display_cryptobox_bootstrap($data['coins'], $data['def_coin'],$data['def_language'] , $custom_text, 70, 200, true, URL::asset("img/Logo_footer.svg"), "https://www.dovera.sk/media/micro_2015_cukrovka/img/svg/icon--checkmark.svg", 250, "", "curl", false);
 //echo $box->display_cryptobox_bootstrap($coins, $def_coin, $def_language, $custom_text, 70, 200, true, "default", "default", 250, "", "curl", true);
 
 // You can setup method='curl' in function above and use code below on this webpage -
@@ -65,12 +65,21 @@ echo $box->display_cryptobox_bootstrap($data['coins'], $data['def_coin'],$data['
         $('.user-img').click(function(){
             $('.list').toggle(500);
         });
+//        if(document.getElementById('refresh2') !== null) {
+//            console.log("refresh is null");
+            refresh();
+//            document.getElementById('refreshForm').submit();
+//        }
 
-        refresh();
 
     });
 
     var time;
+
+//    time = setTimeout(function () {
+//        alert('dsa')
+//    },5000);
+
     function refresh() {
 
         axios.get('{{route('checkPaymentReceived',['orderID'=>$data['orderID']])}}').then(function (response) {
@@ -78,12 +87,18 @@ echo $box->display_cryptobox_bootstrap($data['coins'], $data['def_coin'],$data['
             resp = response.data;
             console.log(resp);
 
-            if(resp == 200){
-                document.getElementById('refreshForm').submit();
+            if(resp === 200 && {!! !isset($_GET['amount']) !!}){
+//               if(document.getElementById('refresh2') !== null) {
+//                   console.log("refresh is null");
+                   document.getElementById('refreshForm').submit();
+//               }
+//                $(".acrypto_cryptobox_unpaid").css("display","none");
+//                $(".acrypto_cryptobox_paid").css("display","block");
                 clearTimeout(time);
+                console.log("test 200");
 
-            }else{
-
+            }else if(resp == 404){
+                console.log("test 400");
                 time = setTimeout(function () {
                     refresh()
                 },5000);

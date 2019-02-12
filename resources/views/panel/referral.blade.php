@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hash Bazaar - Referral</title>
-    <link rel="stylesheet" href="{{URL::asset('css/contact-referral-activity-dashboard.css')}}">
-        <script src="{{URL::asset('js/jquery-3.3.1.js')}}"></script>
-        <link rel="stylesheet" href="{{URL::asset('css/cssreset.css')}}">
-    <script>
-
-    </script>
-</head>
-
-<body>
-  @include('panel.master.navbar')
+@extends('panel.master.layout')
+@section('content')
     <!-- Referral Page -->
     <div id="referral-page">
         <q>Notice :</q>
@@ -63,7 +47,7 @@
 
 
 <!-- Footer -->
-    <div>
+    <div id="footer-div">
 
         <div class="referral-footer-div">
                 <p class="referral-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
@@ -73,7 +57,7 @@
 
 
     <!-- Container -->
-    @include('panel.master.sidebar')
+
 
     <script>// ------------user account--------------------
         $(document).ready(function(){
@@ -84,6 +68,4 @@
         })
         
          // =---------------------------------------</script>
-</body>
-
-</html>
+@endsection

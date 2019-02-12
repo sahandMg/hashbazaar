@@ -29,7 +29,11 @@
         <div class="list">
 
             <ul>
-
+                <li class="user-account-list sub2"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
+                <li class="user-account-list sub2"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
+                <li class="user-account-list sub2"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
+                <li class="user-account-list sub2"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
+                <li class="user-account-list sub2"> <a href="{{route('contact')}}" id="contact">Contact</a></li>
                 <li class="user-account-list" id="usericon">User Account</li>
                 <li class="user-account-list" id="logouticon">Log Out</li>
 
@@ -102,6 +106,7 @@
 </div>
 
 
+<<<<<<< HEAD
 <!-- Footer -->
 <footer id="footer" >
         <hr class="hr-footer">
@@ -111,5 +116,7 @@
 </footer>
 
 >>>>>>> 87e4accab20480bb432fe1f168bacfab3711fd93
+=======
+>>>>>>> 68a8d37cdd411eee8ea8ac967e50ef5895ed97a8
 </body>
 </html>

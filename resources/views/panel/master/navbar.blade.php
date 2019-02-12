@@ -20,11 +20,3 @@
 </header>
 
 
-<!-- Footer -->
-<div id="footer-div">
-
-    <div class="footer-div">
-        <p class="footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
-        <img id="footer-image" src="{{URL::asset('img/Logo_footer.svg')}}" alt=""></div>
-
-</div>

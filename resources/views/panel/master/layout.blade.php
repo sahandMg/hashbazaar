@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{URL::asset('css/contact-referral-activity-dashboard.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/cssreset.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/main.css')}}">
-    <title>Hash Bazaar - Dashboard</title>
+    <title>Hash Bazaar</title>
     <script src="{{URL::asset('js/jquery-3.3.1.js')}}"></script>
     <script  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>

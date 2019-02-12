@@ -409,8 +409,9 @@ color: orange !important}
     width: 300px;
     height: 30px;
     margin-top: 3%;
+    border: 3px solid transparent;
     margin-left: 15%;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
 
 }
 
@@ -426,8 +427,9 @@ color: orange !important}
     width: 300px;
     height: 30px;
     margin-top: 3%;
+    border: 3px solid transparent;
     margin-left: 15%;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
 
 }
 
@@ -455,8 +457,9 @@ color: orange !important}
     width: 300px;
     height: 30px;
     margin-top: 3%;
+    border: 3px solid transparent !important;
     margin-left: 15%;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
 }
 
 
@@ -465,8 +468,9 @@ color: orange !important}
     width: 300px;
     height: 30px;
     margin-top: 3%;
+    border: 3px solid transparent;
     margin-left: 15%;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
 }
 
 
@@ -475,16 +479,18 @@ color: orange !important}
     width: 300px;
     height: 30px;
     margin-top: 3%;
+    border: 3px solid transparent;
     margin-left: 15%;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
 }
 
 .setting-information input#submit
 {
     width: 100px;
     height: 40px;
-    background-color:aqua;
+    background-color:#15BEA4;
     margin-left: 30%;
+    border-radius: 8%;
     font-size: 20px;
     color: white;
     font-family: sans-serif;
@@ -534,10 +540,11 @@ color: orange !important}
 .wallet1 input#buttonwallet {
     width: 120px !important;
     height: 60px;
-    background-color:aqua;
+    background-color:#15BEA4;
     margin-left: 43%;
     font-size: 20px;
     margin-top: 5%;
+    border-radius: 8%;
     color: white;
     font-family: sans-serif;
 }
@@ -546,7 +553,7 @@ color: orange !important}
 
 
 .make-wallet {
-    display: none
+    display: block
 
 }
 #make-wallet-title {
@@ -646,24 +653,6 @@ color: orange !important}
     font-size: 22px
 }
 
-form#setting-make-wallet button {
-    width: 160px;
-    height: 60px;
-    border-radius: 10%;
-    background-color: #15BEA4;
-    position: relative;
-    top: 450px;
-    left: 410px;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    font-size: 30px;
-    border: thin solid
-}
-
-form#setting-make-wallet button p {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    font-size: 30px;
-    color: white;
-}
 
 #make-wallet-title2 {
     font-size: 30px;
@@ -684,8 +673,9 @@ form#setting-make-wallet button p {
 .make-wallet input#makewalletsubmit {
     width: 120px !important;
     height: 60px !important;
-    background-color:aqua !important;
+    background-color:#15BEA4 !important;
     font-size: 20px !important;
+    border-radius: 8% !important;
     color: white;
     font-family: sans-serif;
     position: absolute;
@@ -697,14 +687,14 @@ form#setting-make-wallet button p {
 /* ------------------------ */
 
 #setting-hr-footer {
-    width: 100%;
+    width: 99.8%;
     display: block;
 }
 
 #footer-div {
-    width: 100%;
-    margin-left: 0%;
-    margin-top: 80%
+    width: 72%;
+    margin-left: 28%;
+    margin-top: 50%
 
 }
 

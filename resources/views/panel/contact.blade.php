@@ -13,8 +13,16 @@
 
              <button><span style="color:white">Send</span></button>
         </form>
-        <hr class="contact-hr-footer" style="position: relative;">
+        <hr class="contact-hr-footer" >
 
+
+        <div id="footer-div">
+            <div class="contact-footer-div" >
+            <p class="contact-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
+            <img id="contact-footer-image" src="{{URL::asset('img/Logo_footer.svg')}}" alt="">
+
+            </div>
+        </div>
     </div>
 
 
@@ -38,21 +46,6 @@
 
         </nav>
 
-
-
-        <nav class="container-contact2">
-                <ul class="mainList2">
-
-                    <li class="sub2 dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
-                    <li class="sub2"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
-                    <li class="sub2"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
-                    <li class="sub2"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
-                    <li class="sub2"> <a href="{{route('contact')}}" id="contact">Contact</a></li>
-                </ul>
-
-
-
-            </nav>
 
 
 

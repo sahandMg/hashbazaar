@@ -119,10 +119,10 @@
             <p id="dashboard-title3">Mining History</p>
             <hr class="dashboard-hr222-2" >
 
-{{-- 
-            <div class="chart1" >
+
+            <div class="chart-container" >
                     <canvas id="chart1"></canvas>
-            </div> --}}
+            </div>
 
 
             <hr class="dashboard-hr-footer" style="left: -10px">
@@ -167,6 +167,63 @@
         <!-- Main Container -->
 
         <style type="text/css">
+        .chart-container {
+            direction: rtl;
+            position: relative;
+            /*display: block;*/
+            /*margin: auto;*/
+            /*margin: 0px; */
+          /*  height: 40vh;*/
+            /*width: 65vw;*/
+            /*height: 500px !important;*/
+            margin-top: 5%;
+         }
+         @media screen and (min-width:320px) {
+           .chart-container {
+               height: 250px !important;
+            }
+            canvas#chart1 {
+                width: 350px !important;
+            }
+         }
+         @media screen and (min-width:370px) {
+          /* .chart-container {
+               height: 250px !important;
+            }
+            canvas#chart1 {
+                width: 320px !important;
+            }*/
+         }
+         @media screen and (min-width:414px) {
+            .chart-container {
+               height: 300px !important;
+              /*width: 50vw;*/
+            }
+            canvas#chart1 {
+                width: 400px !important;
+            }
+         }
+         @media screen and (min-width:768px) {
+            .chart-container {
+              height: 300px !important;
+              /*width: 400px;*/
+            }
+            canvas#chart1 {
+                width: 730px !important;
+            }
+         }
+         @media screen and (min-width:1024px) {
+            .chart-container {
+               height: 400px !important;
+              /*width: 50vw;*/
+            }
+         }
+         @media screen and (min-width:1224px) {
+            canvas#chart1 {
+                width: 1000px !important;
+            }
+         }
+
 .progress {    border: 1px solid;}
 .progress-bar {
     background-color: #ff9100;
@@ -304,33 +361,40 @@
 
 //                data.push({t:moment('April 01 2017', dateFormat).valueOf(),y: 22});data.push({t:moment('April 03 2017', dateFormat).valueOf(),y: 28.96930236878253});data.push({t: moment('April 04 2017', dateFormat).valueOf(), y: 29.96930236878253});
                 var ctx = document.getElementById('chart1').getContext('2d');
-                if(window.screen.availWidth > 1024) {
-                    ctx.canvas.parentNode.style.height = '300px';
-                    ctx.canvas.parentNode.style.width = '700px';
-<<<<<<< HEAD
-                } else if(window.screen.availWidth > 768) {
-                    ctx.canvas.parentNode.style.height = '200px';
-                    ctx.canvas.parentNode.style.width = '600px';
-                } else if(window.screen.availWidth > 414) {
-                    ctx.canvas.parentNode.style.height = '300px';
-                    ctx.canvas.parentNode.style.width = '300px';
-                } else if(window.screen.availWidth > 320) {
-=======
-                } else if(window.screen.availWidth < 768) {
-                    ctx.canvas.parentNode.style.height = '200px';
-                    ctx.canvas.parentNode.style.width = '600px';
-                } else if(window.screen.availWidth < 414) {
-                    ctx.canvas.parentNode.style.height = '300px';
-                    ctx.canvas.parentNode.style.width = '300px';
-                } else if(window.screen.availWidth < 320) {
->>>>>>> 846edccef67291f2e4441fc419492f46b1e87005
-                    ctx.canvas.parentNode.style.height = '200px';
-                    ctx.canvas.parentNode.style.width = '280px';
-                } else {
-                    ctx.canvas.parentNode.style.height = '300px';
-                    ctx.canvas.parentNode.style.width = '700px';
-                }
-
+               var chartContainer = document.getElementById('chartContainer');
+                console.log(screen.width);
+                var screenWidth = screen.width ;
+                // if(screenWidth > 1024) {
+                //     console.log(" > 1024");
+                //     ctx.canvas.parentNode.style.height = '300px';
+                //     ctx.canvas.parentNode.style.width = '700px';
+                //     // chartContainer.style.width = "700px";
+                //     // chartContainer.style.height = "300px";
+                // } else if(screenWidth > 767) {
+                //     console.log(" > 768");
+                //     ctx.canvas.parentNode.style.height = '250px';
+                //     ctx.canvas.parentNode.style.width = '650px';
+                //     // chartContainer.style.width = "600px";
+                //     // chartContainer.style.height = "200px";
+                // } else if(screenWidth > 413) {
+                //     console.log(" > 414");
+                //     ctx.canvas.parentNode.style.height = '300px';
+                //     ctx.canvas.parentNode.style.width = '300px';
+                //     // chartContainer.style.width = "300px";
+                //     // chartContainer.style.height = "300px";
+                // } else if(screenWidth > 300) {
+                //     console.log(" > 320");
+                //     ctx.canvas.parentNode.style.height = '200px';
+                //     ctx.canvas.parentNode.style.width = '280px';
+                //     // chartContainer.style.width = "280px";
+                //     // chartContainer.style.height = "200px";
+                // } else {
+                //     console.log("else");
+                //     ctx.canvas.parentNode.style.height = '300px';
+                //     ctx.canvas.parentNode.style.width = '700px';
+                //     // chartContainer.style.width = "700px";
+                //     // chartContainer.style.height = "300px";
+                // }
 
                 var color = Chart.helpers.color;
                 var cfg = {
@@ -350,6 +414,8 @@
                         }]
                     },
                     options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
                         scales: {
                             xAxes: [{
                                 type: 'time',

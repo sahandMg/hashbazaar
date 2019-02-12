@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="main.css">
     <script src="jquery-3.3.1.js"></script>
     <script src="jquery.animate-colors.js"></script>
-    <title>Hash Bazaar - Setting</title>
+    <title>Hash Bazaar - Make Wallet</title>
 
 </head>
 <body>
@@ -44,54 +44,40 @@
         <div class="flex-item two"><a href="#">Wallet</a></div>
 
     </div>
+   
 
+    <div class="make-wallet">
 
-    <div class="setting-information">
-        <form action="">
-            <q>User Information </q> <br>
+                <p id="make-wallet-title">Current Bitcoin Wallet Address</p>
+    
+    
+                <div class="address">
+    
+                    <div class="address-img"><img  src="img/SampleQR.svg" alt=""></div>
+    
+                    <div class="address-box">
+                            <input type="text" placeholder="SDKnsdakndnj12n1k1lkmdsalm">
+    
+                         <a href="mail-icon"><img class="icon" src="../img/Mail.svg" alt=""></a>
+                        <a href="link-icon"><img class="icon" src="../img/Link.svg" alt=""></a>
+                         <a href="copy-icon"><img class="icon" src="../img/Copy.svg" alt=""></a>
+                    </div>
+    
+                    <div class="change-address">
+                        
+                        <form action="">
+                        <input type="text" placeholder="SDKnsdakndnj12n1k1lkmdsalm"><br>
 
-            <p id="textbefore">Name</p>
-            <input type="text" name="text" id="text" placeholder="Name"> <br>
-            <p id="textbefore">Email</p>
-
-            <input type="email" name="email" id="email" placeholder="user@example.com"> <br> <br> <br>
-
-            <q>Password</q> <br>
-            <p id="textbefore">Current Password</p>
-            
-            <input type="password" name="curpass" id="cur-password" placeholder="Current Password"> <br>
-            <p id="textbefore">New Password</p>
-
-            <input type="password" name="newpass" id="newpassword" placeholder="Current Password"> <br>
-            <p id="textbefore">Confirm Password</p>
-
-            <input type="password" name="Confirmpassword" id="Confirmpassword" placeholder="confirm Password"> 
-
-            <input type="button" value="Submit" id="submit">  
-        </form>
-
+                        <input type="submit" value="Submit" id="makewalletsubmit">
+                        </form>
+                    </div>
+    
+    
+    
+                </div><!-- address -->
+    
+                <p id="make-wallet-title2">Need To Change Your Address ?</p>
     </div>
-
-    <div class="wallet1">
-
-            <p>Still Don’t Have a Bitcoin Wallet? Click <a href="#" id="clickhear"
-                style="color:orange;text-decoration: none;font-weight: bold;">Hear</a> To Make One!
-                </p>
-
-                <q>OR</q>
-
-                <blockquote>Change Your Wallet Address</blockquote>
-                <form id="setting-wallet" action="">
-                <input type="text" id="textwallet">
-
-                <input type="button" id="buttonwallet" value="Submit">
-                </form>
-
-
-
-        </div><!-- Wallet 1 -->
-
-
 
 </div>
 <!-- ---------------------------------------------------------------------------------------------- -->
@@ -159,6 +145,16 @@
         })
 
         
+
+        $('#clickhear').click(function(){
+            $('.setting-information').hide();
+            $('.wallet1').hide();
+            $('.make-wallet').show()
+
+            $('.two a').css('color','orange');
+            $('.one a').css('color','#2e2d2d');
+
+        })
     })
 
 </script>

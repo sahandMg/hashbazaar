@@ -2636,38 +2636,12 @@ div ul .navbar #welcome {
 
  #activity-page {
      position: absolute;
-     top: 100px;
+     top: 00px;
      left: 27.5%;
      width: 72%;
  }
 
  #activity {color: orange !important}
-
- #activity-page q  {
-     font-size: 30px;
-    color: #2e2d2d;
-    font-weight: bold;
-    font-family: sans-serif;
-    position: absolute;
-    left: 40px;
-    top: 100px
-
- }
-
-
- #activity-page_firstList
- {
-    list-style-type:inherit;
-
-    position: absolute;
-    left: 70px;
-    top: 150px;
-    color: #2e2d2d;
-    font-family: sans-serif;
-    line-height: 2;
-    font-size: 25px
-
- }
 
  #activity-page blockquote {
     font-size: 30px;
@@ -2675,7 +2649,7 @@ div ul .navbar #welcome {
     font-weight: bold;
     font-family: sans-serif;
     position: absolute;
-    top: 350px;
+    top: 250px;
     left: 40px;
  }
 
@@ -2690,7 +2664,7 @@ div ul .navbar #welcome {
     font-weight: bold;
     font-family: sans-serif;
     position: relative;
-    top: 450px;
+    top: 350px;
     left: 350px;
  }
 
@@ -2702,7 +2676,7 @@ div ul .navbar #welcome {
      position: relative;
      overflow: scroll;
      height: 250px;
-     top: 500px;
+     top: 400px;
      width: 960px;
      margin: 0;
      padding: 0
@@ -2719,14 +2693,10 @@ div ul .navbar #welcome {
     position: relative;
     top: 100px;
     font-size: 25px;
-     border: 2px solid;
     font-weight: bold;
     font-family: sans-serif;
     margin-left: 7%
-
-
 }
-
 
 #activity-page_secondList div ul li {
     font-weight: normal !important;
@@ -2734,7 +2704,6 @@ div ul .navbar #welcome {
     top: 25px;
     font-size: 20px;
     position: relative;
-
 }
 
 .mainList2 {display: none}
@@ -2764,8 +2733,6 @@ div ul .navbar #welcome {
      height: 300px;
  }
 
-
-
  #activity-page_thirdList_column
 {
     flex-grow: 1;
@@ -2776,9 +2743,7 @@ div ul .navbar #welcome {
     font-weight: bold;
     font-family: sans-serif;
     margin-left: 7%
-
 }
-
 
 #activity-page_thirdList div ul li {
     font-weight: normal !important;
@@ -2787,14 +2752,12 @@ div ul .navbar #welcome {
     font-size: 17px;
     height: 70px;
     position: relative;
-
 }
 
 #activity-page_thirdList div ul li:nth-of-type(1) {
     top: 20px;
     position: relative;
 }
-
 
 .activity-hr-footer
 {
@@ -2804,11 +2767,13 @@ div ul .navbar #welcome {
 /* Footer */
 
 .activity-footer-div {
-    width: 100%;
-    left: 0%;
+    width: 70%;
+    left: 28%;
     position: relative;
-    top: 1320px;
-    height: 0
+    top: 1220px;
+    height: 100;
+    /* border: 2px solid */
+    
 }
 
 #activity-footer-image {
@@ -2821,8 +2786,7 @@ div ul .navbar #welcome {
     font-family: sans-serif;
     position: absolute;
     top: -20px;
-    left: 40%
-
+    left: 30%
 }
 
 
@@ -2906,31 +2870,16 @@ div ul .navbar #welcome {
         left: -55px;
     }
 
-
     /* =============--media--================Activity=============================== */
-
-
-    #activity-page q  {
-        font-size: 25px;
-    }
-
-
-    #activity-page_firstList
-    {
-       font-size: 20px;
-
-    }
 
     #activity-page blockquote {
        font-size: 25px;
     }
 
-
     #activity-page .purchases q {
        width: 170px;
        height: 30px;
        font-size: 25px;
-
     }
 
      
@@ -2939,8 +2888,6 @@ div ul .navbar #welcome {
         top: 450px;
         font-size: 20px;
         margin-left:7%
-
-
     }
     #activity-page_secondList
     {
@@ -2958,12 +2905,7 @@ div ul .navbar #welcome {
         top: 25px;
         font-size: 20px;
         position: relative;
-
     }
-
-
-
-
 
     #activity-page_secondList_column
     {
@@ -2975,8 +2917,6 @@ div ul .navbar #welcome {
     font-weight: bold;
     font-family: sans-serif;
     margin-left: 7%
-
-
     }
 
    #activity-page .Transactions q {
@@ -2989,18 +2929,16 @@ div ul .navbar #welcome {
        top: 450px;
        font-size: 20px;
        margin-left:7%
-
-
     }
    #activity-page_thirdList
     {
-     display: flex;
-     flex-flow: row wrap;
-     position: relative;
-     overflow: scroll;
-     height: 300px;
-     top: 480px;
-     width: 730px;
+        display: flex;
+        flex-flow: row wrap;
+        position: relative;
+        overflow: scroll;
+        height: 300px;
+        top: 480px;
+        width: 730px;
     }
     #activity-page_thirdList_column
    {
@@ -3031,8 +2969,6 @@ div ul .navbar #welcome {
        position: relative;
    }
 
-
-
    /* Footer */
    .activity-hr-footer {
        top: 567px
@@ -3056,49 +2992,12 @@ div ul .navbar #welcome {
 
     #activity-page {
         height: 1000px;
-
         z-index: 0;
     }
     #activity-page_firstList {
         z-index: 1;
-
     }
-    .container-activity2{
-        position:  relative;
-        top: 2px;
-        width: 95%;
-        float: left;
-        z-index: -0;
-        display: block;
-    }
-
-    .container-activity2 .mainList2 {
-        background: #2e2d2d;
-        position: fixed;
-        top: 0;
-        height: 40px;
-        width: 98.5%;
-        border-bottom: 2px solid orange;
-        display: block
-    }
-
-    .container-activity2 .mainList2 .sub2{
-        float: left;
-        margin-left: 80px;
-        text-align: center;
-        margin-top: 15px;
-        position: sticky;
-        top: 0;
-
-    }
-
-    .container-activity2 .mainList2 .sub2 a {
-        text-decoration: none;
-        color: orange
-    }
-    .container-activity2 .mainList2 .sub2 a:hover {
-        color: white;
-    }
+   
     .mainList {
         display: none
     }
@@ -3159,30 +3058,23 @@ div ul .navbar #welcome {
         top: 0px
     }
 
-
-
     #activity-page {
         left: 1.5%;
         width: 100%;
     }
 
-
     #activity-page q  {
         font-size: 27px;
-
     }
-
 
     #activity-page_firstList
     {
        font-size: 22px
-
     }
 
     #activity-page blockquote {
        font-size: 27px;
     }
-
 
     #activity-page .purchases q {
        height: 30px;
@@ -3223,7 +3115,6 @@ div ul .navbar #welcome {
    #activity-page_thirdList div ul li {
        width: 120px;
        font-size: 15px;
-
    }
 
    .activity-hr-footer
@@ -3273,51 +3164,10 @@ div ul .navbar #welcome {
         z-index: 2;
     }
     #activity-page {
-    height: 1000px;
-
-    z-index: 0;
+        height: 1000px;
+        z-index: 0;
     }
-    #activity-page_firstList {
-    z-index: 1;
-    left: 30px;
-    height: 350px;
-
-    }
-    .container-activity2{
-        position:  relative;
-        top: 2px;
-        width: 95%;
-        float: left;
-        z-index: -0;
-        display: block;
-    }
-
-    .container-activity2 .mainList2 {
-        background: #2e2d2d;
-        position: fixed;display: block;
-        top: 0;
-        height: 40px;
-        width: 402px;
-        border-bottom: 2px solid orange;
-    }
-
-    .container-activity2 .mainList2 .sub2{
-        float: left;
-        margin-left: 35px;
-        text-align: center;
-        margin-top: 10px;
-        top: 0;
-        font-size: 13px;
-
-    }
-
-    .container-activity2 .mainList2 .sub2 a {
-        text-decoration: none;
-        color: orange
-    }
-    .container-activity2 .mainList2 .sub2 a:hover {
-        color: white;
-    }
+   
     .mainList {
         display: none
     }
@@ -3343,7 +3193,6 @@ div ul .navbar #welcome {
         left: -20px;
         top: 0px
     }
-
 
     #referral:before {
         content: "";
@@ -3379,26 +3228,9 @@ div ul .navbar #welcome {
     }
 
 
-
-
-
     #activity-page {
         left: 1.5%;
         width: 100%;
-    }
-
-
-    #activity-page q  {
-        font-size: 22px;
-
-    }
-
-
-    #activity-page_firstList
-    {
-    font-size: 12px;
-    width: 380px;
-
     }
 
     #activity-page blockquote {
@@ -3406,7 +3238,6 @@ div ul .navbar #welcome {
         left: 30px;
         font-size: 22px;
     }
-
 
     #activity-page .purchases q {
     height: 20px;
@@ -3418,20 +3249,18 @@ div ul .navbar #welcome {
         top: 360px;
         width: 400px;
         height: 300px;
-    overflow: scroll;
-
+        overflow: scroll;
     }
     #activity-page_secondList_column
     {
-    top: 00px;
-    font-size: 15px;
-    margin-top: 80px;
+        top: 00px;
+        font-size: 15px;
+        margin-top: 80px;
     }
 
-
     #activity-page_secondList div ul li {
-    width: 120px;
-    font-size: 13px;
+        width: 120px;
+        font-size: 13px;
     }
     #activity-page .Transactions {
         width: 380px !important
@@ -3442,25 +3271,24 @@ div ul .navbar #welcome {
         left: 100px;
     }
     #activity-page_thirdList{
-    top:470px;
+        top:470px;
         width: 400px;
 
     }
     #activity-page_thirdList_column
     {
-    font-size: 17px;
+        font-size: 17px;
     }
 
     #activity-page_thirdList div ul li {
-    width: 120px;
-    font-size: 13px;
-
+        width: 120px;
+        font-size: 13px;
     }
 
     .activity-hr-footer
     {
         left: 0;
-    top: 600px
+        top: 600px
     }
 
     /* Footer */
@@ -3469,24 +3297,23 @@ div ul .navbar #welcome {
         top: 540px
     }
     .activity-footer-div {
-    width: 100%;
-    left: 0%;
-    position: absolute;
-    top: 1400px
+        width: 100%;
+        left: 0%;
+        position: absolute;
+        top: 1400px
     }
 
     #activity-footer-image {
-    width: 150px;
-    height: 60px;
+        width: 150px;
+        height: 60px;
     }
 
     .activity-footer-paragraph {
-    font-size: 15px;
-    font-family: sans-serif;
-    position: absolute;
-    top: -60px;
-    left: 60px
-
+        font-size: 15px;
+        font-family: sans-serif;
+        position: absolute;
+        top: -60px;
+        left: 60px
     }
 
 
@@ -3496,11 +3323,6 @@ div ul .navbar #welcome {
 
 /* Activity-Media-375 */
 @media screen and (max-width:375px) {
-
-    .container-activity2 .mainList2 {
-        width: 395px !important;
-        display: block
-    }
 
     .container-activity {
         display: none;
@@ -3517,53 +3339,10 @@ div ul .navbar #welcome {
         width: 375px;
     }
     #activity-page {
-    height: 1000px;
-
-    z-index: 0;
+        height: 1000px;
+        z-index: 0;
     }
-    #activity-page_firstList {
-    z-index: 1;
-    left: 30px;
-    top: 100px;
-    height: 350px;
-    width: 300px !important;
-
-    }
-    .container-activity2{
-        position:  relative;
-        top: 2px;
-        width: 95%;
-        float: left;
-        z-index: -0;
-        display: block;
-    }
-
-    .container-activity2 .mainList2 {
-        background: #2e2d2d;
-        position: fixed;display: block;
-        top: 0;
-        height: 40px;
-        width: 414px;
-        border-bottom: 2px solid orange;
-    }
-
-    .container-activity2 .mainList2 .sub2{
-        float: left;
-        margin-left: 30px;
-        text-align: center;
-        margin-top: 10px;
-        top: 0;
-        font-size: 12px;
-
-    }
-
-    .container-activity2 .mainList2 .sub2 a {
-        text-decoration: none;
-        color: orange
-    }
-    .container-activity2 .mainList2 .sub2 a:hover {
-        color: white;
-    }
+  
     .mainList {
         display: none
     }
@@ -3624,29 +3403,9 @@ div ul .navbar #welcome {
         top: 0px
     }
 
-
-
-
-
     #activity-page {
         left: 1.5%;
         width: 100%;
-    }
-
-
-    #activity-page q  {
-        font-size: 22px;
-        top: 70px;
-        left: 30px;
-
-    }
-
-
-    #activity-page_firstList
-    {
-       font-size: 12px;
-       width: 300px !important;
-
     }
 
     #activity-page blockquote {
@@ -3654,7 +3413,6 @@ div ul .navbar #welcome {
         left: 30px;
         font-size: 22px;
     }
-
 
     #activity-page .purchases q {
        height: 20px;
@@ -3674,7 +3432,6 @@ div ul .navbar #welcome {
        margin-top: 80px
     }
 
-
     #activity-page_secondList div ul li {
        width: 120px;
        font-size: 13px;
@@ -3690,7 +3447,6 @@ div ul .navbar #welcome {
     #activity-page_thirdList{
        top:470px;
         width: 360px;
-
     }
     #activity-page_thirdList_column
     {
@@ -3700,7 +3456,6 @@ div ul .navbar #welcome {
     #activity-page_thirdList div ul li {
        width: 120px;
        font-size: 13px;
-
     }
 
     .activity-hr-footer
@@ -3743,26 +3498,7 @@ div ul .navbar #welcome {
         position: absolute;
         left: 10px;
     }
-    .container-activity2 .mainList2 {
-        width: 320px;
-        display: block
-    }
-
-    .container-activity2 .mainList2 .sub2{
-        float: left;
-        margin-left: 25px;
-        text-align: center;
-        margin-top: 10px;
-        top: 0;
-        font-size: 11.5px;
-
-    }
-    #activity-page_firstList
-    {
-       font-size: 12px;
-       width: 250px !important;
-
-    }
+ 
     #dashboard:before {
         content: "";
         background-image: url("img/Dashboard.svg");
@@ -3824,7 +3560,6 @@ div ul .navbar #welcome {
     }
     #activity-page_secondList{
          width: 305px;
- 
     }
     #activity-page_thirdList{
         top:470px;

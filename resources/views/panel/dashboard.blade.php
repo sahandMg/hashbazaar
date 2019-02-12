@@ -119,10 +119,10 @@
             <p id="dashboard-title3">Mining History</p>
             <hr class="dashboard-hr222-2" >
 
-
+{{-- 
             <div class="chart1" >
                     <canvas id="chart1"></canvas>
-            </div>
+            </div> --}}
 
 
             <hr class="dashboard-hr-footer" style="left: -10px">

@@ -829,8 +829,18 @@ form#setting-make-wallet button p {
         top:980px
     }
 
-
-
+    #usericon:before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-image: url("../img/user-solid.svg");
+        background-size: 100% 100%;
+        position: relative;
+        left: 1vh !important;
+        top: 2vh !important
+        
+    }
     .footer-div {
         left: 0px;
         /* width: 1024px */

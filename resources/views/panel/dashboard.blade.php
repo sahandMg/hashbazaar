@@ -17,17 +17,16 @@
             <!-- Circle -->
             <div id="dashboard-page-circle">
                 <span id="circle-span">Total Mining</span>
-                <p>&nbsp;<span id="miningBTC"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; <span style="color: orange; font-size: 30px">BTC</span> </p>
-                <hr style="width: 84%; text-align:center; top: 40%; position: relative;">
-                <p><span id="miningDollar"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua; font-size: 30px">USD</span></p>
+                <p>&nbsp;<span id="miningBTC"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; <span style="color: orange;">BTC</span> </p>
+                <hr style="width: 84%; text-align:center; margin-top: 02%; ">
+                <p><span id="miningDollar"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua;">USD</span></p>
 
                 <button id="redeem" disabled onclick="redeem()"> Redeem ! </button>
 
 
             </div>
             <!-- Hash History -->
-            <hr class="dashboard-hr1-1">
-            <hr class="dashboard-hr1"  style="position: relative;top: 130px;">
+            <hr class="dashboard-hr1">
             <p id="dashboard-title">Hash History</p>
             <hr class="dashboard-hr2-2">
 
@@ -67,7 +66,7 @@
                                          @foreach($hashes as $key => $hash)
 
                                              <li>
-                                             <div style="width: 180px; margin: 0px auto">
+                                             <div class="remain">
                                               <div class="progress">
 
 
@@ -95,9 +94,9 @@
 
 
             <!--   Buy hash power -->
-            <hr  class="dashboard-hr11"  style="position: relative;top: 200px;">
+            <hr  class="dashboard-hr11">
             <p id="dashboard-title2">Buy Hash Power</p>
-            <hr class="dashboard-hr22-2" style="position: relative;top:190px">
+            <hr class="dashboard-hr22-2">
 
             <h5 id="demo"></h5>
             <div class="slidecontainer">
@@ -116,10 +115,9 @@
 
             <!-- Mining History -->
 
-            <hr class="dashboard-hr111" style="position: relative;top: 420px;">
+            <hr class="dashboard-hr111" >
             <p id="dashboard-title3">Mining History</p>
-            <!-- <hr class="dashboard-hr222" style="position: relative;top:560px;"> -->
-            <hr class="dashboard-hr222-2" style="position: relative;top:410px">
+            <hr class="dashboard-hr222-2" >
 
 
             <div class="chart1" >
@@ -127,20 +125,21 @@
             </div>
 
 
-            <hr class="dashboard-hr-footer" style="position: relative;left: -10px">
+            <hr class="dashboard-hr-footer" style="left: -10px">
     </div>
 
     {{-- Footer --}}
-    <div class="dashboard-footer-div" >
-        {{-- <hr class="dashboard-hr-footer"> --}}
-        <p class="dashboard-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
-        <img id="dashboard-footer-image" src="{{URL::asset('img/Logo_footer.svg')}}" alt="">
+    <div id="footer-div">
+            <div class="dashboard-footer-div" >
+            <p class="dashboard-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
+            <img id="dashboard-footer-image" src="{{URL::asset('img/Logo_footer.svg')}}" alt="">
 
+        </div>
     </div>
     <!-- Container -->
     <div class="mainContainer">
 
-
+{{-- 
         <nav class="container">
 
             <ul class="mainList">
@@ -155,7 +154,7 @@
 
             </ul>
 
-        </nav>
+        </nav> --}}
 
 
 
@@ -308,15 +307,15 @@
                 if(window.screen.availWidth > 1024) {
                     ctx.canvas.parentNode.style.height = '300px';
                     ctx.canvas.parentNode.style.width = '700px';
-                } else if(window.screen.availWidth > 726) {
+                } else if(window.screen.availWidth < 768) {
                     ctx.canvas.parentNode.style.height = '200px';
                     ctx.canvas.parentNode.style.width = '600px';
-                } else if(window.screen.availWidth > 400) {
+                } else if(window.screen.availWidth < 414) {
                     ctx.canvas.parentNode.style.height = '300px';
-                    ctx.canvas.parentNode.style.width = '400px';
-                } else if(window.screen.availWidth > 300) {
-                    ctx.canvas.parentNode.style.height = '200px';
                     ctx.canvas.parentNode.style.width = '300px';
+                } else if(window.screen.availWidth < 320) {
+                    ctx.canvas.parentNode.style.height = '200px';
+                    ctx.canvas.parentNode.style.width = '280px';
                 } else {
                     ctx.canvas.parentNode.style.height = '300px';
                     ctx.canvas.parentNode.style.width = '700px';

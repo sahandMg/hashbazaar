@@ -3464,7 +3464,10 @@ div ul .navbar #welcome {
     }
 
     /* Footer */
-
+    #footer-div {
+        position: relative;
+        top: 540px
+    }
     .activity-footer-div {
     width: 100%;
     left: 0%;
@@ -4033,9 +4036,9 @@ div ul .navbar #welcome {
     width: 72.3%;
     height: 1800px;
     /* right: 0; */
-    left: 27.7%;
-    top: 100px;
-    position: absolute;
+    margin-left: 27.7%;
+    margin-top:150px;
+    /* position: absolute; */
     box-sizing: border-box;
     display: block;
 }
@@ -4054,14 +4057,14 @@ div ul .navbar #welcome {
     height: 450px;
     border: 20px solid #ff9100;
     border-radius: 50%;
-    position: relative;
-    left: 23%;
-    top: 4%;
+    /* position: relative; */
+    margin-left: 23%;
+    margin-top: 4%;
     border-collapse: 2px solid #727272
 }
 
 #redeem {
-    margin-top: 45%;
+    margin-top: 10%;
     margin-left: 38%;
 }
 
@@ -4071,27 +4074,42 @@ div ul .navbar #welcome {
     font-family: sans-serif;
     color: #727272;
     position: absolute;
-    top: 25%;
+    margin-top: 100px;
     font-weight: bolder;
-    left: 30%;
+    margin-left: 10%;
 }
 
 
-#dashboard-page-circle p {
+#dashboard-page-circle p:nth-of-type(1) {
     font-size: 45px;
     text-align: center;
     color: rgb(41, 37, 37);
-    position: relative;
-    top: 40%;
+    /* position: relative; */
+    margin-top: 35%;
     font-weight: bolder;
     font-family: sans-serif
 }
 
+
+#dashboard-page-circle p:nth-of-type(2) {
+    font-size: 45px;
+    text-align: center;
+    color: rgb(41, 37, 37);
+    /* position: relative; */
+    margin-top: 2%;
+    font-weight: bolder;
+    font-family: sans-serif
+}
+
+#miningBTC span, #miningBTC span {
+    font-size: 30px
+}
+
 /* ==================================================HASH History============================== */
 #dashboard-page #dashboard-title {
-    position: absolute;
-    left: 40%;
-    top: 615px;
+    /* position: absolute; */
+    margin-left: 40%;
+    margin-top: -2%;
     font-family: sans-serif;
     font-size: 25px;
     font-weight: bolder;
@@ -4106,9 +4124,9 @@ div ul .navbar #welcome {
  {
      display: flex;
      flex-flow: row wrap;
-     position: relative;
+     /* position: relative; */
      height: 300px;
-     top: 130px;
+     margin-top: 30px;
      overflow:scroll;
  }
 
@@ -4117,14 +4135,15 @@ div ul .navbar #welcome {
  #Hash-History_column
 {
     flex-grow: 1;
-    position: relative;
-    top: 30px;
+    /* position: relative; */
+    margin-top: 30px;
     font-size: 15px;
     color: #2e2d2d;
     font-weight: bolder;
     font-family: sans-serif;
     margin-left: 5%;
     text-align: left;
+    display: block
 
 }
 
@@ -4135,24 +4154,16 @@ div ul .navbar #welcome {
     top: 30px;
     font-size: 20px;
     height: 70px;
-    position: relative;
+    /* position: relative; */
     color: #2e2d2d;
     font-weight: bold;
-
-
 }
 
 #Hash-History_column  li:nth-of-type(1) {
     top: 30px;
-    position: relative;
+    /* position: relative; */
 }
 
-#Hash-History_column .remain li {
-    width: 150px;
-    border: 1px solid ;
-    height: 35px;
-
-}
 
 .remain li:nth-of-type(1) div {
     background-color: orange;
@@ -4163,45 +4174,38 @@ div ul .navbar #welcome {
 }
 
 .remain li:nth-of-type(2) div {
-      /* margin-top: 35px; */
-      background-color: orange;
-      text-align: center;
+    background-color: orange;
+    text-align: center;
     width: 40%;
     height: 35px
 
 }
 
 
-
-.remain li:nth-of-type(1)  {
-    text-align: center;
-
+.remain {
+    width: 180px; margin: 0px auto
 }
-
-.remain li:nth-of-type(2)  {
-      margin-top: 35px;
-      text-align: center;
-}
-
 /* ==============================================Buy hash power=================================== */
 
 #demo {
-    position: relative;
-    top: 210px;
+    /* position: relative; */
+    margin-top: 8%;
     margin-left: 44%;
     font-size: 25px;
     font-weight: bolder;
     color: #242424;
-    font-family: Helvetica, sans-serif
+    font-family: Helvetica, sans-serif;
 }
 
 
 
 .slidecontainer {
     width: 82%;
-    top: 280px;
+    margin-top: 2%;
     margin-left: 8%;
-    position: relative;
+    top: 0%;
+    left: 0;
+    /* position: relative; */
 
 }
 
@@ -4237,13 +4241,14 @@ div ul .navbar #welcome {
 }
 
 #dashboard-page #dashboard-title2 {
-    position: absolute;
-    left: 38%;
-    top: 1010px;
+    /* position: absolute; */
+    margin-left: 38%;
+    margin-top: -2%;
     font-family: sans-serif;
     font-size: 25px;
     font-weight: bolder;
-    color: #2e2d2d
+    color: #2e2d2d;
+
 }
 
 form.dashboard-page button {
@@ -4251,9 +4256,9 @@ form.dashboard-page button {
     height: 60px;
     border-radius:10%;
     background-color: #15BEA4;
-    position: relative;
-    top: 50px;
-    left:310px;
+    /* position: relative; */
+    margin-top: 50px;
+    margin-left:310px;
     font-family: 'Segoe UI', Tahoma, sans-serif;
     font-size: 30px;
     border: thin solid
@@ -4267,86 +4272,94 @@ form.dashboard-page button p {
 /*============================================== Mining History ===================================*/
 
 
-#dashboard-page #dashboard-title3 {
-    position: absolute;
-    left: 39%;
-    top: 1375px;
-    font-family: sans-serif;
-    font-size: 25px;
-    font-weight: bolder;
-    color: #2e2d2d;
-}
+    #dashboard-page #dashboard-title3 {
+        /* position: absolute; */
+        margin-left: 39%;
+        margin-top: -2%;
+        font-family: sans-serif;
+        font-size: 25px;
+        font-weight: bolder;
+        color: #2e2d2d;
+    }
 
 
-canvas#chart1 {
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    position: relative;
-    top: 480px;
-    left: 150px
-}
- .dashboard-hr1-1  { display: none}
+    canvas#chart1 {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        /* position: absolute; */
+        margin-top: 5%;
+        margin-left: 20%
+    }
 
- .dashboard-hr222-2 {
-     width: 39%;
-     left: 29.5%;
- }
-.dashboard-hr11 {
-    width: 37%;
-    left: -308px
-}
+    .dashboard-hr1 {
+        width: 38%;
+        margin-left: -0px;
+        margin-top: 60px
+    }
+    .dashboard-hr1-1  { display: none}
 
-.dashboard-hr111 {
-    width: 37%;
-    left: -310px
-}
+    .dashboard-hr222-2 {
+        width: 40%;
+        margin-left: 59.5%;
+        margin-top: -15px
+    }
+    .dashboard-hr11 {
+        width: 37%;
+        margin-top: 5%;
+        margin-left: 0;
+    }
 
-.dashboard-hr22-2 {
-display: block;
-width: 38.5%;
-left: 29.5%
-}
+    .dashboard-hr111 {
+        width: 37%;
+        left: 0px !important;
+        margin-left: 0;
+        margin-top: 10%
+    }
 
-.dashboard-hr1 {
-    width: 38%;
-    left: -300px;
+    .dashboard-hr22-2 {
+        display: block;
+        width: 39.5%;
+        margin-left:59.5%;
+        margin-top: -14px
+
+    }
 
 
-}
-
-.dashboard-hr2-2 {
-    width: 41.5%;
-    left: 28.5%;
-    top: 120px;
-    position: relative;
-}
-.dashboard-hr-footer
-{
-    top: 650px
-}
+    .dashboard-hr2-2 {
+        width: 41.5%;
+        margin-left: 57.5%;
+        margin-top: -16px;
+        /* position: relative; */
+    }
+    .dashboard-hr-footer
+    {
+        margin-top: 150px
+    }
 
 /* ============================================Footer======================================= */
+    #footer-div {
+        margin-top: 10px;
+        display: block
+    }
+    .dashboard-footer-div {
+        width: 70%;
+        margin-left: 28%;
+        /* position: absolute; */
+        margin-top: 0px;
+    }
 
-.dashboard-footer-div {
-    width: 70%;
-    left: 30%;
-    position: absolute;
-    top: 2080px
-}
+    #dashboard-footer-image {
+        width: 250px;
+        height: 100px;
+    }
 
-#dashboard-footer-image {
-    width: 250px;
-    height: 100px;
-}
-
-.dashboard-footer-paragraph {
-    font-size: 20px;
-    font-family: sans-serif;
-    position: absolute;
-    top: -20px;
-    left: 40%
-}
+    .dashboard-footer-paragraph {
+        font-size: 20px;
+        font-family: sans-serif;
+        /* position: absolute; */
+        margin-left: 40%
+    }
 
 
 
@@ -4434,131 +4447,142 @@ left: 29.5%
         height: 30px;
         left: -55px;
     }
-    .dashboard-hr222-2 {
-        width: 39%;
-        left: 29.5%;
+
+
+    .dashboard-hr1 {
+        width: 38%;
+        margin-left: -10px;
+        margin-top: 60px
     }
-   .dashboard-hr11 {
-       width: 33%;
-       left: -260px
-   }
 
-   .dashboard-hr111 {
-       width: 37%;
-       left: -247px
-   }
+    .dashboard-hr2-2 {
+        width: 41.5%;
+        margin-left: 57.5%;
+        margin-top: -16px;
+        /* position: relative; */
+    }
 
-   .dashboard-hr22-2 {
-   display: block;
-   width: 37.5%;
-   left: 30.5%
-   }
+    .dashboard-hr222-2 {
+        width: 40%;
+        margin-left: 59.5%;
+        margin-top: -15px
+    }
+    .dashboard-hr11 {
+        width: 37%;
+        margin-top: 5%;
+        margin-left: 0;
+    }
 
+    .dashboard-hr111 {
+        width: 37%;
+        left: 0px !important;
+        margin-left: 0;
+        margin-top: 10%
+    }
 
-   .dashboard-hr2-2 {
-       width: 41.5%;
-       left: 28.5%;
-       top: 120px;
-       position: relative;
-   }
+    .dashboard-hr22-2 {
+        display: block;
+        width: 39.5%;
+        margin-left:59.5%;
+        margin-top: -14px
+
+    }
+   
 
     /* ================---media--=================Circle================================== */
 
-#dashboard-page-circle {
-    width: 310px;
-    height: 310px;
-}
+    #dashboard-page-circle {
+        width: 310px;
+        height: 310px;
+    }
 
-#circle-span {
-    font-size: 20px;
-}
+    #circle-span {
+        font-size: 20px !important;
+    }
 
-
-#dashboard-page-circle p {
-    font-size: 30px;
-    top: 40%;
-}
-
-.dashboard-hr1 {
-    width: 35%;
-    left: -250px
-}
-
-.dashboard-hr2 {
-    width: 37%;
-
-}
-
-.dashboard-hr-footer
-{
-    top: 740px;
-}
+    #circle-span {
+        font-size: 20px !important;
+        margin-top: 70px;
+    }
+    #dashboard-page-circle p {
+        font-size: 30px !important;
+        margin-top: 40%;
+    }
+    .dashboard-hr-footer
+    {
+        margin-top: 150px
+    }
 /* ==================================================HASH History============================== */
 
-#dashboard-page #dashboard-title {
-    left: 39%;
-    top: 470px;
-    font-size: 22px;
+    #dashboard-page #dashboard-title {
+        margin-left: 38%;
+        font-size: 22px;
+    }
 
-}
+    #no-hash {
+        font-size: 25px;
+    }
+    #Hash-History-list
+    {
+        height: 300px;
+    }
 
-#no-hash {
-    font-size: 25px;
-}
-#Hash-History_column ul li {
-    font-weight: normal !important;
-    width: 100px;
-    top: 30px;
-    font-size: 16px;
-    height: 70px;
-
-
-}
-
-#Hash-History_column .remain li {
-    width: 100px;
-    border: 1px solid ;
-    height: 35px;
-
-}
+    #Hash-History_column
+    {
+        margin-top: 30px;
+        font-size: 15px;
+        margin-left: 5%;
+    }
 
 
+    #Hash-History_column ul li {
+        width: 80px;
+        margin-top: 30px;
+        font-size: 13px;
+        height: 70px;
+    }
+
+    #Hash-History_column .remain li {
+        width: 100px;
+        border: 1px solid ;
+        height: 35px;
+    }
+        
+    .remain {
+        width: 100px; margin: 0px auto
+    }
 
 /* ==============================================Buy hash power=================================== */
 
+    #dashboard-page #dashboard-title2 {
+        left: 35%;
+        top: 870px;
+        font-size: 22px;
+    }
 
+    form.dashboard-page button {
+        width: 160px;
+        height: 60px;
+        border-radius:10%;
+        background-color: #15BEA4;
+        position: relative;
+        margin-top: 50px;
+        margin-left:220px;
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        font-size: 30px;
+        border: thin solid
+    }
 
-
-
-#dashboard-page #dashboard-title2 {
-    left: 35%;
-    top: 870px;
-    font-size: 22px;
-}
-
-form.dashboard-page button {
-    width: 160px;
-    height: 60px;
-    border-radius:10%;
-    background-color: #15BEA4;
-    position: relative;
-    top: 50px;
-    left:220px;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    font-size: 30px;
-    border: thin solid
-}
-
-form.dashboard-page button p {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    font-size: 30px;
-    color: white;
-}
+    form.dashboard-page button p {
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        font-size: 30px;
+        color: white;
+    }
 /*============================================== Mining History ===================================*/
 
 #dashboard-page #dashboard-title3 {
-    left: 38%;
-    top: 1240px;
+    margin-left: 38%;
+    margin-top: -16px;
     font-size: 22px;
     z-index: 2;
 }
@@ -4572,23 +4596,23 @@ canvas#chart1 {
     top: 600px;
 } */
 
-
 canvas#chart1 {
-    top: 450px;
-    left: 0px
+    margin-top: 0px;
+    margin-left: 0
 }
 
 
-
-
-
 /*========================================= Footer============================== */
-
+.dashboard-hr-footer {
+    top: 0;
+    margin-top: 28%
+}
 .dashboard-footer-div {
-    width: 100%;
-    left: 0%;
-    position: absolute;
-    top: 2050px
+    width: 70%;
+    margin-left: 27%;
+    /* position: absolute; */
+    margin-top: -15%;
+    top: 0
 }
 
 
@@ -4598,57 +4622,32 @@ canvas#chart1 {
 /* Dashboard-Media-768 */
 @media screen and (max-width:768px) {
 
-    .container-dashboard {
+    .container {
         display: none
     }
 
 
     #dashboard-page {
         height: 1800px;
-        left: 0;
+        margin-left: 0;
         width: 100%;
         z-index: 0;
     }
 
 
     .container-dashboard2{
-        position:  relative;
+        /* position:  relative; */
         top: 2px;
         width: 100%;
         float: left;
         display: block;
     }
-
-    .container-dashboard2 .mainList2 {
-        background: #2e2d2d;
-        position: fixed;
-        top: 0;
-        z-index:0;
-        height: 40px;
-        width: 100%;
-        border-bottom: 2px solid orange;
-        display: block
+    
+    .container  .mainList {
+        display: none !important
     }
-
-    .container-dashboard2 .mainList2 .sub2{
-        float: left;
-        margin-left: 80px;
-        text-align: center;
-        margin-top: 10px;
-        position: sticky;
-        top: 0;
-
-    }
-
-    .container-dashboard2 .mainList2 .sub2 a {
-        text-decoration: none;
-        color: orange
-    }
-    .container-dashboard2 .mainList2 .sub2 a:hover {
-        color: white;
-    }
-    .mainList {
-        display: none
+    .container {
+        border-bottom: transparent
     }
 
     #dashboard:before {
@@ -4720,9 +4719,9 @@ canvas#chart1 {
         height: 450px;
         border: 20px solid #ff9100;
         border-radius: 50%;
-        position: relative;
-        left: 19%;
-        top: 4%;
+        /* position: relative; */
+        margin-left: 19%;
+        margin-top: 4%;
         border-collapse: 2px solid #727272
     }
 
@@ -4731,10 +4730,9 @@ canvas#chart1 {
         text-align: center;
         font-family: sans-serif;
         color: #727272;
-        position: absolute;
-        top: 25%;
+        margin-top: 15%;
         font-weight: bolder;
-        left: 30%;
+        margin-left: 22%;
     }
 
 
@@ -4742,40 +4740,40 @@ canvas#chart1 {
         font-size: 45px;
         text-align: center;
         color: rgb(41, 37, 37);
-        position: relative;
-        top: 40%;
+        /* position: relative; */
+        margin-top: 40%;
         font-weight: bolder;
         font-family: sans-serif
     }
 
     /* ==================================================HASH History============================== */
     #dashboard-page #dashboard-title {
-        position: absolute;
-        left: 39.9%;
-        top: 620px;
+        /* position: absolute; */
+        margin-left: 42.2%;
         font-family: sans-serif;
         font-size: 25px;
         font-weight: bolder;
-        color: #2e2d2d
+        color: #2e2d2d;
+        margin-top: -20px
     }
 
     .dashboard-hr1  {
-        width: 37%;
-        left: -240px;
-
+        width: 40%;
+        margin-left: 0
 
     }
 
     .dashboard-hr2-2  {
-        width: 37%;
-        left: 31.5%;
+        width: 42%;
+        margin-left: 64.5%;
+        margin-top: -15px
     }
 
     #Hash-History-list
      {
          display: flex;
          flex-flow: row wrap;
-         position: relative;
+         /* position: relative; */
      }
 
 
@@ -4783,78 +4781,26 @@ canvas#chart1 {
      #Hash-History_column
     {
         flex-grow: 1;
-        position: relative;
-        top: 200px;
-        font-size: 15px;
-        color: #2e2d2d;
-        font-weight: bolder;
-        font-family: sans-serif;
+        /* position: relative; */
+        margin-top: 20px;
         margin-left: 5%;
-        text-align: left;
 
     }
 
 
     #Hash-History_column ul li {
-        font-weight: normal !important;
         width: 150px;
-        top: 30px;
-        font-size: 20px;
+        font-size: 16px;
         height: 70px;
-        position: relative;
-        color: #2e2d2d;
-        font-weight: bold;
-
-
-    }
-
-    #Hash-History_column  li:nth-of-type(1) {
-        top: 30px;
-        position: relative;
-    }
-
-    #Hash-History_column .remain li {
-        width: 150px;
-        border: 1px solid ;
-        height: 35px;
-
-    }
-
-    .remain li:nth-of-type(1) div {
-        background-color: orange;
-        text-align: center;
-        width: 80%;
-        height: 35px
-
-    }
-
-    .remain li:nth-of-type(2) div {
-          /* margin-top: 35px; */
-          background-color: orange;
-          text-align: center;
-        width: 40%;
-        height: 35px
-
-    }
-
-
-
-    .remain li:nth-of-type(1)  {
-        text-align: center;
-
-    }
-
-    .remain li:nth-of-type(2)  {
-          margin-top: 35px;
-          text-align: center;
+        /* position: relative; */
     }
 
     /* ==============================================Buy hash power=================================== */
 
     #dashboard-page #dashboard-title2 {
-        position: absolute;
-        left: 36%;
-        top: 1010px;
+        /* position: absolute; */
+        margin-left: 40%;
+        margin-top: -20px;
         font-family: sans-serif;
         font-size: 25px;
         font-weight: bolder;
@@ -4862,15 +4808,13 @@ canvas#chart1 {
     }
 
     .dashboard-hr11 {
-        width: 34%;
-        left: -250px;
-
-
+        width: 37%;
+        margin-left: .5%
     }
 
     .dashboard-hr22-2 {
-        width: 36.5%;
-        left: 31.5%;
+        width: 38.5%;
+        margin-left: 67.5%;
     }
 
     form.dashboard-page button {
@@ -4878,9 +4822,9 @@ canvas#chart1 {
         height: 60px;
         border-radius:10%;
         background-color: #15BEA4;
-        position: relative;
-        top: 50px;
-        left:230px;
+        /* position: relative; */
+        margin-top: 50px;
+        margin-left:230px;
         font-family: 'Segoe UI', Tahoma, sans-serif;
         font-size: 30px;
         border: thin solid
@@ -4895,36 +4839,44 @@ canvas#chart1 {
 
 
     #dashboard-page #dashboard-title3 {
-        position: absolute;
-        left: 36%;
-        top: 1375px;
+        /* position: absolute; */
+        margin-left: 41%;
+        margin-top: -20px;
         font-family: sans-serif;
         font-size: 25px;
         font-weight: bolder;
         color: #2e2d2d
     }
     .dashboard-hr111{
-        width: 34%;
-        left: -250px;
+        width: 38%;
+        margin-left: 0.5%
     }
 
-    .dashboard-hr222 {
-        width: 35%;
-        left: 32%;
+    .dashboard-hr222-2 {
+        width: 40%;
+        margin-left: 66%;
     }
 
     .dashboard-hr-footer
     {
-        top:650px
+        margin-top:220px;
+        width: 106%;
+        margin-left: 0;
+        left: 0 !important;
     }
 
     /* ============================================Footer======================================= */
-
+    #footer-div {
+        margin-top: 10px;
+        border-bottom: transparent;
+        display: block
+    }
     .dashboard-footer-div {
         width: 70%;
-        left: 5%;
-        position: absolute;
-        top: 2130px
+        margin-left: 2%;
+        /* position: absolute; */
+        margin-top: 0px;
+        border-bottom: transparent
     }
 
     #dashboard-footer-image {
@@ -4934,11 +4886,12 @@ canvas#chart1 {
 
     .dashboard-footer-paragraph {
         font-size: 20px;
+        border-bottom: transparent;
         font-family: sans-serif;
-        position: absolute;
+        /* position: absolute; */
         top: -60px;
-        left: 200px;
-        width: 400px
+        margin-left: 200px;
+        width: 440px
     }
 
 
@@ -4960,178 +4913,142 @@ canvas#chart1 {
     }
 
     #dashboard-page {
-        height: 1800px;
+        height: 0px !important;
 
         width: 100%;
         z-index: 0;
     }
 
+    .mainList {
+        display: none
+    }
 
-.container-dashboard2{
-    position: relative ;
-    top: 2px;
-    width: 410px;
-    float: left;
-    display: block;
-}
+    #dashboard:before {
+        content: "";
+        background-image: url("img/Dashboard.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
 
-.container-dashboard2 .mainList2 {
-    background: #2e2d2d;
-    position: fixed;
-    top: 0px;
-    z-index:0;
-    height: 40px;
-    width: 414px;
-    border-bottom: 2px solid orange;
-}
-
-.container-dashboard2 .mainList2 .sub2{
-    float: left;
-    margin-left: 35px;
-    text-align: center;
-    margin-top: 10px;
-    top: 0;
-    font-size: 13px;
-
-}
-
-.container-dashboard2 .mainList2 .sub2 a {
-    text-decoration: none;
-    color: orange
-}
-.container-dashboard2 .mainList2 .sub2 a:hover {
-    color: white;
-}
-.mainList {
-    display: none
-}
-
-#dashboard:before {
-    content: "";
-    background-image: url("img/Dashboard.svg");
-    width: 15px;
-    height: 15px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -20px;
-    top: 0px
-}
-
-#activity:before {
-    content: "";
-    background-image: url("img/Activity.svg");
-    width: 15px;
-    height: 15px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -20px;
-    top: 0px
-}
+    #activity:before {
+        content: "";
+        background-image: url("img/Activity.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
 
 
-#referral:before {
-    content: "";
-    background-image: url("img/Referral.svg");
-    width: 15px;
-    height: 15px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -20px;
-    top: 0px
-}
+    #referral:before {
+        content: "";
+        background-image: url("img/Referral.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
 
-#setting:before {
-    content: "";
-    background-image: url("img/Setting.svg");
-    width: 15px;
-    height: 15px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -20px;
-    top: 0px
-}
+    #setting:before {
+        content: "";
+        background-image: url("img/Setting.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
 
-#contact:before {
-    content: "";
-    background-image: url("img/contact.svg");
-    width: 15px;
-    height: 15px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -20px;
-    top: 0px
-}
-
-
-.dashboard-hr1-1 {
-    display: block;
-    top: 135px;
-    width: 30%;
-    left: -145px;
-    position: relative;
-
-}
-
-.dashboard-hr2-2 {
-    display: block;
-    top: 115px;
-    width: 30%;
-    position: relative;
-    left: 142px;
-}
+    #contact:before {
+        content: "";
+        background-image: url("img/contact.svg");
+        width: 15px;
+        height: 15px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: -20px;
+        top: 0px
+    }
 
 
-.dashboard-hr11 {
-    display: block;
-}
-/* User Account */
+    .dashboard-hr1-1 {
+        display: block;
+        top: 135px;
+        width: 30%;
+        left: -145px;
+        /* position: relative; */
 
-.useraccount {
-    top: 10px;
-    margin-left:80%;
-}
-.useraccount .list {
-    width: 170px;
-    height: 110px;
-    display: block;
-}
-.useraccount .list  {
-    margin-left: -105px
-}
-.useraccount .list:after {
-    margin-left: 110px;
-}
+    }
 
-.useraccount .list ul li {
-    width: 170px;
-    font-size: 15px
+    .dashboard-hr2-2 {
+        display: block;
+        top: 115px;
+        width: 30%;
+        /* position: relative; */
+        left: 142px;
+    }
 
-}
 
-#usericon:before {
-    content: '';
-    display: block;
-    width: 20px;
-    height: 20px;
-    background-image: url("../img/user-solid.svg");
-    background-size: 100% 100%;
-    position: relative;
-    left: 2.5vh;
-    top: 3vh
-    
-}
+    .dashboard-hr11 {
+        display: block;
+    }
+    /* User Account */
+
+    .useraccount {
+        top: 10px;
+        margin-left:80%;
+    }
+    .useraccount .list {
+        width: 170px;
+        height: 110px;
+        display: block;
+    }
+    .useraccount .list  {
+        margin-left: -105px
+    }
+    .useraccount .list:after {
+        margin-left: 110px;
+    }
+
+    .useraccount .list ul li {
+        width: 170px;
+        font-size: 15px
+
+    }
+
+    #usericon:before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-image: url("../img/user-solid.svg");
+        background-size: 100% 100%;
+        position: relative;
+        left: 2.5vh;
+        top: 3vh
+        
+    }
 
 
 
-#usericon:hover::before ,#logouticon:hover::before{
-    border: 1px solid white;
-    border-radius: 15%;
-    background-color: white
-}
+    #usericon:hover::before ,#logouticon:hover::before{
+        border: 1px solid white;
+        border-radius: 15%;
+        background-color: white
+    }
 
-#logouticon:before{
-    left: 3vh;
-}
+    #logouticon:before{
+        left: 3vh;
+    }
 
 
     /* ======================================Circle=========================================== */
@@ -5141,7 +5058,7 @@ canvas#chart1 {
         height: 250px;
         border: 20px solid #ff9100;
         border-radius: 50%;
-        position: relative;
+        /* position: relative; */
         margin-left: 15%;
         left: 0%;
         top: 4%;
@@ -5149,22 +5066,22 @@ canvas#chart1 {
     }
 
     #circle-span {
-        font-size: 20px;
+        font-size: 15px !important;
         text-align: center;
         font-family: sans-serif;
         color: #727272;
-        position: absolute;
-        top: 25%;
+        /* position: absolute; */
+        margin-top: 15%;
         font-weight: bolder;
-        left: 30%;
+        margin-left: 20%;
     }
 
 
     #dashboard-page-circle p {
-        font-size: 25px;
+        font-size: 20px !important;
         text-align: center;
         color: rgb(41, 37, 37);
-        position: relative;
+        /* position: relative; */
         top: 40%;
         font-weight: bolder;
         font-family: sans-serif
@@ -5172,32 +5089,33 @@ canvas#chart1 {
 
     /* ==================================================HASH History============================== */
     #dashboard-page #dashboard-title {
-        position: absolute;
-        left: 35%;
-        top: 420px;
+        /* position: absolute; */
+        margin-left: 35.5%;
+        margin-top:-20px;
         font-family: sans-serif;
-        font-size: 20px;
+        font-size: 18px;
         font-weight: bolder;
         color: #2e2d2d
     }
 
     .dashboard-hr1  {
-        width: 25%;
+        width: 33%;
         left: 10px;
 
 
     }
 
-    .dashboard-hr2  {
-        width: 3%;
+    .dashboard-hr2-2  {
+        width: 33%;
         left: 0%;
+        margin-top: -7px
     }
 
     #Hash-History-list
      {
          display: flex;
          flex-flow: row wrap;
-         position: relative;
+         /* position: relative; */
      }
 
 
@@ -5205,7 +5123,7 @@ canvas#chart1 {
      #Hash-History_column
     {
         flex-grow: 1;
-        position: relative;
+        /* position: relative; */
         top: 200px;
         font-size: 15px;
         color: #2e2d2d;
@@ -5219,64 +5137,31 @@ canvas#chart1 {
 
     #Hash-History_column ul li {
         font-weight: normal !important;
-        width: 150px;
+        width: 60px;
         top: 30px;
-        font-size: 20px;
+        font-size: 15px;
         height: 70px;
-        position: relative;
+        /* position: relative; */
         color: #2e2d2d;
         font-weight: bold;
-
-
     }
 
     #Hash-History_column  li:nth-of-type(1) {
         top: 30px;
-        position: relative;
+        /* position: relative; */
     }
 
-    #Hash-History_column .remain li {
-        width: 150px;
+    .remain {
+        width: 60px;
         border: 1px solid ;
-        height: 35px;
-
-    }
-
-    .remain li:nth-of-type(1) div {
-        background-color: orange;
-        text-align: center;
-        width: 80%;
-        height: 35px
-
-    }
-
-    .remain li:nth-of-type(2) div {
-          /* margin-top: 35px; */
-          background-color: orange;
-          text-align: center;
-        width: 40%;
-        height: 35px
-
-    }
-
-
-
-    .remain li:nth-of-type(1)  {
-        text-align: center;
-
-    }
-
-    .remain li:nth-of-type(2)  {
-          margin-top: 35px;
-          text-align: center;
+        font-size: 12px
     }
 
     /* ==============================================Buy hash power=================================== */
 
     #dashboard-page #dashboard-title2 {
-        position: absolute;
-        left: 30%;
-        top: 825px !important;
+        /* position: absolute; */
+        margin-left: 30%;
         font-family: sans-serif;
         font-size: 20px;
         font-weight: bolder;
@@ -5286,24 +5171,23 @@ canvas#chart1 {
     .dashboard-hr11 {
         width: 26%;
         left: -150px;
-
-
     }
 
     .dashboard-hr22-2 {
         display: block;
         width: 27%;
-        left: 35.2%;
+        margin-left: 71.2%;
+        margin-top: -10px
     }
 
     form.dashboard-page button {
-        width: 130px;
-        height: 50px;
+        width: 100px;
+        height: 40px;
         border-radius:10%;
         background-color: #15BEA4;
-        position: relative;
-        top: 50px;
-        left:120px;
+        /* position: relative; */
+        margin-top: 20px;
+        margin-left:120px;
         font-family: 'Segoe UI', Tahoma, sans-serif;
         font-size: 30px;
         border: thin solid
@@ -5318,9 +5202,8 @@ canvas#chart1 {
 
 
     #dashboard-page #dashboard-title3 {
-        position: absolute;
-        left: 32.5%;
-        top: 1185px;
+        /* position: absolute; */
+        margin-left: 32.5%;
         font-family: sans-serif;
         font-size: 20px;
         font-weight: bolder;
@@ -5334,25 +5217,21 @@ canvas#chart1 {
     .dashboard-hr222-2 {
         display: block;
         width: 29%;
-        left: 35%;
+        margin-left: 69%;
+        margin-top: -10px
     }
 
     canvas#chart1 {
         -moz-user-select: none;
         -webkit-user-select: none;
         -ms-user-select: none;
-        position: relative;
-        top: 450px;
+        /* position: relative; */
+        margin-top: 50px;
         width: 390px !important;
+        height: 200px !important
     }
 
 
-    .dashboard-hr1 {
-        width: 35%;
-        left: -310px;
-
-
-    }
 
     .dashboard-hr2 {
         width: 40%;
@@ -5361,30 +5240,37 @@ canvas#chart1 {
 
     .dashboard-hr-footer
     {
-        top: 590px
+        margin-top: 0;
+        top: 0
     }
 
     /* ============================================Footer======================================= */
-
+    #footer-div {
+        top: 0 !important;
+        margin-top: 1270px;
+        height: 050px;
+        width: 100%;
+    }
     .dashboard-footer-div {
-        width: 10% !important;
+        width: 100% !important;
         left: 0%;
-        position: absolute;
-        top: 1880px
+        /* position: absolute; */
+        margin-top: 0
     }
 
     #dashboard-footer-image {
         width: 100px;
         height: 50px;
+        margin: 0 auto
     }
 
     .dashboard-footer-paragraph {
         font-size: 15px;
         font-family: sans-serif;
-        position: absolute;
+        /* position: absolute; */
         top: -60px;
-        left: 100px;
-        width: 400px
+        margin-left: 80px;
+        width: 280px
     }
 
 
@@ -5394,21 +5280,6 @@ canvas#chart1 {
 
 /* Dashboard-Media-375 */
 @media screen and (max-width:375px) {
-
-    .container-dashboard2 .mainList2 {
-        width: 375px;
-    }
-
-    .container-dashboard2 .mainList2 .sub2{
-        float: left;
-        margin-left: 30px;
-        text-align: center;
-        margin-top: 10px;
-        top: 0;
-        font-size: 13px;
-
-    }
-
 
     .useraccount {
         top: 10px;
@@ -5423,53 +5294,64 @@ canvas#chart1 {
         height: 250px;
         border: 20px solid #ff9100;
         border-radius: 50%;
-        position: relative;
+        /* position: relative; */
         margin-left: 12%;
         left: 0%;
         top: 4%;
         border-collapse: 2px solid #727272
     }
 
+    #circle-span {
+        font-size: 15px !important;
+        text-align: center;
+        font-family: sans-serif;
+        color: #727272;
+        /* position: absolute; */
+        margin-top: 15%;
+        font-weight: bolder;
+        margin-left: 20%;
+    }
 
+
+    #dashboard-page-circle p {
+        font-size: 20px !important;
+        text-align: center;
+        color: rgb(41, 37, 37);
+        /* position: relative; */
+        top: 40%;
+        font-weight: bolder;
+        font-family: sans-serif
+    }
 
     /* ==================================================HASH History============================== */
     #dashboard-page #dashboard-title {
-        position: absolute;
-        left: 35%;
-        top: 420px;
+        /* position: absolute; */
+        margin-left: 35.5%;
+        margin-top:-20px;
         font-family: sans-serif;
-        font-size: 20px;
+        font-size: 17px;
         font-weight: bolder;
         color: #2e2d2d
     }
 
     .dashboard-hr1  {
-        width: 25%;
+        width: 33%;
         left: 10px;
-        display: none;
 
 
     }
 
-    .dashboard-hr2  {
-        width: 3%;
-        display: none;
+    .dashboard-hr2-2  {
+        width: 33%;
         left: 0%;
+        margin-top: -7px
     }
 
-    .dashboard-hr1-1 {
-        left: -130px
-    }
-    .dashboard-hr2-2 {
-        left: 130px;
-        width: 24%;
-        top: 125px
-    }
     #Hash-History-list
      {
          display: flex;
          flex-flow: row wrap;
-         position: relative;
+         /* position: relative; */
      }
 
 
@@ -5477,7 +5359,7 @@ canvas#chart1 {
      #Hash-History_column
     {
         flex-grow: 1;
-        position: relative;
+        /* position: relative; */
         top: 200px;
         font-size: 15px;
         color: #2e2d2d;
@@ -5491,64 +5373,31 @@ canvas#chart1 {
 
     #Hash-History_column ul li {
         font-weight: normal !important;
-        width: 150px;
+        width: 55px;
         top: 30px;
-        font-size: 20px;
+        font-size: 15px;
         height: 70px;
-        position: relative;
+        /* position: relative; */
         color: #2e2d2d;
         font-weight: bold;
-
-
     }
 
     #Hash-History_column  li:nth-of-type(1) {
         top: 30px;
-        position: relative;
+        /* position: relative; */
     }
 
-    #Hash-History_column .remain li {
-        width: 150px;
+    .remain {
+        width: 50px;
         border: 1px solid ;
-        height: 35px;
-
-    }
-
-    .remain li:nth-of-type(1) div {
-        background-color: orange;
-        text-align: center;
-        width: 80%;
-        height: 35px
-
-    }
-
-    .remain li:nth-of-type(2) div {
-          /* margin-top: 35px; */
-          background-color: orange;
-          text-align: center;
-        width: 40%;
-        height: 35px
-
-    }
-
-
-
-    .remain li:nth-of-type(1)  {
-        text-align: center;
-
-    }
-
-    .remain li:nth-of-type(2)  {
-          margin-top: 35px;
-          text-align: center;
+        font-size: 12px
     }
 
     /* ==============================================Buy hash power=================================== */
 
     #dashboard-page #dashboard-title2 {
-        position: absolute;
-        left: 30% !important;
-        top: 815px !important;
+        /* position: absolute; */
+        margin-left: 30%;
         font-family: sans-serif;
         font-size: 18px;
         font-weight: bolder;
@@ -5556,26 +5405,25 @@ canvas#chart1 {
     }
 
     .dashboard-hr11 {
-        width: 23%;
-        left: -140px;
-
-
+        width: 26%;
+        left: -150px;
     }
 
     .dashboard-hr22-2 {
-        width: 25%;
         display: block;
-        left: 36.2% !important;
+        width: 27%;
+        margin-left: 71.2%;
+        margin-top: -10px
     }
 
     form.dashboard-page button {
-        width: 130px;
-        height: 50px;
+        width: 100px;
+        height: 40px;
         border-radius:10%;
         background-color: #15BEA4;
-        position: relative;
-        top: 50px;
-        left:100px;
+        /* position: relative; */
+        margin-top: 20px;
+        margin-left:120px;
         font-family: 'Segoe UI', Tahoma, sans-serif;
         font-size: 30px;
         border: thin solid
@@ -5590,41 +5438,37 @@ canvas#chart1 {
 
 
     #dashboard-page #dashboard-title3 {
-        position: absolute;
-        left: 30.5%;
-        top: 1175px;
+        /* position: absolute; */
+        margin-left: 32.5%;
         font-family: sans-serif;
-        font-size: 20px;
+        font-size: 18px;
         font-weight: bolder;
         color: #2e2d2d
     }
     .dashboard-hr111{
-        width: 30%;
-        left: -140px;
+        width: 29%;
+        left: -145px;
     }
 
     .dashboard-hr222-2 {
         display: block;
         width: 29%;
-        left: 35%;
+        margin-left: 69%;
+        margin-top: -10px
     }
 
     canvas#chart1 {
         -moz-user-select: none;
         -webkit-user-select: none;
         -ms-user-select: none;
-        position: relative;
-        top: 450px;
-        width: 360px !important;
+        /* position: relative; */
+        margin-top: 50px;
+        width: 330px !important;
+        height: 200px !important;
+        margin-left: 20px
     }
 
 
-    .dashboard-hr1 {
-        width: 35%;
-        left: -310px;
-
-
-    }
 
     .dashboard-hr2 {
         width: 40%;
@@ -5633,31 +5477,40 @@ canvas#chart1 {
 
     .dashboard-hr-footer
     {
-        top: 600px
+        margin-top: 0;
+        top: 0;
+        width: 100%
     }
 
     /* ============================================Footer======================================= */
-
+    #footer-div {
+        top: 0 !important;
+        margin-top: 1270px;
+        height: 050px;
+        width: 100%;
+    }
     .dashboard-footer-div {
-        width: 10% !important;
+        width: 100% !important;
         left: 0%;
-        position: absolute;
-        top: 1880px
+        /* position: absolute; */
+        margin-top: 0
     }
 
     #dashboard-footer-image {
         width: 100px;
         height: 50px;
+        margin: 0 auto
     }
 
     .dashboard-footer-paragraph {
         font-size: 15px;
         font-family: sans-serif;
-        position: absolute;
+        /* position: absolute; */
         top: -60px;
-        left: 10px;
-        width: 300px
+        margin-left: 40px;
+        width: 280px
     }
+
 
 }
 
@@ -5742,50 +5595,72 @@ canvas#chart1 {
     }
 
 
-    /* ======================================Circle=========================================== */
-    #dashboard-page-circle {
-        width: 250px;
+     /* ======================================Circle=========================================== */
+     #dashboard-page-circle {
+        width: 200px;
         display: block;
-        height: 250px;
+        height: 200px;
         border: 20px solid #ff9100;
         border-radius: 50%;
-        position: relative;
-        margin-left: 4%;
+        /* position: relative; */
+        margin-left: 11%;
         left: 0%;
-        top: 2%;
+        top: 4%;
         border-collapse: 2px solid #727272
     }
 
+    #circle-span {
+        font-size: 13px !important;
+        text-align: center;
+        font-family: sans-serif;
+        color: #727272;
+        /* position: absolute; */
+        margin-top: 15%;
+        font-weight: bolder;
+        margin-left: 20%;
+    }
 
+
+    #dashboard-page-circle p {
+        font-size: 18px !important;
+        text-align: center;
+        color: rgb(41, 37, 37);
+        /* position: relative; */
+        top: 40%;
+        font-weight: bolder;
+        font-family: sans-serif
+    }
 
     /* ==================================================HASH History============================== */
     #dashboard-page #dashboard-title {
-        position: absolute;
-        left: 33%;
-        top: 420px;
+        /* position: absolute; */
+        margin-left: 35.5%;
+        margin-top:-20px;
         font-family: sans-serif;
-        font-size: 20px;
+        font-size: 15px;
         font-weight: bolder;
         color: #2e2d2d
     }
 
     .dashboard-hr1  {
-        width: 25%;
+        width: 30%;
         left: 10px;
 
 
     }
 
-    .dashboard-hr2  {
-        width: 3%;
+    .dashboard-hr2-2  {
+        width: 30%;
         left: 0%;
+        margin-top: -5px;
+        margin-left: 69%
     }
 
     #Hash-History-list
      {
          display: flex;
          flex-flow: row wrap;
-         position: relative;
+         /* position: relative; */
      }
 
 
@@ -5793,9 +5668,9 @@ canvas#chart1 {
      #Hash-History_column
     {
         flex-grow: 1;
-        position: relative;
-        top: 50px;
-        font-size: 12px;
+        /* position: relative; */
+        top: 200px;
+        font-size: 15px;
         color: #2e2d2d;
         font-weight: bolder;
         font-family: sans-serif;
@@ -5803,97 +5678,67 @@ canvas#chart1 {
         text-align: left;
 
     }
-
+    #Hash-History-list {
+        width: 300px
+    }
 
     #Hash-History_column ul li {
         font-weight: normal !important;
-        width: 100px;
+        width: 85px;
         top: 30px;
         font-size: 15px;
         height: 70px;
-        position: relative;
+        /* position: relative; */
         color: #2e2d2d;
         font-weight: bold;
-
-
+        margin-top: 10px
     }
+    
 
     #Hash-History_column  li:nth-of-type(1) {
         top: 30px;
-        position: relative;
+        /* position: relative; */
     }
 
-    #Hash-History_column .remain li {
-        width: 150px;
+    .remain {
+        width: 50px;
         border: 1px solid ;
-        height: 35px;
-
-    }
-
-    .remain li:nth-of-type(1) div {
-        background-color: orange;
-        text-align: center;
-        width: 80%;
-        height: 35px
-
-    }
-
-    .remain li:nth-of-type(2) div {
-          /* margin-top: 35px; */
-          background-color: orange;
-          text-align: center;
-        width: 40%;
-        height: 35px
-
-    }
-
-
-
-    .remain li:nth-of-type(1)  {
-        text-align: center;
-
-    }
-
-    .remain li:nth-of-type(2)  {
-          margin-top: 35px;
-          text-align: center;
+        font-size: 12px
     }
 
     /* ==============================================Buy hash power=================================== */
 
     #dashboard-page #dashboard-title2 {
-        position: absolute;
-        left: 23% !important;
-        top: 945px;
+        /* position: absolute; */
+        margin-left: 30%;
         font-family: sans-serif;
-        font-size: 20px;
+        font-size: 16px;
         font-weight: bolder;
         color: #2e2d2d
     }
 
     .dashboard-hr11 {
-        width: 29%;
-        left: -140px;
-        display: block
-
+        width: 26%;
+        left: -150px;
     }
 
     .dashboard-hr22-2 {
-        width: 23%;
-        left: 35.8% !important;
-        display: block
+        display: block;
+        width: 27%;
+        margin-left: 71.2%;
+        margin-top: -8px
     }
 
     form.dashboard-page button {
-        width: 130px;
-        height: 50px;
+        width: 90px;
+        height: 40px;
         border-radius:10%;
         background-color: #15BEA4;
-        position: relative;
-        top: 50px;
-        left:80px;
+        /* position: relative; */
+        margin-top: 20px;
+        margin-left:120px;
         font-family: 'Segoe UI', Tahoma, sans-serif;
-        font-size: 30px;
+        font-size: 25px;
         border: thin solid
     }
 
@@ -5906,41 +5751,36 @@ canvas#chart1 {
 
 
     #dashboard-page #dashboard-title3 {
-        position: absolute;
-        left: 24.5%;
-        top: 1175px;
+        /* position: absolute; */
+        margin-left: 32.5%;
         font-family: sans-serif;
-        font-size: 20px;
+        font-size: 16px;
         font-weight: bolder;
         color: #2e2d2d
     }
     .dashboard-hr111{
-        width: 30%;
-        left: -140px;
+        width: 29%;
     }
 
     .dashboard-hr222-2 {
-        width: 29%;
-        left: 35%;
         display: block;
+        width: 29%;
+        margin-left: 69%;
+        margin-top: -8px
     }
 
     canvas#chart1 {
         -moz-user-select: none;
         -webkit-user-select: none;
         -ms-user-select: none;
-        position: relative;
-        top: 450px;
-        width: 310px !important;
+        /* position: relative; */
+        margin-top: 50px;
+        width: 280px !important;
+        height: 200px !important;
+        margin-left: 5px
     }
 
 
-    .dashboard-hr1 {
-        width: 35%;
-        left: -310px;
-
-
-    }
 
     .dashboard-hr2 {
         width: 40%;
@@ -5949,29 +5789,38 @@ canvas#chart1 {
 
     .dashboard-hr-footer
     {
-        top: 600px
+        margin-top: 0;
+        top: 0;
+        width: 100%
     }
 
     /* ============================================Footer======================================= */
-
+    #footer-div {
+        top: 0 !important;
+        margin-top: 1270px;
+        height: 050px;
+        width: 100%;
+    }
     .dashboard-footer-div {
-        width: 10% !important;
+        width: 100% !important;
         left: 0%;
-        position: absolute;
-        top: 1900px
+        /* position: absolute; */
+        margin-top: 0
     }
 
     #dashboard-footer-image {
-        width: 150px;
+        width: 100px;
         height: 50px;
+        margin: 0 auto
     }
 
     .dashboard-footer-paragraph {
-        font-size: 15px;
+        font-size: 13px;
         font-family: sans-serif;
-        position: absolute;
+        /* position: absolute; */
         top: -60px;
-        left: 10px;
-        width: 270px
+        margin-left:20px;
+        width: 280px
     }
+
 }

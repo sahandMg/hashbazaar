@@ -40,21 +40,6 @@
 
 
 
-        <nav class="container-contact2">
-                <ul class="mainList2">
-
-                    <li class="sub2 dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
-                    <li class="sub2"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
-                    <li class="sub2"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
-                    <li class="sub2"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
-                    <li class="sub2"> <a href="{{route('contact')}}" id="contact">Contact</a></li>
-                </ul>
-
-
-
-            </nav>
-
-
 
     </div>
 

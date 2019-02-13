@@ -2567,9 +2567,9 @@ div ul .navbar #welcome {
 /* Activity */
 
  #activity-page {
-     position: absolute;
+     /* position: absolute; */
      top: 00px;
-     left: 27.5%;
+     margin-left: 27.5%;
      width: 72%;
  }
 
@@ -2580,9 +2580,9 @@ div ul .navbar #welcome {
     color: #2e2d2d;
     font-weight: bold;
     font-family: sans-serif;
-    position: absolute;
-    top: 250px;
-    left: 40px;
+    /* position: absolute; */
+    margin-top: 210px;
+    margin-left: 40px;
  }
 
 
@@ -2595,9 +2595,9 @@ div ul .navbar #welcome {
     color: #2e2d2d;
     font-weight: bold;
     font-family: sans-serif;
-    position: relative;
-    top: 350px;
-    left: 350px;
+    /* position: relative; */
+    margin-top: 400px;
+    margin-left: 350px;
  }
 
 
@@ -2605,10 +2605,10 @@ div ul .navbar #welcome {
  {
      display: flex;
      flex-flow: row wrap;
-     position: relative;
+     /* position: relative; */
      overflow: scroll;
      height: 250px;
-     top: 400px;
+     margin-top: 80px !important;
      width: 960px;
      margin: 0;
      padding: 0
@@ -2622,8 +2622,8 @@ div ul .navbar #welcome {
  #activity-page_secondList_column
 {
     flex-grow: 1;
-    position: relative;
-    top: 100px;
+    /* position: relative; */
+    margin-top: 10px;
     font-size: 25px;
     font-weight: bold;
     font-family: sans-serif;
@@ -2633,9 +2633,9 @@ div ul .navbar #welcome {
 #activity-page_secondList div ul li {
     font-weight: normal !important;
     width: 150px;
-    top: 25px;
+    margin-top: 25px;
     font-size: 20px;
-    position: relative;
+    /* position: relative; */
 }
 
 .mainList2 {display: none}
@@ -2649,27 +2649,42 @@ div ul .navbar #welcome {
    color: #2e2d2d;
    font-weight: bold;
    font-family: sans-serif;
-   position: absolute;
-   left: 320px;
-   top: 790px;
+   /* position: absolute; */
+   margin-left: 320px;
+   margin-top: 70px;
 }
 
 #activity-page_thirdList
  {
      display: flex;
      flex-flow: row wrap;
-     position: relative;
+     /* position: relative; */
      overflow: scroll;
-     top: 550px;
+     margin-top: 70px;
      width: 970px;
      height: 300px;
  }
+#activity-page_secondList_column .remain {
 
+    border: 1px solid black;
+    height: 25px;
+    width: 80%;
+    text-align: center;
+    color: white;
+}
+
+
+#activity-page_secondList_column .remain .progress {
+    width:98%;
+    background-color: orange;
+    height: 100%;
+
+}
  #activity-page_thirdList_column
 {
     flex-grow: 1;
-    position: relative;
-    top: 10px;
+    /* position: relative; */
+    margin-top: 10px;
     font-size: 25px;
     color: #2e2d2d;
     font-weight: bold;
@@ -2680,29 +2695,30 @@ div ul .navbar #welcome {
 #activity-page_thirdList div ul li {
     font-weight: normal !important;
     width: 150px;
-    top: 10px;
+    margin-top: 10px;
     font-size: 17px;
     height: 70px;
-    position: relative;
+    /* position: relative; */
 }
 
 #activity-page_thirdList div ul li:nth-of-type(1) {
-    top: 20px;
-    position: relative;
+    margin-top: 20px;
+    /* position: relative; */
 }
 
 .activity-hr-footer
 {
-    top: 590px
+    margin-top: 90px;
+    top: 0;
 }
 
 /* Footer */
 
 .activity-footer-div {
     width: 70%;
-    left: 28%;
-    position: relative;
-    top: 1220px;
+    margin-left: 28%;
+    /* position: relative; */
+    margin-top: 20px;
     height: 100;
     /* border: 2px solid */
     
@@ -2716,9 +2732,9 @@ div ul .navbar #welcome {
 .activity-footer-paragraph {
     font-size: 20px;
     font-family: sans-serif;
-    position: absolute;
+    /* position: absolute; */
     top: -20px;
-    left: 30%
+    margin-left: 30%
 }
 
 
@@ -2825,25 +2841,25 @@ div ul .navbar #welcome {
     {
       display: flex;
       flex-flow: row wrap;
-      position: relative;
+      /* position: relative; */
       overflow: scroll;
       height: 300px;
-      top: 450px;
+      margin-top: 0px;
       width: 730px
     }
     #activity-page_secondList div ul li {
         font-weight: normal !important;
         width: 120px;
-        top: 25px;
+        margin-top: 25px;
         font-size: 20px;
-        position: relative;
+        /* position: relative; */
     }
 
     #activity-page_secondList_column
     {
     flex-grow: 1;
-    position: relative;
-    top: 100px;
+    /* position: relative; */
+    margin-top: 50px;
     font-size: 25px;
     color: #2e2d2d;
     font-weight: bold;
@@ -2866,7 +2882,7 @@ div ul .navbar #welcome {
     {
         display: flex;
         flex-flow: row wrap;
-        position: relative;
+        /* position: relative; */
         overflow: scroll;
         height: 300px;
         top: 480px;
@@ -2875,7 +2891,7 @@ div ul .navbar #welcome {
     #activity-page_thirdList_column
    {
        flex-grow: 1;
-       position: relative;
+       /* position: relative; */
        top: 200px;
        font-size: 20px;
        color: #2e2d2d;
@@ -2889,21 +2905,21 @@ div ul .navbar #welcome {
    #activity-page_thirdList div ul li {
        font-weight: normal !important;
        width: 120px;
-       top: 10px;
+       margin-top: 10px;
        font-size: 17px;
        height: 70px;
-       position: relative;
+       /* position: relative; */
 
    }
 
    #activity-page_thirdList div ul li:nth-of-type(1) {
        top: 20px;
-       position: relative;
+       /* position: relative; */
    }
 
    /* Footer */
    .activity-hr-footer {
-       top: 567px
+       top: 7px
    }
    .activity-footer-div {
        top: 1350px
@@ -2991,7 +3007,7 @@ div ul .navbar #welcome {
     }
 
     #activity-page {
-        left: 1.5%;
+        margin-left: 1.5% !important;
         width: 100%;
     }
 
@@ -3051,16 +3067,19 @@ div ul .navbar #welcome {
 
    .activity-hr-footer
    {
-       top: 480px
+       top: 70px;
+       width: 98%;
+       margin-left: -10px;
+       left: 0
    }
 
    /* Footer */
 
    .activity-footer-div {
        width: 100%;
-       left: 0%;
-       position: absolute;
-       top: 1300px
+       margin-left: 0%;
+       /* position: absolute; */
+       top: 1100px
    }
 
    #activity-footer-image {
@@ -3071,9 +3090,9 @@ div ul .navbar #welcome {
    .activity-footer-paragraph {
        font-size: 20px;
        font-family: sans-serif;
-       position: absolute;
+       /* position: absolute; */
        top: -60px;
-       left: 150px
+       margin-left: 150px
 
    }
 
@@ -3161,25 +3180,25 @@ div ul .navbar #welcome {
 
 
     #activity-page {
-        left: 1.5%;
+        margin-left: 1.5% !important;
         width: 100%;
     }
 
     #activity-page blockquote {
-        top: 250px;
-        left: 30px;
+        margin-top: 150px;
+        margin-left: 30px;
         font-size: 22px;
     }
 
     #activity-page .purchases q {
-    height: 20px;
-    font-size: 18px;
-    left: 100px;
-    top: 350px
+        height: 20px;
+        font-size: 18px;
+        margin-left: 150px;
+        /* margin-top: 350px !important */
     }
     #activity-page_secondList {
-        top: 360px;
-        width: 400px;
+        margin-top: 30px;
+        width: 380px;
         height: 300px;
         overflow: scroll;
     }
@@ -3200,7 +3219,7 @@ div ul .navbar #welcome {
     #activity-page .Transactions q {
         height: 18px;
         font-size: 18px;
-        left: 100px;
+        margin-left: 100px;
     }
     #activity-page_thirdList{
         top:470px;
@@ -3219,20 +3238,21 @@ div ul .navbar #welcome {
 
     .activity-hr-footer
     {
-        left: 0;
-        top: 600px
+        margin-left: 0;
+        top: 60px
     }
 
     /* Footer */
     #footer-div {
-        position: relative;
+        /* position: relative; */
         top: 540px
     }
     .activity-footer-div {
         width: 100%;
-        left: 0%;
-        position: absolute;
-        top: 1400px
+        margin-left: 0%;
+        /* position: absolute; */
+        top: 000px !important;
+        margin-top: -1300px !important
     }
 
     #activity-footer-image {
@@ -3243,9 +3263,9 @@ div ul .navbar #welcome {
     .activity-footer-paragraph {
         font-size: 15px;
         font-family: sans-serif;
-        position: absolute;
+        /* position: absolute; */
         top: -60px;
-        left: 60px
+        margin-left: 60px
     }
 
 
@@ -3342,14 +3362,14 @@ div ul .navbar #welcome {
 
     #activity-page blockquote {
         top: 250px;
-        left: 30px;
+        margin-left: 30px;
         font-size: 22px;
     }
 
     #activity-page .purchases q {
        height: 20px;
        font-size: 18px;
-       left: 100px;
+       margin-left: 100px;
        top: 350px
     }
     #activity-page_secondList {
@@ -3374,7 +3394,7 @@ div ul .navbar #welcome {
     #activity-page .Transactions q {
         height: 18px;
         font-size: 18px;
-        left: 100px;
+        margin-left: 100px;
     }
     #activity-page_thirdList{
        top:470px;
@@ -3392,17 +3412,17 @@ div ul .navbar #welcome {
 
     .activity-hr-footer
     {
-        left: 0;
-       top: 600px
+        margin-left: 0;
+       top: 0px
     }
 
     /* Footer */
 
     .activity-footer-div {
        width: 100%;
-       left: 0%;
-       position: absolute;
-       top: 1400px
+       margin-left: 0%;
+       /* position: absolute; */
+       margin-top: 00px
     }
 
     #activity-footer-image {
@@ -3413,9 +3433,9 @@ div ul .navbar #welcome {
     .activity-footer-paragraph {
        font-size: 15px;
        font-family: sans-serif;
-       position: absolute;
+       /* position: absolute; */
        top: -60px;
-       left: 20px
+       margin-left: 20px
 
     }
 }
@@ -3495,13 +3515,13 @@ div ul .navbar #welcome {
     }
     #activity-page_thirdList{
         top:470px;
-         width: 305px;
+        width: 305px;
  
      }
     .footer-paragraph {
         font-size: 12px;
         font-family: sans-serif;
-        position: absolute;
+        /* position: absolute; */
         top: -60px;
         margin-left: 0px;
         width: 200px
@@ -3832,25 +3852,9 @@ div ul .navbar #welcome {
 }
 
 
-.remain li:nth-of-type(1) div {
-    background-color: orange;
-    text-align: center;
-    width: 80%;
-    height: 35px
-
-}
-
-.remain li:nth-of-type(2) div {
-    background-color: orange;
-    text-align: center;
-    width: 40%;
-    height: 35px
-
-}
-
 
 .remain {
-    width: 180px; margin: 0px auto
+    width: 180px; margin: 0px auto;
 }
 /* ==============================================Buy hash power=================================== */
 

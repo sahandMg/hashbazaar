@@ -48,11 +48,11 @@ foreach ($hashes as $key=> $hash){
                 </div><br> <br>
 
                 <div id="activity-page_secondList_column">Remains
-
+                    {{-- style="width: 180px; margin: 0px auto" --}}
                     <ul>
                         @foreach($hashes as $key => $hash)
                             <li>
-                                <div style="width: 180px; margin: 0px auto">
+                                <div class="remain" >
                                     <div class="progress">
                                         <div class="progress-bar" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%">
                                             <span class="title">{{$remainedLife[$key]}}%</span>

@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="{{URL::asset('css/contact-referral-activity-dashboard.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/cssreset.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/main.css')}}">
+    <!-- <link rel="stylesheet" href="{{URL::asset('bootstrap/css/bootstrap.min.css')}}"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
+    <link rel="stylesheet" href="fonts/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="{{URL::asset('css/theme.css')}}"> -->
     <title>Hash Bazaar</title>
     <link rel="icon" href="img/TabLogo.png">
     <script src="{{URL::asset('js/jquery-3.3.1.js')}}"></script>

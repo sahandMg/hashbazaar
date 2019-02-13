@@ -3923,23 +3923,39 @@ div ul .navbar #welcome {
 }
 
 form.dashboard-page button {
-    width: 160px;
-    height: 60px;
-    border-radius:10%;
-    background-color: #15BEA4;
-    /* position: relative; */
-    margin-top: 50px;
-    margin-left:310px;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    font-size: 30px;
-    border: thin solid
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem 1.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    /*transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;*/
+    color: #212529;
+    background-color: #42dca3;
+    border-color: #42dca3;
+    font-family: Cabin,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    transition: all .3s ease-in-out;
+    text-transform: uppercase;
+    border-radius: 0;
+    border-radius: 100px 100px 100px 100px;
+    border: none;
+    display: block;
+    margin: auto;
+    margin-top: 3%;
 }
 
-form.dashboard-page button p {
+/*form.dashboard-page button p {
     font-family: 'Segoe UI', Tahoma, sans-serif;
     font-size: 30px;
     color: white;
-}
+}*/
 /*============================================== Mining History ===================================*/
 
 
@@ -4232,7 +4248,7 @@ form.dashboard-page button p {
     }
 
     form.dashboard-page button {
-        width: 160px;
+        /*width: 160px;
         height: 60px;
         border-radius:10%;
         background-color: #15BEA4;
@@ -4241,14 +4257,14 @@ form.dashboard-page button p {
         margin-left:220px;
         font-family: 'Segoe UI', Tahoma, sans-serif;
         font-size: 30px;
-        border: thin solid
+        border: thin solid*/
     }
 
-    form.dashboard-page button p {
+   /* form.dashboard-page button p {
         font-family: 'Segoe UI', Tahoma, sans-serif;
         font-size: 30px;
         color: white;
-    }
+    }*/
 /*============================================== Mining History ===================================*/
 
 #dashboard-page #dashboard-title3 {
@@ -4489,22 +4505,22 @@ canvas#chart1 {
     }
 
     form.dashboard-page button {
-        width: 160px;
+        /*width: 160px;
         height: 60px;
         border-radius:10%;
         background-color: #15BEA4;
         /* position: relative; */
-        margin-top: 50px;
+        /*margin-top: 50px;
         margin-left:230px;
         font-family: 'Segoe UI', Tahoma, sans-serif;
         font-size: 30px;
-        border: thin solid
+        border: thin solid*/
     }
 
     form.dashboard-page button p {
-        font-family: 'Segoe UI', Tahoma, sans-serif;
+      /*  font-family: 'Segoe UI', Tahoma, sans-serif;
         font-size: 30px;
-        color: white;
+        color: white;*/
     }
     /*============================================== Mining History ===================================*/
 
@@ -4852,23 +4868,23 @@ canvas#chart1 {
     }
 
     form.dashboard-page button {
-        width: 100px;
+       /* width: 100px;
         height: 40px;
         border-radius:10%;
-        background-color: #15BEA4;
+        background-color: #15BEA4;*/
         /* position: relative; */
-        margin-top: 20px;
+       /* margin-top: 20px;
         margin-left:120px;
         font-family: 'Segoe UI', Tahoma, sans-serif;
         font-size: 30px;
-        border: thin solid
+        border: thin solid;*/
     }
 
-    form.dashboard-page button p {
+   /* form.dashboard-page button p {
         font-family: 'Segoe UI', Tahoma, sans-serif;
         font-size: 28px;
         color: white;
-    }
+    }*/
     /*============================================== Mining History ===================================*/
 
 
@@ -5088,23 +5104,23 @@ canvas#chart1 {
     }
 
     form.dashboard-page button {
-        width: 100px;
+        /*width: 100px;
         height: 40px;
         border-radius:10%;
-        background-color: #15BEA4;
+        background-color: #15BEA4;*/
         /* position: relative; */
-        margin-top: 20px;
+        /*margin-top: 20px;
         margin-left:120px;
         font-family: 'Segoe UI', Tahoma, sans-serif;
         font-size: 30px;
-        border: thin solid
+        border: thin solid;*/
     }
 
-    form.dashboard-page button p {
+  /*  form.dashboard-page button p {
         font-family: 'Segoe UI', Tahoma, sans-serif;
         font-size: 28px;
         color: white;
-    }
+    }*/
     /*============================================== Mining History ===================================*/
 
 
@@ -5401,23 +5417,23 @@ canvas#chart1 {
     }
 
     form.dashboard-page button {
-        width: 90px;
+        /*width: 90px;
         height: 40px;
         border-radius:10%;
-        background-color: #15BEA4;
+        background-color: #15BEA4;*/
         /* position: relative; */
-        margin-top: 20px;
+      /*  margin-top: 20px;
         margin-left:120px;
         font-family: 'Segoe UI', Tahoma, sans-serif;
         font-size: 25px;
-        border: thin solid
+        border: thin solid*/
     }
 
-    form.dashboard-page button p {
+   /* form.dashboard-page button p {
         font-family: 'Segoe UI', Tahoma, sans-serif;
         font-size: 28px;
         color: white;
-    }
+    }*/
     /*============================================== Mining History ===================================*/
 
 

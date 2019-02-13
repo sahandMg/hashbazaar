@@ -106,7 +106,7 @@
                       <p>Income : At this time We predict {{$settings->bitcoin_income_per_month_per_th}} BTC/month for every Th.</p>
                       <small>(Changes may happen depends on bitcoin price and bitcoin network difficulty changes.)</small>
                     </div>
-                    <button type="submit"><p>Order</p></button>
+                    <button type="submit">Order</button>
                  </form>
                 @else
                   <p> TH Not Available !</p>
@@ -375,10 +375,11 @@
                 });
                     var slider = document.getElementById("myRange");
                     var output = document.getElementById("demo");
-                    output.innerHTML = slider.value+' Th';
-                    // Display the default slider value
                     var cost = document.getElementById("cost");
-
+                    output.innerHTML = slider.value+' Th';
+                    cost.innerHTML = slider.value * 50 ;
+                    // Display the default slider value
+                    
                     slider.oninput = function() {
                             console.log("input change");
                         output.innerHTML = this.value+' Th';

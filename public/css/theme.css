@@ -109,7 +109,38 @@ a {
   top: 0px !important;
   position: relative;
 }
+.container {
+  box-sizing: border-box
+}
+.container #text {
+  width: 500px !important ; 
+  margin-left: 600px;
+  color: black;
+  line-height: 2.5;  
+  /* height: 500px; */
+  /* margin-top: -500px; */
+  text-align: left;
+  font-family: sans-serif;
 
+}
+
+#title {
+  font-size : 30px;
+  text-align: center !important;
+  font-weight: bolder !important;
+  
+}
+
+
+
+#price {
+  width: 600px !important;
+  margin-left: -510px !important;
+  left: 0 !important;
+  justify-content: left !important;
+  justify-items: left !important;
+  margin-top: -300px !important;
+}
 #sharePlan  {
   position: relative;
   top: 80px;

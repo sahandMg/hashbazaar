@@ -183,16 +183,16 @@
                height: 250px !important;
             }
             canvas#chart1 {
-                width: 350px !important;
+                width: 310px !important;
             }
          }
          @media screen and (min-width:370px) {
-          /* .chart-container {
+           .chart-container {
                height: 250px !important;
             }
             canvas#chart1 {
-                width: 320px !important;
-            }*/
+                width: 350px !important;
+            }
          }
          @media screen and (min-width:414px) {
             .chart-container {
@@ -220,7 +220,7 @@
          }
          @media screen and (min-width:1224px) {
             canvas#chart1 {
-                width: 1000px !important;
+                width: 880px !important;
             }
          }
 

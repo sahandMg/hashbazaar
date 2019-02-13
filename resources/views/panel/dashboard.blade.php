@@ -140,9 +140,9 @@
         </div>
     </div>
     <!-- Container -->
-    <div class="mainContainer">
+   {{--  <div class="mainContainer">
 
-{{-- 
+
         <nav class="container">
 
             <ul class="mainList">
@@ -157,12 +157,12 @@
 
             </ul>
 
-        </nav> --}}
+        </nav> 
 
 
 
+    </div> --}}
 
-    </div>
 
 
     
@@ -207,14 +207,17 @@
             }
             canvas#chart1 {
                 width: 310px !important;
+            
             }
          }
          @media screen and (min-width:370px) {
            .chart-container {
                height: 250px !important;
+              
             }
             canvas#chart1 {
                 width: 350px !important;
+               
             }
          }
          @media screen and (min-width:414px) {
@@ -223,7 +226,8 @@
               /*width: 50vw;*/
             }
             canvas#chart1 {
-                width: 400px !important;
+                width: 350px !important;
+                height: 220px;
             }
          }
          @media screen and (min-width:526px) {
@@ -241,7 +245,7 @@
               /*width: 400px;*/
             }
             canvas#chart1 {
-                width: 680px !important;
+                width: 600px !important;
             }
          }
 

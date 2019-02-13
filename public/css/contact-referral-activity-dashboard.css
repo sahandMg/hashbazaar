@@ -434,14 +434,16 @@ form.contact-page p:nth-of-type(1) {
     margin-top: 380px;
 }
 .contact-hr-footer {
-    margin-top: 0px !important
+    margin-top: 50px !important;
+    display: block !important;
+
 }
 
 /* Footer */
 
 
 .contact-footer-div {
-    margin-top: 80px;
+    margin-top: 0px !important;
     width: 70%;
     margin-left: 0%;
     /* position: absolute; */
@@ -750,7 +752,7 @@ form.contact-page p:nth-of-type(1) {
 
 
     .contact-footer-div {
-        margin-top:200px !important;
+        margin-top:000px !important;
         width: 94%;
         left: 2%;
         margin: 0%;
@@ -906,12 +908,12 @@ form.contact-page p:nth-of-type(1) {
     }
 
     .contact-hr-footer {
-        margin-top: 200px
+        margin-top:  200px !important
     }
 
 /* Footer */
     #footer-div {
-        margin-top: -40%;
+        margin-top: -500px !important;
         top: 0
     }
     .contact-footer-div {
@@ -920,7 +922,7 @@ form.contact-page p:nth-of-type(1) {
         top:0px;
         left: 2%;
         margin: 0;
-        margin-top: -40%;
+        margin-top: -1400px !important;
     }
 
     #contact-footer-image {
@@ -1054,7 +1056,7 @@ form.contact-page p:nth-of-type(1) {
     }
 
     .contact-hr-footer {
-        margin-top: 200px
+        margin-top: 200px !important
     }
 
 /* Footer */
@@ -1068,7 +1070,7 @@ form.contact-page p:nth-of-type(1) {
         top:0px;
         left: 2%;
         margin: 0;
-        margin-top: -40%;
+        margin-top: -1300px !important ;
     }
 
     #contact-footer-image {
@@ -1210,12 +1212,12 @@ form.contact-page p:nth-of-type(1) {
     }
 
     .contact-hr-footer {
-        margin-top: 200px
+        margin-top: 270px !important
     }
 
 /* Footer */
     #footer-div {
-        margin-top: -40%;
+        margin-top: 0;
         top: 0
     }
     .contact-footer-div {
@@ -1224,7 +1226,7 @@ form.contact-page p:nth-of-type(1) {
         top:0px;
         left: 2%;
         margin: 0;
-        margin-top: -40%;
+        margin-top: -1250px !important;
     }
 
     #contact-footer-image {
@@ -2027,12 +2029,12 @@ div ul .navbar #welcome {
 
     #referral-page q  {
         font-size: 20px;
-    color: #2e2d2d;
-    font-weight: bold;
-    font-family: sans-serif;
-    /* position: absolute; */
-    top: 60px;
-    margin-left: 30px
+        color: #2e2d2d;
+        font-weight: bold;
+        font-family: sans-serif;
+        /* position: absolute; */
+        top: 60px;
+        margin-left: 30px
 
     }
 
@@ -2125,7 +2127,7 @@ div ul .navbar #welcome {
 
     .referral-hr-footer
     {
-        top: 1100px;
+        top: 1200px;
         left:-310px;
         width: 414px !important;
     }
@@ -2136,7 +2138,7 @@ div ul .navbar #welcome {
         width: 94%;
         margin-left: 0%;
         /* position: absolute; */
-        margin-top: -750px
+        margin-top: -800px !important
     }
 
     .referral-footer-paragraph {
@@ -2220,7 +2222,7 @@ div ul .navbar #welcome {
 
     .referral-hr-footer
     {
-        top: 1000px;
+        top: 1100px;
         left:-312px;
         width: 375px !important;
     }
@@ -2344,7 +2346,7 @@ div ul .navbar #welcome {
 
     .referral-hr-footer
     {
-        top: 1050px;
+        top: 1030px;
         left:-235px;
         width: 320px !important;
     }
@@ -2737,7 +2739,27 @@ div ul .navbar #welcome {
     margin-left: 30%
 }
 
-
+/* Activity-Media-1280 */
+@media screen and (max-width:1280px) {
+    .container-activity {
+        width: 340px !important;
+        height: 100%;
+        background: rgb(39, 38, 38);
+        border-top: 4px solid orange;
+        position: fixed;
+        top: 110px;
+    
+    
+    }
+    
+    .container-activity .mainList {
+        background: white;
+        width: 340px !important;
+        top: 150px
+    
+    }
+    
+}
 /* Activity-Media-1024 */
 @media screen and (max-width:1024px)
 {
@@ -3245,14 +3267,15 @@ div ul .navbar #welcome {
     /* Footer */
     #footer-div {
         /* position: relative; */
-        top: 540px
+        top: 540px;
+        margin-top: 0 !important
     }
     .activity-footer-div {
         width: 100%;
         margin-left: 0%;
         /* position: absolute; */
         top: 000px !important;
-        margin-top: -1300px !important
+        margin-top: -1450px !important;
     }
 
     #activity-footer-image {
@@ -3422,7 +3445,7 @@ div ul .navbar #welcome {
        width: 100%;
        margin-left: 0%;
        /* position: absolute; */
-       margin-top: 00px
+       margin-top: -1400px !important
     }
 
     #activity-footer-image {
@@ -3434,7 +3457,7 @@ div ul .navbar #welcome {
        font-size: 15px;
        font-family: sans-serif;
        /* position: absolute; */
-       top: -60px;
+       /* margin-top: -60px !important; */
        margin-left: 20px
 
     }
@@ -3517,6 +3540,13 @@ div ul .navbar #welcome {
         top:470px;
         width: 305px;
  
+     }
+
+     .activity-footer-div {
+        width: 100%;
+        margin-left: 0%;
+        /* position: absolute; */
+        margin-top: -1360px !important
      }
     .footer-paragraph {
         font-size: 12px;
@@ -4021,19 +4051,19 @@ form.dashboard-page button {
     }
     .dashboard-hr-footer
     {
-        margin-top: 150px
+        margin-top: 70px
     }
 
 /* ============================================Footer======================================= */
     #footer-div {
-        margin-top: 10px;
+        margin-top: 60px !important;
         display: block
     }
     .dashboard-footer-div {
         width: 70%;
         margin-left: 28%;
         /* position: absolute; */
-        margin-top: 0px;
+        margin-top: 100px;
     }
 
     #dashboard-footer-image {
@@ -4197,7 +4227,7 @@ form.dashboard-page button {
     }
     .dashboard-hr-footer
     {
-        margin-top: 150px
+        margin-top: 100px !important
     }
 /* ==================================================HASH History============================== */
 
@@ -4247,24 +4277,7 @@ form.dashboard-page button {
         font-size: 22px;
     }
 
-    form.dashboard-page button {
-        /*width: 160px;
-        height: 60px;
-        border-radius:10%;
-        background-color: #15BEA4;
-        position: relative;
-        margin-top: 50px;
-        margin-left:220px;
-        font-family: 'Segoe UI', Tahoma, sans-serif;
-        font-size: 30px;
-        border: thin solid*/
-    }
-
-   /* form.dashboard-page button p {
-        font-family: 'Segoe UI', Tahoma, sans-serif;
-        font-size: 30px;
-        color: white;
-    }*/
+   
 /*============================================== Mining History ===================================*/
 
 #dashboard-page #dashboard-title3 {
@@ -4273,15 +4286,6 @@ form.dashboard-page button {
     font-size: 22px;
     z-index: 2;
 }
-
-/* 
-canvas#chart1 {
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    position: relative;
-    top: 600px;
-} */
 
 canvas#chart1 {
     margin-top: 0px;
@@ -4312,22 +4316,14 @@ canvas#chart1 {
     .container {
         display: none
     }
-
+    .mainContainer {display: none}
+    .container .mainList { display: none}
 
     #dashboard-page {
         height: 1800px;
         margin-left: 0;
         width: 100%;
         z-index: 0;
-    }
-
-
-    .container-dashboard2{
-        /* position:  relative; */
-        top: 2px;
-        width: 100%;
-        float: left;
-        display: block;
     }
     
     .container  .mainList {
@@ -4392,12 +4388,6 @@ canvas#chart1 {
         left: -30px;
         top: 0px
     }
-
-
-
-
-
-
 
     /* ======================================Circle=========================================== */
     #dashboard-page-circle {
@@ -4504,24 +4494,6 @@ canvas#chart1 {
         margin-left: 67.5%;
     }
 
-    form.dashboard-page button {
-        /*width: 160px;
-        height: 60px;
-        border-radius:10%;
-        background-color: #15BEA4;
-        /* position: relative; */
-        /*margin-top: 50px;
-        margin-left:230px;
-        font-family: 'Segoe UI', Tahoma, sans-serif;
-        font-size: 30px;
-        border: thin solid*/
-    }
-
-    form.dashboard-page button p {
-      /*  font-family: 'Segoe UI', Tahoma, sans-serif;
-        font-size: 30px;
-        color: white;*/
-    }
     /*============================================== Mining History ===================================*/
 
 
@@ -4546,17 +4518,17 @@ canvas#chart1 {
 
     .dashboard-hr-footer
     {
-        margin-top:220px;
-        width: 106%;
+        margin-top:100px !important;
+        width: 100%;
         margin-left: 0;
         left: 0 !important;
     }
 
     /* ============================================Footer======================================= */
     #footer-div {
-        margin-top: 10px;
+        margin-top: 00px !important;
         border-bottom: transparent;
-        display: block
+        display: block;
     }
     .dashboard-footer-div {
         width: 70%;
@@ -4867,24 +4839,6 @@ canvas#chart1 {
         margin-top: -10px
     }
 
-    form.dashboard-page button {
-       /* width: 100px;
-        height: 40px;
-        border-radius:10%;
-        background-color: #15BEA4;*/
-        /* position: relative; */
-       /* margin-top: 20px;
-        margin-left:120px;
-        font-family: 'Segoe UI', Tahoma, sans-serif;
-        font-size: 30px;
-        border: thin solid;*/
-    }
-
-   /* form.dashboard-page button p {
-        font-family: 'Segoe UI', Tahoma, sans-serif;
-        font-size: 28px;
-        color: white;
-    }*/
     /*============================================== Mining History ===================================*/
 
 
@@ -4914,8 +4868,8 @@ canvas#chart1 {
         -ms-user-select: none;
         /* position: relative; */
         margin-top: 50px;
-        width: 390px !important;
-        height: 200px !important
+        /* width: 300px !important; */
+        /* height: 200px !important */
     }
 
 
@@ -4927,14 +4881,14 @@ canvas#chart1 {
 
     .dashboard-hr-footer
     {
-        margin-top: 0;
+        margin-top: 30px !important;
         top: 0
     }
 
     /* ============================================Footer======================================= */
     #footer-div {
         top: 0 !important;
-        margin-top: 1270px;
+        margin-top: 1430px !important;
         height: 050px;
         width: 100%;
     }
@@ -5103,24 +5057,7 @@ canvas#chart1 {
         margin-top: -10px
     }
 
-    form.dashboard-page button {
-        /*width: 100px;
-        height: 40px;
-        border-radius:10%;
-        background-color: #15BEA4;*/
-        /* position: relative; */
-        /*margin-top: 20px;
-        margin-left:120px;
-        font-family: 'Segoe UI', Tahoma, sans-serif;
-        font-size: 30px;
-        border: thin solid;*/
-    }
-
-  /*  form.dashboard-page button p {
-        font-family: 'Segoe UI', Tahoma, sans-serif;
-        font-size: 28px;
-        color: white;
-    }*/
+  
     /*============================================== Mining History ===================================*/
 
 
@@ -5164,7 +5101,7 @@ canvas#chart1 {
 
     .dashboard-hr-footer
     {
-        margin-top: 0;
+        margin-top: 00px !important;
         top: 0;
         width: 100%
     }
@@ -5172,7 +5109,7 @@ canvas#chart1 {
     /* ============================================Footer======================================= */
     #footer-div {
         top: 0 !important;
-        margin-top: 1270px;
+        margin-top: 1340px !important;
         height: 050px;
         width: 100%;
     }
@@ -5416,24 +5353,6 @@ canvas#chart1 {
         margin-top: -8px
     }
 
-    form.dashboard-page button {
-        /*width: 90px;
-        height: 40px;
-        border-radius:10%;
-        background-color: #15BEA4;*/
-        /* position: relative; */
-      /*  margin-top: 20px;
-        margin-left:120px;
-        font-family: 'Segoe UI', Tahoma, sans-serif;
-        font-size: 25px;
-        border: thin solid*/
-    }
-
-   /* form.dashboard-page button p {
-        font-family: 'Segoe UI', Tahoma, sans-serif;
-        font-size: 28px;
-        color: white;
-    }*/
     /*============================================== Mining History ===================================*/
 
 
@@ -5484,7 +5403,7 @@ canvas#chart1 {
     /* ============================================Footer======================================= */
     #footer-div {
         top: 0 !important;
-        margin-top: 1270px;
+        margin-top: 1270px !important;
         height: 050px;
         width: 100%;
     }

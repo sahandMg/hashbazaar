@@ -22,7 +22,7 @@
 
 </head>
 
-<body id="page-top" style="background: white">
+<body id="page-top" style="background: white" >
 <!-- class="masthead pb-3" -->
 <?php
     $settings = DB::table('settings')->first();
@@ -263,10 +263,9 @@ window.onclick = function(event) {
         
         })
         
-
-
-        })
-        
+      
+        });
+     
         </script>
 </body>
 

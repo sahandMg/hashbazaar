@@ -93,17 +93,24 @@
             <hr  class="dashboard-hr11">
             <p id="dashboard-title2">Buy Hash Power</p>
             <hr class="dashboard-hr22-2">
-
             <h5 id="demo"></h5>
             <div class="slidecontainer">
                 @if($settings->available_th > 0)
                 <form class="dashboard-page" method="post" action="{{route('payment')}}">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <input type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="myRange">
-                    <button type="submit"><p>Order</p></button></form>
-                    @else
-                    <p> TH Not Available !</p>
-                    @endif
+                    <div style="text-align: left;font-weight: 700;">
+                      <p>Hash allocation cost : <span id="cost"></span> dollar</p>
+                      <p>Maitanace fee: {{$settings->maintenance_fee_per_th_per_day}} dollar per Th/day</p>
+                      <small>(include all electricity, cooling, development, and servicing costs )</small>
+                      <p>Income : At this time We predict {{$settings->bitcoin_income_per_month_per_th}} BTC/month for every Th.</p>
+                      <small>(Changes may happen depends on bitcoin price and bitcoin network difficulty changes.)</small>
+                    </div>
+                    <button type="submit"><p>Order</p></button>
+                 </form>
+                @else
+                  <p> TH Not Available !</p>
+                @endif
             </div>
 
 
@@ -163,6 +170,13 @@
         <!-- Main Container -->
 
         <style type="text/css">
+
+         .dashboard-page p {
+          margin: 0px;padding: 0px;padding-top: 5px; font-size: 18px;line-height: 1.6;
+         }
+         .dashboard-page small {
+            color: #707070;
+         }
         .chart-container {
             direction: rtl;
             position: relative;
@@ -175,6 +189,14 @@
             margin-top: 5%;
          }
 
+         @media screen and (max-width:414px) {
+           .dashboard-page p {
+             padding-top: 5px; font-size: 15px;line-height: 1.4;
+           }
+           .dashboard-page small {
+             font-size: 13px;
+            }
+         }
          canvas#chart1 {
             margin: auto;
          }
@@ -355,12 +377,12 @@
                     var output = document.getElementById("demo");
                     output.innerHTML = slider.value+' Th';
                     // Display the default slider value
-                    // var cost = document.getElementById("cost");
+                    var cost = document.getElementById("cost");
 
                     slider.oninput = function() {
                             console.log("input change");
                         output.innerHTML = this.value+' Th';
-                        // cost.innerHTML = slider.value * 50 ;
+                        cost.innerHTML = slider.value * 50 ;
                         };
 
                     //    ==================================chart==============

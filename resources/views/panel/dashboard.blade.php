@@ -8,10 +8,6 @@
             }
 
     ?>
-
-
-
-
     <!-- Dashboard Page -->
         <div id="dashboard-page">
             <!-- Circle -->
@@ -178,6 +174,11 @@
             /*height: 500px !important;*/
             margin-top: 5%;
          }
+
+         canvas#chart1 {
+            margin: auto;
+         }
+
          @media screen and (min-width:320px) {
            .chart-container {
                height: 250px !important;
@@ -203,25 +204,53 @@
                 width: 400px !important;
             }
          }
+         @media screen and (min-width:526px) {
+            .chart-container {
+              height: 300px !important;
+              /*width: 400px;*/
+            }
+            canvas#chart1 {
+                width: 480px !important;
+            }
+         }
          @media screen and (min-width:768px) {
             .chart-container {
               height: 300px !important;
               /*width: 400px;*/
             }
             canvas#chart1 {
-                width: 730px !important;
+                width: 680px !important;
+            }
+         }
+
+         @media screen and (min-width:868px) {
+            .chart-container {
+              height: 300px !important;
+              /*width: 400px;*/
+            }
+            canvas#chart1 {
+                width: 540px !important;
             }
          }
          @media screen and (min-width:1024px) {
             .chart-container {
-               height: 400px !important;
+               height: 340px !important;
               /*width: 50vw;*/
+            }
+            canvas#chart1 {
+                width: 570px !important;
             }
          }
          @media screen and (min-width:1224px) {
             canvas#chart1 {
-                width: 880px !important;
+                width: 840px !important;
             }
+         }
+         @media screen and (min-width:1324px) {
+            canvas#chart1 {
+                width: 850px !important;
+            }
+        
          }
 
 .progress {    border: 1px solid;}

@@ -22,7 +22,7 @@
 
 </head>
 
-<body id="page-top" style="background: white">
+<body id="page-top" style="background: white" >
 <!-- class="masthead pb-3" -->
 <?php
     $settings = DB::table('settings')->first();
@@ -99,7 +99,20 @@
 </section>
 <section id="priceCompare" class="context-section backgroundGrey text-center pt-3 pb-3">
     <h2 style="color: #707070">Our advantage is low cost !</h2>
-    <div class="container"><img id="price" src="img/Pricing.svg"></div>
+    <div class="container">
+            <div id="text">
+                <ul>
+                    <p id="title">Lorem ipsum dolor sit amet.</p>
+                    
+                    <li><p id="myp1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, illum.</p></li>
+                    <li><p id="myp2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, illum.</p></li>
+                    <li><p id="myp3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, illum.</p></li>
+
+                </ul>
+            </div>
+        <img id="price" src="img/Pricing.svg">
+        
+    </div>
 </section>
 <section id="contact" class="text-center backgroundGrey">
     <div class="row" style="background: white">
@@ -250,10 +263,9 @@ window.onclick = function(event) {
         
         })
         
-
-
-        })
-        
+      
+        });
+     
         </script>
 </body>
 

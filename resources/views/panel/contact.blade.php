@@ -13,8 +13,8 @@
 
              <button><span style="color:white">Send</span></button>
         </form>
-        <hr class="contact-hr-footer" >
 
+        <hr class="contact-hr-footer">
 
         <div id="footer-div">
             <div class="contact-footer-div" >

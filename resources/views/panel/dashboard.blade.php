@@ -8,10 +8,6 @@
             }
 
     ?>
-
-
-
-
     <!-- Dashboard Page -->
         <div id="dashboard-page">
             <!-- Circle -->
@@ -97,17 +93,24 @@
             <hr  class="dashboard-hr11">
             <p id="dashboard-title2">Buy Hash Power</p>
             <hr class="dashboard-hr22-2">
-
             <h5 id="demo"></h5>
             <div class="slidecontainer">
                 @if($settings->available_th > 0)
                 <form class="dashboard-page" method="post" action="{{route('payment')}}">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <input type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="myRange">
-                    <button type="submit"><p>Order</p></button></form>
-                    @else
-                    <p> TH Not Available !</p>
-                    @endif
+                    <div style="text-align: left;font-weight: 700;">
+                      <p>Hash allocation cost : <span id="cost"></span> dollar</p>
+                      <p>Maitanace fee: {{$settings->maintenance_fee_per_th_per_day}} dollar per Th/day</p>
+                      <small>(include all electricity, cooling, development, and servicing costs )</small>
+                      <p>Income : At this time We predict {{$settings->bitcoin_income_per_month_per_th}} BTC/month for every Th.</p>
+                      <small>(Changes may happen depends on bitcoin price and bitcoin network difficulty changes.)</small>
+                    </div>
+                    <button type="submit">Order</button>
+                 </form>
+                @else
+                  <p> TH Not Available !</p>
+                @endif
             </div>
 
 
@@ -137,9 +140,9 @@
         </div>
     </div>
     <!-- Container -->
-    <div class="mainContainer">
+   {{--  <div class="mainContainer">
 
-{{-- 
+
         <nav class="container">
 
             <ul class="mainList">
@@ -154,12 +157,12 @@
 
             </ul>
 
-        </nav> --}}
+        </nav> 
 
 
 
+    </div> --}}
 
-    </div>
 
 
     
@@ -167,6 +170,13 @@
         <!-- Main Container -->
 
         <style type="text/css">
+
+         .dashboard-page p {
+          margin: 0px;padding: 0px;padding-top: 5px; font-size: 18px;line-height: 1.6;
+         }
+         .dashboard-page small {
+            color: #707070;
+         }
         .chart-container {
             direction: rtl;
             position: relative;
@@ -178,21 +188,37 @@
             /*height: 500px !important;*/
             margin-top: 5%;
          }
+
+         @media screen and (max-width:414px) {
+           .dashboard-page p {
+             padding-top: 5px; font-size: 15px;line-height: 1.4;
+           }
+           .dashboard-page small {
+             font-size: 13px;
+            }
+         }
+         canvas#chart1 {
+            margin: auto;
+         }
+
          @media screen and (min-width:320px) {
            .chart-container {
                height: 250px !important;
             }
             canvas#chart1 {
-                width: 350px !important;
+                width: 310px !important;
+            
             }
          }
          @media screen and (min-width:370px) {
-          /* .chart-container {
+           .chart-container {
                height: 250px !important;
+              
             }
             canvas#chart1 {
-                width: 320px !important;
-            }*/
+                width: 350px !important;
+               
+            }
          }
          @media screen and (min-width:414px) {
             .chart-container {
@@ -200,7 +226,17 @@
               /*width: 50vw;*/
             }
             canvas#chart1 {
-                width: 400px !important;
+                width: 350px !important;
+                height: 220px;
+            }
+         }
+         @media screen and (min-width:526px) {
+            .chart-container {
+              height: 300px !important;
+              /*width: 400px;*/
+            }
+            canvas#chart1 {
+                width: 480px !important;
             }
          }
          @media screen and (min-width:768px) {
@@ -209,19 +245,38 @@
               /*width: 400px;*/
             }
             canvas#chart1 {
-                width: 730px !important;
+                width: 600px !important;
+            }
+         }
+
+         @media screen and (min-width:868px) {
+            .chart-container {
+              height: 300px !important;
+              /*width: 400px;*/
+            }
+            canvas#chart1 {
+                width: 540px !important;
             }
          }
          @media screen and (min-width:1024px) {
             .chart-container {
-               height: 400px !important;
+               height: 340px !important;
               /*width: 50vw;*/
+            }
+            canvas#chart1 {
+                width: 570px !important;
             }
          }
          @media screen and (min-width:1224px) {
             canvas#chart1 {
-                width: 1000px !important;
+                width: 840px !important;
             }
+         }
+         @media screen and (min-width:1324px) {
+            canvas#chart1 {
+                width: 850px !important;
+            }
+        
          }
 
 .progress {    border: 1px solid;}
@@ -324,14 +379,15 @@
                 });
                     var slider = document.getElementById("myRange");
                     var output = document.getElementById("demo");
+                    var cost = document.getElementById("cost");
                     output.innerHTML = slider.value+' Th';
+                    cost.innerHTML = slider.value * 50 ;
                     // Display the default slider value
-                    // var cost = document.getElementById("cost");
-
+                    
                     slider.oninput = function() {
                             console.log("input change");
                         output.innerHTML = this.value+' Th';
-                        // cost.innerHTML = slider.value * 50 ;
+                        cost.innerHTML = slider.value * 50 ;
                         };
 
                     //    ==================================chart==============

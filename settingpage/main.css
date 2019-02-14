@@ -690,7 +690,12 @@ color: orange !important}
     width: 99.8%;
     display: block;
 }
-
+#makewallet-footer-div {
+    width: 72%;
+    margin-left: 28%;
+    margin-top: 50%
+        
+    }
 #footer-div {
     width: 72%;
     margin-left: 28%;
@@ -852,10 +857,15 @@ color: orange !important}
     .make-wallet input#makewalletsubmit {
         left:0px;
     }
-    
+    #makewallet-footer-div {
+        margin-top: 630px;
+        margin-left: 26.5%
+            
+        }
     /* Footer */
     .hr-footer
     {
+        width: 70%;
         top:980px
     }
 
@@ -877,8 +887,11 @@ color: orange !important}
     .container {
         display: none;
     }
+    .mainContainer {
+        display: none
+    }
     .container{
-        display: block;
+        /* display: block; */
         position:  relative;
         top: 22px;
         width: 100%;
@@ -967,7 +980,7 @@ color: orange !important}
     }
         
     .make-wallet input#makewalletsubmit {
-        top: 50px;
+        top: 60px;
     }
 
     form {
@@ -978,12 +991,19 @@ color: orange !important}
     .hr-footer {
         top: 800px
     }
+    #makewallet-footer-div {
+    margin-top: 530px;
+        
+    }
 
-    .footer-div {
+
+
+    #footer-div {
         top:960px;
-        width: 94%;
-        left: 2%;
-        margin: 0%
+        width: 100%;
+        margin-left: 0% !important;
+        left: 0 !important;
+        margin-top: 100px;
     }
     .footer-paragraph {
         font-size: 18px;
@@ -1013,7 +1033,7 @@ color: orange !important}
         z-index: 2;
     }
     .Logo_header {
-        width: 300px;
+        width: 300px ;
         height: 90px;
         position: absolute;
         left: 20px;
@@ -1155,7 +1175,6 @@ color: orange !important}
     }
     .setting-information input::placeholder { font-size: 15px}
 
-    .setting-information {display: none;}
 
     /* Wallet 1 */
     .wallet1 {
@@ -1245,17 +1264,20 @@ color: orange !important}
         width: 100px !important;
         height: 40px !important;
         left:50px;
-        top: 30px;
+        top: 60px;
     }
 
 
 /* Footer */
+    #makewallet-footer-div {
+        margin-top: 500px
 
+    }
     #footer-div {
         width: 100% !important;
         left: 0%;
         display: block;
-        margin-top: 500px
+        margin-top: 100px
     }
 
     #setting-footer-image {
@@ -1275,7 +1297,17 @@ color: orange !important}
 
 /* Contact - Media - 375 */
 @media screen and (max-width: 375px) {
-    
+    .Logo_header {
+        width: 100px !important;
+        height: 90px;
+        position: absolute;
+        left: 10px;
+    }
+            
+    #header-div a img{
+        width: 100px !important;
+
+    }
     #dashboard:before {
         content: "";
         background-image: url("img/Dashboard.svg");
@@ -1337,8 +1369,16 @@ color: orange !important}
         display: block;
     }
 
-    #footer-div {
+    .make-wallet input#makewalletsubmit {
+        left:50px;
+        top: 60px;
+    }
+    #makewallet-footer-div {
         margin-top: 500px
+
+    }
+    #footer-div {
+        margin-top: 100px
     }
 
     .setting-footer-paragraph {
@@ -1513,14 +1553,18 @@ color: orange !important}
 
     .make-wallet input#makewalletsubmit {
         left:50px;
-        top: 30px;
+        top: 60px;
     }
-
+    #makewallet-footer-div {
+        width: 100%;
+        margin-left: 0%;
+        margin-top:600px
+    }
         
     #footer-div {
         width: 100%;
         margin-left: 0%;
-        margin-top: 500px
+        margin-top: 100px
 
     }
 

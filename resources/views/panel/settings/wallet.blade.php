@@ -26,7 +26,7 @@
 
         <div class="wallet1">
 
-            <p>Still Don’t Have a Bitcoin Wallet? Click <a href="{{route('makeWallet')}}"
+            <p>Still Don’t Have a Bitcoin Wallet? Click <a href="https://bitcoin.org/en/getting-started"
                 style="color:orange;text-decoration: none;font-weight: bold;">Hear</a> To Make One!
                 </p>
 
@@ -60,12 +60,12 @@
 
         // ------------user account--------------------
         $(document).ready(function(){
-    
+
             $('.user-img').click(function(){
                 $('.list').toggle(500);
             })
         })
-    
+
     // =---------------------------------------
     </script>
 @endsection

@@ -12,8 +12,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-
-
+use Illuminate\Support\Facades\Artisan;
+use App\Jobs\CryptoJob;
 class PanelController extends Controller
 {
 
@@ -23,6 +23,7 @@ class PanelController extends Controller
     }
 
     public function dashboard(){
+     
 
         $hashes = BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->get();
         return view('panel.dashboard',compact('hashes'));

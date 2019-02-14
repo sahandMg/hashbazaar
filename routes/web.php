@@ -78,27 +78,28 @@ Route::get('job',function(){
 
 Route::get('test',function (){
 
-echo Cache::get('test');
-    $client = new GuzzleClient();
-    $config = [
-        'referer' => true,
-         'headers' => [
-             'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-             'Accept-Encoding' => 'gzip, deflate, br',
-],
-];
-        $url = 'http://localhost:7000/test2';
-        // $promise = $client->getAsync('http://localhost:7000/test2');
 
-        // $promise = $client->requestAsync('GET','http://localhost:7000/test2',$config)->then(function (ResponseInterface $response) {
-        //     return  $response->getBody()->getContents();
+// echo Cache::get('test');
+//     $client = new GuzzleClient();
+//     $config = [
+//         'referer' => true,
+//          'headers' => [
+//              'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+//              'Accept-Encoding' => 'gzip, deflate, br',
+// ],
+// ];
+//         $url = 'http://localhost:7000/test2';
+//         // $promise = $client->getAsync('http://localhost:7000/test2');
 
-        // });
-        $promise = $client->requestAsync('GET', $url);
+//         // $promise = $client->requestAsync('GET','http://localhost:7000/test2',$config)->then(function (ResponseInterface $response) {
+//         //     return  $response->getBody()->getContents();
 
-        $promise->wait();
+//         // });
+//         $promise = $client->requestAsync('GET', $url);
 
-        return redirect('https://google.com');
+//         $promise->wait();
+
+//         return redirect('https://google.com');
 
 
 });

@@ -6,8 +6,8 @@
 
     <div class="setting-flex">
 
-        <div class="flex-item one"><a href="#">User Information</a></div> 
-        
+        <div class="flex-item one"><a href="#">User Information</a></div>
+
 
         <div class="flex-item two"><a href="#">Wallet</a></div>
 
@@ -26,23 +26,23 @@
 
             <q>Password</q> <br>
             <p id="textbefore">Current Password</p>
-            
+
             <input type="password" name="curpass" id="cur-password" placeholder="Current Password"> <br>
             <p id="textbefore">New Password</p>
 
             <input type="password" name="newpass" id="newpassword" placeholder="Current Password"> <br>
             <p id="textbefore">Confirm Password</p>
 
-            <input type="password" name="Confirmpassword" id="Confirmpassword" placeholder="confirm Password"> 
+            <input type="password" name="Confirmpassword" id="Confirmpassword" placeholder="confirm Password">
 
-            <input type="button" value="Submit" id="submit">  
+            <input type="button" value="Submit" id="submit">
         </form>
 
     </div>
 
     <div class="wallet1">
 
-            <p>Still Don’t Have a Bitcoin Wallet? Click <a href="#" id="clickhear"
+            <p>Still Don’t Have a Bitcoin Wallet? Click <a href="https://bitcoin.org/en/getting-started" id="clickhear"
                 style="color:orange;text-decoration: none;font-weight: bold;">Hear</a> To Make One!
                 </p>
 
@@ -63,33 +63,33 @@
     <div class="make-wallet">
 
                 <p id="make-wallet-title">Current Bitcoin Wallet Address</p>
-    
-    
+
+
                 <div class="address">
-    
+
                     <div class="address-img"><img  src="img/SampleQR.svg" alt=""></div>
-    
+
                     <div class="address-box">
                             <input type="text" placeholder="SDKnsdakndnj12n1k1lkmdsalm">
-    
+
                          <a href="mail-icon"><img class="icon" src="../img/Mail.svg" alt=""></a>
                         <a href="link-icon"><img class="icon" src="../img/Link.svg" alt=""></a>
                          <a href="copy-icon"><img class="icon" src="../img/Copy.svg" alt=""></a>
                     </div>
-    
+
                     <div class="change-address">
-                        
+
                         <form action="">
                         <input type="text" placeholder="SDKnsdakndnj12n1k1lkmdsalm"><br>
 
                         <input type="submit" value="Submit" id="makewalletsubmit">
                         </form>
                     </div>
-    
-    
-    
+
+
+
                 </div><!-- address -->
-    
+
                 <p id="make-wallet-title2">Need To Change Your Address ?</p>
     </div>
 
@@ -103,7 +103,7 @@
     <nav class="container">
 
         <ul class="mainList">
-            
+
             <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="{{URL::asset('img/Logo_In_NavBar.svg')}}" alt="Logo_In_NavBar"></a>
                 <a href="" id="welcome">Welcome User</a> </li>
             <li class="sub dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
@@ -126,7 +126,7 @@
         <p class="setting-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
         <img id="setting-footer-image" src="img/Logo_footer.svg" alt="">
 
-</footer> 
+</footer>
 
 <script>
     $.noConflict();
@@ -149,13 +149,13 @@
             $('.setting-information').hide();
             $('.wallet1').show();
             $('.make-wallet').hide()
-            
+
             $('.two a').css('color','orange');
             $('.one a').css('color','#2e2d2d');
 
         })
 
-        
+
 
         $('#clickhear').click(function(){
             $('.setting-information').hide();

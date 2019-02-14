@@ -280,31 +280,26 @@ header img { height: 175px;margin-bottom: 4%; }
       transition: ease .3s;
     }
 
-    
- .change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-45deg) translate(-9px, 6px);
-}
+      
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
 
-.change .bar2 {opacity: 0;}
+  .change .bar2 {opacity: 0;}
 
-.change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-8px, -8px);
-  transform: rotate(45deg) translate(-8px, -8px);
-}
-/* 
-.navigation-menu div {
-  width: 40px;
-  border: 2px solid white;
-  margin-top: 8px
-} */
-
-
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+  .container {
+    margin-top: 50px
+  }
   .container #text {
     width: 400px !important ; 
     margin-left: 350px;
     /* height: 500px; */
-    /* margin-top: -500px; */
+    /* margin-top: 50px !important; */
     font-size: 20px;
   }
 
@@ -318,7 +313,7 @@ header img { height: 175px;margin-bottom: 4%; }
     width: 350px !important;
     margin-left: -350px !important;
     left: 0 !important;
-    margin-top: -300px !important;
+    margin-top: -400px !important;
   }
    
 
@@ -397,7 +392,7 @@ header img { height: 175px;margin-bottom: 4%; }
     #price {
       width: 330px !important;
       margin-left: -10px !important;
-      margin-top: -00px !important;
+      margin-top: -100px !important;
     }
 }
 
@@ -429,7 +424,7 @@ header img { height: 175px;margin-bottom: 4%; }
   #price {
     width: 300px !important;
     margin-left: -10px !important;
-    margin-top: -00px !important;
+    margin-top: -100px !important;
   }
 }
 
@@ -456,22 +451,27 @@ header img { height: 175px;margin-bottom: 4%; }
     padding-bottom: 8px;
     margin-left: -30px;
   }
+  #priceCompare h2 {
+    font-size : 15px !important;
 
+  }
   
   .container #text {
     width: 300px !important ; 
     margin-left: 0px;
     font-size: 13px !important
   }
-  
+  .container #text p {
+    font-size: 13px 
+  }
   #title {
-    font-size : 20px;
+    font-size : 20px !important;
   }
   
   #price {
     width: 250px !important;
     margin-left: -10px !important;
-    margin-top: -00px !important;
+    margin-top: -100px !important;
   }
 }
 /*color for selected text*/

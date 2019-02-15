@@ -559,7 +559,7 @@ form.contact-page p:nth-of-type(1) {
 
     .contact-hr-footer
     {
-        margin-top: 80px
+        margin-top:180px !important
     }
 
     #contact-page h1 {
@@ -1917,7 +1917,7 @@ div ul .navbar #welcome {
 
     .referral-footer-div {
         width: 94%;
-        left: 0%;
+        margin-left: 0%;
         /* position: absolute; */
         top: 1080px
     }

@@ -100,6 +100,8 @@
 <section id="priceCompare" class="context-section backgroundGrey text-center pt-3 pb-3">
     <h2 style="color: #707070">Our advantage is low cost !</h2>
     <div class="container">
+            <img id="price" src="img/Pricing.svg">
+
             <div id="text">
                 <ul>
                     <p id="title">Lorem ipsum dolor sit amet.</p>
@@ -110,7 +112,6 @@
 
                 </ul>
             </div>
-        <img id="price" src="img/Pricing.svg">
         
     </div>
 </section>

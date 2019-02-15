@@ -26,22 +26,42 @@
 
 
     <div class="customerservice-questions">
-        <ul class="question-list1">
-
-            <li class="question-list100"><p class="question" id="1">Lorem ipsum dolor sit amet.</p>
-                <p class="answer" id="answer1">Lorem ipsum dolor sit amet consectetur.
+        <ul class="question-list1" style="color: #696967;">
+            <li class="question-list100">
+                <h4 class="question" id="1">1.  What is Bitcoin?</h4>
+                <p class="answer" id="answer1">
+                  The new generation of transaction system is based on block chain. People needs crypto currencies to deal in this new system. Bitcoin as the most important crypto is a digital and global money system currency. It allows people to send or receive money across the internet.
+                  For more Information read about it in Bloomberg.
+                </p>
+            </li>
+<<<<<<< HEAD
+            <!-- --- -->
+           
+=======
+            <li class="question-list100">
+                <h4 class="question" id="2">Lorem ipsum dolor sit amet.</h4>
+                <p class="answer" id="answer2">Lorem ipsum dolor sit amet consectetur.
 
                 </p>
             </li>
-            <!-- --- -->
-           
+            <li class="question-list100">
+                <h4 class="question" id="3">Lorem ipsum dolor sit amet.</h4>
+                <p class="answer" id="answer3">Lorem ipsum dolor sit amet consectetur.
+
+                </p>
+            </li>
+            <li class="question-list100">
+                <h4 class="question" id="4">Lorem ipsum dolor sit amet.</h4>
+                <p class="answer" id="answer4">Lorem ipsum dolor sit amet consectetur.
+                </p>
+            </li>
+>>>>>>> a9e458c45ceff03edb00f5a1e91182f24ea2ad78
         </ul>
 
 
 
     </div>
 
-    <!-- --------------------------------------- -->
 
     <div class="customerservice-questions2">
            <ul class="question-list1">
@@ -231,6 +251,7 @@
             $('#answer1').show(300);
             $(this).css('height' , '150px');
             $(this).css('transition' , 'all .5s');
+<<<<<<< HEAD
             $(this).css('font-weight' , 'bolder');
             $('.question-list1 .question:after').css('display','none');
             $('.question-list1 .question:before').css('display','block');
@@ -248,6 +269,9 @@
 
 
 
+=======
+            // $(this).css('color' , 'aqua')
+>>>>>>> a9e458c45ceff03edb00f5a1e91182f24ea2ad78
 
 
 

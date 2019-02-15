@@ -288,6 +288,7 @@ ul li {
     .customerservice-questions3 , .customerservice-questions4 {
         top:400px !important;
         margin-left: -2% !important
+
     }
     .question-list1 .question:after {
         content: '';

@@ -559,7 +559,7 @@ form.contact-page p:nth-of-type(1) {
 
     .contact-hr-footer
     {
-        margin-top:180px !important
+        margin-top:80px !important
     }
 
     #contact-page h1 {
@@ -597,10 +597,10 @@ form.contact-page p:nth-of-type(1) {
         font-size: 30px;
         border: thin solid
     }
+   
 
-        
     .contact-footer-div {
-        margin-top: 80px;
+        margin-top: 80px !important;
         width: 70%;
         margin-left: 0%;
         /* position: absolute; */
@@ -745,14 +745,15 @@ form.contact-page p:nth-of-type(1) {
     }
 
     .contact-hr-footer {
-        top: 800px
+        top: 800px;
+        margin-top: 170px !important
     }
 
     /* Footer */
 
 
     .contact-footer-div {
-        margin-top:000px !important;
+        margin-top:10px !important;
         width: 94%;
         left: 2%;
         margin: 0%;

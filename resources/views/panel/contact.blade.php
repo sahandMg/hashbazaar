@@ -14,9 +14,10 @@
              <button><span style="color:white">Send</span></button>
         </form>
 
-        <hr class="contact-hr-footer">
 
         <div id="footer-div">
+        <hr class="contact-hr-footer">
+
             <div class="contact-footer-div" >
             <p class="contact-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
             <img id="contact-footer-image" src="{{URL::asset('img/Logo_footer.svg')}}" alt="">

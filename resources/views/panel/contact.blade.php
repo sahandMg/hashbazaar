@@ -10,8 +10,7 @@
             <input type="email" name="Email" id="Email" placeholder="Email">
 
             <textarea name="" id="" cols="30" rows="10"></textarea>
-
-             <button><span style="color:white">Send</span></button>
+            <button class="pandel-button">Send</button>
         </form>
 
 

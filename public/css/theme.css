@@ -109,7 +109,7 @@ a {
   top: 0px !important;
   position: relative;
 }
-#priceCompare .container {
+/*#priceCompare .container {
   box-sizing: border-box;
   display: grid;
   display: -ms-grid;
@@ -117,21 +117,13 @@ a {
   display: -webkit-grid;
   grid-template-columns: repeat(2,1fr);
   grid-template-rows: repeat(1,1fr);
-  grid-gap: 20px 
-  /* display: flex;
-  flex-flow: row wrap */
-}
-#priceCompare .container #text {
-  /* width: 500px !important ;  */
-  /* margin-left: 600px; */
+  grid-gap: 20px ;
+}*/
+/*#priceCompare .container #text {
   color: black;
   line-height: 2.5;  
-  /* height: 500px; */
-  /* margin-top: -500px; */
   text-align: left;
   font-family: sans-serif;
-  
-
 }
 
 #priceCompare  #title {
@@ -139,26 +131,26 @@ a {
   text-align: left !important;
   font-weight: bolder !important;
   
-}
+}*/
 
 
 
-#priceCompare #price {
-  /* width: 600px !important; */
-  /* margin-left: -510px !important; */
+/*#priceCompare #price {
   left: 0 !important;
   justify-content: left !important;
   justify-items: left !important;
-  /* margin-top: -300px !important; */
-}
+}*/
 #sharePlan  {
   position: relative;
   top: 80px;
 }
- #priceCompare{
+/* #priceCompare{
   top: 80px;
   position: relative;
-} 
+} */
+/*#priceCompare h3 {
+      font-size: 1.7rem;
+}*/
 
 #contact {
   position: relative;
@@ -176,6 +168,24 @@ h3 { font-size: 50px }
 header h3 {margin: 0;}
 
 header img { height: 175px;margin-bottom: 4%; }
+
+/*.advantages {
+  padding-bottom: 2%;
+}*/
+.advantages h3 {
+  font-size: 20px;
+}
+.advantages h5 {
+  text-align: left;
+  margin: 0px;
+}
+.advantages p {
+  text-align: left;
+  padding: 0px;
+}
+.advantages li {
+  margin-bottom: 2%;
+}
 
 @media only screen and (max-width:1280px) {
     .header-navbar {
@@ -297,32 +307,34 @@ header img { height: 175px;margin-bottom: 4%; }
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);
   }
-  #priceCompare .container {
+  /*#priceCompare .container {
     margin-top: 50px
   }
   #priceCompare .container #text {
     width: 350px !important ; 
-    /* margin-left: 350px; */
-    /* height: 500px; */
-    /* margin-top: 50px !important; */
     font-size: 15px !important;
   }
 
   #priceCompare #title {
     font-size : 20px !important;
-    /* margin-left: -30px */
   }
 
 
   #priceCompare #price {
     width: 350px !important;
-    /* margin-left: -350px !important; */
     left: 0 !important;
-    /* margin-top: -400px !important; */;
     margin-left: -100px !important
   }
-   
-
+   */
+   .advantages h3 {
+     font-size: 19px;
+   }
+   .advantages h5 {
+     font-size: 17px;
+   }
+   .advantages p {
+     font-size: 15px;
+   }
 }
 
 
@@ -335,20 +347,25 @@ header img { height: 175px;margin-bottom: 4%; }
       margin-left: -80px;
 
     }
-    #priceCompare .container {
+
+    .advantages-detail {
+      margin-top: 4%;
+    }
+    .advantages-detail h3 {
+      margin-bottom: 25px;
+    }
+    /*#priceCompare .container {
       display: grid;
       display: -ms-grid;
       display: -o-grid;
       display: -webkit-grid;
       grid-template-columns: repeat(1,1fr);
       grid-template-rows: repeat(2,1fr);
-      grid-gap: 10px 
-      /* display: flex;
-      flex-flow: row wrap */
+      grid-gap: 10px ;
     }
     #priceCompare .container #text {
       width: 500px !important ; 
-      /* margin-left: 50px; */;
+       margin-left: 50px; ;
       font-size: 25px !important
     }
 
@@ -363,16 +380,19 @@ header img { height: 175px;margin-bottom: 4%; }
       width: 500px !important;
       margin-left: 0px !important;
       margin-top: -00px !important;
-    }
+    }*/
 }
 
 @media only screen and (max-width: 420px) {
     header img { height: 60px; }
     header h1 { font-size: 20px; }
      h3 { font-size: 15px; }
-     #priceCompare h2 {
+     /*#priceCompare h2 {
       font-size: 20px;
      }
+     #priceCompare h3 {
+      font-size: 18px;
+     }*/
      #contact h2 {
       font-size: 15px;
      }
@@ -400,7 +420,7 @@ header img { height: 175px;margin-bottom: 4%; }
       margin-left: -30px;
     }
 
-    #priceCompare .container {
+   /* #priceCompare .container {
       grid-template-columns: repeat(1,1fr);
       grid-template-rows: repeat(2,1fr);
     }
@@ -420,7 +440,7 @@ header img { height: 175px;margin-bottom: 4%; }
       width: 380px !important;
       margin-left: 0px !important;
       margin-top: -00px !important;
-    }
+    }*/
 
     
 }
@@ -441,7 +461,7 @@ header img { height: 175px;margin-bottom: 4%; }
     margin-left: -30px;
   }
 
-  #priceCompare .container {
+  /*#priceCompare .container {
     grid-template-columns: repeat(1,1fr);
     grid-template-rows: repeat(2,1fr);
   }
@@ -461,7 +481,7 @@ header img { height: 175px;margin-bottom: 4%; }
     width: 340px !important;
     margin-left: 0px !important;
     margin-top: -00px !important;
-  }
+  }*/
 
 }
 
@@ -488,7 +508,17 @@ header img { height: 175px;margin-bottom: 4%; }
     padding-bottom: 8px;
     margin-left: -30px;
   }
-  #priceCompare h2 {
+
+  .advantages h3 {
+     font-size: 17px;
+   }
+   .advantages h5 {
+     font-size: 15px;
+   }
+   .advantages p {
+     font-size: 13px;
+   }
+ /* #priceCompare h2 {
     font-size : 15px !important;
   }
   
@@ -512,7 +542,7 @@ header img { height: 175px;margin-bottom: 4%; }
     width: 300px !important;
     margin-left: 0px !important;
     margin-top: -00px !important;
-  }
+  }*/
 }
 /*color for selected text*/
 ::selection {

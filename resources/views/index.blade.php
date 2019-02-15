@@ -76,7 +76,7 @@
         </div>
     </div>
 </header>
-<section id="sharePlan" class="text-center" style="padding-top: 2%;color: #707070;">
+<section class="text-center" style="padding-top: 4%;color: #707070;">
     <div>
        <h3 class="fontTheme">choose your investment planS</h3>
     </div>
@@ -97,22 +97,36 @@
         </div>
     </div>
 </section>
-<section id="priceCompare" class="context-section backgroundGrey text-center pt-3 pb-3">
-    <h2 style="color: #707070">Our advantage is low cost !</h2>
+<section class="context-section backgroundGrey text-center pt-4 pb-4 advantages" style="color: #707070">
+    <h2>Our Advantages</h2>
     <div class="container">
-            <img id="price" src="img/Pricing.svg">
-
-            <div id="text">
-                <ul>
-                    <p id="title">Lorem ipsum dolor sit amet.</p>
-                    
-                    <li><p id="myp1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, illum.</p></li>
-                    <li><p id="myp2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, illum.</p></li>
-                    <li><p id="myp3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, illum.</p></li>
-
-                </ul>
-            </div>
-        
+     <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <h3 class="text-center"  style="color: #707070;">Working in the regions in which energy cost is in the lowest level</h3>
+         <img id="price" src="img/Pricing.svg">
+       </div>
+       <div class="col-lg-6 col-md-6 col-sm-12 advantages-detail">
+             <h3>Other advantages:</h3>
+             <ul>
+                 <li>
+                    <h5>Instant mining</h5>
+                    <p>Start mining immediately after confirming payment without any concerns and challenges.</p>
+                 </li>
+                 <li>
+                    <h5>Daily withdrawal</h5>
+                    <p>Withdraw your daily mining profit at 00:00 every day.</p>
+                 </li>
+                 <li>
+                    <h5>Activity report</h5>
+                    <p>Keep track of your transaction from your panel.</p>
+                 </li>
+                 <li>
+                    <h5>Statistical details</h5>
+                    <p>Track your real time mining output at any point from any location.</p>
+                 </li>
+              </ul>
+           </div>
+       </div>  
     </div>
 </section>
 <section id="contact" class="text-center backgroundGrey">

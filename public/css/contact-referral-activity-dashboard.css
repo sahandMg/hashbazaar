@@ -407,18 +407,17 @@ color: orange !important}
     /* position: relative; */
 }
 
-form.contact-page button {
+/*form.contact-page button {
     width: 160px;
     height: 60px;
     border-radius:10%;
     background-color: #15BEA4;
-    /* position: relative; */
     margin-top: 60px;
     margin-left:370px;
     font-family: 'Segoe UI', Tahoma, sans-serif;
     font-size: 30px;
     border: thin solid
-}
+}*/
 
 form.contact-page button p {
     font-family: 'Segoe UI', Tahoma, sans-serif;
@@ -559,7 +558,7 @@ form.contact-page p:nth-of-type(1) {
 
     .contact-hr-footer
     {
-        margin-top: 80px
+        margin-top:80px !important
     }
 
     #contact-page h1 {
@@ -585,22 +584,20 @@ form.contact-page p:nth-of-type(1) {
         border: 2px solid black;
     }
 
-    form.contact-page button {
+   /* form.contact-page button {
         width: 160px;
         height: 60px;
         border-radius:10%;
         background-color: #15BEA4;
-        /* position: relative; */
-        /* top: 600px; */
         margin-left:300px;
         font-family: 'Segoe UI', Tahoma, sans-serif;
         font-size: 30px;
         border: thin solid
-    }
+    }*/
+   
 
-        
     .contact-footer-div {
-        margin-top: 80px;
+        margin-top: 80px !important;
         width: 70%;
         margin-left: 0%;
         /* position: absolute; */
@@ -739,20 +736,21 @@ form.contact-page p:nth-of-type(1) {
         height: 150px;
     }
 
-    form.contact-page button {
+    /*form.contact-page button {
         top: 620px;
         left:310px;
-    }
+    }*/
 
     .contact-hr-footer {
-        top: 800px
+        top: 800px;
+        margin-top: 170px !important
     }
 
     /* Footer */
 
 
     .contact-footer-div {
-        margin-top:000px !important;
+        margin-top:10px !important;
         width: 94%;
         left: 2%;
         margin: 0%;
@@ -902,11 +900,11 @@ form.contact-page p:nth-of-type(1) {
             height: 150px;
     }
 
-    form.contact-page button {
+   /* form.contact-page button {
         top: 520px;
         margin-left:130px;
     }
-
+*/
     .contact-hr-footer {
         margin-top:  200px !important
     }
@@ -1050,11 +1048,11 @@ form.contact-page p:nth-of-type(1) {
             height: 150px;
     }
 
-    form.contact-page button {
+   /* form.contact-page button {
         top: 520px;
         margin-left:130px;
     }
-
+*/
     .contact-hr-footer {
         margin-top: 200px !important
     }
@@ -1202,14 +1200,14 @@ form.contact-page p:nth-of-type(1) {
             height: 150px;
     }
 
-    form.contact-page button {
+   /* form.contact-page button {
         top: 520px;
         margin-left:90px;;
         width: 110px;
         font-size: 20px;
         margin-top: 10px
         
-    }
+    }*/
 
     .contact-hr-footer {
         margin-top: 270px !important
@@ -1917,7 +1915,7 @@ div ul .navbar #welcome {
 
     .referral-footer-div {
         width: 94%;
-        left: 0%;
+        margin-left: 0%;
         /* position: absolute; */
         top: 1080px
     }
@@ -3223,18 +3221,39 @@ div ul .navbar #welcome {
         width: 380px;
         height: 300px;
         overflow: scroll;
+        display: flex;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: -o-flex;
+        flex-flow: column wrap
     }
     #activity-page_secondList_column
     {
         top: 00px;
         font-size: 15px;
-        margin-top: 80px;
+        margin-top: 240px;
+        position: absolute;
+    }
+
+    #activity-page_secondList_column:nth-of-type(2){
+        margin-top: 300px
+    }
+
+    #activity-page_secondList_column:nth-of-type(3){
+        margin-top: 350px
+    }
+
+    #activity-page_secondList_column:nth-of-type(4){
+        margin-top: 400px
     }
 
     #activity-page_secondList div ul li {
         width: 120px;
         font-size: 13px;
+        margin-left: 200px;
+        margin-top: -10px;
     }
+
     #activity-page .Transactions {
         width: 380px !important
     }
@@ -3246,16 +3265,48 @@ div ul .navbar #welcome {
     #activity-page_thirdList{
         top:470px;
         width: 400px;
+        flex-flow: row wrap;
+
 
     }
     #activity-page_thirdList_column
     {
-        font-size: 17px;
+        font-size: 21px;
+        position: absolute;
+        margin-top: 530px
     }
 
+    #activity-page_thirdList_column:nth-of-type(1) ul li {
+        position: absolute;
+        margin-top: -10px;
+        margin-left: 60px
+    }
+    #activity-page_thirdList_column ul li:nth-of-type(1) {
+        position: absolute;
+        margin-top: -18px !important;
+        margin-left: 160px;
+        height: 13px;
+        font-size: 18px;
+    }
+
+    #activity-page_thirdList_column:nth-of-type(2) {
+        margin-top: 590px
+    }
+
+    #activity-page_thirdList_column:nth-of-type(3) {
+        margin-top: 650px
+    }
+    
+    #activity-page_thirdList_column:nth-of-type(4) {
+        margin-top: 710px
+    }
+   
+    
     #activity-page_thirdList div ul li {
         width: 120px;
         font-size: 13px;
+        margin-left: 60px;
+        
     }
 
     .activity-hr-footer
@@ -3290,6 +3341,8 @@ div ul .navbar #welcome {
         top: -60px;
         margin-left: 60px
     }
+
+    .useraccount {margin-left: 78% !important}
 
 
 
@@ -3406,6 +3459,44 @@ div ul .navbar #welcome {
        font-size: 15px;
        margin-top: 80px
     }
+
+
+
+    #activity-page_secondList_column
+    {
+        top: 00px;
+        font-size: 15px;
+        margin-top: 240px;
+        position: absolute;
+    }
+
+    #activity-page_thirdList_column ul li:nth-of-type(1) {
+        position: absolute;
+        margin-top: -18px !important;
+        margin-left: 120px;
+        height: 13px;
+        font-size: 16px;
+    }
+
+    /* #activity-page_secondList_column:nth-of-type(1){
+        margin-top: 250px
+    }
+    #activity-page_secondList_column:nth-of-type(2){
+        margin-top: 300px
+    }
+
+    #activity-page_secondList_column:nth-of-type(3){
+        margin-top: 350px
+    }
+
+    #activity-page_secondList_column:nth-of-type(4){
+        margin-top: 400px
+    } */
+
+    #activity-page_secondList div ul li {
+        margin-left: 150px;
+    }
+    
 
     #activity-page_secondList div ul li {
        width: 120px;
@@ -3536,11 +3627,23 @@ div ul .navbar #welcome {
     #activity-page_secondList{
          width: 305px;
     }
+    #activity-page_secondList div ul li {
+        margin-left: 120px;
+    }
+
+    #activity-page_thirdList_column ul li:nth-of-type(1) {
+        position: absolute;
+        margin-top: -18px !important;
+        margin-left: 120px;
+        height: 13px;
+        font-size: 14px;
+    }
     #activity-page_thirdList{
         top:470px;
         width: 305px;
  
      }
+     /* .useraccount {margin-left: 75%} */
 
      .activity-footer-div {
         width: 100%;
@@ -3952,7 +4055,7 @@ div ul .navbar #welcome {
 
 }
 
-form.dashboard-page button {
+.pandel-button {
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
@@ -3961,8 +4064,8 @@ form.dashboard-page button {
     -ms-user-select: none;
     user-select: none;
     border: 1px solid transparent;
-    padding: .375rem 1.75rem;
-    font-size: 1rem;
+    padding: .475rem 2rem;
+    font-size: 1.2rem;
     line-height: 1.5;
     border-radius: .25rem;
     /*transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;*/
@@ -3979,6 +4082,7 @@ form.dashboard-page button {
     display: block;
     margin: auto;
     margin-top: 3%;
+    cursor: pointer;
 }
 
 /*form.dashboard-page button p {
@@ -4912,6 +5016,11 @@ canvas#chart1 {
         top: -60px;
         margin-left: 80px;
         width: 280px
+    }
+    .pandel-button {
+     padding: .375rem 1.75rem;
+     font-size: 1rem;
+     line-height: 1.5;
     }
 
 

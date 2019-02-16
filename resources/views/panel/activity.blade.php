@@ -78,16 +78,12 @@ foreach ($hashes as $key=> $hash){
             <div id="activity-page_thirdList_column"> Date
                 <ul>
                     <li>10 Sep 2018</li>
-                    <li>10 Sep 2018</li>
-                    <li>10 Sep 2018</li>
 
                 </ul>
             </div>
 
             <div id="activity-page_thirdList_column"> BTC
                 <ul>
-                    <li>0.01</li>
-                    <li>0.01</li>
                     <li>0.01</li>
 
                 </ul>
@@ -97,17 +93,11 @@ foreach ($hashes as $key=> $hash){
                 <ul>
                     <li>778dsadDSAB
                         Hhbjbdsa89dsax</li>
-                    <li>778dsadDSAB
-                        Hhbjbdsa89dsax</li>
-                    <li>778dsadDSAB
-                        Hhbjbdsa89dsax</li>
                 </ul>
             </div>
 
             <div id="activity-page_thirdList_column"> Status
                 <ul>
-                    <li>Pending</li>
-                    <li>Processed</li>
                     <li>Pending</li>
                 </ul>
             </div>

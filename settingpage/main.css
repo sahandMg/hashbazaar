@@ -459,7 +459,7 @@ color: orange !important}
     margin-top: 3%;
     border: 3px solid transparent !important;
     margin-left: 15%;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid black !important;
 }
 
 
@@ -697,9 +697,9 @@ color: orange !important}
         
     }
 #footer-div {
-    width: 72%;
-    margin-left: 28%;
-    margin-top: 50%
+    width: 70%;
+    margin-left: 29%;
+    margin-top: 25%
 
 }
 
@@ -863,14 +863,15 @@ color: orange !important}
             
         }
     /* Footer */
-    .hr-footer
+    #setting-hr-footer
     {
-        width: 70%;
-        top:980px
+        width: 103%;
+        /* top:980px */;
     }
 
-    .footer-div {
-        left: 0px;
+    #footer-div {
+        margin-left:27%;
+        margin-top: 40% !important
     }
 
 }
@@ -996,11 +997,14 @@ color: orange !important}
         
     }
 
-
+    #setting-wallet #textwallet {
+        width: 300px !important; 
+        margin-left: 32%
+    }
 
     #footer-div {
         top:960px;
-        width: 100%;
+        width: 96%;
         margin-left: 0% !important;
         left: 0 !important;
         margin-top: 100px;
@@ -1132,14 +1136,14 @@ color: orange !important}
     }
 
     .setting-information input#text {
-        width: 200px;
+        width: 150px;
     }
 
     .setting-information #textbefore {
         font-size: 18px;
     }
     .setting-information input#email {
-        width: 200px;
+        width: 150px;
     }
 
 
@@ -1156,17 +1160,17 @@ color: orange !important}
     }
 
     .setting-information input#cur-password {
-        width: 200px;
+        width: 150px;
         margin-left: 15%;
     }
 
     .setting-information input#newpassword {
-        width: 200px;
+        width: 150px;
         margin-left: 15%;
     }
 
     .setting-information input#Confirmpassword {
-        width: 200px;
+        width: 150px;
     }
 
     .setting-information input#submit
@@ -1193,9 +1197,10 @@ color: orange !important}
         font-size: 15px
     }
 
-    .wallet1 input#textwallet{
-        width: 200px;
-        margin-left: 25%
+   
+    #setting-wallet #textwallet {
+        width: 200px !important; 
+        margin-left: 27% !important
     }
 
 
@@ -1274,10 +1279,10 @@ color: orange !important}
 
     }
     #footer-div {
-        width: 100% !important;
-        left: 0%;
+        width: 96% !important;
+        margin-left: 0%;
         display: block;
-        margin-top: 100px
+        margin-top: 400px !important
     }
 
     #setting-footer-image {
@@ -1295,13 +1300,17 @@ color: orange !important}
 }
 
 
-/* Contact - Media - 375 */
+/*  - Media - 375 */
 @media screen and (max-width: 375px) {
     .Logo_header {
         width: 100px !important;
         height: 90px;
         position: absolute;
         left: 10px;
+    }
+
+    .useraccount {
+        margin-left: 80%
     }
             
     #header-div a img{
@@ -1367,6 +1376,38 @@ color: orange !important}
     #setting-hr-footer {
         width: 100%;
         display: block;
+    }
+
+    .wallet1 {width: 250px;margin-left: 0}
+
+    .wallet1 p {
+        font-size: 15px;
+        width:200px
+    }
+
+    .wallet1 q {
+        width:200px;
+        font-size: 20px;
+    }
+
+    .wallet1 blockquote {
+        margin: 7% 27%;
+        font-size: 15px
+    }
+
+   
+    #setting-wallet #textwallet {
+        width: 170px !important; 
+        margin-left: 20% !important
+    }
+
+
+    .wallet1 input#buttonwallet {
+        width: 100px !important;
+        height: 40px;
+        margin-left:43%;
+        font-size: 18px;
+        margin-top: 15%;
     }
 
     .make-wallet input#makewalletsubmit {
@@ -1470,6 +1511,7 @@ color: orange !important}
     /* Wallet 1 */
     .wallet1 {
         display: none;
+        width: 180px !important
     }
     .wallet1 p {
         font-size: 12px;
@@ -1480,20 +1522,20 @@ color: orange !important}
     }
 
     .wallet1 blockquote {
-        margin: 7% 20%;
+        margin: 7% 18%;
         font-size: 15px
     }
 
-    .wallet1 input#textwallet{
-        width: 150px;
-        margin-left: 25%
+    #setting-wallet #textwallet{
+        width: 110px !important;
+        margin-left: 25% !important
     }
 
 
     .wallet1 input#buttonwallet {
         width: 80px !important;
         height: 40px;
-        margin-left:35%;
+        margin-left:28% !important;
         font-size: 18px;
         margin-top: 15%;
     }

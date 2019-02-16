@@ -106,7 +106,7 @@
                       <p>Income : At this time We predict {{$settings->bitcoin_income_per_month_per_th}} BTC/month for every Th.</p>
                       <small>(Changes may happen depends on bitcoin price and bitcoin network difficulty changes.)</small>
                     </div>
-                    <button type="submit">Order</button>
+                    <button class="pandel-button" type="submit">Order</button>
                  </form>
                 @else
                   <p> TH Not Available !</p>

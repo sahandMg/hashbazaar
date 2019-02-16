@@ -109,56 +109,58 @@ a {
   top: 0px !important;
   position: relative;
 }
-.container {
-  box-sizing: border-box
-}
-.container #text {
-  width: 500px !important ; 
-  margin-left: 600px;
+/*#priceCompare .container {
+  box-sizing: border-box;
+  display: grid;
+  display: -ms-grid;
+  display: -o-grid;
+  display: -webkit-grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(1,1fr);
+  grid-gap: 20px ;
+}*/
+/*#priceCompare .container #text {
   color: black;
   line-height: 2.5;  
-  /* height: 500px; */
-  /* margin-top: -500px; */
   text-align: left;
   font-family: sans-serif;
-
 }
 
-#title {
+#priceCompare  #title {
   font-size : 30px;
-  text-align: center !important;
+  text-align: left !important;
   font-weight: bolder !important;
   
-}
+}*/
 
 
 
-#price {
-  width: 600px !important;
-  margin-left: -510px !important;
+/*#priceCompare #price {
   left: 0 !important;
   justify-content: left !important;
   justify-items: left !important;
-  margin-top: -300px !important;
-}
+}*/
 #sharePlan  {
   position: relative;
   top: 80px;
 }
- #priceCompare{
+/* #priceCompare{
   top: 80px;
   position: relative;
-} 
+} */
+/*#priceCompare h3 {
+      font-size: 1.7rem;
+}*/
 
-#contact {
+/*#contact {
   position: relative;
   top: 80px;
-}
+}*/
 
-footer {
+/*footer {
   position: relative;
   top: 80px;
-}
+}*/
 header h1 { font-size: 50px }
 small {font-size: 100%;}
 h3 { font-size: 50px }
@@ -166,6 +168,24 @@ h3 { font-size: 50px }
 header h3 {margin: 0;}
 
 header img { height: 175px;margin-bottom: 4%; }
+
+/*.advantages {
+  padding-bottom: 2%;
+}*/
+.advantages h3 {
+  font-size: 20px;
+}
+.advantages h5 {
+  text-align: left;
+  margin: 0px;
+}
+.advantages p {
+  text-align: left;
+  padding: 0px;
+}
+.advantages li {
+  margin-bottom: 2%;
+}
 
 @media only screen and (max-width:1280px) {
     .header-navbar {
@@ -175,7 +195,7 @@ header img { height: 175px;margin-bottom: 4%; }
       padding-left: 0px
     }
     
-  .container #text {
+  /* .container #text {
     width: 500px !important ; 
     margin-left: 600px;
   }
@@ -183,7 +203,7 @@ header img { height: 175px;margin-bottom: 4%; }
   #price {
     width: 570px !important;
     height: 500px;
-  }
+  } */
 }
 @media only screen and (max-width: 1024px) {
     header img { height: 100px; }
@@ -203,18 +223,13 @@ header img { height: 175px;margin-bottom: 4%; }
     
   }
     
-  .container #text {
-    width: 450px !important ; 
-    margin-left: 450px;
-    /* height: 500px; */
-    /* margin-top: -500px; */
-  }
+  
  
   #price {
-    width: 400px !important;
-    margin-left: -510px !important;
+    /* width: 400px !important; */
+    /* margin-left: -510px !important; */
     left: 0 !important;
-    margin-top: -300px !important;
+    /* margin-top: -300px !important; */
   }
      
 }
@@ -292,31 +307,34 @@ header img { height: 175px;margin-bottom: 4%; }
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);
   }
-  .container {
+  /*#priceCompare .container {
     margin-top: 50px
   }
-  .container #text {
-    width: 400px !important ; 
-    margin-left: 350px;
-    /* height: 500px; */
-    /* margin-top: 50px !important; */
-    font-size: 20px;
+  #priceCompare .container #text {
+    width: 350px !important ; 
+    font-size: 15px !important;
   }
 
-  #title {
-    font-size : 23px;
-    margin-left: -30px
+  #priceCompare #title {
+    font-size : 20px !important;
   }
 
 
-  #price {
+  #priceCompare #price {
     width: 350px !important;
-    margin-left: -350px !important;
     left: 0 !important;
-    margin-top: -400px !important;
+    margin-left: -100px !important
   }
-   
-
+   */
+   .advantages h3 {
+     font-size: 19px;
+   }
+   .advantages h5 {
+     font-size: 17px;
+   }
+   .advantages p {
+     font-size: 15px;
+   }
 }
 
 
@@ -330,29 +348,51 @@ header img { height: 175px;margin-bottom: 4%; }
 
     }
 
-    .container #text {
-      width: 400px !important ; 
-      margin-left: 50px;
+    .advantages-detail {
+      margin-top: 4%;
+    }
+    .advantages-detail h3 {
+      margin-bottom: 25px;
+    }
+    /*#priceCompare .container {
+      display: grid;
+      display: -ms-grid;
+      display: -o-grid;
+      display: -webkit-grid;
+      grid-template-columns: repeat(1,1fr);
+      grid-template-rows: repeat(2,1fr);
+      grid-gap: 10px ;
+    }
+    #priceCompare .container #text {
+      width: 500px !important ; 
+       margin-left: 50px; ;
+      font-size: 25px !important
+    }
+
+    #priceCompare .container p {
+      font-size: 20px
+    }
+    #priceCompare .container #title {
+      font-size : 25px !important;
     }
     
-    #title {
-      font-size : 23px;
-    }
-    
-    #price {
-      width: 400px !important;
-      margin-left: -10px !important;
+    #priceCompare .container #price {
+      width: 500px !important;
+      margin-left: 0px !important;
       margin-top: -00px !important;
-    }
+    }*/
 }
 
 @media only screen and (max-width: 420px) {
     header img { height: 60px; }
     header h1 { font-size: 20px; }
      h3 { font-size: 15px; }
-     #priceCompare h2 {
+     /*#priceCompare h2 {
       font-size: 20px;
      }
+     #priceCompare h3 {
+      font-size: 18px;
+     }*/
      #contact h2 {
       font-size: 15px;
      }
@@ -380,20 +420,29 @@ header img { height: 175px;margin-bottom: 4%; }
       margin-left: -30px;
     }
 
-    .container #text {
-      width: 360px !important ; 
-      margin-left: 10px;
+   /* #priceCompare .container {
+      grid-template-columns: repeat(1,1fr);
+      grid-template-rows: repeat(2,1fr);
+    }
+    #priceCompare .container #text {
+      width: 380px !important ; 
+      font-size: 23px !important
+    }
+
+    #priceCompare .container p {
+      font-size:18px
+    }
+    #priceCompare .container #title {
+      font-size : 23px !important;
     }
     
-    #title {
-      font-size : 23px;
-    }
+    #priceCompare .container #price {
+      width: 380px !important;
+      margin-left: 0px !important;
+      margin-top: -00px !important;
+    }*/
+
     
-    #price {
-      width: 330px !important;
-      margin-left: -10px !important;
-      margin-top: -100px !important;
-    }
 }
 
 @media screen and (max-width: 375px) {
@@ -412,20 +461,28 @@ header img { height: 175px;margin-bottom: 4%; }
     margin-left: -30px;
   }
 
-  .container #text {
+  /*#priceCompare .container {
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(2,1fr);
+  }
+  #priceCompare .container #text {
     width: 340px !important ; 
-    margin-left: 0px;
+    font-size: 20px !important
+  }
+
+  #priceCompare .container p {
+    font-size:15px
+  }
+  #priceCompare .container #title {
+    font-size : 20px !important;
   }
   
-  #title {
-    font-size : 23px;
-  }
-  
-  #price {
-    width: 300px !important;
-    margin-left: -10px !important;
-    margin-top: -100px !important;
-  }
+  #priceCompare .container #price {
+    width: 340px !important;
+    margin-left: 0px !important;
+    margin-top: -00px !important;
+  }*/
+
 }
 
 
@@ -451,28 +508,41 @@ header img { height: 175px;margin-bottom: 4%; }
     padding-bottom: 8px;
     margin-left: -30px;
   }
-  #priceCompare h2 {
-    font-size : 15px !important;
 
+  .advantages h3 {
+     font-size: 17px;
+   }
+   .advantages h5 {
+     font-size: 15px;
+   }
+   .advantages p {
+     font-size: 13px;
+   }
+ /* #priceCompare h2 {
+    font-size : 15px !important;
   }
   
-  .container #text {
+  #priceCompare .container {
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(2,1fr);
+  }
+  #priceCompare .container #text {
     width: 300px !important ; 
-    margin-left: 0px;
-    font-size: 13px !important
+    font-size: 18px !important
   }
-  .container #text p {
-    font-size: 13px 
+
+  #priceCompare .container p {
+    font-size:13px
   }
-  #title {
-    font-size : 20px !important;
+  #priceCompare .container #title {
+    font-size : 18px !important;
   }
   
-  #price {
-    width: 250px !important;
-    margin-left: -10px !important;
-    margin-top: -100px !important;
-  }
+  #priceCompare .container #price {
+    width: 300px !important;
+    margin-left: 0px !important;
+    margin-top: -00px !important;
+  }*/
 }
 /*color for selected text*/
 ::selection {

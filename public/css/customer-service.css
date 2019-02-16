@@ -36,26 +36,26 @@ ul li {
     display: -ms-flex;
     display: -o-flex;
     display: -webkit-flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap !important;
     
 }
 
-.customerservice-questions  {
-    width: 85%;
-    margin-left: 7.5%;
+.customerservice-questions ,.customerservice-questions2 ,.customerservice-questions3 ,
+.customerservice-questions4 {
+    width: 82% !important;
+    margin-left: 7.0%;
     margin-right: 7.5%;
     flex-flow: 5;
     /* border: 2px solid; */
     grid-row: auto/span 2;
     position: absolute;
     top: 400px;
+    display: block
 }
 
 
 
 /* ---------------------------------category------------------ */
-
-
 
 .category-button {
     width: 20%;
@@ -74,7 +74,7 @@ ul li {
     width: 80px;
     height: 80px;
     position: absolute;
-    background-image: url('img/angle-down-solid.svg');
+    background-image: url('../img/angle-down-solid.svg');
     background-size: 100% 100%;
     margin-top: 40px;
 
@@ -82,16 +82,16 @@ ul li {
 
 /* --- */
 .category-button:nth-of-type(1):before {
-    background-image: url('img/angle-down-solid.svg');
+    background-image: url('../img/angle-down-solid.svg');
 }
 .category-button:nth-of-type(2):before {
-    background-image: url('img/angle-down-solid.svg');
+    background-image: url('../img/angle-down-solid.svg');
 }
 .category-button:nth-of-type(3):before {
-    background-image: url('img/angle-down-solid.svg');
+    background-image: url('../img/angle-down-solid.svg');
 }
 .category-button:nth-of-type(4):before {
-    background-image: url('img/angle-down-solid.svg');
+    background-image: url('../img/angle-down-solid.svg');
 }
 /* -- */
 
@@ -121,16 +121,14 @@ ul li {
     top: 20%;
 }
 .question-list1 {
-    width: 95%;
+    width: 100%;
     height: 95%;
     /* border: 2px solid blue; */
     position: absolute;
     display: block;
     background-color: white;
-
+    /* margin-left: 7%; */
 }
-
-
 
 .question-list1 .question-list100 {
     width: 100%;
@@ -162,18 +160,38 @@ ul li {
     content: '';
     width: 30px;
     height: 30px;
-    background-image: url('img/angle-down-solid.svg');
+    background-image: url('../img/angle-down-solid.svg');
     transform: rotate(-90deg);
     margin-left: 73%;
     background-size: 100% 100%;
     position: absolute  ;
-    color: rgb(26, 26, 122)
+    color: rgb(26, 26, 122);
+    /* display: block */;
+    z-index: 5;
+    background-color: white
+}
+
+.question-list1 .question:before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-image: url('../img/angle-down-solid.svg');
+    transform: rotate(0deg);
+    margin-left: 95%;
+    background-size: 100% 100%;
+    position: absolute  ;
+    color: rgb(26, 26, 122);
+    background-color: white;
+    display: none;
+    z-index: -1;
 }
 
 
 @media screen and (max-width:1024px){
 
-    
+    .customerservice-category {
+        margin-left: 2%
+    }
     .category-button:before {
         width: 60px;
         height: 60px;
@@ -186,8 +204,18 @@ ul li {
         margin-left: 63%;
     }
 
-}
+    .customerservice-category {
+        height: 200px
+    }
 
+
+    .customerservice-questions , .customerservice-questions2 ,
+    .customerservice-questions3 , .customerservice-questions4 {
+        top:300px !important;
+        margin-left: 0%
+        
+    }
+}
 
 @media screen and (max-width:768px) {
     
@@ -218,8 +246,178 @@ ul li {
     }
 
 
+    .customerservice-questions , .customerservice-questions2 ,
+    .customerservice-questions3 , .customerservice-questions4 {
+        top:250px !important;
+        
+    }
+
     
-.customerservice-questions  {
-    top: 250px;
 }
+
+@media screen and (max-width:414px) {
+    .customerservice-category {
+        width: 100%;
+        margin-left: -2%;
+        margin-right: 5%;
+        flex-grow: 1;
+        grid-row: auto/span 1;
+        display: grid;
+        display: -ms-grid;
+        display: -o-grid;
+        display: -webkit-grid;
+        grid-template-rows: repeat(3, 200px);
+        grid-template-columns: repeat(2, 1fr);
+
+
+    }
+    
+    .category-button {
+        width: 170px;
+        margin-top: 0px !important
+    }
+    .category-button:nth-of-type(even) {
+        margin-left:10px
+    }
+
+    .category-button p {
+        font-size: 18px;
+    }
+
+    .customerservice-questions , .customerservice-questions2 ,
+    .customerservice-questions3 , .customerservice-questions4 {
+        top:400px !important;
+        margin-left: -2% !important
+
+    }
+    .question-list1 .question:after {
+        content: '';
+        width: 25px;
+        height: 25px;
+        margin-left: 25%;
+    }
+
+        
+    .question-list1 li .question {
+        font-size: 17px;
+
+    }
+
+    .question-list1 .question-list100 {
+        height: 30px;
+    }
+}
+
+@media screen and (max-width:375px) {
+    .customerservice-category {
+        width: 100%;
+        margin-left: .0%;
+        margin-right: 5%;
+        flex-grow: 1;
+        grid-row: auto/span 1;
+        display: grid;
+        display: -ms-grid;
+        display: -o-grid;
+        display: -webkit-grid;
+        grid-template-rows: repeat(3, 180px);
+        grid-template-columns: repeat(2, 1fr);
+
+
+    }
+
+    .category-button {
+        width: 140px;
+        margin-top: 0px !important
+    }
+    .category-button:nth-of-type(even) {
+        margin-left:10px
+    }
+
+    .category-button p {
+        font-size: 15px;
+    }
+    .category-button:before {
+        content: '';
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        background-image: url('../img/angle-down-solid.svg');
+        background-size: 100% 100%;
+        margin-top: 20px;
+    
+    }
+    .customerservice-questions , .customerservice-questions2 ,
+    .customerservice-questions3 , .customerservice-questions4 {
+        top:330px !important;
+        margin-left: 0% !important
+    }
+    .question-list1 .question:after {
+        content: '';
+        width: 25px;
+        height: 25px;
+        margin-left: 23%;
+    }
+
+        
+    .question-list1 li .question {
+        font-size: 16px;
+
+    }
+
+    .question-list1 .question-list100 {
+        height: 27px;
+    }
+}
+
+
+@media screen and (max-width:375px) {
+    .customerservice-category {
+        width: 100%;
+        margin-left: .0%;
+        margin-right: 5%;
+        flex-grow: 1;
+        grid-row: auto/span 1;
+        display: grid;
+        display: -ms-grid;
+        display: -o-grid;
+        display: -webkit-grid;
+        grid-template-rows: repeat(3, 160px);
+        grid-template-columns: repeat(2, 1fr);
+
+
+    }
+
+    .category-button {
+        width: 130px;
+        margin-top: 0px !important
+    }
+    .category-button:nth-of-type(even) {
+        margin-left:0px
+    }
+
+    .category-button p {
+        font-size: 15px;
+    }
+  
+    .customerservice-questions , .customerservice-questions2 ,
+    .customerservice-questions3 , .customerservice-questions4 {
+        top:300px !important;
+        margin-left: -5% !important
+    }
+    .question-list1 .question:after {
+        content: '';
+        width: 25px;
+        height: 25px;
+        margin-left: 18%;
+    }
+
+        
+    .question-list1 li .question {
+        font-size: 15px;
+
+    }
+
+    .question-list1 .question-list100 {
+        height: 27px;
+    }
 }

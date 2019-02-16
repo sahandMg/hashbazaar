@@ -10,13 +10,13 @@
             <input type="email" name="Email" id="Email" placeholder="Email">
 
             <textarea name="" id="" cols="30" rows="10"></textarea>
-
-             <button><span style="color:white">Send</span></button>
+            <button class="pandel-button">Send</button>
         </form>
 
-        <hr class="contact-hr-footer">
 
         <div id="footer-div">
+        <hr class="contact-hr-footer">
+
             <div class="contact-footer-div" >
             <p class="contact-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
             <img id="contact-footer-image" src="{{URL::asset('img/Logo_footer.svg')}}" alt="">

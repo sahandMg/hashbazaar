@@ -7,35 +7,35 @@
     ?>
     <header id="header" >
         {{-- navbar  ../../public/img/Logo_header.svg.svg.svg   --}}
-        <div class="header-navbar">
-            <div id="header-navbar-logo">
-                <ul>
-                    <li class="navbar-list big"><img class="navbar-small-logo" src="{{asset('img/Logo_header.svg')}}" alt="Logo">
-                </ul>
-            </div>
-            <div id="header-navbar-menu">
-                <ul>
-                    <li class="navbar-list small"><a href="#">Home</a></li>
-                    <li class="navbar-list small"><a href="#">About</a></li>
-                    <li class="navbar-list small"><a href="{{route('customerService')}}"> FAQ</a></li>
-                    <li class="navbar-list small"><a href="{{route('blog')}}">Blog</a></li>
-                    @if(Auth::guard('user')->check())
-                        <li class="navbar-list small signup"><a href="{{route('dashboard')}}" >Dashboard</a></li>
-                    @else
-                        <li class="navbar-list small signup"><a href="{{route('signup')}}" >Sign Up</a></li>
-                        <li class="navbar-list small login"><a href="{{route('login')}}" >Log In</a></li>
-                    @endif
-                </ul>
+        {{--<div class="header-navbar">--}}
+            {{--<div id="header-navbar-logo">--}}
+                {{--<ul>--}}
+                    {{--<li class="navbar-list big"><img class="navbar-small-logo" src="{{asset('img/Logo_header.svg')}}" alt="Logo">--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+            {{--<div id="header-navbar-menu">--}}
+                {{--<ul>--}}
+                    {{--<li class="navbar-list small"><a href="#">Home</a></li>--}}
+                    {{--<li class="navbar-list small"><a href="#">About</a></li>--}}
+                    {{--<li class="navbar-list small"><a href="{{route('customerService')}}"> FAQ</a></li>--}}
+                    {{--<li class="navbar-list small"><a href="{{route('blog')}}">Blog</a></li>--}}
+                    {{--@if(Auth::guard('user')->check())--}}
+                        {{--<li class="navbar-list small signup"><a href="{{route('dashboard')}}" >Dashboard</a></li>--}}
+                    {{--@else--}}
+                        {{--<li class="navbar-list small signup"><a href="{{route('signup')}}" >Sign Up</a></li>--}}
+                        {{--<li class="navbar-list small login"><a href="{{route('login')}}" >Log In</a></li>--}}
+                    {{--@endif--}}
+                {{--</ul>--}}
 
-            </div>
+            {{--</div>--}}
 
 
-            <div class="navigation-menu">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </div>
-        </div>
+            {{--<div class="navigation-menu">--}}
+                {{--<div class="bar1"></div>--}}
+                {{--<div class="bar2"></div>--}}
+                {{--<div class="bar3"></div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
 
         {{--  --}}
@@ -133,12 +133,7 @@
             </div>
         </div>
     </section>
-    <footer class="backgroundMoreGrey">
-        <div class="container text-center">
-            <p>© 2018 HashBazaar. All rights reserved</p>
-        </div>
-    </footer>
-
+   @include('master.footer')
     <!-- The Modal -->
     <div id="myModal" class="modal" style="color: black;">
 

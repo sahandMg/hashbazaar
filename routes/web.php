@@ -185,7 +185,7 @@ Route::group(['middleware'=>'block','prefix'=>'panel'],function(){
 
 Route::get('blog',['as'=>'blog','uses'=>'BlogController@index']);
 
-Route::get('customer-service',['as'=>'customerService','uses'=>'PageController@customerService']);
+Route::get('faq',['as'=>'customerService','uses'=>'PageController@customerService']);
 
 
 Route::group(['prefix' => '@admin'], function () {

@@ -1,4 +1,4 @@
-@extends('master.layout')
+@extends('master.auth')
 @section('content')
 	
 	<div class="limiter">
@@ -75,7 +75,7 @@
 			</div>
 		</div>
 	</div>
-	
+	@include('master.footer')
 	
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>

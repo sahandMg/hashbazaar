@@ -53,6 +53,7 @@
         <a class="blog-readmore">Read more...</a></div>
 
 </div>
+@include('master.footer')
 
 <script>
 

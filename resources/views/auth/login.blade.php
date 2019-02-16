@@ -1,6 +1,5 @@
-@extends('master.layout')
+@extends('master.auth')
 @section('content')
-
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
@@ -59,8 +58,8 @@
 			</div>
 		</div>
 	</div>
-	
-	
+
+	@include('master.footer')
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->

@@ -1,24 +1,20 @@
- {{-- <h4 class="question" id="1">1.  What is Bitcoin?</h4>
-                <p class="answer" id="answer1">
-                  The new generation of transaction system is based on block chain. People needs crypto currencies to deal in this new system. Bitcoin as the most important crypto is a digital and global money system currency. It allows people to send or receive money across the internet.
-                  For more Information read about it in Bloomberg.
-                </p>  --}}
+@extends('master.layout')
+@section('content')
+                {{--<!DOCTYPE html>--}}
+                {{--<html lang="en">--}}
+                {{--<head>--}}
+                    {{--<meta charset="UTF-8">--}}
+                    {{--<meta name="viewport" content="width=device-width, initial-scale=1.0">--}}
+                    {{--<meta http-equiv="X-UA-Compatible" content="ie=edge">--}}
+                    {{--<link rel="stylesheet" href="css/customer-service.css">--}}
+                    {{--<title>FAQ</title>--}}
+                    {{--<script src="js/jquery-3.3.1.js"></script>--}}
+                    {{--<script src="js/jquery.animate-colors.js"></script>--}}
 
-                <!DOCTYPE html>
-                <html lang="en">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-                    <link rel="stylesheet" href="css/customer-service.css">
-                    <title>FAQ</title>
-                    <script src="js/jquery-3.3.1.js"></script>
-                    <script src="js/jquery.animate-colors.js"></script>
-                
-                
-                </head>
-                <body>
-                
+
+                {{--</head>--}}
+                {{--<body>--}}
+
                 <div class="customerservice-container">
                 
                 
@@ -145,7 +141,7 @@
                     </div>  
                 
                 </div>
-                
+                @include('master.footer')
                 <script>
                 
                 
@@ -268,6 +264,4 @@
                 
                 
                 </script>
-                </body>
-                
-                </html>
+@endsection

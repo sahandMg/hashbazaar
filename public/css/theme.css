@@ -21,19 +21,26 @@ a {
   flex-direction: row;
   -ms-flex-direction: row;
   position: fixed;
-  z-index: 2;
-  box-shadow: 0px 1.5px 0px 0px #c0c0bc
+  z-index: 22;
+  box-shadow: 0px 1.5px 0px 0px #c0c0bc;
+  top: 0;
+  margin-top: 0;
 
 }
 .small {
+  top: 0;
+  margin-top: 0;
   padding-left: 10px
 }
 #header-navbar-logo {
-  flex: 1
+  flex: 1;
+  top: 0;
+  margin-top: 0;
 }
 #header-navbar-logo ul li {
   list-style-type: none;
-  position: absolute;
+  position: absolute;top: 0;
+  margin-top: 0;
 }
 
 .big img {
@@ -48,6 +55,7 @@ a {
   left: 200px;
   top: 25px;
   position: relative;
+  margin-top: 0;
 }
 
 #header-navbar-menu ul li {

@@ -18,22 +18,22 @@
 						Sign Up
 					</span>
 
-					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter your name">
+					<div class="wrap-input100 validate-input m-b-10" data-validate="Please enter your name">
 						<input class="input100" type="text" name="name" placeholder="name" value="{{Request::old('name')}}">
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input email" data-validate = "Please enter email" >
+					<div class="wrap-input100 validate-input email m-b-10" data-validate = "Please enter email" >
 						<input class="input100" type="email" name="email" placeholder="Email" value="{{Request::old('email')}}">
 						<span class="focus-input100"></span>
 					</div>
                     
-                    <div class="wrap-input100 validate-input pass" data-validate = "Please enter password">
+                    <div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
                             <input class="input100" type="password" name="password" placeholder="Password">
                             <span class="focus-input100"></span>
                     </div>
 
-                    <div class="wrap-input100 validate-input pass" data-validate = "Please enter password">
+                    <div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
                             <input class="input100" type="password" name="confirm_password" placeholder="Confirm password">
                             <span class="focus-input100"></span>
                     </div>

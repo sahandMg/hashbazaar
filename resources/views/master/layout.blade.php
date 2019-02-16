@@ -34,7 +34,7 @@
     <div class="header-navbar">
         <div id="header-navbar-logo">
             <ul>
-                <li class="navbar-list big"><img class="navbar-small-logo" src="{{asset('img/Logo_header.svg')}}" alt="Logo">
+                <li class="navbar-list big"><a href="http://hashbazaar.com"><img class="navbar-small-logo" src="{{asset('img/Logo_header.svg')}}" alt="Logo"></a>
             </ul>
         </div>
         <div id="header-navbar-menu">
@@ -46,8 +46,8 @@
                 @if(Auth::guard('user')->check())
                     <li class="navbar-list small signup"><a href="{{route('dashboard')}}" >Dashboard</a></li>
                 @else
-                    <li class="navbar-list small signup"><a href="{{route('signup')}}" >Sign Up</a></li>
-                    <li class="navbar-list small login"><a href="{{route('login')}}" >Log In</a></li>
+                <li class="navbar-list small signup"><a href="{{route('signup')}}" id="sg" >Sign Up</a></li>
+                <li class="navbar-list small login"><a href="{{route('login')}}" id="lg" >Log In</a></li>
                 @endif
             </ul>
 

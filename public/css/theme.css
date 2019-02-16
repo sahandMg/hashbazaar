@@ -83,23 +83,27 @@ a {
   background: transparent !important;
 
 }
-#header-navbar-menu ul .login , .signup {
-  border: 2px solid white;
+
+
+#lg , #sg {
+  display: block;
+  height: 110%;
+  border: 2px solid white ;
   padding: 4px 10px 4px 10px;
   border-radius: 4%;
   transition: all .5s ease;
   -webkit-transition: all .5s ease;
-    -moz-transition: all .5s ease;
-    -ms-transition: all 1.5s eases;
-    
+  -moz-transition: all .5s ease;
+  -ms-transition: all 1.5s eases;
   font-weight: bolder;
   cursor: pointer;
-
+  margin-top: -5px
 }
 
-#header-navbar-menu ul .login:hover , .signup:hover {
+#lg:hover , #sg:hover {
   background: white;
   border: 2px solid #43A047;
+
 } 
 .navigation-menu {
   display: none

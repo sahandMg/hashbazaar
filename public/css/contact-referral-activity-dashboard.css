@@ -458,7 +458,7 @@ form.contact-page p:nth-of-type(1) {
     font-family: sans-serif;
     /* position: absolute; */
     top: -20px;
-    margin-left: 40%
+    margin-left: 40% 
 
 }
 
@@ -2131,7 +2131,7 @@ div ul .navbar #welcome {
 
     .referral-hr-footer
     {
-        top: 1200px;
+        top: 1030px;
         left:-310px;
         width: 414px !important;
     }
@@ -2142,13 +2142,15 @@ div ul .navbar #welcome {
         width: 94%;
         margin-left: 0%;
         /* position: absolute; */
-        margin-top: -800px !important
+        margin-top: 300px !important
     }
 
     .referral-footer-paragraph {
-        font-size: 14px;
-        margin-left: 0;
-        margin-left: 80px;
+        font-size: 16px;
+        margin-left: 0px;
+        top: 0 !important;
+        margin-top: 0 !important;
+        width: 300px
     }
 
     #referral-footer-image {
@@ -2226,7 +2228,7 @@ div ul .navbar #welcome {
 
     .referral-hr-footer
     {
-        top: 1100px;
+        top: 1020px;
         left:-312px;
         width: 375px !important;
     }
@@ -2237,14 +2239,15 @@ div ul .navbar #welcome {
         width: 94%;
         margin-left: 0%;
         /* position: absolute; */
-        top: 1050px
+        margin-top: 350px !important
     }
 
     .referral-footer-paragraph {
-        font-size: 14px;
-        margin-left: 0;
-        left: 70px;
+        font-size: 16px;
+        margin-left: 0px;
     }
+
+    
 
     #referral-footer-image {
         width: 100px;
@@ -2350,7 +2353,7 @@ div ul .navbar #welcome {
 
     .referral-hr-footer
     {
-        top: 1030px;
+        top: 1010px;
         left:-235px;
         width: 320px !important;
     }
@@ -2361,13 +2364,15 @@ div ul .navbar #welcome {
         width: 90%;
         margin-left: 0%;
         /* position: absolute; */
-        top: 1050px
+        top: 1250px;
+        margin-top: 200px
     }
 
     .referral-footer-paragraph {
         font-size: 14px;
         margin-left: 0;
-        left: 30px;
+        left: 0px;
+        width: 300px;
     }
 
     #referral-footer-image {
@@ -2612,7 +2617,7 @@ div ul .navbar #welcome {
      display: flex;
      flex-flow: row wrap;
      /* position: relative; */
-     overflow: scroll;
+     overflow-y: scroll;
      height: 250px;
      margin-top: 80px !important;
      width: 960px;
@@ -2665,7 +2670,7 @@ div ul .navbar #welcome {
      display: flex;
      flex-flow: row wrap;
      /* position: relative; */
-     overflow: scroll;
+     overflow-y: scroll;
      margin-top: 70px;
      width: 970px;
      height: 300px;
@@ -2724,7 +2729,7 @@ div ul .navbar #welcome {
     width: 70%;
     margin-left: 28%;
     /* position: relative; */
-    margin-top: 20px;
+    margin-top: -440px !important;
     height: 100;
     /* border: 2px solid */
     
@@ -2868,7 +2873,7 @@ div ul .navbar #welcome {
       display: flex;
       flex-flow: row wrap;
       /* position: relative; */
-      overflow: scroll;
+      overflow-y: scroll;
       height: 300px;
       margin-top: 0px;
       width: 730px
@@ -2909,7 +2914,7 @@ div ul .navbar #welcome {
         display: flex;
         flex-flow: row wrap;
         /* position: relative; */
-        overflow: scroll;
+        overflow-y: scroll;
         height: 300px;
         top: 480px;
         width: 730px;
@@ -2945,7 +2950,7 @@ div ul .navbar #welcome {
 
    /* Footer */
    .activity-hr-footer {
-       top: 7px
+       top: -40px
    }
    .activity-footer-div {
        top: 1350px
@@ -3093,7 +3098,7 @@ div ul .navbar #welcome {
 
    .activity-hr-footer
    {
-       top: 70px;
+       top: -70px !important;
        width: 98%;
        margin-left: -10px;
        left: 0
@@ -3226,7 +3231,7 @@ div ul .navbar #welcome {
         margin-top: 30px;
         width: 380px;
         height: 300px;
-        overflow: scroll;
+        overflow-y: scroll;
         display: flex;
         display: -ms-flexbox;
         display: -webkit-flex;
@@ -3318,13 +3323,12 @@ div ul .navbar #welcome {
     .activity-hr-footer
     {
         margin-left: 0;
-        top: 60px
     }
 
     /* Footer */
     #footer-div {
         /* position: relative; */
-        top: 540px;
+        top: 540px ;
         margin-top: 0 !important
     }
     .activity-footer-div {
@@ -3332,7 +3336,7 @@ div ul .navbar #welcome {
         margin-left: 0%;
         /* position: absolute; */
         top: 000px !important;
-        margin-top: -1450px !important;
+        margin-top: -500px !important;
     }
 
     #activity-footer-image {
@@ -3484,20 +3488,6 @@ div ul .navbar #welcome {
         font-size: 16px;
     }
 
-    /* #activity-page_secondList_column:nth-of-type(1){
-        margin-top: 250px
-    }
-    #activity-page_secondList_column:nth-of-type(2){
-        margin-top: 300px
-    }
-
-    #activity-page_secondList_column:nth-of-type(3){
-        margin-top: 350px
-    }
-
-    #activity-page_secondList_column:nth-of-type(4){
-        margin-top: 400px
-    } */
 
     #activity-page_secondList div ul li {
         margin-left: 150px;
@@ -3542,7 +3532,7 @@ div ul .navbar #welcome {
        width: 100%;
        margin-left: 0%;
        /* position: absolute; */
-       margin-top: -1400px !important
+       margin-top: -530px !important
     }
 
     #activity-footer-image {
@@ -3655,7 +3645,7 @@ div ul .navbar #welcome {
         width: 100%;
         margin-left: 0%;
         /* position: absolute; */
-        margin-top: -1360px !important
+        margin-top: -520px !important
      }
     .footer-paragraph {
         font-size: 12px;
@@ -3953,7 +3943,7 @@ div ul .navbar #welcome {
      /* position: relative; */
      height: 300px;
      margin-top: 30px;
-     overflow:scroll;
+     overflow-y: scroll
  }
 
 
@@ -4176,7 +4166,7 @@ div ul .navbar #welcome {
         width: 70%;
         margin-left: 28%;
         /* position: absolute; */
-        margin-top: 100px;
+        margin-top: -370px;
     }
 
     #dashboard-footer-image {
@@ -4415,7 +4405,7 @@ canvas#chart1 {
     width: 70%;
     margin-left: 27%;
     /* position: absolute; */
-    margin-top: -15%;
+    margin-top: -50%;
     top: 0
 }
 
@@ -4647,7 +4637,7 @@ canvas#chart1 {
         width: 70%;
         margin-left: 2%;
         /* position: absolute; */
-        margin-top: 0px;
+        margin-top: -300px;
         border-bottom: transparent
     }
 
@@ -5000,8 +4990,7 @@ canvas#chart1 {
 
     /* ============================================Footer======================================= */
     #footer-div {
-        top: 0 !important;
-        margin-top: 1430px !important;
+        top: 200 !important;
         height: 050px;
         width: 100%;
     }
@@ -5009,7 +4998,7 @@ canvas#chart1 {
         width: 100% !important;
         left: 0%;
         /* position: absolute; */
-        margin-top: 0
+        margin-top: 1400px
     }
 
     #dashboard-footer-image {
@@ -5235,7 +5224,7 @@ canvas#chart1 {
         width: 100% !important;
         left: 0%;
         /* position: absolute; */
-        margin-top: 0
+        margin-top: 1360px
     }
 
     #dashboard-footer-image {
@@ -5529,7 +5518,7 @@ canvas#chart1 {
         width: 100% !important;
         left: 0%;
         /* position: absolute; */
-        margin-top: 0
+        margin-top: 1270px
     }
 
     #dashboard-footer-image {

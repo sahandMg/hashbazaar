@@ -127,6 +127,7 @@
     cursor: pointer;
 }
 
+.sub2 {display:none}
 /* CONTACT */
 
 .mainContainer
@@ -718,13 +719,19 @@ color: orange !important}
 }
 
 
-/* Contact - Media - 1024 */
+/*  - Media - 1024 */
 @media screen and (max-width:1024px){
+
+        
+    #usericon:before {
+        position: relative;
+        left: 1vh; 
+        top: 2vh !important
+        
+    }
     /* ---------------=====Media====-------------Main Container--------------------------- */
 
-    .useraccount .list {
-        display: none;
-    }
+    
     .container {
         width: 270px !important;
     }
@@ -877,8 +884,41 @@ color: orange !important}
 }
 
 
-/* Contact - Media - 768 */
+/*  - Media - 768 */
 @media screen and (max-width:768px) {
+    /* user account list */
+        .useraccount .sub2 {
+            display:block !important;
+            border-bottom: thin solid;
+            padding-top: 5px;
+            text-decoration: none !important;
+            /* border-bottom: transparent */
+        }
+
+        #dashboard , #contac , #activity , #referral , #setting {
+            border-bottom: transparent !important;
+
+        }
+
+        #dashboard:hover , #contact:hover , #activity:hover , #referral:hover , #setting:hover {
+            color: black !important;
+            border-bottom: orange !important
+
+        }
+
+        #setting {color:orange !important}
+
+        .useraccount .list {
+            height: 326px;
+        }
+        #usericon:hover{
+            background-color: black;
+            border-top-left-radius: 0px !important;
+            border-top-right-radius: 0px !important; 
+        
+        }
+
+    /*  */
     body {
         background-color: #FFFDE8
     }
@@ -1027,9 +1067,14 @@ color: orange !important}
 }
 
 
-/* Contact - Media - 414 */
+/*  - Media - 414 */
 @media screen and (max-width: 414px) {
+    /* --------user account list */
+    .useraccount .list {height: 315px}
 
+
+
+    /*  */
     body {
         background-color: #FFFDE8
     }
@@ -1303,7 +1348,7 @@ color: orange !important}
 /*  - Media - 375 */
 @media screen and (max-width: 375px) {
     .Logo_header {
-        width: 100px !important;
+        width: 200px !important;
         height: 90px;
         position: absolute;
         left: 10px;
@@ -1314,7 +1359,7 @@ color: orange !important}
     }
             
     #header-div a img{
-        width: 100px !important;
+        width: 200px !important;
 
     }
     #dashboard:before {
@@ -1434,10 +1479,10 @@ color: orange !important}
     }
 }
 
-/* Contact - Media - 320 */
+/*  - Media - 320 */
 @media screen and (max-width:320px) {
     .Logo_header {
-        width: 100px !important;
+        width: 200px !important;
         height: 90px;
         position: absolute;
         left: 10px;

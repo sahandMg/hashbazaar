@@ -8,6 +8,8 @@
         cursor: pointer;
         background: rgb(235, 233, 233);
         height: 100px;
+        margin-left: 4.16%;
+        margin-right: 4.16%;
     }
     .faq-question-list {
         border-bottom: 1px dashed black;
@@ -15,6 +17,13 @@
     .faq-question {
         cursor: pointer;
     }
+    .faq-section h4 {
+         margin-top: 5%;
+         font-size: 1.2rem;
+         letter-spacing: 0.4px;
+    }
+
+
     @media only screen and (max-width: 576px) {
         .faq-container {
           margin-top: 20%;
@@ -23,6 +32,15 @@
           font-size: 1.5rem;
           letter-spacing: 0.8px;
         }
+        .faq-section {
+          width: 42%;  
+          margin-left: 4%;
+          margin-right: 4%;
+          margin-top: 2%;
+       }
+       .faq-section h4 {
+         font-size: 1rem;
+       }
     }
     @media only screen and (max-width: 420px) {
         .faq-container {
@@ -38,15 +56,15 @@
                      <h2 class="text-center">Frequently asked questions</h2> 
                      <!-- customerservice-category  category-button one  -->
                     <div class="row">
-                        <div class="col-md-3 col-sm-6 ml-5 faq-section"><h4>Bitcoin</h4></div>
-                        <div class="col-md-3 col-sm-6 ml-5 mr-5 faq-section"><h4>Mining</h4></div>
-                        <div class="col-md-3 col-sm-6 mr-5  faq-section"><h4>Hash Bazaar</h4></div>
+                        <div class="col-md-3 faq-section" style="background-color: #e8ad2c;"><h4>Bitcoin</h4></div>
+                        <div class="col-md-3 faq-section"><h4>Mining</h4></div>
+                        <div class="col-md-3 faq-section"><h4>Hash Bazaar</h4></div>
                     </div>
                     <br/><br/>
                  <div class="faq-questions-section">
                  <!-- Bitcoin -->
                     <div class="faq-customerservice-questions">
-                        <ul class="faq-question-list" style="color: #696967">
+                        <ul class="faq-question-list-container" style="color: #696967">
                             <li class="faq-question-list">
                                 <h5 class="faq-question">What is Bitcoin?</h5>
                                 <div class="faq-answer">
@@ -76,7 +94,7 @@
                     </div>
                     <!-- Mining -->
                     <div class="faq-customerservice-questions">
-                        <ul class="faq-question-list" style="color: #696967">
+                        <ul class="faq-question-list-container" style="color: #696967">
                             <li class="faq-question-list">
                                 <h5 class="faq-question">What does mining really mean?</h5>
                                 <div class="faq-answer">
@@ -157,7 +175,7 @@
                     </div>
                     <!-- Hash Bazaar -->
                     <div class="faq-customerservice-questions">
-                        <ul class="faq-question-list" style="color: #696967">
+                        <ul class="faq-question-list-container" style="color: #696967">
                             <li class="faq-question-list">
                                 <h5 class="faq-question">How can I join to hash bazaar community?</h5>
                                 <div class="faq-answer">
@@ -343,8 +361,10 @@
                             $('.faq-answer').hide();
                             $(this).parent().children().eq(1).show();
                          })
-
+                          
                         $('.faq-section').click(function(){
+                            $('.faq-section').css('background-color' , 'rgb(235, 233, 233)');
+                            $(this).css('background-color' , '#e8ad2c');
                             var listItem = $(this);
                             $('.faq-customerservice-questions').hide();
                             $('.faq-questions-section').children().eq($(this).index()).show();

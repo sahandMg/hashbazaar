@@ -10,6 +10,7 @@
         height: 100px;
         margin-left: 4.16%;
         margin-right: 4.16%;
+        position: relative;
     }
     .faq-question-list {
         border-bottom: 1px dashed black;
@@ -22,8 +23,20 @@
          font-size: 1.2rem;
          letter-spacing: 0.4px;
     }
-
-
+    .faq-section img {
+        width: 50px;
+        position: absolute;
+        top: 35px;
+    }
+    .faq-question-list-container {
+        padding: 0px;
+    }
+    .faq-question-list h5 {
+         margin-top: 2%;
+    }
+    .faq-answer li {
+        list-style: disc;
+     }
     @media only screen and (max-width: 576px) {
         .faq-container {
           margin-top: 20%;
@@ -33,13 +46,32 @@
           letter-spacing: 0.8px;
         }
         .faq-section {
-          width: 42%;  
-          margin-left: 4%;
-          margin-right: 4%;
+          width: 45%;  
+          margin-left: 2.5%;
+          margin-right: 2.5%;
           margin-top: 2%;
        }
        .faq-section h4 {
          font-size: 1rem;
+       }
+       .faq-question-list h5 {
+         font-size: 1rem;
+         margin-bottom: 25px;
+       }
+       .faq-question-list p {
+         font-size: 0.9rem;
+         margin-bottom: 10px;
+       }
+       .faq-answer li {
+        font-size: 0.8rem;
+       }
+       .faq-answer ul {
+        padding-left: 25px;
+        margin-bottom: 10px;
+       }
+       .faq-section img {
+        width: 50px;
+        top: 35px;
        }
     }
     @media only screen and (max-width: 420px) {
@@ -50,14 +82,27 @@
           font-size: 1.2rem;
           letter-spacing: 0.5px;
         }
+        .faq-question-list h5 {
+         font-size: 0.9rem;
+         margin-bottom: 15px;
+       }
+       .faq-question-list p {
+         font-size: 0.8rem;
+       }
     }
 </style>  
                 <div class="container faq-container">
                      <h2 class="text-center">Frequently asked questions</h2> 
                      <!-- customerservice-category  category-button one  -->
                     <div class="row">
-                        <div class="col-md-3 faq-section" style="background-color: #e8ad2c;"><h4>Bitcoin</h4></div>
-                        <div class="col-md-3 faq-section"><h4>Mining</h4></div>
+                        <div class="col-md-3 faq-section" style="background-color: #e8ad2c;">
+                          <h4>Bitcoin</h4>
+                          <img src="img/bitcoin-faq.svg" />
+                        </div>
+                        <div class="col-md-3 faq-section">
+                           <h4>Mining</h4>
+                           <img src="img/mining-faq.svg" />
+                        </div>
                         <div class="col-md-3 faq-section"><h4>Hash Bazaar</h4></div>
                     </div>
                     <br/><br/>

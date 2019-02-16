@@ -42,6 +42,9 @@ body {
     position: absolute;
     opacity: .3;
     transition: all .5s ease-out;
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -ms-transition: all .5s ease-out;
     background-color: transparent;
     z-index: 3;
     border-radius: 10px
@@ -72,6 +75,9 @@ body {
     width: 260px;
     height: 250px;
     transition: all 2s;
+    -webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    -ms-transition: all 2s;
     border-radius: 10px
 }
 
@@ -114,7 +120,10 @@ a {
     margin-left: 50px;
     color: orange !important;
     font-weight: bolder;
-    transition: all .3s 
+    transition: all .3s ;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
 }
 
 .blog-readmore:hover {

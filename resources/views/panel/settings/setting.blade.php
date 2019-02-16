@@ -1,5 +1,6 @@
 @extends('panel.master.layout')
 @section('content')
+<link rel="stylesheet" href="/public/js/jquery-3.3.1.js">
 <!-- ---------------------------------------------------------------------------------------------- -->
 
 <div id="setting-page">
@@ -60,7 +61,8 @@
         </div><!-- Wallet 1 -->
 
 
-    <div class="make-wallet">
+    
+        <div class="make-wallet">
 
                 <p id="make-wallet-title">Current Bitcoin Wallet Address</p>
 

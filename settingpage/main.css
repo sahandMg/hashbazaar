@@ -726,11 +726,11 @@ color: orange !important}
         display: none;
     }
     .container {
-        width: 270px;
+        width: 270px !important;
     }
 
     .container .mainList {
-        width: 270px
+        width: 270px !important
     }
 
     .container .mainList .navbar .Logo_In_NavBar{

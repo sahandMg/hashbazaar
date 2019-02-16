@@ -12,9 +12,6 @@
     border-bottom: transparent;
     cursor: unset;
 }
-.sub2 {
-    display: none
-}
 .useraccount .list {
     width: 200px;
     height: 110px;
@@ -385,6 +382,7 @@ color: orange !important}
 /* ------------setting-information---------- */
 .setting-information  {
     margin-top: 10%;
+    display: block;
 
 }
 
@@ -411,8 +409,9 @@ color: orange !important}
     width: 300px;
     height: 30px;
     margin-top: 3%;
+    border: 3px solid transparent;
     margin-left: 15%;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
 
 }
 
@@ -428,8 +427,9 @@ color: orange !important}
     width: 300px;
     height: 30px;
     margin-top: 3%;
+    border: 3px solid transparent;
     margin-left: 15%;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
 
 }
 
@@ -457,8 +457,9 @@ color: orange !important}
     width: 300px;
     height: 30px;
     margin-top: 3%;
+    border: 3px solid transparent !important;
     margin-left: 15%;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black !important;
 }
 
 
@@ -467,8 +468,9 @@ color: orange !important}
     width: 300px;
     height: 30px;
     margin-top: 3%;
+    border: 3px solid transparent;
     margin-left: 15%;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
 }
 
 
@@ -477,16 +479,18 @@ color: orange !important}
     width: 300px;
     height: 30px;
     margin-top: 3%;
+    border: 3px solid transparent;
     margin-left: 15%;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
 }
 
 .setting-information input#submit
 {
     width: 100px;
     height: 40px;
-    background-color:aqua;
+    background-color:#15BEA4;
     margin-left: 30%;
+    border-radius: 8%;
     font-size: 20px;
     color: white;
     font-family: sans-serif;
@@ -536,10 +540,11 @@ color: orange !important}
 .wallet1 input#buttonwallet {
     width: 120px !important;
     height: 60px;
-    background-color:aqua;
+    background-color:#15BEA4;
     margin-left: 43%;
     font-size: 20px;
     margin-top: 5%;
+    border-radius: 8%;
     color: white;
     font-family: sans-serif;
 }
@@ -548,7 +553,7 @@ color: orange !important}
 
 
 .make-wallet {
-    display: none
+    display: none;
 
 }
 #make-wallet-title {
@@ -648,25 +653,6 @@ color: orange !important}
     font-size: 22px
 }
 
-form#setting-make-wallet button {
-    width: 160px;
-    height: 60px;
-    border-radius: 10%;
-    background-color: #15BEA4;
-    position: relative;
-    top: 450px;
-    left: 410px;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    font-size: 30px;
-    border: thin solid
-}
-
-form#setting-make-wallet button p {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    font-size: 30px;
-    color: white;
-}
-
 
 #make-wallet-title2 {
     font-size: 30px;
@@ -678,20 +664,18 @@ form#setting-make-wallet button p {
     font-family: sans-serif;
 }
 
-
 .address-box a {
     left: 250px;
     margin-left: 25px;
     position: relative;
 }
 
-
-
 .make-wallet input#makewalletsubmit {
     width: 120px !important;
     height: 60px !important;
-    background-color:aqua !important;
+    background-color:#15BEA4 !important;
     font-size: 20px !important;
+    border-radius: 8% !important;
     color: white;
     font-family: sans-serif;
     position: absolute;
@@ -700,21 +684,22 @@ form#setting-make-wallet button p {
 }
 
 
-
-
-
-
 /* ------------------------ */
 
 #setting-hr-footer {
-    width: 100%;
+    width: 99.8%;
     display: block;
 }
-
+#makewallet-footer-div {
+    width: 100%;
+    margin-left: 0%;
+    margin-top: 50%
+        
+    }
 #footer-div {
     width: 100%;
     margin-left: 0%;
-    margin-top: 80%
+    margin-top: 35% !important
 
 }
 
@@ -738,18 +723,14 @@ form#setting-make-wallet button p {
     /* ---------------=====Media====-------------Main Container--------------------------- */
 
     .useraccount .list {
-        
         display: none;
     }
-    .container-contact {
-        width: 270px;
-        /* height: 1850px; */
-
-
+    .container {
+        width: 270px !important;
     }
 
     .container .mainList {
-        width: 270px
+        width: 270px !important
     }
 
     .container .mainList .navbar .Logo_In_NavBar{
@@ -763,7 +744,6 @@ form#setting-make-wallet button p {
     div ul .navbar #welcome {
         font-size: 17px;
         left: 70px;
-
     }
 
 
@@ -822,28 +802,76 @@ form#setting-make-wallet button p {
         height: 30px;
         left: -55px;
     }
-
-
-    .hr-footer
-    {
-        top:980px
-    }
-
-    #usericon:before {
-        content: '';
-        display: block;
-        width: 20px;
-        height: 20px;
-        background-image: url("../img/user-solid.svg");
-        background-size: 100% 100%;
-        position: relative;
-        left: 1vh !important;
-        top: 2vh !important
+    /* Make wallet */
         
+    
+    #make-wallet-title {
+        margin-left: 17%;
+        left: 0
     }
-    .footer-div {
-        left: 0px;
-        /* width: 1024px */
+    
+    .address .address-img {
+        width: 140px;
+        height: 140px;
+        left: 40px
+    }
+
+    .address .address-box div {
+        left: 250px;
+    }
+
+    .address-box {
+        left: 40px;
+    }
+
+    .address-box input {
+        left: 170px;
+        width: 300px;
+    }
+
+    .address-box input::placeholder {
+        font-size: 18px
+    }
+
+    .change-address {
+        top: 270px;
+        width: 300px;
+        margin-left: 300px;
+    }
+
+    .change-address input {
+        width: 300px;
+        left: -100px;
+        top: -50px;
+    }
+
+    .change-address input::placeholder {
+        font-size: 18px
+    }
+
+
+    #make-wallet-title2 {
+        margin-left: 17%;
+    }
+
+    .make-wallet input#makewalletsubmit {
+        left:0px;
+    }
+    #makewallet-footer-div {
+        margin-top: 630px;
+        margin-left: 0%
+            
+        }
+    /* Footer */
+    #setting-hr-footer
+    {
+        width: 100%;
+        /* top:980px */;
+    }
+
+    #footer-div {
+        margin-left:0%;
+        margin-top: 40% !important
     }
 
 }
@@ -860,65 +888,21 @@ form#setting-make-wallet button p {
     .container {
         display: none;
     }
+    .mainContainer {
+        display: none
+    }
     .container{
-        display: block;
+        /* display: block; */
         position:  relative;
         top: 22px;
         width: 100%;
+        border-bottom: 0px solid transparent;
         float: left;
     }
-        
-    .useraccount {
-        margin-left:89%;
-    }
-    
+
     .useraccount .list {
-        width: 200px !important;
-        height: 360px;
-        display: none ;
-        margin-top: 110px;
-    }
-
-    .useraccount .list ul li {
-        padding-top: 8px;
-        border-bottom: #727272 1px solid
-    }
-
-    #usericon {
-        border-bottom: 1px solid;
-        border-top-left-radius: 0px;
-        border-top-right-radius: 0px;
-    }
-
-    #usericon:hover{
-        border-top-left-radius: 0px;
-        border-top-right-radius: 0px;
-    }
-   
-    .sub2 {
-        display: block !important;}
-    .sub2 a{
-        display: block !important;
-        list-style-type: none !important;
-        text-decoration: none !important;
-        transition: all .1s;
-    }
-
-    .sub2 #contact:hover , #dashboard:hover , #activity:hover , #referral:hover , 
-    #setting:hover{
-        color: black !important;
-    }
         
-    #usericon:before {
-        content: '';
-        display: block;
-        width: 20px;
-        height: 20px;
-        background-image: url("../img/user-solid.svg");
-        background-size: 100% 100%;
-        position: relative;
-        left: 2vh;
-        top: 2vh
+        display: none;
     }
 
     .mainList {
@@ -932,22 +916,9 @@ form#setting-make-wallet button p {
         height: 20px;
         background-size: 100% 100%;
         position: absolute;
-        left: 10px;
-        top: 10px;
-        /* filter: blur(5px);
-        filter: brightness(0.4);
-        filter: contrast(200%);
-        filter: drop-shadow(16px 16px 20px blue);
-        filter: grayscale(50%);
-        filter: hue-rotate(90deg);
-        filter: invert(75%);
-        filter: opacity(25%);
-        filter: saturate(30%);
-        filter: sepia(60%); */
-        /* border: 2px solid black;
-        filter: invert(-75%);
-        filter: sepia(-60%); */
-        }
+        left: -30px;
+        top: 0px
+    }
 
     #activity:before {
         content: "";
@@ -971,7 +942,7 @@ form#setting-make-wallet button p {
         left: -30px;
         top: 0px
     }
-    #setting {color:orange !important}
+
     #setting:before {
         content: "";
         background-image: url("img/Setting.svg");
@@ -995,18 +966,48 @@ form#setting-make-wallet button p {
     }
 
 
+    /* Setting Page */
+
+    #setting-page {
+        width: 99%;
+        margin-left: 0% !important;
+    }
+
+
+    /* ------------setting-information---------- */
+    .setting-information  {
+        margin-left: 0%;
+        width: 100%;
+    }
+        
+    .make-wallet input#makewalletsubmit {
+        top: 60px;
+    }
+
+    form {
+        border-bottom: 2px solid transparent
+    }
+    /* Footer */
+
     .hr-footer {
         top: 800px
     }
+    #makewallet-footer-div {
+    margin-top: 530px;
+        
+    }
 
-    /* Footer */
+    #setting-wallet #textwallet {
+        width: 300px !important; 
+        margin-left: 32%
+    }
 
-
-    .footer-div {
+    #footer-div {
         top:960px;
-        width: 94%;
-        left: 2%;
-        margin: 0%
+        width: 96%;
+        margin-left: 0% !important;
+        left: 0 !important;
+        margin-top: 100px;
     }
     .footer-paragraph {
         font-size: 18px;
@@ -1036,7 +1037,7 @@ form#setting-make-wallet button p {
         z-index: 2;
     }
     .Logo_header {
-        width: 200px;
+        width: 300px ;
         height: 90px;
         position: absolute;
         left: 20px;
@@ -1049,17 +1050,6 @@ form#setting-make-wallet button p {
         display: none
     }
 
-    .useraccount {
-        margin-left: 82%
-    }
-    .useraccount .list {
-        height: 345px
-    } 
-    #logouticon {
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        border-bottom: transparent
-    }
     #dashboard:before {
         content: "";
         background-image: url("img/Dashboard.svg");
@@ -1120,52 +1110,213 @@ form#setting-make-wallet button p {
         top: 800px
     }
 
-/* Footer */
+    /* Setting Page */
 
-    .footer-div {
-        width: 10% !important;
-        position: absolute;
-        top: 960px;
-        left: 2%;
-        margin: 0%
+    #setting-page {
+        width: 100%;
+        margin-top: 200px;
+    }
+    
+    #setting-page .setting-flex .flex-item a {
+        font-size: 15px;
     }
 
-    #footer-image {
+    /* ------------setting-information---------- */
+
+    .setting-information q:nth-of-type(1) {
+        font-size: 20px;
+        margin-left: 14%;
+    }
+
+    .setting-information q:nth-of-type(1):before {
+        width: 25px;
+        height: 25px;
+        margin-left: -7.8%;
+        margin-top: -1.3%
+    }
+
+    .setting-information input#text {
+        width: 150px;
+    }
+
+    .setting-information #textbefore {
+        font-size: 18px;
+    }
+    .setting-information input#email {
+        width: 150px;
+    }
+
+
+    .setting-information q:nth-of-type(2) {
+        font-size: 23px;
+        margin-left: 14%;
+    }
+
+    .setting-information q:nth-of-type(2):before {
+        content: '';
+        width: 30px;
+        height: 30px;
+        margin-left: -8%
+    }
+
+    .setting-information input#cur-password {
+        width: 150px;
+        margin-left: 15%;
+    }
+
+    .setting-information input#newpassword {
+        width: 150px;
+        margin-left: 15%;
+    }
+
+    .setting-information input#Confirmpassword {
+        width: 150px;
+    }
+
+    .setting-information input#submit
+    {
+        margin-top: 4%
+    }
+    .setting-information input::placeholder { font-size: 15px}
+
+
+    /* Wallet 1 */
+    .wallet1 {
+        display: none;
+    }
+    .wallet1 p {
+        font-size: 15px;
+    }
+
+    .wallet1 q {
+        font-size: 25px;
+    }
+
+    .wallet1 blockquote {
+        margin: 7% 27%;
+        font-size: 15px
+    }
+
+   
+    #setting-wallet #textwallet {
+        width: 200px !important; 
+        margin-left: 27% !important
+    }
+
+
+    .wallet1 input#buttonwallet {
+        width: 100px !important;
+        height: 40px;
+        margin-left:40%;
+        font-size: 18px;
+        margin-top: 10%;
+    }
+    /* ----------Make Wallet----------- */
+
+    .make-wallet {
+        display: none
+    }
+    #make-wallet-title {
+        font-size:20px;
+        margin-left: 15%;
+    }
+
+    .address .address-img {
+        width: 100px;
+        height: 100px;
+        left: 10px
+    }
+
+
+    .address-box {
+        position: relative;
+        left: 40px;
+    }
+
+    .address-box input {
+        width: 200px;
+        left: 100px;
+    }
+
+    .address-box input::placeholder {
+        text-align: center;
+        font-size: 13px
+    }
+
+    .change-address {
+        top: 170px;
+        margin-left: 100px;
+    }
+
+    .change-address input {
+        width:200px;
+        left: 00px;
+        top: -70px;
+    }
+
+    .change-address input::placeholder {
+        font-size:13px
+    }
+
+    #make-wallet-title2 {
+        font-size: 18px;
+        top: 190px;
+        margin-left: 17%;
+    }
+
+
+    .make-wallet input#makewalletsubmit {
+        width: 100px !important;
+        height: 40px !important;
+        left:50px;
+        top: 60px;
+    }
+
+
+/* Footer */
+    #makewallet-footer-div {
+        margin-top: 500px
+
+    }
+    #footer-div {
+        width: 96% !important;
+        margin-left: 0%;
+        display: block;
+        margin-top: 400px !important
+    }
+
+    #setting-footer-image {
         width: 150px;
         height: 75px;
     }
 
-    .footer-paragraph {
+    .setting-footer-paragraph {
         font-size: 15px;
         font-family: sans-serif;
-        position: absolute;
-        top: -60px;
-        left: 0px;
+        top: 0px;
         width: 260px
     }
 
 }
 
 
-/* Contact - Media - 375 */
+/*  - Media - 375 */
 @media screen and (max-width: 375px) {
-    
-    
-    .useraccount {
-        margin-left: 78%
-    }
-    
-    .useraccount .list {
-        height: 250px
-    } 
-        
-    
-    .useraccount .list ul li {
-        width: 200px;
-        padding-bottom: 10px;
-        padding-top: 4px;
+    .Logo_header {
+        width: 100px !important;
+        height: 90px;
+        position: absolute;
+        left: 10px;
     }
 
+    .useraccount {
+        margin-left: 80%
+    }
+            
+    #header-div a img{
+        width: 100px !important;
+
+    }
     #dashboard:before {
         content: "";
         background-image: url("img/Dashboard.svg");
@@ -1221,26 +1372,84 @@ form#setting-make-wallet button p {
         left: -25px;
         top: 0px
     }
+        
+    #setting-hr-footer {
+        width: 100%;
+        display: block;
+    }
 
-    .footer-paragraph {
-        font-size: 13px;
-        font-family: sans-serif;
-        position: absolute;
+    .wallet1 {width: 250px;margin-left: 0}
+
+    .wallet1 p {
+        font-size: 15px;
+        width:200px
+    }
+
+    .wallet1 q {
+        width:200px;
+        font-size: 20px;
+    }
+
+    .wallet1 blockquote {
+        margin: 7% 27%;
+        font-size: 15px
+    }
+
+   
+    #setting-wallet #textwallet {
+        width: 170px !important; 
+        margin-left: 20% !important
+    }
+
+
+    .wallet1 input#buttonwallet {
+        width: 100px !important;
+        height: 40px;
+        margin-left:43%;
+        font-size: 18px;
+        margin-top: 15%;
+    }
+
+    .make-wallet input#makewalletsubmit {
+        left:50px;
+        top: 60px;
+    }
+    #makewallet-footer-div {
+        margin-top: 500px
+
+    }
+    #footer-div {
+        margin-top: 100px
+    }
+
+    .setting-footer-paragraph {
+        font-size:15px;
         top: -60px;
-        left: 0px;
-        width: 260px
+        margin-left: 10%
+    }
+
+    #setting-footer-image {
+        width: 150px;
+        height: 100px;
     }
 }
 
 /* Contact - Media - 320 */
 @media screen and (max-width:320px) {
     .Logo_header {
-        width: 200px;
+        width: 100px !important;
         height: 90px;
         position: absolute;
         left: 10px;
     }
-   
+            
+    #header-div a img{
+        width: 100px !important;
+
+    }
+    .useraccount {
+        margin-left:80%;
+    }
 
     #dashboard:before {
         content: "";
@@ -1298,24 +1507,127 @@ form#setting-make-wallet button p {
         top: 0px
     }
 
-    .footer-div {
-        width: 94%;
-        left: 0%;
-        position: absolute;
-        top: 960px
+    
+    /* Wallet 1 */
+    .wallet1 {
+        display: none;
+        width: 200px !important;
+        margin-left: 10%
+    }
+    .wallet1 p {
+        font-size: 12px;
+        margin-left: 0 !important;
+        text-align: center;
     }
 
-    .footer-paragraph {
-        font-size: 13px;
-        margin-left: 0;
-        left: 0px;
-        width: 230px
+    .wallet1 q {
+        margin-left: 30% !important;
+        text-align: center;
+        font-size: 20px;
     }
 
-    #footer-image {
+    .wallet1 blockquote {
+        margin: 7% 0%;
+        font-size: 15px
+    }
+
+    #setting-wallet #textwallet{
+        width: 150px !important;
+        margin-left: 3% !important
+    }
+
+
+    .wallet1 input#buttonwallet {
+        width: 80px !important;
+        height: 40px;
+        margin-left:20% !important;
+        font-size: 18px;
+        margin-top: 22%;
+    }
+    /* ----------Make Wallet----------- */
+
+    .make-wallet {
+        display: none
+    }
+    #make-wallet-title {
+        font-size:15px;
+        margin-left: 12%;
+    }
+
+    .address .address-img {
         width: 100px;
-        height: 50px;
+        height: 100px;
+        left: 100px;
+        top: 20px;
+
     }
+
+
+    .address-box {
+        position: relative;
+        left: 40px;
+        top: 100px
+    }
+
+    .address-box input {
+        width: 200px;
+        left: 20px;
+    }
+
+    .address-box input::placeholder {
+        font-size: 12px
+    }
+
+    .change-address {
+        top: 200px;
+        margin-left:60px;
+    }
+
+    .change-address input {
+        width:200px;
+        top: -70px;
+    }
+
+    .change-address input::placeholder {
+        font-size:12px
+    }
+
+    #make-wallet-title2 {
+        font-size: 13px;
+        top: 230px;
+        margin-left: 17%;
+    }
+
+    .make-wallet input#makewalletsubmit {
+        left:50px;
+        top: 60px;
+    }
+    #makewallet-footer-div {
+        width: 100%;
+        margin-left: 0%;
+        margin-top:600px
+    }
+        
+    #footer-div {
+        width: 100%;
+        margin-left: 0%;
+        margin-top: 100px
+
+    }
+
+
+    .setting-footer-paragraph {
+        font-size: 12px;
+        font-family: sans-serif;
+        top: -60px;
+        margin-left: 10%
+        
+    }
+
+    #setting-footer-image {
+        width: 100px !important;
+        height: 100px;
+    }      
 
 }
 

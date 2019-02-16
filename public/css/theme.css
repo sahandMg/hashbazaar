@@ -88,6 +88,10 @@ a {
   padding: 4px 10px 4px 10px;
   border-radius: 4%;
   transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all 1.5s eases;
+    
   font-weight: bolder;
   cursor: pointer;
 

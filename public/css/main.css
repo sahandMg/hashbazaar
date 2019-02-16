@@ -37,7 +37,10 @@
     border-bottom: 18px solid white;
     margin-left: 140px;
     top:-18px;
-    transition: all 1s
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
 
 }
 
@@ -53,6 +56,9 @@
     font-family: sans-serif;
     font-weight: bold;
     transition: all .5s ease-in;
+    -webkit-transition: all .5s ease-in;
+    -moz-transition: all .5s ease-in;
+    -ms-transition: all .5s ease-in;
     cursor: pointer;
 
 }
@@ -902,6 +908,9 @@ form#setting-make-wallet button p {
         list-style-type: none !important;
         text-decoration: none !important;
         transition: all .1s;
+        -webkit-transition: all .1s;
+        -moz-transition: all .1s;
+        -ms-transition: all .1s;
     }
 
     .sub2 #contact:hover , #dashboard:hover , #activity:hover , #referral:hover , 

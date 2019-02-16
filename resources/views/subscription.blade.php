@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Hash Bazar</title>
-    <link rel="icon" href="img/TabLogo.png">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
-    <link rel="stylesheet" href="fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="css/theme.css">
+@extends('master.layout')
+@section('content')
 
-</head>
-<body style="background: white">
-        <header id="subscriptionHeader" class="masthead backgroundGrey"  >
             <div class="intro-body" >
                 <div class="container"  style=" background : center no-repeat url('img/LOGO-Transparent.png'); background-size: contain">
                     <div class="row">
@@ -49,5 +36,4 @@
 
   gtag('config', 'UA-131063343-1');
 </script>
-</body>
-</html>
+@endsection

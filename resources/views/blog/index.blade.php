@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/blog.css">
+@extends('master.layout')
+@section('content')
+{{--<!DOCTYPE html>--}}
+{{--<html lang="en">--}}
+{{--<head>--}}
+    {{--<meta charset="UTF-8">--}}
+    {{--<meta name="viewport" content="width=device-width, initial-scale=1.0">--}}
+    {{--<meta http-equiv="X-UA-Compatible" content="ie=edge">--}}
+    {{--<link rel="stylesheet" href="css/blog.css">--}}
 
-    <title>Document</title>
-</head>
-<body>
+    {{--<title>Document</title>--}}
+{{--</head>--}}
+{{--<body>--}}
 <div class="blog-container">
     <div class="blog-grid-item one" onclick="rotate(this)" onmouseout="toBack(this)">
         <img class="blog-image frontside" src="img/swatch.jpg" alt="">
@@ -72,5 +74,4 @@
 
 
 </script>
-</body>
-</html>
+@endsection

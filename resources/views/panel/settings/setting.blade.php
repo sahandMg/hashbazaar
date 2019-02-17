@@ -1,6 +1,6 @@
 @extends('panel.master.layout')
 @section('content')
-<link rel="stylesheet" href="/public/js/jquery-3.3.1.js">
+<script src="/public/js/jquery-3.3.1.js"></script>
 <!-- ---------------------------------------------------------------------------------------------- -->
 
 <div id="setting-page">

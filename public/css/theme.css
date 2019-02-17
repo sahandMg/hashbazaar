@@ -84,7 +84,6 @@ a {
 
 }
 
-
 #lg , #sg {
   display: block;
   height: 110%;
@@ -125,58 +124,8 @@ a {
   top: 0px !important;
   position: relative;
 }
-/*#priceCompare .container {
-  box-sizing: border-box;
-  display: grid;
-  display: -ms-grid;
-  display: -o-grid;
-  display: -webkit-grid;
-  grid-template-columns: repeat(2,1fr);
-  grid-template-rows: repeat(1,1fr);
-  grid-gap: 20px ;
-}*/
-/*#priceCompare .container #text {
-  color: black;
-  line-height: 2.5;  
-  text-align: left;
-  font-family: sans-serif;
-}
-
-#priceCompare  #title {
-  font-size : 30px;
-  text-align: left !important;
-  font-weight: bolder !important;
-  
-}*/
 
 
-
-/*#priceCompare #price {
-  left: 0 !important;
-  justify-content: left !important;
-  justify-items: left !important;
-}*/
-/*#sharePlan  {*/
-  /*position: relative;
-  top: 80px*/;
-/*}*/
-/* #priceCompare{
-  top: 80px;
-  position: relative;
-} */
-/*#priceCompare h3 {
-      font-size: 1.7rem;
-}*/
-
-/*#contact {
-  position: relative;
-  top: 80px;
-}*/
-
-/*footer {
-  position: relative;
-  top: 80px;
-}*/
 header h1 { font-size: 50px }
 small {font-size: 100%;}
 h3 { font-size: 50px }
@@ -211,15 +160,7 @@ header img { height: 175px;margin-bottom: 4%; }
       padding-left: 0px
     }
     
-  /* .container #text {
-    width: 500px !important ; 
-    margin-left: 600px;
-  }
-
-  #price {
-    width: 570px !important;
-    height: 500px;
-  } */
+ 
 }
 @media only screen and (max-width: 1024px) {
     header img { height: 100px; }
@@ -238,14 +179,9 @@ header img { height: 175px;margin-bottom: 4%; }
     margin-left: 3%;
     
   }
-    
-  
  
   #price {
-    /* width: 400px !important; */
-    /* margin-left: -510px !important; */
     left: 0 !important;
-    /* margin-top: -300px !important; */
   }
      
 }

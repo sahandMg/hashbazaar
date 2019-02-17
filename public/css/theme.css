@@ -258,12 +258,15 @@ header img { height: 175px;margin-bottom: 4%; }
        background: black;;
        height: 360px;
        text-align: left;
-       left: -15px;
+       left: 0px;
        top: 82px;
        flex: 10;
-       width: 100%;
+       width: 100% !important;
        display: none;
-       margin-left: -95px;
+       margin-left: -105px;
+       border-bottom-left-radius: 8%;
+       border-bottom-right-radius: 5%;
+
 
      }
      #header-navbar-menu  ul 
@@ -290,13 +293,19 @@ header img { height: 175px;margin-bottom: 4%; }
        right: 25px;
      }
       .signup {
-       border: thin solid transparent
+       border: thin solid transparent;height:50px;
+       border:transparent !important
      }
 
      .login {
        background: white;
-       color: #43A047
+       color: #43A047;height:50px;
     }
+
+       .a {
+         padding-left: 10px
+       }
+       #lg , #sg {height:50px;}
 
 
     .navigation-menu .bar1, .bar2, .bar3 {
@@ -359,8 +368,18 @@ header img { height: 175px;margin-bottom: 4%; }
     header h1 { font-size: 20px }
      h3 { font-size: 20px }
      #header-navbar-menu {
-      left: -15px;
-      margin-left: -80px;
+      background: black;;
+      height: 360px;
+      text-align: left;
+      left: 0px;
+      top: 82px;
+      flex: 10;
+      width: 100% !important;
+      display: none;
+      margin-left: -95px;
+      border-bottom-left-radius: 0%;
+      border-bottom-right-radius: 0%;
+
 
     }
 
@@ -424,9 +443,9 @@ header img { height: 175px;margin-bottom: 4%; }
      #header-navbar-menu {
       left: -0px;
       margin-left: -50px;
-      height: 270px;
-      border-bottom-left-radius: 15px;
-      border-bottom-right-radius: 5px
+      height: 275px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius:0px
 
     }
 
@@ -466,8 +485,8 @@ header img { height: 175px;margin-bottom: 4%; }
     left: -0px;
     margin-left: -40px;
     height: 270px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 5px
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px
 
   }
 
@@ -514,8 +533,8 @@ header img { height: 175px;margin-bottom: 4%; }
     left: -0px;
     margin-left: -45px;
     height: 270px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 5px
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px
 
   }
 

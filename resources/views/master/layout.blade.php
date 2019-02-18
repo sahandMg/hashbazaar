@@ -74,12 +74,12 @@
             s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
 
             $(document).ready(function(){
-            $('.navigation-menu').click(function(){
-                $('#header-navbar-menu').toggle();
-                $('.login').show();
-                $('.signup').show();
+                $('.navigation-menu').click(function(){
                 $('.navigation-menu').toggleClass('change');
-            })
+                $('#header-navbar-menu').toggle(9990000000000000000)
+                // $('.login').show();
+                // $('.signup').show();
+                })
         });
      </script>
 

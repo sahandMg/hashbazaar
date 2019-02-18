@@ -1563,7 +1563,7 @@ header {
  {
      display: flex;
      flex-flow: row wrap;
-     overflow-y: scroll;
+     /* overflow-y: scroll; */
      height: 250px;
      margin-top: 80px !important;
      width: 960px;
@@ -1576,7 +1576,7 @@ header {
     margin: 15% 35%
 }
 
- #activity-page_secondList_column
+ .activity-page_secondList_column
 {
     flex-grow: 1;
     margin-top: 10px;
@@ -1612,12 +1612,12 @@ header {
  {
      display: flex;
      flex-flow: row wrap;
-     overflow-y: scroll;
+     /* overflow-y: scroll; */
      margin-top: 70px;
      width: 970px;
      height: 300px;
  }
-#activity-page_secondList_column .remain {
+.activity-page_secondList_column .remain {
 
     border: 1px solid black;
     height: 25px;
@@ -1626,13 +1626,13 @@ header {
     color: white;
 }
 
-#activity-page_secondList_column .remain .progress {
+.activity-page_secondList_column .remain .progress {
     width:98%;
     background-color: orange;
     height: 100%;
 
 }
- #activity-page_thirdList_column
+ .activity-page_thirdList_column
 {
     flex-grow: 1;
     margin-top: 10px;
@@ -1792,7 +1792,7 @@ header {
        font-size: 25px;
     }
      
-    #activity-page_secondList_column
+    .activity-page_secondList_column
     {
         top: 450px;
         font-size: 20px;
@@ -1802,7 +1802,7 @@ header {
     {
       display: flex;
       flex-flow: row wrap;
-      overflow-y: scroll;
+      /* overflow-y: scroll; */
       height: 300px;
       margin-top: 0px;
       width: 730px
@@ -1814,7 +1814,7 @@ header {
         font-size: 20px;
     }
 
-    #activity-page_secondList_column
+    .activity-page_secondList_column
     {
     flex-grow: 1;
     margin-top: 50px;
@@ -1830,7 +1830,7 @@ header {
       height: 30px;
       font-size: 25px;
     }
-   #activity-page_thirdList_column
+   .activity-page_thirdList_column
     {
        top: 450px;
        font-size: 20px;
@@ -1840,12 +1840,12 @@ header {
     {
         display: flex;
         flex-flow: row wrap;
-        overflow-y: scroll;
+        /* overflow-y: scroll; */
         height: 300px;
         top: 480px;
         width: 730px;
     }
-    #activity-page_thirdList_column
+    .activity-page_thirdList_column
    {
        flex-grow: 1;
        top: 200px;
@@ -1985,7 +1985,7 @@ header {
         margin: 15% 35%
     }
 
-    #activity-page_secondList_column
+    .activity-page_secondList_column
    {
        top: 160px;
        font-size: 20px;
@@ -2004,7 +2004,7 @@ header {
       font-size: 27px;
    }
 
-    #activity-page_thirdList_column
+    .activity-page_thirdList_column
    {
        top: 120px;
        font-size: 22px;
@@ -2152,7 +2152,7 @@ header {
         display: -o-flex;
         flex-flow: column wrap
     }
-    #activity-page_secondList_column
+    .activity-page_secondList_column
     {
         top: 00px;
         font-size: 15px;
@@ -2160,15 +2160,15 @@ header {
         position: absolute;
     }
 
-    #activity-page_secondList_column:nth-of-type(2){
+    .activity-page_secondList_column:nth-of-type(2){
         margin-top: 300px
     }
 
-    #activity-page_secondList_column:nth-of-type(3){
+    .activity-page_secondList_column:nth-of-type(3){
         margin-top: 350px
     }
 
-    #activity-page_secondList_column:nth-of-type(4){
+    .activity-page_secondList_column:nth-of-type(4){
         margin-top: 400px
     }
 
@@ -2192,19 +2192,19 @@ header {
         width: 400px;
         flex-flow: row wrap;
     }
-    #activity-page_thirdList_column
+    .activity-page_thirdList_column
     {
         font-size: 21px;
         position: absolute;
         margin-top: 530px
     }
 
-    #activity-page_thirdList_column:nth-of-type(1) ul li {
+    .activity-page_thirdList_column:nth-of-type(1) ul li {
         position: absolute;
         margin-top: -10px;
         margin-left: 60px
     }
-    #activity-page_thirdList_column ul li:nth-of-type(1) {
+    .activity-page_thirdList_column ul li:nth-of-type(1) {
         position: absolute;
         margin-top: -18px !important;
         margin-left: 160px;
@@ -2212,15 +2212,15 @@ header {
         font-size: 18px;
     }
 
-    #activity-page_thirdList_column:nth-of-type(2) {
+    .activity-page_thirdList_column:nth-of-type(2) {
         margin-top: 590px
     }
 
-    #activity-page_thirdList_column:nth-of-type(3) {
+    .activity-page_thirdList_column:nth-of-type(3) {
         margin-top: 650px
     }
     
-    #activity-page_thirdList_column:nth-of-type(4) {
+    .activity-page_thirdList_column:nth-of-type(4) {
         margin-top: 710px
     }
     
@@ -2367,14 +2367,14 @@ header {
         width: 360px;
         height: 300px
     }
-    #activity-page_secondList_column
+    .activity-page_secondList_column
     {
        top: 00px;
        font-size: 15px;
        margin-top: 80px
     }
 
-    #activity-page_secondList_column
+    .activity-page_secondList_column
     {
         top: 00px;
         font-size: 15px;
@@ -2382,7 +2382,7 @@ header {
         position: absolute;
     }
 
-    #activity-page_thirdList_column ul li:nth-of-type(1) {
+    .activity-page_thirdList_column ul li:nth-of-type(1) {
         position: absolute;
         margin-top: -18px !important;
         margin-left: 120px;
@@ -2410,7 +2410,7 @@ header {
        top:470px;
         width: 360px;
     }
-    #activity-page_thirdList_column
+    .activity-page_thirdList_column
     {
        font-size: 17px;
     }
@@ -2522,7 +2522,7 @@ header {
         margin-left: 120px;
     }
 
-    #activity-page_thirdList_column ul li:nth-of-type(1) {
+    .activity-page_thirdList_column ul li:nth-of-type(1) {
         position: absolute;
         margin-top: -18px !important;
         margin-left: 120px;
@@ -2683,10 +2683,10 @@ body {
      flex-flow: row wrap;
      height: 300px;
      margin-top: 30px;
-     overflow-y: scroll
+     /* overflow-y: scroll; */
  }
 
- #Hash-History_column
+ .Hash-History_column
 {
     flex-grow: 1;
     margin-top: 30px;
@@ -2699,7 +2699,7 @@ body {
     display: block
 }
 
-#Hash-History_column ul li {
+.Hash-History_column ul li {
     font-weight: normal !important;
     width: 150px;
     top: 30px;
@@ -2709,7 +2709,7 @@ body {
     font-weight: bold;
 }
 
-#Hash-History_column  li:nth-of-type(1) {
+.Hash-History_column  li:nth-of-type(1) {
     top: 30px;
 }
 
@@ -3010,21 +3010,21 @@ body {
         height: 300px;
     }
 
-    #Hash-History_column
+    .Hash-History_column
     {
         margin-top: 30px;
         font-size: 15px;
         margin-left: 5%;
     }
 
-    #Hash-History_column ul li {
+    .Hash-History_column ul li {
         width: 80px;
         margin-top: 30px;
         font-size: 13px;
         height: 70px;
     }
 
-    #Hash-History_column .remain li {
+    .Hash-History_column .remain li {
         width: 100px;
         border: 1px solid ;
         height: 35px;
@@ -3150,14 +3150,14 @@ body {
          flex-flow: row wrap;
      }
 
-     #Hash-History_column
+     .Hash-History_column
     {
         flex-grow: 1;
         margin-top: 20px;
         margin-left: 5%;
     }
 
-    #Hash-History_column ul li {
+    .Hash-History_column ul li {
         width: 150px;
         font-size: 16px;
         height: 70px;
@@ -3336,7 +3336,7 @@ body {
          flex-flow: row wrap;
      }
 
-     #Hash-History_column
+     .Hash-History_column
     {
         flex-grow: 1;
         top: 200px;
@@ -3348,7 +3348,7 @@ body {
         text-align: left;
     }
 
-    #Hash-History_column ul li {
+    .Hash-History_column ul li {
         font-weight: normal !important;
         width: 60px;
         top: 30px;
@@ -3358,7 +3358,7 @@ body {
         font-weight: bold;
     }
 
-    #Hash-History_column  li:nth-of-type(1) {
+    .Hash-History_column  li:nth-of-type(1) {
         top: 30px;
     }
 
@@ -3544,7 +3544,7 @@ body {
 
 
 
-     #Hash-History_column
+     .Hash-History_column
     {
         flex-grow: 1;
         /* position: relative; */
@@ -3559,7 +3559,7 @@ body {
     }
 
 
-    #Hash-History_column ul li {
+    .Hash-History_column ul li {
         font-weight: normal !important;
         width: 55px;
         top: 30px;
@@ -3570,7 +3570,7 @@ body {
         font-weight: bold;
     }
 
-    #Hash-History_column  li:nth-of-type(1) {
+    .Hash-History_column  li:nth-of-type(1) {
         top: 30px;
         /* position: relative; */
     }
@@ -3766,7 +3766,7 @@ body {
 
 
 
-     #Hash-History_column
+     .Hash-History_column
     {
         flex-grow: 1;
         /* position: relative; */
@@ -3783,7 +3783,7 @@ body {
         width: 300px
     }
 
-    #Hash-History_column ul li {
+    .Hash-History_column ul li {
         font-weight: normal !important;
         width: 85px;
         top: 30px;
@@ -3796,7 +3796,7 @@ body {
     }
     
 
-    #Hash-History_column  li:nth-of-type(1) {
+    .Hash-History_column  li:nth-of-type(1) {
         top: 30px;
         /* position: relative; */
     }

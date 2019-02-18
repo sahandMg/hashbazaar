@@ -20,7 +20,7 @@
     background-color: black !important;
 }
 .useraccount .list  {
-    margin-left: -740px
+    margin-left: -700px
 }
 .useraccount .list:after {
     content: '';
@@ -51,6 +51,7 @@
 .useraccount .list ul li a {
     width:400px !important;
     position: relative;
+    margin-left: 190px
 }
 #logouticon {
     border-bottom-left-radius: 0px;
@@ -76,7 +77,7 @@
     background-image: url("../img/sign-out-alt-solid.svg");
     background-size: 100% 100%;
     position: absolute;
-    left: 31.5vh !important;
+    left: 31.5vh ;
     top: 0vh !important;
 }
 #logouticon:hover:before {background-color: transparent;
@@ -102,7 +103,10 @@ border: transparent}
     color: orange;
     font-size: 20px;
     text-decoration: none !important;
+    display: block
 }
+
+.navigation-menu{height:30px !important}
 /* CONTACT */
 
 .mainContainer
@@ -545,7 +549,7 @@ color: orange !important}
     height: 60px !important;
     margin-left: 43% !important ;
     margin-top: 5% !important;
-    padding: .475rem 2rem !important;
+    /* padding: .475rem 2rem !important; */
     font-size: 1.2rem !important;
     line-height: 1.5 !important;
     border-radius: .25rem !important;
@@ -935,7 +939,7 @@ color: orange !important}
             height: 25px;
             background-size: 100% 100%;
             position: absolute;
-            left: -3.5vh;
+            left: 100px ;
             top: 0px;
             z-index: 100;
         }
@@ -947,7 +951,7 @@ color: orange !important}
             height: 25px;
             background-size: 100% 100%;
             position: absolute;
-            left: -5vh;
+            left: 100px ;
             top: 0px;
             z-index: 100;
         }
@@ -959,7 +963,7 @@ color: orange !important}
             height: 25px;
             background-size: 100% 100%;
             position: absolute;
-            left: -5vh;
+            left: 100px ;
             top: 0px;
             z-index: 100;
         }
@@ -971,7 +975,7 @@ color: orange !important}
             height: 25px;
             background-size: 100% 100%;
             position: absolute;
-            left: -5.4vh;
+            left: 100px ;
             top: 0px;
             z-index: 100;
         }
@@ -983,9 +987,21 @@ color: orange !important}
             height: 25px;
             background-size: 100% 100%;
             position: absolute;
-            left: -5vh;
+            left: 100px ;
             top: 0px;
             z-index: 100;
+        }
+
+        #logouticon:before{
+            content: '';
+            display: block;
+            width: 25px;
+            height: 25px;
+            background-image: url("../img/sign-out-alt-solid.svg");
+            background-size: 100% 100%;
+            position: absolute;
+            left: 290px !important;
+            top: 0vh !important;
         }
     /*  */
     body {
@@ -1142,13 +1158,14 @@ color: orange !important}
         /* top: 80px; */
         margin-top: 83px
     }
-
+    .useraccount .list ul li a {
+        margin-left:0px
+    }
     .useraccount {margin-left: 85% !important}
     .navigation-menu {
         margin-top: 20px;
     }
 
-    #logouticon:before {left: 18.3vh !important;}
     /*  */
     body {
         background-color: #FFFDE8
@@ -1175,62 +1192,77 @@ color: orange !important}
         display: none
     }
 
-    #dashboard:before {
+    #dashboard2:before {
         content: "";
-        background-image: url("img/Dashboard.svg");
-        width: 20px;
-        height: 20px;
+        background-image: url("../img/Dashboard.svg");
+        width: 25px;
+        height: 25px;
         background-size: 100% 100%;
         position: absolute;
-        left: -30px;
-        top: 0px
+        left: 14.5vh;
+        top: 0px;
+        z-index: 100;
     }
-
-    #activity:before {
-        content: "";
-        background-image: url("img/Activity.svg");
-        width: 20px;
-        height: 20px;
+    
+    #activity2:before {
+        content: '';
+        background-image: url("../img/Activity.svg");
+        width: 25px;
+        height: 25px;
         background-size: 100% 100%;
         position: absolute;
-        left: -30px;
-        top: 0px
+        left: 14.5vh;
+        top: 0px;
+        z-index: 100;
     }
-
-
-    #referral:before {
+    
+    #referral2:before {
         content: "";
-        background-image: url("img/Referral.svg");
-        width: 20px;
-        height: 20px;
+        background-image: url("../img/Referral.svg");
+        width: 25px;
+        height: 25px;
         background-size: 100% 100%;
         position: absolute;
-        left: -30px;
-        top: 0px
+        left: 14.5vh;
+        top: 0px;
+        z-index: 100;
     }
-
-    #setting:before {
+    
+    #setting2:before {
         content: "";
-        background-image: url("img/Setting.svg");
-        width: 20px;
-        height: 20px;
+        background-image: url("../img/Setting.svg");
+        width: 25px;
+        height: 25px;
         background-size: 100% 100%;
         position: absolute;
-        left: -30px;
-        top: 0px
+        left: 14.5vh;
+        top: 0px;
+        z-index: 100;
     }
-
-    #contact:before {
+    
+    #contact2:before {
         content: "";
-        background-image: url("img/contact.svg");
-        width: 20px;
-        height: 20px;
+        background-image: url("../img/contact.svg");
+        width: 25px;
+        height: 25px;
         background-size: 100% 100%;
         position: absolute;
-        left: -30px;
-        top: 0px
+        left: 14.5vh;
+        top: 0px;
+        z-index: 100;
     }
 
+    #logouticon:before{
+        content: '';
+        display: block;
+        width: 25px;
+        height: 25px;
+        background-image: url("../img/sign-out-alt-solid.svg");
+        background-size: 100% 100%;
+        position: absolute;
+        left: 14.5vh !important;
+        top: 0vh !important;
+    }
     .hr-footer {
         top: 800px
     }
@@ -1443,64 +1475,69 @@ color: orange !important}
         width: 200px !important;
 
     }
-    #logouticon:before {left: 15.7vh !important;}
-
-    #dashboard:before {
-        content: "";
-        background-image: url("img/Dashboard.svg");
-        width: 17px;
-        height: 17px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -25px;
-        top: 0px
+    #logouticon:before{
+        left: 100px !important;
     }
 
-    #activity:before {
+    #dashboard2:before {
         content: "";
-        background-image: url("img/Activity.svg");
-        width: 17px;
-        height: 17px;
+        background-image: url("../img/Dashboard.svg");
+        width: 25px;
+        height: 25px;
         background-size: 100% 100%;
         position: absolute;
-        left: -25px;
-        top: 0px
+        left: 100px;
+        top: 0px;
+        z-index: 100;
     }
-
-
-    #referral:before {
-        content: "";
-        background-image: url("img/Referral.svg");
-        width: 17px;
-        height: 17px;
+    
+    #activity2:before {
+        content: '';
+        background-image: url("../img/Activity.svg");
+        width: 25px;
+        height: 25px;
         background-size: 100% 100%;
         position: absolute;
-        left: -25px;
-        top: 0px
+        left: 100px;
+        top: 0px;
+        z-index: 100;
     }
-
-    #setting:before {
+    
+    #referral2:before {
         content: "";
-        background-image: url("img/Setting.svg");
-        width: 17px;
-        height: 17px;
+        background-image: url("../img/Referral.svg");
+        width: 25px;
+        height: 25px;
         background-size: 100% 100%;
         position: absolute;
-        left: -25px;
-        top: 0px
+        left: 100px;
+        top: 0px;
+        z-index: 100;
     }
-
-    #contact:before {
+    
+    #setting2:before {
         content: "";
-        background-image: url("img/contact.svg");
-        width: 17px;
-        height: 17px;
+        background-image: url("../img/Setting.svg");
+        width: 25px;
+        height: 25px;
         background-size: 100% 100%;
         position: absolute;
-        left: -25px;
-        top: 0px
+        left: 100px;
+        top: 0px;
+        z-index: 100;
     }
-        
+    
+    #contact2:before {
+        content: "";
+        background-image: url("../img/contact.svg");
+        width: 25px;
+        height: 25px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: 100px;
+        top: 0px;
+        z-index: 100;
+    }
     #setting-hr-footer {
         width: 100%;
         display: block;
@@ -1579,7 +1616,11 @@ color: orange !important}
         margin-left:80%;
     }
 
-    #logouticon:before {left: 11.7vh !important;}
+    .useraccount .list ul li a {margin-left: -35px}
+
+    #logouticon:before{
+        left: 11.5vh !important;
+    }
 
     #dashboard:before {
         content: "";

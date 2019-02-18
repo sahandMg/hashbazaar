@@ -2175,7 +2175,7 @@ header {
     #activity-page_secondList div ul li {
         width: 120px;
         font-size: 13px;
-        margin-left: 200px;
+        margin-left: 140px;
         margin-top: -10px;
     }
 
@@ -2227,7 +2227,7 @@ header {
     #activity-page_thirdList div ul li {
         width: 120px;
         font-size: 13px;
-        margin-left: 60px;
+        margin-left: 130px;
     }
 
     .activity-hr-footer
@@ -3139,8 +3139,8 @@ body {
     }
 
     .dashboard-hr2-2  {
-        width: 42%;
-        margin-left: 64.5%;
+        width: 36.5% !important;
+        margin-left: 62.5%;
         margin-top: -15px
     }
 
@@ -3175,13 +3175,13 @@ body {
     }
 
     .dashboard-hr11 {
-        width: 37%;
+        width: 37% !important;
         margin-left: .5%
     }
 
     .dashboard-hr22-2 {
-        width: 38.5%;
-        margin-left: 67.5%;
+        width: 32.5% !important;
+        margin-left: 66% !important;
     }
 
     /*============================================== Mining History ===================================*/
@@ -3200,8 +3200,8 @@ body {
     }
 
     .dashboard-hr222-2 {
-        width: 40%;
-        margin-left: 66%;
+        width: 35.3% !important;
+        margin-left: 64%;
     }
 
     .dashboard-hr-footer
@@ -3715,7 +3715,6 @@ body {
         text-align: center;
         font-family: sans-serif;
         color: #727272;
-        /* position: absolute; */
         margin-top: 15%;
         font-weight: bolder;
         margin-left: 20%;
@@ -3726,7 +3725,6 @@ body {
         font-size: 18px !important;
         text-align: center;
         color: rgb(41, 37, 37);
-        /* position: relative; */
         top: 40%;
         font-weight: bolder;
         font-family: sans-serif
@@ -3734,8 +3732,7 @@ body {
 
     /* ==================================================HASH History============================== */
     #dashboard-page #dashboard-title {
-        /* position: absolute; */
-        margin-left: 35.5%;
+        margin-left: 34%;
         margin-top:-20px;
         font-family: sans-serif;
         font-size: 15px;
@@ -3751,25 +3748,21 @@ body {
     }
 
     .dashboard-hr2-2  {
-        width: 30%;
+        width: 28%;
         left: 0%;
         margin-top: -5px;
-        margin-left: 69%
+        margin-left: 63%
     }
 
     #Hash-History-list
      {
          display: flex;
          flex-flow: row wrap;
-         /* position: relative; */
      }
-
-
 
      .Hash-History_column
     {
         flex-grow: 1;
-        /* position: relative; */
         top: 200px;
         font-size: 15px;
         color: #2e2d2d;
@@ -3789,16 +3782,13 @@ body {
         top: 30px;
         font-size: 15px;
         height: 70px;
-        /* position: relative; */
         color: #2e2d2d;
         font-weight: bold;
         margin-top: 10px
     }
-    
 
     .Hash-History_column  li:nth-of-type(1) {
         top: 30px;
-        /* position: relative; */
     }
 
     .remain {
@@ -3810,7 +3800,6 @@ body {
     /* ==============================================Buy hash power=================================== */
 
     #dashboard-page #dashboard-title2 {
-        /* position: absolute; */
         margin-left: 30%;
         font-family: sans-serif;
         font-size: 16px;
@@ -3819,14 +3808,14 @@ body {
     }
 
     .dashboard-hr11 {
-        width: 26%;
+        width: 26% !important;
         left: -150px;
     }
 
     .dashboard-hr22-2 {
         display: block;
-        width: 27%;
-        margin-left: 71.2%;
+        width: 27.6% !important;
+        margin-left: 72.2% !important;
         margin-top: -8px
     }
 
@@ -3834,7 +3823,6 @@ body {
 
 
     #dashboard-page #dashboard-title3 {
-        /* position: absolute; */
         margin-left: 32.5%;
         font-family: sans-serif;
         font-size: 16px;
@@ -3847,7 +3835,7 @@ body {
 
     .dashboard-hr222-2 {
         display: block;
-        width: 29%;
+        width: 30.5% !important;
         margin-left: 69%;
         margin-top: -8px
     }
@@ -3856,19 +3844,12 @@ body {
         -moz-user-select: none;
         -webkit-user-select: none;
         -ms-user-select: none;
-        /* position: relative; */
         margin-top: 50px;
         width: 280px !important;
         height: 200px !important;
         margin-left: 5px
     }
 
-
-
-    .dashboard-hr2 {
-        width: 40%;
-        left: 30%;
-    }
 
     .dashboard-hr-footer
     {
@@ -3887,7 +3868,6 @@ body {
     .dashboard-footer-div {
         width: 100% !important;
         left: 0%;
-        /* position: absolute; */
         margin-top: 1270px
     }
 
@@ -3900,7 +3880,6 @@ body {
     .dashboard-footer-paragraph {
         font-size: 13px;
         font-family: sans-serif;
-        /* position: absolute; */
         top: -60px;
         margin-left:20px;
         width: 280px

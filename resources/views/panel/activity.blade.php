@@ -20,7 +20,7 @@ foreach ($hashes as $key=> $hash){
 
         <div id="activity-page_secondList">
             @if(!$hashes->isEmpty())
-                <div    id="activity-page_secondList_column">Hash Power
+                <div    class="activity-page_secondList_column">Hash Power
                     <ul>
                         @foreach($hashes as $hash)
                         <li>{{$hash->hash}} TH/S</li>
@@ -28,7 +28,7 @@ foreach ($hashes as $key=> $hash){
                     </ul>
                 </div><br><br>
 
-                <div id="activity-page_secondList_column">Started At
+                <div class="activity-page_secondList_column">Started At
                     <ul>
                         @foreach($hashes as $hash)
                         <li>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}}</li>
@@ -37,7 +37,7 @@ foreach ($hashes as $key=> $hash){
 
                 </div><br><br>
 
-                <div id="activity-page_secondList_column">Ends At
+                <div class="activity-page_secondList_column">Ends At
                     <ul>
                         @foreach($hashes as $hash)
 
@@ -47,7 +47,7 @@ foreach ($hashes as $key=> $hash){
                     </ul>
                 </div><br> <br>
 
-                <div id="activity-page_secondList_column">Remains
+                <div class="activity-page_secondList_column">Remains
                     {{-- style="width: 180px; margin: 0px auto" --}}
                     <ul>
                         @foreach($hashes as $key => $hash)
@@ -75,32 +75,34 @@ foreach ($hashes as $key=> $hash){
     <div class="Transactions">
         <q>Transactions </q>
         <div id="activity-page_thirdList">
-            <div id="activity-page_thirdList_column"> Date
+            <div class="activity-page_thirdList_column"> Date
                 <ul>
                     <li>10 Sep 2018</li>
 
                 </ul>
             </div>
 
-            <div id="activity-page_thirdList_column"> BTC
+            <div class="activity-page_thirdList_column"> BTC
                 <ul>
                     <li>0.01</li>
 
                 </ul>
             </div>
 
-            <div id="activity-page_thirdList_column"> Address
+            <div class="activity-page_thirdList_column"> Address
                 <ul>
                     <li>778dsadDSAB
                         Hhbjbdsa89dsax</li>
                 </ul>
             </div>
 
-            <div id="activity-page_thirdList_column"> Status
+            <div class="activity-page_thirdList_column"> Status
                 <ul>
                     <li>Pending</li>
                 </ul>
             </div>
+
+            
         </div>
     </div>
 
@@ -130,7 +132,26 @@ foreach ($hashes as $key=> $hash){
         $('.user-img').click(function(){
             $('.list').toggle(500);
         })
-    })
+    
+                    var activitySecondListNumItems = $('.activity-page_secondList_column').length;
+                    if( activitySecondListNumItems > 8){
+                        $('#activity-page_secondList').css('overflow-y' , "scroll")
+                    }
+                    else {
+                        $('#activity-page_secondList').css('overflow-y' , "hidden")
 
+                    }
+
+
+                    var activityThirdListNumItems = $('.activity-page_thirdList_column').length;
+                    if( activityThirdListNumItems > 8){
+                        $('#activity-page_thirdList').css('overflow-y' , "scroll")
+                    }
+                    else {
+                        $('#activity-page_thirdList').css('overflow-y' , "hidden")
+
+                    }
+
+    })
     // =---------------------------------------</script>
 @endsection

@@ -324,6 +324,42 @@ color: orange !important}
     left: -80px;
     top: 18px
 }
+
+
+.pandel-button {
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .475rem 2rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    color: #212529;
+    background-color: #42dca3;
+    border-color: #42dca3;
+    font-family: Cabin,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    text-transform: uppercase;
+    border-radius: 0;
+    border-radius: 100px 100px 100px 100px;
+    border: none;
+    display: block;
+    margin: auto;
+    margin-top: 3% ;
+    cursor: pointer;
+}
+
+    
+    .ws {margin-top: 15% !important;}
 /* Setting Page */
 
 #setting-page {

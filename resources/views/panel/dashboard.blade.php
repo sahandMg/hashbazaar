@@ -30,7 +30,7 @@
 
                         <div id="Hash-History-list">
                             @if(!$hashes->isEmpty())
-                            <div id="Hash-History_column"> Hash Power
+                            <div class="Hash-History_column"> Hash Power
                                 <ul>
                                    @foreach($hashes as $hash)
                                     <li>{{$hash->hash}} TH/S</li>
@@ -39,7 +39,7 @@
                             </div>
 
 
-                            <div id="Hash-History_column"> Started at
+                            <div class="Hash-History_column"> Started at
                                     <ul>
                                         @foreach($hashes as $hash)
                                             <li>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}} </li>
@@ -48,7 +48,7 @@
                                     </ul>
                             </div>
 
-                            <div id="Hash-History_column"> Ends at
+                            <div class="Hash-History_column"> Ends at
                                     <ul>
                                         @foreach($hashes as $hash)
                                             <li>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}</li>
@@ -57,7 +57,7 @@
                                     </ul>
                              </div>
 
-                            <div id="Hash-History_column"> Remain
+                            <div class="Hash-History_column"> Remain
                                      <ul>
                                          @foreach($hashes as $key => $hash)
 
@@ -80,9 +80,14 @@
 
                                     </ul>
                              </div>
+
+                             {{--  --}}
                             @else
                                 <p id="no-hash"> NO Hash History</p>
                             @endif
+                            {{--  --}}
+                          
+                          
                         </div>
 
              </div>
@@ -312,7 +317,15 @@
                         $('.list').toggle(500);
                     });
 
+                    var numItems = $('.Hash-History_column').length;
+                    // alert($('.Hash-History_column').length);
+                    if( numItems > 10){
+                        $('#Hash-History-list').css('overflow-y' , "scroll")
+                    }
+                    else {
+                        $('#Hash-History-list').css('overflow-y' , "hidden")
 
+                    }
                 });
 
                 var user = {!! json_encode(\Illuminate\Support\Facades\Auth::guard('user')->user()->code) !!}

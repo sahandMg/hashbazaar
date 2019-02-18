@@ -36,7 +36,7 @@
     <script src="js/jquery.animate-colors.js"></script>
 
 </head>
-<body>
+<body style="background-color: white;">
 <header id="header" >
     {{-- navbar  ../../public/img/Logo_header.svg.svg.svg   --}}
     <div class="header-navbar">
@@ -75,7 +75,20 @@
 </header>
 @yield('content')
 
+<script type="text/javascript">
+          window.$crisp=[];window.CRISP_WEBSITE_ID="792f282f-edde-46b8-8b02-d38ca5cb92c2";
+        (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";
+            s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
 
+            $(document).ready(function(){
+            $('.navigation-menu').click(function(){
+                $('#header-navbar-menu').toggle();
+                $('.login').show();
+                $('.signup').show();
+                $('.navigation-menu').toggleClass('change');
+            })
+        });
+     </script>
 
 
 </body>

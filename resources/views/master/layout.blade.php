@@ -52,8 +52,6 @@
             </ul>
 
         </div>
-
-
         <div class="navigation-menu">
             <div class="bar1"></div>
             <div class="bar2"></div>
@@ -73,13 +71,14 @@
         (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";
             s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
 
-            $(document).ready(function(){
-            $('.navigation-menu').click(function(){
+        $(document).ready(function(){
+             $('.navigation-menu').click(function(){
+                console.log("navigation");
                 $('#header-navbar-menu').toggle();
                 $('.login').show();
                 $('.signup').show();
                 $('.navigation-menu').toggleClass('change');
-            })
+            });
         });
      </script>
 

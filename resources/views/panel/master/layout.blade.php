@@ -39,11 +39,11 @@
         <div class="list">
 
             <ul>
-                <li class="user-account-list sub2"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
-                <li class="user-account-list sub2"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
-                <li class="user-account-list sub2"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
-                <li class="user-account-list sub2"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
-                <li class="user-account-list sub2"> <a href="{{route('contact')}}" id="contact">Contact</a></li>
+                <li class="user-account-list sub2"> <a href="{{route('dashboard')}}" id="dashboard2">Dashboard</a></li>
+                <li class="user-account-list sub2"> <a href="{{route('activity')}}" id="activity2">Activity</a></li>
+                <li class="user-account-list sub2"> <a href="{{route('referral')}}" id="referral2">Referral</a> </li>
+                <li class="user-account-list sub2"> <a href="{{route('setting')}}" id="setting2">Setting</a></li>
+                <li class="user-account-list sub2"> <a href="{{route('contact')}}" id="contact2">Contact</a></li>
                 <li class="user-account-list" id="logouticon">Log Out</li>
 
             </ul>

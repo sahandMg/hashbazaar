@@ -107,6 +107,15 @@ a {
 .navigation-menu {
   display: none
 }
+
+.dashboard {
+  padding-left: 10px !important;
+  padding: 5px ;
+  border: 2px solid #43A047 !important;
+ color: #43A047 !important ;
+ background:white !important;
+ margin-top: -10px
+}
 /* --------------------------------------------------------------------------- */
 
 .row h1 {
@@ -233,6 +242,7 @@ header img { height: 175px;margin-bottom: 4%; }
        border:transparent !important
      }
 
+     
      .login {
        background: white;
        color: #43A047;height:50px;

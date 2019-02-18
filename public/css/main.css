@@ -5,24 +5,22 @@
     top: 0px;
     margin-left:90%;
     width: 0px;
+    height: 500px;
     left: 0;
     background-color: transparent;
     border-bottom: transparent;
     cursor: unset;
-    display: none
 }
 .useraccount .list {
-    width: 200px;
-    height: 110px;
-    border-radius: 10px;
-    margin-top: 100px;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0px;
+    margin-top: 114px;
     margin-left:0%;
-    background-color: white;
-    box-shadow: 2px 3px 10px 1px silver;
-    display: none;
+    background-color: black !important;
 }
 .useraccount .list  {
-    margin-left: -135px
+    margin-left: -740px
 }
 .useraccount .list:after {
     content: '';
@@ -32,12 +30,13 @@
     border-bottom: 18px solid white;
     margin-left: 140px;
     top:-18px;
-    transition: all 1s
+    transition: all 1s;
+    display: none
 }
 
 .useraccount .list ul li {
     list-style-type: none;
-    width: 200px;
+    width: 100%;
     padding-bottom: 20px;
     text-align: center;
     left: 0;
@@ -47,63 +46,41 @@
     font-weight: bold;
     transition: all .5s ease-in;
     cursor: pointer;
+    border-bottom: 2px solid orange
 }
-
-#usericon:before {
-    content: '';
-    display: block;
-    width: 20px;
-    height: 20px;
-    background-image: url("../img/user-solid.svg");
-    background-size: 100% 100%;
+.useraccount .list ul li a {
+    width:400px !important;
     position: relative;
-    left: 3vh;
-    top: 3vh
 }
-
-#usericon {
-    border-bottom: 1px solid;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-#usericon:hover{
-    background-color: black;
-    color: white;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
 #logouticon {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    color: orange;
+    border-bottom: transparent !important;
+    position: relative;
+    top: 20px
 }
 #logouticon:hover {
-    background-color: black;
-    height: 33px;
+    height:100% !important;
     color: white;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-#usericon:hover::before ,#logouticon:hover::before{
-    border: 1px solid white;
-    border-radius: 15%;
-    background-color: white
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom: transparent !important;
 }
 
 #logouticon:before{
     content: '';
     display: block;
-    width: 20px;
-    height: 20px;
-    background-image: url("../img/sign-out-alt-solid\ \(1\).svg");
+    width: 25px;
+    height: 25px;
+    background-image: url("../img/sign-out-alt-solid.svg");
     background-size: 100% 100%;
-    position: relative;
-    left: 3vh;
-    top: 3vh;
+    position: absolute;
+    left: 31.5vh !important;
+    top: 0vh !important;
 }
-
+#logouticon:hover:before {background-color: transparent;
+border: transparent}
 .user-img
 {
     width: 40px;
@@ -118,6 +95,14 @@
 }
 
 .sub2 {display:none}
+
+.useraccount .sub2:hover {color: white !important}
+
+#dashboard2 , #contact2 , #activity2 , #referral2 , #setting2 {
+    color: orange;
+    font-size: 20px;
+    text-decoration: none !important;
+}
 /* CONTACT */
 
 .mainContainer
@@ -357,7 +342,6 @@ color: orange !important}
     margin-top: 3% ;
     cursor: pointer;
 }
-
     
     .ws {margin-top: 15% !important;}
 /* Setting Page */
@@ -403,7 +387,6 @@ color: orange !important}
     color: orange
 }
 
-
 .flex-item.two {
     border-left: 2px solid 
 }
@@ -412,7 +395,6 @@ color: orange !important}
 .setting-information  {
     margin-top: 10%;
     display: block;
-
 }
 
 .setting-information q:nth-of-type(1) {
@@ -441,7 +423,6 @@ color: orange !important}
     border: 3px solid transparent;
     margin-left: 15%;
     border-bottom: 1px solid black;
-
 }
 
 .setting-information #textbefore {
@@ -459,9 +440,7 @@ color: orange !important}
     border: 3px solid transparent;
     margin-left: 15%;
     border-bottom: 1px solid black;
-
 }
-
 
 .setting-information q:nth-of-type(2) {
     font-size: 30px;
@@ -491,7 +470,6 @@ color: orange !important}
     border-bottom: 1px solid black !important;
 }
 
-
 .setting-information input#newpassword {
     background-color: #FFFDE8;
     width: 300px;
@@ -501,7 +479,6 @@ color: orange !important}
     margin-left: 15%;
     border-bottom: 1px solid black;
 }
-
 
 .setting-information input#Confirmpassword {
     background-color: #FFFDE8;
@@ -523,10 +500,8 @@ color: orange !important}
     font-size: 20px;
     color: white;
     font-family: sans-serif;
-
 }
 .setting-information input::placeholder { font-size: 20px}
-
 
 /* Wallet 1 */
 .wallet1 {
@@ -565,25 +540,24 @@ color: orange !important}
     background-color: #FFFDE8
 }
 
-
 .wallet1 input#buttonwallet {
     width: 120px !important;
-    height: 60px;
-    background-color:#15BEA4;
-    margin-left: 43%;
-    font-size: 20px;
-    margin-top: 5%;
-    border-radius: 8%;
-    color: white;
-    font-family: sans-serif;
+    height: 60px !important;
+    margin-left: 43% !important ;
+    margin-top: 5% !important;
+    padding: .475rem 2rem !important;
+    font-size: 1.2rem !important;
+    line-height: 1.5 !important;
+    border-radius: .25rem !important;
+    color: #212529 !important;
+    background-color: #42dca3 !important;
+    border-color: #42dca3 !important;
+    font-family: Cabin,Helvetica Neue,Helvetica,Arial,sans-serif !important;
 }
 /* ----------Make Wallet----------- */
 
-
-
 .make-wallet {
     display: none;
-
 }
 #make-wallet-title {
     font-size: 30px;
@@ -594,7 +568,6 @@ color: orange !important}
     font-weight: bolder;
     font-family: sans-serif;
 }
-
 
 .address {
     width: 000px;
@@ -614,8 +587,6 @@ color: orange !important}
     width: 25px;
     height: 25px;
     padding: 5px;
-
-
 }
 .address .address-box {
     float: left;
@@ -634,9 +605,7 @@ color: orange !important}
 .address-box {
     position: relative;
     left: 140px;
-
 }
-
 
 .address-box input {
     position: relative;
@@ -647,9 +616,7 @@ color: orange !important}
     border: 1px solid transparent;
     border-bottom: 1px solid silver;
     background-color: #FFFDE8
-
 }
-
 
 .address-box input::placeholder {
     text-align: center;
@@ -676,12 +643,10 @@ color: orange !important}
     border-bottom: 1px solid silver
 }
 
-
 .change-address input::placeholder {
     text-align: center;
     font-size: 22px
 }
-
 
 #make-wallet-title2 {
     font-size: 30px;
@@ -712,7 +677,6 @@ color: orange !important}
     top: 80px;
 }
 
-
 /* ------------------------ */
 
 #setting-hr-footer {
@@ -723,22 +687,18 @@ color: orange !important}
     width: 100%;
     margin-left: 0%;
     margin-top: 50%
-        
-    }
+}
 #footer-div {
     width: 100%;
     margin-left: 0%;
     margin-top: 35% !important
-
 }
-
 
 .setting-footer-paragraph {
     font-size: 20px;
     font-family: sans-serif;
     top: -60px;
     margin-left: 30%
-    
 }
 
 #setting-footer-image {
@@ -925,29 +885,14 @@ color: orange !important}
         .useraccount .sub2 {
             display:block !important;
             border-bottom: thin solid;
-            padding-top: 5px;
+            padding-top: 10px;
             text-decoration: none !important;
         }
 
-        #dashboard , #contac , #activity , #referral , #setting {
-            border-bottom: transparent !important;
-        }
-
-        #dashboard:hover , #contact:hover , #activity:hover , #referral:hover , #setting:hover {
-            color: black !important;
-            border-bottom: orange !important
-        }
-
-        #setting {color:orange !important}
-
         .useraccount .list {
-            height: 268px !important;
+            height:317px !important;
         }
-        #usericon:hover{
-            background-color: black;
-            border-top-left-radius: 0px !important;
-            border-top-right-radius: 0px !important; 
-        }
+      
         /* Bar */
         .navigation-menu {
             background: transparent;
@@ -980,6 +925,67 @@ color: orange !important}
         .change .bar3 {
           -webkit-transform: rotate(45deg) translate(-8px, -8px);
           transform: rotate(45deg) translate(-8px, -8px);
+        }
+
+
+        #dashboard2:before {
+            content: "";
+            background-image: url("../img/Dashboard.svg");
+            width: 25px;
+            height: 25px;
+            background-size: 100% 100%;
+            position: absolute;
+            left: -3.5vh;
+            top: 0px;
+            z-index: 100;
+        }
+        
+        #activity2:before {
+            content: '';
+            background-image: url("../img/Activity.svg");
+            width: 25px;
+            height: 25px;
+            background-size: 100% 100%;
+            position: absolute;
+            left: -5vh;
+            top: 0px;
+            z-index: 100;
+        }
+        
+        #referral2:before {
+            content: "";
+            background-image: url("../img/Referral.svg");
+            width: 25px;
+            height: 25px;
+            background-size: 100% 100%;
+            position: absolute;
+            left: -5vh;
+            top: 0px;
+            z-index: 100;
+        }
+        
+        #setting2:before {
+            content: "";
+            background-image: url("../img/Setting.svg");
+            width: 25px;
+            height: 25px;
+            background-size: 100% 100%;
+            position: absolute;
+            left: -5.4vh;
+            top: 0px;
+            z-index: 100;
+        }
+        
+        #contact2:before {
+            content: "";
+            background-image: url("../img/contact.svg");
+            width: 25px;
+            height: 25px;
+            background-size: 100% 100%;
+            position: absolute;
+            left: -5vh;
+            top: 0px;
+            z-index: 100;
         }
     /*  */
     body {
@@ -1131,14 +1137,18 @@ color: orange !important}
 @media screen and (max-width: 414px) {
     /* --------user account list */
     .useraccount .list {
-        height: 267px !important;
-        margin-left: -40% !important;
+        /* height: 267px !important; */
+        margin-left: -85% !important;
+        /* top: 80px; */
+        margin-top: 83px
     }
 
     .useraccount {margin-left: 85% !important}
     .navigation-menu {
         margin-top: 20px;
     }
+
+    #logouticon:before {left: 18.3vh !important;}
     /*  */
     body {
         background-color: #FFFDE8
@@ -1146,6 +1156,9 @@ color: orange !important}
     header {
         z-index: 2;
         height: 80px;
+        position: fixed;
+        top: 0% !important;
+        margin-top:0 !important;
     }
     #header-div {height:80px}
     .Logo_header {
@@ -1430,6 +1443,8 @@ color: orange !important}
         width: 200px !important;
 
     }
+    #logouticon:before {left: 15.7vh !important;}
+
     #dashboard:before {
         content: "";
         background-image: url("img/Dashboard.svg");
@@ -1563,10 +1578,9 @@ color: orange !important}
     .useraccount {
         margin-left:80%;
     }
-    .useraccount .list {
-        height: 267px !important;
-        margin-left: -50% !important;
-    }
+
+    #logouticon:before {left: 11.7vh !important;}
+
     #dashboard:before {
         content: "";
         background-image: url("img/Dashboard.svg");

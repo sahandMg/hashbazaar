@@ -44,7 +44,7 @@
                 <li class="navbar-list small a"><a href="{{route('customerService')}}">FAQ</a></li>
                 <li class="navbar-list small a"><a href="{{route('blog')}}">Blog</a></li>
                 @if(Auth::guard('user')->check())
-                    <li class="navbar-list small signup"><a href="{{route('dashboard')}}" >Dashboard</a></li>
+                    <li class="navbar-list small dashboard"><a href="{{route('dashboard')}}" >Dashboard</a></li>
                 @else
                 <li class="navbar-list small signup"><a href="{{route('signup')}}" id="sg" >Sign Up</a></li>
                 <li class="navbar-list small login"><a href="{{route('login')}}" id="lg" >Log In</a></li>

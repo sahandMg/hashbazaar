@@ -36,7 +36,7 @@
 
             <input type="password" name="Confirmpassword" id="Confirmpassword" placeholder="confirm Password">
 
-            <input type="button" value="Submit" class="pandel-button" >
+            <input type="button" value="Submit" class="pandel-button">
         </form>
 
     </div>
@@ -53,7 +53,7 @@
                 <form id="setting-wallet" action="">
                 <input type="text" id="textwallet">
 
-                <input type="button" class="pandel-button ws" value="Submit" >
+                <input type="button" id="buttonwallet" value="Submit">
                 </form>
 
 

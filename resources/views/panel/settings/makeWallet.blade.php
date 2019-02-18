@@ -9,6 +9,8 @@
         <title>Hash Bazaar - Make Wallet</title>
     <link rel="stylesheet" href="../css/setting-make wallet.css">
     <link rel="stylesheet" href="../css/cssreset.css">
+    <script src="/public/js/jquery-3.3.1.js"></script>
+
     <script>
 
     </script>
@@ -51,12 +53,7 @@
 
             </div>
 
-
-
-            {{--<div class="flex-item-two flex-item"><a style="color:orange" href="{{route('changePassword')}}" class="change">Change Password</a></div>--}}
-
-
-            {{--<div class="flex-item three"><a href="{{route('wallet')}}">Wallet</a></div>--}}
+          
 
             <div class="flex-item-two flex-item"><a href="{{route('changePassword')}}" class="change">Change Password</a></div>
 

@@ -34,20 +34,20 @@
     <div class="header-navbar">
         <div id="header-navbar-logo">
             <ul>
-                <li class="navbar-list big"><img class="navbar-small-logo" src="{{asset('img/Logo_header.svg')}}" alt="Logo">
+                <li class="navbar-list big"><a href="http://hashbazaar.com"><img class="navbar-small-logo" src="{{asset('img/Logo_header.svg')}}" alt="Logo"></a>
             </ul>
         </div>
         <div id="header-navbar-menu">
             <ul>
-                <li class="navbar-list small"><a href="{{route('index')}}">Home</a></li>
-                <li class="navbar-list small"><a href="#">About</a></li>
-                <li class="navbar-list small"><a href="{{route('customerService')}}">FAQ</a></li>
-                <li class="navbar-list small"><a href="{{route('blog')}}">Blog</a></li>
+                <li class="navbar-list small a"><a href="{{route('index')}}">Home</a></li>
+                <li class="navbar-list small a"><a href="#">About</a></li>
+                <li class="navbar-list small a"><a href="{{route('customerService')}}">FAQ</a></li>
+                <li class="navbar-list small a"><a href="{{route('blog')}}">Blog</a></li>
                 @if(Auth::guard('user')->check())
                     <li class="navbar-list small signup"><a href="{{route('dashboard')}}" >Dashboard</a></li>
                 @else
-                    <li class="navbar-list small signup"><a href="{{route('signup')}}" >Sign Up</a></li>
-                    <li class="navbar-list small login"><a href="{{route('login')}}" >Log In</a></li>
+                <li class="navbar-list small signup"><a href="{{route('signup')}}" id="sg" >Sign Up</a></li>
+                <li class="navbar-list small login"><a href="{{route('login')}}" id="lg" >Log In</a></li>
                 @endif
             </ul>
 
@@ -68,7 +68,20 @@
 @yield('content')
 
 
+    <script type="text/javascript">
+          window.$crisp=[];window.CRISP_WEBSITE_ID="792f282f-edde-46b8-8b02-d38ca5cb92c2";
+        (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";
+            s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
 
+            $(document).ready(function(){
+                $('.navigation-menu').click(function(){
+                $('.navigation-menu').toggleClass('change');
+                $('#header-navbar-menu').toggle(9990000000000000000)
+                // $('.login').show();
+                // $('.signup').show();
+                })
+        });
+     </script>
 
 </body>
 </html>

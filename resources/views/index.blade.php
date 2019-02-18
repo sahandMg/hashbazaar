@@ -10,7 +10,7 @@
         {{--<div class="header-navbar">--}}
             {{--<div id="header-navbar-logo">--}}
                 {{--<ul>--}}
-                    {{--<li class="navbar-list big"><img class="navbar-small-logo" src="{{asset('img/Logo_header.svg')}}" alt="Logo">--}}
+                    {{--<li class="navbar-list big"><a href="http://hashbazaar.com"><img class="navbar-small-logo" src="{{asset('img/Logo_header.svg')}}" alt="Logo"></a>--}}
                 {{--</ul>--}}
             {{--</div>--}}
             {{--<div id="header-navbar-menu">--}}
@@ -37,7 +37,6 @@
             {{--</div>--}}
         {{--</div>--}}
 
-
         {{--  --}}
         <div class="intro-body headerTheme">
             <div class="container">
@@ -54,7 +53,7 @@
             </div>
         </div>
     </header>
-    <section class="text-center" style="padding-top: 4%;color: #707070;">
+    <section  id="sharePlan" class="text-center" style="padding-top: 4%;color: #707070;">
         <div>
             <h3 class="fontTheme">choose your investment planS</h3>
         </div>
@@ -167,9 +166,7 @@
     </div>
 
     {{-- -------------- --}}
-    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="792f282f-edde-46b8-8b02-d38ca5cb92c2";
-        (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";
-            s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+
 
     <script src="js/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -234,26 +231,17 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'UA-131063343-1');
     </script>
-
     <script>
         $(document).ready(function(){
-
             $('.navigation-menu').click(function(){
-
                 $('#header-navbar-menu').toggle();
                 $('.login').show();
                 $('.signup').show();
                 $('.navigation-menu').toggleClass('change');
-
-
             })
-
-
         });
-
     </script>
 
 

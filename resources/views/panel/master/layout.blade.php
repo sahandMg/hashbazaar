@@ -30,8 +30,12 @@
     <div id="header-div"> <a href="http://hashbazaar.com"> <img class="Logo_header" src="{{URL::asset('img/Logo_header.svg')}}" alt="Logo_header"></a> </div>
     <div class="useraccount">
 
-        <img class="user-img" src="{{URL::asset('../img/user-circle-solid.svg')}}" alt="">
-
+        {{-- <img class="user-img" src="{{URL::asset('../img/user-circle-solid.svg')}}" alt=""> --}}
+        <div class="navigation-menu">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
         <div class="list">
 
             <ul>
@@ -40,12 +44,12 @@
                 <li class="user-account-list sub2"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
                 <li class="user-account-list sub2"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
                 <li class="user-account-list sub2"> <a href="{{route('contact')}}" id="contact">Contact</a></li>
-                <li class="user-account-list" id="usericon">User Account</li>
                 <li class="user-account-list" id="logouticon">Log Out</li>
 
             </ul>
         </div>
 
+       
     </div>
 </header>
 
@@ -71,6 +75,7 @@
             <li class="sub"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
             <li class="sub"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
             <li class="sub"> <a href="{{route('contact')}}" id="contact">Contact</a></li>
+            <li class="sub"> <a href="{{route('logout')}}" id="logouticon2">Log Out</a></li>
 
         </ul>
 
@@ -81,6 +86,20 @@
 
 </div>
 
+    <script type="text/javascript">
+          window.$crisp=[];window.CRISP_WEBSITE_ID="792f282f-edde-46b8-8b02-d38ca5cb92c2";
+        (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";
+            s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+    </script>
 
+    <script>
+        $(document).ready(function(){
+            $('.navigation-menu').click(function(){
+                $('#header-navbar-menu').toggle();
+                $('.useraccount .list').toggle();
+                $('.navigation-menu').toggleClass('change');
+            })
+        });
+    </script>
 </body>
 </html>

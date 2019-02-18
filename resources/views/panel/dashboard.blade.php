@@ -30,7 +30,7 @@
 
                         <div id="Hash-History-list">
                             @if(!$hashes->isEmpty())
-                            <div id="Hash-History_column"> Hash Power
+                            <div class="Hash-History_column"> Hash Power
                                 <ul>
                                    @foreach($hashes as $hash)
                                     <li>{{$hash->hash}} TH/S</li>
@@ -39,7 +39,7 @@
                             </div>
 
 
-                            <div id="Hash-History_column"> Started at
+                            <div class="Hash-History_column"> Started at
                                     <ul>
                                         @foreach($hashes as $hash)
                                             <li>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}} </li>
@@ -48,7 +48,7 @@
                                     </ul>
                             </div>
 
-                            <div id="Hash-History_column"> Ends at
+                            <div class="Hash-History_column"> Ends at
                                     <ul>
                                         @foreach($hashes as $hash)
                                             <li>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}</li>
@@ -57,7 +57,7 @@
                                     </ul>
                              </div>
 
-                            <div id="Hash-History_column"> Remain
+                            <div class="Hash-History_column"> Remain
                                      <ul>
                                          @foreach($hashes as $key => $hash)
 
@@ -80,9 +80,14 @@
 
                                     </ul>
                              </div>
+
+                             {{--  --}}
                             @else
                                 <p id="no-hash"> NO Hash History</p>
                             @endif
+                            {{--  --}}
+                          
+                          
                         </div>
 
              </div>
@@ -139,35 +144,7 @@
 
         </div>
     </div>
-    <!-- Container -->
-   {{--  <div class="mainContainer">
 
-
-        <nav class="container">
-
-            <ul class="mainList">
-
-                <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="{{URL::asset('img/Logo_In_NavBar.svg')}}" alt="Logo_In_NavBar"></a>
-                    <a href="" id="welcome">Welcome User</a> </li>
-                <li class="sub dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
-                <li class="sub"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
-                <li class="sub"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
-                <li class="sub"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
-                <li class="sub"> <a href="{{route('contact')}}" id="contact">Contact</a></li>
-
-            </ul>
-
-        </nav> 
-
-
-
-    </div> --}}
-
-
-
-    
-
-        <!-- Main Container -->
 
         <style type="text/css">
 
@@ -340,7 +317,15 @@
                         $('.list').toggle(500);
                     });
 
+                    var numItems = $('.Hash-History_column').length;
+                    // alert($('.Hash-History_column').length);
+                    if( numItems > 10){
+                        $('#Hash-History-list').css('overflow-y' , "scroll")
+                    }
+                    else {
+                        $('#Hash-History-list').css('overflow-y' , "hidden")
 
+                    }
                 });
 
                 var user = {!! json_encode(\Illuminate\Support\Facades\Auth::guard('user')->user()->code) !!}

@@ -27,7 +27,6 @@
 .useraccount .list:after {
     content: '';
     position: absolute;
-    /* border-top:20px solid rgba(0, 0, 0, 0.53); */
     border-left:18px solid transparent;
     border-right:18px solid transparent;
     border-bottom: 18px solid white;
@@ -37,13 +36,11 @@
     -webkit-transition: all 1s;
     -moz-transition: all 1s;
     -ms-transition: all 1s;
-
 }
 
 .useraccount .list ul li {
     list-style-type: none;
     width: 200px;
-    /* height: 50%; */
     padding-bottom: 20px;
     text-align: center;
     left: 0;
@@ -56,7 +53,6 @@
     -moz-transition: all .5s ease-in;
     -ms-transition: all .5s ease-in;
     cursor: pointer;
-
 }
 
 #usericon:before {
@@ -84,7 +80,6 @@
         top: 2vh !important
     }
 
-
 }
 #usericon {
     border-bottom: 1px solid;
@@ -97,13 +92,11 @@
     color: white;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-
 }
 
 #logouticon {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-
 }
 #logouticon:hover {
     background-color: black;
@@ -113,7 +106,6 @@
     border-bottom-right-radius: 10px;
 
 }
-
 
 #usericon:hover::before ,#logouticon:hover::before{
     border: 1px solid white;
@@ -158,7 +150,6 @@ body {
 
 }
 
-
 .container-contact2 {
     display: none
 }
@@ -182,7 +173,6 @@ header {
     height: 110px;
     position: fixed;
     z-index: 2000;
-
 }
 
 .Logo_header {
@@ -191,86 +181,9 @@ header {
     position: fixed;
     left: -120px;
     z-index: 2000;
-
 }
-
-
 
 /* Menu */
-.container-contact {
-    width: 370px;
-    background: rgb(39, 38, 38);
-    border-top: 4px solid orange;
-    position: fixed;
-    top: 110px;
-    height: 100%
-}
-
-.container-contact .mainList {
-    background: white;
-    width: 370px;
-}
-
-.container-contact .navbar {
-    height: 130px;
-    border-bottom: 2px solid #727272;
-    background: rgb(39, 38, 38);
-    font-family: sans-serif;
-}
-
-.container-contact .Logo_In_NavBar {
-    width: 250px;
-    height: 400px;
-    left: 50px;
-    position: absolute;
-    top: -170px
-}
-
-
-.container-contact ul .navbar #welcome {
-    font-size: 20px;
-    color: white;
-    position: absolute;
-    left: 110px;
-    top: 90px;
-    text-decoration: none
-}
-
-.container-contact .mainList .sub {
-    color: orange;
-    height: 60px;
-    border-bottom: 2px solid #727272;
-    font-size: 30px;
-    background: rgb(39, 38, 38);
-    padding-bottom: 10px;
-    text-align: center;
-    font-family: sans-serif
-}
-
-.container-contact .mainList .sub a {
-    color: orange;
-    text-decoration: none;
-    padding-top: 20px;
-    position: relative;
-    left: -40px;
-    top: 30%
-}
-
-.container-contact .mainList .sub a:hover {
-    color: white;
-}
-
-.container-contact .mainList .sub {
-    color: orange;
-    height: 60px;
-    border-bottom: 2px solid #727272;
-    font-size: 30px;
-    background: rgb(39, 38, 38);
-    padding-bottom: 10px;
-    text-align: center;
-    font-family: sans-serif
-}
-
 
 .sub:after {
     background-image: url("../img/Arrow.svg");
@@ -283,84 +196,14 @@ header {
     position: absolute;
 }
 
-#dashboard:before {
-    content: "";
-    background-image: url("../img/Dashboard.svg");
-    width: 35px;
-    height: 35px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -60px;
-    top: 15px
-}
-
-#activity:before {
-    content: '';
-    background-image: url("../img/Activity.svg");
-    width: 35px;
-    height: 35px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -80px;
-    top: 15px
-}
-
-
-#referral:before {
-    content: "";
-    background-image: url("../img/Referral.svg");
-    width: 35px;
-    height: 35px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -80px;
-    top: 15px
-}
-
-#setting:before {
-    content: "";
-    background-image: url("../img/Setting.svg");
-    width: 35px;
-    height: 35px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -85px;
-    top: 15px
-}
-
-.contact {
-    border-bottom: 1px solid transparent !important
-}
-
-#contact {
-color: orange !important}
-
-#contact:hover {
-    color: white !important
-}
-#contact:before {
-    content: "";
-    background-image: url("../img/contact.svg");
-    width: 35px;
-    height: 35px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -80px;
-    top: 18px
-}
-
 /* Contact */
 
 #contact-page {
-    /* position: relative; */
-    /* margin-top: 200px; */
     margin-left: 27.5%;
     width: 72%;
 }
 
-
 #contact-page h1 {
-    /* position: absolute; */
     font-size: 30px;
     font-weight: bolder;
     color: #2e2d2d;
@@ -374,9 +217,7 @@ color: orange !important}
     background-color: #FFFDE8
 }
 
-
 #contact-page input:nth-of-type(1){
-    /* position: absolute; */
     width: 400px;
     height: 30px;
     border: 2px solid transparent;
@@ -385,9 +226,7 @@ color: orange !important}
     margin-left: 300px;
 }
 
-
 #contact-page input:nth-of-type(2){
-    /* position: absolute; */
     margin-top: 50px;
     margin-left: 300px;
     width: 400px;
@@ -396,10 +235,8 @@ color: orange !important}
     border-bottom: 2px solid black !important
 }
 
-
 #contact-page textarea{
     resize: none;
-    /* position: absolute; */
     background: #FFFDE8;
     margin-top: 90px ;
     margin-left: 150px;
@@ -410,20 +247,7 @@ color: orange !important}
 
 #contact-page input:nth-of-type(3)::placeholder {
     margin-top: -50px;
-    /* position: relative; */
 }
-
-/*form.contact-page button {
-    width: 160px;
-    height: 60px;
-    border-radius:10%;
-    background-color: #15BEA4;
-    margin-top: 60px;
-    margin-left:370px;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    font-size: 30px;
-    border: thin solid
-}*/
 
 form.contact-page button p {
     font-family: 'Segoe UI', Tahoma, sans-serif;
@@ -432,7 +256,6 @@ form.contact-page button p {
 }
 
 form.contact-page p:nth-of-type(1) {
-    /* position: relative; */
     font-weight: bolder;
     font-size: 25px;
     margin-left:180px;
@@ -443,29 +266,23 @@ form.contact-page p:nth-of-type(1) {
     display: block !important;
 
 }
-
 /* Footer */
-
 
 .contact-footer-div {
     margin-top: 0px !important;
     width: 70%;
     margin-left: 0%;
-    /* position: absolute; */
 }
 .contact-footer-paragraph {
     font-size: 20px;
     font-family: sans-serif;
-    /* position: absolute; */
     top: -20px;
-    margin-left: 40%
-
+    margin-left: 40% 
 }
 
 #contact-footer-image {
     width: 250px;
     height: 120px;
-    /* position: absolute; */
     left: 30%
 }
 
@@ -479,44 +296,6 @@ form.contact-page p:nth-of-type(1) {
         
         display: none;
     }
-    .container-contact {
-        width: 270px;
-        /* height: 1850px; */
-
-
-    }
-
-    .container-contact .mainList {
-        width: 270px
-    }
-
-    .container-contact .mainList .navbar .Logo_In_NavBar{
-        width: 210px;
-        height: 370px;
-        left: 30px;
-        position: absolute;
-        top: -170px;
-    }
-
-    div ul .navbar #welcome {
-        font-size: 17px;
-        left: 70px;
-
-    }
-
-
-    .container-contact .mainList .sub {
-        height: 60px;
-        font-size: 25px;
-        padding-bottom: 10px;
-    }
-
-
-    .container-contact .mainList .sub a {
-        left: -10px;
-        top: 30%
-    }
-
 
     .sub:after {
         width: 1em;
@@ -524,43 +303,6 @@ form.contact-page p:nth-of-type(1) {
         content: "";
         left: 85%;
     }
-
-
-    #dashboard:before {
-        content: "";
-        width: 30px;
-        height: 30px;
-        left: -40px;
-    }
-
-    #activity:before {
-        content: "";
-        width: 30px;
-        height: 30px;
-        left: -55px;
-    }
-
-    #contact:before {
-        content: "";
-        width: 30px;
-        height: 30px;
-        left: -55px;
-    }
-
-    #setting:before {
-        content: "";
-        width: 30px;
-        height: 30px;
-        left: -55px;
-    }
-
-    #referral:before {
-        content: "";
-        width: 30px;
-        height: 30px;
-        left: -55px;
-    }
-
 
     .contact-hr-footer
     {
@@ -590,16 +332,7 @@ form.contact-page p:nth-of-type(1) {
         border: 2px solid black;
     }
 
-   /* form.contact-page button {
-        width: 160px;
-        height: 60px;
-        border-radius:10%;
-        background-color: #15BEA4;
-        margin-left:300px;
-        font-family: 'Segoe UI', Tahoma, sans-serif;
-        font-size: 30px;
-        border: thin solid
-    }*/
+   
    
 
     .contact-footer-div {
@@ -638,7 +371,6 @@ form.contact-page p:nth-of-type(1) {
     .container-contact {
         display: none;
     }
-   
 
     .useraccount .list {
         
@@ -649,61 +381,6 @@ form.contact-page p:nth-of-type(1) {
         display: none
     }
 
-    #dashboard:before {
-        content: "";
-        background-image: url("img/Dashboard.svg");
-        width: 20px;
-        height: 20px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -30px;
-        top: 0px
-    }
-
-    #activity:before {
-        content: "";
-        background-image: url("img/Activity.svg");
-        width: 20px;
-        height: 20px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -30px;
-        top: 0px
-    }
-
-
-    #referral:before {
-        content: "";
-        background-image: url("img/Referral.svg");
-        width: 20px;
-        height: 20px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -30px;
-        top: 0px
-    }
-
-    #setting:before {
-        content: "";
-        background-image: url("img/Setting.svg");
-        width: 20px;
-        height: 20px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -30px;
-        top: 0px
-    }
-
-    #contact:before {
-        content: "";
-        background-image: url("img/contact.svg");
-        width: 20px;
-        height: 20px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -30px;
-        top: 0px
-    }
     /* Contact */
 
     #contact-page {
@@ -712,7 +389,6 @@ form.contact-page p:nth-of-type(1) {
         margin-left: 0%;
         width: 100%;
     }
-
 
     #contact-page h1 {
         font-size: 30px;
@@ -724,7 +400,6 @@ form.contact-page p:nth-of-type(1) {
         left: 170px;
         top: 200px;
     }
-
 
     #contact-page input:nth-of-type(2){
         left: 170px;
@@ -797,73 +472,14 @@ form.contact-page p:nth-of-type(1) {
         position: absolute;
         left: 20px;
     }
-    .container-contact {
-        display: none;
-    }
    
     .mainList {
         display: none
     }
 
-    #dashboard:before {
-        content: "";
-        background-image: url("img/Dashboard.svg");
-        width: 20px;
-        height: 20px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -30px;
-        top: 0px
-    }
-
-    #activity:before {
-        content: "";
-        background-image: url("img/Activity.svg");
-        width: 20px;
-        height: 20px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -30px;
-        top: 0px
-    }
-
-
-    #referral:before {
-        content: "";
-        background-image: url("img/Referral.svg");
-        width: 20px;
-        height: 20px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -30px;
-        top: 0px
-    }
-
-    #setting:before {
-        content: "";
-        background-image: url("img/Setting.svg");
-        width: 20px;
-        height: 20px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -30px;
-        top: 0px
-    }
-
-    #contact:before {
-        content: "";
-        background-image: url("img/contact.svg");
-        width: 20px;
-        height: 20px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -30px;
-        top: 0px
-    }
     /* Contact */
 
     #contact-page {
-        /* position: relative; */
         top: 0px;
         margin-left: 0%;
         width: 100%;
@@ -874,59 +490,49 @@ form.contact-page p:nth-of-type(1) {
     #contact-page h1 {
         font-size: 20px;
         width: 280px;
-        margin-left: 60px;
+        margin-left: 60px !important;
         top: 50px
-
     }
 
     #contact-page input:nth-of-type(1){
-        left: 100px;
+        margin-left: 100px !important;
         margin-top: 40px;
         width: 200px;
         border-bottom: 2px solid
-
     }
 
-
     #contact-page input:nth-of-type(2){
-        left: 100px;
+        margin-left: 100px !important;
         margin-top:30px;
         width: 200px;
         border-bottom: 2px solid
     }
 
-
     #contact-page textarea{
         background: #FFFDE8;
-            resize: none;
-            /* position: absolute; */
-            margin-top: 50px;
-            left: 70px;
-            width: 250px;
-            height: 150px;
+        resize: none;
+        margin-top: 50px;
+        margin-left: 70px !important;
+        width: 250px;
+        height: 150px;
     }
 
-   /* form.contact-page button {
-        top: 520px;
-        margin-left:130px;
-    }
-*/
     .contact-hr-footer {
-        margin-top:  200px !important
+        margin-top:  000px !important;
+        top: 0 !important;
     }
 
 /* Footer */
     #footer-div {
-        margin-top: -500px !important;
+        margin-top: 100px !important;
         top: 0
     }
     .contact-footer-div {
         width: 10% !important;
-        /* position: absolute; */
         top:0px;
         left: 2%;
         margin: 0;
-        margin-top: -1400px !important;
+        margin-top: -00px !important;
     }
 
     #contact-footer-image {
@@ -951,80 +557,20 @@ form.contact-page p:nth-of-type(1) {
 /* Contact - Media - 375 */
 @media screen and (max-width: 375px) {
 
-
-    #dashboard:before {
-        content: "";
-        background-image: url("img/Dashboard.svg");
-        width: 17px;
-        height: 17px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -25px;
-        top: 0px
-    }
-
-    #activity:before {
-        content: "";
-        background-image: url("img/Activity.svg");
-        width: 17px;
-        height: 17px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -25px;
-        top: 0px
-    }
-
-
-    #referral:before {
-        content: "";
-        background-image: url("img/Referral.svg");
-        width: 17px;
-        height: 17px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -25px;
-        top: 0px
-    }
-
-    #setting:before {
-        content: "";
-        background-image: url("img/Setting.svg");
-        width: 17px;
-        height: 17px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -25px;
-        top: 0px
-    }
-
-    #contact:before {
-        content: "";
-        background-image: url("img/contact.svg");
-        width: 17px;
-        height: 17px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -25px;
-        top: 0px
-    }
-
       /* Contact */
 
     #contact-page {
-        /* position: relative; */
         top: 0px;
         margin-left: 0%;
         width: 100%;
         margin-top: 100px
     }
 
-
     #contact-page h1 {
         font-size: 20px;
         width: 280px;
         margin-left: 60px;
         top: 50px
-
     }
 
     #contact-page input:nth-of-type(1){
@@ -1032,9 +578,7 @@ form.contact-page p:nth-of-type(1) {
         margin-top: 40px;
         width: 200px;
         border-bottom: 2px solid
-
     }
-
 
     #contact-page input:nth-of-type(2){
         margin-left: 100px;
@@ -1043,38 +587,30 @@ form.contact-page p:nth-of-type(1) {
         border-bottom: 2px solid
     }
 
-
     #contact-page textarea{
         background: #FFFDE8;
-            resize: none;
-            /* position: absolute; */
-            margin-top: 50px;
-            margin-left: 70px;
-            width: 250px;
-            height: 150px;
+        resize: none;
+        margin-top: 50px;
+        margin-left: 70px;
+        width: 250px;
+        height: 150px;
     }
 
-   /* form.contact-page button {
-        top: 520px;
-        margin-left:130px;
-    }
-*/
     .contact-hr-footer {
         margin-top: 200px !important
     }
 
-/* Footer */
+    /* Footer */
     #footer-div {
-        margin-top: -40%;
+        margin-top: -0%;
         top: 0
     }
     .contact-footer-div {
         width: 10% !important;
-        /* position: absolute; */
         top:0px;
         left: 2%;
         margin: 0;
-        margin-top: -1300px !important ;
+        margin-top: -00px !important ;
     }
 
     #contact-footer-image {
@@ -1087,7 +623,6 @@ form.contact-page p:nth-of-type(1) {
         margin-top: 0;
         font-size: 15px;
         font-family: sans-serif;
-        /* position: absolute; */
         top: -60px;
         left: 0px;
         width: 260px
@@ -1103,80 +638,21 @@ form.contact-page p:nth-of-type(1) {
         position: absolute;
         left: 10px;
     }
-    
 
-    #dashboard:before {
-        content: "";
-        background-image: url("img/Dashboard.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -22px;
-        top: 0px
-    }
-
-    #activity:before {
-        content: "";
-        background-image: url("img/Activity.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -22px;
-        top: 0px
-    }
-
-
-    #referral:before {
-        content: "";
-        background-image: url("img/Referral.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -22px;
-        top: 0px
-    }
-
-    #setting:before {
-        content: "";
-        background-image: url("img/Setting.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -22px;
-        top: 0px
-    }
-
-    #contact:before {
-        content: "";
-        background-image: url("img/contact.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -22px;
-        top: 0px
-    }
       /* Contact */
 
       #contact-page {
-        /* position: relative; */
         top: 0px;
         margin-left: 0%;
         width: 100%;
         margin-top: 100px
     }
 
-
     #contact-page h1 {
         font-size: 15px;
         width: 260px;
         margin-left: 20px;
         top: 50px
-
     }
 
     #contact-page input:nth-of-type(1){
@@ -1184,9 +660,7 @@ form.contact-page p:nth-of-type(1) {
         margin-top: 40px;
         width: 150px;
         border-bottom: 2px solid
-
     }
-
 
     #contact-page input:nth-of-type(2){
         margin-left: 80px;
@@ -1195,42 +669,30 @@ form.contact-page p:nth-of-type(1) {
         border-bottom: 2px solid
     }
 
-
     #contact-page textarea{
         background: #FFFDE8;
-            resize: none;
-            /* position: absolute; */
-            margin-top: 50px;
-            margin-left: 40px;
-            width: 200px;
-            height: 150px;
+        resize: none;
+        margin-top: 50px;
+        margin-left: 40px;
+        width: 200px;
+        height: 150px;
     }
-
-   /* form.contact-page button {
-        top: 520px;
-        margin-left:90px;;
-        width: 110px;
-        font-size: 20px;
-        margin-top: 10px
-        
-    }*/
 
     .contact-hr-footer {
         margin-top: 270px !important
     }
 
-/* Footer */
+    /* Footer */
     #footer-div {
         margin-top: 0;
         top: 0
     }
     .contact-footer-div {
         width: 10% !important;
-        /* position: absolute; */
         top:0px;
         left: 2%;
         margin: 0;
-        margin-top: -1250px !important;
+        margin-top: -0px !important;
     }
 
     #contact-footer-image {
@@ -1243,20 +705,15 @@ form.contact-page p:nth-of-type(1) {
         margin-top: 0;
         font-size: 15px;
         font-family: sans-serif;
-        /* position: absolute; */
         top: -60px;
         left: 0px;
         width: 260px
     }
 
-
 }
 
 
-
-
 /* REFERRAL */
-
 
 
 .mainContainer
@@ -1290,7 +747,6 @@ header {
     height: 110px;
     position: fixed;
     z-index: 2000;
-
 }
 
 .Logo_header {
@@ -1300,195 +756,39 @@ header {
     left: -120px;
 }
 
-.mainList2 {display: none}
-
-/* Menu */
-.container-referral {
-    width: 370px;
-    background: rgb(39, 38, 38);
-    border-top: 4px solid orange;
-    position: fixed;
-    top:110px !important;
-    left: 0;
-    bottom: 0;
-    height: 100%;
-
-}
-
-.container-referral .mainList {
-    background: white;
-    width: 370px;
-
-}
-
-.navbar {
-    height: 130px;
-    border-top: 2px solid rgb(39, 38, 38);
-    border-bottom: 2px solid #727272;
-    background: rgb(39, 38, 38);
-    font-family: sans-serif;
-}
-
-.Logo_In_NavBar {
-    width: 250px;
-    height: 400px;
-    left: 50px;
-    position: absolute;
-    top: -170px
-}
-
-
-div ul .navbar #welcome {
-    font-size: 20px;
-    color: white;
-    position: absolute;
-    left: 110px;
-    top: 90px;
-    text-decoration: none
-}
-
-.container-referral .mainList .sub {
-    color: orange;
-    height: 60px;
-    border-bottom: 2px solid #727272;
-    font-size: 30px;
-    background: rgb(39, 38, 38);
-    padding-bottom: 10px;
-    text-align: center;
-    font-family: sans-serif
-}
-
-.container-referral .mainList .sub a {
-    color: orange;
-    text-decoration: none;
-    padding-top: 20px;
-    position: relative;
-    left: -40px;
-    top: 30%
-}
-
-.container-referral .mainList .sub a:hover {
-    color: white;
-}
-
-.sub:after {
-    background-image: url("img/Arrow.svg");
-    width: 1em;
-    height: 1em;
-    margin-top: 25px;
-    content: "";
-    left: 300px;
-    background-size: 100% 100%;
-    position: absolute;
-}
-
-#dashboard:before {
-    content: "";
-    background-image: url("img/Dashboard.svg");
-    width: 35px;
-    height: 35px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -60px;
-    top: 15px
-}
-
-#activity:before {
-    content: '';
-    background-image: url("img/Activity.svg");
-    width: 35px;
-    height: 35px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -80px;
-    top: 15px
-}
-
-#referral:hover {
-    color: white !important;
-}
-#referral:before {
-    content: "";
-    background-image: url("img/Referral.svg");
-    width: 35px;
-    height: 35px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -80px;
-    top: 15px
-}
-
-#setting:before {
-    content: "";
-    background-image: url("img/Setting.svg");
-    width: 35px;
-    height: 35px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -85px;
-    top: 15px
-}
-
-.contact {
-    border-bottom: 1px solid transparent !important
-}
-
-#contact:before {
-    content: "";
-    background-image: url("img/contact.svg");
-    width: 35px;
-    height: 35px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -80px;
-    top: 18px
-}
-
-
-
-
 /* Referral */
 #referral {color: orange !important}
 
 #referral-page {
-    /* position: absolute; */
     margin-top: 200px;
     margin-left: 27.5%;
     width: 70%;
 }
-
 
 #referral-page q  {
     font-size: 30px;
    color: #2e2d2d;
    font-weight: bold;
    font-family: sans-serif;
-   /* position: absolute; */
    margin-top: 120px !important;
    margin-left: 40px
-
 }
 
 .referral-page_firstList {
     list-style-type:inherit;
-
-    /* position: absolute; */
     margin-top: 40px;
     margin-left: 60px;
     color: #2e2d2d;
     font-family: sans-serif;
     line-height: 2;
     font-size: 25px
-
 }
-
 
 #referral-page blockquote {
     font-size: 25px;
     color: #2e2d2d;
     font-weight: bold;
     font-family: sans-serif;
-    /* position: absolute; */
     margin-top: 30px;
     margin-left: 40px;
  }
@@ -1497,10 +797,8 @@ div ul .navbar #welcome {
      font-size: 25px;
      font-family: sans-serif;
      color: #2e2d2d;
-     /* position: absolute; */
      margin-top: -20px;
      margin-left: 240px;
-
  }
 
  #referral-page dl {
@@ -1509,7 +807,6 @@ div ul .navbar #welcome {
     color: #2e2d2d;
     font-weight: bold;
     font-family: sans-serif;
-    /* position: absolute; */
     margin-top: 40px;
     margin-left: 40px;
 }
@@ -1518,10 +815,8 @@ div ul .navbar #welcome {
     font-size: 25px;
     font-family: sans-serif;
     color: #2e2d2d;
-    /* position: absolute; */
     top: 400px;
     margin-left: 410px;
-
 }
 
 
@@ -1529,16 +824,12 @@ div ul .navbar #welcome {
  {
      display: flex;
      flex-flow: row wrap;
-     /* position: relative; */
      float: left;
  }
-
-
 
  .referral-page_secondList_column
 {
     flex-grow: 1;
-    /* position: relative; */
     margin-top: 50px;
     font-size: 25px;
     color: #2e2d2d;
@@ -1546,10 +837,7 @@ div ul .navbar #welcome {
     left: 50px;;
     height: 100px;
     margin-left:40px
-
-
 }
-
 
 .referral-page_secondList_column ul li {
     width: auto;
@@ -1558,15 +846,12 @@ div ul .navbar #welcome {
     font-weight: bolder !important
 }
 
-
 .referral-hr-footer
 {
     top: 950px;
     width: 72% !important;
-    /* position: absolute; */
     margin-left:0px !important;
     margin: 0
-
 }
 
 /* Footer */
@@ -1574,22 +859,18 @@ div ul .navbar #welcome {
 .referral-footer-div {
     width: 69% !important;
     margin-left: 28%;
-    /* position: absolute; */
     margin-top: 420px;
-    /* height: 200px; */
 }
 
 #referral-footer-image {
     width: 250px;
     height: 100px;
     left: 30%;
-    /* position: absolute; */
 }
 
 .referral-footer-paragraph {
     font-size: 20px;
     font-family: sans-serif;
-    /* position: absolute; */
     top: -20px;
     margin-left:30%
 }
@@ -1598,89 +879,12 @@ div ul .navbar #welcome {
 @media screen and (max-width:1024px){
     /* ---------------=====Media====-------------Main Container--------------------------- */
 
-    .container-referral {
-        width: 270px;
-        height: 1050px;
-
-
-    }
-
-    .container-referral .mainList {
-        width: 270px
-    }
-
-    .container-referral .mainList .navbar .Logo_In_NavBar{
-        width: 220px;
-        height: 370px;
-        left: 30px;
-        position: absolute;
-        top: -170px
-    }
-
-    div ul .navbar #welcome {
-        font-size: 17px;
-        left: 70px;
-
-    }
-
-
-    .container-referral .mainList .sub {
-        height: 60px;
-        font-size: 25px;
-        padding-bottom: 10px;
-    }
-
-
-    .container-referral .mainList .sub a {
-        left: -10px;
-        top: 30%
-    }
-
-
     .sub:after {
         width: 1em;
         height: 1em;
         content: "";
         left: 85%;
     }
-
-
-    #dashboard:before {
-        content: "";
-        width: 30px;
-        height: 30px;
-        left: -40px;
-    }
-
-    #activity:before {
-        content: "";
-        width: 30px;
-        height: 30px;
-        left: -55px;
-    }
-
-    #contact:before {
-        content: "";
-        width: 30px;
-        height: 30px;
-        left: -55px;
-    }
-
-    #setting:before {
-        content: "";
-        width: 30px;
-        height: 30px;
-        left: -55px;
-    }
-
-    #referral:before {
-        content: "";
-        width: 30px;
-        height: 30px;
-        left: -55px;
-    }
-
-
 
 
 /* =======----media----==========================Referral==================================== */
@@ -1796,64 +1000,6 @@ div ul .navbar #welcome {
             display: none
         }
 
-        #dashboard:before {
-            content: "";
-            background-image: url("img/Dashboard.svg");
-            width: 20px;
-            height: 20px;
-            background-size: 100% 100%;
-            position: absolute;
-            left: -30px;
-            top: 0px
-        }
-
-        #activity:before {
-            content: "";
-            background-image: url("img/Activity.svg");
-            width: 20px;
-            height: 20px;
-            background-size: 100% 100%;
-            position: absolute;
-            left: -30px;
-            top: 0px
-        }
-
-
-        #referral:before {
-            content: "";
-            background-image: url("img/Referral.svg");
-            width: 20px;
-            height: 20px;
-            background-size: 100% 100%;
-            position: absolute;
-            left: -30px;
-            top: 0px
-        }
-
-        #setting:before {
-            content: "";
-            background-image: url("img/Setting.svg");
-            width: 20px;
-            height: 20px;
-            background-size: 100% 100%;
-            position: absolute;
-            left: -30px;
-            top: 0px
-        }
-
-        #contact:before {
-            content: "";
-            background-image: url("img/contact.svg");
-            width: 20px;
-            height: 20px;
-            background-size: 100% 100%;
-            position: absolute;
-            left: -30px;
-            top: 0px
-        }
-
-
-
         /* ==================================Referral================================ */
 
     #referral-page {
@@ -1963,69 +1109,10 @@ div ul .navbar #welcome {
         display: none
     }
 
-    #dashboard:before {
-        content: "";
-        background-image: url("img/Dashboard.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -20px;
-        top: 0px
-    }
-
-    #activity:before {
-        content: "";
-        background-image: url("img/Activity.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -20px;
-        top: 0px
-    }
-
-
-    #referral:before {
-        content: "";
-        background-image: url("img/Referral.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -20px;
-        top: 0px
-    }
-
-    #setting:before {
-        content: "";
-        background-image: url("img/Setting.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -20px;
-        top: 0px
-    }
-
-    #contact:before {
-        content: "";
-        background-image: url("img/contact.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -20px;
-        top: 0px
-    }
-
-
-
     /* Referral */
 
     #referral-page {
-        /* position: absolute; */
-        top: 100px;
+        margin-top: 100px;
         margin-left: .5%;
         width: 72%;
     }
@@ -2036,7 +1123,6 @@ div ul .navbar #welcome {
         color: #2e2d2d;
         font-weight: bold;
         font-family: sans-serif;
-        /* position: absolute; */
         top: 60px;
         margin-left: 30px
 
@@ -2044,7 +1130,6 @@ div ul .navbar #welcome {
 
     .referral-page_firstList {
         list-style-type:inherit;
-        /* position: absolute; */
         top: 100px;
         margin-left: 50px;
         color: #2e2d2d;
@@ -2052,7 +1137,6 @@ div ul .navbar #welcome {
         line-height: 2;
         font-size: 17px;
         width: 350px
-
     }
 
 
@@ -2061,7 +1145,6 @@ div ul .navbar #welcome {
         color: #2e2d2d;
         font-weight: bold;
         font-family: sans-serif;
-        /* position: absolute; */
         top: 330px;
         margin-left: 30px;
     }
@@ -2070,19 +1153,15 @@ div ul .navbar #welcome {
         font-size: 20px;
         font-family: sans-serif;
         color: #2e2d2d;
-        /* position: absolute; */
         top: 310px;
         margin-left: 200px;
-
     }
 
     #referral-page dl {
-
-    font-size: 17px;
+        font-size: 17px;
         color: #2e2d2d;
         font-weight: bold;
         font-family: sans-serif;
-        /* position: absolute; */
         top: 400px;
         margin-left: 30px;
     }
@@ -2091,28 +1170,21 @@ div ul .navbar #welcome {
         font-size: 17px;
         font-family: sans-serif;
         color: #2e2d2d;
-        /* position: absolute; */
         top: 400px;
         margin-left: 280px;
         width: 50px
-
     }
-
 
     .referral-page_secondList
     {
         display: flex;
         flex-flow: row wrap;
-        /* position: relative; */
         float: left;
     }
-
-
 
     .referral-page_secondList_column
     {
         flex-grow: 1;
-        /* position: relative; */
         top: 500px;
         font-size: 20px;
         color: #2e2d2d;
@@ -2131,24 +1203,25 @@ div ul .navbar #welcome {
 
     .referral-hr-footer
     {
-        top: 1200px;
+        top: 930px;
         left:-310px;
         width: 414px !important;
     }
 
     /* Footer */
-
+    
     .referral-footer-div {
         width: 94%;
         margin-left: 0%;
-        /* position: absolute; */
-        margin-top: -800px !important
+        margin-top: 300px !important
     }
 
     .referral-footer-paragraph {
-        font-size: 14px;
-        margin-left: 0;
-        margin-left: 80px;
+        font-size: 16px;
+        margin-left: 0px;
+        top: 0 !important;
+        margin-top: 0 !important;
+        width: 300px
     }
 
     #referral-footer-image {
@@ -2171,7 +1244,6 @@ div ul .navbar #welcome {
 
     .referral-page_firstList {
         list-style-type:inherit;
-        /* position: absolute; */
         top: 100px;
         margin-left: 40px;
         color: #2e2d2d;
@@ -2179,14 +1251,12 @@ div ul .navbar #welcome {
         line-height: 2;
         font-size: 17px;
         width: 280px
-
     }
     #referral-page blockquote {
         font-size: 18px;
         color: #2e2d2d;
         font-weight: bold;
         font-family: sans-serif;
-        /* position: absolute; */
         top: 330px;
         margin-left: 30px;
     }
@@ -2195,19 +1265,15 @@ div ul .navbar #welcome {
         font-size: 18px;
         font-family: sans-serif;
         color: #2e2d2d;
-        /* position: absolute; */
         top: 310px;
         margin-left: 180px;
-
     }
 
     #referral-page dl {
-
         font-size: 16px;
         color: #2e2d2d;
         font-weight: bold;
         font-family: sans-serif;
-        /* position: absolute; */
         top: 400px;
         margin-left: 30px;
     }
@@ -2216,17 +1282,14 @@ div ul .navbar #welcome {
         font-size: 17px;
         font-family: sans-serif;
         color: #2e2d2d;
-        /* position: absolute; */
         top: 400px;
         margin-left: 280px;
         width: 50px
-
     }
-
 
     .referral-hr-footer
     {
-        top: 1100px;
+        top: 920px;
         left:-312px;
         width: 375px !important;
     }
@@ -2236,14 +1299,12 @@ div ul .navbar #welcome {
     .referral-footer-div {
         width: 94%;
         margin-left: 0%;
-        /* position: absolute; */
-        top: 1050px
+        margin-top: 350px !important
     }
 
     .referral-footer-paragraph {
-        font-size: 14px;
-        margin-left: 0;
-        left: 70px;
+        font-size: 16px;
+        margin-left: 0px;
     }
 
     #referral-footer-image {
@@ -2256,45 +1317,9 @@ div ul .navbar #welcome {
 /* Referral - Media - 320 */
 @media screen and (max-width: 320px) {
  
-    #dashboard:before {
-        content: "";
-        background-image: url("img/Dashboard.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -20px;
-        top: 0px
-    }
 
-    #activity:before {
-        content: "";
-        background-image: url("img/Activity.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -20px;
-        top: 0px
-    }
-
-
-    #referral:before {
-        display: none;
-    }
-
-    #setting:before {
-        display: none;
-
-    }
-
-    #contact:before {
-        display: none;
-
-    }
     .referral-page_firstList {
         list-style-type:inherit;
-        /* position: absolute; */
         top: 100px;
         margin-left: 40px;
         color: #2e2d2d;
@@ -2309,7 +1334,6 @@ div ul .navbar #welcome {
         color: #2e2d2d;
         font-weight: bold;
         font-family: sans-serif;
-        /* position: absolute; */
         top: 330px;
         margin-left: 30px;
     }
@@ -2318,19 +1342,15 @@ div ul .navbar #welcome {
         font-size: 15px;
         font-family: sans-serif;
         color: #2e2d2d;
-        /* position: absolute; */
         top: 315px;
         margin-left: 160px;
-
     }
 
     #referral-page dl {
-
         font-size: 15px;
         color: #2e2d2d;
         font-weight: bold;
         font-family: sans-serif;
-        /* position: absolute; */
         top: 400px;
         margin-left: 30px;
         line-height: 1.5
@@ -2340,17 +1360,15 @@ div ul .navbar #welcome {
         font-size: 17px;
         font-family: sans-serif;
         color: #2e2d2d;
-        /* position: absolute; */
         top: 425px;
         margin-left:90px;
         width: 50px
-
     }
 
 
     .referral-hr-footer
     {
-        top: 1030px;
+        top: 910px;
         left:-235px;
         width: 320px !important;
     }
@@ -2361,17 +1379,19 @@ div ul .navbar #welcome {
         width: 90%;
         margin-left: 0%;
         /* position: absolute; */
-        top: 1050px
+        top: 1250px;
+        margin-top: 200px
     }
 
     .referral-footer-paragraph {
         font-size: 14px;
         margin-left: 0;
-        left: 30px;
+        left: 0px;
+        width: 300px;
     }
 
     #referral-footer-image {
-        width: 150px;
+        width: 150px !important;
         height: 50px;
     }
 
@@ -2382,15 +1402,12 @@ div ul .navbar #welcome {
 
 /* ACTIVITY */
 
-
-
 .mainContainer
 {
     background-color: #FFFDE8
 }
 body {
     background-color: #FFFDE8
-
 }
 
 
@@ -2426,25 +1443,7 @@ header {
 }
 
 
-
 /* Menu */
-.container-activity {
-    width: 370px;
-    height: 100%;
-    background: rgb(39, 38, 38);
-    border-top: 4px solid orange;
-    position: fixed;
-    top: 110px;
-
-
-}
-
-.container-activity .mainList {
-    background: white;
-    width: 370px;
-    top: 150px
-
-}
 
 .navbar {
     height: 130px;
@@ -2452,48 +1451,6 @@ header {
     background: rgb(39, 38, 38);
     font-family: helvetica
 
-}
-
-.Logo_In_NavBar {
-    width: 250px;
-    height: 400px;
-    left: 50px;
-    position: absolute;
-    top: -170px
-}
-
-
-div ul .navbar #welcome {
-    font-size: 20px;
-    color: white;
-    position: absolute;
-    left: 110px;
-    top: 90px;
-    text-decoration: none
-}
-
-.container-activity .mainList .sub {
-    color: orange;
-    height: 60px;
-    border-bottom: 2px solid #727272;
-    font-size: 30px;
-    background: rgb(39, 38, 38);
-    padding-bottom: 10px;
-    text-align: center;
-    font-family: sans-serif
-}
-
-.container-activity .mainList .sub a {
-    color: orange;
-    text-decoration: none;
-    padding-top: 20px;
-    position: relative;
-    left: -40px;
-    top: 30%
-}
-
-.container-activity .mainList .sub a:hover {
-    color: white;
 }
 
 .sub:after {
@@ -2573,7 +1530,6 @@ div ul .navbar #welcome {
 /* Activity */
 
  #activity-page {
-     /* position: absolute; */
      top: 00px;
      margin-left: 27.5%;
      width: 72%;
@@ -2586,11 +1542,9 @@ div ul .navbar #welcome {
     color: #2e2d2d;
     font-weight: bold;
     font-family: sans-serif;
-    /* position: absolute; */
     margin-top: 210px;
     margin-left: 40px;
  }
-
 
  #activity-page .purchases q {
     width: 200px;
@@ -2601,18 +1555,15 @@ div ul .navbar #welcome {
     color: #2e2d2d;
     font-weight: bold;
     font-family: sans-serif;
-    /* position: relative; */
     margin-top: 400px;
     margin-left: 350px;
  }
-
 
  #activity-page_secondList
  {
      display: flex;
      flex-flow: row wrap;
-     /* position: relative; */
-     overflow: scroll;
+     /* overflow-y: scroll; */
      height: 250px;
      margin-top: 80px !important;
      width: 960px;
@@ -2625,10 +1576,9 @@ div ul .navbar #welcome {
     margin: 15% 35%
 }
 
- #activity-page_secondList_column
+ .activity-page_secondList_column
 {
     flex-grow: 1;
-    /* position: relative; */
     margin-top: 10px;
     font-size: 25px;
     font-weight: bold;
@@ -2641,7 +1591,6 @@ div ul .navbar #welcome {
     width: 150px;
     margin-top: 25px;
     font-size: 20px;
-    /* position: relative; */
 }
 
 .mainList2 {display: none}
@@ -2655,7 +1604,6 @@ div ul .navbar #welcome {
    color: #2e2d2d;
    font-weight: bold;
    font-family: sans-serif;
-   /* position: absolute; */
    margin-left: 320px;
    margin-top: 70px;
 }
@@ -2664,13 +1612,12 @@ div ul .navbar #welcome {
  {
      display: flex;
      flex-flow: row wrap;
-     /* position: relative; */
-     overflow: scroll;
+     /* overflow-y: scroll; */
      margin-top: 70px;
      width: 970px;
      height: 300px;
  }
-#activity-page_secondList_column .remain {
+.activity-page_secondList_column .remain {
 
     border: 1px solid black;
     height: 25px;
@@ -2679,17 +1626,15 @@ div ul .navbar #welcome {
     color: white;
 }
 
-
-#activity-page_secondList_column .remain .progress {
+.activity-page_secondList_column .remain .progress {
     width:98%;
     background-color: orange;
     height: 100%;
 
 }
- #activity-page_thirdList_column
+ .activity-page_thirdList_column
 {
     flex-grow: 1;
-    /* position: relative; */
     margin-top: 10px;
     font-size: 25px;
     color: #2e2d2d;
@@ -2704,12 +1649,10 @@ div ul .navbar #welcome {
     margin-top: 10px;
     font-size: 17px;
     height: 70px;
-    /* position: relative; */
 }
 
 #activity-page_thirdList div ul li:nth-of-type(1) {
     margin-top: 20px;
-    /* position: relative; */
 }
 
 .activity-hr-footer
@@ -2723,11 +1666,8 @@ div ul .navbar #welcome {
 .activity-footer-div {
     width: 70%;
     margin-left: 28%;
-    /* position: relative; */
-    margin-top: 20px;
+    margin-top: -440px !important;
     height: 100;
-    /* border: 2px solid */
-    
 }
 
 #activity-footer-image {
@@ -2738,7 +1678,6 @@ div ul .navbar #welcome {
 .activity-footer-paragraph {
     font-size: 20px;
     font-family: sans-serif;
-    /* position: absolute; */
     top: -20px;
     margin-left: 30%
 }
@@ -2752,15 +1691,12 @@ div ul .navbar #welcome {
         border-top: 4px solid orange;
         position: fixed;
         top: 110px;
-    
-    
     }
     
     .container-activity .mainList {
         background: white;
         width: 340px !important;
         top: 150px
-    
     }
     
 }
@@ -2855,9 +1791,8 @@ div ul .navbar #welcome {
        height: 30px;
        font-size: 25px;
     }
-
      
-    #activity-page_secondList_column
+    .activity-page_secondList_column
     {
         top: 450px;
         font-size: 20px;
@@ -2867,8 +1802,7 @@ div ul .navbar #welcome {
     {
       display: flex;
       flex-flow: row wrap;
-      /* position: relative; */
-      overflow: scroll;
+      /* overflow-y: scroll; */
       height: 300px;
       margin-top: 0px;
       width: 730px
@@ -2878,13 +1812,11 @@ div ul .navbar #welcome {
         width: 120px;
         margin-top: 25px;
         font-size: 20px;
-        /* position: relative; */
     }
 
-    #activity-page_secondList_column
+    .activity-page_secondList_column
     {
     flex-grow: 1;
-    /* position: relative; */
     margin-top: 50px;
     font-size: 25px;
     color: #2e2d2d;
@@ -2898,7 +1830,7 @@ div ul .navbar #welcome {
       height: 30px;
       font-size: 25px;
     }
-   #activity-page_thirdList_column
+   .activity-page_thirdList_column
     {
        top: 450px;
        font-size: 20px;
@@ -2908,25 +1840,21 @@ div ul .navbar #welcome {
     {
         display: flex;
         flex-flow: row wrap;
-        /* position: relative; */
-        overflow: scroll;
+        /* overflow-y: scroll; */
         height: 300px;
         top: 480px;
         width: 730px;
     }
-    #activity-page_thirdList_column
+    .activity-page_thirdList_column
    {
        flex-grow: 1;
-       /* position: relative; */
        top: 200px;
        font-size: 20px;
        color: #2e2d2d;
        font-weight: bold;
        font-family: sans-serif;
        margin-left: 7%
-
    }
-
 
    #activity-page_thirdList div ul li {
        font-weight: normal !important;
@@ -2934,18 +1862,15 @@ div ul .navbar #welcome {
        margin-top: 10px;
        font-size: 17px;
        height: 70px;
-       /* position: relative; */
-
    }
 
    #activity-page_thirdList div ul li:nth-of-type(1) {
        top: 20px;
-       /* position: relative; */
    }
 
    /* Footer */
    .activity-hr-footer {
-       top: 7px
+       top: -40px
    }
    .activity-footer-div {
        top: 1350px
@@ -2997,7 +1922,6 @@ div ul .navbar #welcome {
         left: -30px;
         top: 0px
     }
-
 
     #referral:before {
         content: "";
@@ -3061,7 +1985,7 @@ div ul .navbar #welcome {
         margin: 15% 35%
     }
 
-    #activity-page_secondList_column
+    .activity-page_secondList_column
    {
        top: 160px;
        font-size: 20px;
@@ -3080,7 +2004,7 @@ div ul .navbar #welcome {
       font-size: 27px;
    }
 
-    #activity-page_thirdList_column
+    .activity-page_thirdList_column
    {
        top: 120px;
        font-size: 22px;
@@ -3093,7 +2017,7 @@ div ul .navbar #welcome {
 
    .activity-hr-footer
    {
-       top: 70px;
+       top: -70px !important;
        width: 98%;
        margin-left: -10px;
        left: 0
@@ -3104,7 +2028,6 @@ div ul .navbar #welcome {
    .activity-footer-div {
        width: 100%;
        margin-left: 0%;
-       /* position: absolute; */
        top: 1100px
    }
 
@@ -3116,10 +2039,8 @@ div ul .navbar #welcome {
    .activity-footer-paragraph {
        font-size: 20px;
        font-family: sans-serif;
-       /* position: absolute; */
        top: -60px;
        margin-left: 150px
-
    }
 
 }
@@ -3204,7 +2125,6 @@ div ul .navbar #welcome {
         top: 0px
     }
 
-
     #activity-page {
         margin-left: 1.5% !important;
         width: 100%;
@@ -3220,20 +2140,19 @@ div ul .navbar #welcome {
         height: 20px;
         font-size: 18px;
         margin-left: 150px;
-        /* margin-top: 350px !important */
     }
     #activity-page_secondList {
         margin-top: 30px;
         width: 380px;
         height: 300px;
-        overflow: scroll;
+        overflow-y: scroll;
         display: flex;
         display: -ms-flexbox;
         display: -webkit-flex;
         display: -o-flex;
         flex-flow: column wrap
     }
-    #activity-page_secondList_column
+    .activity-page_secondList_column
     {
         top: 00px;
         font-size: 15px;
@@ -3241,15 +2160,15 @@ div ul .navbar #welcome {
         position: absolute;
     }
 
-    #activity-page_secondList_column:nth-of-type(2){
+    .activity-page_secondList_column:nth-of-type(2){
         margin-top: 300px
     }
 
-    #activity-page_secondList_column:nth-of-type(3){
+    .activity-page_secondList_column:nth-of-type(3){
         margin-top: 350px
     }
 
-    #activity-page_secondList_column:nth-of-type(4){
+    .activity-page_secondList_column:nth-of-type(4){
         margin-top: 400px
     }
 
@@ -3272,22 +2191,20 @@ div ul .navbar #welcome {
         top:470px;
         width: 400px;
         flex-flow: row wrap;
-
-
     }
-    #activity-page_thirdList_column
+    .activity-page_thirdList_column
     {
         font-size: 21px;
         position: absolute;
         margin-top: 530px
     }
 
-    #activity-page_thirdList_column:nth-of-type(1) ul li {
+    .activity-page_thirdList_column:nth-of-type(1) ul li {
         position: absolute;
         margin-top: -10px;
         margin-left: 60px
     }
-    #activity-page_thirdList_column ul li:nth-of-type(1) {
+    .activity-page_thirdList_column ul li:nth-of-type(1) {
         position: absolute;
         margin-top: -18px !important;
         margin-left: 160px;
@@ -3295,44 +2212,39 @@ div ul .navbar #welcome {
         font-size: 18px;
     }
 
-    #activity-page_thirdList_column:nth-of-type(2) {
+    .activity-page_thirdList_column:nth-of-type(2) {
         margin-top: 590px
     }
 
-    #activity-page_thirdList_column:nth-of-type(3) {
+    .activity-page_thirdList_column:nth-of-type(3) {
         margin-top: 650px
     }
     
-    #activity-page_thirdList_column:nth-of-type(4) {
+    .activity-page_thirdList_column:nth-of-type(4) {
         margin-top: 710px
     }
-   
     
     #activity-page_thirdList div ul li {
         width: 120px;
         font-size: 13px;
         margin-left: 60px;
-        
     }
 
     .activity-hr-footer
     {
         margin-left: 0;
-        top: 60px
     }
 
     /* Footer */
     #footer-div {
-        /* position: relative; */
-        top: 540px;
+        top: 540px ;
         margin-top: 0 !important
     }
     .activity-footer-div {
         width: 100%;
         margin-left: 0%;
-        /* position: absolute; */
         top: 000px !important;
-        margin-top: -1450px !important;
+        margin-top: -500px !important;
     }
 
     #activity-footer-image {
@@ -3343,14 +2255,11 @@ div ul .navbar #welcome {
     .activity-footer-paragraph {
         font-size: 15px;
         font-family: sans-serif;
-        /* position: absolute; */
         top: -60px;
         margin-left: 60px
     }
 
     .useraccount {margin-left: 78% !important}
-
-
 
 }
 
@@ -3402,7 +2311,6 @@ div ul .navbar #welcome {
         left: -20px;
         top: 0px
     }
-
 
     #referral:before {
         content: "";
@@ -3459,16 +2367,14 @@ div ul .navbar #welcome {
         width: 360px;
         height: 300px
     }
-    #activity-page_secondList_column
+    .activity-page_secondList_column
     {
        top: 00px;
        font-size: 15px;
        margin-top: 80px
     }
 
-
-
-    #activity-page_secondList_column
+    .activity-page_secondList_column
     {
         top: 00px;
         font-size: 15px;
@@ -3476,7 +2382,7 @@ div ul .navbar #welcome {
         position: absolute;
     }
 
-    #activity-page_thirdList_column ul li:nth-of-type(1) {
+    .activity-page_thirdList_column ul li:nth-of-type(1) {
         position: absolute;
         margin-top: -18px !important;
         margin-left: 120px;
@@ -3484,25 +2390,9 @@ div ul .navbar #welcome {
         font-size: 16px;
     }
 
-    /* #activity-page_secondList_column:nth-of-type(1){
-        margin-top: 250px
-    }
-    #activity-page_secondList_column:nth-of-type(2){
-        margin-top: 300px
-    }
-
-    #activity-page_secondList_column:nth-of-type(3){
-        margin-top: 350px
-    }
-
-    #activity-page_secondList_column:nth-of-type(4){
-        margin-top: 400px
-    } */
-
     #activity-page_secondList div ul li {
         margin-left: 150px;
     }
-    
 
     #activity-page_secondList div ul li {
        width: 120px;
@@ -3520,7 +2410,7 @@ div ul .navbar #welcome {
        top:470px;
         width: 360px;
     }
-    #activity-page_thirdList_column
+    .activity-page_thirdList_column
     {
        font-size: 17px;
     }
@@ -3541,8 +2431,7 @@ div ul .navbar #welcome {
     .activity-footer-div {
        width: 100%;
        margin-left: 0%;
-       /* position: absolute; */
-       margin-top: -1400px !important
+       margin-top: -530px !important
     }
 
     #activity-footer-image {
@@ -3553,10 +2442,7 @@ div ul .navbar #welcome {
     .activity-footer-paragraph {
        font-size: 15px;
        font-family: sans-serif;
-       /* position: absolute; */
-       /* margin-top: -60px !important; */
        margin-left: 20px
-
     }
 }
 
@@ -3592,7 +2478,6 @@ div ul .navbar #welcome {
         left: -22px;
         top: 0px
     }
-
 
     #referral:before {
         content: "";
@@ -3637,7 +2522,7 @@ div ul .navbar #welcome {
         margin-left: 120px;
     }
 
-    #activity-page_thirdList_column ul li:nth-of-type(1) {
+    .activity-page_thirdList_column ul li:nth-of-type(1) {
         position: absolute;
         margin-top: -18px !important;
         margin-left: 120px;
@@ -3647,20 +2532,16 @@ div ul .navbar #welcome {
     #activity-page_thirdList{
         top:470px;
         width: 305px;
- 
      }
-     /* .useraccount {margin-left: 75%} */
 
      .activity-footer-div {
         width: 100%;
         margin-left: 0%;
-        /* position: absolute; */
-        margin-top: -1360px !important
+        margin-top: -520px !important
      }
     .footer-paragraph {
         font-size: 12px;
         font-family: sans-serif;
-        /* position: absolute; */
         top: -60px;
         margin-left: 0px;
         width: 200px
@@ -3679,7 +2560,6 @@ div ul .navbar #welcome {
     display: none
 }
 
-
 /* --------------------------------------------------------Header----------------------------------------- */
 
 header {
@@ -3692,7 +2572,6 @@ header {
     font-size: 50px;
     position: fixed;
     z-index: 2000;
-
 }
 
 header div {
@@ -3702,7 +2581,6 @@ header div {
     height: 110px;
     position: fixed;
     z-index: 2000;
-
 }
 
 .Logo_header {
@@ -3715,156 +2593,15 @@ header div {
 
 body {
     background-color: #FFFDE8
-
-}
-
-/* ----------------------------------------------Main Container-------------------------------------------- */
-.container-dashboard {
-    width: 370px;
-    height: 2150px;
-    background: rgb(39, 38, 38);
-    border-top: 4px solid orange
-}
-
-.container-dashboard .mainList {
-    background: white;
-    position: sticky;
-    width: 370px;
-    top: 130px
-}
-
-.container-dashboard .navbar {
-    height: 130px;
-    border-bottom: 2px solid #727272;
-    background: rgb(39, 38, 38);
-    font-family: sans-serif;
-}
-
-.container-dashboard .Logo_In_NavBar {
-    width: 250px;
-    height: 400px;
-    left: 50px;
-    position: absolute;
-    top: -170px
-}
-
-
-div ul .navbar #welcome {
-    font-size: 20px;
-    color: white;
-    position: absolute;
-    left: 110px;
-    top: 90px;
-    text-decoration: none
-}
-
-.container-dashboard .mainList .sub {
-    color: orange;
-    height: 60px;
-    border-bottom: 2px solid #727272;
-    font-size: 30px;
-    background: rgb(39, 38, 38);
-    padding-bottom: 10px;
-    text-align: center;
-    font-family: sans-serif
-}
-
-.container-dashboard .mainList .sub a {
-    color: orange;
-    text-decoration: none;
-    padding-top: 20px;
-    position: relative;
-    left: -40px;
-    top: 30%
-}
-
-.container-dashboard .mainList .sub a:hover {
-    color: white;
-}
-
-.sub:after {
-    background-image: url("img/Arrow.svg");
-    width: 1em;
-    height: 1em;
-    margin-top: 25px;
-    content: "";
-    left: 80%;
-    background-size: 100% 100%;
-    position: absolute;
-}
-#dashboard:hover{
-    color: white !important
-}
-#dashboard:before {
-    content: "";
-    background-image: url("img/Dashboard.svg");
-    width: 35px;
-    height: 35px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -60px;
-    top: 15px
-}
-
-#activity:before {
-    content: '';
-    background-image: url("img/Activity.svg");
-    width: 35px;
-    height: 35px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -80px;
-    top: 15px
-}
-
-
-#referral:before {
-    content: "";
-    background-image: url("img/Referral.svg");
-    width: 35px;
-    height: 35px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -80px;
-    top: 15px
-}
-
-#setting:before {
-    content: "";
-    background-image: url("img/Setting.svg");
-    width: 35px;
-    height: 35px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -85px;
-    top: 15px
-}
-
-.contact {
-    border-bottom: 1px solid transparent !important
-}
-
-#contact:before {
-    content: "";
-    background-image: url("img/contact.svg");
-    width: 35px;
-    height: 35px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -80px;
-    top: 18px
 }
 
 /*  --------------------------------------------------dashboard-page----------------------------------------*/
 
-
 #dashboard-page {
     width: 72.3%;
     height: 1800px;
-    /* right: 0; */
     margin-left: 27.7%;
     margin-top:150px;
-    /* position: absolute; */
     box-sizing: border-box;
     display: block;
 }
@@ -3883,7 +2620,6 @@ div ul .navbar #welcome {
     height: 450px;
     border: 20px solid #ff9100;
     border-radius: 50%;
-    /* position: relative; */
     margin-left: 23%;
     margin-top: 4%;
     border-collapse: 2px solid #727272
@@ -3905,23 +2641,19 @@ div ul .navbar #welcome {
     margin-left: 10%;
 }
 
-
 #dashboard-page-circle p:nth-of-type(1) {
     font-size: 45px;
     text-align: center;
     color: rgb(41, 37, 37);
-    /* position: relative; */
     margin-top: 35%;
     font-weight: bolder;
     font-family: sans-serif
 }
 
-
 #dashboard-page-circle p:nth-of-type(2) {
     font-size: 45px;
     text-align: center;
     color: rgb(41, 37, 37);
-    /* position: relative; */
     margin-top: 2%;
     font-weight: bolder;
     font-family: sans-serif
@@ -3933,7 +2665,6 @@ div ul .navbar #welcome {
 
 /* ==================================================HASH History============================== */
 #dashboard-page #dashboard-title {
-    /* position: absolute; */
     margin-left: 40%;
     margin-top: -2%;
     font-family: sans-serif;
@@ -3950,18 +2681,14 @@ div ul .navbar #welcome {
  {
      display: flex;
      flex-flow: row wrap;
-     /* position: relative; */
      height: 300px;
      margin-top: 30px;
-     overflow:scroll;
+     /* overflow-y: scroll; */
  }
 
-
-
- #Hash-History_column
+ .Hash-History_column
 {
     flex-grow: 1;
-    /* position: relative; */
     margin-top: 30px;
     font-size: 15px;
     color: #2e2d2d;
@@ -3970,27 +2697,21 @@ div ul .navbar #welcome {
     margin-left: 5%;
     text-align: left;
     display: block
-
 }
 
-
-#Hash-History_column ul li {
+.Hash-History_column ul li {
     font-weight: normal !important;
     width: 150px;
     top: 30px;
     font-size: 20px;
     height: 70px;
-    /* position: relative; */
     color: #2e2d2d;
     font-weight: bold;
 }
 
-#Hash-History_column  li:nth-of-type(1) {
+.Hash-History_column  li:nth-of-type(1) {
     top: 30px;
-    /* position: relative; */
 }
-
-
 
 .remain {
     width: 180px; margin: 0px auto;
@@ -3998,7 +2719,6 @@ div ul .navbar #welcome {
 /* ==============================================Buy hash power=================================== */
 
 #demo {
-    /* position: relative; */
     margin-top: 8%;
     margin-left: 44%;
     font-size: 25px;
@@ -4007,16 +2727,12 @@ div ul .navbar #welcome {
     font-family: Helvetica, sans-serif;
 }
 
-
-
 .slidecontainer {
     width: 82%;
     margin-top: 2%;
     margin-left: 8%;
     top: 0%;
     left: 0;
-    /* position: relative; */
-
 }
 
 .slider {
@@ -4051,14 +2767,12 @@ div ul .navbar #welcome {
 }
 
 #dashboard-page #dashboard-title2 {
-    /* position: absolute; */
     margin-left: 38%;
     margin-top: -2%;
     font-family: sans-serif;
     font-size: 25px;
     font-weight: bolder;
     color: #2e2d2d;
-
 }
 
 .pandel-button {
@@ -4074,7 +2788,6 @@ div ul .navbar #welcome {
     font-size: 1.2rem;
     line-height: 1.5;
     border-radius: .25rem;
-    /*transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;*/
     color: #212529;
     background-color: #42dca3;
     border-color: #42dca3;
@@ -4094,16 +2807,9 @@ div ul .navbar #welcome {
     cursor: pointer;
 }
 
-/*form.dashboard-page button p {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    font-size: 30px;
-    color: white;
-}*/
 /*============================================== Mining History ===================================*/
 
-
     #dashboard-page #dashboard-title3 {
-        /* position: absolute; */
         margin-left: 39%;
         margin-top: -2%;
         font-family: sans-serif;
@@ -4112,12 +2818,10 @@ div ul .navbar #welcome {
         color: #2e2d2d;
     }
 
-
     canvas#chart1 {
         -moz-user-select: none;
         -webkit-user-select: none;
         -ms-user-select: none;
-        /* position: absolute; */
         margin-top: 5%;
         margin-left: 20%
     }
@@ -4152,15 +2856,12 @@ div ul .navbar #welcome {
         width: 39.5%;
         margin-left:59.5%;
         margin-top: -14px
-
     }
-
 
     .dashboard-hr2-2 {
         width: 41.5%;
         margin-left: 57.5%;
         margin-top: -16px;
-        /* position: relative; */
     }
     .dashboard-hr-footer
     {
@@ -4175,8 +2876,7 @@ div ul .navbar #welcome {
     .dashboard-footer-div {
         width: 70%;
         margin-left: 28%;
-        /* position: absolute; */
-        margin-top: 100px;
+        margin-top: -370px;
     }
 
     #dashboard-footer-image {
@@ -4187,10 +2887,8 @@ div ul .navbar #welcome {
     .dashboard-footer-paragraph {
         font-size: 20px;
         font-family: sans-serif;
-        /* position: absolute; */
         margin-left: 40%
     }
-
 
 
 /* Dashboard-Media-1024 */
@@ -4200,7 +2898,6 @@ div ul .navbar #welcome {
     .container-dashboard {
         width: 270px;
         height: 2100px;
-
     }
 
     .container-dashboard .mainList {
@@ -4218,9 +2915,7 @@ div ul .navbar #welcome {
     div ul .navbar #welcome {
         font-size: 17px;
         left: 70px;
-
     }
-
 
     .container-dashboard .mainList .sub {
         height: 60px;
@@ -4228,12 +2923,10 @@ div ul .navbar #welcome {
         padding-bottom: 10px;
     }
 
-
     .container-dashboard .mainList .sub a {
         left: -10px;
         top: 30%
     }
-
 
     .sub:after {
         width: 1em;
@@ -4241,43 +2934,6 @@ div ul .navbar #welcome {
         content: "";
         left: 85%;
     }
-
-
-    #dashboard:before {
-        content: "";
-        width: 30px;
-        height: 30px;
-        left: -40px;
-    }
-
-    #activity:before {
-        content: "";
-        width: 30px;
-        height: 30px;
-        left: -55px;
-    }
-
-    #contact:before {
-        content: "";
-        width: 30px;
-        height: 30px;
-        left: -55px;
-    }
-
-    #setting:before {
-        content: "";
-        width: 30px;
-        height: 30px;
-        left: -55px;
-    }
-
-    #referral:before {
-        content: "";
-        width: 30px;
-        height: 30px;
-        left: -55px;
-    }
-
 
     .dashboard-hr1 {
         width: 38%;
@@ -4289,7 +2945,6 @@ div ul .navbar #welcome {
         width: 41.5%;
         margin-left: 57.5%;
         margin-top: -16px;
-        /* position: relative; */
     }
 
     .dashboard-hr222-2 {
@@ -4315,9 +2970,7 @@ div ul .navbar #welcome {
         width: 39.5%;
         margin-left:59.5%;
         margin-top: -14px
-
     }
-   
 
     /* ================---media--=================Circle================================== */
 
@@ -4342,7 +2995,7 @@ div ul .navbar #welcome {
     {
         margin-top: 100px !important
     }
-/* ==================================================HASH History============================== */
+    /* ==================================================HASH History============================== */
 
     #dashboard-page #dashboard-title {
         margin-left: 38%;
@@ -4357,22 +3010,21 @@ div ul .navbar #welcome {
         height: 300px;
     }
 
-    #Hash-History_column
+    .Hash-History_column
     {
         margin-top: 30px;
         font-size: 15px;
         margin-left: 5%;
     }
 
-
-    #Hash-History_column ul li {
+    .Hash-History_column ul li {
         width: 80px;
         margin-top: 30px;
         font-size: 13px;
         height: 70px;
     }
 
-    #Hash-History_column .remain li {
+    .Hash-History_column .remain li {
         width: 100px;
         border: 1px solid ;
         height: 35px;
@@ -4382,43 +3034,39 @@ div ul .navbar #welcome {
         width: 100px; margin: 0px auto
     }
 
-/* ==============================================Buy hash power=================================== */
+    /* ==============================================Buy hash power=================================== */
 
     #dashboard-page #dashboard-title2 {
         left: 35%;
         top: 870px;
         font-size: 22px;
     }
-
    
-/*============================================== Mining History ===================================*/
+    /*============================================== Mining History ===================================*/
 
-#dashboard-page #dashboard-title3 {
-    margin-left: 38%;
-    margin-top: -16px;
-    font-size: 22px;
-    z-index: 2;
-}
+    #dashboard-page #dashboard-title3 {
+        margin-left: 38%;
+        margin-top: -16px;
+        font-size: 22px;
+        z-index: 2;
+    }
 
-canvas#chart1 {
-    margin-top: 0px;
-    margin-left: 0
-}
+    canvas#chart1 {
+        margin-top: 0px;
+        margin-left: 0
+    }
 
-
-/*========================================= Footer============================== */
-.dashboard-hr-footer {
-    top: 0;
-    margin-top: 28%
-}
-.dashboard-footer-div {
-    width: 70%;
-    margin-left: 27%;
-    /* position: absolute; */
-    margin-top: -15%;
-    top: 0
-}
-
+    /*========================================= Footer============================== */
+    .dashboard-hr-footer {
+        top: 0;
+        margin-top: 28%
+    }
+    .dashboard-footer-div {
+        width: 70%;
+        margin-left: 27%;
+        margin-top: -50%;
+        top: 0
+    }
 
 }
 
@@ -4438,68 +3086,9 @@ canvas#chart1 {
         width: 100%;
         z-index: 0;
     }
-    
-    .container  .mainList {
-        display: none !important
-    }
+   
     .container {
         border-bottom: transparent
-    }
-
-    #dashboard:before {
-        content: "";
-        background-image: url("img/Dashboard.svg");
-        width: 20px;
-        height: 20px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -30px;
-        top: 0px
-    }
-
-    #activity:before {
-        content: "";
-        background-image: url("img/Activity.svg");
-        width: 20px;
-        height: 20px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -30px;
-        top: 0px
-    }
-
-
-    #referral:before {
-        content: "";
-        background-image: url("img/Referral.svg");
-        width: 20px;
-        height: 20px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -30px;
-        top: 0px
-    }
-
-    #setting:before {
-        content: "";
-        background-image: url("img/Setting.svg");
-        width: 20px;
-        height: 20px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -30px;
-        top: 0px
-    }
-
-    #contact:before {
-        content: "";
-        background-image: url("img/contact.svg");
-        width: 20px;
-        height: 20px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -30px;
-        top: 0px
     }
 
     /* ======================================Circle=========================================== */
@@ -4509,7 +3098,6 @@ canvas#chart1 {
         height: 450px;
         border: 20px solid #ff9100;
         border-radius: 50%;
-        /* position: relative; */
         margin-left: 19%;
         margin-top: 4%;
         border-collapse: 2px solid #727272
@@ -4525,12 +3113,10 @@ canvas#chart1 {
         margin-left: 22%;
     }
 
-
     #dashboard-page-circle p {
         font-size: 45px;
         text-align: center;
         color: rgb(41, 37, 37);
-        /* position: relative; */
         margin-top: 40%;
         font-weight: bolder;
         font-family: sans-serif
@@ -4538,7 +3124,6 @@ canvas#chart1 {
 
     /* ==================================================HASH History============================== */
     #dashboard-page #dashboard-title {
-        /* position: absolute; */
         margin-left: 42.2%;
         font-family: sans-serif;
         font-size: 25px;
@@ -4563,32 +3148,24 @@ canvas#chart1 {
      {
          display: flex;
          flex-flow: row wrap;
-         /* position: relative; */
      }
 
-
-
-     #Hash-History_column
+     .Hash-History_column
     {
         flex-grow: 1;
-        /* position: relative; */
         margin-top: 20px;
         margin-left: 5%;
-
     }
 
-
-    #Hash-History_column ul li {
+    .Hash-History_column ul li {
         width: 150px;
         font-size: 16px;
         height: 70px;
-        /* position: relative; */
     }
 
     /* ==============================================Buy hash power=================================== */
 
     #dashboard-page #dashboard-title2 {
-        /* position: absolute; */
         margin-left: 40%;
         margin-top: -20px;
         font-family: sans-serif;
@@ -4609,9 +3186,7 @@ canvas#chart1 {
 
     /*============================================== Mining History ===================================*/
 
-
     #dashboard-page #dashboard-title3 {
-        /* position: absolute; */
         margin-left: 41%;
         margin-top: -20px;
         font-family: sans-serif;
@@ -4646,8 +3221,7 @@ canvas#chart1 {
     .dashboard-footer-div {
         width: 70%;
         margin-left: 2%;
-        /* position: absolute; */
-        margin-top: 0px;
+        margin-top: -300px;
         border-bottom: transparent
     }
 
@@ -4660,25 +3234,16 @@ canvas#chart1 {
         font-size: 20px;
         border-bottom: transparent;
         font-family: sans-serif;
-        /* position: absolute; */
         top: -60px;
         margin-left: 200px;
         width: 440px
     }
-
 
 }
 
 
 /* Dashboard-Media-414 */
 @media screen and (max-width:414px) {
-    .Logo_header {
-        top: 0px;
-        width: 200px;
-        height: 110px;
-        position: absolute;
-        left: 40px;
-    }
 
     .container-dashboard {
         display: none
@@ -4686,7 +3251,6 @@ canvas#chart1 {
 
     #dashboard-page {
         height: 0px !important;
-
         width: 100%;
         z-index: 0;
     }
@@ -4695,133 +3259,23 @@ canvas#chart1 {
         display: none
     }
 
-    #dashboard:before {
-        content: "";
-        background-image: url("img/Dashboard.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -20px;
-        top: 0px
-    }
-
-    #activity:before {
-        content: "";
-        background-image: url("img/Activity.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -20px;
-        top: 0px
-    }
-
-
-    #referral:before {
-        content: "";
-        background-image: url("img/Referral.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -20px;
-        top: 0px
-    }
-
-    #setting:before {
-        content: "";
-        background-image: url("img/Setting.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -20px;
-        top: 0px
-    }
-
-    #contact:before {
-        content: "";
-        background-image: url("img/contact.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -20px;
-        top: 0px
-    }
-
-
     .dashboard-hr1-1 {
         display: block;
         top: 135px;
         width: 30%;
         left: -145px;
-        /* position: relative; */
-
     }
 
     .dashboard-hr2-2 {
         display: block;
         top: 115px;
         width: 30%;
-        /* position: relative; */
         left: 142px;
     }
-
 
     .dashboard-hr11 {
         display: block;
     }
-    /* User Account */
-
-    .useraccount {
-        top: 10px;
-        margin-left:80%;
-    }
-    .useraccount .list {
-        width: 170px;
-        height: 110px;
-        display: block;
-    }
-    .useraccount .list  {
-        margin-left: -105px
-    }
-    .useraccount .list:after {
-        margin-left: 110px;
-    }
-
-    .useraccount .list ul li {
-        width: 170px;
-        font-size: 15px
-
-    }
-
-    #usericon:before {
-        content: '';
-        display: block;
-        width: 20px;
-        height: 20px;
-        background-image: url("../img/user-solid.svg");
-        background-size: 100% 100%;
-        position: relative;
-        left: 2.5vh;
-        top: 3vh
-        
-    }
-
-
-
-    #usericon:hover::before ,#logouticon:hover::before{
-        border: 1px solid white;
-        border-radius: 15%;
-        background-color: white
-    }
-
-    #logouticon:before{
-        left: 3vh;
-    }
-
 
     /* ======================================Circle=========================================== */
     #dashboard-page-circle {
@@ -4830,10 +3284,9 @@ canvas#chart1 {
         height: 250px;
         border: 20px solid #ff9100;
         border-radius: 50%;
-        /* position: relative; */
         margin-left: 15%;
         left: 0%;
-        top: 4%;
+        margin-top:-8% !important;
         border-collapse: 2px solid #727272
     }
 
@@ -4842,18 +3295,15 @@ canvas#chart1 {
         text-align: center;
         font-family: sans-serif;
         color: #727272;
-        /* position: absolute; */
         margin-top: 15%;
         font-weight: bolder;
         margin-left: 20%;
     }
 
-
     #dashboard-page-circle p {
         font-size: 20px !important;
         text-align: center;
         color: rgb(41, 37, 37);
-        /* position: relative; */
         top: 40%;
         font-weight: bolder;
         font-family: sans-serif
@@ -4861,7 +3311,6 @@ canvas#chart1 {
 
     /* ==================================================HASH History============================== */
     #dashboard-page #dashboard-title {
-        /* position: absolute; */
         margin-left: 35.5%;
         margin-top:-20px;
         font-family: sans-serif;
@@ -4873,8 +3322,6 @@ canvas#chart1 {
     .dashboard-hr1  {
         width: 33%;
         left: 10px;
-
-
     }
 
     .dashboard-hr2-2  {
@@ -4887,15 +3334,11 @@ canvas#chart1 {
      {
          display: flex;
          flex-flow: row wrap;
-         /* position: relative; */
      }
 
-
-
-     #Hash-History_column
+     .Hash-History_column
     {
         flex-grow: 1;
-        /* position: relative; */
         top: 200px;
         font-size: 15px;
         color: #2e2d2d;
@@ -4903,24 +3346,20 @@ canvas#chart1 {
         font-family: sans-serif;
         margin-left: 5%;
         text-align: left;
-
     }
 
-
-    #Hash-History_column ul li {
+    .Hash-History_column ul li {
         font-weight: normal !important;
         width: 60px;
         top: 30px;
         font-size: 15px;
         height: 70px;
-        /* position: relative; */
         color: #2e2d2d;
         font-weight: bold;
     }
 
-    #Hash-History_column  li:nth-of-type(1) {
+    .Hash-History_column  li:nth-of-type(1) {
         top: 30px;
-        /* position: relative; */
     }
 
     .remain {
@@ -4932,12 +3371,11 @@ canvas#chart1 {
     /* ==============================================Buy hash power=================================== */
 
     #dashboard-page #dashboard-title2 {
-        /* position: absolute; */
         margin-left: 30%;
         font-family: sans-serif;
         font-size: 20px;
         font-weight: bolder;
-        color: #2e2d2d
+        color: #2e2d2d;
     }
 
     .dashboard-hr11 {
@@ -4954,9 +3392,7 @@ canvas#chart1 {
 
     /*============================================== Mining History ===================================*/
 
-
     #dashboard-page #dashboard-title3 {
-        /* position: absolute; */
         margin-left: 32.5%;
         font-family: sans-serif;
         font-size: 20px;
@@ -4979,13 +3415,8 @@ canvas#chart1 {
         -moz-user-select: none;
         -webkit-user-select: none;
         -ms-user-select: none;
-        /* position: relative; */
         margin-top: 50px;
-        /* width: 300px !important; */
-        /* height: 200px !important */
     }
-
-
 
     .dashboard-hr2 {
         width: 40%;
@@ -4994,22 +3425,20 @@ canvas#chart1 {
 
     .dashboard-hr-footer
     {
-        margin-top: 30px !important;
+        margin-top: 70px !important;
         top: 0
     }
 
     /* ============================================Footer======================================= */
     #footer-div {
-        top: 0 !important;
-        margin-top: 1430px !important;
+        margin-top: 200 !important;
         height: 050px;
         width: 100%;
     }
     .dashboard-footer-div {
         width: 100% !important;
         left: 0%;
-        /* position: absolute; */
-        margin-top: 0
+        margin-top: 1470px
     }
 
     #dashboard-footer-image {
@@ -5115,7 +3544,7 @@ canvas#chart1 {
 
 
 
-     #Hash-History_column
+     .Hash-History_column
     {
         flex-grow: 1;
         /* position: relative; */
@@ -5130,7 +3559,7 @@ canvas#chart1 {
     }
 
 
-    #Hash-History_column ul li {
+    .Hash-History_column ul li {
         font-weight: normal !important;
         width: 55px;
         top: 30px;
@@ -5141,7 +3570,7 @@ canvas#chart1 {
         font-weight: bold;
     }
 
-    #Hash-History_column  li:nth-of-type(1) {
+    .Hash-History_column  li:nth-of-type(1) {
         top: 30px;
         /* position: relative; */
     }
@@ -5235,7 +3664,7 @@ canvas#chart1 {
         width: 100% !important;
         left: 0%;
         /* position: absolute; */
-        margin-top: 0
+        margin-top: 1360px
     }
 
     #dashboard-footer-image {
@@ -5260,82 +3689,12 @@ canvas#chart1 {
 /* Dashboard-Media-320 */
 @media screen and (max-width: 320px) {
 
-    .Logo_header {
-        width: 200px;
-        height: 90px;
+    /* .Logo_header {
+        width: 100px !important;
+        height: 80px;
         position: absolute;
         left: 10px;
-    }
-    .container-dashboard2 .mainList2 {
-        width: 320px;
-    }
-
-    .container-dashboard2 .mainList2 .sub2{
-        float: left;
-        margin-left: 25px;
-        text-align: center;
-        margin-top: 10px;
-        top: 0;
-        font-size: 11.5px;
-
-    }
-
-    #dashboard:before {
-        content: "";
-        background-image: url("img/Dashboard.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -22px;
-        top: 0px
-    }
-
-    #activity:before {
-        content: "";
-        background-image: url("img/Activity.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -22px;
-        top: 0px
-    }
-
-
-    #referral:before {
-        content: "";
-        background-image: url("img/Referral.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -22px;
-        top: 0px
-    }
-
-    #setting:before {
-        content: "";
-        background-image: url("img/Setting.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -22px;
-        top: 0px
-    }
-
-    #contact:before {
-        content: "";
-        background-image: url("img/contact.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -22px;
-        top: 0px
-    }
-
+    } */
 
      /* ======================================Circle=========================================== */
      #dashboard-page-circle {
@@ -5407,7 +3766,7 @@ canvas#chart1 {
 
 
 
-     #Hash-History_column
+     .Hash-History_column
     {
         flex-grow: 1;
         /* position: relative; */
@@ -5424,7 +3783,7 @@ canvas#chart1 {
         width: 300px
     }
 
-    #Hash-History_column ul li {
+    .Hash-History_column ul li {
         font-weight: normal !important;
         width: 85px;
         top: 30px;
@@ -5437,7 +3796,7 @@ canvas#chart1 {
     }
     
 
-    #Hash-History_column  li:nth-of-type(1) {
+    .Hash-History_column  li:nth-of-type(1) {
         top: 30px;
         /* position: relative; */
     }
@@ -5529,7 +3888,7 @@ canvas#chart1 {
         width: 100% !important;
         left: 0%;
         /* position: absolute; */
-        margin-top: 0
+        margin-top: 1270px
     }
 
     #dashboard-footer-image {

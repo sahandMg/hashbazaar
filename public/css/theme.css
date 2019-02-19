@@ -56,6 +56,7 @@ a {
   top: 25px;
   position: relative;
   margin-top: 0;
+  max-width: 100%;
 }
 
 #header-navbar-menu ul li {
@@ -110,12 +111,14 @@ a {
 
 .dashboard {
   padding-left: 10px !important;
+  padding-right: 10px !important;
   padding: 5px ;
   border: 2px solid #43A047 !important;
  color: #43A047 !important ;
  background:white !important;
  margin-top: -10px
 }
+.dashboard:hover {border-bottom:transparent !important}
 /* --------------------------------------------------------------------------- */
 
 .row h1 {

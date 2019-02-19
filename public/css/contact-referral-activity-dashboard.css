@@ -448,6 +448,8 @@ form.contact-page p:nth-of-type(1) {
     #contact-footer-image {
         border-bottom: transparent;
         left: 0%;
+        width: 200px;
+        height: 100px;
     }
 
     .useraccount .list {
@@ -536,9 +538,9 @@ form.contact-page p:nth-of-type(1) {
     }
 
     #contact-footer-image {
-        width: 150px;
-        margin-top: 0;
-        height: 75px;
+        width: 100px;
+        height: 50px;
+        margin: 0 auto
     }
 
     .contact-footer-paragraph {
@@ -614,9 +616,9 @@ form.contact-page p:nth-of-type(1) {
     }
 
     #contact-footer-image {
-        width: 150px;
-        margin-top: 0;
-        height: 75px;
+        width: 100px;
+        height: 50px;
+        margin: 0 auto
     }
 
     .contact-footer-paragraph {
@@ -696,9 +698,9 @@ form.contact-page p:nth-of-type(1) {
     }
 
     #contact-footer-image {
-        width: 150px;
-        margin-top: 0;
-        height: 75px;
+        width: 100px;
+        height: 50px;
+        margin: 0 auto
     }
 
     .contact-footer-paragraph {
@@ -1077,8 +1079,10 @@ header {
         left: 200px;
         width: 320px
     }
-
-
+    #referral-footer-image {
+    width: 200px;
+    height: 100px;
+    }
 }
 
 /* Referral - Media - 414 */
@@ -1225,8 +1229,9 @@ header {
     }
 
     #referral-footer-image {
-        width: 150px;
+        width: 100px;
         height: 50px;
+        margin: 0 auto
     }
 
 }
@@ -1310,6 +1315,7 @@ header {
     #referral-footer-image {
         width: 100px;
         height: 50px;
+        margin: 0 auto
     }
 }
 
@@ -1391,8 +1397,9 @@ header {
     }
 
     #referral-footer-image {
-        width: 150px !important;
+        width: 100px !important;
         height: 50px;
+        margin: 0 auto
     }
 
 }
@@ -2032,8 +2039,8 @@ header {
    }
 
    #activity-footer-image {
-       width: 200px;
-       height: 100px;
+        width: 200px;
+        height: 100px;
    }
 
    .activity-footer-paragraph {
@@ -2248,8 +2255,9 @@ header {
     }
 
     #activity-footer-image {
-        width: 150px;
-        height: 60px;
+        width: 100px;
+        height: 50px;
+        margin: 0 auto
     }
 
     .activity-footer-paragraph {
@@ -2435,8 +2443,9 @@ header {
     }
 
     #activity-footer-image {
-       width: 150px;
-       height: 60px;
+        width: 100px;
+        height: 50px;
+        margin: 0 auto
     }
 
     .activity-footer-paragraph {
@@ -2546,6 +2555,11 @@ header {
         margin-left: 0px;
         width: 200px
     }
+    #activity-footer-image  {
+        width: 100px;
+        height: 50px;
+        margin: 0 auto
+    }
 
 }
 
@@ -2615,15 +2629,26 @@ body {
 
 /* ======================================Circle=========================================== */
 #dashboard-page-circle {
-    width: 450px;
+    width: 400px;
     display: block;
-    height: 450px;
+    height: 400px;
     border: 20px solid #ff9100;
     border-radius: 50%;
-    margin-left: 23%;
+    margin-left: 50% !important;
     margin-top: 4%;
     border-collapse: 2px solid #727272
 }
+
+#dashboard-page-circle2 {
+    width: 400px;
+    display: block;
+    height: 400px;
+    border: 20px solid #ff9100;
+    border-radius: 50%;
+    border-collapse: 2px solid #727272;
+    margin-top: -40%;
+}
+
 
 #redeem {
     margin-top: 10%;
@@ -2631,18 +2656,18 @@ body {
 }
 
 #circle-span {
-    font-size: 30px;
+    font-size: 27px;
     text-align: center;
     font-family: sans-serif;
     color: #727272;
     position: absolute;
     margin-top: 100px;
     font-weight: bolder;
-    margin-left: 10%;
+    margin-left: 7.5%;
 }
 
 #dashboard-page-circle p:nth-of-type(1) {
-    font-size: 45px;
+    font-size: 42px;
     text-align: center;
     color: rgb(41, 37, 37);
     margin-top: 35%;
@@ -2651,7 +2676,7 @@ body {
 }
 
 #dashboard-page-circle p:nth-of-type(2) {
-    font-size: 45px;
+    font-size: 42px;
     text-align: center;
     color: rgb(41, 37, 37);
     margin-top: 2%;
@@ -2660,7 +2685,7 @@ body {
 }
 
 #miningBTC span, #miningBTC span {
-    font-size: 30px
+    font-size: 27px
 }
 
 /* ==================================================HASH History============================== */
@@ -2974,11 +2999,13 @@ body {
 
     /* ================---media--=================Circle================================== */
 
-    #dashboard-page-circle {
+    #dashboard-page-circle , #dashboard-page-circle2{
         width: 310px;
         height: 310px;
     }
-
+    #dashboard-page-circle2 {
+        margin-top: -47%;
+    }
     #circle-span {
         font-size: 20px !important;
     }
@@ -3092,25 +3119,36 @@ body {
     }
 
     /* ======================================Circle=========================================== */
-    #dashboard-page-circle {
-        width: 450px;
+    #dashboard-page-circle  {
+        width: 280px;
         display: block;
-        height: 450px;
+        height: 280px;
         border: 20px solid #ff9100;
         border-radius: 50%;
-        margin-left: 19%;
+        margin-left: 46% !important;
         margin-top: 4%;
+        border-collapse: 2px solid #727272;
+        margin-right: 0%;
+        padding: 0 !important;
+    }
+    #dashboard-page-circle2 {
+        width: 280px;
+        display: block;
+        height: 280px;
+        border: 20px solid #ff9100;
+        border-radius: 50%;
+        margin-left: 2%;
+        margin-top: -42%;
         border-collapse: 2px solid #727272
     }
-
     #circle-span {
         font-size: 30px;
         text-align: center;
         font-family: sans-serif;
         color: #727272;
-        margin-top: 15%;
+        margin-top: 8%;
         font-weight: bolder;
-        margin-left: 22%;
+        margin-left: 12%;
     }
 
     #dashboard-page-circle p {
@@ -3221,7 +3259,7 @@ body {
     .dashboard-footer-div {
         width: 70%;
         margin-left: 2%;
-        margin-top: -300px;
+        margin-top: -440px;
         border-bottom: transparent
     }
 
@@ -3284,12 +3322,22 @@ body {
         height: 250px;
         border: 20px solid #ff9100;
         border-radius: 50%;
-        margin-left: 15%;
+        margin-left: 10% !important;
         left: 0%;
         margin-top:-8% !important;
         border-collapse: 2px solid #727272
     }
-
+    #dashboard-page-circle2 {
+        width: 250px;
+        display: block;
+        height: 250px;
+        border: 20px solid #ff9100;
+        border-radius: 50%;
+        margin-left: 10% !important;
+        left: 0%;
+        margin-top:5% !important;
+        border-collapse: 2px solid #727272
+    }
     #circle-span {
         font-size: 15px !important;
         text-align: center;
@@ -3438,7 +3486,7 @@ body {
     .dashboard-footer-div {
         width: 100% !important;
         left: 0%;
-        margin-top: 1470px
+        margin-top: 1750px !important
     }
 
     #dashboard-footer-image {
@@ -3461,9 +3509,7 @@ body {
      line-height: 1.5;
     }
 
-
 }
-
 
 
 /* Dashboard-Media-375 */
@@ -3474,9 +3520,8 @@ body {
         margin-left:75%;
     }
 
-
     /* ======================================Circle=========================================== */
-    #dashboard-page-circle {
+    #dashboard-page-circle , #dashboard-page-circle2 {
         width: 250px;
         display: block;
         height: 250px;
@@ -3488,7 +3533,9 @@ body {
         top: 4%;
         border-collapse: 2px solid #727272
     }
-
+    #dashboard-page-circle2 {
+        margin-left: 15% !important
+    }
     #circle-span {
         font-size: 15px !important;
         text-align: center;
@@ -3499,7 +3546,6 @@ body {
         font-weight: bolder;
         margin-left: 20%;
     }
-
 
     #dashboard-page-circle p {
         font-size: 20px !important;
@@ -3525,8 +3571,6 @@ body {
     .dashboard-hr1  {
         width: 33%;
         left: 10px;
-
-
     }
 
     .dashboard-hr2-2  {
@@ -3542,8 +3586,6 @@ body {
          /* position: relative; */
      }
 
-
-
      .Hash-History_column
     {
         flex-grow: 1;
@@ -3555,9 +3597,7 @@ body {
         font-family: sans-serif;
         margin-left: 5%;
         text-align: left;
-
     }
-
 
     .Hash-History_column ul li {
         font-weight: normal !important;
@@ -3639,8 +3679,6 @@ body {
         margin-left: 20px
     }
 
-
-
     .dashboard-hr2 {
         width: 40%;
         left: 30%;
@@ -3656,7 +3694,7 @@ body {
     /* ============================================Footer======================================= */
     #footer-div {
         top: 0 !important;
-        margin-top: 1340px !important;
+        margin-top: 1660px !important;
         height: 050px;
         width: 100%;
     }
@@ -3664,7 +3702,7 @@ body {
         width: 100% !important;
         left: 0%;
         /* position: absolute; */
-        margin-top: 1360px
+        margin-top: 1660px !important
     }
 
     #dashboard-footer-image {
@@ -3689,27 +3727,19 @@ body {
 /* Dashboard-Media-320 */
 @media screen and (max-width: 320px) {
 
-    /* .Logo_header {
-        width: 100px !important;
-        height: 80px;
-        position: absolute;
-        left: 10px;
-    } */
 
      /* ======================================Circle=========================================== */
-     #dashboard-page-circle {
+     #dashboard-page-circle , #dashboard-page-circle2 {
         width: 200px;
         display: block;
         height: 200px;
         border: 20px solid #ff9100;
         border-radius: 50%;
-        /* position: relative; */
         margin-left: 11%;
-        left: 0%;
-        top: 4%;
         border-collapse: 2px solid #727272
     }
-
+        
+        #dashboard-page-circle2 {margin-left: 10% !important; }
     #circle-span {
         font-size: 13px !important;
         text-align: center;
@@ -3743,8 +3773,6 @@ body {
     .dashboard-hr1  {
         width: 30%;
         left: 10px;
-
-
     }
 
     .dashboard-hr2-2  {
@@ -3770,7 +3798,6 @@ body {
         font-family: sans-serif;
         margin-left: 5%;
         text-align: left;
-
     }
     #Hash-History-list {
         width: 300px
@@ -3821,7 +3848,6 @@ body {
 
     /*============================================== Mining History ===================================*/
 
-
     #dashboard-page #dashboard-title3 {
         margin-left: 32.5%;
         font-family: sans-serif;
@@ -3850,7 +3876,6 @@ body {
         margin-left: 5px
     }
 
-
     .dashboard-hr-footer
     {
         margin-top: 0;
@@ -3861,14 +3886,13 @@ body {
     /* ============================================Footer======================================= */
     #footer-div {
         top: 0 !important;
-        margin-top: 1270px !important;
         height: 050px;
         width: 100%;
     }
     .dashboard-footer-div {
         width: 100% !important;
         left: 0%;
-        margin-top: 1270px
+        margin-top: 1530px !important
     }
 
     #dashboard-footer-image {

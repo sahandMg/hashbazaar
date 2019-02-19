@@ -38,7 +38,7 @@
     list-style-type: none;
     width: 100%;
     padding-bottom: 20px;
-    text-align: center;
+    text-align: left !important;
     left: 0;
     margin-left: 0px;
     position: relative; 
@@ -51,7 +51,7 @@
 .useraccount .list ul li a {
     width:400px !important;
     position: relative;
-    margin-left: 190px
+    margin-left:320px !important
 }
 #logouticon {
     border-bottom-left-radius: 0px;
@@ -59,7 +59,8 @@
     color: orange;
     border-bottom: transparent !important;
     position: relative;
-    top: 20px
+    top: 20px;
+    margin-left: 320px
 }
 #logouticon:hover {
     height:100% !important;
@@ -67,6 +68,7 @@
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     border-bottom: transparent !important;
+    background-color: transparent !important
 }
 
 #logouticon:before{
@@ -77,7 +79,7 @@
     background-image: url("../img/sign-out-alt-solid.svg");
     background-size: 100% 100%;
     position: absolute;
-    left: 31.5vh ;
+    left: 1.5vh !important;
     top: 0vh !important;
 }
 #logouticon:hover:before {background-color: transparent;
@@ -889,12 +891,13 @@ color: orange !important}
         .useraccount .sub2 {
             display:block !important;
             border-bottom: thin solid;
-            padding-top: 10px;
+            padding-top: 15px;
             text-decoration: none !important;
+            padding-bottom: 5px
         }
 
         .useraccount .list {
-            height:317px !important;
+            height:337px !important;
         }
       
         /* Bar */
@@ -939,7 +942,7 @@ color: orange !important}
             height: 25px;
             background-size: 100% 100%;
             position: absolute;
-            left: 100px ;
+            left: -40px ;
             top: 0px;
             z-index: 100;
         }
@@ -951,7 +954,7 @@ color: orange !important}
             height: 25px;
             background-size: 100% 100%;
             position: absolute;
-            left: 100px ;
+            left: -40px ;
             top: 0px;
             z-index: 100;
         }
@@ -963,7 +966,7 @@ color: orange !important}
             height: 25px;
             background-size: 100% 100%;
             position: absolute;
-            left: 100px ;
+            left: -40px ;
             top: 0px;
             z-index: 100;
         }
@@ -975,7 +978,7 @@ color: orange !important}
             height: 25px;
             background-size: 100% 100%;
             position: absolute;
-            left: 100px ;
+            left: -40px ;
             top: 0px;
             z-index: 100;
         }
@@ -987,7 +990,7 @@ color: orange !important}
             height: 25px;
             background-size: 100% 100%;
             position: absolute;
-            left: 100px ;
+            left: -40px ;
             top: 0px;
             z-index: 100;
         }
@@ -1000,7 +1003,7 @@ color: orange !important}
             background-image: url("../img/sign-out-alt-solid.svg");
             background-size: 100% 100%;
             position: absolute;
-            left: 290px !important;
+            left: -40px !important;
             top: 0vh !important;
         }
     /*  */
@@ -1159,7 +1162,7 @@ color: orange !important}
         margin-top: 83px
     }
     .useraccount .list ul li a {
-        margin-left:0px
+        margin-left:160px !important
     }
     .useraccount {margin-left: 85% !important}
     .navigation-menu {
@@ -1199,7 +1202,7 @@ color: orange !important}
         height: 25px;
         background-size: 100% 100%;
         position: absolute;
-        left: 14.5vh;
+        left: -40px;
         top: 0px;
         z-index: 100;
     }
@@ -1211,7 +1214,7 @@ color: orange !important}
         height: 25px;
         background-size: 100% 100%;
         position: absolute;
-        left: 14.5vh;
+        left: -40px;
         top: 0px;
         z-index: 100;
     }
@@ -1223,7 +1226,7 @@ color: orange !important}
         height: 25px;
         background-size: 100% 100%;
         position: absolute;
-        left: 14.5vh;
+        left: -40px;
         top: 0px;
         z-index: 100;
     }
@@ -1235,7 +1238,7 @@ color: orange !important}
         height: 25px;
         background-size: 100% 100%;
         position: absolute;
-        left: 14.5vh;
+        left: -40px;
         top: 0px;
         z-index: 100;
     }
@@ -1247,7 +1250,7 @@ color: orange !important}
         height: 25px;
         background-size: 100% 100%;
         position: absolute;
-        left: 14.5vh;
+        left: -40px;
         top: 0px;
         z-index: 100;
     }
@@ -1260,8 +1263,11 @@ color: orange !important}
         background-image: url("../img/sign-out-alt-solid.svg");
         background-size: 100% 100%;
         position: absolute;
-        left: 14.5vh !important;
+        left: -40px;
         top: 0vh !important;
+    }
+    #logouticon {
+        margin-left: 165px
     }
     .hr-footer {
         top: 800px
@@ -1470,14 +1476,14 @@ color: orange !important}
     .useraccount {
         margin-left: 80%
     }
-            
+    .useraccount .list ul li a {
+        margin-left:150px !important
+    }    
     #header-div a img{
         width: 200px !important;
 
     }
-    #logouticon:before{
-        left: 100px !important;
-    }
+    
 
     #dashboard2:before {
         content: "";
@@ -1486,7 +1492,7 @@ color: orange !important}
         height: 25px;
         background-size: 100% 100%;
         position: absolute;
-        left: 100px;
+        left:-40px;
         top: 0px;
         z-index: 100;
     }
@@ -1498,7 +1504,7 @@ color: orange !important}
         height: 25px;
         background-size: 100% 100%;
         position: absolute;
-        left: 100px;
+        left:-40px;
         top: 0px;
         z-index: 100;
     }
@@ -1510,7 +1516,7 @@ color: orange !important}
         height: 25px;
         background-size: 100% 100%;
         position: absolute;
-        left: 100px;
+        left:-40px;
         top: 0px;
         z-index: 100;
     }
@@ -1522,7 +1528,7 @@ color: orange !important}
         height: 25px;
         background-size: 100% 100%;
         position: absolute;
-        left: 100px;
+        left:-40px;
         top: 0px;
         z-index: 100;
     }
@@ -1534,9 +1540,13 @@ color: orange !important}
         height: 25px;
         background-size: 100% 100%;
         position: absolute;
-        left: 100px;
+        left:-40px;
         top: 0px;
         z-index: 100;
+    }
+    #logouticon {margin-left:150px}
+    #logouticon:before {
+        left:-40px
     }
     #setting-hr-footer {
         width: 100%;
@@ -1618,10 +1628,12 @@ color: orange !important}
 
     .useraccount .list ul li a {margin-left: -35px}
 
-    #logouticon:before{
-        left: 11.5vh !important;
-    }
+    .useraccount .list ul li a {
+        margin-left:130px !important
+    }  
+    #logouticon {margin-left: 130px}
 
+    #logouticon:before {left:-22px}
     #dashboard:before {
         content: "";
         background-image: url("img/Dashboard.svg");

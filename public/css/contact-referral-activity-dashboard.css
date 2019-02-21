@@ -1200,7 +1200,7 @@ header {
 
     .referral-hr-footer
     {
-        top: 910px;
+        top: 900px;
         left:-310px;
         width: 414px !important;
     }
@@ -1208,7 +1208,7 @@ header {
     /* Footer */
     
     .referral-footer-div {
-        width: 94%;
+        width: 100%;
         margin-left: 0%;
         margin-top: 300px !important
     }
@@ -1228,7 +1228,6 @@ header {
     }
 
 }
-
 
 /* Referral - Media - 375 */
 @media screen and (max-width:375px) {
@@ -1287,7 +1286,7 @@ header {
 
     .referral-hr-footer
     {
-        top: 910px;
+        top: 900px;
         left:-312px;
         width: 375px !important;
     }
@@ -1311,7 +1310,6 @@ header {
         margin: 0 auto
     }
 }
-
 
 /* Referral - Media - 320 */
 @media screen and (max-width: 320px) {
@@ -1367,9 +1365,10 @@ header {
 
     .referral-hr-footer
     {
-        top: 890px;
+        top: 870px;
         left:-235px;
         width: 320px !important;
+        margin-bottom: 20px !important;
     }
 
     /* Footer */
@@ -1378,7 +1377,7 @@ header {
         width: 90%;
         margin-left: 0%;
         /* position: absolute; */
-        top: 1250px;
+        top: 1260px;
         margin-top: 200px
     }
 
@@ -1396,8 +1395,6 @@ header {
     }
 
 }
-
-
 
 
 /* ACTIVITY */

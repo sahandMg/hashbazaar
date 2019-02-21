@@ -979,9 +979,6 @@ header {
 /* Referral - Media - 768 */
 @media screen and (max-width:768px) {
 
-        .container-referral {
-            display: none;
-        }
         #header-div {
             border-bottom: 4px solid orange;
             width: 100%;
@@ -1005,7 +1002,7 @@ header {
         /* ==================================Referral================================ */
 
     #referral-page {
-        margin-left: 1.5%;
+        margin-left: 0%;
         width: 100%;
     }
 
@@ -1105,10 +1102,6 @@ header {
         left:30px
     }
 
-    .container-referral {
-        display: none;
-    }
-
     .mainList {
         display: none
     }
@@ -1117,8 +1110,8 @@ header {
 
     #referral-page {
         margin-top: 100px;
-        margin-left: .5%;
-        width: 72%;
+        margin-left: 0%;
+        width: 100%;
     }
 
 
@@ -1158,7 +1151,7 @@ header {
         font-family: sans-serif;
         color: #2e2d2d;
         top: 310px;
-        margin-left: 200px;
+        margin-left: 180px;
     }
 
     #referral-page dl {
@@ -1207,7 +1200,7 @@ header {
 
     .referral-hr-footer
     {
-        top: 930px;
+        top: 910px;
         left:-310px;
         width: 414px !important;
     }
@@ -1271,7 +1264,7 @@ header {
         font-family: sans-serif;
         color: #2e2d2d;
         top: 310px;
-        margin-left: 180px;
+        margin-left: 160px;
     }
 
     #referral-page dl {
@@ -1294,7 +1287,7 @@ header {
 
     .referral-hr-footer
     {
-        top: 920px;
+        top: 910px;
         left:-312px;
         width: 375px !important;
     }
@@ -1349,7 +1342,7 @@ header {
         font-family: sans-serif;
         color: #2e2d2d;
         top: 315px;
-        margin-left: 160px;
+        margin-left: 140px;
     }
 
     #referral-page dl {
@@ -1367,14 +1360,14 @@ header {
         font-family: sans-serif;
         color: #2e2d2d;
         top: 425px;
-        margin-left:90px;
+        margin-left:250px;
         width: 50px
     }
 
 
     .referral-hr-footer
     {
-        top: 910px;
+        top: 890px;
         left:-235px;
         width: 320px !important;
     }
@@ -1690,7 +1683,8 @@ header {
 }
 
 /* Activity-Media-1280 */
-@media screen and (max-width:1280px) {
+@media screen and (max-width:1280px) 
+{
     .container-activity {
         width: 340px !important;
         height: 100%;
@@ -1707,43 +1701,11 @@ header {
     }
     
 }
+
 /* Activity-Media-1024 */
 @media screen and (max-width:1024px)
 {
     /* ---------------=====Media====-------------Main Container--------------------------- */
-
-    .container-activity {
-        width: 270px;
-        height: 1400px;
-    }
-
-    .container-activity .mainList {
-        width: 270px
-    }
-
-    .container-activity .mainList .navbar .Logo_In_NavBar{
-        width: 220px;
-        height: 380px;
-        left: 30px;
-        position: absolute;
-        top: -170px
-    }
-
-    div ul .navbar #welcome {
-        font-size: 17px;
-        left: 70px;
-    }
-
-    .container-activity .mainList .sub {
-        height: 60px;
-        font-size: 25px;
-        padding-bottom: 10px;
-    }
-
-    .container-activity .mainList .sub a {
-        left: -10px;
-        top: 30%
-    }
 
     .sub:after {
         width: 1em;
@@ -1809,7 +1771,6 @@ header {
     {
       display: flex;
       flex-flow: row wrap;
-      /* overflow-y: scroll; */
       height: 300px;
       margin-top: 0px;
       width: 730px
@@ -1823,13 +1784,13 @@ header {
 
     .activity-page_secondList_column
     {
-    flex-grow: 1;
-    margin-top: 50px;
-    font-size: 25px;
-    color: #2e2d2d;
-    font-weight: bold;
-    font-family: sans-serif;
-    margin-left: 7%
+        flex-grow: 1;
+        margin-top: 50px;
+        font-size: 25px;
+        color: #2e2d2d;
+        font-weight: bold;
+        font-family: sans-serif;
+        margin-left: 7%
     }
 
    #activity-page .Transactions q {
@@ -1847,7 +1808,6 @@ header {
     {
         display: flex;
         flex-flow: row wrap;
-        /* overflow-y: scroll; */
         height: 300px;
         top: 480px;
         width: 730px;
@@ -1884,12 +1844,9 @@ header {
    }
 }
 
-
 /* Activity-Media-768 */
-@media screen and (max-width: 768px) {
-    .container-activity {
-        display: none;
-    }
+@media screen and (max-width: 768px) 
+{
 
     header {
         z-index: 2;
@@ -1964,7 +1921,7 @@ header {
     }
 
     #activity-page {
-        margin-left: 1.5% !important;
+        margin-left: 0% !important;
         width: 100%;
     }
 
@@ -2053,11 +2010,8 @@ header {
 }
 
 /* Activity-Media-414 */
-@media screen and (max-width:414px) {
-
-    .container-activity {
-        display: none;
-    }
+@media screen and (max-width:414px) 
+{
 
     .Logo_header {
         width: 300px;
@@ -2133,7 +2087,7 @@ header {
     }
 
     #activity-page {
-        margin-left: 1.5% !important;
+        margin-left: 0% !important;
         width: 100%;
     }
 
@@ -2271,9 +2225,9 @@ header {
 
 }
 
-
 /* Activity-Media-375 */
-@media screen and (max-width:375px) {
+@media screen and (max-width:375px) 
+{
 
     .container-activity {
         display: none;
@@ -2354,7 +2308,6 @@ header {
     }
 
     #activity-page {
-        left: 1.5%;
         width: 100%;
     }
 
@@ -2455,9 +2408,9 @@ header {
     }
 }
 
-
 /* Activity-Media-320 */
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 320px) 
+{
 
     .Logo_header {
         width: 300px;
@@ -2570,10 +2523,6 @@ header {
     background-color: #FFFDE8
 }
 
-.container-dashboard2 {
-    display: none
-}
-
 /* --------------------------------------------------------Header----------------------------------------- */
 
 header {
@@ -2620,11 +2569,6 @@ body {
     display: block;
 }
 
-.mainContainer .container-dashboard .mainList .dashboard:focus,
-#dashboard:focus~#dashboard-page {
-    display: none
-}
-
 #dashboard {color: orange !important}
 
 /* ======================================Circle=========================================== */
@@ -2646,9 +2590,8 @@ body {
     border: 20px solid #ff9100;
     border-radius: 50%;
     border-collapse: 2px solid #727272;
-    margin-top: -40%;
+    margin-top: -38%;
 }
-
 
 #redeem {
     margin-top: 10%;
@@ -2920,38 +2863,11 @@ body {
 @media screen and (max-width:1024px){
     /* ---------------=====Media====-------------Main Container--------------------------- */
 
-    .container-dashboard {
-        width: 270px;
-        height: 2100px;
-    }
-
-    .container-dashboard .mainList {
-        width: 270px
-    }
-
-    .container-dashboard .mainList .navbar .Logo_In_NavBar{
-        width: 220px;
-        height: 380px;
-        left: 30px;
-        position: absolute;
-        top: -170px
-    }
-
     div ul .navbar #welcome {
         font-size: 17px;
         left: 70px;
     }
-
-    .container-dashboard .mainList .sub {
-        height: 60px;
-        font-size: 25px;
-        padding-bottom: 10px;
-    }
-
-    .container-dashboard .mainList .sub a {
-        left: -10px;
-        top: 30%
-    }
+  
 
     .sub:after {
         width: 1em;
@@ -3109,8 +3025,8 @@ body {
 
     #dashboard-page {
         height: 1800px;
-        margin-left: 0;
-        width: 100%;
+        margin-left: 0 !important;
+        width: 98%;
         z-index: 0;
     }
    
@@ -3173,7 +3089,6 @@ body {
     .dashboard-hr1  {
         width: 40%;
         margin-left: 0
-
     }
 
     .dashboard-hr2-2  {
@@ -3254,11 +3169,12 @@ body {
     #footer-div {
         margin-top: 00px !important;
         border-bottom: transparent;
+        margin-left: 0% !important;
         display: block;
     }
     .dashboard-footer-div {
         width: 70%;
-        margin-left: 2%;
+        margin-left: 0% !important;
         margin-top: -440px;
         border-bottom: transparent
     }
@@ -3534,7 +3450,7 @@ body {
         border-collapse: 2px solid #727272
     }
     #dashboard-page-circle2 {
-        margin-left: 15% !important
+        margin-left: 12% !important
     }
     #circle-span {
         font-size: 15px !important;

@@ -1,15 +1,13 @@
 #header {
   text-align: center;
-  
 }
 /* ------------------------------Navbar----------------------- */
 a {
   text-decoration: none;
-
 }
 .header-navbar {
   width: 100%;
-  height: 80px;
+  height: 100px;
   background: black;
   color: black;
   font-size: 20px;
@@ -25,7 +23,7 @@ a {
   box-shadow: 0px 1.5px 0px 0px #c0c0bc;
   top: 0;
   margin-top: 0;
-
+  margin-left: 0;
 }
 .small {
   top: 0;
@@ -39,30 +37,30 @@ a {
 }
 #header-navbar-logo ul li {
   list-style-type: none;
-  position: absolute;top: 0;
-  margin-top: 0;
+  position: fixed;
+  top: 0;
+  margin-top: 15px;
 }
 
 .big img {
   width: 200px;
   height: 80px;
-  left: 20px;
-  position: relative;
+  margin-left: 20px;
+  /* position: relative; */
 }
 
 #header-navbar-menu {
   flex: 4;
-  left: 200px;
-  top: 25px;
-  position: relative;
-  margin-top: 0;
+  margin-left: 200px;
+  margin-top: 45px;
+  /* position: relative; */
   max-width: 100%;
 }
 
 #header-navbar-menu ul li {
   list-style-type: none;
   float: left;
-  position: relative;
+  /* position: relative; */
   margin-left: 6%;
   
 }
@@ -82,7 +80,6 @@ a {
 
 #header-navbar-menu ul .login:after , .signup:after {
   background: transparent !important;
-
 }
 
 #lg , #sg {
@@ -103,7 +100,6 @@ a {
 #lg:hover , #sg:hover {
   background: white;
   border: 2px solid #43A047;
-
 } 
 .navigation-menu {
   display: none
@@ -114,21 +110,19 @@ a {
   padding-right: 10px !important;
   padding: 5px ;
   border: 2px solid #43A047 !important;
- color: #43A047 !important ;
- background:white !important;
- margin-top: -10px
+  color: #43A047 !important ;
+  background:white !important;
+  margin-top: -10px
 }
 .dashboard:hover {border-bottom:transparent !important}
 /* --------------------------------------------------------------------------- */
 
 .row h1 {
-  margin-top: 80px
+  margin-top: 100px
 }
 .headerTheme {
   margin: auto;
-  /*background-size: contain;*/
   background-size:100% auto;
-  /*width: 100%;*/
   background: black url('../img/Bitcoin.svg') no-repeat center;
   padding: 2% 0;
   max-width: 100%;
@@ -136,7 +130,6 @@ a {
   top: 0px !important;
   position: relative;
 }
-
 
 header h1 { font-size: 50px }
 small {font-size: 100%;}
@@ -167,6 +160,7 @@ header img { height: 175px;margin-bottom: 4%; }
 @media only screen and (max-width:1280px) {
     .header-navbar {
       width: 100%;
+      top: 0;
     }
     .small {
       padding-left: 0px
@@ -174,22 +168,21 @@ header img { height: 175px;margin-bottom: 4%; }
     
  
 }
+
 @media only screen and (max-width: 1024px) {
-    header img { height: 100px; }
-    header h1 { font-size: 40px }
-     h3 { font-size: 40px }
-     .headerTheme {height: 500px;}
+  header img { height: 100px; }
+  header h1 { font-size: 40px }
+  h3 { font-size: 40px }
+  .headerTheme {height: 500px;}
       
   #header-navbar-menu {
     flex: 4;
-    left: 150px;
-    top: 25px;
-    position: relative;
+    margin-left: 150px !important;
+    /* position: relative; */
   }
 
   #header-navbar-menu ul li {
     margin-left: 3%;
-    
   }
  
   #price {
@@ -197,37 +190,43 @@ header img { height: 175px;margin-bottom: 4%; }
   }
      
 }
+
 @media only screen and (max-width: 768px) {
+    header {
+      top: 0 ;
+    }
     header img { height: 90px; }
     header h1 { font-size: 30px }
-     h3 { font-size: 30px }
-
-     #header-navbar-menu {
-       background: black;;
-       height: 360px;
-       text-align: left;
-       left: 0px;
-       top: 82px;
-       flex: 10;
-       width: 100% !important;
-       display: none;
-       margin-left: -105px;
-       border-bottom-left-radius: 8%;
-       border-bottom-right-radius: 5%;
-
-
-     }
+    h3 { font-size: 30px }
+    .header-navbar {
+      top: 0;
+      position: fixed;
+    }
+    #header-navbar-menu {
+      background: black;;
+      height: 360px;
+      text-align: left;
+      left: 0px;
+      top: 82px;
+      flex: 10;
+      width: 100% !important;
+      display: none;
+      margin-left: -105px;
+      border-bottom-left-radius: 5%;
+      border-bottom-right-radius: 5%;
+    }
      #header-navbar-menu  ul 
      {
        margin-top: 10px;
-       margin-left: 0;
+       margin-left: -38px !important;
        padding-bottom: 20px;
+       left: 0;
      }
      #header-navbar-menu  ul li
      {
        margin-top: 10px;
        float: none;
-       margin-left: 0;
+       margin-left: 0 !important;
        padding-bottom: 20px;
        border-bottom: 2px solid rgb(255, 187, 0);
      }
@@ -237,24 +236,23 @@ header img { height: 175px;margin-bottom: 4%; }
      .navigation-menu {
        display: block;
        position: fixed;
-       top: 10px;
+       top: 35px;
        right: 25px;
      }
       .signup {
        border: thin solid transparent;height:50px;
        border:transparent !important
      }
-
      
      .login {
        background: white;
        color: #43A047;height:50px;
     }
 
-       .a {
-         padding-left: 10px
-       }
-       #lg , #sg {height:50px;}
+    .a {
+      padding-left: 10px
+    }
+    #lg , #sg {height:50px;}
 
 
     .navigation-menu .bar1, .bar2, .bar3 {
@@ -281,25 +279,7 @@ header img { height: 175px;margin-bottom: 4%; }
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);
   }
-  /*#priceCompare .container {
-    margin-top: 50px
-  }
-  #priceCompare .container #text {
-    width: 350px !important ; 
-    font-size: 15px !important;
-  }
-
-  #priceCompare #title {
-    font-size : 20px !important;
-  }
-
-
-  #priceCompare #price {
-    width: 350px !important;
-    left: 0 !important;
-    margin-left: -100px !important
-  }
-   */
+ 
    .advantages h3 {
      font-size: 19px;
    }
@@ -310,7 +290,6 @@ header img { height: 175px;margin-bottom: 4%; }
      font-size: 15px;
    }
 }
-
 
 @media only screen and (max-width: 576px) {
     header img { height: 80px; }
@@ -328,8 +307,6 @@ header img { height: 175px;margin-bottom: 4%; }
       margin-left: -95px;
       border-bottom-left-radius: 0%;
       border-bottom-right-radius: 0%;
-
-
     }
 
     .advantages-detail {
@@ -338,45 +315,14 @@ header img { height: 175px;margin-bottom: 4%; }
     .advantages-detail h3 {
       margin-bottom: 25px;
     }
-    /*#priceCompare .container {
-      display: grid;
-      display: -ms-grid;
-      display: -o-grid;
-      display: -webkit-grid;
-      grid-template-columns: repeat(1,1fr);
-      grid-template-rows: repeat(2,1fr);
-      grid-gap: 10px ;
-    }
-    #priceCompare .container #text {
-      width: 500px !important ; 
-       margin-left: 50px; ;
-      font-size: 25px !important
-    }
-
-    #priceCompare .container p {
-      font-size: 20px
-    }
-    #priceCompare .container #title {
-      font-size : 25px !important;
-    }
     
-    #priceCompare .container #price {
-      width: 500px !important;
-      margin-left: 0px !important;
-      margin-top: -00px !important;
-    }*/
 }
 
 @media only screen and (max-width: 420px) {
     header img { height: 60px; }
     header h1 { font-size: 20px; }
      h3 { font-size: 15px; }
-     /*#priceCompare h2 {
-      font-size: 20px;
-     }
-     #priceCompare h3 {
-      font-size: 18px;
-     }*/
+    
      #contact h2 {
       font-size: 15px;
      }
@@ -386,8 +332,10 @@ header img { height: 175px;margin-bottom: 4%; }
      #sharePlan h3 { letter-spacing: 0px;margin-top: 2%; }
      #myModal h2 {font-size: 20px;}
      .responsive-circle {
-       height: 40px;width: 40px;
-       padding: 0rem 0rem;line-height: 35px;
+       height: 40px;
+       width: 40px;
+       padding: 0rem 0rem;
+       line-height: 35px;
      }
      #header-navbar-menu {
       left: -0px;
@@ -395,7 +343,6 @@ header img { height: 175px;margin-bottom: 4%; }
       height: 275px;
       border-bottom-left-radius: 0px;
       border-bottom-right-radius:0px
-
     }
 
     #header-navbar-menu  ul li{
@@ -404,28 +351,6 @@ header img { height: 175px;margin-bottom: 4%; }
       margin-left: -30px;
     }
 
-   /* #priceCompare .container {
-      grid-template-columns: repeat(1,1fr);
-      grid-template-rows: repeat(2,1fr);
-    }
-    #priceCompare .container #text {
-      width: 380px !important ; 
-      font-size: 23px !important
-    }
-
-    #priceCompare .container p {
-      font-size:18px
-    }
-    #priceCompare .container #title {
-      font-size : 23px !important;
-    }
-    
-    #priceCompare .container #price {
-      width: 380px !important;
-      margin-left: 0px !important;
-      margin-top: -00px !important;
-    }*/
-
     
 }
 
@@ -433,7 +358,7 @@ header img { height: 175px;margin-bottom: 4%; }
   #header-navbar-menu {
     left: -0px;
     margin-left: -40px;
-    height: 270px;
+    height: 275px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px
 
@@ -444,28 +369,6 @@ header img { height: 175px;margin-bottom: 4%; }
     padding-bottom: 8px;
     margin-left: -30px;
   }
-
-  /*#priceCompare .container {
-    grid-template-columns: repeat(1,1fr);
-    grid-template-rows: repeat(2,1fr);
-  }
-  #priceCompare .container #text {
-    width: 340px !important ; 
-    font-size: 20px !important
-  }
-
-  #priceCompare .container p {
-    font-size:15px
-  }
-  #priceCompare .container #title {
-    font-size : 20px !important;
-  }
-  
-  #priceCompare .container #price {
-    width: 340px !important;
-    margin-left: 0px !important;
-    margin-top: -00px !important;
-  }*/
 
 }
 
@@ -481,7 +384,7 @@ header img { height: 175px;margin-bottom: 4%; }
   #header-navbar-menu {
     left: -0px;
     margin-left: -45px;
-    height: 270px;
+    height: 275px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px
 
@@ -502,31 +405,7 @@ header img { height: 175px;margin-bottom: 4%; }
    .advantages p {
      font-size: 13px;
    }
- /* #priceCompare h2 {
-    font-size : 15px !important;
-  }
-  
-  #priceCompare .container {
-    grid-template-columns: repeat(1,1fr);
-    grid-template-rows: repeat(2,1fr);
-  }
-  #priceCompare .container #text {
-    width: 300px !important ; 
-    font-size: 18px !important
-  }
 
-  #priceCompare .container p {
-    font-size:13px
-  }
-  #priceCompare .container #title {
-    font-size : 18px !important;
-  }
-  
-  #priceCompare .container #price {
-    width: 300px !important;
-    margin-left: 0px !important;
-    margin-top: -00px !important;
-  }*/
 }
 /*color for selected text*/
 ::selection {
@@ -545,6 +424,7 @@ header img { height: 175px;margin-bottom: 4%; }
 .fontTheme{
   font-family: Helvetica,Arial,sans-serif,Lora,Helvetica Neue;
   color: #696967;
+  margin-left: 0;
 }
 
 .round-input{

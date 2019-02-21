@@ -108,7 +108,13 @@ border: transparent}
     display: block
 }
 
-.navigation-menu{height:30px !important}
+.navigation-menu{height:30px !important;
+    margin-top:0px;
+    background-color: transparent !important;
+    border-bottom: transparent !important;
+    display: none
+    
+}
 /* CONTACT */
 
 .mainContainer
@@ -130,8 +136,8 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    width: 100%;
-    height: 110px;
+    width: 110%;
+    height: 120px;
     background-color: black;
     font-size: 50px;
     position: fixed;
@@ -141,7 +147,7 @@ header {
 #header-div {
     border-bottom: 4px solid orange;
     width: 100%;
-    height: 110px;
+    height: 120px;
     position: fixed;
     z-index: 2000;
 }
@@ -160,7 +166,7 @@ header {
     background: rgb(39, 38, 38);
     border-top: 4px solid orange;
     position: fixed;
-    top: 110px;
+    top: 120px;
     height: 100%;
     left: 0
 }
@@ -899,12 +905,15 @@ color: orange !important}
         .useraccount .list {
             height:337px !important;
         }
-      
+        .useraccount {
+            margin-left:83% !important;
+        }
         /* Bar */
         .navigation-menu {
             background: transparent;
             border-bottom: transparent;
             margin-top: 35px;
+            display: block;
 
         }
         .navigation-menu .bar1, .bar2, .bar3 {
@@ -1164,9 +1173,12 @@ color: orange !important}
     .useraccount .list ul li a {
         margin-left:160px !important
     }
-    .useraccount {margin-left: 85% !important}
+    .useraccount {
+        margin-left:78% !important;
+    }
     .navigation-menu {
         margin-top: 20px;
+        display: block;
     }
 
     /*  */
@@ -1472,9 +1484,11 @@ color: orange !important}
         position: absolute;
         left: 10px;
     }
-
+    .navigation-menu {
+        display: block;
+    }
     .useraccount {
-        margin-left: 80%
+        margin-left:78% !important;
     }
     .useraccount .list ul li a {
         margin-left:150px !important
@@ -1623,9 +1637,11 @@ color: orange !important}
         
     }
     .useraccount {
-        margin-left:80%;
+        margin-left:78% !important;
     }
-
+    .navigation-menu {
+        display: block;
+    }
     .useraccount .list ul li a {margin-left: -35px}
 
     .useraccount .list ul li a {

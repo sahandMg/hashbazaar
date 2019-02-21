@@ -10,10 +10,9 @@ foreach ($hashes as $key=> $hash){
 ?>
 
 
-
 <div id="activity-page">
 
-    <blockquote>Recent Activities</blockquote>
+    <blockquote>Recent Activities</blockquote> 
 
     <div class="purchases">
         <q>Purchases</q>
@@ -48,7 +47,6 @@ foreach ($hashes as $key=> $hash){
                 </div><br> <br>
 
                 <div class="activity-page_secondList_column">Remains
-                    {{-- style="width: 180px; margin: 0px auto" --}}
                     <ul>
                         @foreach($hashes as $key => $hash)
                             <li>
@@ -70,7 +68,7 @@ foreach ($hashes as $key=> $hash){
 
         </div>
 
-    </div>
+    </div> 
 
     <div class="Transactions">
         <q>Transactions </q>
@@ -104,23 +102,23 @@ foreach ($hashes as $key=> $hash){
 
             
         </div>
-    </div>
+    </div> 
 
 
-    <hr class="activity-hr-footer" style="position: relative;">
+    <hr class="activity-hr-footer" style="position: relative;"> 
 
 
-</div>
+</div> 
 
 
 <!-- Footer -->
-<div id="footer-div">
+ <div id="footer-div">
 
     <div class="activity-footer-div">
         <p class="activity-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
         <img id="activity-footer-image" src="img/Logo_footer.svg" alt="" ></div>
 
-</div>
+</div> 
 
 <!-- Container -->
 @include('panel.master.sidebar')

@@ -65,7 +65,6 @@
     position: relative;
     left: 3vh;
     top: 3vh
-    
 }
 @media screen and (max-width:1024px) {
         
@@ -73,7 +72,6 @@
         left: 2vh;
         top: 2vh
     }
-
         
     #logouticon:before{
         left: 2vh !important;
@@ -104,7 +102,6 @@
     color: white;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-
 }
 
 #usericon:hover::before ,#logouticon:hover::before{
@@ -147,12 +144,8 @@
 }
 body {
     background-color: #FFFDE8
-
 }
 
-.container-contact2 {
-    display: none
-}
 /* Header */
 
 header {
@@ -201,6 +194,7 @@ header {
 #contact-page {
     margin-left: 27.5%;
     width: 72%;
+    height: auto !important;
 }
 
 #contact-page h1 {
@@ -287,13 +281,11 @@ form.contact-page p:nth-of-type(1) {
 }
 
 
-
 /* Contact - Media - 1024 */
 @media screen and (max-width:1024px){
-    /* ---------------=====Media====-------------Main Container--------------------------- */
+    /* ----------------------------Main Container--------------------------- */
 
     .useraccount .list {
-        
         display: none;
     }
 
@@ -302,11 +294,6 @@ form.contact-page p:nth-of-type(1) {
         height: 1em;
         content: "";
         left: 85%;
-    }
-
-    .contact-hr-footer
-    {
-        margin-top:80px !important
     }
 
     #contact-page h1 {
@@ -319,46 +306,39 @@ form.contact-page p:nth-of-type(1) {
 
     #contact-page input:nth-of-type(2) {
         margin-left: 150px;
-        /* top: 300px; */
     }
     #contact-page textarea {
         resize: none;
         background: #FFFDE8;
-    /* position: absolute; */
-        /* top: 420px ; */
         margin-left: 100px;
         width: 500px;
         height: 150px;
         border: 2px solid black;
     }
-
    
-   
+    .contact-hr-footer
+    {
+        margin-top:80px !important
+    }
 
     .contact-footer-div {
         margin-top: 80px !important;
         width: 70%;
         margin-left: 0%;
-        /* position: absolute; */
     }
     .contact-footer-paragraph {
         font-size: 20px;
         font-family: sans-serif;
-        /* position: absolute; */
-        top: -20px;
         margin-left: 30%
-
     }
 
     #contact-footer-image {
         width: 250px;
         height: 120px;
-        /* position: absolute; */
         left: 30%
     }
 
 }
-
 
 /* Contact - Media - 768 */
 @media screen and (max-width:768px) {
@@ -368,12 +348,8 @@ form.contact-page p:nth-of-type(1) {
     header {
         z-index: 2;
     }
-    .container-contact {
-        display: none;
-    }
 
     .useraccount .list {
-        
         display: none;
     }
 
@@ -384,7 +360,6 @@ form.contact-page p:nth-of-type(1) {
     /* Contact */
 
     #contact-page {
-        /* position: relative; */
         top: 0px;
         margin-left: 0%;
         width: 100%;
@@ -406,21 +381,14 @@ form.contact-page p:nth-of-type(1) {
         top: 300px;
     }
 
-
     #contact-page textarea{
         background: #FFFDE8;
-            resize: none;
-            /* position: absolute; */
+        resize: none;
         top: 430px ;
         left: 130px;
         width: 510px;
         height: 150px;
     }
-
-    /*form.contact-page button {
-        top: 620px;
-        left:310px;
-    }*/
 
     .contact-hr-footer {
         top: 800px;
@@ -428,7 +396,6 @@ form.contact-page p:nth-of-type(1) {
     }
 
     /* Footer */
-
 
     .contact-footer-div {
         margin-top:10px !important;
@@ -442,7 +409,6 @@ form.contact-page p:nth-of-type(1) {
         border-bottom: transparent;
         top: -60px;
         left: 230px
-
     }
 
     #contact-footer-image {
@@ -453,11 +419,9 @@ form.contact-page p:nth-of-type(1) {
     }
 
     .useraccount .list {
-        
         display: none;
     }
 }
-
 
 /* Contact - Media - 414 */
 @media screen and (max-width: 414px) {
@@ -487,7 +451,6 @@ form.contact-page p:nth-of-type(1) {
         width: 100%;
         margin-top: 100px
     }
-
 
     #contact-page h1 {
         font-size: 20px;
@@ -527,7 +490,8 @@ form.contact-page p:nth-of-type(1) {
 /* Footer */
     #footer-div {
         margin-top: 100px !important;
-        top: 0
+        top: 0;
+        width: 100% !important
     }
     .contact-footer-div {
         width: 10% !important;
@@ -550,11 +514,10 @@ form.contact-page p:nth-of-type(1) {
         /* position: absolute; */
         top: -60px;
         left: 0px;
-        width: 260px
+        width: 290px
     }
 
 }
-
 
 /* Contact - Media - 375 */
 @media screen and (max-width: 375px) {
@@ -627,7 +590,7 @@ form.contact-page p:nth-of-type(1) {
         font-family: sans-serif;
         top: -60px;
         left: 0px;
-        width: 260px
+        width: 290px
     }
 
 }
@@ -709,7 +672,7 @@ form.contact-page p:nth-of-type(1) {
         font-family: sans-serif;
         top: -60px;
         left: 0px;
-        width: 260px
+        width: 290px
     }
 
 }
@@ -821,7 +784,6 @@ header {
     margin-left: 410px;
 }
 
-
 .referral-page_secondList
  {
      display: flex;
@@ -850,18 +812,18 @@ header {
 
 .referral-hr-footer
 {
-    top: 950px;
-    width: 72% !important;
-    margin-left:0px !important;
+    top: 1020px;
+    width: 75% !important;
+    margin-left:-40px !important;
     margin: 0
 }
 
 /* Footer */
 
 .referral-footer-div {
-    width: 69% !important;
+    width: 70% !important;
     margin-left: 28%;
-    margin-top: 420px;
+    margin-top: 320px !important;
 }
 
 #referral-footer-image {
@@ -1059,7 +1021,9 @@ header {
     {
         top: 900px;
         width: 758px !important;
-        left: -10px !important;
+        margin-left: 0px !important;
+        left: 0 !important;
+
     }
 
     /* Footer */
@@ -1068,7 +1032,7 @@ header {
         width: 94%;
         margin-left: 0%;
         /* position: absolute; */
-        top: 1080px
+        margin-top: 400px !important
     }
 
     .referral-footer-paragraph {
@@ -1200,7 +1164,7 @@ header {
 
     .referral-hr-footer
     {
-        top: 910px;
+        top: 900px;
         left:-310px;
         width: 414px !important;
     }
@@ -1208,7 +1172,7 @@ header {
     /* Footer */
     
     .referral-footer-div {
-        width: 94%;
+        width: 100%;
         margin-left: 0%;
         margin-top: 300px !important
     }
@@ -1228,7 +1192,6 @@ header {
     }
 
 }
-
 
 /* Referral - Media - 375 */
 @media screen and (max-width:375px) {
@@ -1287,7 +1250,7 @@ header {
 
     .referral-hr-footer
     {
-        top: 910px;
+        top: 900px;
         left:-312px;
         width: 375px !important;
     }
@@ -1311,7 +1274,6 @@ header {
         margin: 0 auto
     }
 }
-
 
 /* Referral - Media - 320 */
 @media screen and (max-width: 320px) {
@@ -1367,9 +1329,10 @@ header {
 
     .referral-hr-footer
     {
-        top: 890px;
+        top: 870px;
         left:-235px;
         width: 320px !important;
+        margin-bottom: 20px !important;
     }
 
     /* Footer */
@@ -1378,7 +1341,7 @@ header {
         width: 90%;
         margin-left: 0%;
         /* position: absolute; */
-        top: 1250px;
+        top: 1260px;
         margin-top: 200px
     }
 
@@ -1397,9 +1360,6 @@ header {
 
 }
 
-
-
-
 /* ACTIVITY */
 
 .mainContainer
@@ -1409,7 +1369,6 @@ header {
 body {
     background-color: #FFFDE8
 }
-
 
 /* Header */
 
@@ -1423,16 +1382,14 @@ header {
     font-size: 50px;
     position: fixed;
     z-index: 200;
-
 }
 
 #header-div {
     border-bottom: 4px solid orange;
     width: 100%;
     height: 110px;
-    position: fixex;
+    position: fixed;
     z-index: 200;
-
 }
 
 .Logo_header {
@@ -1450,7 +1407,6 @@ header {
     border-bottom: 2px solid #727272;
     background: rgb(39, 38, 38);
     font-family: helvetica
-
 }
 
 .sub:after {
@@ -1487,7 +1443,6 @@ header {
     left: -80px;
     top: 15px
 }
-
 
 #referral:before {
     content: "";
@@ -1526,7 +1481,6 @@ header {
     top: 18px
 }
 
-
 /* Activity */
 
  #activity-page {
@@ -1544,6 +1498,7 @@ header {
     font-family: sans-serif;
     margin-top: 210px;
     margin-left: 40px;
+    margin-bottom: 20px
  }
 
  #activity-page .purchases q {
@@ -1612,7 +1567,6 @@ header {
  {
      display: flex;
      flex-flow: row wrap;
-     /* overflow-y: scroll; */
      margin-top: 70px;
      width: 970px;
      height: 300px;
@@ -1630,7 +1584,6 @@ header {
     width:98%;
     background-color: orange;
     height: 100%;
-
 }
  .activity-page_thirdList_column
 {
@@ -1837,10 +1790,10 @@ header {
 
    /* Footer */
    .activity-hr-footer {
-       top: -40px
+       top: 40px
    }
    .activity-footer-div {
-       top: 1350px
+    margin-top: -300px !important
    }
 }
 
@@ -1925,23 +1878,20 @@ header {
         width: 100%;
     }
 
-    #activity-page q  {
-        font-size: 27px;
-    }
-
-    #activity-page_firstList
+    /* #activity-page_firstList
     {
        font-size: 22px
-    }
+    } */
 
     #activity-page blockquote {
        font-size: 27px;
+       margin-top: 150px
     }
 
     #activity-page .purchases q {
        height: 30px;
        font-size: 27px;
-       top: 420px
+       margin-top: 200px !important
     }
        
     #nopur {
@@ -1951,10 +1901,9 @@ header {
 
     .activity-page_secondList_column
    {
-       top: 160px;
+       margin-top: 0px;
        font-size: 20px;
    }
-
 
    #activity-page_secondList div ul li {
        width: 120px;
@@ -1992,7 +1941,8 @@ header {
    .activity-footer-div {
        width: 100%;
        margin-left: 0%;
-       top: 1100px
+       margin-top:-450px;
+       display: block
    }
 
    #activity-footer-image {
@@ -2003,7 +1953,7 @@ header {
    .activity-footer-paragraph {
        font-size: 20px;
        font-family: sans-serif;
-       top: -60px;
+       margin-top: -160px !important;
        margin-left: 150px
    }
 
@@ -2021,10 +1971,6 @@ header {
     }
     header {
         z-index: 2;
-    }
-    #activity-page {
-        height: 1000px;
-        z-index: 0;
     }
    
     .mainList {
@@ -2089,10 +2035,11 @@ header {
     #activity-page {
         margin-left: 0% !important;
         width: 100%;
+        height: auto !important
     }
 
     #activity-page blockquote {
-        margin-top: 150px;
+        margin-top: 100px;
         margin-left: 30px;
         font-size: 22px;
     }
@@ -2103,7 +2050,7 @@ header {
         margin-left: 150px;
     }
     #activity-page_secondList {
-        margin-top: 30px;
+        margin-top: 30px !important;
         width: 380px;
         height: 300px;
         overflow-y: scroll;
@@ -2117,20 +2064,20 @@ header {
     {
         top: 00px;
         font-size: 15px;
-        margin-top: 240px;
+        margin-top: 200px;
         position: absolute;
     }
 
     .activity-page_secondList_column:nth-of-type(2){
-        margin-top: 300px
+        margin-top: 260px;
     }
 
     .activity-page_secondList_column:nth-of-type(3){
-        margin-top: 350px
+        margin-top: 310px
     }
 
     .activity-page_secondList_column:nth-of-type(4){
-        margin-top: 400px
+        margin-top: 360px;
     }
 
     #activity-page_secondList div ul li {
@@ -2149,7 +2096,6 @@ header {
         margin-left: 100px;
     }
     #activity-page_thirdList{
-        top:470px;
         width: 400px;
         flex-flow: row wrap;
     }
@@ -2157,9 +2103,18 @@ header {
     {
         font-size: 21px;
         position: absolute;
-        margin-top: 530px
+        margin-top: 430px
+    }
+    .activity-page_thirdList_column:nth-of-type(2) {
+        margin-top: 470px !important;
+    }
+    .activity-page_thirdList_column:nth-of-type(3) {
+        margin-top: 510px !important;
     }
 
+    .activity-page_thirdList_column:nth-of-type(4) {
+        margin-top: 550px !important;
+    }
     .activity-page_thirdList_column:nth-of-type(1) ul li {
         position: absolute;
         margin-top: -10px;
@@ -2171,18 +2126,6 @@ header {
         margin-left: 160px;
         height: 13px;
         font-size: 18px;
-    }
-
-    .activity-page_thirdList_column:nth-of-type(2) {
-        margin-top: 590px
-    }
-
-    .activity-page_thirdList_column:nth-of-type(3) {
-        margin-top: 650px
-    }
-    
-    .activity-page_thirdList_column:nth-of-type(4) {
-        margin-top: 710px
     }
     
     #activity-page_thirdList div ul li {
@@ -2205,7 +2148,7 @@ header {
         width: 100%;
         margin-left: 0%;
         top: 000px !important;
-        margin-top: -500px !important;
+        margin-top: -100px !important;
     }
 
     #activity-footer-image {
@@ -2244,7 +2187,7 @@ header {
         width: 375px;
     }
     #activity-page {
-        height: 1000px;
+        height: auto;
         z-index: 0;
     }
   
@@ -2328,18 +2271,12 @@ header {
         width: 360px;
         height: 300px
     }
-    .activity-page_secondList_column
-    {
-       top: 00px;
-       font-size: 15px;
-       margin-top: 80px
-    }
-
+    
     .activity-page_secondList_column
     {
         top: 00px;
         font-size: 15px;
-        margin-top: 240px;
+        margin-top: 200px;
         position: absolute;
     }
 
@@ -2384,7 +2321,7 @@ header {
     .activity-hr-footer
     {
         margin-left: 0;
-       top: 0px
+        top: 0px
     }
 
     /* Footer */
@@ -2392,7 +2329,7 @@ header {
     .activity-footer-div {
        width: 100%;
        margin-left: 0%;
-       margin-top: -530px !important
+       margin-top: -130px !important
     }
 
     #activity-footer-image {
@@ -2499,7 +2436,7 @@ header {
      .activity-footer-div {
         width: 100%;
         margin-left: 0%;
-        margin-top: -520px !important
+        margin-top: -160px !important
      }
     .footer-paragraph {
         font-size: 12px;
@@ -2651,7 +2588,6 @@ body {
      flex-flow: row wrap;
      height: 300px;
      margin-top: 30px;
-     /* overflow-y: scroll; */
  }
 
  .Hash-History_column
@@ -3343,14 +3279,14 @@ body {
     }
 
     .dashboard-hr11 {
-        width: 26%;
+        width: 26% !important;
         left: -150px;
     }
 
     .dashboard-hr22-2 {
         display: block;
-        width: 27%;
-        margin-left: 71.2%;
+        width: 27.5% !important;
+        margin-left: 71% !important;
         margin-top: -10px
     }
 
@@ -3370,7 +3306,7 @@ body {
 
     .dashboard-hr222-2 {
         display: block;
-        width: 29%;
+        width: 28% !important;
         margin-left: 69%;
         margin-top: -10px
     }
@@ -3389,7 +3325,7 @@ body {
 
     .dashboard-hr-footer
     {
-        margin-top: 70px !important;
+        margin-top: 20px !important;
         top: 0
     }
 

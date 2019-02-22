@@ -33,6 +33,7 @@
 
             </div> 
             <!-- Hash History -->
+            
              <hr class="dashboard-hr1">
             <p id="dashboard-title">Hash History</p>
             <hr class="dashboard-hr2-2"> 

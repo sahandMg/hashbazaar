@@ -253,7 +253,8 @@ header img { height: 175px;margin-bottom: 4%; }
       padding-left: 10px
     }
     #lg , #sg {height:50px;}
-
+    #sg {border: thin solid transparent;
+      border:transparent !important}
 
     .navigation-menu .bar1, .bar2, .bar3 {
       width: 35px;
@@ -358,7 +359,7 @@ header img { height: 175px;margin-bottom: 4%; }
   #header-navbar-menu {
     left: -0px;
     margin-left: -40px;
-    height: 345px;
+    height: 325px !important;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px
 

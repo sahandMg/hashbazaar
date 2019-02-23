@@ -1575,7 +1575,7 @@ header {
 
     border: 1px solid black;
     height: 25px;
-    width: 80%;
+    width: 100%;
     text-align: center;
     color: white;
 }
@@ -1583,7 +1583,9 @@ header {
 .activity-page_secondList_column .remain .progress {
     width:98%;
     background-color: orange;
-    height: 100%;
+    text-align: center;
+    height: 88%;
+    padding-top: 3px
 }
  .activity-page_thirdList_column
 {
@@ -2598,7 +2600,7 @@ body {
     color: #2e2d2d;
     font-weight: bolder;
     font-family: sans-serif;
-    margin-left: 5%;
+    margin-left: 6% !important;
     text-align: left;
     display: block
 }
@@ -2614,12 +2616,27 @@ body {
 }
 
 .Hash-History_column  li:nth-of-type(1) {
-    top: 30px;
+    margin-top: 30px;
 }
 
-.remain {
-    width: 180px; margin: 0px auto;
+
+.Hash-History_column .remain {
+
+    width: 160px !important;
+    text-align: center !important;
+    color: white !important;
 }
+
+.Hash-History_column .remain .progress {
+    width:98% !important;
+    background-color: white !important;
+    border: 1px solid black !important;
+    text-align: center !important;
+    height: 100% !important;
+    padding-top: 0px !important
+}
+ 
+
 /* ==============================================Buy hash power=================================== */
 
 #demo {
@@ -2909,8 +2926,22 @@ body {
         height: 35px;
     }
         
-    .remain {
-        width: 100px; margin: 0px auto
+    
+
+    .Hash-History_column .remain {
+
+        width: 130px !important;
+        text-align: center !important;
+        color: white !important;
+    }
+
+    .Hash-History_column .remain .progress {
+        width:98% !important;
+        background-color: white !important;
+        border: 1px solid black !important;
+        text-align: center !important;
+        height: 100% !important;
+        padding-top: 0px !important
     }
 
     /* ==============================================Buy hash power=================================== */
@@ -3244,7 +3275,7 @@ body {
         color: #2e2d2d;
         font-weight: bolder;
         font-family: sans-serif;
-        margin-left: 5%;
+        margin-left: 10% !important;
         text-align: left;
     }
 
@@ -3262,10 +3293,22 @@ body {
         top: 30px;
     }
 
-    .remain {
-        width: 60px;
-        border: 1px solid ;
-        font-size: 12px
+    
+
+    .Hash-History_column .remain {
+
+        width: 100px !important;
+        text-align: center !important;
+        color: white !important;
+    }
+
+    .Hash-History_column .remain .progress {
+        width:98% !important;
+        background-color: white !important;
+        border: 1px solid black !important;
+        text-align: center !important;
+        height: 100% !important;
+        padding-top: 0px !important
     }
 
     /* ==============================================Buy hash power=================================== */

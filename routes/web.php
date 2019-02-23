@@ -16,6 +16,8 @@ use App\Jobs\subscriptionMailJob;
 use App\Mining;
 use App\MiningReport;
 use App\Setting;
+use App\Transaction;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
@@ -77,30 +79,6 @@ Route::get('job',function(){
 });
 
 Route::get('test',function (){
-
-
-// echo Cache::get('test');
-//     $client = new GuzzleClient();
-//     $config = [
-//         'referer' => true,
-//          'headers' => [
-//              'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-//              'Accept-Encoding' => 'gzip, deflate, br',
-// ],
-// ];
-//         $url = 'http://localhost:7000/test2';
-//         // $promise = $client->getAsync('http://localhost:7000/test2');
-
-//         // $promise = $client->requestAsync('GET','http://localhost:7000/test2',$config)->then(function (ResponseInterface $response) {
-//         //     return  $response->getBody()->getContents();
-
-//         // });
-//         $promise = $client->requestAsync('GET', $url);
-
-//         $promise->wait();
-
-//         return redirect('https://google.com');
-dd(uniqid('hashBazaar_'.str_random(5)));
 
 });
 

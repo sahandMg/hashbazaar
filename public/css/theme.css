@@ -660,3 +660,8 @@ header img { height: 175px;margin-bottom: 4%; }
 .network-flex #twttr:hover {
   transform: translateY(-6px)
 }
+
+
+.network-flex #insta:hover {
+  transform: translateY(-6px)
+}

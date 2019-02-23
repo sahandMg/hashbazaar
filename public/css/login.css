@@ -330,6 +330,8 @@ iframe {
   display: -o-flex;
   flex: row;
   transition: all 1s;
+  margin-left: 100px;
+  border: thin solid 
 
 
 }
@@ -340,6 +342,7 @@ iframe {
   height: 50px;
   border-radius: 50%;
   text-align: center;
+  border: thin solid ;
   margin-left: 60px;
 }
 
@@ -465,4 +468,11 @@ iframe {
   .limiter {
     margin-top: 27% 
   }
+}
+
+@media screen and (max-width:320px){
+  .container-socialnet {
+    margin-left: 80px;
+
+    }
 }

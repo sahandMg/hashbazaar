@@ -37,11 +37,15 @@
 
 					<div class="container-socialnet">
 						
-						<a href="https://facebook.com" class="socialnet-flex" id="fb"><img src="img/icons/facebook.svg" alt=""></a>
+						{{-- <a href="https://facebook.com" class="socialnet-flex" id="fb"><img src="img/icons/facebook.svg" alt=""></a>
 						
-						<a href="https://twitter.com" class="socialnet-flex" id="twttr"><img src="img/icons/twitter.svg" alt=""></a>
+						<a href="https://twitter.com" class="socialnet-flex" id="twttr"><img src="img/icons/twitter.svg" alt=""></a> --}}
 						
+<<<<<<< HEAD
+						{{-- <a href="https://plus.google.com/+googleplus" class="socialnet-flex" id="gp"><img src="../../../public/img/googleicon.png" alt=""></a> --}}
+=======
 						<a href="{{route('redirectToProvider')}}" class="socialnet-flex" id="gp"><img src="img/icons/google-plus.svg" alt=""></a>
+>>>>>>> ef4e3b3be08837e024b3ed18ecc13376462169c3
 
 					</div>
 

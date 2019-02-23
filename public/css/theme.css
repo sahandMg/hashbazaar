@@ -194,6 +194,11 @@ header img { height: 175px;margin-bottom: 4%; }
   #price {
     left: 0 !important;
   }
+
+  
+  .network-flex {
+    margin-left: 36% !important;
+  }
      
 }
 
@@ -315,7 +320,7 @@ header img { height: 175px;margin-bottom: 4%; }
 
    
   .network-flex {
-    margin-left: 23% !important;
+    margin-left: 33% !important;
   }
 }
 
@@ -345,7 +350,7 @@ header img { height: 175px;margin-bottom: 4%; }
     }
     
   .network-flex {
-    margin-left: 20% !important;
+    margin-left: 47%;
   }
     
 }
@@ -384,7 +389,7 @@ header img { height: 175px;margin-bottom: 4%; }
     }
 
     .network-flex {
-      margin-left: 8% !important;
+      margin-left: 16% !important;
     }
     
 }
@@ -407,7 +412,7 @@ header img { height: 175px;margin-bottom: 4%; }
 
   
   .network-flex {
-    margin-left: 3% !important;
+    margin-left: 12% !important;
   }
 
 }
@@ -448,7 +453,7 @@ header img { height: 175px;margin-bottom: 4%; }
 
    
   .network-flex {
-    margin-left: -4% !important;
+    margin-left: 5% !important;
   }
 
 }
@@ -632,7 +637,7 @@ header img { height: 175px;margin-bottom: 4%; }
   display: -o-flex;
   flex: row;
   transition: all 1s;
-  margin-left: 33%;
+  margin-left: 40%;
 
 
 }
@@ -643,7 +648,6 @@ header img { height: 175px;margin-bottom: 4%; }
   height: 50px;
   border-radius: 50%;
   text-align: center;
-  border: thin solid ;
   margin-left: 30px;
 }
 

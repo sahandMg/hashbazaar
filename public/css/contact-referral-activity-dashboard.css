@@ -65,7 +65,6 @@
     position: relative;
     left: 3vh;
     top: 3vh
-    
 }
 @media screen and (max-width:1024px) {
         
@@ -73,7 +72,6 @@
         left: 2vh;
         top: 2vh
     }
-
         
     #logouticon:before{
         left: 2vh !important;
@@ -104,7 +102,6 @@
     color: white;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-
 }
 
 #usericon:hover::before ,#logouticon:hover::before{
@@ -147,12 +144,8 @@
 }
 body {
     background-color: #FFFDE8
-
 }
 
-.container-contact2 {
-    display: none
-}
 /* Header */
 
 header {
@@ -201,6 +194,7 @@ header {
 #contact-page {
     margin-left: 27.5%;
     width: 72%;
+    height: auto !important;
 }
 
 #contact-page h1 {
@@ -287,13 +281,11 @@ form.contact-page p:nth-of-type(1) {
 }
 
 
-
 /* Contact - Media - 1024 */
 @media screen and (max-width:1024px){
-    /* ---------------=====Media====-------------Main Container--------------------------- */
+    /* ----------------------------Main Container--------------------------- */
 
     .useraccount .list {
-        
         display: none;
     }
 
@@ -302,11 +294,6 @@ form.contact-page p:nth-of-type(1) {
         height: 1em;
         content: "";
         left: 85%;
-    }
-
-    .contact-hr-footer
-    {
-        margin-top:80px !important
     }
 
     #contact-page h1 {
@@ -319,46 +306,39 @@ form.contact-page p:nth-of-type(1) {
 
     #contact-page input:nth-of-type(2) {
         margin-left: 150px;
-        /* top: 300px; */
     }
     #contact-page textarea {
         resize: none;
         background: #FFFDE8;
-    /* position: absolute; */
-        /* top: 420px ; */
         margin-left: 100px;
         width: 500px;
         height: 150px;
         border: 2px solid black;
     }
-
    
-   
+    .contact-hr-footer
+    {
+        margin-top:80px !important
+    }
 
     .contact-footer-div {
         margin-top: 80px !important;
         width: 70%;
         margin-left: 0%;
-        /* position: absolute; */
     }
     .contact-footer-paragraph {
         font-size: 20px;
         font-family: sans-serif;
-        /* position: absolute; */
-        top: -20px;
         margin-left: 30%
-
     }
 
     #contact-footer-image {
         width: 250px;
         height: 120px;
-        /* position: absolute; */
         left: 30%
     }
 
 }
-
 
 /* Contact - Media - 768 */
 @media screen and (max-width:768px) {
@@ -368,12 +348,8 @@ form.contact-page p:nth-of-type(1) {
     header {
         z-index: 2;
     }
-    .container-contact {
-        display: none;
-    }
 
     .useraccount .list {
-        
         display: none;
     }
 
@@ -384,7 +360,6 @@ form.contact-page p:nth-of-type(1) {
     /* Contact */
 
     #contact-page {
-        /* position: relative; */
         top: 0px;
         margin-left: 0%;
         width: 100%;
@@ -406,21 +381,14 @@ form.contact-page p:nth-of-type(1) {
         top: 300px;
     }
 
-
     #contact-page textarea{
         background: #FFFDE8;
-            resize: none;
-            /* position: absolute; */
+        resize: none;
         top: 430px ;
         left: 130px;
         width: 510px;
         height: 150px;
     }
-
-    /*form.contact-page button {
-        top: 620px;
-        left:310px;
-    }*/
 
     .contact-hr-footer {
         top: 800px;
@@ -428,7 +396,6 @@ form.contact-page p:nth-of-type(1) {
     }
 
     /* Footer */
-
 
     .contact-footer-div {
         margin-top:10px !important;
@@ -442,20 +409,19 @@ form.contact-page p:nth-of-type(1) {
         border-bottom: transparent;
         top: -60px;
         left: 230px
-
     }
 
     #contact-footer-image {
         border-bottom: transparent;
         left: 0%;
+        width: 200px;
+        height: 100px;
     }
 
     .useraccount .list {
-        
         display: none;
     }
 }
-
 
 /* Contact - Media - 414 */
 @media screen and (max-width: 414px) {
@@ -485,7 +451,6 @@ form.contact-page p:nth-of-type(1) {
         width: 100%;
         margin-top: 100px
     }
-
 
     #contact-page h1 {
         font-size: 20px;
@@ -525,7 +490,8 @@ form.contact-page p:nth-of-type(1) {
 /* Footer */
     #footer-div {
         margin-top: 100px !important;
-        top: 0
+        top: 0;
+        width: 100% !important
     }
     .contact-footer-div {
         width: 10% !important;
@@ -536,9 +502,9 @@ form.contact-page p:nth-of-type(1) {
     }
 
     #contact-footer-image {
-        width: 150px;
-        margin-top: 0;
-        height: 75px;
+        width: 100px;
+        height: 50px;
+        margin: 0 auto
     }
 
     .contact-footer-paragraph {
@@ -548,11 +514,10 @@ form.contact-page p:nth-of-type(1) {
         /* position: absolute; */
         top: -60px;
         left: 0px;
-        width: 260px
+        width: 290px
     }
 
 }
-
 
 /* Contact - Media - 375 */
 @media screen and (max-width: 375px) {
@@ -614,9 +579,9 @@ form.contact-page p:nth-of-type(1) {
     }
 
     #contact-footer-image {
-        width: 150px;
-        margin-top: 0;
-        height: 75px;
+        width: 100px;
+        height: 50px;
+        margin: 0 auto
     }
 
     .contact-footer-paragraph {
@@ -625,7 +590,7 @@ form.contact-page p:nth-of-type(1) {
         font-family: sans-serif;
         top: -60px;
         left: 0px;
-        width: 260px
+        width: 290px
     }
 
 }
@@ -696,9 +661,9 @@ form.contact-page p:nth-of-type(1) {
     }
 
     #contact-footer-image {
-        width: 150px;
-        margin-top: 0;
-        height: 75px;
+        width: 100px;
+        height: 50px;
+        margin: 0 auto
     }
 
     .contact-footer-paragraph {
@@ -707,7 +672,7 @@ form.contact-page p:nth-of-type(1) {
         font-family: sans-serif;
         top: -60px;
         left: 0px;
-        width: 260px
+        width: 290px
     }
 
 }
@@ -819,7 +784,6 @@ header {
     margin-left: 410px;
 }
 
-
 .referral-page_secondList
  {
      display: flex;
@@ -848,18 +812,18 @@ header {
 
 .referral-hr-footer
 {
-    top: 950px;
-    width: 72% !important;
-    margin-left:0px !important;
+    top: 1020px;
+    width: 75% !important;
+    margin-left:-40px !important;
     margin: 0
 }
 
 /* Footer */
 
 .referral-footer-div {
-    width: 69% !important;
+    width: 70% !important;
     margin-left: 28%;
-    margin-top: 420px;
+    margin-top: 320px !important;
 }
 
 #referral-footer-image {
@@ -977,9 +941,6 @@ header {
 /* Referral - Media - 768 */
 @media screen and (max-width:768px) {
 
-        .container-referral {
-            display: none;
-        }
         #header-div {
             border-bottom: 4px solid orange;
             width: 100%;
@@ -1003,7 +964,7 @@ header {
         /* ==================================Referral================================ */
 
     #referral-page {
-        margin-left: 1.5%;
+        margin-left: 0%;
         width: 100%;
     }
 
@@ -1060,7 +1021,9 @@ header {
     {
         top: 900px;
         width: 758px !important;
-        left: -10px !important;
+        margin-left: 0px !important;
+        left: 0 !important;
+
     }
 
     /* Footer */
@@ -1069,7 +1032,7 @@ header {
         width: 94%;
         margin-left: 0%;
         /* position: absolute; */
-        top: 1080px
+        margin-top: 400px !important
     }
 
     .referral-footer-paragraph {
@@ -1077,8 +1040,10 @@ header {
         left: 200px;
         width: 320px
     }
-
-
+    #referral-footer-image {
+    width: 200px;
+    height: 100px;
+    }
 }
 
 /* Referral - Media - 414 */
@@ -1101,10 +1066,6 @@ header {
         left:30px
     }
 
-    .container-referral {
-        display: none;
-    }
-
     .mainList {
         display: none
     }
@@ -1113,8 +1074,8 @@ header {
 
     #referral-page {
         margin-top: 100px;
-        margin-left: .5%;
-        width: 72%;
+        margin-left: 0%;
+        width: 100%;
     }
 
 
@@ -1154,7 +1115,7 @@ header {
         font-family: sans-serif;
         color: #2e2d2d;
         top: 310px;
-        margin-left: 200px;
+        margin-left: 180px;
     }
 
     #referral-page dl {
@@ -1203,7 +1164,7 @@ header {
 
     .referral-hr-footer
     {
-        top: 930px;
+        top: 900px;
         left:-310px;
         width: 414px !important;
     }
@@ -1211,7 +1172,7 @@ header {
     /* Footer */
     
     .referral-footer-div {
-        width: 94%;
+        width: 100%;
         margin-left: 0%;
         margin-top: 300px !important
     }
@@ -1225,12 +1186,12 @@ header {
     }
 
     #referral-footer-image {
-        width: 150px;
+        width: 100px;
         height: 50px;
+        margin: 0 auto
     }
 
 }
-
 
 /* Referral - Media - 375 */
 @media screen and (max-width:375px) {
@@ -1266,7 +1227,7 @@ header {
         font-family: sans-serif;
         color: #2e2d2d;
         top: 310px;
-        margin-left: 180px;
+        margin-left: 160px;
     }
 
     #referral-page dl {
@@ -1289,7 +1250,7 @@ header {
 
     .referral-hr-footer
     {
-        top: 920px;
+        top: 900px;
         left:-312px;
         width: 375px !important;
     }
@@ -1310,9 +1271,9 @@ header {
     #referral-footer-image {
         width: 100px;
         height: 50px;
+        margin: 0 auto
     }
 }
-
 
 /* Referral - Media - 320 */
 @media screen and (max-width: 320px) {
@@ -1343,7 +1304,7 @@ header {
         font-family: sans-serif;
         color: #2e2d2d;
         top: 315px;
-        margin-left: 160px;
+        margin-left: 140px;
     }
 
     #referral-page dl {
@@ -1361,16 +1322,17 @@ header {
         font-family: sans-serif;
         color: #2e2d2d;
         top: 425px;
-        margin-left:90px;
+        margin-left:250px;
         width: 50px
     }
 
 
     .referral-hr-footer
     {
-        top: 910px;
+        top: 870px;
         left:-235px;
         width: 320px !important;
+        margin-bottom: 20px !important;
     }
 
     /* Footer */
@@ -1379,7 +1341,7 @@ header {
         width: 90%;
         margin-left: 0%;
         /* position: absolute; */
-        top: 1250px;
+        top: 1260px;
         margin-top: 200px
     }
 
@@ -1391,14 +1353,12 @@ header {
     }
 
     #referral-footer-image {
-        width: 150px !important;
+        width: 100px !important;
         height: 50px;
+        margin: 0 auto
     }
 
 }
-
-
-
 
 /* ACTIVITY */
 
@@ -1409,7 +1369,6 @@ header {
 body {
     background-color: #FFFDE8
 }
-
 
 /* Header */
 
@@ -1423,16 +1382,14 @@ header {
     font-size: 50px;
     position: fixed;
     z-index: 200;
-
 }
 
 #header-div {
     border-bottom: 4px solid orange;
     width: 100%;
     height: 110px;
-    position: fixex;
+    position: fixed;
     z-index: 200;
-
 }
 
 .Logo_header {
@@ -1450,7 +1407,6 @@ header {
     border-bottom: 2px solid #727272;
     background: rgb(39, 38, 38);
     font-family: helvetica
-
 }
 
 .sub:after {
@@ -1487,7 +1443,6 @@ header {
     left: -80px;
     top: 15px
 }
-
 
 #referral:before {
     content: "";
@@ -1526,7 +1481,6 @@ header {
     top: 18px
 }
 
-
 /* Activity */
 
  #activity-page {
@@ -1544,6 +1498,7 @@ header {
     font-family: sans-serif;
     margin-top: 210px;
     margin-left: 40px;
+    margin-bottom: 20px
  }
 
  #activity-page .purchases q {
@@ -1612,7 +1567,6 @@ header {
  {
      display: flex;
      flex-flow: row wrap;
-     /* overflow-y: scroll; */
      margin-top: 70px;
      width: 970px;
      height: 300px;
@@ -1621,7 +1575,7 @@ header {
 
     border: 1px solid black;
     height: 25px;
-    width: 80%;
+    width: 100%;
     text-align: center;
     color: white;
 }
@@ -1629,8 +1583,9 @@ header {
 .activity-page_secondList_column .remain .progress {
     width:98%;
     background-color: orange;
-    height: 100%;
-
+    text-align: center;
+    height: 88%;
+    padding-top: 3px
 }
  .activity-page_thirdList_column
 {
@@ -1683,7 +1638,8 @@ header {
 }
 
 /* Activity-Media-1280 */
-@media screen and (max-width:1280px) {
+@media screen and (max-width:1280px) 
+{
     .container-activity {
         width: 340px !important;
         height: 100%;
@@ -1700,43 +1656,11 @@ header {
     }
     
 }
+
 /* Activity-Media-1024 */
 @media screen and (max-width:1024px)
 {
     /* ---------------=====Media====-------------Main Container--------------------------- */
-
-    .container-activity {
-        width: 270px;
-        height: 1400px;
-    }
-
-    .container-activity .mainList {
-        width: 270px
-    }
-
-    .container-activity .mainList .navbar .Logo_In_NavBar{
-        width: 220px;
-        height: 380px;
-        left: 30px;
-        position: absolute;
-        top: -170px
-    }
-
-    div ul .navbar #welcome {
-        font-size: 17px;
-        left: 70px;
-    }
-
-    .container-activity .mainList .sub {
-        height: 60px;
-        font-size: 25px;
-        padding-bottom: 10px;
-    }
-
-    .container-activity .mainList .sub a {
-        left: -10px;
-        top: 30%
-    }
 
     .sub:after {
         width: 1em;
@@ -1802,7 +1726,6 @@ header {
     {
       display: flex;
       flex-flow: row wrap;
-      /* overflow-y: scroll; */
       height: 300px;
       margin-top: 0px;
       width: 730px
@@ -1816,13 +1739,13 @@ header {
 
     .activity-page_secondList_column
     {
-    flex-grow: 1;
-    margin-top: 50px;
-    font-size: 25px;
-    color: #2e2d2d;
-    font-weight: bold;
-    font-family: sans-serif;
-    margin-left: 7%
+        flex-grow: 1;
+        margin-top: 50px;
+        font-size: 25px;
+        color: #2e2d2d;
+        font-weight: bold;
+        font-family: sans-serif;
+        margin-left: 7%
     }
 
    #activity-page .Transactions q {
@@ -1840,7 +1763,6 @@ header {
     {
         display: flex;
         flex-flow: row wrap;
-        /* overflow-y: scroll; */
         height: 300px;
         top: 480px;
         width: 730px;
@@ -1870,19 +1792,16 @@ header {
 
    /* Footer */
    .activity-hr-footer {
-       top: -40px
+       top: 40px
    }
    .activity-footer-div {
-       top: 1350px
+    margin-top: -300px !important
    }
 }
 
-
 /* Activity-Media-768 */
-@media screen and (max-width: 768px) {
-    .container-activity {
-        display: none;
-    }
+@media screen and (max-width: 768px) 
+{
 
     header {
         z-index: 2;
@@ -1957,27 +1876,24 @@ header {
     }
 
     #activity-page {
-        margin-left: 1.5% !important;
+        margin-left: 0% !important;
         width: 100%;
     }
 
-    #activity-page q  {
-        font-size: 27px;
-    }
-
-    #activity-page_firstList
+    /* #activity-page_firstList
     {
        font-size: 22px
-    }
+    } */
 
     #activity-page blockquote {
        font-size: 27px;
+       margin-top: 150px
     }
 
     #activity-page .purchases q {
        height: 30px;
        font-size: 27px;
-       top: 420px
+       margin-top: 200px !important
     }
        
     #nopur {
@@ -1987,10 +1903,9 @@ header {
 
     .activity-page_secondList_column
    {
-       top: 160px;
+       margin-top: 0px;
        font-size: 20px;
    }
-
 
    #activity-page_secondList div ul li {
        width: 120px;
@@ -2028,29 +1943,27 @@ header {
    .activity-footer-div {
        width: 100%;
        margin-left: 0%;
-       top: 1100px
+       margin-top:-450px;
+       display: block
    }
 
    #activity-footer-image {
-       width: 200px;
-       height: 100px;
+        width: 200px;
+        height: 100px;
    }
 
    .activity-footer-paragraph {
        font-size: 20px;
        font-family: sans-serif;
-       top: -60px;
+       margin-top: -160px !important;
        margin-left: 150px
    }
 
 }
 
 /* Activity-Media-414 */
-@media screen and (max-width:414px) {
-
-    .container-activity {
-        display: none;
-    }
+@media screen and (max-width:414px) 
+{
 
     .Logo_header {
         width: 300px;
@@ -2060,10 +1973,6 @@ header {
     }
     header {
         z-index: 2;
-    }
-    #activity-page {
-        height: 1000px;
-        z-index: 0;
     }
    
     .mainList {
@@ -2126,12 +2035,13 @@ header {
     }
 
     #activity-page {
-        margin-left: 1.5% !important;
+        margin-left: 0% !important;
         width: 100%;
+        height: auto !important
     }
 
     #activity-page blockquote {
-        margin-top: 150px;
+        margin-top: 100px;
         margin-left: 30px;
         font-size: 22px;
     }
@@ -2142,7 +2052,7 @@ header {
         margin-left: 150px;
     }
     #activity-page_secondList {
-        margin-top: 30px;
+        margin-top: 30px !important;
         width: 380px;
         height: 300px;
         overflow-y: scroll;
@@ -2156,26 +2066,26 @@ header {
     {
         top: 00px;
         font-size: 15px;
-        margin-top: 240px;
+        margin-top: 200px;
         position: absolute;
     }
 
     .activity-page_secondList_column:nth-of-type(2){
-        margin-top: 300px
+        margin-top: 260px;
     }
 
     .activity-page_secondList_column:nth-of-type(3){
-        margin-top: 350px
+        margin-top: 310px
     }
 
     .activity-page_secondList_column:nth-of-type(4){
-        margin-top: 400px
+        margin-top: 360px;
     }
 
     #activity-page_secondList div ul li {
         width: 120px;
         font-size: 13px;
-        margin-left: 200px;
+        margin-left: 140px;
         margin-top: -10px;
     }
 
@@ -2188,7 +2098,6 @@ header {
         margin-left: 100px;
     }
     #activity-page_thirdList{
-        top:470px;
         width: 400px;
         flex-flow: row wrap;
     }
@@ -2196,9 +2105,18 @@ header {
     {
         font-size: 21px;
         position: absolute;
-        margin-top: 530px
+        margin-top: 430px
+    }
+    .activity-page_thirdList_column:nth-of-type(2) {
+        margin-top: 470px !important;
+    }
+    .activity-page_thirdList_column:nth-of-type(3) {
+        margin-top: 510px !important;
     }
 
+    .activity-page_thirdList_column:nth-of-type(4) {
+        margin-top: 550px !important;
+    }
     .activity-page_thirdList_column:nth-of-type(1) ul li {
         position: absolute;
         margin-top: -10px;
@@ -2211,23 +2129,11 @@ header {
         height: 13px;
         font-size: 18px;
     }
-
-    .activity-page_thirdList_column:nth-of-type(2) {
-        margin-top: 590px
-    }
-
-    .activity-page_thirdList_column:nth-of-type(3) {
-        margin-top: 650px
-    }
-    
-    .activity-page_thirdList_column:nth-of-type(4) {
-        margin-top: 710px
-    }
     
     #activity-page_thirdList div ul li {
         width: 120px;
         font-size: 13px;
-        margin-left: 60px;
+        margin-left: 130px;
     }
 
     .activity-hr-footer
@@ -2244,12 +2150,13 @@ header {
         width: 100%;
         margin-left: 0%;
         top: 000px !important;
-        margin-top: -500px !important;
+        margin-top: -100px !important;
     }
 
     #activity-footer-image {
-        width: 150px;
-        height: 60px;
+        width: 100px;
+        height: 50px;
+        margin: 0 auto
     }
 
     .activity-footer-paragraph {
@@ -2263,9 +2170,9 @@ header {
 
 }
 
-
 /* Activity-Media-375 */
-@media screen and (max-width:375px) {
+@media screen and (max-width:375px) 
+{
 
     .container-activity {
         display: none;
@@ -2282,7 +2189,7 @@ header {
         width: 375px;
     }
     #activity-page {
-        height: 1000px;
+        height: auto;
         z-index: 0;
     }
   
@@ -2346,7 +2253,6 @@ header {
     }
 
     #activity-page {
-        left: 1.5%;
         width: 100%;
     }
 
@@ -2367,18 +2273,12 @@ header {
         width: 360px;
         height: 300px
     }
-    .activity-page_secondList_column
-    {
-       top: 00px;
-       font-size: 15px;
-       margin-top: 80px
-    }
-
+    
     .activity-page_secondList_column
     {
         top: 00px;
         font-size: 15px;
-        margin-top: 240px;
+        margin-top: 200px;
         position: absolute;
     }
 
@@ -2423,7 +2323,7 @@ header {
     .activity-hr-footer
     {
         margin-left: 0;
-       top: 0px
+        top: 0px
     }
 
     /* Footer */
@@ -2431,12 +2331,13 @@ header {
     .activity-footer-div {
        width: 100%;
        margin-left: 0%;
-       margin-top: -530px !important
+       margin-top: -130px !important
     }
 
     #activity-footer-image {
-       width: 150px;
-       height: 60px;
+        width: 100px;
+        height: 50px;
+        margin: 0 auto
     }
 
     .activity-footer-paragraph {
@@ -2446,9 +2347,9 @@ header {
     }
 }
 
-
 /* Activity-Media-320 */
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 320px) 
+{
 
     .Logo_header {
         width: 300px;
@@ -2537,7 +2438,7 @@ header {
      .activity-footer-div {
         width: 100%;
         margin-left: 0%;
-        margin-top: -520px !important
+        margin-top: -160px !important
      }
     .footer-paragraph {
         font-size: 12px;
@@ -2545,6 +2446,11 @@ header {
         top: -60px;
         margin-left: 0px;
         width: 200px
+    }
+    #activity-footer-image  {
+        width: 100px;
+        height: 50px;
+        margin: 0 auto
     }
 
 }
@@ -2554,10 +2460,6 @@ header {
 
 .mainContainer {
     background-color: #FFFDE8
-}
-
-.container-dashboard2 {
-    display: none
 }
 
 /* --------------------------------------------------------Header----------------------------------------- */
@@ -2606,23 +2508,28 @@ body {
     display: block;
 }
 
-.mainContainer .container-dashboard .mainList .dashboard:focus,
-#dashboard:focus~#dashboard-page {
-    display: none
-}
-
 #dashboard {color: orange !important}
 
 /* ======================================Circle=========================================== */
 #dashboard-page-circle {
-    width: 450px;
+    width: 400px;
     display: block;
-    height: 450px;
+    height: 400px;
     border: 20px solid #ff9100;
     border-radius: 50%;
-    margin-left: 23%;
+    margin-left: 50% !important;
     margin-top: 4%;
     border-collapse: 2px solid #727272
+}
+
+#dashboard-page-circle2 {
+    width: 400px;
+    display: block;
+    height: 400px;
+    border: 20px solid #ff9100;
+    border-radius: 50%;
+    border-collapse: 2px solid #727272;
+    margin-top: -38%;
 }
 
 #redeem {
@@ -2631,18 +2538,18 @@ body {
 }
 
 #circle-span {
-    font-size: 30px;
+    font-size: 27px;
     text-align: center;
     font-family: sans-serif;
     color: #727272;
     position: absolute;
     margin-top: 100px;
     font-weight: bolder;
-    margin-left: 10%;
+    margin-left: 7.5%;
 }
 
 #dashboard-page-circle p:nth-of-type(1) {
-    font-size: 45px;
+    font-size: 42px;
     text-align: center;
     color: rgb(41, 37, 37);
     margin-top: 35%;
@@ -2651,7 +2558,7 @@ body {
 }
 
 #dashboard-page-circle p:nth-of-type(2) {
-    font-size: 45px;
+    font-size: 42px;
     text-align: center;
     color: rgb(41, 37, 37);
     margin-top: 2%;
@@ -2660,7 +2567,7 @@ body {
 }
 
 #miningBTC span, #miningBTC span {
-    font-size: 30px
+    font-size: 27px
 }
 
 /* ==================================================HASH History============================== */
@@ -2683,7 +2590,6 @@ body {
      flex-flow: row wrap;
      height: 300px;
      margin-top: 30px;
-     /* overflow-y: scroll; */
  }
 
  .Hash-History_column
@@ -2694,7 +2600,7 @@ body {
     color: #2e2d2d;
     font-weight: bolder;
     font-family: sans-serif;
-    margin-left: 5%;
+    margin-left: 6% !important;
     text-align: left;
     display: block
 }
@@ -2710,12 +2616,27 @@ body {
 }
 
 .Hash-History_column  li:nth-of-type(1) {
-    top: 30px;
+    margin-top: 30px;
 }
 
-.remain {
-    width: 180px; margin: 0px auto;
+
+.Hash-History_column .remain {
+
+    width: 160px !important;
+    text-align: center !important;
+    color: white !important;
 }
+
+.Hash-History_column .remain .progress {
+    width:98% !important;
+    background-color: white !important;
+    border: 1px solid black !important;
+    text-align: center !important;
+    height: 100% !important;
+    padding-top: 0px !important
+}
+ 
+
 /* ==============================================Buy hash power=================================== */
 
 #demo {
@@ -2895,38 +2816,11 @@ body {
 @media screen and (max-width:1024px){
     /* ---------------=====Media====-------------Main Container--------------------------- */
 
-    .container-dashboard {
-        width: 270px;
-        height: 2100px;
-    }
-
-    .container-dashboard .mainList {
-        width: 270px
-    }
-
-    .container-dashboard .mainList .navbar .Logo_In_NavBar{
-        width: 220px;
-        height: 380px;
-        left: 30px;
-        position: absolute;
-        top: -170px
-    }
-
     div ul .navbar #welcome {
         font-size: 17px;
         left: 70px;
     }
-
-    .container-dashboard .mainList .sub {
-        height: 60px;
-        font-size: 25px;
-        padding-bottom: 10px;
-    }
-
-    .container-dashboard .mainList .sub a {
-        left: -10px;
-        top: 30%
-    }
+  
 
     .sub:after {
         width: 1em;
@@ -2974,11 +2868,13 @@ body {
 
     /* ================---media--=================Circle================================== */
 
-    #dashboard-page-circle {
+    #dashboard-page-circle , #dashboard-page-circle2{
         width: 310px;
         height: 310px;
     }
-
+    #dashboard-page-circle2 {
+        margin-top: -47%;
+    }
     #circle-span {
         font-size: 20px !important;
     }
@@ -3030,8 +2926,22 @@ body {
         height: 35px;
     }
         
-    .remain {
-        width: 100px; margin: 0px auto
+    
+
+    .Hash-History_column .remain {
+
+        width: 130px !important;
+        text-align: center !important;
+        color: white !important;
+    }
+
+    .Hash-History_column .remain .progress {
+        width:98% !important;
+        background-color: white !important;
+        border: 1px solid black !important;
+        text-align: center !important;
+        height: 100% !important;
+        padding-top: 0px !important
     }
 
     /* ==============================================Buy hash power=================================== */
@@ -3082,8 +2992,8 @@ body {
 
     #dashboard-page {
         height: 1800px;
-        margin-left: 0;
-        width: 100%;
+        margin-left: 0 !important;
+        width: 98%;
         z-index: 0;
     }
    
@@ -3092,25 +3002,36 @@ body {
     }
 
     /* ======================================Circle=========================================== */
-    #dashboard-page-circle {
-        width: 450px;
+    #dashboard-page-circle  {
+        width: 280px;
         display: block;
-        height: 450px;
+        height: 280px;
         border: 20px solid #ff9100;
         border-radius: 50%;
-        margin-left: 19%;
+        margin-left: 46% !important;
         margin-top: 4%;
+        border-collapse: 2px solid #727272;
+        margin-right: 0%;
+        padding: 0 !important;
+    }
+    #dashboard-page-circle2 {
+        width: 280px;
+        display: block;
+        height: 280px;
+        border: 20px solid #ff9100;
+        border-radius: 50%;
+        margin-left: 2%;
+        margin-top: -42%;
         border-collapse: 2px solid #727272
     }
-
     #circle-span {
         font-size: 30px;
         text-align: center;
         font-family: sans-serif;
         color: #727272;
-        margin-top: 15%;
+        margin-top: 8%;
         font-weight: bolder;
-        margin-left: 22%;
+        margin-left: 12%;
     }
 
     #dashboard-page-circle p {
@@ -3135,12 +3056,11 @@ body {
     .dashboard-hr1  {
         width: 40%;
         margin-left: 0
-
     }
 
     .dashboard-hr2-2  {
-        width: 42%;
-        margin-left: 64.5%;
+        width: 36.5% !important;
+        margin-left: 62.5%;
         margin-top: -15px
     }
 
@@ -3175,13 +3095,13 @@ body {
     }
 
     .dashboard-hr11 {
-        width: 37%;
+        width: 37% !important;
         margin-left: .5%
     }
 
     .dashboard-hr22-2 {
-        width: 38.5%;
-        margin-left: 67.5%;
+        width: 32.5% !important;
+        margin-left: 66% !important;
     }
 
     /*============================================== Mining History ===================================*/
@@ -3200,8 +3120,8 @@ body {
     }
 
     .dashboard-hr222-2 {
-        width: 40%;
-        margin-left: 66%;
+        width: 35.3% !important;
+        margin-left: 64%;
     }
 
     .dashboard-hr-footer
@@ -3216,12 +3136,13 @@ body {
     #footer-div {
         margin-top: 00px !important;
         border-bottom: transparent;
+        margin-left: 0% !important;
         display: block;
     }
     .dashboard-footer-div {
         width: 70%;
-        margin-left: 2%;
-        margin-top: -300px;
+        margin-left: 0% !important;
+        margin-top: -440px;
         border-bottom: transparent
     }
 
@@ -3284,12 +3205,22 @@ body {
         height: 250px;
         border: 20px solid #ff9100;
         border-radius: 50%;
-        margin-left: 15%;
+        margin-left: 10% !important;
         left: 0%;
         margin-top:-8% !important;
         border-collapse: 2px solid #727272
     }
-
+    #dashboard-page-circle2 {
+        width: 250px;
+        display: block;
+        height: 250px;
+        border: 20px solid #ff9100;
+        border-radius: 50%;
+        margin-left: 10% !important;
+        left: 0%;
+        margin-top:5% !important;
+        border-collapse: 2px solid #727272
+    }
     #circle-span {
         font-size: 15px !important;
         text-align: center;
@@ -3344,7 +3275,7 @@ body {
         color: #2e2d2d;
         font-weight: bolder;
         font-family: sans-serif;
-        margin-left: 5%;
+        margin-left: 10% !important;
         text-align: left;
     }
 
@@ -3362,10 +3293,22 @@ body {
         top: 30px;
     }
 
-    .remain {
-        width: 60px;
-        border: 1px solid ;
-        font-size: 12px
+    
+
+    .Hash-History_column .remain {
+
+        width: 100px !important;
+        text-align: center !important;
+        color: white !important;
+    }
+
+    .Hash-History_column .remain .progress {
+        width:98% !important;
+        background-color: white !important;
+        border: 1px solid black !important;
+        text-align: center !important;
+        height: 100% !important;
+        padding-top: 0px !important
     }
 
     /* ==============================================Buy hash power=================================== */
@@ -3379,14 +3322,14 @@ body {
     }
 
     .dashboard-hr11 {
-        width: 26%;
+        width: 26% !important;
         left: -150px;
     }
 
     .dashboard-hr22-2 {
         display: block;
-        width: 27%;
-        margin-left: 71.2%;
+        width: 27.5% !important;
+        margin-left: 71% !important;
         margin-top: -10px
     }
 
@@ -3406,7 +3349,7 @@ body {
 
     .dashboard-hr222-2 {
         display: block;
-        width: 29%;
+        width: 28% !important;
         margin-left: 69%;
         margin-top: -10px
     }
@@ -3425,7 +3368,7 @@ body {
 
     .dashboard-hr-footer
     {
-        margin-top: 70px !important;
+        margin-top: 20px !important;
         top: 0
     }
 
@@ -3438,7 +3381,7 @@ body {
     .dashboard-footer-div {
         width: 100% !important;
         left: 0%;
-        margin-top: 1470px
+        margin-top: 1750px !important
     }
 
     #dashboard-footer-image {
@@ -3461,9 +3404,7 @@ body {
      line-height: 1.5;
     }
 
-
 }
-
 
 
 /* Dashboard-Media-375 */
@@ -3474,9 +3415,8 @@ body {
         margin-left:75%;
     }
 
-
     /* ======================================Circle=========================================== */
-    #dashboard-page-circle {
+    #dashboard-page-circle , #dashboard-page-circle2 {
         width: 250px;
         display: block;
         height: 250px;
@@ -3488,7 +3428,9 @@ body {
         top: 4%;
         border-collapse: 2px solid #727272
     }
-
+    #dashboard-page-circle2 {
+        margin-left: 12% !important
+    }
     #circle-span {
         font-size: 15px !important;
         text-align: center;
@@ -3499,7 +3441,6 @@ body {
         font-weight: bolder;
         margin-left: 20%;
     }
-
 
     #dashboard-page-circle p {
         font-size: 20px !important;
@@ -3525,8 +3466,6 @@ body {
     .dashboard-hr1  {
         width: 33%;
         left: 10px;
-
-
     }
 
     .dashboard-hr2-2  {
@@ -3542,8 +3481,6 @@ body {
          /* position: relative; */
      }
 
-
-
      .Hash-History_column
     {
         flex-grow: 1;
@@ -3555,9 +3492,7 @@ body {
         font-family: sans-serif;
         margin-left: 5%;
         text-align: left;
-
     }
-
 
     .Hash-History_column ul li {
         font-weight: normal !important;
@@ -3639,8 +3574,6 @@ body {
         margin-left: 20px
     }
 
-
-
     .dashboard-hr2 {
         width: 40%;
         left: 30%;
@@ -3656,7 +3589,7 @@ body {
     /* ============================================Footer======================================= */
     #footer-div {
         top: 0 !important;
-        margin-top: 1340px !important;
+        margin-top: 1660px !important;
         height: 050px;
         width: 100%;
     }
@@ -3664,7 +3597,7 @@ body {
         width: 100% !important;
         left: 0%;
         /* position: absolute; */
-        margin-top: 1360px
+        margin-top: 1660px !important
     }
 
     #dashboard-footer-image {
@@ -3689,33 +3622,24 @@ body {
 /* Dashboard-Media-320 */
 @media screen and (max-width: 320px) {
 
-    /* .Logo_header {
-        width: 100px !important;
-        height: 80px;
-        position: absolute;
-        left: 10px;
-    } */
 
      /* ======================================Circle=========================================== */
-     #dashboard-page-circle {
+     #dashboard-page-circle , #dashboard-page-circle2 {
         width: 200px;
         display: block;
         height: 200px;
         border: 20px solid #ff9100;
         border-radius: 50%;
-        /* position: relative; */
         margin-left: 11%;
-        left: 0%;
-        top: 4%;
         border-collapse: 2px solid #727272
     }
-
+        
+        #dashboard-page-circle2 {margin-left: 10% !important; }
     #circle-span {
         font-size: 13px !important;
         text-align: center;
         font-family: sans-serif;
         color: #727272;
-        /* position: absolute; */
         margin-top: 15%;
         font-weight: bolder;
         margin-left: 20%;
@@ -3726,7 +3650,6 @@ body {
         font-size: 18px !important;
         text-align: center;
         color: rgb(41, 37, 37);
-        /* position: relative; */
         top: 40%;
         font-weight: bolder;
         font-family: sans-serif
@@ -3734,8 +3657,7 @@ body {
 
     /* ==================================================HASH History============================== */
     #dashboard-page #dashboard-title {
-        /* position: absolute; */
-        margin-left: 35.5%;
+        margin-left: 34%;
         margin-top:-20px;
         font-family: sans-serif;
         font-size: 15px;
@@ -3746,30 +3668,24 @@ body {
     .dashboard-hr1  {
         width: 30%;
         left: 10px;
-
-
     }
 
     .dashboard-hr2-2  {
-        width: 30%;
+        width: 28%;
         left: 0%;
         margin-top: -5px;
-        margin-left: 69%
+        margin-left: 63%
     }
 
     #Hash-History-list
      {
          display: flex;
          flex-flow: row wrap;
-         /* position: relative; */
      }
-
-
 
      .Hash-History_column
     {
         flex-grow: 1;
-        /* position: relative; */
         top: 200px;
         font-size: 15px;
         color: #2e2d2d;
@@ -3777,7 +3693,6 @@ body {
         font-family: sans-serif;
         margin-left: 5%;
         text-align: left;
-
     }
     #Hash-History-list {
         width: 300px
@@ -3789,16 +3704,13 @@ body {
         top: 30px;
         font-size: 15px;
         height: 70px;
-        /* position: relative; */
         color: #2e2d2d;
         font-weight: bold;
         margin-top: 10px
     }
-    
 
     .Hash-History_column  li:nth-of-type(1) {
         top: 30px;
-        /* position: relative; */
     }
 
     .remain {
@@ -3810,7 +3722,6 @@ body {
     /* ==============================================Buy hash power=================================== */
 
     #dashboard-page #dashboard-title2 {
-        /* position: absolute; */
         margin-left: 30%;
         font-family: sans-serif;
         font-size: 16px;
@@ -3819,22 +3730,20 @@ body {
     }
 
     .dashboard-hr11 {
-        width: 26%;
+        width: 26% !important;
         left: -150px;
     }
 
     .dashboard-hr22-2 {
         display: block;
-        width: 27%;
-        margin-left: 71.2%;
+        width: 27.6% !important;
+        margin-left: 72.2% !important;
         margin-top: -8px
     }
 
     /*============================================== Mining History ===================================*/
 
-
     #dashboard-page #dashboard-title3 {
-        /* position: absolute; */
         margin-left: 32.5%;
         font-family: sans-serif;
         font-size: 16px;
@@ -3847,7 +3756,7 @@ body {
 
     .dashboard-hr222-2 {
         display: block;
-        width: 29%;
+        width: 30.5% !important;
         margin-left: 69%;
         margin-top: -8px
     }
@@ -3856,18 +3765,10 @@ body {
         -moz-user-select: none;
         -webkit-user-select: none;
         -ms-user-select: none;
-        /* position: relative; */
         margin-top: 50px;
         width: 280px !important;
         height: 200px !important;
         margin-left: 5px
-    }
-
-
-
-    .dashboard-hr2 {
-        width: 40%;
-        left: 30%;
     }
 
     .dashboard-hr-footer
@@ -3880,15 +3781,13 @@ body {
     /* ============================================Footer======================================= */
     #footer-div {
         top: 0 !important;
-        margin-top: 1270px !important;
         height: 050px;
         width: 100%;
     }
     .dashboard-footer-div {
         width: 100% !important;
         left: 0%;
-        /* position: absolute; */
-        margin-top: 1270px
+        margin-top: 1530px !important
     }
 
     #dashboard-footer-image {
@@ -3900,7 +3799,6 @@ body {
     .dashboard-footer-paragraph {
         font-size: 13px;
         font-family: sans-serif;
-        /* position: absolute; */
         top: -60px;
         margin-left:20px;
         width: 280px

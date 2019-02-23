@@ -11,7 +11,7 @@
     <!-- Dashboard Page -->
         <div id="dashboard-page">
             <!-- Circle -->
-            <div id="dashboard-page-circle">
+             <div id="dashboard-page-circle">
                 <span id="circle-span">Total Mining</span>
                 <p>&nbsp;<span id="miningBTC"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; <span style="color: orange;">BTC</span> </p>
                 <hr style="width: 84%; text-align:center; margin-top: 02%; ">
@@ -21,81 +21,89 @@
 
 
             </div>
+
+            <div id="dashboard-page-circle2">
+                <span id="circle-span">Total Mining</span>
+                <p>&nbsp;<span id="miningBTC"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; <span style="color: orange;">BTC</span> </p>
+                <hr style="width: 84%; text-align:center; margin-top: 02%; ">
+                <p><span id="miningDollar"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua;">USD</span></p>
+
+                <button id="redeem" disabled onclick="redeem()"> Redeem ! </button>
+
+
+            </div> 
             <!-- Hash History -->
-            <hr class="dashboard-hr1">
+            
+             <hr class="dashboard-hr1">
             <p id="dashboard-title">Hash History</p>
-            <hr class="dashboard-hr2-2">
+            <hr class="dashboard-hr2-2"> 
 
-           <div class="Hash-History">
+            <div class="Hash-History">
 
-                        <div id="Hash-History-list">
-                            @if(!$hashes->isEmpty())
-                            <div class="Hash-History_column"> Hash Power
-                                <ul>
-                                   @foreach($hashes as $hash)
-                                    <li>{{$hash->hash}} TH/S</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-
-
-                            <div class="Hash-History_column"> Started at
-                                    <ul>
-                                        @foreach($hashes as $hash)
-                                            <li>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}} </li>
-                                        @endforeach
-
-                                    </ul>
-                            </div>
-
-                            <div class="Hash-History_column"> Ends at
-                                    <ul>
-                                        @foreach($hashes as $hash)
-                                            <li>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}</li>
-                                        @endforeach
-
-                                    </ul>
-                             </div>
-
-                            <div class="Hash-History_column"> Remain
-                                     <ul>
-                                         @foreach($hashes as $key => $hash)
-
-                                             <li>
-                                             <div class="remain">
-                                              <div class="progress">
+                <div id="Hash-History-list">
+                    @if(!$hashes->isEmpty())
+                    
+                    <div class="Hash-History_column"> Hash Power
+                        <ul>
+                            @foreach($hashes as $hash)
+                            <li>{{$hash->hash}} TH/S</li>
+                            @endforeach
+                        </ul>
+                    </div>
 
 
+                    <div class="Hash-History_column"> Started at
+                        <ul>
+                            @foreach($hashes as $hash)
+                                <li>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}} </li>
+                                @endforeach
 
-                                                      <div class="progress-bar" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%">
-                                                      <span class="title">{{$remainedLife[$key]}}%</span>
+                            </ul>
+                    </div>
 
-                                                </div>
-                                              </div>
-                                             </div>
+                    <div class="Hash-History_column"> Ends at
+                        <ul>
+                            @foreach($hashes as $hash)
+                            <li>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}</li>
+                            @endforeach
 
-                                             </li>
+                        </ul>
+                    </div>
 
-                                         @endforeach
+                    <div class="Hash-History_column"> Remain
+                        <ul>
+                            @foreach($hashes as $key => $hash)
 
-                                    </ul>
-                             </div>
+                            <li>
+                                <div class="remain">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%">
+                                            <span class="title">{{$remainedLife[$key]}}%</span>
 
-                             {{--  --}}
-                            @else
-                                <p id="no-hash"> NO Hash History</p>
-                            @endif
-                            {{--  --}}
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </li>
+
+                            @endforeach
+
+                        </ul>
+                    </div>
+
+                    @else
+                        <p id="no-hash"> NO Hash History</p>
+                    @endif
+                           
                           
-                          
-                        </div>
+                </div>
 
-             </div>
+             </div> 
 
 
 
             <!--   Buy hash power -->
-            <hr  class="dashboard-hr11">
+             <hr  class="dashboard-hr11">
             <p id="dashboard-title2">Buy Hash Power</p>
             <hr class="dashboard-hr22-2">
             <h5 id="demo"></h5>
@@ -116,13 +124,12 @@
                 @else
                   <p> TH Not Available !</p>
                 @endif
-            </div>
+            </div> 
 
 
 
 
             <!-- Mining History -->
-
             <hr class="dashboard-hr111" >
             <p id="dashboard-title3">Mining History</p>
             <hr class="dashboard-hr222-2" >
@@ -130,20 +137,20 @@
 
             <div class="chart-container" >
                     <canvas id="chart1"></canvas>
-            </div>
+            </div> 
 
 
-            <hr class="dashboard-hr-footer" style="left: -10px">
+             <hr class="dashboard-hr-footer" style="left: -10px"> 
     </div>
 
     {{-- Footer --}}
     <div id="footer-div">
             <div class="dashboard-footer-div" >
-            <p class="dashboard-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
-            <img id="dashboard-footer-image" src="{{URL::asset('img/Logo_footer.svg')}}" alt="">
+                <p class="dashboard-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
+                <img id="dashboard-footer-image" src="{{URL::asset('img/Logo_footer.svg')}}" alt="">
 
-        </div>
-    </div>
+            </div>
+    </div> 
 
 
         <style type="text/css">

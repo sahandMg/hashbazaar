@@ -42,7 +42,7 @@
                 <li class="navbar-list small a"><a href="{{route('index')}}">Home</a></li>
                 <li class="navbar-list small a"><a href="#">About</a></li>
                 <li class="navbar-list small a"><a href="{{route('customerService')}}">FAQ</a></li>
-                <li class="navbar-list small a"><a href="{{route('blog')}}">Blog</a></li>
+                <li class="navbar-list small a"><a href="{{env('Blog_URL')}}">Blog</a></li>
                 @if(Auth::guard('user')->check())
                     <li class="navbar-list small dashboard"><a href="{{route('dashboard')}}" >Dashboard</a></li>
                 @else

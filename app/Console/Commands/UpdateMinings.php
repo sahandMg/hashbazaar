@@ -5,6 +5,8 @@ namespace App\Console\Commands;
 use App\BitHash;
 use App\Mining;
 use App\MiningReport;
+use App\Transaction;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Auth;
@@ -68,7 +70,7 @@ class UpdateMinings extends Command
         $result = curl_exec($ch);
         curl_close($ch);
         $mining24 = json_decode($result)->data->earn24Hours;
-        $users = DB::table('users')->get();
+        $users = User::all();
         $mainTHash = $settings->total_th;
 
 
@@ -104,6 +106,10 @@ class UpdateMinings extends Command
                         }
                     }
                 }
+
+                $total_paid_btc = Transaction::where('user_id',$user->id)->where('status','paid')->sum('amount_btc');
+                $user->update(['total_mining'=>$minings->sum('mined_btc'),'pending'=> $minings->sum('mined_btc') - $total_paid_btc]);
+                $user->save();
             }
         }
     }

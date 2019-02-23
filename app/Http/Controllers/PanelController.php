@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\BitHash;
+use App\Events\Contact;
+use App\Message;
 use App\Mining;
 use App\MiningReport;
 use Carbon\Carbon;
@@ -153,5 +155,29 @@ class PanelController extends Controller
     public function contact(){
 
         return view('panel.contact');
+    }
+
+    public function post_contact(Request $request,Message $message){
+
+        $this->validate($request,['name'=>'required','email'=>'required|email','message'=>'required']);
+
+        if($request->has('name')){
+
+        }
+        $message->name = $request->name;
+        $message->email = $request->email;
+        $message->message = $request->message;
+        $message->save();
+
+//        MessageJob::dispatch($request->email,$request->message);
+        $data = [
+            'UserMessage'=> $request->message,
+            'email'=> $request->email,
+            'name' => $request->name
+        ];
+
+        event(new Contact($data));
+
+        return redirect()->back()->with(['message'=>'Your message has been sent!']);
     }
 }

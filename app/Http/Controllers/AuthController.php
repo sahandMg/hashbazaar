@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Helpers;
 use App\Jobs\subscriptionMailJob;
 use App\User;
+use Laravel\Socialite\Facades\Socialite;
 use Stevebauman\Location\Facades\Location;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,7 +30,7 @@ class AuthController extends Controller
         ]);
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->code = str_random(10);
+        $user->code = uniqid('hashBazaar_'.str_random(5));
         $user->password = Hash::make($request->password);
         $user->reset_password = str_random(10);
         $user->ip = Helpers::userIP();
@@ -157,6 +158,67 @@ class AuthController extends Controller
             return redirect()->back();
         }
 
+    }
+    /*
+     * Google Login Apis
+     */
+
+    public function redirectToProvider()
+    {
+//
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function handleProviderCallback(){
+
+        $client =  Socialite::driver('google')->stateless()->user();
+
+//        try{
+//            $user = User::where('email',$client->email)->firstOrFaile();
+//        }catch (\Exception $exception){
+//
+//            return 404;
+//        }
+
+//            $userData = JWTAuth::parseToken()->authenticate();
+
+//            return ['token'=>$token,'userData'=>$user];
+
+        $user = User::where('email',$client->email)->first();
+        if(!is_null($user)){
+            $user->avatar = $client->avatar;
+            $user->ip = Helpers::userIP();
+            try{
+
+                $user->country = strtolower(Location::get(Helpers::userIP())->countryCode);
+            }catch (\Exception $exception){
+                $user->country = 'fr';
+            }
+
+            $user->save();
+
+            Auth::guard('user')->login($user);
+            return redirect()->route('dashboard');
+        }
+
+        $user = new User();
+        $user->name = $client->name;
+        $user->email = $client->email;
+        $user->code = uniqid('hashBazaar_'.str_random(5));
+        $user->avatar = $client->avatar;
+        $user->ip = Helpers::userIP();
+        try{
+
+            $user->country = strtolower(Location::get(Helpers::userIP())->countryCode);
+        }catch (\Exception $exception){
+            $user->country = 'fr';
+        }
+
+        $user->save();
+
+
+
+        return redirect()->route('dashboard');
     }
 
     public function logout(){

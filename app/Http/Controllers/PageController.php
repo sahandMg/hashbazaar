@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Crawling\CoinMarketCap;
+use App\Events\Contact;
 use App\Jobs\MessageJob;
 use App\Message;
 
@@ -33,17 +34,15 @@ Gets user message for form
         $message->email = $request->email;
         $message->message = $request->message;
         $message->save();
+
 //        MessageJob::dispatch($request->email,$request->message);
         $data = [
             'UserMessage'=> $request->message,
-            'email'=> $request->email
+            'email'=> $request->email,
+            'name' => $request->name
         ];
 
-         Mail::send('messageMailPage',$data,function($message) use($data){
-             $message->from ($data['email']);
-             $message->to ('Admin@HashBazaar');
-             $message->subject ('Form Email');
-         });
+        event(new Contact($data));
 
         return redirect()->back()->with(['message'=>'Your message has been sent!']);
     }

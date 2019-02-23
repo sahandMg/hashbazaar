@@ -10,7 +10,7 @@
     <!-- <link rel="stylesheet" href="{{URL::asset('bootstrap/css/bootstrap.min.css')}}"> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
-    <link rel="stylesheet" href="fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../fonts/font-awesome.min.css">
     <!-- <link rel="stylesheet" href="{{URL::asset('css/theme.css')}}"> -->
     <title>Hash Bazaar</title>
     <link rel="icon" href="img/TabLogo.png">
@@ -69,7 +69,7 @@
         <ul class="mainList">
             
             <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="{{URL::asset('img/Logo_In_NavBar.svg')}}" alt="Logo_In_NavBar"></a>
-                <a href="" id="welcome">Welcome User</a> </li>
+                <a href="" id="welcome">{{Auth::guard('user')->user()->name}}</a> </li>
             <li class="sub dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
             <li class="sub"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
             <li class="sub"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>

@@ -24,9 +24,9 @@
 
             <div id="dashboard-page-circle2">
                 <span id="circle-span">Total Mining</span>
-                <p>&nbsp;<span id="miningBTC"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; <span style="color: orange;">BTC</span> </p>
+                <p>&nbsp;<span id="miningBTC2"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; <span style="color: orange;">BTC</span> </p>
                 <hr style="width: 84%; text-align:center; margin-top: 02%; ">
-                <p><span id="miningDollar"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua;">USD</span></p>
+                <p><span id="miningDollar2"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua;">USD</span></p>
 
                 <button id="redeem" disabled onclick="redeem()"> Redeem ! </button>
 
@@ -356,11 +356,18 @@
 
                         document.getElementById('miningBTC').innerHTML = 0;
                         document.getElementById('miningDollar').innerHTML = 0;
+                        document.getElementById('miningBTC2').innerHTML = 0;
+                        document.getElementById('miningDollar2').innerHTML = 0;
                     }else{
 
-
-                        document.getElementById('miningBTC').innerHTML = response.data[0].toFixed(8);
-                        document.getElementById('miningDollar').innerHTML = response.data[1].toFixed(8);
+                    var miningBTC = response.data[0].toFixed(8);
+                    var miningDollar = response.data[1].toFixed(8);
+                    var userPendingBtc = {!! Auth::guard('user')->user()->pending !!};
+                    var userPendingUsd = userPendingBtc * miningDollar/miningBTC;
+                        document.getElementById('miningBTC').innerHTML = miningBTC;
+                        document.getElementById('miningDollar').innerHTML = miningDollar;
+                        document.getElementById('miningBTC2').innerHTML = userPendingBtc.toFixed(8);
+                        document.getElementById('miningDollar2').innerHTML = userPendingUsd.toFixed(8);
                         var minimum_redeem = {!! json_encode($settings->minimum_redeem) !!}
                         if(response.data[0] >= minimum_redeem){
                             document.getElementById('redeem').disabled = false;

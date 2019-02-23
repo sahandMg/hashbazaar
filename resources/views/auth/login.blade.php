@@ -41,7 +41,7 @@
 						
 						<a href="https://twitter.com" class="socialnet-flex" id="twttr"><img src="img/icons/twitter.svg" alt=""></a>
 						
-						<a href="https://plus.google.com/+googleplus" class="socialnet-flex" id="gp"><img src="img/icons/google-plus.svg" alt=""></a>
+						<a href="{{route('redirectToProvider')}}" class="socialnet-flex" id="gp"><img src="img/icons/google-plus.svg" alt=""></a>
 
 					</div>
 

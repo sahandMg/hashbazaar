@@ -41,8 +41,8 @@ Gets user message for form
 
          Mail::send('messageMailPage',$data,function($message) use($data){
              $message->from ($data['email']);
-             $message->to ('Admin@HashBazaar');
-             $message->subject ('Form Email');
+             $message->to ('Admin@HashBazaar.com');
+             $message->subject ('Message From User');
          });
 
         return redirect()->back()->with(['message'=>'Your message has been sent!']);

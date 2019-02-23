@@ -125,6 +125,10 @@ Route::get('login','AuthController@login')->name('login');
 
 Route::post('login','AuthController@post_login')->name('login');
 
+Route::get('login/google','AuthController@redirectToProvider')->name('redirectToProvider');
+
+Route::get('login/google/callback','AuthController@handleProviderCallback')->name('handleProviderCallback');
+
 Route::get('signup','AuthController@signup')->name('signup');
 
 Route::post('signup','AuthController@post_signup')->name('signup');

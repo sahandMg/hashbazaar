@@ -50,7 +50,7 @@
                 <li class="navbar-list small"><a href="{{route('index')}}">Home</a></li>
                 <li class="navbar-list small"><a href="#">About</a></li>
                 <li class="navbar-list small"><a href="{{route('customerService')}}">FAQ</a></li>
-                <li class="navbar-list small"><a href="{{route('blog')}}">Blog</a></li>
+                <li class="navbar-list small"><a href="http://blog.hashbazaar.com/">Blog</a></li>
                 @if(Auth::guard('user')->check())
                     <li class="navbar-list small signup"><a href="{{route('dashboard')}}" >Dashboard</a></li>
                 @else

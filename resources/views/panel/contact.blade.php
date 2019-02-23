@@ -4,12 +4,13 @@
     <div id="contact-page">
 
         <h1> Let Us know Your Questions!</h1>
-        <form class="contact-page" action="">
-            <input type="text" name="Name" id="Name" placeholder="Name">
+        <form class="contact-page" method="post" action="{{route('contact')}}">
+            <input type="hidden" name="_token" value="{{csrf_token()}}">
+            <input type="hidden" name="name" id="Name" value="{{Auth::guard('user')->user()->name}}">
 
-            <input type="email" name="Email" id="Email" placeholder="Email">
+            <input type="hidden" name="email" id="Email" value="{{Auth::guard('user')->user()->email}}">
 
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <textarea name="message" id="" cols="30" rows="10" placeholder="Your message ..."></textarea>
             <button class="pandel-button">Send</button>
         </form>
 

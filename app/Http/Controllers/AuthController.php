@@ -30,7 +30,7 @@ class AuthController extends Controller
         ]);
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->code = str_random(10);
+        $user->code = uniqid('hashBazaar_'.str_random(5));
         $user->password = Hash::make($request->password);
         $user->reset_password = str_random(10);
         $user->ip = Helpers::userIP();
@@ -186,12 +186,25 @@ class AuthController extends Controller
 
         $user = User::where('email',$client->email)->first();
         if(!is_null($user)){
+            $user->avatar = $client->avatar;
+            $user->ip = Helpers::userIP();
+            try{
+
+                $user->country = strtolower(Location::get(Helpers::userIP())->countryCode);
+            }catch (\Exception $exception){
+                $user->country = 'fr';
+            }
+
+            $user->save();
+
             Auth::guard('user')->login($user);
+            return redirect()->route('dashboard');
         }
 
         $user = new User();
         $user->name = $client->name;
         $user->email = $client->email;
+        $user->code = uniqid('hashBazaar_'.str_random(5));
         $user->avatar = $client->avatar;
         $user->ip = Helpers::userIP();
         try{

@@ -100,7 +100,7 @@ Route::get('test',function (){
 //         $promise->wait();
 
 //         return redirect('https://google.com');
-
+dd(uniqid('hashBazaar_'.str_random(5)));
 
 });
 
@@ -169,6 +169,8 @@ Route::group(['middleware'=>'block','prefix'=>'panel'],function(){
     Route::get('referral','PanelController@referral')->name('referral');
 
     Route::get('contact','PanelController@contact')->name('contact');
+
+    Route::post('contact','PanelController@post_contact')->name('contact');
 
     Route::get('logout',['as'=> 'logout','uses'=>'AuthController@logout']);
 

@@ -13,6 +13,7 @@
         "guzzlehttp/guzzle": "^6.3",
         "kevinrob/guzzle-cache-middleware": "^3.2",
         "laravel/framework": "5.7.*",
+        "laravel/socialite": "^4.1",
         "laravel/tinker": "^1.0",
         "stevebauman/location": "^3.0",
         "symfony/dom-crawler": "^4.0",

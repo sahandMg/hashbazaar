@@ -240,20 +240,37 @@ header img { height: 175px;margin-bottom: 4%; }
        right: 25px;
      }
       .signup {
-       border: thin solid transparent;height:50px;
-       border:transparent !important
+       border: thin solid transparent;height:40px;
+      border-bottom: 2px solid orange !important;
      }
-     
+     #sg {
+      border-bottom: 2px solid transparent !important;
+
+     }
+     #sg , #lg {
+      background: transparent !important;
+      border-top: transparent !important;
+      border-right: transparent !important;
+      /* border-bottom: 2px solid orange !important; */
+      border-left: transparent !important;
+     }
      .login {
-       background: white;
-       color: #43A047;height:50px;
+       background: transparent !important;
+      border-bottom: 2px solid orange !important;
+      border-top: transparent !important;
+      border-right: transparent !important;
+      border-left: transparent !important;
+       color: #43A047;height:37px;
+    }
+    #lg {
+      border-bottom: 2px solid transparent !important;
+
     }
 
     .a {
       padding-left: 10px
     }
-    #lg , #sg {height:50px;}
-
+    
 
     .navigation-menu .bar1, .bar2, .bar3 {
       width: 35px;
@@ -358,7 +375,7 @@ header img { height: 175px;margin-bottom: 4%; }
   #header-navbar-menu {
     left: -0px;
     margin-left: -40px;
-    height: 345px;
+    height: 325px !important;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px
 

@@ -50,11 +50,11 @@
                 <q>OR</q>
 
                 <blockquote>Change Your Wallet Address</blockquote>
-                <form id="setting-wallet" action="">
-                <input type="text" id="textwallet">
+                {{-- <form id="setting-wallet" action=""> --}}
+                    <input type="text" id="textwallet">
 
-                <input type="button" id="buttonwallet" value="Submit">
-                </form>
+                    <input type="button" class="buttonwallet" value="Submit">
+                {{-- </form> --}}
 
 
 

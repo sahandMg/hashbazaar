@@ -131,7 +131,7 @@
                                 <div class="faq-answer">
                                  <p>
                                   You can buy it from any online or offline bitcoin sellers.
-                                  You can find a list of sellers from <a href="https://www.coindesk.com/information/what-is-bitcoin">here</a>.
+                                  You can find a list of sellers from <a href="https://www.bitpremier.com/buy-bitcoins">here</a>.
                                  </p>
                                 </div>
                             </li>
@@ -233,7 +233,7 @@
                                 <h5 class="faq-question">How can I join to hash bazaar community?</h5>
                                 <div class="faq-answer">
                                  <p>
-                                  Sign up with a valid email. We will guide you for the rest from your panel. 
+                                  Sign up with a valid email. We will guide you for the rest from your dashboard. 
                                  </p>
                                 </div>
                             </li>
@@ -241,7 +241,7 @@
                                 <h5 class="faq-question">How can I start my mining?</h5>
                                 <div class="faq-answer">
                                  <p>
-                                  From your panel:
+                                  From your dashboard:
                                  </p>
                                  <p>
                                   Choose the amount of money you want to invest (Choose the amount of hash power you want to purchase)
@@ -261,7 +261,7 @@
                                   The amount of money you want to invest (The amount of hash power you want to purchase).
                                  </p>
                                  <p>
-                                  The predicted mining payout that can be found from your panel or other cryptocurrency calculator. 
+                                  The predicted mining payout that can be found from your dashboard or other cryptocurrency calculator. 
                                  </p>
                                 </div>
                             </li> 
@@ -272,7 +272,7 @@
                                   You should pay it only with bitcoin.
                                  </p>
                                  <p>
-                                  If you have no bitcoin you should buy it first from any online or offline merchant. You can find a list of sellers from here.
+                                  If you have no bitcoin you should buy it first from any online or offline merchant. You can find a list of sellers from <a href="https://www.bitpremier.com/buy-bitcoins">here</a>.
                                  </p>
                                 </div>
                             </li> 
@@ -283,7 +283,7 @@
                                   You should pay it only with bitcoin.
                                  </p>
                                  <p>
-                                  If you have no bitcoin you should buy it first from any online or offline merchant. You can find a list of sellers from here.
+                                  If you have no bitcoin you should buy it first from any online or offline merchant. You can find a list of sellers from <a href="https://www.bitpremier.com/buy-bitcoins">here</a>.
                                  </p>
                                 </div>
                             </li>   
@@ -291,7 +291,7 @@
                                 <h5 class="faq-question">How can I find the predicted return from my panel?</h5>
                                 <div class="faq-answer">
                                  <p>
-                                  You can find it from your panel, Section …
+                                  You can find it from your dashboard.
                                  </p>
                                 </div>
                             </li>

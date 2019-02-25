@@ -6,38 +6,8 @@
     $settings = DB::table('settings')->first();
     ?>
     <header id="header" >
-        {{-- navbar  ../../public/img/Logo_header.svg.svg.svg   --}}
-        {{--<div class="header-navbar">--}}
-            {{--<div id="header-navbar-logo">--}}
-                {{--<ul>--}}
-                    {{--<li class="navbar-list big"><a href="http://hashbazaar.com"><img class="navbar-small-logo" src="{{asset('img/Logo_header.svg')}}" alt="Logo"></a>--}}
-                {{--</ul>--}}
-            {{--</div>--}}
-            {{--<div id="header-navbar-menu">--}}
-                {{--<ul>--}}
-                    {{--<li class="navbar-list small"><a href="#">Home</a></li>--}}
-                    {{--<li class="navbar-list small"><a href="#">About</a></li>--}}
-                    {{--<li class="navbar-list small"><a href="{{route('customerService')}}"> FAQ</a></li>--}}
-                    {{--<li class="navbar-list small"><a href="{{route('blog')}}">Blog</a></li>--}}
-                    {{--@if(Auth::guard('user')->check())--}}
-                        {{--<li class="navbar-list small signup"><a href="{{route('dashboard')}}" >Dashboard</a></li>--}}
-                    {{--@else--}}
-                        {{--<li class="navbar-list small signup"><a href="{{route('signup')}}" >Sign Up</a></li>--}}
-                        {{--<li class="navbar-list small login"><a href="{{route('login')}}" >Log In</a></li>--}}
-                    {{--@endif--}}
-                {{--</ul>--}}
+       
 
-            {{--</div>--}}
-
-
-            {{--<div class="navigation-menu">--}}
-                {{--<div class="bar1"></div>--}}
-                {{--<div class="bar2"></div>--}}
-                {{--<div class="bar3"></div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-
-        {{--  --}}
         <div class="intro-body headerTheme">
             <div class="container">
                 <div class="row">
@@ -107,7 +77,7 @@
         </div>
     </section>
     <section id="contact" class="text-center backgroundGrey">
-        <div class="row" style="background: white">
+        <div class="" style="background: white;padding-bottom:1px">
             <div class="col-lg-8 mx-auto">
                 <h2 class="fontTheme m-3">Let us know your questions</h2>
             </div>

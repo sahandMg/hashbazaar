@@ -29,17 +29,22 @@
     .faq-section img {
         width: 50px;
         position: absolute;
-        top: 35px;
+        top: 30px;
+        right: 15px;
     }
     .faq-question-list-container {
         padding: 0px;
     }
     .faq-question-list h5 {
          margin-top: 2%;
-    }
+    }    
     .faq-answer li {
         list-style: disc;
      }
+     .faq-answer ul {
+        margin-bottom: 2%;
+     }
+     .faq-answer p {margin-bottom: 1%;}
     @media only screen and (max-width: 576px) {
         .faq-container {
           margin-top: 20%;
@@ -75,6 +80,9 @@
        .faq-section img {
         width: 50px;
         top: 35px;
+       }
+       .faq-question-list-container {
+         padding-left: 5%;
        }
     }
     @media only screen and (max-width: 420px) {
@@ -117,7 +125,7 @@
                                 <h5 class="faq-question">What is Bitcoin?</h5>
                                 <div class="faq-answer">
                                  <p>
-                                  The new generation of transaction system is based on block chain. People needs crypto currencies to deal in this new system. Bitcoin as the most important crypto is a digital and global money system currency. It allows people to send or receive money  across the internet. For more Information read about it in Bloomberg.
+                                  The new generation of transaction system is based on block chain. People needs crypto currencies to deal in this new system. Bitcoin as the most important crypto is a digital and global money system currency. It allows people to send or receive money  across the internet. For more Information read about it in <a href="http://blog.hashbazaar.com/">Our blog</a>.
                                  </p>
                                 </div>
                             </li>
@@ -126,7 +134,7 @@
                                 <div class="faq-answer">
                                  <p>
                                   You can buy it from any online or offline bitcoin sellers.
-                                  You can find a list of sellers from here.
+                                  You can find a list of sellers from <a href="https://www.bitpremier.com/buy-bitcoins">here</a>.
                                  </p>
                                 </div>
                             </li>
@@ -154,11 +162,11 @@
                             <li class="faq-question-list">
                                 <h5 class="faq-question">How does mining make profit for the miner? </h5>
                                 <div class="faq-answer">
-                                 <p>
-                                  The miner is rewarded in two ways:
-                                  Transaction validation fee
-                                  The new block mining reward
-                                 </p>
+                                 <p style="margin-bottom: 2%;"> The miner is rewarded in two ways:</p>
+                                 <ul style="margin-bottom: 2%;">
+                                   <li>Transaction validation fee.</li>
+                                   <li>The new block mining reward.</li>
+                                 </ul>
                                 </div>
                             </li>
                             <li class="faq-question-list">
@@ -173,7 +181,7 @@
                                 <h5 class="faq-question">What Cryptocurrency cloud mining services are working now?</h5>
                                 <div class="faq-answer">
                                  <p>
-                                  There are many Cryptocurrency cloud mining services working now. You can find a list of cloud mining services from here. 
+                                  There are many Cryptocurrency cloud mining services working now, like genesis-mining and hashflare. 
                                  </p>
                                  <p>
                                   What differences are there between the Cryptocurrency cloud mining services?
@@ -228,7 +236,7 @@
                                 <h5 class="faq-question">How can I join to hash bazaar community?</h5>
                                 <div class="faq-answer">
                                  <p>
-                                  Sign up with a valid email. We will guide you for the rest from your panel. 
+                                  Sign up with a valid email. We will guide you for the rest from your dashboard. 
                                  </p>
                                 </div>
                             </li>
@@ -236,7 +244,7 @@
                                 <h5 class="faq-question">How can I start my mining?</h5>
                                 <div class="faq-answer">
                                  <p>
-                                  From your panel:
+                                  From your dashboard:
                                  </p>
                                  <p>
                                   Choose the amount of money you want to invest (Choose the amount of hash power you want to purchase)
@@ -256,7 +264,7 @@
                                   The amount of money you want to invest (The amount of hash power you want to purchase).
                                  </p>
                                  <p>
-                                  The predicted mining payout that can be found from your panel or other cryptocurrency calculator. 
+                                  The predicted mining payout that can be found from your dashboard or other cryptocurrency calculator. 
                                  </p>
                                 </div>
                             </li> 
@@ -267,7 +275,7 @@
                                   You should pay it only with bitcoin.
                                  </p>
                                  <p>
-                                  If you have no bitcoin you should buy it first from any online or offline merchant. You can find a list of sellers from here.
+                                  If you have no bitcoin you should buy it first from any online or offline merchant. You can find a list of sellers from <a href="https://www.bitpremier.com/buy-bitcoins">here</a>.
                                  </p>
                                 </div>
                             </li> 
@@ -278,7 +286,7 @@
                                   You should pay it only with bitcoin.
                                  </p>
                                  <p>
-                                  If you have no bitcoin you should buy it first from any online or offline merchant. You can find a list of sellers from here.
+                                  If you have no bitcoin you should buy it first from any online or offline merchant. You can find a list of sellers from <a href="https://www.bitpremier.com/buy-bitcoins">here</a>.
                                  </p>
                                 </div>
                             </li>   
@@ -286,7 +294,7 @@
                                 <h5 class="faq-question">How can I find the predicted return from my panel?</h5>
                                 <div class="faq-answer">
                                  <p>
-                                  You can find it from your panel, Section …
+                                  You can find it from your dashboard.
                                  </p>
                                 </div>
                             </li>
@@ -322,7 +330,7 @@
                     jQuery(document).ready(function ($) {
                         $('.faq-answer').hide();
                         $('.faq-customerservice-questions').hide();
-                        $('.faq-questions-section').children().eq(1).show();
+                        $('.faq-questions-section').children().eq(0).show();
 
                         $('.faq-question').click(function(){
                             $('.faq-answer').hide();

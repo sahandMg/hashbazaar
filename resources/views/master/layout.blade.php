@@ -28,6 +28,8 @@
     <script src="js/jquery.animate-colors.js"></script>
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/jquery.animate-colors.js"></script>
+    <script src="../../../public/js/jquery-3.3.1.js"></script>
+
 </head>
 
 <body id="page-top" style="background: white" >

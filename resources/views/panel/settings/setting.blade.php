@@ -142,7 +142,7 @@
 <footer id="footer-div" >
         <hr id="setting-hr-footer">
         <p class="setting-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
-        <img id="setting-footer-image" src="../img/Logo_footer.svg" alt="">
+        <img id="setting-footer-image" src="{{asset('img/Logo_footer.png')}}" alt="">
 
 </footer>
 

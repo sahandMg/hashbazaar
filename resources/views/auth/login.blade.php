@@ -47,6 +47,9 @@
 						{{-- <a href="https://plus.google.com/+googleplus" class="socialnet-flex" id="gp"><img src="../../../public/img/googleicon.png" alt=""></a> --}}
 						{{-- <a href="{{route('redirectToProvider')}}" class="socialnet-flex" id="gp"><img src="img/icons/googleicon.png" alt=""></a> --}}
 
+						<a href="#" class="socialnet-flex" id="gp">
+							<img src="img/icons/googleicon.png" alt=""></a>
+						{{-- alt="Join With Google Account" --}}
 					</div>
 
 					<div class="flex-col-c p-t-0 p-b-40">

@@ -117,7 +117,7 @@
 
             <div class="make-wallet-footer-div">
                     <p class="make-wallet-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
-                 <img id="make-wallet-footer-image" src="img/Logo_footer.svg" alt=""></div>
+                 <img id="make-wallet-footer-image" src="{{asset('img/Logo_footer.png')}}" alt=""></div>
 
             </div>
 

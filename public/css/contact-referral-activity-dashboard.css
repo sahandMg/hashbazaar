@@ -277,8 +277,8 @@ form.contact-page p:nth-of-type(1) {
 
 #contact-footer-image {
     width: 250px;
-    height: 120px;
-    left: 30%
+    height: 60px;
+    
 }
 
 
@@ -414,7 +414,8 @@ form.contact-page p:nth-of-type(1) {
         border-bottom: transparent;
         left: 0%;
         width: 200px;
-        height: 100px;
+        height: 60px;
+        
     }
 
     .useraccount .list {
@@ -827,7 +828,7 @@ header {
 
 #referral-footer-image {
     width: 250px;
-    height: 100px;
+    height: 60px;
     left: 30%;
 }
 
@@ -1040,8 +1041,9 @@ header {
         width: 320px
     }
     #referral-footer-image {
-    width: 200px;
-    height: 100px;
+        width: 200px;
+        height: 60px;
+   
     }
 }
 
@@ -1513,39 +1515,11 @@ header {
     margin-left: 350px;
  }
 
- #activity-page_secondList
- {
-     display: flex;
-     flex-flow: row wrap;
-     /* overflow-y: scroll; */
-     height: 250px;
-     margin-top: 80px !important;
-     width: 960px;
-     margin: 0;
-     padding: 0
- }
-
 #nopur {
     font-size: 30px;
     margin: 15% 35%
 }
 
- .activity-page_secondList_column
-{
-    flex-grow: 1;
-    margin-top: 10px;
-    font-size: 25px;
-    font-weight: bold;
-    font-family: sans-serif;
-    margin-left: 7%
-}
-
-#activity-page_secondList div ul li {
-    font-weight: normal !important;
-    width: 150px;
-    margin-top: 25px;
-    font-size: 20px;
-}
 
 .mainList2 {display: none}
 
@@ -1562,51 +1536,51 @@ header {
    margin-top: 70px;
 }
 
-#activity-page_thirdList
+
+ #Transactions-list
  {
-     display: flex;
-     flex-flow: row wrap;
-     margin-top: 70px;
-     width: 970px;
+     margin-top: 30px;
+     width: 100%;
      height: 300px;
+     float:left;
  }
-.activity-page_secondList_column .remain {
 
-    border: 1px solid black;
-    height: 25px;
-    width: 100%;
-    text-align: center;
-    color: white;
-}
-
-.activity-page_secondList_column .remain .progress {
-    width:98%;
-    background-color: orange;
-    text-align: center;
-    height: 88%;
-    padding-top: 3px
-}
- .activity-page_thirdList_column
+ 
+#Transactions-list tr
 {
     flex-grow: 1;
-    margin-top: 10px;
-    font-size: 25px;
+    margin-top: 30px;
+    font-size: 15px;
     color: #2e2d2d;
-    font-weight: bold;
+    font-weight: bolder;
     font-family: sans-serif;
-    margin-left: 7%
+     width: 95%;
+     margin-left: 5%;
+    text-align: left;
+    display: block
 }
 
-#activity-page_thirdList div ul li {
+#Transactions-list tr th  {
     font-weight: normal !important;
     width: 150px;
     margin-top: 10px;
-    font-size: 17px;
+    width: 30.4%;
+    font-size: 24px;
+    margin-left: -2% !important;
     height: 70px;
+    color: #2e2d2d;
 }
 
-#activity-page_thirdList div ul li:nth-of-type(1) {
-    margin-top: 20px;
+#Transactions-list tr td { 
+    font-weight: bolder;
+    font-weight: normal !important;
+    width: 150px;
+    margin-left: 0% !important;
+    margin-top: 10px;
+     width: 26.4%;
+     font-size: 20px;
+    height: 70px;
+    color: #2e2d2d;
 }
 
 .activity-hr-footer
@@ -1619,21 +1593,21 @@ header {
 
 .activity-footer-div {
     width: 70%;
-    margin-left: 28%;
-    margin-top: -440px !important;
+    margin-left: 0%;
+    margin-top: -320px !important;
     height: 100;
 }
 
 #activity-footer-image {
     width: 200px;
-    height: 100px;
+    height: 60px;
 }
 
 .activity-footer-paragraph {
     font-size: 20px;
     font-family: sans-serif;
     top: -20px;
-    margin-left: 30%
+    margin-left: 7%
 }
 
 /* Activity-Media-1280 */
@@ -1714,79 +1688,55 @@ header {
        height: 30px;
        font-size: 25px;
     }
-     
-    .activity-page_secondList_column
-    {
-        top: 450px;
-        font-size: 20px;
-        margin-left:7%
-    }
-    #activity-page_secondList
-    {
-      display: flex;
-      flex-flow: row wrap;
-      height: 300px;
-      margin-top: 0px;
-      width: 730px
-    }
-    #activity-page_secondList div ul li {
-        font-weight: normal !important;
-        width: 120px;
-        margin-top: 25px;
-        font-size: 20px;
-    }
-
-    .activity-page_secondList_column
-    {
-        flex-grow: 1;
-        margin-top: 50px;
-        font-size: 25px;
-        color: #2e2d2d;
-        font-weight: bold;
-        font-family: sans-serif;
-        margin-left: 7%
-    }
 
    #activity-page .Transactions q {
       width: 180px;
       height: 30px;
       font-size: 25px;
     }
-   .activity-page_thirdList_column
+    #Transactions-list
     {
-       top: 450px;
-       font-size: 20px;
-       margin-left:7%
-    }
-   #activity-page_thirdList
-    {
-        display: flex;
-        flex-flow: row wrap;
+        margin-top: 30px;
+        width: 100%;
         height: 300px;
-        top: 480px;
-        width: 730px;
+        float:left;
     }
-    .activity-page_thirdList_column
+    
+    #Transactions-list tr
    {
        flex-grow: 1;
-       top: 200px;
-       font-size: 20px;
+       margin-top: 30px;
+       font-size: 15px;
        color: #2e2d2d;
-       font-weight: bold;
+       font-weight: bolder;
        font-family: sans-serif;
-       margin-left: 7%
+        width: 95%;
+        margin-left: 5%;
+       text-align: left;
+       display: block
    }
-
-   #activity-page_thirdList div ul li {
+   
+   #Transactions-list tr th  {
        font-weight: normal !important;
-       width: 120px;
+       width: 150px;
        margin-top: 10px;
-       font-size: 17px;
+       width: 29.6%;
+       font-size: 24px;
+       margin-left: -2% !important;
        height: 70px;
+       color: #2e2d2d;
    }
-
-   #activity-page_thirdList div ul li:nth-of-type(1) {
-       top: 20px;
+   
+   #Transactions-list tr td { 
+       font-weight: bolder;
+       font-weight: normal !important;
+       width: 150px;
+       margin-left: 0% !important;
+       margin-top: 10px;
+        width: 26.4%;
+        font-size: 20px;
+       height: 70px;
+       color: #2e2d2d;
    }
 
    /* Footer */
@@ -1810,9 +1760,6 @@ header {
     #activity-page {
         height: 1000px;
         z-index: 0;
-    }
-    #activity-page_firstList {
-        z-index: 1;
     }
    
     .mainList {
@@ -1878,11 +1825,7 @@ header {
         margin-left: 0% !important;
         width: 100%;
     }
-
-    /* #activity-page_firstList
-    {
-       font-size: 22px
-    } */
+  
 
     #activity-page blockquote {
        font-size: 27px;
@@ -1900,16 +1843,7 @@ header {
         margin: 15% 35%
     }
 
-    .activity-page_secondList_column
-   {
-       margin-top: 0px;
-       font-size: 20px;
-   }
-
-   #activity-page_secondList div ul li {
-       width: 120px;
-       font-size: 17px;
-   }
+   
    #activity-page .Transactions  {
        width: 700px !important
     }
@@ -1918,21 +1852,56 @@ header {
       font-size: 27px;
    }
 
-    .activity-page_thirdList_column
+   #Transactions-list
    {
-       top: 120px;
-       font-size: 22px;
+       margin-top: 30px;
+       width: 100%;
+       height: 300px;
+       float:left;
    }
 
-   #activity-page_thirdList div ul li {
-       width: 120px;
+   
+   #Transactions-list tr
+   {
+       flex-grow: 1;
+       margin-top: 30px;
        font-size: 15px;
+       color: #2e2d2d;
+       font-weight: bolder;
+       font-family: sans-serif;
+       width: 95%;
+       margin-left: 5%;
+       text-align: left;
+       display: block
+   }
+
+   #Transactions-list tr th  {
+       font-weight: normal !important;
+       width: 150px;
+       margin-top: 10px;
+       width: 29.7%;
+       font-size: 24px;
+       margin-left: 0% !important;
+       height: 70px;
+       color: #2e2d2d;
+   }
+
+   #Transactions-list tr td { 
+       font-weight: bolder;
+       font-weight: normal !important;
+       width: 150px;
+       margin-left: 0% !important;
+       margin-top: 10px;
+       width: 28%;
+       font-size: 20px;
+       height: 70px;
+       color: #2e2d2d;
    }
 
    .activity-hr-footer
    {
-       top: -10px !important;
-       width: 98%;
+       top: -20px !important;
+       width: 100%;
        margin-left: -10px;
        left: 0
    }
@@ -1942,13 +1911,13 @@ header {
    .activity-footer-div {
        width: 100%;
        margin-left: 0%;
-       margin-top:-450px;
+       margin-top:-300px !important;
        display: block
    }
 
    #activity-footer-image {
         width: 200px;
-        height: 100px;
+        height: 60px;
    }
 
    .activity-footer-paragraph {
@@ -2049,44 +2018,7 @@ header {
         font-size: 18px;
         margin-left: 150px;
     }
-    #activity-page_secondList {
-        margin-top: 30px !important;
-        width: 380px;
-        height: 300px;
-        overflow-y: scroll;
-        display: flex;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: -o-flex;
-        flex-flow: column wrap
-    }
-    .activity-page_secondList_column
-    {
-        top: 00px;
-        font-size: 15px;
-        margin-top: 200px;
-        position: absolute;
-    }
-
-    .activity-page_secondList_column:nth-of-type(2){
-        margin-top: 260px;
-    }
-
-    .activity-page_secondList_column:nth-of-type(3){
-        margin-top: 310px
-    }
-
-    .activity-page_secondList_column:nth-of-type(4){
-        margin-top: 360px;
-    }
-
-    #activity-page_secondList div ul li {
-        width: 120px;
-        font-size: 13px;
-        margin-left: 140px;
-        margin-top: -10px;
-    }
-
+   
     #activity-page .Transactions {
         width: 380px !important
     }
@@ -2095,43 +2027,49 @@ header {
         font-size: 18px;
         margin-left: 100px;
     }
-    #activity-page_thirdList{
-        width: 400px;
-        flex-flow: row wrap;
-    }
-    .activity-page_thirdList_column
+    #Transactions-list
     {
-        font-size: 21px;
-        position: absolute;
-        margin-top: 430px
-    }
-    .activity-page_thirdList_column:nth-of-type(2) {
-        margin-top: 470px !important;
-    }
-    .activity-page_thirdList_column:nth-of-type(3) {
-        margin-top: 510px !important;
-    }
-
-    .activity-page_thirdList_column:nth-of-type(4) {
-        margin-top: 550px !important;
-    }
-    .activity-page_thirdList_column:nth-of-type(1) ul li {
-        position: absolute;
-        margin-top: -10px;
-        margin-left: 60px
-    }
-    .activity-page_thirdList_column ul li:nth-of-type(1) {
-        position: absolute;
-        margin-top: -18px !important;
-        margin-left: 160px;
-        height: 13px;
-        font-size: 18px;
+        margin-top: 30px;
+        width: 100%;
+        height: 300px;
+        float:left;
     }
     
-    #activity-page_thirdList div ul li {
-        width: 120px;
+    #Transactions-list tr
+    {
+        flex-grow: 1;
+        margin-top: 0px;
+        font-size: 12px;
+        color: #2e2d2d;
+        font-weight: bolder;
+        font-family: sans-serif;
+        width: 95%;
+        margin-left: 5%;
+        text-align: left;
+        display: block
+    }
+
+    #Transactions-list tr th  {
+        font-weight: normal !important;
+        width: 150px;
+        margin-top: 10px;
+        width: 29%;
+        font-size: 18px;
+        margin-left: 0% !important;
+        height: 70px;
+        color: #2e2d2d;
+    }
+
+    #Transactions-list tr td { 
+        font-weight: bolder;
+        font-weight: normal !important;
+        width: 150px;
+        margin-left: 0% !important;
+        margin-top: 10px;
+        width: 28%;
         font-size: 13px;
-        margin-left: 130px;
+        height: 70px;
+        color: #2e2d2d;
     }
 
     .activity-hr-footer
@@ -2266,36 +2204,7 @@ header {
        margin-left: 100px;
        top: 350px
     }
-    #activity-page_secondList {
-        top: 360px;
-        width: 360px;
-        height: 300px
-    }
-    
-    .activity-page_secondList_column
-    {
-        top: 00px;
-        font-size: 15px;
-        margin-top: 200px;
-        position: absolute;
-    }
 
-    .activity-page_thirdList_column ul li:nth-of-type(1) {
-        position: absolute;
-        margin-top: -18px !important;
-        margin-left: 120px;
-        height: 13px;
-        font-size: 16px;
-    }
-
-    #activity-page_secondList div ul li {
-        margin-left: 150px;
-    }
-
-    #activity-page_secondList div ul li {
-       width: 120px;
-       font-size: 13px;
-    }
     #activity-page .Transactions {
         width: 360px !important
     }
@@ -2304,18 +2213,50 @@ header {
         font-size: 18px;
         margin-left: 100px;
     }
-    #activity-page_thirdList{
-       top:470px;
-        width: 360px;
-    }
-    .activity-page_thirdList_column
+    #Transactions-list
     {
-       font-size: 17px;
+        margin-top: 30px;
+        width: 100%;
+        height: 300px;
+        float:left;
     }
 
-    #activity-page_thirdList div ul li {
-       width: 120px;
-       font-size: 13px;
+    
+    #Transactions-list tr
+    {
+        flex-grow: 1;
+        margin-top: 00px;
+        font-size: 12px;
+        color: #2e2d2d;
+        font-weight: bolder;
+        font-family: sans-serif;
+        width: 95%;
+        margin-left: 5%;
+        text-align: left;
+        display: block
+    }
+
+    #Transactions-list tr th  {
+        font-weight: normal !important;
+        width: 150px;
+        margin-top: 10px;
+        width: 28.8%;
+        font-size: 16px;
+        margin-left: 0% !important;
+        height: 70px;
+        color: #2e2d2d;
+    }
+
+    #Transactions-list tr td { 
+        font-weight: bolder;
+        font-weight: normal !important;
+        width: 150px;
+        margin-left: 0% !important;
+        margin-top: 10px !important;
+        width: 29%;
+        font-size: 13px;
+        height: 70px;
+        color: #2e2d2d;
     }
 
     .activity-hr-footer
@@ -2414,24 +2355,52 @@ header {
     #activity-page .Transactions {
         width: 310px !important
     }
-    #activity-page_secondList{
-         width: 305px;
-    }
-    #activity-page_secondList div ul li {
-        margin-left: 120px;
+    #Transactions-list
+    {
+        margin-top: 30px;
+        width: 100%;
+        height: 300px;
+        float:left;
     }
 
-    .activity-page_thirdList_column ul li:nth-of-type(1) {
-        position: absolute;
-        margin-top: -18px !important;
-        margin-left: 120px;
-        height: 13px;
-        font-size: 14px;
+    
+    #Transactions-list tr
+    {
+        flex-grow: 1;
+        margin-top: 00px;
+        font-size: 12px;
+        color: #2e2d2d;
+        font-weight: bolder;
+        font-family: sans-serif;
+        width: 95%;
+        margin-left: 5%;
+        text-align: left;
+        display: block
     }
-    #activity-page_thirdList{
-        top:470px;
-        width: 305px;
-     }
+
+    #Transactions-list tr th  {
+        font-weight: normal !important;
+        width: 150px;
+        margin-top: 10px;
+        width: 28.6%;
+        font-size: 14px;
+        margin-left: 0% !important;
+        height: 70px;
+        color: #2e2d2d;
+    }
+
+    #Transactions-list tr td { 
+        font-weight: bolder;
+        font-weight: normal !important;
+        width: 150px;
+        margin-left: 0% !important;
+        margin-top: 10px !important;
+        width: 27%;
+        font-size: 12px;
+        height: 70px;
+        color: #2e2d2d;
+    }
+   
 
      .activity-hr-footer
      {
@@ -2589,13 +2558,14 @@ body {
 }
 #Hash-History-list
  {
-     display: flex;
-     flex-flow: row wrap;
-     height: 300px;
      margin-top: 30px;
+     width: 100%;
+     height: 300px;
+     float:left;
  }
 
- .Hash-History_column
+ 
+#Hash-History-list tr
 {
     flex-grow: 1;
     margin-top: 30px;
@@ -2603,34 +2573,65 @@ body {
     color: #2e2d2d;
     font-weight: bolder;
     font-family: sans-serif;
-    margin-left: 6% !important;
+     width: 95%;
+     margin-left: 5%;
     text-align: left;
     display: block
 }
 
-.Hash-History_column ul li {
+#Hash-History-list tr th  {
     font-weight: normal !important;
     width: 150px;
-    top: 30px;
-    font-size: 20px;
+    margin-top: 10px;
+    width: 29.4%;
+    font-size: 24px;
+    margin-left: -2% !important;
     height: 70px;
     color: #2e2d2d;
-    font-weight: bold;
 }
 
-.Hash-History_column  li:nth-of-type(1) {
-    margin-top: 30px;
+#Hash-History-list tr td { 
+    font-weight: bolder;
+    font-weight: normal !important;
+    width: 150px;
+    margin-left: 0% !important;
+    margin-top: 10px;
+     width: 26.4%;
+     font-size: 20px;
+    height: 70px;
+    color: #2e2d2d;
 }
 
+#Hash-History-list .remain {
+    width: 180px; margin: 0px auto;
+    /* height:30px; */
+    border: thin solid ;
 
-.Hash-History_column .remain {
+}
+
+.progress {    border: 1px solid;}
+.progress-bar {
+    background-color: #ff9100;
+    text-align: center;
+    color: white;
+  width: 0;
+  -webkit-animation: progress 1.5s ease-in-out forwards;
+          animation: progress 1.5s ease-in-out forwards;
+}
+.progress-bar .title {
+  opacity: 0;
+  -webkit-animation: show 0.35s forwards ease-in-out 0.5s;
+          animation: show 0.35s forwards ease-in-out 0.5s;
+}
+
+#Hash-History-list .remain {
 
     width: 160px !important;
     text-align: center !important;
     color: white !important;
 }
 
-.Hash-History_column .remain .progress {
+#Hash-History-list .remain .progress {
     width:98% !important;
     background-color: white !important;
     border: 1px solid black !important;
@@ -2805,7 +2806,7 @@ body {
 
     #dashboard-footer-image {
         width: 250px;
-        height: 100px;
+        height: 60px;
     }
 
     .dashboard-footer-paragraph {
@@ -2814,6 +2815,17 @@ body {
         margin-left: 40%
     }
 
+
+@media screen and (max-width:1280px) {
+    #dashboard-page-circle , #dashboard-page-circle2{
+        width: 360px;
+        height: 360px;
+    }
+
+    #dashboard-page-circle2 {
+        margin-left: 4%
+    }
+}
 
 /* Dashboard-Media-1024 */
 @media screen and (max-width:1024px){
@@ -2906,39 +2918,65 @@ body {
     }
     #Hash-History-list
     {
+        margin-top: 30px;
+        width: 100%;
         height: 300px;
+        float:left;
     }
-
-    .Hash-History_column
-    {
-        margin-top: 30px;
-        font-size: 15px;
+   
+    
+   #Hash-History-list tr
+   {
+       flex-grow: 1;
+       margin-top: 30px;
+       font-size: 15px;
+       color: #2e2d2d;
+       font-weight: bolder;
+       font-family: sans-serif;
+        width: 95%;
         margin-left: 5%;
-    }
-
-    .Hash-History_column ul li {
-        width: 80px;
-        margin-top: 30px;
-        font-size: 13px;
-        height: 70px;
-    }
-
-    .Hash-History_column .remain li {
+       text-align: left;
+       display: block
+   }
+   
+   #Hash-History-list tr th  {
+       font-weight: normal !important;
+       width: 150px;
+       margin-top: 10px;
+       width: 28.9%;
+       font-size: 24px;
+       margin-left: -2% !important;
+       height: 70px;
+       color: #2e2d2d;
+   }
+   
+   #Hash-History-list tr td { 
+       font-weight: bolder;
+       font-weight: normal !important;
+       width: 150px;
+       margin-left: 0% !important;
+       margin-top: 10px;
+        width: 26.4%;
+        font-size: 20px;
+       height: 70px;
+       color: #2e2d2d;
+   }
+    /* .Hash-History_column .remain li {
         width: 100px;
         border: 1px solid ;
         height: 35px;
     }
-        
+         */
     
 
-    .Hash-History_column .remain {
+    #Hash-History-list .remain {
 
         width: 130px !important;
         text-align: center !important;
         color: white !important;
     }
 
-    .Hash-History_column .remain .progress {
+    #Hash-History-list .remain .progress {
         width:98% !important;
         background-color: white !important;
         border: 1px solid black !important;
@@ -3068,22 +3106,49 @@ body {
     }
 
     #Hash-History-list
-     {
-         display: flex;
-         flex-flow: row wrap;
-     }
-
-     .Hash-History_column
     {
-        flex-grow: 1;
-        margin-top: 20px;
-        margin-left: 4% !important;
+        margin-top: 30px;
+        width: 100%;
+        height: 300px;
+        float:left;
     }
 
-    .Hash-History_column ul li {
+    
+    #Hash-History-list tr
+    {
+        flex-grow: 1;
+        margin-top: 30px;
+        font-size: 15px;
+        color: #2e2d2d;
+        font-weight: bolder;
+        font-family: sans-serif;
+        width: 95%;
+        margin-left: 5%;
+        text-align: left;
+        display: block
+    }
+
+    #Hash-History-list tr th  {
+        font-weight: normal !important;
         width: 150px;
-        font-size: 16px;
+        margin-top: 10px;
+        width: 28.9%;
+        font-size: 24px;
+        margin-left: 0% !important;
         height: 70px;
+        color: #2e2d2d;
+    }
+
+    #Hash-History-list tr td { 
+        font-weight: bolder;
+        font-weight: normal !important;
+        width: 150px;
+        margin-left: 0% !important;
+        margin-top: 10px;
+        width: 28%;
+        font-size: 20px;
+        height: 70px;
+        color: #2e2d2d;
     }
 
     /* ==============================================Buy hash power=================================== */
@@ -3151,7 +3216,7 @@ body {
 
     #dashboard-footer-image {
         width: 200px;
-        height: 100px;
+        height: 60px;
     }
 
     .dashboard-footer-paragraph {
@@ -3265,47 +3330,59 @@ body {
     }
 
     #Hash-History-list
-     {
-         display: flex;
-         flex-flow: row wrap;
-     }
-
-     .Hash-History_column
     {
-        flex-grow: 1;
-        top: 200px;
-        font-size: 15px;
-        color: #2e2d2d;
-        font-weight: bolder;
-        font-family: sans-serif;
-        margin-left: 10% !important;
-        text-align: left;
-    }
-
-    .Hash-History_column ul li {
-        font-weight: normal !important;
-        width: 60px;
-        top: 30px;
-        font-size: 15px;
-        height: 70px;
-        color: #2e2d2d;
-        font-weight: bold;
-    }
-
-    .Hash-History_column  li:nth-of-type(1) {
-        top: 30px;
+        margin-top: 30px;
+        width: 100%;
+        height: 300px;
+        float:left;
     }
 
     
+    #Hash-History-list tr
+    {
+        flex-grow: 1;
+        margin-top: 0px;
+        font-size: 12px;
+        color: #2e2d2d;
+        font-weight: bolder;
+        font-family: sans-serif;
+        width: 95%;
+        margin-left: 5%;
+        text-align: left;
+        display: block
+    }
 
-    .Hash-History_column .remain {
+    #Hash-History-list tr th  {
+        font-weight: normal !important;
+        width: 150px;
+        margin-top: 10px;
+        width: 5%;
+        font-size: 18px;
+        margin-left: 0% !important;
+        height: 70px;
+        color: #2e2d2d;
+    }
+
+    #Hash-History-list tr td { 
+        font-weight: bolder;
+        font-weight: normal !important;
+        width: 150px;
+        margin-left: 0% !important;
+        margin-top: 10px;
+        width: 27%;
+        font-size: 13px;
+        height: 70px;
+        color: #2e2d2d;
+    }
+
+    #Hash-History-list .remain {
 
         width: 100px !important;
         text-align: center !important;
         color: white !important;
     }
 
-    .Hash-History_column .remain .progress {
+    #Hash-History-list .remain .progress {
         width:98% !important;
         background-color: white !important;
         border: 1px solid black !important;
@@ -3478,43 +3555,54 @@ body {
     }
 
     #Hash-History-list
-     {
-         display: flex;
-         flex-flow: row wrap;
-         /* position: relative; */
-     }
+    {
+        margin-top: 30px;
+        width: 100%;
+        height: 300px;
+        float:left;
+    }
 
-     .Hash-History_column
+    
+    #Hash-History-list tr
     {
         flex-grow: 1;
-        /* position: relative; */
-        top: 200px;
-        font-size: 15px;
+        margin-top: 00px;
+        font-size: 12px;
         color: #2e2d2d;
         font-weight: bolder;
         font-family: sans-serif;
+        width: 95%;
         margin-left: 5%;
         text-align: left;
+        display: block
     }
 
-    .Hash-History_column ul li {
+    #Hash-History-list tr th  {
         font-weight: normal !important;
-        width: 55px;
-        top: 30px;
-        font-size: 15px;
+        width: 150px;
+        margin-top: 10px;
+        width: 28.4%;
+        font-size: 16px;
+        margin-left: 0% !important;
         height: 70px;
-        /* position: relative; */
         color: #2e2d2d;
-        font-weight: bold;
     }
 
-    .Hash-History_column  li:nth-of-type(1) {
-        top: 30px;
-        /* position: relative; */
+    #Hash-History-list tr td { 
+        font-weight: bolder;
+        font-weight: normal !important;
+        width: 150px;
+        margin-left: 0% !important;
+        margin-top: 10px !important;
+        width: 29%;
+        font-size: 13px;
+        height: 70px;
+        color: #2e2d2d;
     }
+   
 
-    .remain {
-        width: 50px;
+    #Hash-History-list .remain {
+        width: 65px !important;
         border: 1px solid ;
         font-size: 12px
     }
@@ -3681,43 +3769,54 @@ body {
     }
 
     #Hash-History-list
-     {
-         display: flex;
-         flex-flow: row wrap;
-     }
+    {
+        margin-top: 30px;
+        width: 100%;
+        height: 300px;
+        float:left;
+    }
 
-     .Hash-History_column
+    
+    #Hash-History-list tr
     {
         flex-grow: 1;
-        top: 200px;
-        font-size: 15px;
+        margin-top: 00px;
+        font-size: 12px;
         color: #2e2d2d;
         font-weight: bolder;
         font-family: sans-serif;
+        width: 95%;
         margin-left: 5%;
         text-align: left;
-    }
-    #Hash-History-list {
-        width: 300px
+        display: block
     }
 
-    .Hash-History_column ul li {
+    #Hash-History-list tr th  {
         font-weight: normal !important;
-        width: 85px;
-        top: 30px;
-        font-size: 15px;
+        width: 150px;
+        margin-top: 10px;
+        width: 5%;
+        font-size: 14px;
+        margin-left: 0% !important;
         height: 70px;
         color: #2e2d2d;
-        font-weight: bold;
-        margin-top: 10px
     }
 
-    .Hash-History_column  li:nth-of-type(1) {
-        top: 30px;
+    #Hash-History-list tr td { 
+        font-weight: bolder;
+        font-weight: normal !important;
+        width: 150px;
+        margin-left: 0% !important;
+        margin-top: 10px !important;
+        width: 27%;
+        font-size: 12px;
+        height: 70px;
+        color: #2e2d2d;
     }
+   
 
-    .remain {
-        width: 50px;
+    #Hash-History-list .remain {
+        width: 50px !important;
         border: 1px solid ;
         font-size: 12px
     }

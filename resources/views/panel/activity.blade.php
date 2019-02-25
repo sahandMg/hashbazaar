@@ -17,92 +17,147 @@ foreach ($hashes as $key=> $hash){
     <div class="purchases">
         <q>Purchases</q>
 
-        <div id="activity-page_secondList">
-            @if(!$hashes->isEmpty())
-                <div    class="activity-page_secondList_column">Hash Power
-                    <ul>
+        <table id="Hash-History-list">
+                @if(!$hashes->isEmpty())
+
+                <tr>
+                    <th class="Hash-History_column"> 
+                        Hash Power  
+                    </th>
+
+                    <th class="Hash-History_column"> 
+                        Started at
+                       
+                    </th>
+
+                    <th class="Hash-History_column"> 
+                        Ends at
+                        
+                    </th>
+
+                    <th class="Hash-History_column"> 
+                        Remain
+                        
+                    </th>
+
+                </tr>
+
+                <tr>
+
+                    <td>
                         @foreach($hashes as $hash)
-                        <li>{{$hash->hash}} TH/S</li>
-                            @endforeach
-                    </ul>
-                </div><br><br>
-
-                <div class="activity-page_secondList_column">Started At
-                    <ul>
-                        @foreach($hashes as $hash)
-                        <li>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}}</li>
-                            @endforeach
-                    </ul>
-
-                </div><br><br>
-
-                <div class="activity-page_secondList_column">Ends At
-                    <ul>
-                        @foreach($hashes as $hash)
-
-                        <li>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}</li>
-
+                            <span>{{$hash->hash}}TH/S</span>
                         @endforeach
-                    </ul>
-                </div><br> <br>
+                            
+                    </td>
 
-                <div class="activity-page_secondList_column">Remains
-                    <ul>
+                    <td>
+                        @foreach($hashes as $hash)
+                        
+                            <span>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}}    </span> 
+                            @endforeach
+
+                    </td>
+
+                    <td> 
+                            @foreach($hashes as $hash)
+
+                            <span>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}   </span>
+                            @endforeach
+
+                    </td>
+
+                    <td>
                         @foreach($hashes as $key => $hash)
-                            <li>
-                                <div class="remain" >
+                            
+
+                            
+                                <div class="remain">
                                     <div class="progress">
                                         <div class="progress-bar" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%">
                                             <span class="title">{{$remainedLife[$key]}}%</span>
+
                                         </div>
                                     </div>
                                 </div>
 
-                            </li>
-                        @endforeach
-                    </ul>
-                </div><br> <br>
-            @else
-                <p id="nopur"> No Purchase !</p>
-            @endif
+                            
+                                @endforeach
 
-        </div>
+                            
+                    </td>
 
+                </tr>
+                
+                
+
+                @else
+                    <p id="no-hash"> NO Purchases</p>
+                @endif
+                       
+   
+            </table>
+
+        
     </div> 
 
     <div class="Transactions">
         <q>Transactions </q>
         <div id="activity-page_thirdList">
-            <div class="activity-page_thirdList_column"> Date
-                <ul>
-                    <li>10 Sep 2018</li>
 
-                </ul>
-            </div>
+            <table id="Transactions-list" >
+                    <tr>
+                        <th class="Transactions_column"> 
+                            Date  
+                        </th>
 
-            <div class="activity-page_thirdList_column"> BTC
-                <ul>
-                    <li>0.01</li>
+                        <th class="Transactions_column"> 
+                            BTC 
+                           
+                        </th>
 
-                </ul>
-            </div>
+                        <th class="Transactions_column"> 
+                            Address
+                            
+                        </th>
 
-            <div class="activity-page_thirdList_column"> Address
-                <ul>
-                    <li>778dsadDSAB
-                        Hhbjbdsa89dsax</li>
-                </ul>
-            </div>
+                        <th class="Transactions_column"> 
+                            Status
+                            
+                        </th>
 
-            <div class="activity-page_thirdList_column"> Status
-                <ul>
-                    <li>Pending</li>
-                </ul>
-            </div>
+                    </tr>
 
-            
-        </div>
-    </div> 
+                    <tr>
+
+                        <td>
+                            
+                            10 Sep 2018
+                                
+                        </td>
+
+                        <td>
+                            
+                              0.01  
+                        </td>
+
+                        <td> 
+                            778dsadDSAB Hhbjbdsa89dsax
+                        </td>
+
+                        <td>
+                            Pending                                
+                        </td>
+
+                    </tr>
+         
+                    
+                 
+                        <!-- <p id="no-hash"> NO Hash History</p> -->
+                   
+                          
+                          
+                </table>
 
 
     <hr class="activity-hr-footer" style="position: relative;"> 
@@ -116,8 +171,9 @@ foreach ($hashes as $key=> $hash){
 
     <div class="activity-footer-div">
         <p class="activity-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
-        <img id="activity-footer-image" src="img/Logo_footer.svg" alt="" ></div>
-
+        
+        <img id="activity-footer-image" src="{{asset('img/Logo_footer.png')}}" alt="" ></div>
+        {{-- {{asset('img/Logo_footer.png')}} --}}
 </div> 
 
 <!-- Container -->

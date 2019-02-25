@@ -1,6 +1,13 @@
 @extends('panel.master.layout')
+@section('title')
+    <title>Referrals</title>
+@endsection
 @section('content')
     <!-- Referral Page -->
+    <?php
+            $user = Auth::guard('user')->user();
+
+    ?>
     <div id="referral-page">
         <q>Notice :</q>
 
@@ -12,25 +19,25 @@
         </ul>
 
                 <blockquote>My Referral ID : </blockquote>
-                <p> &nbsp; &nbsp; KJDNSA39d987DSA</p>
+                <p>{{$user->code}}</p>
 
 
                 <dl>Total Benefits Till Now (USD) :</dl>
-                <p>$ 100</p>
+                <p>$ {{$user->referral->total_benefit}}</p>
 
     <div class="referral-page_secondList">
 
             <div class="referral-page_secondList_column">Number of Sharing
-                <ul><li>5</li></ul>
+                <ul><li>{{$user->referral->total_sharing_num}}</li></ul>
             </div>
 
             <div class="referral-page_secondList_column">Total Sharing Income (USD)
-                    <ul><li>$ 12000</li></ul>
+                    <ul><li>$ {{$user->referral->total_sharing_income}}</li></ul>
 
             </div>
 
             <div class="referral-page_secondList_column">My Benefit (USD)
-                    <ul><li>$ 3000</li></ul>
+                    <ul><li>$ {{$user->referral->user_income_share}}</li></ul>
             </div>
 
 

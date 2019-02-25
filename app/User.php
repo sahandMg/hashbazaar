@@ -33,4 +33,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function referral(){
+
+        return $this->hasOne(Referral::class);
+    }
 }

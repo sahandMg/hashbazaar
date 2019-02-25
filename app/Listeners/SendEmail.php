@@ -37,7 +37,7 @@ class SendEmail
         });
 
         Mail::send('email.replyMessageMailPage',$data,function($message) use($data){
-            $message->from ('noReply@HashBazaar.com');
+            $message->from ('Admin@HashBazaar.com');
             $message->to ($data['email']);
             $message->subject ('Reply From HashBazaar');
         });

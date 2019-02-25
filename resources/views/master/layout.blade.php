@@ -10,7 +10,11 @@
     <meta name="description"
           content="Bitcoin is the digital gold of the future & HashBazaar is the most cost effective cloud mining company on the market. Mine bitcoin through the cloud, get started today!"/>
     <meta name="google-site-verification" content="roNqWp-CmbNsSN2R6ggCv2ubJwFNikEs_WJ7E2P3WDw" />
-    <title>Hash Bazaar</title>
+    @if(request()->path() === '/')
+        <title>Hash Bazaar</title>
+    @else
+        @yield('title')
+    @endif
     <link rel="icon" href="img/TabLogo.png">
     <link rel="stylesheet" href="css/blog.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
@@ -20,7 +24,6 @@
     <link rel="stylesheet" href="css/theme.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="css/customer-service.css">
-    <title>FAQ</title>
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/jquery.animate-colors.js"></script>
     <script src="js/jquery-3.3.1.js"></script>

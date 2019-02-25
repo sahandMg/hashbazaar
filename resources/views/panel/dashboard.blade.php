@@ -1,4 +1,7 @@
 @extends('panel.master.layout')
+@section('title')
+    <title>Dashboard</title>
+@endsection
 @section('content')
     <?php
     $settings = DB::table('settings')->first();
@@ -188,6 +191,7 @@
                       <p>Income : At this time We predict {{$settings->bitcoin_income_per_month_per_th}} BTC/month for every Th.</p>
                       <small>(Changes may happen depends on bitcoin price and bitcoin network difficulty changes.)</small>
                     </div>
+
                     <button class="pandel-button" type="submit">Order</button>
                  </form>
                 @else
@@ -196,6 +200,13 @@
             </div> 
 
 
+             <form style="padding: 20px;" method="POST" action="{{route('dashboard')}}">
+                      <input type="hidden" name="_token" value="{{csrf_token()}}">
+                 <input type="text" name="referralCode" >
+
+                    <button type="submit" class="btn btn-primary"> Apply </button>
+
+                   </form>
 
 
             <!-- Mining History -->

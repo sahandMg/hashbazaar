@@ -93,10 +93,22 @@ class PanelController extends Controller
     }
 
     /*
-     * Submit new HashPower Orders
+     * Apply referral code
      */
     public function postDashboard(Request $request,Hash $hash){
 
+        $this->validate($request,[
+            'referralCode'=>'required'
+        ]);
+
+        $code = $request->referralCode;
+        $referralUser = DB::table('users')->where('code',$code)->where('id','!=',Auth::id())->first();
+        if(is_null($referralUser)){
+
+            return redirect()->back()->with(['error'=>'Code Is Not Valid']);
+        }else{
+
+        }
     }
 
 
@@ -110,6 +122,22 @@ class PanelController extends Controller
     public function setting(){
 
         return view('panel.settings.setting');
+    }
+
+    public function post_setting(Request $request){
+
+        $this->validate($request,[
+            'pass'=>'required|min:8',
+            'newpass'=>'required|min:8',
+            'confirm'=>'required|same:newpass',
+        ]);
+        $user = Auth::guard('user')->user();
+        $user->update([
+            'password'=>Hash::make($request->newpass)
+
+        ]);
+        $user->save();
+        return redirect()->back()->with(['message'=>'Password Changed']);
     }
 
     public function userInfo(){

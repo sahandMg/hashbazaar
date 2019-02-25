@@ -16,7 +16,7 @@ class CreateLogsTable extends Migration
         Schema::create('logs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('env');
-            $table->string('message', 500);
+            $table->longText('message');
             $table->enum('level', [
                 'DEBUG',
                 'INFO',

@@ -1,4 +1,7 @@
 @extends('panel.master.layout')
+@section('title')
+    <title>Contact Us</title>
+@endsection
 @section('content')
     <!-- Contact Page -->
     <div id="contact-page">

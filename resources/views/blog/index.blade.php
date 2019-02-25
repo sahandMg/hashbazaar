@@ -1,4 +1,7 @@
 @extends('master.layout')
+@section('title')
+    <title>Blog</title>
+@endsection
 @section('content')
 {{--<!DOCTYPE html>--}}
 {{--<html lang="en">--}}

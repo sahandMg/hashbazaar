@@ -30,7 +30,7 @@ class AuthController extends Controller
         ]);
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->code = uniqid('hashBazaar_'.str_random(5));
+        $user->code = uniqid('hashBazaar_');
         $user->password = Hash::make($request->password);
         $user->reset_password = str_random(10);
         $user->ip = Helpers::userIP();
@@ -49,6 +49,7 @@ class AuthController extends Controller
             'code'=> $user->code,
             'email'=>$user->email
         ];
+        event(new \App\Events\ReferralQuery(Auth::user()));
         Mail::send('email.thanks',$data,function($message) use($data){
             $message->from ('Admin@HashBazaar');
             $message->to ($data['email']);
@@ -204,7 +205,7 @@ class AuthController extends Controller
         $user = new User();
         $user->name = $client->name;
         $user->email = $client->email;
-        $user->code = uniqid('hashBazaar_'.str_random(5));
+        $user->code = uniqid('hashBazaar_');
         $user->avatar = $client->avatar;
         $user->ip = Helpers::userIP();
         try{
@@ -216,7 +217,16 @@ class AuthController extends Controller
 
         $user->save();
 
-
+        $data = [
+            'code'=> $user->code,
+            'email'=>$user->email
+        ];
+        event(new \App\Events\ReferralQuery(Auth::user()));
+        Mail::send('email.thanks',$data,function($message) use($data){
+            $message->from ('Admin@HashBazaar');
+            $message->to ($data['email']);
+            $message->subject ('Subscription Email');
+        });
 
         return redirect()->route('dashboard');
     }

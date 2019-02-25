@@ -20,6 +20,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         'App\Events\Contact' => [
             'App\Listeners\SendEmail'
+        ],
+        'App\Events\ReferralQuery' => [
+            'App\Listeners\makeQuery'
         ]
     ];
 

@@ -1,4 +1,7 @@
 @extends('panel.master.layout')
+@section('title')
+    <title>Activity</title>
+@endsection
 @section('content')
 <?php
 $settings = DB::table('settings')->first();

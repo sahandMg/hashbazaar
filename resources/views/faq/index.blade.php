@@ -26,7 +26,8 @@
     .faq-section img {
         width: 50px;
         position: absolute;
-        top: 35px;
+        top: 30px;
+        right: 15px;
     }
     .faq-question-list-container {
         padding: 0px;
@@ -37,6 +38,7 @@
     .faq-answer li {
         list-style: disc;
      }
+     .faq-answer p {margin-bottom: 1%;}
     @media only screen and (max-width: 576px) {
         .faq-container {
           margin-top: 20%;
@@ -72,6 +74,9 @@
        .faq-section img {
         width: 50px;
         top: 35px;
+       }
+       .faq-question-list-container {
+         padding-left: 5%;
        }
     }
     @media only screen and (max-width: 420px) {
@@ -114,7 +119,7 @@
                                 <h5 class="faq-question">What is Bitcoin?</h5>
                                 <div class="faq-answer">
                                  <p>
-                                  The new generation of transaction system is based on block chain. People needs crypto currencies to deal in this new system. Bitcoin as the most important crypto is a digital and global money system currency. It allows people to send or receive money  across the internet. For more Information read about it in Bloomberg.
+                                  The new generation of transaction system is based on block chain. People needs crypto currencies to deal in this new system. Bitcoin as the most important crypto is a digital and global money system currency. It allows people to send or receive money  across the internet. For more Information read about it in <a href="http://blog.hashbazaar.com/">Our blog</a>.
                                  </p>
                                 </div>
                             </li>
@@ -151,11 +156,11 @@
                             <li class="faq-question-list">
                                 <h5 class="faq-question">How does mining make profit for the miner? </h5>
                                 <div class="faq-answer">
-                                 <p>
-                                  The miner is rewarded in two ways:
-                                  Transaction validation fee
-                                  The new block mining reward
-                                 </p>
+                                 <p style="margin-bottom: 2%;"> The miner is rewarded in two ways:</p>
+                                 <ul style="margin-bottom: 2%;">
+                                   <li>Transaction validation fee.</li>
+                                   <li>The new block mining reward.</li>
+                                 </ul>
                                 </div>
                             </li>
                             <li class="faq-question-list">
@@ -319,7 +324,7 @@
                     jQuery(document).ready(function ($) {
                         $('.faq-answer').hide();
                         $('.faq-customerservice-questions').hide();
-                        $('.faq-questions-section').children().eq(1).show();
+                        $('.faq-questions-section').children().eq(0).show();
 
                         $('.faq-question').click(function(){
                             $('.faq-answer').hide();

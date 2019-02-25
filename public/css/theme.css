@@ -188,17 +188,21 @@ header img { height: 175px;margin-bottom: 4%; }
   }
 
   #header-navbar-menu ul li {
-    margin-left: 1%;
+    margin-left: 6%;
   }
  
   #price {
     left: 0 !important;
   }
 
-  
   .network-flex {
-    margin-left: 36% !important;
+    margin-left: 37%  !important;
+
   }
+  
+.network-flex img {
+  margin: 0 20px auto;
+}
      
 }
 
@@ -225,7 +229,9 @@ header img { height: 175px;margin-bottom: 4%; }
       margin-left: -105px !important;
       border-bottom-left-radius: 5%;
       border-bottom-right-radius: 5%;
+      margin-top: 25px
     }
+   
      #header-navbar-menu  ul 
      {
        margin-top: 80px;
@@ -350,7 +356,7 @@ header img { height: 175px;margin-bottom: 4%; }
     }
     
   .network-flex {
-    margin-left: 47%;
+    margin-left: 27% !important;
   }
     
 }
@@ -389,7 +395,7 @@ header img { height: 175px;margin-bottom: 4%; }
     }
 
     .network-flex {
-      margin-left: 16% !important;
+      margin-left: 17.4% !important;
     }
     
 }
@@ -412,7 +418,7 @@ header img { height: 175px;margin-bottom: 4%; }
 
   
   .network-flex {
-    margin-left: 12% !important;
+    margin-left: 14% !important;
   }
 
 }
@@ -424,7 +430,7 @@ header img { height: 175px;margin-bottom: 4%; }
   }
   .navigation-menu {
     right: 25px;
-    top: 40px;
+    top: 36px;
   }
   #header-navbar-menu {
     left: -0px;
@@ -453,7 +459,7 @@ header img { height: 175px;margin-bottom: 4%; }
 
    
   .network-flex {
-    margin-left: 5% !important;
+    margin-left: 8% !important;
   }
 
 }
@@ -630,15 +636,13 @@ header img { height: 175px;margin-bottom: 4%; }
 .network-flex {
   width: 20%;
   height: 10px;
-  margin-top: 20px;
   display: flex;
   display: -webkit-flex;
   display: -ms-flex;
   display: -o-flex;
   flex: row;
   transition: all 1s;
-  margin-left: 40%;
-
+  margin: 0 auto;
 
 }
 
@@ -648,7 +652,7 @@ header img { height: 175px;margin-bottom: 4%; }
   height: 50px;
   border-radius: 50%;
   text-align: center;
-  margin-left: 30px;
+  margin: 0 20px auto;
 }
 
 

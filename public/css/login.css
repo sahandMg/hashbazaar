@@ -434,7 +434,7 @@ iframe {
 @media screen and (max-width:768px) {
     
   .limiter {
-    margin-top: 12% !important
+    margin-top: 2% !important
   }
 }
 
@@ -474,5 +474,8 @@ iframe {
   .container-socialnet {
     margin-left: 80px;
 
+    }
+    .limiter {
+      margin-top: 30%  !important
     }
 }

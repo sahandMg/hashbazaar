@@ -239,7 +239,7 @@ div ul .navbar #welcome {
     background-image: url("../img/Arrow.svg");
     width: 1em;
     height: 1em;
-    margin-top: 25px;
+    margin-top: 17px;
     content: "";
     left: 300px;
     background-size: 100% 100%;
@@ -949,7 +949,7 @@ color: orange !important}
         .navigation-menu {
             background: transparent;
             border-bottom: transparent;
-            margin-top: 35px;
+            margin-top: 43px;
             display: block;
 
         }
@@ -1058,6 +1058,11 @@ color: orange !important}
     }
     header {
         z-index: 2;
+    }
+    .Logo_header {
+        width: 400px;
+        left: 30px !important;
+        margin-top: 15px
     }
     .container {
         display: none;
@@ -1250,11 +1255,13 @@ color: orange !important}
         margin-top:0 !important;
     }
     #header-div {height:80px}
+
     .Logo_header {
         width: 200px ;
         height: 80px;
+        left: 30px !important;
+        margin-top: 0px;
         position: absolute;
-        left: 20px;
         top: 5px
     }
     .container {
@@ -1541,7 +1548,9 @@ color: orange !important}
         width: 200px !important;
         height: 90px;
         position: absolute;
-        left: 10px;
+        left: 30px !important;
+        margin-top: 0px;
+        top: 0px
     }
     .navigation-menu {
         display: block;
@@ -1686,10 +1695,12 @@ color: orange !important}
 /*  - Media - 320 */
 @media screen and (max-width:320px) {
     .Logo_header {
-        width: 200px !important;
+        width: 180px !important;
         height: 80px;
         position: absolute;
         left: 10px;
+        margin-top: 0px;
+        top: 5px
     }
             
     #header-div , header {

@@ -95,7 +95,7 @@
                         <p id="no-hash"> NO Hash History</p>
                     @endif
                            
-                          
+       
                 </div>
 
              </div> 
@@ -323,16 +323,15 @@
                     $('.user-img').click(function(){
                         $('.list').toggle(500);
                     });
-
+                    
                     var numItems = $('.Hash-History_column').length;
                     // alert($('.Hash-History_column').length);
-                    if( numItems > 10){
-                        $('#Hash-History-list').css('overflow-y' , "scroll")
-                    }
-                    else {
-                        $('#Hash-History-list').css('overflow-y' , "hidden")
-
-                    }
+                    if( numItems > 10)
+                        $('#Hash-History-list').css('overflow-y' , "scroll");
+                    
+                    else 
+                        $('#Hash-History-list').css('overflow-y' , "hidden");
+                    
                 });
 
                 var user = {!! json_encode(\Illuminate\Support\Facades\Auth::guard('user')->user()->code) !!}

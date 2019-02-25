@@ -232,8 +232,9 @@ header {
 #contact-page textarea{
     resize: none;
     background: #FFFDE8;
-    margin-top: 90px ;
-    margin-left: 150px;
+    margin: 0 auto;
+    margin-left: 20%;
+    margin-top: 10%;
     width: 600px;
     height: 150px;
     border: 2px solid black;
@@ -384,8 +385,6 @@ form.contact-page p:nth-of-type(1) {
     #contact-page textarea{
         background: #FFFDE8;
         resize: none;
-        top: 430px ;
-        left: 130px;
         width: 510px;
         height: 150px;
     }
@@ -455,7 +454,7 @@ form.contact-page p:nth-of-type(1) {
     #contact-page h1 {
         font-size: 20px;
         width: 280px;
-        margin-left: 60px !important;
+        margin-left: 70px !important;
         top: 50px
     }
 
@@ -477,7 +476,7 @@ form.contact-page p:nth-of-type(1) {
         background: #FFFDE8;
         resize: none;
         margin-top: 50px;
-        margin-left: 70px !important;
+        margin-left: 80px !important;
         width: 250px;
         height: 150px;
     }
@@ -534,7 +533,7 @@ form.contact-page p:nth-of-type(1) {
     #contact-page h1 {
         font-size: 20px;
         width: 280px;
-        margin-left: 60px;
+        margin-left: 50px !important;
         top: 50px
     }
 
@@ -556,7 +555,7 @@ form.contact-page p:nth-of-type(1) {
         background: #FFFDE8;
         resize: none;
         margin-top: 50px;
-        margin-left: 70px;
+        margin-left: 60px !important;
         width: 250px;
         height: 150px;
     }
@@ -616,7 +615,7 @@ form.contact-page p:nth-of-type(1) {
     #contact-page h1 {
         font-size: 15px;
         width: 260px;
-        margin-left: 20px;
+        margin-left: 55px !important;
         top: 50px
     }
 
@@ -638,7 +637,7 @@ form.contact-page p:nth-of-type(1) {
         background: #FFFDE8;
         resize: none;
         margin-top: 50px;
-        margin-left: 40px;
+        margin-left: 55px !important;
         width: 200px;
         height: 150px;
     }
@@ -1259,7 +1258,7 @@ header {
 
     .referral-footer-div {
         width: 94%;
-        margin-left: 0%;
+        margin-left: 2%;
         margin-top: 350px !important
     }
 
@@ -1795,7 +1794,7 @@ header {
        top: 40px
    }
    .activity-footer-div {
-    margin-top: -300px !important
+    margin-top: -340px !important
    }
 }
 
@@ -1932,7 +1931,7 @@ header {
 
    .activity-hr-footer
    {
-       top: -70px !important;
+       top: -10px !important;
        width: 98%;
        margin-left: -10px;
        left: 0
@@ -1955,8 +1954,7 @@ header {
    .activity-footer-paragraph {
        font-size: 20px;
        font-family: sans-serif;
-       margin-top: -160px !important;
-       margin-left: 150px
+       margin-left: 210px
    }
 
 }
@@ -2323,7 +2321,7 @@ header {
     .activity-hr-footer
     {
         margin-left: 0;
-        top: 0px
+        top: -40px !important
     }
 
     /* Footer */
@@ -2435,6 +2433,11 @@ header {
         width: 305px;
      }
 
+     .activity-hr-footer
+     {
+         margin-left: 0;
+         top: -70px !important
+     }
      .activity-footer-div {
         width: 100%;
         margin-left: 0%;
@@ -2529,7 +2532,7 @@ body {
     border: 20px solid #ff9100;
     border-radius: 50%;
     border-collapse: 2px solid #727272;
-    margin-top: -38%;
+    margin-top: -42%;
 }
 
 #redeem {
@@ -3008,7 +3011,7 @@ body {
         height: 280px;
         border: 20px solid #ff9100;
         border-radius: 50%;
-        margin-left: 46% !important;
+        margin-left: 56% !important;
         margin-top: 4%;
         border-collapse: 2px solid #727272;
         margin-right: 0%;
@@ -3020,7 +3023,7 @@ body {
         height: 280px;
         border: 20px solid #ff9100;
         border-radius: 50%;
-        margin-left: 2%;
+        margin-left: 5%;
         margin-top: -42%;
         border-collapse: 2px solid #727272
     }
@@ -3074,7 +3077,7 @@ body {
     {
         flex-grow: 1;
         margin-top: 20px;
-        margin-left: 5%;
+        margin-left: 4% !important;
     }
 
     .Hash-History_column ul li {

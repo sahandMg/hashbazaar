@@ -105,8 +105,16 @@ class PanelController extends Controller
         $referralUser = DB::table('users')->where('code',$code)->where('id','!=',Auth::id())->first();
         if(is_null($referralUser)){
 
-            return redirect()->back()->with(['error'=>'Code Is Not Valid']);
-        }else{
+            return redirect()->back()->with(['error'=>'Code is not valid']);
+        }
+        /*
+         * 1. check sharing level
+         * 2. update sharing benefit
+         * 3. update sharing number
+         * 4.
+         */
+        else{
+
 
         }
     }

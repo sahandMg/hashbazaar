@@ -111,6 +111,16 @@
             <hr class="dashboard-hr22-2">
             <h5 id="demo"></h5>
             <div class="slidecontainer">
+                @if(count($errors->all()) > 0)
+                    <ul>
+                        @foreach($errors as $error)
+                            <li>{{$error}}</li>
+                         @endforeach
+                    </ul>
+                @endif
+                @if(session()->has('error'))
+                    <p>{{session('error')}}</p>
+                  @endif
                 @if($settings->available_th > 0)
                 <form class="dashboard-page" method="post" action="{{route('payment')}}">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -133,7 +143,7 @@
 
              <form style="padding: 20px;" method="POST" action="{{route('dashboard')}}">
                       <input type="hidden" name="_token" value="{{csrf_token()}}">
-                 <input type="text" name="referralCode" >
+                 <input type="text" name="referralCode" placeholder="referral code ..." >
 
                     <button type="submit" class="btn btn-primary"> Apply </button>
 

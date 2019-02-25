@@ -1,4 +1,7 @@
 @extends('master.layout')
+@section('title')
+    <title>FAQ</title>
+@endsection
 @section('content')
 <style type="text/css">
     .faq-container {

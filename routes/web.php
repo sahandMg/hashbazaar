@@ -80,6 +80,7 @@ Route::get('job',function(){
 
 Route::get('test',function (){
 
+    event(new \App\Events\ReferralQuery(Auth::user()));
 });
 
 Route::get('test2',function(){
@@ -133,6 +134,8 @@ Route::group(['middleware'=>'block','prefix'=>'panel'],function(){
     Route::get('activity','PanelController@activity')->name('activity');
 
     Route::get('setting','PanelController@setting')->name('setting');
+
+    Route::post('setting','PanelController@post_setting')->name('setting');
 
     Route::get('setting/user-info','PanelController@userInfo')->name('userInfo');
 

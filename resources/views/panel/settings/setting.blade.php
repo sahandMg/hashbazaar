@@ -1,4 +1,7 @@
 @extends('panel.master.layout')
+@section('title')
+    <title>Settings</title>
+@endsection
 @section('content')
 
 <script src="../js/jquery-3.3.1.js"></script>
@@ -15,29 +18,41 @@
 
     </div>
 
+    @if(count($errors->all()) > 0)
 
+        <ul>
+            @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+             @endforeach
+        </ul>
+      @endif
+
+    @if(session()->has('message'))
+        <p>{{session('message')}}</p>
+    @endif
     <div class="setting-information">
-        <form action="">
+        <form action="{{route('setting')}}" method="post">
+            <input type="hidden" name="_token" value="{{csrf_token()}}">
             <q>User Information </q> <br>
 
             <p id="textbefore">Name</p>
-            <input type="text" name="text" id="text" placeholder="Name"> <br>
+            <input type="text" name="text" id="text" value="{{Auth::guard('user')->user()->name}}" disabled="disabled"> <br>
             <p id="textbefore">Email</p>
 
-            <input type="email" name="email" id="email" placeholder="user@example.com"> <br> <br> <br>
+            <input type="email" name="email" id="email" value="{{Auth::guard('user')->user()->email}}" disabled="disabled"> <br> <br> <br>
 
             <q>Password</q> <br>
             <p id="textbefore">Current Password</p>
 
-            <input type="password" name="curpass" id="cur-password" placeholder="Current Password"> <br>
+            <input type="password" name="pass" id="cur-password" placeholder="Current Password"> <br>
             <p id="textbefore">New Password</p>
 
-            <input type="password" name="newpass" id="newpassword" placeholder="Current Password"> <br>
+            <input type="password" name="newpass" id="newpassword" placeholder="New Password"> <br>
             <p id="textbefore">Confirm Password</p>
 
-            <input type="password" name="Confirmpassword" id="Confirmpassword" placeholder="confirm Password">
+            <input type="password" name="confirm" id="Confirmpassword" placeholder="confirm Password">
 
-            <input type="button" value="Submit" class="pandel-button">
+            <input type="submit" value="Submit" class="pandel-button">
         </form>
 
     </div>

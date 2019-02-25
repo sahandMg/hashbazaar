@@ -1,4 +1,7 @@
 @extends('panel.master.layout')
+@section('title')
+    <title>Wallet</title>
+@endsection
 @section('content')
 
 <script src="/public/js/jquery-3.3.1.js"></script>

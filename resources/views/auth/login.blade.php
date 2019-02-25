@@ -1,4 +1,7 @@
 @extends('master.auth')
+@section('title')
+	<title>Login</title>
+@endsection
 @section('content')
 	<div class="limiter">
 		<div class="container-login100">
@@ -51,7 +54,7 @@
 							Don’t have an account?
 						</span>
 
-						<a href="#" class="txt3">
+						<a href="{{route('signup')}}" class="txt3">
 							Sign up now
 						</a>
 					</div>

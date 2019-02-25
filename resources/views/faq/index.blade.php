@@ -34,9 +34,12 @@
     }
     .faq-question-list h5 {
          margin-top: 2%;
-    }
+    }    
     .faq-answer li {
         list-style: disc;
+     }
+     .faq-answer ul {
+        margin-bottom: 2%;
      }
      .faq-answer p {margin-bottom: 1%;}
     @media only screen and (max-width: 576px) {
@@ -128,7 +131,7 @@
                                 <div class="faq-answer">
                                  <p>
                                   You can buy it from any online or offline bitcoin sellers.
-                                  You can find a list of sellers from here.
+                                  You can find a list of sellers from <a href="https://www.coindesk.com/information/what-is-bitcoin">here</a>.
                                  </p>
                                 </div>
                             </li>
@@ -175,7 +178,7 @@
                                 <h5 class="faq-question">What Cryptocurrency cloud mining services are working now?</h5>
                                 <div class="faq-answer">
                                  <p>
-                                  There are many Cryptocurrency cloud mining services working now. You can find a list of cloud mining services from here. 
+                                  There are many Cryptocurrency cloud mining services working now, like genesis-mining and hashflare. 
                                  </p>
                                  <p>
                                   What differences are there between the Cryptocurrency cloud mining services?

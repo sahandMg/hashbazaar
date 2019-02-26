@@ -1697,7 +1697,7 @@ header {
     #Transactions-list
     {
         margin-top: 30px;
-        width: 100%;
+        width: 98%;
         height: 300px;
         float:left;
     }
@@ -1741,10 +1741,15 @@ header {
 
    /* Footer */
    .activity-hr-footer {
-       top: 40px
+       top: 230px;
+       margin-left: -768px
    }
    .activity-footer-div {
-    margin-top: -340px !important
+    margin-top: -280px !important
+   }
+
+   .activity-footer-paragraph {
+       margin-left: 32%;
    }
 }
 
@@ -1855,7 +1860,7 @@ header {
    #Transactions-list
    {
        margin-top: 30px;
-       width: 100%;
+       width: 85%;
        height: 300px;
        float:left;
    }
@@ -1870,7 +1875,7 @@ header {
        font-weight: bolder;
        font-family: sans-serif;
        width: 95%;
-       margin-left: 5%;
+       margin-left: 15%;
        text-align: left;
        display: block
    }
@@ -1900,9 +1905,9 @@ header {
 
    .activity-hr-footer
    {
-       top: -20px !important;
+       top: 200px !important;
        width: 100%;
-       margin-left: -10px;
+       margin-left: -597px;
        left: 0
    }
 
@@ -1918,6 +1923,7 @@ header {
    #activity-footer-image {
         width: 200px;
         height: 60px;
+        margin-top: 50px
    }
 
    .activity-footer-paragraph {
@@ -2074,7 +2080,7 @@ header {
 
     .activity-hr-footer
     {
-        margin-left: 0;
+        margin-left: -397px;
     }
 
     /* Footer */
@@ -2098,7 +2104,7 @@ header {
     .activity-footer-paragraph {
         font-size: 15px;
         font-family: sans-serif;
-        top: -60px;
+        margin-top: -120px;
         margin-left: 60px
     }
 
@@ -2261,8 +2267,8 @@ header {
 
     .activity-hr-footer
     {
-        margin-left: 0;
-        top: -40px !important
+        margin-left: -160;
+        top: 190px !important
     }
 
     /* Footer */
@@ -2693,7 +2699,7 @@ body {
 
 #dashboard-page #dashboard-title2 {
     margin-left: 38%;
-    margin-top: -2%;
+    margin-top: -4% !important;
     font-family: sans-serif;
     font-size: 25px;
     font-weight: bolder;
@@ -2765,7 +2771,7 @@ body {
     }
     .dashboard-hr11 {
         width: 37%;
-        margin-top: 5%;
+        margin-top: 5% !important;
         margin-left: 0;
     }
 
@@ -2780,7 +2786,7 @@ body {
         display: block;
         width: 39.5%;
         margin-left:59.5%;
-        margin-top: -14px
+        margin-top: -24px
     }
 
     .dashboard-hr2-2 {
@@ -2823,7 +2829,8 @@ body {
     }
 
     #dashboard-page-circle2 {
-        margin-left: 4%
+        margin-left: 4%;
+        margin-top: -43.4% !important
     }
 }
 

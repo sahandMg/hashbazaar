@@ -122,6 +122,11 @@ class AuthController extends Controller
             'email'=>$user->email
         ];
 
+        Mail::send('email.newUser',['user'=>$user],function($message) use($data){
+            $message->from ('Admin@HashBazaar');
+            $message->to ('info@hashbazaar.com');
+            $message->subject ('New User');
+        });
         Mail::send('email.thanks',$data,function($message) use($data){
             $message->from ('Admin@HashBazaar');
             $message->to ($data['email']);

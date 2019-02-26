@@ -7,6 +7,8 @@ use App\Events\Contact;
 use App\Message;
 use App\Mining;
 use App\MiningReport;
+use App\Referral;
+use App\Sharing;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
@@ -114,8 +116,22 @@ class PanelController extends Controller
          * 4.
          */
         else{
+            $referralUser = Referral::where('code',$code)->where('id','!=',Auth::id())->first();
+            $sharings = Sharing::all()->pluck('sharing_number')->toArray();
+            dd($sharings);
+            $referralUser->update([
+                'total_sharing_num' => $referralUser->total_sharing_num + 1
+            ]);
+            $referralUser->save();
+            $total_sharing_num = $referralUser->total_sharing_num;
 
+            if($total_sharing_num < $sharings[0] ){
 
+            }elseif( $sharings[0] <= $total_sharing_num && $total_sharing_num < $sharings[1]){
+
+            }elseif( $sharings[1] <= $total_sharing_num && $total_sharing_num < $sharings[2]){
+
+            }elseif( $sharings[2] >= $total_sharing_num){}
         }
     }
 

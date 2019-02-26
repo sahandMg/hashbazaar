@@ -2507,7 +2507,7 @@ body {
     border: 20px solid #ff9100;
     border-radius: 50%;
     border-collapse: 2px solid #727272;
-    margin-top: -42%;
+    margin-top: -45%;
 }
 
 #redeem {
@@ -2543,7 +2543,23 @@ body {
     font-weight: bolder;
     font-family: sans-serif
 }
+#dashboard-page-circle2 p:nth-of-type(1) {
+    font-size: 42px;
+    text-align: center;
+    color: rgb(41, 37, 37);
+    margin-top: 35%;
+    font-weight: bolder;
+    font-family: sans-serif
+}
 
+#dashboard-page-circle2 p:nth-of-type(2) {
+    font-size: 42px;
+    text-align: center;
+    color: rgb(41, 37, 37);
+    margin-top: 2%;
+    font-weight: bolder;
+    font-family: sans-serif
+}
 #miningBTC span, #miningBTC span {
     font-size: 27px
 }
@@ -2895,7 +2911,7 @@ body {
         height: 310px;
     }
     #dashboard-page-circle2 {
-        margin-top: -47%;
+        margin-top: -47% !important;
         margin-left: 2%
     }
     #circle-span {
@@ -2907,6 +2923,10 @@ body {
         margin-top: 70px;
     }
     #dashboard-page-circle p {
+        font-size: 30px !important;
+        margin-top: 40%;
+    }
+    #dashboard-page-circle2 p {
         font-size: 30px !important;
         margin-top: 40%;
     }
@@ -3070,7 +3090,7 @@ body {
         border: 20px solid #ff9100;
         border-radius: 50%;
         margin-left: 5%;
-        margin-top: -42%;
+        margin-top: -43% !important;
         border-collapse: 2px solid #727272
     }
     #circle-span {
@@ -3091,7 +3111,14 @@ body {
         font-weight: bolder;
         font-family: sans-serif
     }
-
+    #dashboard-page-circle2 p {
+        font-size: 45px;
+        text-align: center;
+        color: rgb(41, 37, 37);
+        margin-top: 40%;
+        font-weight: bolder;
+        font-family: sans-serif
+    }
     /* ==================================================HASH History============================== */
     #dashboard-page #dashboard-title {
         margin-left: 42.2%;
@@ -3315,7 +3342,14 @@ body {
         font-weight: bolder;
         font-family: sans-serif
     }
-
+    #dashboard-page-circle2 p {
+        font-size: 20px !important;
+        text-align: center;
+        color: rgb(41, 37, 37);
+        top: 40%;
+        font-weight: bolder;
+        font-family: sans-serif
+    }
     /* ==================================================HASH History============================== */
     #dashboard-page #dashboard-title {
         margin-left: 35.5%;
@@ -3539,7 +3573,15 @@ body {
         font-weight: bolder;
         font-family: sans-serif
     }
-
+    #dashboard-page-circle2 p {
+        font-size: 20px !important;
+        text-align: center;
+        color: rgb(41, 37, 37);
+        /* position: relative; */
+        top: 40%;
+        font-weight: bolder;
+        font-family: sans-serif
+    }
     /* ==================================================HASH History============================== */
     #dashboard-page #dashboard-title {
         /* position: absolute; */
@@ -3753,7 +3795,14 @@ body {
         font-weight: bolder;
         font-family: sans-serif
     }
-
+    #dashboard-page-circle2 p {
+        font-size: 18px !important;
+        text-align: center;
+        color: rgb(41, 37, 37);
+        top: 40%;
+        font-weight: bolder;
+        font-family: sans-serif
+    }
     /* ==================================================HASH History============================== */
     #dashboard-page #dashboard-title {
         margin-left: 34%;

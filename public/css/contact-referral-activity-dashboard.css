@@ -2830,7 +2830,7 @@ body {
 
     #dashboard-page-circle2 {
         margin-left: 4%;
-        margin-top: -43.4% !important
+        margin-top: -43% !important
     }
 }
 
@@ -2896,6 +2896,7 @@ body {
     }
     #dashboard-page-circle2 {
         margin-top: -47%;
+        margin-left: 2%
     }
     #circle-span {
         font-size: 20px !important;

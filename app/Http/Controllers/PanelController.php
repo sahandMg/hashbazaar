@@ -102,22 +102,24 @@ class PanelController extends Controller
      */
     public function postDashboard(Request $request,Hash $hash){
 
-        $this->validate($request,[
-            'referralCode'=>'required'
-        ]);
-
         $code = $request->referralCode;
         $referralUser = DB::table('users')->where('code',$code)->where('id','!=',Auth::id())->first();
         $is_expired = DB::table('expired_codes')->where('code',$code)->first();
         // check if the code is used before
         if(!is_null($is_expired)){
 
-            return redirect()->back()->with(['error'=>'Expired code entered']);
+            return [
+                'type'=>'error',
+                'body'=>'Expired code entered'
+            ];
         }
         // check code validation
         if(is_null($referralUser)){
 
-            return redirect()->back()->with(['error'=>'Code is not valid']);
+            return [
+                'type'=>'error',
+                'body'=>'Code is not valid'
+            ];
         }
         /*
          * 1. check sharing level
@@ -158,7 +160,10 @@ class PanelController extends Controller
 //                }elseif( $sharings[2] >= $total_sharing_num){}
             }
 
-            return redirect()->back();
+            return [
+                'type'=>'message',
+                'body'=>'code accepted'
+            ];
 
         }
     }

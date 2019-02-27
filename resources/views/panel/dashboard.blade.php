@@ -202,30 +202,19 @@
                       <small>(Changes may happen depends on bitcoin price and bitcoin network difficulty changes.)</small>
                     </div>
                     <span class="rfrcode">Referral Code:</span>
-                    <form style="padding: 20px;" method="POST" action="{{route('dashboard')}}">
+                    {{--<form style="padding: 20px;" method="POST" action="{{route('dashboard')}}">--}}
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
-                       <input type="text" name="referralCode" style="margin-top:5px" class="aplybtntext">
+                       <input id='referralCode' type="text" name="referralCode" style="margin-top:5px" class="aplybtntext">
       
-                          <button type="submit" class="btn btn-primary aplybtn"> Apply </button>
+                          <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> Apply </button>
       
-                         </form>
+                         {{--</form>--}}
                     <button class="pandel-button" type="submit">Order</button>
                  </form>
                 @else
                   <p> TH Not Available !</p>
                 @endif
-            </div> 
-
-
-
-             <form style="padding: 20px;" method="POST" action="{{route('dashboard')}}">
-                      <input type="hidden" name="_token" value="{{csrf_token()}}">
-                 <input type="text" name="referralCode" placeholder="referral code ..." >
-
-                    <button type="submit" class="btn btn-primary"> Apply </button>
-
-                   </form>
-
+            </div>
 
 
             <!-- Mining History -->
@@ -424,7 +413,7 @@
                     });
                     
                     var numItems = $('#Hash-History-list tr').length;
-                    alert($('#Hash-History-list tr').length);
+
                     if( numItems > 2)
                         $('#Hash-History-list').css('overflow-y' , "scroll");
                     
@@ -441,8 +430,28 @@
 
                         console.log(response.data)
                     })
-                }
+                };
+                var activeDiscount = 0;
+                var thPrice = {!! $settings->usd_per_hash !!}
+                function sendCode() {
 
+                    var code = document.getElementById('referralCode').value;
+
+                    axios.post('{{route('SendCode')}}',{referralCode:code}).then(function (response) {
+
+                        var resp = response.data
+                        if(resp['type'] == 'error'){
+                            alert(resp['body'])
+
+                        }else{
+
+                            alert(resp['body']);
+
+                            thPrice = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!}
+                        }
+
+                    });
+                }
 
                  // =---------------------------------------
 
@@ -474,17 +483,19 @@
                     }
 
                 });
+
+
                     var slider = document.getElementById("myRange");
                     var output = document.getElementById("demo");
                     var cost = document.getElementById("cost");
                     output.innerHTML = slider.value+' Th';
-                    cost.innerHTML = slider.value * 50 ;
+                    cost.innerHTML = slider.value * thPrice ;
                     // Display the default slider value
                     
                     slider.oninput = function() {
                             console.log("input change");
                         output.innerHTML = this.value+' Th';
-                        cost.innerHTML = slider.value * 50 ;
+                        cost.innerHTML = slider.value * thPrice;
                         };
 
                     //    ==================================chart==============

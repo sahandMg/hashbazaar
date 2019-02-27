@@ -93,19 +93,17 @@ Route::get('test2',function(){
         'description' => 'https://ssaa.com',
         'callback' => 'dadsda',
         'bank'=>'novin',
-        'ip'=> '192.168.1.9'
+        'ip'=> '192.168.1.1'
     );
     $fields2 = json_encode($fields);
     $url = 'https://paystar.ir/api/create';
     $ch = curl_init();
     curl_setopt($ch,CURLOPT_URL, $url);
-    curl_setopt($ch,CURLOPT_POSTFIELDS, $fields);
-    curl_setopt($ch,CURLOPT_POST, count($fields));
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($fields));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $result = curl_exec($ch);
     curl_close($ch);
-    header('Location: https://paystar.ir/api/create/'.$fields2);
-
     return $result;
 });
 
@@ -209,6 +207,7 @@ Route::group(['prefix' => '@admin'], function () {
 //   Voyager::routes();
 });
 
+Route::post('send-code','PanelController@postDashboard')->name('SendCode');
 
 Route::group(['prefix' => 'admin'], function () {
 

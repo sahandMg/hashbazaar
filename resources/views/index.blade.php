@@ -176,7 +176,8 @@
 
         // When the user clicks on the button, open the modal
         btn.onclick = function() {
-            modal.style.display = "block";
+            // modal.style.display = "block";
+            window.location.href='http://hashbazaar.com/signup';
         }
 
         // When the user clicks on <span> (x), close the modal

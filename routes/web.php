@@ -85,9 +85,28 @@ Route::get('test',function (){
 
 Route::get('test2',function(){
 
-    sleep(10);
+    $fields = array(
+        'amount' => '100',
+        'email' => 'sahand.mg.ne@gmail.com',
+        'phone' => '021321',
+        'pin' => '7DC84A8791E676C3DD7C',
+        'description' => 'https://ssaa.com',
+        'callback' => 'dadsda',
+        'bank'=>'novin',
+        'ip'=> '192.168.1.9'
+    );
+    $fields2 = json_encode($fields);
+    $url = 'https://paystar.ir/api/create';
+    $ch = curl_init();
+    curl_setopt($ch,CURLOPT_URL, $url);
+    curl_setopt($ch,CURLOPT_POSTFIELDS, $fields);
+    curl_setopt($ch,CURLOPT_POST, count($fields));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $result = curl_exec($ch);
+    curl_close($ch);
+    header('Location: https://paystar.ir/api/create/'.$fields2);
 
-    return 200;
+    return $result;
 });
 
 Route::get('/','PageController@index')->name('index');

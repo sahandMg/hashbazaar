@@ -76,7 +76,7 @@
         (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";
             s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
 
-<<<<<<< HEAD
+
         $(document).ready(function(){
              $('.navigation-menu').click(function(){
                 console.log("navigation");
@@ -85,15 +85,15 @@
                 $('.signup').show();
                 $('.navigation-menu').toggleClass('change');
             });
-=======
-            $(document).ready(function(){
-                $('.navigation-menu').click(function(){
-                $('.navigation-menu').toggleClass('change');
-                $('#header-navbar-menu').toggle(9990000000000000000)
-                // $('.login').show();
-                // $('.signup').show();
-                })
->>>>>>> 4c811e96f02beeb4f68fea3049c26e3609df7fd5
+
+//            $(document).ready(function(){
+//                $('.navigation-menu').click(function(){
+//                $('.navigation-menu').toggleClass('change');
+//                $('#header-navbar-menu').toggle(9990000000000000000)
+//                // $('.login').show();
+//                // $('.signup').show();
+//                })
+
         });
      </script>
 

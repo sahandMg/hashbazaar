@@ -502,7 +502,7 @@ form.contact-page p:nth-of-type(1) {
     }
 
     #contact-footer-image {
-        width: 100px;
+        width: 130px;
         height: 50px;
         margin: 0 auto
     }
@@ -1187,7 +1187,7 @@ header {
     }
 
     #referral-footer-image {
-        width: 100px;
+        width: 130px;
         height: 50px;
         margin: 0 auto
     }
@@ -1541,7 +1541,7 @@ header {
  {
      margin-top: 30px;
      width: 100%;
-     height: 300px;
+     height: 100px !important;
      float:left;
  }
 
@@ -1567,7 +1567,7 @@ header {
     width: 30.4%;
     font-size: 24px;
     margin-left: -2% !important;
-    height: 70px;
+    height: 40px;
     color: #2e2d2d;
 }
 
@@ -1576,13 +1576,39 @@ header {
     font-weight: normal !important;
     width: 150px;
     margin-left: 0% !important;
-    margin-top: 10px;
-     width: 26.4%;
-     font-size: 20px;
+    margin-top: 00px;
+    width: 30.2%;
+    font-size: 20px;
     height: 70px;
     color: #2e2d2d;
 }
+#Transactions-list tr td:nth-of-type(3) {
+    margin-top: -5px;
+}
 
+.tooltip {
+    position: relative;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: auto;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    margin-top: 20px;
+    margin-left: -50%
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
 .activity-hr-footer
 {
     margin-top: 90px;
@@ -1593,9 +1619,10 @@ header {
 
 .activity-footer-div {
     width: 70%;
-    margin-left: 0%;
+    margin-left: 2%;
     margin-top: -320px !important;
     height: 100;
+    padding-bottom: 2%
 }
 
 #activity-footer-image {
@@ -1607,7 +1634,7 @@ header {
     font-size: 20px;
     font-family: sans-serif;
     top: -20px;
-    margin-left: 7%
+    margin-left: 47% !important
 }
 
 /* Activity-Media-1280 */
@@ -1723,7 +1750,7 @@ header {
        width: 29.6%;
        font-size: 24px;
        margin-left: -2% !important;
-       height: 70px;
+       height: 40px;
        color: #2e2d2d;
    }
    
@@ -1735,13 +1762,13 @@ header {
        margin-top: 10px;
         width: 26.4%;
         font-size: 20px;
-       height: 70px;
+       height: 40px;
        color: #2e2d2d;
    }
 
    /* Footer */
    .activity-hr-footer {
-       top: 230px;
+       top: 0px;
        margin-left: -768px
    }
    .activity-footer-div {
@@ -1750,6 +1777,7 @@ header {
 
    .activity-footer-paragraph {
        margin-left: 32%;
+       width: 400px
    }
 }
 
@@ -1887,7 +1915,6 @@ header {
        width: 29.7%;
        font-size: 24px;
        margin-left: 0% !important;
-       height: 70px;
        color: #2e2d2d;
    }
 
@@ -1899,15 +1926,14 @@ header {
        margin-top: 10px;
        width: 28%;
        font-size: 20px;
-       height: 70px;
        color: #2e2d2d;
    }
 
    .activity-hr-footer
    {
-       top: 200px !important;
+       top:100px !important;
        width: 100%;
-       margin-left: -597px;
+       margin-left: 0px;
        left: 0
    }
 
@@ -1916,20 +1942,23 @@ header {
    .activity-footer-div {
        width: 100%;
        margin-left: 0%;
-       margin-top:-300px !important;
+       margin-top:-200px !important;
        display: block
    }
 
    #activity-footer-image {
         width: 200px;
         height: 60px;
-        margin-top: 50px
+        margin-top: 30px;
+        padding-left: 2%
+
    }
 
    .activity-footer-paragraph {
        font-size: 20px;
        font-family: sans-serif;
-       margin-left: 210px
+       margin-left: 210px !important;
+       padding-top: 40px
    }
 
 }
@@ -2018,7 +2047,10 @@ header {
         margin-left: 30px;
         font-size: 22px;
     }
-
+    #activity-page .purchases {
+        height: 2px !important;
+        margin-bottom: 0 
+    }
     #activity-page .purchases q {
         height: 20px;
         font-size: 18px;
@@ -2026,12 +2058,14 @@ header {
     }
    
     #activity-page .Transactions {
-        width: 380px !important
+        width: 380px !important;
+        height: 10px;
+        margin-top: 1px
     }
     #activity-page .Transactions q {
         height: 18px;
         font-size: 18px;
-        margin-left: 100px;
+        margin-left: 140px;
     }
     #Transactions-list
     {
@@ -2062,7 +2096,6 @@ header {
         width: 29%;
         font-size: 18px;
         margin-left: 0% !important;
-        height: 70px;
         color: #2e2d2d;
     }
 
@@ -2074,13 +2107,14 @@ header {
         margin-top: 10px;
         width: 28%;
         font-size: 13px;
-        height: 70px;
         color: #2e2d2d;
     }
 
     .activity-hr-footer
     {
-        margin-left: -397px;
+        margin-left: 0px !important;
+        width: 412px;
+        margin-top: 0
     }
 
     /* Footer */
@@ -2090,22 +2124,26 @@ header {
     }
     .activity-footer-div {
         width: 100%;
-        margin-left: 0%;
+        margin-left: 0% ;
         top: 000px !important;
-        margin-top: -100px !important;
+        margin-top:-20px !important;
     }
 
     #activity-footer-image {
-        width: 100px;
+        width: 130px;
         height: 50px;
-        margin: 0 auto
+        margin: 0 auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 2%
     }
 
     .activity-footer-paragraph {
         font-size: 15px;
         font-family: sans-serif;
-        margin-top: -120px;
-        margin-left: 60px
+        /* margin-top: -120px; */
+        margin-left: 60px !important;
+        width: 270px
     }
 
     .useraccount {margin-left: 78% !important}
@@ -2249,7 +2287,6 @@ header {
         width: 28.8%;
         font-size: 16px;
         margin-left: 0% !important;
-        height: 70px;
         color: #2e2d2d;
     }
 
@@ -2261,14 +2298,14 @@ header {
         margin-top: 10px !important;
         width: 29%;
         font-size: 13px;
-        height: 70px;
         color: #2e2d2d;
     }
 
     .activity-hr-footer
     {
-        margin-left: -160;
-        top: 190px !important
+        margin-left: 0 !important;
+        top: 0px !important;
+        width: 100%;
     }
 
     /* Footer */
@@ -2276,19 +2313,23 @@ header {
     .activity-footer-div {
        width: 100%;
        margin-left: 0%;
-       margin-top: -130px !important
+       margin-top: -110px !important
     }
 
     #activity-footer-image {
-        width: 100px;
-        height: 50px;
-        margin: 0 auto
+        width: 120px;
+        height: 40px;
+       padding-bottom: 10px;
+       margin: 0 auto;
+       padding-left: 2%
     }
 
     .activity-footer-paragraph {
        font-size: 15px;
        font-family: sans-serif;
-       margin-left: 20px
+       margin-left: 20px;
+       padding-top: 30px;
+       padding-bottom: 10px;
     }
 }
 
@@ -2358,6 +2399,10 @@ header {
         top: 0px
     }
 
+      .purchases {
+        height: 3px
+    }
+   
     #activity-page .Transactions {
         width: 310px !important
     }
@@ -2365,7 +2410,7 @@ header {
     {
         margin-top: 30px;
         width: 100%;
-        height: 300px;
+        height: 000px;
         float:left;
     }
 
@@ -2391,7 +2436,6 @@ header {
         width: 28.6%;
         font-size: 14px;
         margin-left: 0% !important;
-        height: 70px;
         color: #2e2d2d;
     }
 
@@ -2401,9 +2445,8 @@ header {
         width: 150px;
         margin-left: 0% !important;
         margin-top: 10px !important;
-        width: 27%;
+        width: 35%;
         font-size: 12px;
-        height: 70px;
         color: #2e2d2d;
     }
    
@@ -2411,23 +2454,23 @@ header {
      .activity-hr-footer
      {
          margin-left: 0;
-         top: -70px !important
+         top: 0px !important;
+         width: 100%;
      }
      .activity-footer-div {
         width: 100%;
         margin-left: 0%;
-        margin-top: -160px !important
+        margin-top: -120px !important
      }
-    .footer-paragraph {
+    .activity-footer-paragraph {
         font-size: 12px;
         font-family: sans-serif;
-        top: -60px;
-        margin-left: 0px;
-        width: 200px
+        width: 260px;
+        margin-left: 0
     }
     #activity-footer-image  {
-        width: 100px;
-        height: 50px;
+        width: 90px;
+        height: 35px;
         margin: 0 auto
     }
 
@@ -2754,6 +2797,50 @@ body {
     cursor: pointer;
 }
 
+.rfrcode {
+    color: black;
+    font-weight: bolder;
+    font-size: 1.2em;
+    margin-top: 10px;
+    padding-top: 10px !important
+}
+.aplybtntext {
+    display: inline-block !important;
+    padding: 5px;
+    border: transparent;
+    margin-top: 10px;
+    border-bottom: 1px solid black !important;
+}
+.aplybtn {
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .275rem 1rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    color: #212529;
+    background-color: #42dca3;
+    border-color: #42dca3;
+    font-family: Cabin,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    text-transform: uppercase;
+    border-radius: 0;
+    border-radius: 100px 100px 100px 100px;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 10px
+}
+
 /*============================================== Mining History ===================================*/
 
     #dashboard-page #dashboard-title3 {
@@ -2812,12 +2899,12 @@ body {
     }
     .dashboard-hr-footer
     {
-        margin-top: 70px
+        margin-top: 170px !important
     }
 
 /* ============================================Footer======================================= */
     #footer-div {
-        margin-top: 60px !important;
+        margin-top: 00px !important;
         display: block
     }
     .dashboard-footer-div {
@@ -2829,12 +2916,13 @@ body {
     #dashboard-footer-image {
         width: 250px;
         height: 60px;
+        padding-bottom: 1%
     }
 
     .dashboard-footer-paragraph {
         font-size: 20px;
         font-family: sans-serif;
-        margin-left: 40%
+        margin-left: 35%
     }
 
 
@@ -2848,12 +2936,18 @@ body {
         margin-left: 4%;
         margin-top: -43% !important
     }
+
+    .dashboard-footer-div {
+        width: 70%;
+        margin-left: 31%;
+        margin-top: -370px;
+    }
 }
 
 /* Dashboard-Media-1024 */
 @media screen and (max-width:1024px){
     /* ---------------=====Media====-------------Main Container--------------------------- */
-
+    
     div ul .navbar #welcome {
         font-size: 17px;
         left: 70px;
@@ -2932,7 +3026,8 @@ body {
     }
     .dashboard-hr-footer
     {
-        margin-top: 100px !important
+        margin-top: 100px !important;
+        margin-left: -13px
     }
     /* ==================================================HASH History============================== */
 
@@ -3038,7 +3133,7 @@ body {
     /*========================================= Footer============================== */
     .dashboard-hr-footer {
         top: 0;
-        margin-top: 28%
+        margin-top: 30%
     }
     .dashboard-footer-div {
         width: 70%;
@@ -3167,10 +3262,10 @@ body {
         font-weight: normal !important;
         width: 150px;
         margin-top: 10px;
-        width: 28.9%;
+        width: 29.2%;
         font-size: 24px;
         margin-left: 0% !important;
-        height: 70px;
+        height: 40px;
         color: #2e2d2d;
     }
 
@@ -3229,7 +3324,7 @@ body {
 
     .dashboard-hr-footer
     {
-        margin-top:100px !important;
+        margin-top:170px !important;
         width: 100%;
         margin-left: 0;
         left: 0 !important;
@@ -3244,8 +3339,8 @@ body {
     }
     .dashboard-footer-div {
         width: 70%;
-        margin-left: 0% !important;
-        margin-top: -440px;
+        margin-left: 2% !important;
+        margin-top: -420px;
         border-bottom: transparent
     }
 
@@ -3375,7 +3470,7 @@ body {
     {
         margin-top: 30px;
         width: 100%;
-        height: 300px;
+        height: 150px;
         float:left;
     }
 
@@ -3401,7 +3496,7 @@ body {
         width: 5%;
         font-size: 18px;
         margin-left: 0% !important;
-        height: 70px;
+        height: 40px;
         color: #2e2d2d;
     }
 
@@ -3413,10 +3508,13 @@ body {
         margin-top: 10px;
         width: 27%;
         font-size: 13px;
-        height: 70px;
+        height: 40px;
         color: #2e2d2d;
     }
 
+    #Hash-History-list tr td:nth-of-type(2) ,  #Hash-History-list tr th:nth-of-type(2)  {
+        display: none
+    }
     #Hash-History-list .remain {
 
         width: 100px !important;
@@ -3507,7 +3605,7 @@ body {
     }
 
     #dashboard-footer-image {
-        width: 100px;
+        width: 130px;
         height: 50px;
         margin: 0 auto
     }
@@ -3742,8 +3840,9 @@ body {
     }
 
     #dashboard-footer-image {
-        width: 100px;
-        height: 50px;
+        width: 120px;
+        height: 40px;
+        padding-bottom: 10px;
         margin: 0 auto
     }
 
@@ -3753,7 +3852,10 @@ body {
         /* position: absolute; */
         top: -60px;
         margin-left: 40px;
-        width: 280px
+        width: 280px;
+        padding-top: 10px;
+        padding-bottom: 20px
+
     }
 
 
@@ -3850,12 +3952,11 @@ body {
 
     #Hash-History-list tr th  {
         font-weight: normal !important;
-        width: 150px;
         margin-top: 10px;
-        width: 5%;
+        width: 41%;
         font-size: 14px;
-        margin-left: 0% !important;
-        height: 70px;
+        margin-left: 10% !important;
+        height: 40px;
         color: #2e2d2d;
     }
 
@@ -3865,7 +3966,7 @@ body {
         width: 150px;
         margin-left: 0% !important;
         margin-top: 10px !important;
-        width: 27%;
+        width: 37.5%;
         font-size: 12px;
         height: 70px;
         color: #2e2d2d;
@@ -3873,11 +3974,18 @@ body {
    
 
     #Hash-History-list .remain {
-        width: 50px !important;
+        width: 70px !important;
         border: 1px solid ;
-        font-size: 12px
+        font-size: 12px;
+        height: 15px
     }
-
+    #Hash-History-list .remain .progress-bar{
+        height: 15px
+    }
+    #Hash-History-list .remain .progress-bar .title{
+        text-align: center;
+        padding-top: 5%;
+    }
     /* ==============================================Buy hash power=================================== */
 
     #dashboard-page #dashboard-title2 {
@@ -3950,9 +4058,10 @@ body {
     }
 
     #dashboard-footer-image {
-        width: 100px;
-        height: 50px;
-        margin: 0 auto
+        width: 90px;
+        height: 35px;
+        margin: 0 auto;
+        padding-left: 1%
     }
 
     .dashboard-footer-paragraph {
@@ -3960,7 +4069,8 @@ body {
         font-family: sans-serif;
         top: -60px;
         margin-left:20px;
-        width: 280px
+        width: 280px;
+        padding-top: 20px
     }
 
 }

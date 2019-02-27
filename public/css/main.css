@@ -60,7 +60,12 @@
     border-bottom: transparent !important;
     position: relative;
     top: 20px;
-    margin-left: 320px
+    margin-left: 0px
+}
+#logouticon a {
+    text-decoration: none;
+    color: orange;
+
 }
 #logouticon:hover {
     height:100% !important;
@@ -71,7 +76,7 @@
     background-color: transparent !important
 }
 
-#logouticon:before{
+#logouticon a:before{
     content: '';
     display: block;
     width: 25px;
@@ -79,7 +84,7 @@
     background-image: url("../img/sign-out-alt-solid.svg");
     background-size: 100% 100%;
     position: absolute;
-    left: 1.5vh !important;
+    left: -6.5vh !important;
     top: 0vh !important;
 }
 #logouticon:hover:before {background-color: transparent;
@@ -760,7 +765,8 @@ color: orange !important}
         height: 370px;
         left: 30px;
         position: absolute;
-        top: -170px;
+        top: -160px;
+
     }
 
     div ul .navbar #welcome {
@@ -821,11 +827,12 @@ color: orange !important}
         left: -55px;
     }
 
-    #logouticon2:before{
+    #logouticon a:before{
         content: "";
         width: 30px;
         height: 30px;
-        left: -55px;
+        left: -40px !important;
+        margin-top: -7px
     }
         
     .setting-information input#submit
@@ -1332,7 +1339,7 @@ color: orange !important}
         z-index: 100;
     }
 
-    #logouticon:before{
+    #logouticon a:before{
         content: '';
         display: block;
         width: 25px;
@@ -1344,7 +1351,7 @@ color: orange !important}
         top: 0vh !important;
     }
     #logouticon {
-        margin-left: 165px
+        margin-left: 0px
     }
     .hr-footer {
         top: 800px
@@ -1418,7 +1425,9 @@ color: orange !important}
         margin-top: 4%;
         margin-left: 0
     }
-    .setting-information input::placeholder { font-size: 15px}
+    .setting-information input::placeholder { font-size: 15px};
+    .setting-information input::-ms-value { font-size: 13px};
+
 
      /* Wallet */
      .wallet1 p {
@@ -1528,15 +1537,16 @@ color: orange !important}
     }
 
     #setting-footer-image {
-        width: 150px;
-        height: 75px;
+        width: 125px;
+        height: 50px;
     }
 
     .setting-footer-paragraph {
-        font-size: 15px;
+        font-size: 13px;
         font-family: sans-serif;
         top: 0px;
-        width: 260px
+        width: 280px;
+        margin-left: 20%
     }
 
 }
@@ -1624,8 +1634,8 @@ color: orange !important}
         top: 0px;
         z-index: 100;
     }
-    #logouticon {margin-left:150px}
-    #logouticon:before {
+    #logouticon {margin-left:0px}
+    #logouticon a:before {
         left:-40px
     }
     #setting-hr-footer {
@@ -1680,15 +1690,17 @@ color: orange !important}
         margin-top: 100px
     }
 
-    .setting-footer-paragraph {
-        font-size:13px;
-        top: -60px;
-        margin-left: 5%
+    #setting-footer-image {
+        width: 125px;
+        height: 50px;
     }
 
-    #setting-footer-image {
-        width: 150px;
-        height: 100px;
+    .setting-footer-paragraph {
+        font-size: 13px;
+        font-family: sans-serif;
+        top: 0px;
+        width: 280px;
+        margin-left: 20%
     }
 }
 
@@ -1718,9 +1730,9 @@ color: orange !important}
     .useraccount .list ul li a {
         margin-left:130px !important
     }  
-    #logouticon {margin-left: 130px}
+    #logouticon {margin-left: 0px}
 
-    #logouticon:before {left:-22px}
+    #logouticon a:before {left:-22px}
     #dashboard:before {
         content: "";
         background-image: url("img/Dashboard.svg");
@@ -1885,18 +1897,18 @@ color: orange !important}
     }
 
 
+    #setting-footer-image {
+        width: 100px;
+        height: 40px;
+    }
+
     .setting-footer-paragraph {
         font-size: 12px;
         font-family: sans-serif;
-        top: -60px;
-        margin-left: 10%
-        
+        top: 0px;
+        width: 280px;
+        margin-left: 13%
     }
-
-    #setting-footer-image {
-        width: 100px !important;
-        height: 100px;
-    }      
 
 }
 

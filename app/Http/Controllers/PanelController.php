@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\BitHash;
 use App\Events\Contact;
+use App\ExpiredCode;
 use App\Message;
 use App\Mining;
 use App\MiningReport;
 use App\Referral;
+use App\ReferralCode;
 use App\Sharing;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
@@ -27,7 +29,8 @@ class PanelController extends Controller
     }
 
     public function dashboard(){
-     
+
+
 
         $hashes = BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->get();
         return view('panel.dashboard',compact('hashes'));
@@ -105,6 +108,13 @@ class PanelController extends Controller
 
         $code = $request->referralCode;
         $referralUser = DB::table('users')->where('code',$code)->where('id','!=',Auth::id())->first();
+        $is_expired = DB::table('expired_codes')->where('code',$code)->first();
+        // check if the code is used before
+        if(!is_null($is_expired)){
+
+            return redirect()->back()->with(['error'=>'Expired code entered']);
+        }
+        // check code validation
         if(is_null($referralUser)){
 
             return redirect()->back()->with(['error'=>'Code is not valid']);
@@ -117,21 +127,39 @@ class PanelController extends Controller
          */
         else{
             $referralUser = Referral::where('code',$code)->where('id','!=',Auth::id())->first();
-            $sharings = Sharing::all()->pluck('sharing_number')->toArray();
-            dd($sharings);
+            $sharings = Sharing::all()->toArray();
+//            dd($sharings[0]);
+            $expireCode = new ExpiredCode();
+            $expireCode->user_id = Auth::guard('user')->id();
+            $expireCode->code = $code;
+            $expireCode->save();
             $referralUser->update([
                 'total_sharing_num' => $referralUser->total_sharing_num + 1
             ]);
             $referralUser->save();
             $total_sharing_num = $referralUser->total_sharing_num;
 
-            if($total_sharing_num < $sharings[0] ){
+            for($i=0 ; $i<count($sharings); $i++){
 
-            }elseif( $sharings[0] <= $total_sharing_num && $total_sharing_num < $sharings[1]){
+                if($sharings[$i]['sharing_number'] <= $total_sharing_num ){
 
-            }elseif( $sharings[1] <= $total_sharing_num && $total_sharing_num < $sharings[2]){
+                    $referralUser->update([
+                        'share_level' => $sharings[$i]['level']
+                    ]);
+                    $referralUser->save();
+                }
 
-            }elseif( $sharings[2] >= $total_sharing_num){}
+
+
+//                elseif( $sharings[0] <= $total_sharing_num && $total_sharing_num < $sharings[1]){
+//
+//                }elseif( $sharings[1] <= $total_sharing_num && $total_sharing_num < $sharings[2]){
+//
+//                }elseif( $sharings[2] >= $total_sharing_num){}
+            }
+
+            return redirect()->back();
+
         }
     }
 

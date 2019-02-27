@@ -44,7 +44,7 @@
                 <li class="user-account-list sub2"> <a href="{{route('referral')}}" id="referral2">Referral</a> </li>
                 <li class="user-account-list sub2"> <a href="{{route('setting')}}" id="setting2">Setting</a></li>
                 <li class="user-account-list sub2"> <a href="{{route('contact')}}" id="contact2">Contact</a></li>
-                <li class="user-account-list" id="logouticon">Log Out</li>
+                <li class="user-account-list" id="logouticon"><a href="{{route('logout')}}">Log Out</a></li>
 
             </ul>
         </div>

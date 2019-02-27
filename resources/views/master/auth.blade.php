@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
-    <title>Log In/Sign Up</title>
 
-=======
     @yield('title')
->>>>>>> fcda7203e999c4e2ac752195a878dbe8d366e0d6
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->

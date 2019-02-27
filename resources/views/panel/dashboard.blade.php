@@ -37,7 +37,7 @@
             </div> 
             <!-- Hash History -->
             
-             <hr class="dashboard-hr1">
+            <hr class="dashboard-hr1">
             <p id="dashboard-title">Hash History</p>
             <hr class="dashboard-hr2-2"> 
 
@@ -175,7 +175,7 @@
 
 
             <!--   Buy hash power -->
-             <hr  class="dashboard-hr11">
+            <hr  class="dashboard-hr11">
             <p id="dashboard-title2">Buy Hash Power</p>
             <hr class="dashboard-hr22-2">
             <h5 id="demo"></h5>
@@ -201,13 +201,21 @@
                       <p>Income : At this time We predict {{$settings->bitcoin_income_per_month_per_th}} BTC/month for every Th.</p>
                       <small>(Changes may happen depends on bitcoin price and bitcoin network difficulty changes.)</small>
                     </div>
-
+                    <span class="rfrcode">Referral Code:</span>
+                    <form style="padding: 20px;" method="POST" action="{{route('dashboard')}}">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                       <input type="text" name="referralCode" style="margin-top:5px" class="aplybtntext">
+      
+                          <button type="submit" class="btn btn-primary aplybtn"> Apply </button>
+      
+                         </form>
                     <button class="pandel-button" type="submit">Order</button>
                  </form>
                 @else
                   <p> TH Not Available !</p>
                 @endif
             </div> 
+
 
 
              <form style="padding: 20px;" method="POST" action="{{route('dashboard')}}">
@@ -217,6 +225,7 @@
                     <button type="submit" class="btn btn-primary"> Apply </button>
 
                    </form>
+
 
 
             <!-- Mining History -->
@@ -414,9 +423,9 @@
                         $('.list').toggle(500);
                     });
                     
-                    var numItems = $('.Hash-History_column').length;
-                    // alert($('.Hash-History_column').length);
-                    if( numItems > 10)
+                    var numItems = $('#Hash-History-list tr').length;
+                    alert($('#Hash-History-list tr').length);
+                    if( numItems > 2)
                         $('#Hash-History-list').css('overflow-y' , "scroll");
                     
                     else 

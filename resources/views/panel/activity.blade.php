@@ -77,7 +77,7 @@ foreach ($hashes as $key=> $hash){
                             
                                 <div class="remain">
                                     <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%;width: {{$remainedLife[$key]}}%;">
                                             <span class="title">{{$remainedLife[$key]}}%</span>
 
                                         </div>
@@ -142,7 +142,7 @@ foreach ($hashes as $key=> $hash){
                         </td>
 
                         <td class="tooltip"> 
-                            778dsadDSAB...
+                            778dsad...
                             
                             <span class="tooltiptext">778dsadDSAB Hhbjbdsa89dsax</span>
 
@@ -203,4 +203,9 @@ foreach ($hashes as $key=> $hash){
 
     })
     // =---------------------------------------</script>
+    <style type="text/css">
+        .progress-bar .title {
+          opacity: 1;
+        }
+      </style>
 @endsection

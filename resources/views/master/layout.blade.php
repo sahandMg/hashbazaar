@@ -70,22 +70,35 @@
 </header>
 @yield('content')
 
+@if(Auth::guard('user')->check())
+ <style>
+     #header-navbar-menu {
+         height: 390px
+     }
 
+     @media screen and (max-width:420px){
+        #header-navbar-menu {
+         height: 300px;
+         border-bottom-left-radius: 5%;
+         border-bottom-right-radius: 5%
+
+        }
+     }
+     @media screen and (max-width:375px){
+        #header-navbar-menu {
+         height: 300px !important;
+         border-bottom-left-radius: 5%;
+         border-bottom-right-radius: 5%
+
+        }
+     }
+ </style>
+@endif
     <script type="text/javascript">
           window.$crisp=[];window.CRISP_WEBSITE_ID="792f282f-edde-46b8-8b02-d38ca5cb92c2";
         (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";
             s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
 
-<<<<<<< HEAD
-        $(document).ready(function(){
-             $('.navigation-menu').click(function(){
-                console.log("navigation");
-                $('#header-navbar-menu').toggle();
-                $('.login').show();
-                $('.signup').show();
-                $('.navigation-menu').toggleClass('change');
-            });
-=======
             $(document).ready(function(){
                 $('.navigation-menu').click(function(){
                 $('.navigation-menu').toggleClass('change');
@@ -93,7 +106,6 @@
                 // $('.login').show();
                 // $('.signup').show();
                 })
->>>>>>> 4c811e96f02beeb4f68fea3049c26e3609df7fd5
         });
      </script>
 

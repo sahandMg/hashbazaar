@@ -115,8 +115,145 @@
 
                     </tr>
                     
-                    
+                    {{--  --}}
+                    <tr>
 
+                            <td>
+                                @foreach($hashes as $hash)
+                                    <span>{{$hash->hash}}TH/S</span>
+                                @endforeach
+                                    
+                            </td>
+    
+                            <td>
+                                @foreach($hashes as $hash)
+                                
+                                    <span>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}}    </span> 
+                                    @endforeach
+    
+                            </td>
+    
+                            <td> 
+                                    @foreach($hashes as $hash)
+    
+                                    <span>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}   </span>
+                                    @endforeach
+    
+                            </td>
+    
+                            <td>
+                                @foreach($hashes as $key => $hash)
+                                    
+    
+                                    
+                                        <div class="remain">
+                                            <div class="progress">
+                                                <div class="progress-bar" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%">
+                                                    <span class="title">{{$remainedLife[$key]}}%</span>
+    
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                    
+                                        @endforeach
+    
+                                    
+                            </td>
+    
+                        </tr> <tr>
+
+                                <td>
+                                    @foreach($hashes as $hash)
+                                        <span>{{$hash->hash}}TH/S</span>
+                                    @endforeach
+                                        
+                                </td>
+        
+                                <td>
+                                    @foreach($hashes as $hash)
+                                    
+                                        <span>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}}    </span> 
+                                        @endforeach
+        
+                                </td>
+        
+                                <td> 
+                                        @foreach($hashes as $hash)
+        
+                                        <span>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}   </span>
+                                        @endforeach
+        
+                                </td>
+        
+                                <td>
+                                    @foreach($hashes as $key => $hash)
+                                        
+        
+                                        
+                                            <div class="remain">
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%">
+                                                        <span class="title">{{$remainedLife[$key]}}%</span>
+        
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                        
+                                            @endforeach
+        
+                                        
+                                </td>
+        
+                            </tr>
+                            <tr>
+
+                                    <td>
+                                        @foreach($hashes as $hash)
+                                            <span>{{$hash->hash}}TH/S</span>
+                                        @endforeach
+                                            
+                                    </td>
+            
+                                    <td>
+                                        @foreach($hashes as $hash)
+                                        
+                                            <span>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}}    </span> 
+                                            @endforeach
+            
+                                    </td>
+            
+                                    <td> 
+                                            @foreach($hashes as $hash)
+            
+                                            <span>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}   </span>
+                                            @endforeach
+            
+                                    </td>
+            
+                                    <td>
+                                        @foreach($hashes as $key => $hash)
+                                            
+            
+                                            
+                                                <div class="remain">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%">
+                                                            <span class="title">{{$remainedLife[$key]}}%</span>
+            
+                                                        </div>
+                                                    </div>
+                                                </div>
+            
+                                            
+                                                @endforeach
+            
+                                            
+                                    </td>
+            
+                                </tr>
+{{--  --}}
                     @else
                         <p id="no-hash"> NO Hash History</p>
                     @endif
@@ -406,12 +543,18 @@
                     });
                     
                     var numItems = $('#Hash-History-list tr').length;
-                    alert($('#Hash-History-list tr').length);
-                    if( numItems > 2)
-                        $('#Hash-History-list').css('overflow-y' , "scroll");
+                    // alert($('#Hash-History-list tr').length);
+                    console.log($('#Hash-History-list tr').length)
                     
-                    else 
-                        $('#Hash-History-list').css('overflow-y' , "hidden");
+                    if( numItems > 3)
+                    {
+                        $('.Hash-History').css('overflow-y' , "scroll");
+                    console.log("numItems > 3");
+                    } else {
+                        $('.Hash-History').css('overflow-y' , "hidden");
+                    console.log("numItems < 3");
+                        
+                    }
                     
                 });
 

@@ -154,7 +154,6 @@ foreach ($hashes as $key=> $hash){
 
                     </tr>
          
-                    
                  
                         <!-- <p id="no-hash"> NO Hash History</p> -->
                    
@@ -190,24 +189,17 @@ foreach ($hashes as $key=> $hash){
             $('.list').toggle(500);
         })
     
-                    var activitySecondListNumItems = $('.activity-page_secondList_column').length;
-                    if( activitySecondListNumItems > 8){
-                        $('#activity-page_secondList').css('overflow-y' , "scroll")
-                    }
-                    else {
-                        $('#activity-page_secondList').css('overflow-y' , "hidden")
-
-                    }
-
-
-                    var activityThirdListNumItems = $('.activity-page_thirdList_column').length;
-                    if( activityThirdListNumItems > 8){
+                    var activitySecondListNumItems = $('#Transactions-list tr').length;
+                    if( activitySecondListNumItems > 3){
                         $('#activity-page_thirdList').css('overflow-y' , "scroll")
                     }
                     else {
                         $('#activity-page_thirdList').css('overflow-y' , "hidden")
 
                     }
+
+
+                  
 
     })
     // =---------------------------------------</script>

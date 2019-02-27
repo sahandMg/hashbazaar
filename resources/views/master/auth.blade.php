@@ -45,7 +45,7 @@
     <div class="header-navbar">
         <div id="header-navbar-logo">
             <ul>
-                <li class="navbar-list big"><img class="navbar-small-logo" src="{{asset('img/Logo_header.svg')}}" alt="Logo">
+                <li class="navbar-list big"><a href="http://hashbazaar.com"><img class="navbar-small-logo" src="{{asset('img/Logo_header.svg')}}" alt="Logo"></a>
             </ul>
         </div>
         <div id="header-navbar-menu">

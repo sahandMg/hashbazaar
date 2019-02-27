@@ -30,7 +30,7 @@
 
         <div class="wallet1">
 
-            <p>Still Don’t Have a Bitcoin Wallet? Click <a href="https://bitcoin.org/en/getting-started"
+            <p>Still Don’t Have a Bitcoin Wallet? Click <a href="https://www.blockchain.com/" target="_blank"
                 style="color:orange;text-decoration: none;font-weight: bold;">Hear</a> To Make One!
                 </p>
 

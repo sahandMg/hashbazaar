@@ -12,9 +12,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
     <link rel="stylesheet" href="../fonts/font-awesome.min.css">
     <!-- <link rel="stylesheet" href="{{URL::asset('css/theme.css')}}"> -->
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon"/>
         @yield('title')
-    {{--<link rel="icon" href="img/TabLogo.png">--}}
     <script src="{{URL::asset('js/jquery-3.3.1.js')}}"></script>
     <script  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>

@@ -115,8 +115,7 @@
 
                     </tr>
                     
-                    
-
+       
                     @else
                         <p id="no-hash"> NO Hash History</p>
                     @endif
@@ -413,12 +412,24 @@
                     });
                     
                     var numItems = $('#Hash-History-list tr').length;
+<<<<<<< HEAD
 
                     if( numItems > 2)
                         $('#Hash-History-list').css('overflow-y' , "scroll");
+=======
+                    // alert($('#Hash-History-list tr').length);
+                    console.log($('#Hash-History-list tr').length)
+>>>>>>> c97a717d5551498eb824c8c8289ae19d6af0e3d5
                     
-                    else 
-                        $('#Hash-History-list').css('overflow-y' , "hidden");
+                    if( numItems > 3)
+                    {
+                        $('.Hash-History').css('overflow-y' , "scroll");
+                    console.log("numItems > 3");
+                    } else {
+                        $('.Hash-History').css('overflow-y' , "hidden");
+                    console.log("numItems < 3");
+                        
+                    }
                     
                 });
 

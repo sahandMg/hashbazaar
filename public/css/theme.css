@@ -194,15 +194,7 @@ header img { height: 175px;margin-bottom: 4%; }
   #price {
     left: 0 !important;
   }
-
-  .network-flex {
-    margin-left: 37%  !important;
-
-  }
   
-.network-flex img {
-  margin: 0 20px auto;
-}
      
 }
 
@@ -324,10 +316,7 @@ header img { height: 175px;margin-bottom: 4%; }
      font-size: 15px;
    }
 
-   
-  .network-flex {
-    margin-left: 33% !important;
-  }
+  
 }
 
 @media only screen and (max-width: 576px) {
@@ -355,9 +344,7 @@ header img { height: 175px;margin-bottom: 4%; }
       margin-bottom: 25px;
     }
     
-  .network-flex {
-    margin-left: 27% !important;
-  }
+  
     
 }
 
@@ -394,9 +381,20 @@ header img { height: 175px;margin-bottom: 4%; }
       margin-left: -30px;
     }
 
-    .network-flex {
-      margin-left: 17.4% !important;
+    .navigation-menu {
+      right: 25px;
+      top: 26px;
     }
+    .header-navbar {
+      height: 80px;
+    }
+    .big img {
+      width: 180px;
+      height: 60px !important;
+      margin-left: 10px;
+    }
+
+    
     
 }
 
@@ -417,9 +415,6 @@ header img { height: 175px;margin-bottom: 4%; }
   }
 
   
-  .network-flex {
-    margin-left: 14% !important;
-  }
 
 }
 
@@ -430,7 +425,7 @@ header img { height: 175px;margin-bottom: 4%; }
   }
   .navigation-menu {
     right: 25px;
-    top: 36px;
+    top: 26px;
   }
   #header-navbar-menu {
     left: -0px;
@@ -458,9 +453,6 @@ header img { height: 175px;margin-bottom: 4%; }
    }
 
    
-  .network-flex {
-    margin-left: 8% !important;
-  }
 
 }
 /*color for selected text*/
@@ -629,37 +621,45 @@ header img { height: 175px;margin-bottom: 4%; }
   background: #43A047;
 }
 
-
-
-
-
 .network-flex {
-  width: 20%;
+  width: 100%;
   height: 10px;
   display: flex;
   display: -webkit-flex;
   display: -ms-flex;
   display: -o-flex;
+  list-style-type: none;
   flex: row;
   transition: all 1s;
-  margin: 0 auto;
+  margin:auto;
+  margin-bottom: 10px
+}
 
+.network-flex ul  {
+  margin: auto;
+  display: block;
+  list-style-type: none;
+  padding-top: 10px;
+}
+.network-flex ul li {
+  list-style-type: none;
+  margin: auto;
+  display: inline-block;
 }
 
 .network-flex img {
   flex: 1;
-  width: 50px;
+  width: auto;
   height: 50px;
   border-radius: 50%;
+  border:transparent;
   text-align: center;
-  margin: 0 20px auto;
+  margin: auto;
 }
-
 
 .network-flex #fb:hover {
   transform: translateY(-6px)
 }
-
 
 .network-flex #gp:hover {
   transform: translateY(-6px)
@@ -668,7 +668,6 @@ header img { height: 175px;margin-bottom: 4%; }
 .network-flex #twttr:hover {
   transform: translateY(-6px)
 }
-
 
 .network-flex #insta:hover {
   transform: translateY(-6px)

@@ -77,7 +77,7 @@ foreach ($hashes as $key=> $hash){
                             
                                 <div class="remain">
                                     <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%;width: {{$remainedLife[$key]}}%;">
                                             <span class="title">{{$remainedLife[$key]}}%</span>
 
                                         </div>
@@ -142,7 +142,7 @@ foreach ($hashes as $key=> $hash){
                         </td>
 
                         <td class="tooltip"> 
-                            778dsadDSAB...
+                            778dsad...
                             
                             <span class="tooltiptext">778dsadDSAB Hhbjbdsa89dsax</span>
 
@@ -154,7 +154,6 @@ foreach ($hashes as $key=> $hash){
 
                     </tr>
          
-                    
                  
                         <!-- <p id="no-hash"> NO Hash History</p> -->
                    
@@ -190,18 +189,8 @@ foreach ($hashes as $key=> $hash){
             $('.list').toggle(500);
         })
     
-                    var activitySecondListNumItems = $('.activity-page_secondList_column').length;
-                    if( activitySecondListNumItems > 8){
-                        $('#activity-page_secondList').css('overflow-y' , "scroll")
-                    }
-                    else {
-                        $('#activity-page_secondList').css('overflow-y' , "hidden")
-
-                    }
-
-
-                    var activityThirdListNumItems = $('.activity-page_thirdList_column').length;
-                    if( activityThirdListNumItems > 8){
+                    var activitySecondListNumItems = $('#Transactions-list tr').length;
+                    if( activitySecondListNumItems > 3){
                         $('#activity-page_thirdList').css('overflow-y' , "scroll")
                     }
                     else {
@@ -209,6 +198,14 @@ foreach ($hashes as $key=> $hash){
 
                     }
 
+
+                  
+
     })
     // =---------------------------------------</script>
+    <style type="text/css">
+        .progress-bar .title {
+          opacity: 1;
+        }
+      </style>
 @endsection

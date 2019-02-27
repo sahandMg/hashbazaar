@@ -134,18 +134,18 @@ foreach ($hashes as $key=> $hash){
                     <tr>
 
                         <td>
-                            
                             10 Sep 2018
-                                
                         </td>
 
                         <td>
-                            
-                              0.01  
+                            0.01  
                         </td>
 
-                        <td> 
-                            778dsadDSAB Hhbjbdsa89dsax
+                        <td class="tooltip"> 
+                            778dsadDSAB...
+                            
+                            <span class="tooltiptext">778dsadDSAB Hhbjbdsa89dsax</span>
+
                         </td>
 
                         <td>
@@ -163,10 +163,10 @@ foreach ($hashes as $key=> $hash){
                 </table>
 
 
-    <hr class="activity-hr-footer" style="position: relative;"> 
 
 
 </div> 
+<hr class="activity-hr-footer" style="position: relative;"> 
 
 
 <!-- Footer -->

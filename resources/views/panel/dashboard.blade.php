@@ -412,14 +412,14 @@
                     });
                     
                     var numItems = $('#Hash-History-list tr').length;
-<<<<<<< HEAD
+
 
                     if( numItems > 2)
                         $('#Hash-History-list').css('overflow-y' , "scroll");
-=======
+
                     // alert($('#Hash-History-list tr').length);
-                    console.log($('#Hash-History-list tr').length)
->>>>>>> c97a717d5551498eb824c8c8289ae19d6af0e3d5
+//                    console.log($('#Hash-History-list tr').length)
+
                     
                     if( numItems > 3)
                     {
@@ -442,27 +442,28 @@
                         console.log(response.data)
                     })
                 };
-                var activeDiscount = 0;
+                var activateDiscount = 0;
                 var thPrice = {!! $settings->usd_per_hash !!}
-                function sendCode() {
+                {{--function sendCode() {--}}
 
-                    var code = document.getElementById('referralCode').value;
+                    {{--var code = document.getElementById('referralCode').value;--}}
 
-                    axios.post('{{route('SendCode')}}',{referralCode:code}).then(function (response) {
+                    {{--axios.post('{{route('SendCode')}}',{referralCode:code}).then(function (response) {--}}
 
-                        var resp = response.data
-                        if(resp['type'] == 'error'){
-                            alert(resp['body'])
+                        {{--var resp = response.data--}}
+                        {{--if(resp['type'] == 'error'){--}}
+                            {{--alert(resp['body'])--}}
 
-                        }else{
+                        {{--}else{--}}
 
-                            alert(resp['body']);
+                            {{--alert(resp['body']);--}}
 
-                            thPrice = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!}
-                        }
+                            {{--thPrice = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!}--}}
+                            {{--activateDiscount = 1;--}}
+                        {{--}--}}
 
-                    });
-                }
+                    {{--});--}}
+                {{--}--}}
 
                  // =---------------------------------------
 
@@ -477,7 +478,6 @@
                         document.getElementById('miningBTC2').innerHTML = 0;
                         document.getElementById('miningDollar2').innerHTML = 0;
                     }else{
-
                     var miningBTC = response.data[0].toFixed(8);
                     var miningDollar = response.data[1].toFixed(8);
                     var userPendingBtc = {!! Auth::guard('user')->user()->pending !!};
@@ -506,7 +506,7 @@
                     slider.oninput = function() {
                             console.log("input change");
                         output.innerHTML = this.value+' Th';
-                        cost.innerHTML = slider.value * thPrice;
+                        cost.innerHTML = slider.value;
                         };
 
                     //    ==================================chart==============

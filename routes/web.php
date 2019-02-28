@@ -96,7 +96,7 @@ Route::get('test2',function(){
         'ip'=> '192.168.1.1'
     );
     $fields2 = json_encode($fields);
-    $url = 'https://paystar.ir/api/create';
+    $url = 'https://test.paystar.ir/api/create';
     $ch = curl_init();
     curl_setopt($ch,CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_POST, true);

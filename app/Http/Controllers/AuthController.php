@@ -109,7 +109,7 @@ class AuthController extends Controller
             $user->country = 'fr';
         }
 
-        $user->code = str_random(10);
+        $user->code = uniqid('hashBazaar_');
         $user->password = Hash::make($request->password);
         $user->reset_password = str_random(10);
         // $user->plan_id = DB::table('plans')->where('name',$request->plan)->first()->id;
@@ -117,6 +117,7 @@ class AuthController extends Controller
         $user->save();
 //        subscriptionMailJob::dispatch($user->email,$user->code);
         Auth::guard('user')->login($user);
+        event(new \App\Events\ReferralQuery(Auth::user()));
         $data = [
             'code'=> $user->code,
             'email'=>$user->email

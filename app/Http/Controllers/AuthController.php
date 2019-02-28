@@ -34,6 +34,8 @@ class AuthController extends Controller
         $user->password = Hash::make($request->password);
         $user->reset_password = str_random(10);
         $user->ip = Helpers::userIP();
+        $user->total_mining = 0;
+        $user->pending = 0;
         try{
 
             $user->country = strtolower(Location::get(Helpers::userIP())->countryCode);
@@ -102,6 +104,8 @@ class AuthController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->ip = Helpers::userIP();
+        $user->total_mining = 0;
+        $user->pending = 0;
         try{
 
             $user->country = strtolower(Location::get(Helpers::userIP())->countryCode);
@@ -109,7 +113,7 @@ class AuthController extends Controller
             $user->country = 'fr';
         }
 
-        $user->code = str_random(10);
+        $user->code = uniqid('hashBazaar_');
         $user->password = Hash::make($request->password);
         $user->reset_password = str_random(10);
         // $user->plan_id = DB::table('plans')->where('name',$request->plan)->first()->id;
@@ -117,6 +121,7 @@ class AuthController extends Controller
         $user->save();
 //        subscriptionMailJob::dispatch($user->email,$user->code);
         Auth::guard('user')->login($user);
+        event(new \App\Events\ReferralQuery(Auth::user()));
         $data = [
             'code'=> $user->code,
             'email'=>$user->email
@@ -213,6 +218,8 @@ class AuthController extends Controller
         $user->code = uniqid('hashBazaar_');
         $user->avatar = $client->avatar;
         $user->ip = Helpers::userIP();
+        $user->total_mining = 0;
+        $user->pending = 0;
         try{
 
             $user->country = strtolower(Location::get(Helpers::userIP())->countryCode);

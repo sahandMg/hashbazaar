@@ -34,6 +34,8 @@ class AuthController extends Controller
         $user->password = Hash::make($request->password);
         $user->reset_password = str_random(10);
         $user->ip = Helpers::userIP();
+        $user->total_mining = 0;
+        $user->pending = 0;
         try{
 
             $user->country = strtolower(Location::get(Helpers::userIP())->countryCode);
@@ -102,6 +104,8 @@ class AuthController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->ip = Helpers::userIP();
+        $user->total_mining = 0;
+        $user->pending = 0;
         try{
 
             $user->country = strtolower(Location::get(Helpers::userIP())->countryCode);
@@ -214,6 +218,8 @@ class AuthController extends Controller
         $user->code = uniqid('hashBazaar_');
         $user->avatar = $client->avatar;
         $user->ip = Helpers::userIP();
+        $user->total_mining = 0;
+        $user->pending = 0;
         try{
 
             $user->country = strtolower(Location::get(Helpers::userIP())->countryCode);

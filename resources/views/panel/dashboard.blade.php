@@ -17,7 +17,7 @@
              <div id="dashboard-page-circle">
                 <span id="circle-span">Total Mining</span>
                 <p>&nbsp;<span id="miningBTC"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; <span style="color: orange;">BTC</span> </p>
-                <hr style="width: 84%; text-align:center; margin-top: 02%; ">
+                <hr style="width: 84%; text-align:center;">
                 <p><span id="miningDollar"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua;">USD</span></p>
 
                 <button id="redeem" disabled onclick="redeem()"> Redeem ! </button>
@@ -26,9 +26,9 @@
             </div>
 
             <div id="dashboard-page-circle2">
-                <span id="circle-span">Total Mining</span>
+                <span id="circle-span">Daily Mining</span>
                 <p>&nbsp;<span id="miningBTC2"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; <span style="color: orange;">BTC</span> </p>
-                <hr style="width: 84%; text-align:center; margin-top: 02%; ">
+                <hr style="width: 84%; text-align:center;">
                 <p><span id="miningDollar2"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua;">USD</span></p>
 
                 <button id="redeem" disabled onclick="redeem()"> Redeem ! </button>

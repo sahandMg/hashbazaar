@@ -193,14 +193,14 @@
                 <form class="dashboard-page" method="post" action="{{route('payment')}}">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <input type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="myRange">
-                    <div style="text-align: left;font-weight: 700;">
+                    <div style="text-align: left;font-weight: 700;padding-bottom:10px">
                       <p>Hash allocation cost : <span id="cost"></span> dollar</p>
                       <p>Maitanace fee: {{$settings->maintenance_fee_per_th_per_day}} dollar per Th/day</p>
                       <small>(include all electricity, cooling, development, and servicing costs )</small>
                       <p>Income : At this time We predict {{$settings->bitcoin_income_per_month_per_th}} BTC/month for every Th.</p>
-                      <small>(Changes may happen depends on bitcoin price and bitcoin network difficulty changes.)</small>
+                      <small style="padding-bottom:20px">(Changes may happen depends on bitcoin price and bitcoin network difficulty changes.)</small>
                     </div>
-                    <span class="rfrcode">Referral Code:</span>
+                    <span class="rfrcode" >Referral Code:</span>
                     {{--<form style="padding: 20px;" method="POST" action="{{route('dashboard')}}">--}}
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                        <input id='referralCode' type="text" name="referralCode" style="margin-top:5px" class="aplybtntext">
@@ -414,11 +414,14 @@
                     var numItems = $('#Hash-History-list tr').length;
 
 
+
                     if( numItems > 2)
                         $('#Hash-History-list').css('overflow-y' , "scroll");
 
                     // alert($('#Hash-History-list tr').length);
 //                    console.log($('#Hash-History-list tr').length)
+
+
 
                     
                     if( numItems > 3)

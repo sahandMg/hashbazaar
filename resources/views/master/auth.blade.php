@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="img/icons/favicon.ico"/>
+    <!-- <link rel="icon" type="image/png" href="img/icons/favicon.ico"/> -->
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
     <!--===============================================================================================-->
@@ -27,12 +27,13 @@
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <!--===============================================================================================-->
 
-    <link rel="icon" href="img/TabLogo.png">
+    <!-- <link rel="icon" href="img/TabLogo.png"> -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
     <link rel="stylesheet" href="fonts/font-awesome.min.css">
     <link rel="stylesheet" href="css/theme.css">
+    <!-- <link rel="icon" href="img/favicon.ico" type="image/x-icon"/> -->
     <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/jquery.animate-colors.js"></script>
@@ -44,7 +45,7 @@
     <div class="header-navbar">
         <div id="header-navbar-logo">
             <ul>
-                <li class="navbar-list big"><img class="navbar-small-logo" src="{{asset('img/Logo_header.svg')}}" alt="Logo">
+                <li class="navbar-list big"><a href="http://hashbazaar.com"><img class="navbar-small-logo" src="{{asset('img/Logo_header.svg')}}" alt="Logo"></a>
             </ul>
         </div>
         <div id="header-navbar-menu">

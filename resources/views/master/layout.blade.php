@@ -15,7 +15,7 @@
     @else
         @yield('title')
     @endif
-    <link rel="icon" href="img/TabLogo.png">
+    <!-- <link rel="icon" href="img/TabLogo.png"> -->
     <link rel="stylesheet" href="css/blog.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">

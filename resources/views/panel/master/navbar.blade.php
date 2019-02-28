@@ -6,7 +6,7 @@
 
         <img class="user-img" src="{{URL::asset('../img/user-circle-solid.svg')}}" alt="">
 
-        <div class="list">
+        <div class="list1">
 
             <ul>
 

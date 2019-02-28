@@ -99,8 +99,8 @@
 
                                 
                                     <div class="remain">
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%">
+                                        <div class="progress1">
+                                            <div class="progress-bar1" role="progressbar1" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%">
                                                 <span class="title">{{$remainedLife[$key]}}%</span>
 
                                             </div>
@@ -194,20 +194,20 @@
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <input type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="myRange">
                     <div style="text-align: left;font-weight: 700;padding-bottom:10px">
-                      <p>Hash allocation cost : <span id="cost"></span> dollar</p>
-                      <p>Maitanace fee: {{$settings->maintenance_fee_per_th_per_day}} dollar per Th/day</p>
+                      <p style="color:black">Hash allocation cost : <span id="cost"></span> dollar</p>
+                      <p style="color:black">Maitanace fee: {{$settings->maintenance_fee_per_th_per_day}} dollar per Th/day</p>
                       <small>(include all electricity, cooling, development, and servicing costs )</small>
-                      <p>Income : At this time We predict {{$settings->bitcoin_income_per_month_per_th}} BTC/month for every Th.</p>
-                      <small style="padding-bottom:20px">(Changes may happen depends on bitcoin price and bitcoin network difficulty changes.)</small>
+                      <p style="color:black">Income : At this time We predict {{$settings->bitcoin_income_per_month_per_th}} BTC/month for every Th.</p>
+                      <small >(Changes may happen depends on bitcoin price and bitcoin network difficulty changes.)</small>
                     </div>
-                    <span class="rfrcode" >Referral Code:</span>
-                    {{--<form style="padding: 20px;" method="POST" action="{{route('dashboard')}}">--}}
+                    <p class="rfrcode">Referral Code:</p>
+                    {{-- <form style="padding: 20px;" method="POST" action="{{route('dashboard')}}"> --}}
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
-                       <input id='referralCode' type="text" name="referralCode" style="margin-top:5px" class="aplybtntext">
+                       <input id='referralCode' type="text" name="referralCode" style="margin-top:5px" class="aplybtn1text">
       
-                          <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> Apply </button>
+                          <button type="button" onclick="sendCode()" class="btn btn-primary"> Apply </button>
       
-                         {{--</form>--}}
+                         {{-- </form> --}}
                     <button class="pandel-button" type="submit">Order</button>
                  </form>
                 @else
@@ -233,7 +233,7 @@
     {{-- Footer --}}
     <div id="footer-div">
             <div class="dashboard-footer-div" >
-                <p class="dashboard-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
+                <p class="dashboard-footer-paragraph" style="color:black">© 2018 HashBazaar. All rights reserved</p>
                 <img id="dashboard-footer-image" src="{{URL::asset('img/Logo_footer.png')}}" alt="">
 
             </div>
@@ -350,8 +350,8 @@
         
          }
 
-.progress {    border: 1px solid;}
-.progress-bar {
+.progress1 {    border: 1px solid;}
+.progress-bar1 {
     background-color: #ff9100;
     text-align: center;
     color: white;
@@ -359,7 +359,7 @@
   -webkit-animation: progress 1.5s ease-in-out forwards;
           animation: progress 1.5s ease-in-out forwards;
 }
-.progress-bar .title {
+.progress-bar1 .title {
   opacity: 0;
   -webkit-animation: show 0.35s forwards ease-in-out 0.5s;
           animation: show 0.35s forwards ease-in-out 0.5s;
@@ -408,7 +408,7 @@
                 $(document).ready(function(){
 
                     $('.user-img').click(function(){
-                        $('.list').toggle(500);
+                        $('.list1').toggle(500);
                     });
                     
                     var numItems = $('#Hash-History-list tr').length;

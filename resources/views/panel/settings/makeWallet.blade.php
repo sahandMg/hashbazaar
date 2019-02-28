@@ -27,7 +27,7 @@
 
                 <img class="user-img" src="../img/user-circle-solid.svg" alt="">
     
-                <div class="list">
+                <div class="list1">
 
                     <ul>
 
@@ -108,7 +108,7 @@
     <hr class="make-wallet-hr-footer" style="position: relative;top: 570px">
 
 
-    </div> <!-- id="setting-page" -->
+    </div> 
 
 
 
@@ -121,51 +121,7 @@
 
             </div>
 
-    <!-- Container -->
-    <div class="mainContainer">
-
-            <!-- <a href="#" class="icon-menu"><img src="img/menu.png" alt=""></a>
-            <a href="#" class="icon-menu-times"><img class="times-solid" src="img/times-solid.svg" alt=""></a> -->
-
-
-        <nav class="container-setting-make-wallet">
-            <ul class="mainList">
-                <ul class="mainList">
-                    <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="img/Logo_In_NavBar.svg" alt="Logo_In_NavBar"></a>
-                        <a href="" id="welcome">Welcome User</a> </li>
-                        <li class="sub dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
-                        <li class="sub"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
-                        <li class="sub"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
-                        <li class="sub"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
-                        <li class="sub"> <a href="{{route('contact')}}" id="contact">Contact</a></li>
-    
-                </ul>
-
-
-
-        </nav>
-
-
-        <nav class="container-setting-make-wallet2">
-            <ul class="mainList2">
-
-                <li class="sub2 dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
-                <li class="sub2"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
-                <li class="sub2"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
-                <li class="sub2"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
-                <li class="sub2"> <a href="{{route('contact')}}" id="contact">Contact</a></li>
-            </ul>
-
-
-
-
-
-
-
-
-
-
-    </div>
+   
 
     <script>
 
@@ -173,7 +129,7 @@
         $(document).ready(function(){
     
             $('.user-img').click(function(){
-                $('.list').toggle(500);
+                $('.list1').toggle(500);
             })
         })
     

@@ -11,7 +11,7 @@
     cursor: pointer;
     font-size: 17px
 }
-.useraccount .list {
+.useraccount .list1 {
     width: 200px;
     height: 110px;
     border-radius: 10px;
@@ -21,10 +21,10 @@
     box-shadow: 2px 3px 10px 1px silver;
     display: none;
 }
-.useraccount .list  {
+.useraccount .list1  {
     margin-left: -135px
 }
-.useraccount .list:after {
+.useraccount .list1:after {
     content: '';
     position: absolute;
     border-left:18px solid transparent;
@@ -38,7 +38,7 @@
     -ms-transition: all 1s;
 }
 
-.useraccount .list ul li {
+.useraccount .list1 ul li {
     list-style-type: none;
     width: 200px;
     padding-bottom: 20px;
@@ -95,7 +95,10 @@
 #logouticon {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    display: none !important
 }
+
+#logouticon a {border-bottom: transparent}
 #logouticon:hover {
     background-color: black;
     height: 33px;
@@ -202,9 +205,9 @@ header {
     font-weight: bolder;
     color: #2e2d2d;
     font-family: sans-serif;
-    width: 500px;
+    width: auto;
     margin-top: 160px;
-    margin-left: 300px;
+    margin-left: 220px;
 }
 #contact-page input
 {
@@ -278,7 +281,8 @@ form.contact-page p:nth-of-type(1) {
 #contact-footer-image {
     width: 250px;
     height: 60px;
-    
+    padding-left: 2%;
+    padding-bottom: 2%;
 }
 
 /* Contact - Media - 1280 */
@@ -294,7 +298,7 @@ form.contact-page p:nth-of-type(1) {
 @media screen and (max-width:1024px){
     /* ----------------------------Main Container--------------------------- */
 
-    .useraccount .list {
+    .useraccount .list1 {
         display: none;
     }
 
@@ -358,7 +362,7 @@ form.contact-page p:nth-of-type(1) {
         z-index: 2;
     }
 
-    .useraccount .list {
+    .useraccount .list1 {
         display: none;
     }
 
@@ -426,7 +430,7 @@ form.contact-page p:nth-of-type(1) {
         
     }
 
-    .useraccount .list {
+    .useraccount .list1 {
         display: none;
     }
 }
@@ -698,9 +702,7 @@ body {
     background-color: #FFFDE8
 
 }
-.container-contact2 {
-    display: none
-}
+
 /* Header */
 
 header {
@@ -848,6 +850,7 @@ header {
     margin-left:30%
 }
 
+/* Referral - Media - 1280 */
 @media screen and (max-width:1280px) {
         
     .referral-hr-footer
@@ -860,7 +863,6 @@ header {
         margin-left: 30%;
     }
 }
-
 
 /* Referral - Media - 1024 */
 @media screen and (max-width:1024px){
@@ -1551,7 +1553,6 @@ header {
     margin: 15% 35%
 }
 
-
 .mainList2 {display: none}
 
 #activity-page .Transactions q {
@@ -1619,11 +1620,11 @@ header {
     margin-top: -5px;
 }
 
-.tooltip {
+.tooltip1 {
     position: relative;
   }
   
-  .tooltip .tooltiptext {
+  .tooltip1 .tooltiptext {
     visibility: hidden;
     width: auto;
     background-color: black;
@@ -1639,7 +1640,7 @@ header {
     margin-left: -50%
   }
   
-  .tooltip:hover .tooltiptext {
+  .tooltip1:hover .tooltiptext {
     visibility: visible;
   }
 .activity-hr-footer
@@ -1673,20 +1674,7 @@ header {
 /* Activity-Media-1280 */
 @media screen and (max-width:1280px) 
 {
-    .container-activity {
-        width: 340px !important;
-        height: 100%;
-        background: rgb(39, 38, 38);
-        border-top: 4px solid orange;
-        position: fixed;
-        top: 110px;
-    }
     
-    .container-activity .mainList {
-        background: white;
-        width: 340px !important;
-        top: 150px
-    }
     .activity-hr-footer
     {
         margin-top: 90px;
@@ -2201,9 +2189,6 @@ header {
 @media screen and (max-width:375px) 
 {
 
-    .container-activity {
-        display: none;
-    }
 
     .Logo_header {
         width: 300px;
@@ -2597,7 +2582,8 @@ body {
     border: 20px solid #ff9100;
     border-radius: 50%;
     border-collapse: 2px solid #727272;
-    margin-top: -45%;
+    margin-top: -41%;
+    margin-left: 5%
 }
 
 #redeem {
@@ -2611,7 +2597,7 @@ body {
     font-family: sans-serif;
     color: #727272;
     position: absolute;
-    margin-top: 100px;
+    margin-top: 70px;
     font-weight: bolder;
     margin-left: 7.5%;
 }
@@ -2657,7 +2643,7 @@ body {
 /* ==================================================HASH History============================== */
 #dashboard-page #dashboard-title {
     margin-left: 40%;
-    margin-top: -2%;
+    margin-top: -4%;
     font-family: sans-serif;
     font-size: 25px;
     font-weight: bolder;
@@ -2721,34 +2707,31 @@ body {
 
 #Hash-History-list .remain {
     width: 180px; margin: 0px auto;
-    /* height:30px; */
     border: thin solid ;
-
 }
 
-.progress {    border: 1px solid;}
-.progress-bar {
+.progress1 {    border: 1px solid;}
+.progress-bar1 {
     background-color: #ff9100;
     text-align: center;
     color: white;
-  width: 0;
-  -webkit-animation: progress 1.5s ease-in-out forwards;
-          animation: progress 1.5s ease-in-out forwards;
+    width: 0;
+    -webkit-animation: progress 1.5s ease-in-out forwards;
+    animation: progress 1.5s ease-in-out forwards;
 }
-.progress-bar .title {
-  opacity: 0;
-  -webkit-animation: show 0.35s forwards ease-in-out 0.5s;
-          animation: show 0.35s forwards ease-in-out 0.5s;
+.progress-bar1 .title {
+    opacity: 0;
+    -webkit-animation: show 0.35s forwards ease-in-out 0.5s;
+    animation: show 0.35s forwards ease-in-out 0.5s;
 }
 
 #Hash-History-list .remain {
-
     width: 160px !important;
     text-align: center !important;
     color: white !important;
 }
 
-#Hash-History-list .remain .progress {
+#Hash-History-list .remain .progress1 {
     width:98% !important;
     background-color: white !important;
     border: 1px solid black !important;
@@ -2810,7 +2793,7 @@ body {
 
 #dashboard-page #dashboard-title2 {
     margin-left: 38%;
-    margin-top: -4% !important;
+    margin-top: -56.4px !important;
     font-family: sans-serif;
     font-size: 25px;
     font-weight: bolder;
@@ -2849,21 +2832,23 @@ body {
     cursor: pointer;
 }
 
-.rfrcode {
+ .rfrcode {
     color: black;
     font-weight: bolder;
     font-size: 1.2em;
-    margin-top: 5% !important;
-    padding-top: 5% !important
+    padding-top: 25px !important;
+    display: inline
 }
-.aplybtntext {
+ .aplybtn1text {
     display: inline-block !important;
-    padding: 5px;
+    padding:5px;
+    padding-bottom: 0px !important;
     border: transparent;
-    margin-top: 10px;
     border-bottom: 1px solid black !important;
+    background-color: #FFFDE8;
+    margin-left: 10px;
 }
-.aplybtn {
+ .btn {
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
@@ -2886,18 +2871,20 @@ body {
     -ms-transition: all .3s ease-in-out;
     text-transform: uppercase;
     border-radius: 0;
-    border-radius: 100px 100px 100px 100px;
+    border-radius: 100px 100px 100px 100px !important;
     border: none;
     display: inline-block;
     cursor: pointer;
-    margin-top: 10px
+    margin-top: -9px;
+    margin-left: 17px
 }
+
 
 /*============================================== Mining History ===================================*/
 
     #dashboard-page #dashboard-title3 {
         margin-left: 39%;
-        margin-top: -2%;
+        margin-top: -3.5%;
         font-family: sans-serif;
         font-size: 25px;
         font-weight: bolder;
@@ -2915,18 +2902,18 @@ body {
     .dashboard-hr1 {
         width: 38%;
         margin-left: -0px;
-        margin-top: 60px
+        margin-top: 80px
     }
     .dashboard-hr1-1  { display: none}
 
     .dashboard-hr222-2 {
         width: 40%;
         margin-left: 59.5%;
-        margin-top: -15px
+        margin-top: -55px
     }
     .dashboard-hr11 {
         width: 37%;
-        margin-top: 5% !important;
+        margin-top: -10px !important;
         margin-left: 0;
     }
 
@@ -2941,13 +2928,13 @@ body {
         display: block;
         width: 39.5%;
         margin-left:59.5%;
-        margin-top: -24px
+        margin-top: -50px
     }
 
     .dashboard-hr2-2 {
         width: 41.5%;
         margin-left: 57.5%;
-        margin-top: -16px;
+        margin-top: -54px;
     }
     .dashboard-hr-footer
     {
@@ -2968,7 +2955,8 @@ body {
     #dashboard-footer-image {
         width: 250px;
         height: 60px;
-        padding-bottom: 1%
+        padding-left: 2%;
+        padding-bottom: 2%
     }
 
     .dashboard-footer-paragraph {
@@ -2986,7 +2974,7 @@ body {
 
     #dashboard-page-circle2 {
         margin-left: 4%;
-        margin-top: -42% !important
+        margin-top: -38% !important
     }
 
     #dashboard-page-circle p:nth-of-type(1)
@@ -3033,7 +3021,7 @@ body {
     .dashboard-hr2-2 {
         width: 41.5%;
         margin-left: 57.5%;
-        margin-top: -16px;
+        margin-top: -56px;
     }
 
     .dashboard-hr222-2 {
@@ -3043,7 +3031,7 @@ body {
     }
     .dashboard-hr11 {
         width: 37%;
-        margin-top: 5%;
+        margin-top: 0% !important;
         margin-left: 0;
     }
 
@@ -3057,8 +3045,8 @@ body {
     .dashboard-hr22-2 {
         display: block;
         width: 39.5%;
-        margin-left:59.5%;
-        margin-top: -14px
+        margin-left:60%;
+        margin-top: -54px
     }
 
     /* ================---media--=================Circle================================== */
@@ -3068,7 +3056,7 @@ body {
         height: 310px;
     }
     #dashboard-page-circle2 {
-        margin-top: -47% !important;
+        margin-top: -42% !important;
         margin-left: 2%
     }
     #circle-span {
@@ -3162,7 +3150,7 @@ body {
         color: white !important;
     }
 
-    #Hash-History-list .remain .progress {
+    #Hash-History-list .remain .progress1 {
         width:98% !important;
         background-color: white !important;
         border: 1px solid black !important;
@@ -3175,10 +3163,17 @@ body {
 
     #dashboard-page #dashboard-title2 {
         left: 35%;
-        top: 870px;
+        margin-top: -8.04% !important;
         font-size: 22px;
     }
+
+    .slidecontainer {
+        margin-top: -5.65%
+    }
    
+    .dashboard-page {
+        margin-top: -15.6%
+    }
     /*============================================== Mining History ===================================*/
 
     #dashboard-page #dashboard-title3 {
@@ -3211,11 +3206,11 @@ body {
 /* Dashboard-Media-768 */
 @media screen and (max-width:768px) {
 
-    .container {
+    .container1 {
         display: none
     }
     .mainContainer {display: none}
-    .container .mainList { display: none}
+    .container1 .mainList { display: none}
 
     #dashboard-page {
         height: 1800px;
@@ -3224,7 +3219,7 @@ body {
         z-index: 0;
     }
    
-    .container {
+    .container1 {
         border-bottom: transparent
     }
 
@@ -3248,7 +3243,7 @@ body {
         border: 20px solid #ff9100;
         border-radius: 50%;
         margin-left: 5%;
-        margin-top: -43% !important;
+        margin-top: -37% !important;
         border-collapse: 2px solid #727272
     }
     #circle-span {
@@ -3284,18 +3279,18 @@ body {
         font-size: 25px;
         font-weight: bolder;
         color: #2e2d2d;
-        margin-top: -20px
+        margin-top: -35px
     }
 
     .dashboard-hr1  {
         width: 40%;
-        margin-left: 0
+        margin-left: 0;
     }
 
     .dashboard-hr2-2  {
         width: 36.5% !important;
         margin-left: 62.5%;
-        margin-top: -15px
+        margin-top: -55px
     }
 
     #Hash-History-list
@@ -3348,7 +3343,7 @@ body {
 
     #dashboard-page #dashboard-title2 {
         margin-left: 40%;
-        margin-top: -20px;
+        margin-top: -58px !important;
         font-family: sans-serif;
         font-size: 25px;
         font-weight: bolder;
@@ -3427,9 +3422,6 @@ body {
 /* Dashboard-Media-414 */
 @media screen and (max-width:414px) {
 
-    .container-dashboard {
-        display: none
-    }
 
     #dashboard-page {
         height: 0px !important;
@@ -3585,7 +3577,7 @@ body {
         color: white !important;
     }
 
-    #Hash-History-list .remain .progress {
+    #Hash-History-list .remain .progress1 {
         width:98% !important;
         background-color: white !important;
         border: 1px solid black !important;
@@ -3676,7 +3668,6 @@ body {
     .dashboard-footer-paragraph {
         font-size: 15px;
         font-family: sans-serif;
-        /* position: absolute; */
         top: -60px;
         margin-left: 80px;
         width: 280px
@@ -3705,7 +3696,6 @@ body {
         height: 250px;
         border: 20px solid #ff9100;
         border-radius: 50%;
-        /* position: relative; */
         margin-left: 12%;
         left: 0%;
         top: 4%;
@@ -3719,7 +3709,6 @@ body {
         text-align: center;
         font-family: sans-serif;
         color: #727272;
-        /* position: absolute; */
         margin-top: 15%;
         font-weight: bolder;
         margin-left: 20%;
@@ -3729,7 +3718,6 @@ body {
         font-size: 20px !important;
         text-align: center;
         color: rgb(41, 37, 37);
-        /* position: relative; */
         top: 40%;
         font-weight: bolder;
         font-family: sans-serif
@@ -3738,14 +3726,12 @@ body {
         font-size: 20px !important;
         text-align: center;
         color: rgb(41, 37, 37);
-        /* position: relative; */
         top: 40%;
         font-weight: bolder;
         font-family: sans-serif
     }
     /* ==================================================HASH History============================== */
     #dashboard-page #dashboard-title {
-        /* position: absolute; */
         margin-left: 35.5%;
         margin-top:-20px;
         font-family: sans-serif;
@@ -3772,7 +3758,6 @@ body {
         height: 300px;
         float:left;
     }
-
     
     #Hash-History-list tr
     {
@@ -3810,7 +3795,6 @@ body {
         height: 70px;
         color: #2e2d2d;
     }
-   
 
     #Hash-History-list .remain {
         width: 65px !important;
@@ -3821,7 +3805,6 @@ body {
     /* ==============================================Buy hash power=================================== */
 
     #dashboard-page #dashboard-title2 {
-        /* position: absolute; */
         margin-left: 30%;
         font-family: sans-serif;
         font-size: 18px;
@@ -3840,13 +3823,10 @@ body {
         margin-left: 71.2%;
         margin-top: -10px
     }
-
   
     /*============================================== Mining History ===================================*/
 
-
     #dashboard-page #dashboard-title3 {
-        /* position: absolute; */
         margin-left: 32.5%;
         font-family: sans-serif;
         font-size: 18px;
@@ -3869,7 +3849,6 @@ body {
         -moz-user-select: none;
         -webkit-user-select: none;
         -ms-user-select: none;
-        /* position: relative; */
         margin-top: 50px;
         width: 330px !important;
         height: 200px !important;
@@ -3897,7 +3876,6 @@ body {
     .dashboard-footer-div {
         width: 100% !important;
         left: 0%;
-        /* position: absolute; */
         margin-top: 1680px !important
     }
 
@@ -3911,15 +3889,12 @@ body {
     .dashboard-footer-paragraph {
         font-size: 15px;
         font-family: sans-serif;
-        /* position: absolute; */
-        top: -60px;
         margin-left: 40px;
         width: 280px;
         padding-top: 10px;
         padding-bottom: 20px
 
     }
-
 
 }
 
@@ -3996,7 +3971,6 @@ body {
         height: 300px;
         float:left;
     }
-
     
     #Hash-History-list tr
     {
@@ -4033,7 +4007,6 @@ body {
         height: 70px;
         color: #2e2d2d;
     }
-   
 
     #Hash-History-list .remain {
         width: 70px !important;
@@ -4041,10 +4014,10 @@ body {
         font-size: 12px;
         height: 15px
     }
-    #Hash-History-list .remain .progress-bar{
+    #Hash-History-list .remain .progress-bar1{
         height: 15px
     }
-    #Hash-History-list .remain .progress-bar .title{
+    #Hash-History-list .remain .progress-bar1 .title{
         text-align: center;
         padding-top: 5%;
     }

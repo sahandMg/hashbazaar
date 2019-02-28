@@ -57,7 +57,7 @@
     <div id="footer-div">
 
         <div class="referral-footer-div">
-                <p class="referral-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
+                <p class="referral-footer-paragraph" style="color:black">© 2018 HashBazaar. All rights reserved</p>
              <img id="referral-footer-image" src="{{URL::asset('img/Logo_footer.png')}}" alt=""></div>
 
     </div>
@@ -70,7 +70,7 @@
         $(document).ready(function(){
     
             $('.user-img').click(function(){
-                $('.list').toggle(500);
+                $('.list1').toggle(500);
             })
         })
         

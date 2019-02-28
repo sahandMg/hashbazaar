@@ -66,7 +66,7 @@
         $(document).ready(function(){
 
             $('.user-img').click(function(){
-                $('.list').toggle(500);
+                $('.list1').toggle(500);
             })
         })
 

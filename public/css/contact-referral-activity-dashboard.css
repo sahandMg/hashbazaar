@@ -2426,7 +2426,6 @@ body {
 
 #dashboard-page {
     width: 72.3%;
-    height: 1800px;
     margin-left: 27.7%;
     margin-top:150px;
     box-sizing: border-box;
@@ -2441,15 +2440,15 @@ body {
     display: flex;
     display: -ms-flexbox;
     display: -webkit-flex;
-    width: 95%;
-    flex-flow: row nowrap;
-    margin-left: 4% !important;
+    width: 85%;
+    flex-flow: row wrap;
+    margin-left: 6% !important;
     margin-top: 4%;
 }
 #dashboard-page-circle {
     width: 450px !important; 
     display: block;
-    height: 450px !important;
+    height: 400px !important;
     border: 20px solid #ff9100;
     border-radius: 50%;
     border-collapse: 2px solid #727272;
@@ -2459,10 +2458,11 @@ body {
 #dashboard-page-circle2 {
     width: 450px !important;
     display: block;
-    height: 450px !important;
+    height: 400px !important;
     border: 20px solid #ff9100;
     border-radius: 50%;
     border-collapse: 2px solid #727272;
+    margin-left: 6% !important;
     flex: 1;
 }
 
@@ -2934,7 +2934,7 @@ body {
 
     #dashboard-page-circle , #dashboard-page-circle2{
         width: 310px;
-        height: 340px !important;
+        height: 310px !important;
     }
     
     #redeem {
@@ -3082,7 +3082,7 @@ body {
     .dashboard-footer-div {
         width: 70%;
         margin-left: 27%;
-        margin-top: -50%;
+        margin-top: -40%;
         top: 0
     }
 
@@ -3099,7 +3099,6 @@ body {
     .container1 .mainList { display: none}
 
     #dashboard-page {
-        height: 1800px;
         margin-left: 0 !important;
         width: 98%;
         z-index: 0;
@@ -3134,7 +3133,7 @@ body {
         color: #727272;
         margin-top: 5% !important;
         font-weight: bolder;
-        margin-left: 12% !important;
+        margin-left: 9% !important;
     }
 
     #dashboard-page-circle p {
@@ -3266,7 +3265,7 @@ body {
 
     .dashboard-hr-footer
     {
-        margin-top:270px !important;
+        margin-top:0px !important;
         width: 100%;
         margin-left: 0;
         left: 0 !important;
@@ -3274,7 +3273,7 @@ body {
 
     /* ============================================Footer======================================= */
     #footer-div {
-        margin-top: 00px !important;
+        margin-top: 0px !important;
         border-bottom: transparent;
         margin-left: 0% !important;
         display: block;
@@ -3282,7 +3281,7 @@ body {
     .dashboard-footer-div {
         width: 70%;
         margin-left: 2% !important;
-        margin-top: -450px;
+        margin-top: -300px;
         border-bottom: transparent
     }
 
@@ -3308,7 +3307,6 @@ body {
 
 
     #dashboard-page {
-        height: 0px !important;
         width: 100%;
         z-index: 0;
     }
@@ -3339,12 +3337,13 @@ body {
 
     .circle-container {
         flex-flow: column wrap;
-        margin-top: 0% !important
+        margin-top: -40px !important
     }
     #dashboard-page-circle {
         width: 350px !important;
         display: block;
         height: 350px !important;
+        margin-left: 0% !important;
         border: 20px solid #ff9100;
         border-radius: 50%;
         border-collapse: 2px solid #727272
@@ -3354,7 +3353,9 @@ body {
         display: block;
         height: 350px !important;
         border: 20px solid #ff9100;
+        margin-left: 0% !important;
         border-radius: 50%;
+        margin-top: 4% !important;
         border-collapse: 2px solid #727272
     }
     #circle-span {
@@ -3373,7 +3374,7 @@ body {
         color: rgb(41, 37, 37);
         margin-top: 40% !important;
         font-weight: bolder;
-        font-family: sans-serif
+        font-family: sans-serif;
     }
     #dashboard-page-circle2 p {
         font-size: 20px !important;
@@ -3381,7 +3382,8 @@ body {
         color: rgb(41, 37, 37);
         margin-top: 40% !important;
         font-weight: bolder;
-        font-family: sans-serif
+        font-family: sans-serif;
+
     }
     /* ==================================================HASH History============================== */
     #dashboard-page #dashboard-title {
@@ -3532,20 +3534,20 @@ body {
     }
     .dashboard-hr-footer
     {
-        margin-top: 120px !important;
+        margin-top: 60px !important;
         top: 0
     }
 
     /* ============================================Footer======================================= */
     #footer-div {
-        margin-top: 200 !important;
+        margin-top: 0 !important;
         height: 050px;
         width: 100%;
     }
     .dashboard-footer-div {
         width: 100% !important;
         left: 0%;
-        margin-top: 1900px !important
+        margin-top: -100px !important
     }
 
     #dashboard-footer-image {
@@ -3760,7 +3762,6 @@ body {
     .dashboard-footer-div {
         width: 100% !important;
         left: 0%;
-        margin-top: 1800px !important
     }
 
     #dashboard-footer-image {
@@ -3973,7 +3974,6 @@ body {
     .dashboard-footer-div {
         width: 100% !important;
         left: 0%;
-        margin-top: 1650px !important
     }
 
     #dashboard-footer-image {

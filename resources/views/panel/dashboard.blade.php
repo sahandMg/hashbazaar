@@ -16,7 +16,7 @@
             <!-- Circle -->
              <div class="circle-container">
 
-                <div id="dashboard-page-circle">
+                <div id="dashboard-page-circle" >
                     <span id="circle-span">Total Mining</span>
                     <p>&nbsp;<span id="miningBTC"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; <span style="color: orange;">BTC</span> </p>
                     <hr style="width: 84%; text-align:center;">
@@ -129,7 +129,7 @@
                 </table>
 
              </div> 
-        {{-- <div class="Hash-History_column"> Hash Power
+             {{-- <div class="Hash-History_column"> Hash Power
                         <ul>
                             @foreach($hashes as $hash)
                             <li>{{$hash->hash}} TH/S</li>

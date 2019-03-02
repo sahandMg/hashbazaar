@@ -26,6 +26,7 @@
 <body>
 <header>
 
+<<<<<<< HEAD
     <div id="header-div"> 
        <a href="http://hashbazaar.com"> <img class="Logo_header" src="{{URL::asset('img/Logo_header.svg')}}" alt="Logo_header"></a> 
     </div>
@@ -38,6 +39,17 @@
             <div class="bar1 test2"></div>
             <div class="bar2 test2"></div>
             <div class="bar3 test2"></div>
+=======
+
+    <div id="header-div"> <a > <img class="Logo_header" src="{{URL::asset('img/Logo_header.svg')}}" alt="Logo_header"></a> </div>
+    <div class="useraccount">
+
+        {{-- <img class="user-img" src="{{URL::asset('../img/user-circle-solid.svg')}}" alt=""> --}}
+        <div class="navigation-menu" id="responsive-nav">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+>>>>>>> 467082ed6f53ee2b8ce0542c120584ba10f423b0
         </div>
         <div class="list1">
             <ul>

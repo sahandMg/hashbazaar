@@ -1808,7 +1808,7 @@ form.contact-page p:nth-of-type(1) {
     margin : auto;
 }
 #dashboard-page-circle {
-    width: 47% !important; 
+    width: 44% !important; 
     display: block;
     height: 100% !important;
     border: 20px solid #ff9100;
@@ -1818,7 +1818,7 @@ form.contact-page p:nth-of-type(1) {
 }
 
 #dashboard-page-circle2 {
-    width: 47% !important; 
+    width: 44% !important; 
     display: block;
     height: 100% !important;
     border: 20px solid #ff9100;
@@ -1868,23 +1868,23 @@ form.contact-page p:nth-of-type(1) {
     font-family: sans-serif;
     color: #727272;
     position: absolute;
-    margin-top: 70px;
+    margin-top: 40px;
     font-weight: bolder;
-    margin-left: 7.5%;
+    margin-left: 6%;
 }
 
 #dashboard-page-circle p:nth-of-type(1) {
-    font-size: 35px;
+    font-size: 33px;
     text-align: center;
     color: rgb(41, 37, 37);
-    margin-top: 31%;
+    margin-top: 27% !important;
     font-weight: bolder;
     font-family: sans-serif;
     padding:0 !important;
 }
 
 #dashboard-page-circle p:nth-of-type(2) {
-    font-size: 35px;
+    font-size: 33px;
     text-align: center;
     color: rgb(41, 37, 37);
     margin-top: -4%;
@@ -1893,17 +1893,17 @@ form.contact-page p:nth-of-type(1) {
     font-family: sans-serif
 }
 #dashboard-page-circle2 p:nth-of-type(1) {
-    font-size: 35px;
+    font-size: 33px;
     text-align: center;
     color: rgb(41, 37, 37);
-    margin-top: 31%;
+    margin-top: 27%;
     font-weight: bolder;
     padding:0 !important;
     font-family: sans-serif
 }
 
 #dashboard-page-circle2 p:nth-of-type(2) {
-    font-size: 35px;
+    font-size: 33px;
     padding:0 !important;
     text-align: center;
     color: rgb(41, 37, 37);
@@ -2105,7 +2105,7 @@ form.contact-page p:nth-of-type(1) {
     display: inline-block !important;
     padding:5px;
     padding-bottom: 0px !important;
-    border: transparent;
+    border: transparent ;
     border-bottom: 1px solid black !important;
     background-color: #FFFDE8;
     margin-left: 10px;
@@ -2164,7 +2164,7 @@ form.contact-page p:nth-of-type(1) {
    }
 
    .title-flex .dashboard-title {
-        margin-left: 1.7em !important;
+        margin-left: 0.5em !important;
         font-size: 20px !important;
         font-weight: bolder;
         color: #2e2d2d;
@@ -2179,24 +2179,92 @@ form.contact-page p:nth-of-type(1) {
         flex: 2
     }
    
+@media screen and (min-width:1840px) {
+    #dashboard-page {
+        width: 82.3% !important;
+        margin-left: 20.7% !important;
+    }
+    #dashboard-page-circle , #dashboard-page-circle2 {
+        width: 31% !important
+    }
+    #dashboard-page-circle ,
+    #dashboard-page-circle2 {
+        margin-left: 10% !important
+    }
 
+    #circle-span {
+        margin-left:5% !important
+    }
+    #Hash-History-list tr th  {
+        width: 170px;
+        width: 30.5%;
+        font-size: 27px;
+        margin-left: 0 !important
+    }
+
+    #Hash-History-list tr td { 
+        width: 170px;
+        width: 28.8%;
+        margin-left: 0 !important;
+        font-size: 24px;
+    }
+
+}
+
+@media screen and (min-width:1600px) {
+
+
+    #dashboard-page-circle ,
+    #dashboard-page-circle2 {
+        width: 35% !important;
+        margin-left: 10% !important
+    }
+
+    #Hash-History-list tr th  {
+        width: 160px;
+        width: 29.8%;
+    }
+
+    #Hash-History-list tr td { 
+        width: 160px;
+        width: 27.8%;
+    }
+}
+
+@media screen and (min-width:1400px) {
+    #dashboard-page-circle ,
+    #dashboard-page-circle2 {
+        width: 40% !important;
+        margin-left: 10% !important
+    }
+
+    #circle-span {
+        margin-left: 7% !important
+    }
+} 
 /* Dashboard-Media-1280 */
 @media screen and (max-width:1280px) {
-    /* #dashboard-page-circle , #dashboard-page-circle2{
-        width: 350px;
-        height: 350px !important;
-    } */
+    #dashboard-page-circle ,
+    #dashboard-page-circle2 {
+        width: 44% !important;
+    }
 
     #dashboard-page-circle p:nth-of-type(1)
     , #dashboard-page-circle p:nth-of-type(2)
     , #dashboard-page-circle2 p:nth-of-type(1)
     , #dashboard-page-circle2 p:nth-of-type(2) {
-        font-size: 34px;
+        font-size: 30px !important;
     }
     
     #miningBTC span, #miningBTC span {
-        font-size: 23px
+        font-size: 20px !important
     }
+
+    #circle-span {
+        margin-left: 5% !important;
+        margin-top: 3% !important
+    }
+
   
 }
 
@@ -2218,10 +2286,10 @@ form.contact-page p:nth-of-type(1) {
 
     /* ================---media--=================Circle================================== */
 
-    /* #dashboard-page-circle , #dashboard-page-circle2{
-        width: 310px;
-        height: 310px !important;
-    } */
+    #dashboard-page-circle , #dashboard-page-circle2{
+        width: 45% !important;
+        /* height: 310px !important; */
+    }
     
     #redeem {
         padding: .175rem 0.5rem;
@@ -2229,7 +2297,8 @@ form.contact-page p:nth-of-type(1) {
     }
     #circle-span {
         font-size: 20px !important;
-        margin-top: 70px;
+        margin-top: 50px !important;
+        margin-left: 6% !important
     }
     #dashboard-page-circle p {
         font-size: 22px !important;
@@ -2238,7 +2307,10 @@ form.contact-page p:nth-of-type(1) {
 
     #dashboard-page-circle p:nth-of-type(1) , #dashboard-page-circle2 p:nth-of-type(1) {
         font-size: 22px !important;
-        margin-top: 42%;
+        margin-top: 42% !important;
+    }
+    #dashboard-page-circle p:nth-of-type(2) , #dashboard-page-circle2 p:nth-of-type(2){
+        font-size: 22px !important;
     }
     #dashboard-page-circle2 p {
         font-size: 22px !important;
@@ -2476,7 +2548,8 @@ form.contact-page p:nth-of-type(1) {
         margin-top: -40px !important
     }
     #dashboard-page-circle {
-        width: 100% !important;
+        width: 90% !important;
+        height: 80% !important;
         display: block;
         /* height: 350px !important; */
         margin-left: 0% !important;
@@ -2485,7 +2558,8 @@ form.contact-page p:nth-of-type(1) {
         border-collapse: 2px solid #727272
     }
     #dashboard-page-circle2 {
-        width: 100% !important;
+        width: 90% !important;
+        height: 80% !important;
         /* width: 350px !important; */
         display: block;
         /* height: 350px !important; */
@@ -2502,14 +2576,14 @@ form.contact-page p:nth-of-type(1) {
         color: #727272;
         margin-top: 13% !important;
         font-weight: bolder;
-        margin-left: 23% !important;
+        margin-left: 20% !important;
     }
 
     #dashboard-page-circle p {
         font-size: 20px !important;
         text-align: center;
         color: rgb(41, 37, 37);
-        margin-top: 40% !important;
+        margin-top: 35% !important;
         font-weight: bolder;
         font-family: sans-serif;
     }
@@ -2517,7 +2591,7 @@ form.contact-page p:nth-of-type(1) {
         font-size: 20px !important;
         text-align: center;
         color: rgb(41, 37, 37);
-        margin-top: 40% !important;
+        margin-top: 35% !important;
         font-weight: bolder;
         font-family: sans-serif;
 
@@ -2759,20 +2833,18 @@ form.contact-page p:nth-of-type(1) {
     }
 
     #dashboard-page-circle p {
-        font-size: 18px !important;
         text-align: center;
         color: rgb(41, 37, 37);
-        top: 40%;
         font-weight: bolder;
-        font-family: sans-serif
+        font-family: sans-serif;
+        font-size: 13px !important;
     }
     #dashboard-page-circle2 p {
-        font-size: 18px !important;
         text-align: center;
         color: rgb(41, 37, 37);
-        top: 40%;
         font-weight: bolder;
-        font-family: sans-serif
+        font-family: sans-serif;
+        font-size: 13px !important;
     }
     /* ==================================================HASH History============================== */
     .title-flex .dashboard-title {

@@ -160,7 +160,7 @@ body, html {
 .limiter {
   width: 100%;
   margin: 0 auto;
-  margin-top:6% !important
+  margin-top:7% !important
 }
 
 .container-login100 {
@@ -331,7 +331,8 @@ body, html {
   transition: all 1s;
   margin: auto;
   border: thin solid ;
-  margin-left: 35%;
+  margin-left: 45% !important;
+  margin-top: 10px
 
 }
 
@@ -433,7 +434,7 @@ body, html {
 @media screen and (max-width:768px) {
     
   .limiter {
-    margin-top: 2% !important
+    margin-top: 0% !important
   }
 }
 
@@ -458,7 +459,7 @@ body, html {
 
 @media screen and (max-width:414px){
   .limiter {
-    margin-top: 22% !important
+    margin-top: 20% !important
   }
 }
 
@@ -470,11 +471,26 @@ body, html {
 }
 
 @media screen and (max-width:320px){
-  .container-socialnet1 {
-    margin-left: 80px;
+    .container-socialnet1 {
+    margin-left: 41% !important;
 
     }
     .limiter {
       margin-top: 30%  !important
     }
+
+      
+  .input100 {
+    height: 40px;
+    background: #ebebeb;
+    border-radius: 27px;
+  }
+
+    
+  .login100-form-title {
+    font-size: 30px;
+    color: #fff;
+    padding-top: 30px;
+    padding-bottom: 19px;
+  }
 }

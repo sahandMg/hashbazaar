@@ -123,6 +123,10 @@ Route::get('about','PageController@aboutUs')->name('aboutUs');
 
 Route::post('login','AuthController@post_login')->name('login');
 
+Route::get('password-reser','AuthController@passwordReset')->name('passwordReset');
+
+Route::post('password-reser','AuthController@post_passwordReset')->name('passwordReset');
+
 Route::get('login/google','AuthController@redirectToProvider')->name('redirectToProvider');
 
 Route::get('login/google/callback','AuthController@handleProviderCallback')->name('handleProviderCallback');

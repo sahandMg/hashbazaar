@@ -243,6 +243,31 @@ class AuthController extends Controller
         return redirect()->route('dashboard');
     }
 
+    public function passwordReset(){
+
+        return view('password_reset');
+    }
+
+    public function post_passwordReset(Request $request){
+
+        $this->validate($request,[
+            'email'=> 'required|email',
+            'password'=>'required|min:6',
+            'confirm'=>'required|same:password'
+        ]);
+
+        $user = User::where('email',$request->email)->first();
+        $pass = strtolower(str_random(10));
+        $user->passowrd = bcrypt($pass);
+        $user->save();
+        Mail::send('email.password',['pass'=>$pass,'user'=>$user],function($message) use($user){
+            $message->from ('Admin@HashBazaar');
+            $message->to ($user->email);
+            $message->subject ('Password Reset');
+        });
+
+    }
+
     public function logout(){
 
         Auth::guard('user')->logout();

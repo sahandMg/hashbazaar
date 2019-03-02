@@ -31,7 +31,7 @@
     <div class="useraccount">
 
         {{-- <img class="user-img" src="{{URL::asset('../img/user-circle-solid.svg')}}" alt=""> --}}
-        <div class="navigation-menu">
+        <div class="navigation-menu" id="responsive-nav">
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
@@ -161,12 +161,25 @@
 
     <script>
         $(document).ready(function(){
-            $('.navigation-menu').click(function(){
-                $('#header-navbar-menu').toggle();
-                $('.useraccount .list1').toggle();
-                $('.navigation-menu').toggleClass('change');
-            })
+            console.log("js run");
+            // $('.navigation-menu').click(function(){
+            //   console.log("navigation-menu");
+            //     $('#header-navbar-menu').toggle();
+            //     $('.useraccount .list1').toggle();
+            //     $('.navigation-menu').toggleClass('change');
+            // })
+            // var myEl = document.getElementById('responsive-nav');
+
+            // myEl.addEventListener('click', function() {
+            //    alert('Hello world');
+            // }, false);
         });
+         console.log("js run");
+         var myEl = document.getElementById('responsive-nav');
+
+            myEl.addEventListener('click', function() {
+               alert('Hello world');
+            }, false);
     </script>
 </body>
 </html>

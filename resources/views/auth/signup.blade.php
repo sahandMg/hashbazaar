@@ -1,4 +1,4 @@
-@extends('master.auth')
+@extends('master.layout')
 @section('title')
 	<title>SignUp</title>
 @endsection

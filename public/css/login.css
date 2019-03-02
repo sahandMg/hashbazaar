@@ -37,7 +37,7 @@ body, html {
 }
 
 /*---------------------------------------------*/
-a {
+.limiter a {
 	font-family: Ubuntu-Regular;
 	font-size: 14px;
 	line-height: 1.7;
@@ -49,21 +49,21 @@ a {
   -moz-transition: all 0.4s;
 }
 
-a:focus {
+.limiter a:focus {
 	outline: none !important;
 }
 
-a:hover {
+.limiter a:hover {
 	text-decoration: none;
   color: #1b3815;
 }
 
 /*---------------------------------------------*/
-h1,h2,h3,h4,h5,h6 {
+.limiter h1,h2,h3,h4,h5,h6 {
 	margin: 0px;
 }
 
-p {
+.limiter p {
 	font-family: Ubuntu-Regular;
 	font-size: 14px;
 	line-height: 1.7;
@@ -71,61 +71,61 @@ p {
 	margin: 0px;
 }
 
-ul, li {
+.limiter ul, li {
 	margin: 0px;
 	list-style-type: none;
 }
 
 
 /*---------------------------------------------*/
-input {
+.limiter input {
 	outline: none;
 	border: none;
 }
 
-input[type="number"] {
+.limiter input[type="number"] {
     -moz-appearance: textfield;
     appearance: none;
     -webkit-appearance: none;
 }
 
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
+.limiter input[type="number"]::-webkit-outer-spin-button,
+.limiter input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
-textarea {
+.limiter textarea {
   outline: none;
   border: none;
 }
 
-textarea:focus, input:focus {
+.limiter textarea:focus, input:focus {
   border-color: transparent !important;
 }
 
 
-input::-webkit-input-placeholder { color: #1b3815;}
-input:-moz-placeholder { color: #1b3815;}
-input::-moz-placeholder { color: #1b3815;}
-input:-ms-input-placeholder { color: #1b3815;}
+.limiter input::-webkit-input-placeholder { color: #1b3815;}
+.limiter input:-moz-placeholder { color: #1b3815;}
+.limiter input::-moz-placeholder { color: #1b3815;}
+.limiter input:-ms-input-placeholder { color: #1b3815;}
 
-textarea::-webkit-input-placeholder { color: #1b3815;}
-textarea:-moz-placeholder { color: #1b3815;}
-textarea::-moz-placeholder { color: #1b3815;}
-textarea:-ms-input-placeholder { color: #1b3815;}
+.limiter textarea::-webkit-input-placeholder { color: #1b3815;}
+.limiter textarea:-moz-placeholder { color: #1b3815;}
+.limiter textarea::-moz-placeholder { color: #1b3815;}
+.limiter textarea:-ms-input-placeholder { color: #1b3815;}
 
 /*---------------------------------------------*/
-button {
+.limiter button {
 	outline: none !important;
 	border: none;
 	background: transparent;
 }
 
-button:hover {
+.limiter button:hover {
 	cursor: pointer;
 }
 
-iframe {
+.limiter iframe {
 	border: none !important;
 }
 

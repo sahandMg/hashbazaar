@@ -57,9 +57,6 @@
    <footer>
        <p class="text-center">© 2018 HashBazaar. All rights reserved</p>
        <img class="test2" src="{{URL::asset('img/Logo_footer.png')}}" alt="HashBazaar">
-       <div class="test2" style="color: black;">
-          <h6>test</h6>
-        </div>
    </footer>
 
     <!-- Container -->

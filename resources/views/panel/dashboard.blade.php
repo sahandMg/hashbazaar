@@ -53,8 +53,8 @@
             <div class="Hash-History">
                     <table class="table custom-table" style="color: black;">
                             @if(!$hashes->isEmpty())
-                          <thead>
-                            <tr>
+                          <thead >
+                            <tr style="font-weight:bolder;">
                                 <th>Hash Power</th>
                                 <th>Started at</th>
                                 <th>Ends at</th>

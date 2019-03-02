@@ -51,85 +51,56 @@
             </div> 
 
             <div class="Hash-History">
-                <table id="Hash-History-list">
-                    @if(!$hashes->isEmpty())
-
-                    <tr>
-                        <th class="Hash-History_column"> 
-                            Hash Power  
-                        </th>
-
-                        <th class="Hash-History_column"> 
-                            Started at
-                           
-                        </th>
-
-                        <th class="Hash-History_column"> 
-                            Ends at
+                    <table class="table custom-table" style="color: black;">
+                            @if(!$hashes->isEmpty())
+                          <thead>
+                            <tr>
+                                <th>Hash Power</th>
+                                <th>Started at</th>
+                                <th>Ends at</th>
+                                <th>Remain</th>
+                             </tr>
+                           </thead>
+                           <tbody>
+                            <tr>
+                                <td>
+                                    @foreach($hashes as $hash)
+                                        <span>{{$hash->hash}}TH/S</span>
+                                    @endforeach         
+                                </td>
+                                <td>
+                                    @foreach($hashes as $hash)
+                                       <span>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}}    </span> 
+                                        @endforeach
+                                </td>
+                                <td> 
+                                        @foreach($hashes as $hash)
+                                        <span>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}   </span>
+                                        @endforeach
+                                </td>
+            
+                                <td>
+                                    @foreach($hashes as $key => $hash)
+                                            <div class="remain">
+                                                <div class="progress1">
+                                                    <div class="progress-bar1" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%;width: {{$remainedLife[$key]}}%;">
+                                                        <span class="title">{{$remainedLife[$key]}}%</span>
+            
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                      @endforeach    
+                                </td>
+                            </tr>
+                           </tbody> 
                             
-                        </th>
-
-                        <th class="Hash-History_column"> 
-                            Remain
-                            
-                        </th>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>
-                            @foreach($hashes as $hash)
-                                <span>{{$hash->hash}}TH/S</span>
-                            @endforeach
-                                
-                        </td>
-
-                        <td>
-                            @foreach($hashes as $hash)
-                            
-                                <span>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}}    </span> 
-                                @endforeach
-
-                        </td>
-
-                        <td> 
-                                @foreach($hashes as $hash)
-
-                                <span>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}   </span>
-                                @endforeach
-
-                        </td>
-
-                        <td>
-                            @foreach($hashes as $key => $hash)
-                                
-
-                                
-                                    <div class="remain">
-                                        <div class="progress1">
-                                            <div class="progress-bar1" role="progressbar1" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%">
-                                                <span class="title">{{$remainedLife[$key]}}%</span>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                
-                                    @endforeach
-
-                                
-                        </td>
-
-                    </tr>
-                    
-       
-                    @else
-                        <p id="no-hash"> NO Hash History</p>
-                    @endif
-                           
-       
-                </table>
+            
+                            @else
+                                <p id="no-hash"> NO Purchases</p>
+                            @endif
+                                   
+               
+                    </table>
             </div> 
              {{-- <div class="Hash-History_column"> Hash Power
                         <ul>

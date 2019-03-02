@@ -1462,6 +1462,10 @@ form.contact-page p:nth-of-type(1) {
         /*margin-left: 150px;*/
     }
    
+    .container .custom-table th:nth-of-type(2) ,
+        .container .custom-table td:nth-of-type(2) {
+            display: none
+        }
     .Transactions {
         width: 380px !important;
         /*height: 10px;*/
@@ -2497,7 +2501,7 @@ form.contact-page p:nth-of-type(1) {
 
 /* Dashboard-Media-414 */
 @media screen and (max-width:414px) {
-
+        
     #dashboard-page {
         width: 100%;
         z-index: 0;
@@ -2578,6 +2582,10 @@ form.contact-page p:nth-of-type(1) {
         float:left;
     }
     
+    .Hash-History .custom-table th:nth-of-type(2) ,
+    .Hash-History .custom-table td:nth-of-type(2) {
+        display: none
+    }
     #Hash-History-list tr
     {
         flex-grow: 1;

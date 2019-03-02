@@ -100,7 +100,7 @@
 
         @media screen and (max-width:1024px) {
           footer img {
-            height: 60px;
+            height: 40px;
           }
           footer {
             margin-left: 280px;

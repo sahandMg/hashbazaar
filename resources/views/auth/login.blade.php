@@ -7,6 +7,11 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<form method="post" action="{{route('login')}}" class="login100-form validate-form p-l-55 p-r-55 p-t-178">
+				    <ul>
+						@foreach($errors->all() as $error)
+							<li style="color: red;margin-bottom: 1%;">{{$error}}</li>
+						@endforeach
+					</ul>
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
 						<span class="login100-form-title">
 						Log In

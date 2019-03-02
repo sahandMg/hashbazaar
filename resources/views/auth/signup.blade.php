@@ -12,10 +12,9 @@
 
 					<ul>
 						@foreach($errors->all() as $error)
-							<li>{{$error}}</li>
+							<li style="color: red;margin-bottom: 1%;">{{$error}}</li>
 						@endforeach
 					</ul>
-					<br>
 				<input type="hidden" name="_token" value="{{csrf_token()}}">
 					<span class="login100-form-title">
 						Sign Up

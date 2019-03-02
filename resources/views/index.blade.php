@@ -28,9 +28,10 @@
             <h3 class="fontTheme">choose your investment planS</h3>
         </div>
         <div class="container">
+          <form>
             <h5 id="demo"></h5>
             <div class="slidecontainer">
-                <input type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" class="slider" id="myRange">
+                <input name="hashNumber" type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" class="slider" id="myRange">
             </div>
             <div style="text-align: left;font-weight: 700;">
                 <p>Hash allocation cost : <span id="cost"></span> dollar</p>
@@ -40,8 +41,9 @@
                 <small>(Changes may happen depends on bitcoin price and bitcoin network difficulty changes.)</small>
             </div>
             <div class="form-group fontTheme" style="margin-top: 2%;">
-                <button id="myBtn" class="btn  btn-primary round-button-com" type="button" style="width: 120px">Buy</button>
+                <button class="btn  btn-primary round-button-com" type="button" style="width: 120px">Buy</button>
             </div>
+           </form>
         </div>
     </section>
     <section class="context-section backgroundGrey text-center pt-4 pb-4 advantages" style="color: #707070">

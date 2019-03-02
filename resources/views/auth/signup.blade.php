@@ -12,10 +12,9 @@
 
 					<ul>
 						@foreach($errors->all() as $error)
-							<li>{{$error}}</li>
+							<li style="color: red;margin-bottom: 1%;">{{$error}}</li>
 						@endforeach
 					</ul>
-					<br>
 				<input type="hidden" name="_token" value="{{csrf_token()}}">
 					<span class="login100-form-title">
 						Sign Up
@@ -83,12 +82,12 @@
 	@include('master.footer')
 	
 <!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!-- <script src="vendor/jquery/jquery-3.2.1.min.js"></script> -->
 <!--===============================================================================================-->
 	<script src="vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!-- <script src="vendor/bootstrap/js/bootstrap.min.js"></script> -->
 <!--===============================================================================================-->
 	<script src="vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->

@@ -79,7 +79,8 @@ foreach ($hashes as $key=> $hash){
         <q>Transactions </q>
         <div id="activity-page_thirdList">
 
-            <table id="Transactions-list" >
+            <table id="Transactions-list" class="table custom-table" >
+                    <thead>
                     <tr>
                         <th class="Transactions_column"> 
                             Date  
@@ -101,6 +102,8 @@ foreach ($hashes as $key=> $hash){
                         </th>
 
                     </tr>
+                </thead>
+                <tbody>
 
                     <tr>
 
@@ -124,6 +127,7 @@ foreach ($hashes as $key=> $hash){
                         </td>
 
                     </tr>
+                </tbody> 
          
                  
                         <!-- <p id="no-hash"> NO Hash History</p> -->
@@ -178,5 +182,12 @@ foreach ($hashes as $key=> $hash){
         .custom-table th{
             border-top: 0px;
         }
+
+        /* @media screen and (max-width:414px){
+            .container .custom-table th:nth-of-type(2) ,
+            .container .custom-table td:nth-of-type(2) {
+                display: none
+            }
+        } */
       </style>
 @endsection

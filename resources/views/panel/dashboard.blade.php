@@ -51,6 +51,7 @@
             </div> 
 
             <div class="Hash-History">
+
                 <table id="Hash-History-list">
                     @if(!$hashes->isEmpty())
 
@@ -110,6 +111,7 @@
                            
        
                 </table>
+
             </div> 
              {{-- <div class="Hash-History_column"> Hash Power
                         <ul>

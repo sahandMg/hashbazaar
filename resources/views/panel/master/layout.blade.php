@@ -24,6 +24,7 @@
 
 </head>
 <body>
+
 {{--<header>--}}
 
     {{--<div id="header-div">--}}
@@ -48,6 +49,32 @@
     {{--</div>--}}
 
 {{--</header>--}}
+
+{{--<header>--}}
+
+    {{--<div id="header-div"> --}}
+       {{--<a href="http://hashbazaar.com"> <img class="Logo_header" src="{{URL::asset('img/Logo_header.svg')}}" alt="Logo_header"></a> --}}
+    {{--</div>--}}
+    {{--<div class="navigation-menu" >--}}
+        {{--<div class="bar1 test2"></div>--}}
+        {{--<div class="bar2 test2"></div>--}}
+        {{--<div class="bar3 test2"></div>--}}
+    {{--</div>--}}
+    {{--<div class="useraccount">--}}
+        {{--<div class="list1">--}}
+            {{--<ul>--}}
+                {{--<li class="user-account-list sub2"> <a href="{{route('dashboard')}}" id="dashboard2">Dashboard</a></li>--}}
+                {{--<li class="user-account-list sub2"> <a href="{{route('activity')}}" id="activity2">Activity</a></li>--}}
+                {{--<li class="user-account-list sub2"> <a href="{{route('referral')}}" id="referral2">Referral</a> </li>--}}
+                {{--<li class="user-account-list sub2"> <a href="{{route('setting')}}" id="setting2">Setting</a></li>--}}
+                {{--<li class="user-account-list sub2"> <a href="{{route('contact')}}" id="contact2">Contact</a></li>--}}
+                {{--<li class="user-account-list sub2" id="logouticon"><a href="{{route('logout')}}" >Log Out</a></li>--}}
+            {{--</ul>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+    {{----}}
+{{--</header>--}}
+
 
 
 

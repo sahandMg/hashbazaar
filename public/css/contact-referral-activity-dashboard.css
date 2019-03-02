@@ -1393,7 +1393,8 @@ form.contact-page p:nth-of-type(1) {
      .purchases q {
        height: 30px;
        font-size: 27px;
-       margin-top: 200px !important
+       padding-bottom: 40px;
+       /*margin-top: 200px !important*/
     }
        
     #nopur {
@@ -1408,6 +1409,7 @@ form.contact-page p:nth-of-type(1) {
     .Transactions q {
       height: 30px;
       font-size: 27px;
+      padding-bottom: 40px;
    }
 
    #Transactions-list
@@ -1481,7 +1483,7 @@ form.contact-page p:nth-of-type(1) {
         font-size: 22px;
     }
      .purchases {
-        height: 2px !important;
+        /*height: 2px !important;*/
         margin-bottom: 0 
     }
      .purchases q {
@@ -1492,7 +1494,7 @@ form.contact-page p:nth-of-type(1) {
    
     .Transactions {
         width: 380px !important;
-        height: 10px;
+        /*height: 10px;*/
         margin-top: 5px !important
     }
      .Transactions q {

@@ -14,12 +14,10 @@ foreach ($hashes as $key=> $hash){
 
 
 <div  class="panel-container activity-container">
-
     <h2 class="text-center">Recent Activities</h2> 
-
     <div class="purchases">
         <q>Purchases</q>
-
+      <div class="container">
         <table id="Hash-History-list">
                 @if(!$hashes->isEmpty())
 
@@ -100,7 +98,7 @@ foreach ($hashes as $key=> $hash){
                        
    
             </table>
-
+        </div>
         
     </div> 
 
@@ -197,6 +195,9 @@ foreach ($hashes as $key=> $hash){
     <style type="text/css">
         .progress-bar1 .title {
           opacity: 1;
+        }
+        .activity-container h2 {
+            margin-top: 4%;
         }
       </style>
 @endsection

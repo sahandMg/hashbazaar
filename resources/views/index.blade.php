@@ -124,10 +124,10 @@
 
 
 
-    <script src="js/jquery.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{asset('js/jquery.min.js')}}"></script>
+    <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src="js/Bazar.js"></script>
+    <script src="{{asset('js/Bazar.js')}}"></script>
     <style type="text/css">
         p {
             margin: 0px;padding: 0px;padding-top: 5px;
@@ -136,17 +136,18 @@
     <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="792f282f-edde-46b8-8b02-d38ca5cb92c2";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
     <script type="text/javascript">
         console.log("js run");
+        var sliderValue = {!! \App\Setting::first()->usd_per_hash !!}
         var slider = document.getElementById("myRange");
         var output = document.getElementById("demo");
         output.innerHTML = slider.value+' Th'; // Display the default slider value
-        var cost = document.getElementById("cost"); cost.innerHTML = slider.value * 50 ;
+        var cost = document.getElementById("cost"); cost.innerHTML = slider.value * sliderValue ;
         var hashInput = document.getElementById("hash");
         hashInput.value = slider.value;
         // Update the current slider value (each time you drag the slider handle)
         slider.oninput = function() {
             console.log("input change");
             output.innerHTML = this.value+' Th';
-            cost.innerHTML = slider.value * 50 ;
+            cost.innerHTML = slider.value * sliderValue ;
             hashInput.value = slider.value;
         }
 

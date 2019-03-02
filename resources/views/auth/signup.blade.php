@@ -51,16 +51,16 @@
                         </button>
 					</div>
 
-					<div class="container-socialnet">
+					<div class="container-socialnet1">
 						
-						{{-- <a href="https://facebook.com" class="socialnet-flex" id="fb">
+						{{-- <a href="https://facebook.com" class="socialnet-flex1" id="fb">
 							<img src="/public/img/facebook.svg" alt=""></a>
 						
-						<a href="https://twitter.com" class="socialnet-flex" id="twttr">
+						<a href="https://twitter.com" class="socialnet-flex1" id="twttr">
 							<img src="/public/img/twitter.svg" alt=""></a>
 						 --}}
 
-						<a href="#" class="socialnet-flex" id="gp">
+						<a href="#" class="socialnet-flex1" id="gp">
 							<img src="img/icons/googleicon.png" alt=""></a>
 						{{-- alt="Join With Google Account" --}}
 

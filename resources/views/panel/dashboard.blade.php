@@ -44,9 +44,9 @@
             
             <div class="title-flex">
             
-                    <hr class="dashboard-hr1"/>
-                    <h1 id="dashboard-title">Hash History</h1>
-                    <hr class="dashboard-hr2-2"/>
+                    <hr class="dashboard-hr"/>
+                    <h1 class="dashboard-title">Hash History</h1>
+                    <hr class="dashboard-hr"/>
             
             </div> 
 
@@ -182,11 +182,11 @@
 
             <!--   Buy hash power -->
             <div class="title-flex">
-                <hr  class="dashboard-hr11"/>
+                <hr  class="dashboard-hr"/>
 
-                <h1 id="dashboard-title2">Buy Hash Power</h1>
+                <h1 class="dashboard-title">Buy Hash Power</h1>
 
-                <hr  class="dashboard-hr11"/>
+                <hr  class="dashboard-hr"/>
             </div>
             <h5 id="demo"></h5>
             <div class="slidecontainer">
@@ -233,9 +233,9 @@
             <!-- Mining History -->
             <div class="title-flex">
 
-                <hr class="dashboard-hr111" >
-                <h3 id="dashboard-title3">Mining History</h3>
-                <hr class="dashboard-hr222-2" >
+                <hr class="dashboard-hr" >
+                <h3 class="dashboard-title">Mining History</h3>
+                <hr class="dashboard-hr" >
 
             </div> 
 

@@ -192,6 +192,46 @@ header {
     position: absolute;
 }
 
+.panel-header {
+    margin-top: 2%;
+    font-size: 2rem;
+    color: #2e2d2d;
+   font-weight: bold;
+   font-family: sans-serif;
+}
+.contact-container form {
+    width: 70%;
+    margin: auto;
+}
+
+@media screen and (max-width:1024px) {
+    .contact-container form {
+      width: 70%;
+    }
+    .panel-header {
+       font-size: 1.8rem;
+     }
+}
+
+@media screen and (max-width:768px) {
+    .contact-container form {
+      width: 80%;
+    }
+    .panel-header {
+       font-size: 1.5rem;
+     }
+}
+@media screen and (max-width:415px) {
+    .contact-container form {
+      width: 90%;
+    }
+    .panel-header1 {
+       margin-top: 4%;
+       font-size: 1.1rem;
+       letter-spacing: 0.5px
+     }
+}
+
 /* Contact */
 
 #contact-page {
@@ -259,40 +299,7 @@ form.contact-page p:nth-of-type(1) {
     margin-left:180px;
     margin-top: 380px;
 }
-.contact-hr-footer {
-    margin-top: 50px !important;
-    display: block !important;
 
-}
-/* Footer */
-
-.contact-footer-div {
-    margin-top: 0px !important;
-    width:90%;
-    margin-left: 0%;
-}
-.contact-footer-paragraph {
-    font-size: 20px;
-    font-family: sans-serif;
-    top: -20px;
-    margin-left: 35% 
-}
-
-#contact-footer-image {
-    width: 250px;
-    height: 60px;
-    padding-left: 1%;
-    padding-bottom: 1%;
-}
-
-/* Contact - Media - 1280 */
-@media screen and (max-width:1280px) {
-    
-.contact-footer-div {
-    
-    margin-left: 4%;
-}
-}
 
 /* Contact - Media - 1024 */
 @media screen and (max-width:1024px){
@@ -329,27 +336,7 @@ form.contact-page p:nth-of-type(1) {
         border: 2px solid black;
     }
    
-    .contact-hr-footer
-    {
-        margin-top:80px !important
-    }
-
-    .contact-footer-div {
-        margin-top: 80px !important;
-        width: 70%;
-        margin-left: 0%;
-    }
-    .contact-footer-paragraph {
-        font-size: 20px;
-        font-family: sans-serif;
-        margin-left: 30%
-    }
-
-    #contact-footer-image {
-        width: 250px;
-        height: 120px;
-        left: 30%
-    }
+    
 
 }
 
@@ -401,35 +388,7 @@ form.contact-page p:nth-of-type(1) {
         height: 150px;
     }
 
-    .contact-hr-footer {
-        top: 800px;
-        margin-top: 170px !important
-    }
-
-    /* Footer */
-
-    .contact-footer-div {
-        margin-top:10px !important;
-        width: 94%;
-        left: 2%;
-        margin: 0%;
-        border-bottom: transparent;
-    }
-    .contact-footer-paragraph {
-        font-size: 18px;
-        border-bottom: transparent;
-        top: -60px;
-        left: 230px
-    }
-
-    #contact-footer-image {
-        border-bottom: transparent;
-        left: 0%;
-        width: 200px;
-        height: 60px;
-        
-    }
-
+  
     .useraccount .list1 {
         display: none;
     }
@@ -494,43 +453,6 @@ form.contact-page p:nth-of-type(1) {
         height: 150px;
     }
 
-    .contact-hr-footer {
-        margin-top:  000px !important;
-        top: 0 !important;
-    }
-
-/* Footer */
-    #footer-div {
-        margin-top: 100px !important;
-        top: 0;
-        width: 100% !important
-    }
-    .contact-footer-div {
-        width: 10% !important;
-        top:0px;
-        left: 2%;
-        margin: 0;
-        margin-top: -00px !important;
-    }
-
-    #contact-footer-image {
-        width: 130px;
-        height: 40px;
-        margin: 0 auto;
-        padding-top: 10px;
-        padding-left: 10px
-    }
-
-    .contact-footer-paragraph {
-        margin-top: 0;
-        font-size: 15px;
-        font-family: sans-serif;
-        /* position: absolute; */
-        top: -60px;
-        left: 0px;
-        width: 290px
-    }
-
 }
 
 /* Contact - Media - 375 */
@@ -573,38 +495,6 @@ form.contact-page p:nth-of-type(1) {
         margin-left: 60px !important;
         width: 250px;
         height: 150px;
-    }
-
-    .contact-hr-footer {
-        margin-top: 200px !important
-    }
-
-    /* Footer */
-    #footer-div {
-        margin-top: -0%;
-        top: 0
-    }
-    .contact-footer-div {
-        width: 10% !important;
-        top:0px;
-        left: 2%;
-        margin: 0;
-        margin-top: -00px !important ;
-    }
-
-    #contact-footer-image {
-        width: 120px !important;
-        height: 50px;
-        margin: 0 auto
-    }
-
-    .contact-footer-paragraph {
-        margin-top: 0;
-        font-size: 15px;
-        font-family: sans-serif;
-        top: -60px;
-        left: 0px;
-        width: 290px
     }
 
 }
@@ -657,84 +547,12 @@ form.contact-page p:nth-of-type(1) {
         height: 150px;
     }
 
-    .contact-hr-footer {
-        margin-top: 270px !important
-    }
-
-    /* Footer */
-    #footer-div {
-        margin-top: 0;
-        top: 0
-    }
-    .contact-footer-div {
-        width: 10% !important;
-        top:0px;
-        left: 2%;
-        margin: 0;
-        margin-top: -0px !important;
-    }
-
-    #contact-footer-image {
-        width: 100px;
-        height: 50px;
-        margin: 0 auto;
-        padding-bottom: 10px
-    }
-
-    .contact-footer-paragraph {
-        margin-top: 0;
-        font-size: 15px;
-        font-family: sans-serif;
-        top: -60px;
-        left: 0px;
-        width: 290px
-    }
-
 }
 
 
 /* REFERRAL */
 
 
-.mainContainer
-{
-    background-color: #FFFDE8
-}
-body {
-    background-color: #FFFDE8
-
-}
-
-/* Header */
-
-header {
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 110px;
-    background-color: black;
-    font-size: 50px;
-    position: fixed;
-    z-index: 2000;
-}
-
-#header-div {
-    border-bottom: 4px solid orange;
-    width: 100% !important;
-    height: 110px;
-    position: fixed;
-    z-index: 2000;
-}
-
-.Logo_header {
-    width: 700px;
-    height: 90px;
-    position: absolute;
-    left: -120px;
-}
-
-/* Referral */
 #referral {color: orange !important}
 
 #referral-page {
@@ -781,8 +599,7 @@ header {
  }
 
  #referral-page dl {
-
- font-size: 25px;
+    font-size: 25px;
     color: #2e2d2d;
     font-weight: bold;
     font-family: sans-serif;
@@ -824,50 +641,6 @@ header {
     font-weight: bolder !important
 }
 
-.referral-hr-footer
-{
-    top: 820px;
-    width: 75% !important;
-    margin-left:-40px !important;
-    margin: 0
-}
-
-/* Footer */
-
-.referral-footer-div {
-    width: 70% !important;
-    margin-left: 28%;
-    margin-top: 320px !important;
-}
-
-#referral-footer-image {
-    width: 250px;
-    height: 60px;
-    left: 30%;
-    padding-bottom: 1%;
-    padding-left: 1%
-}
-
-.referral-footer-paragraph {
-    font-size: 20px;
-    font-family: sans-serif;
-    top: -20px;
-    margin-left:30%
-}
-
-/* Referral - Media - 1280 */
-@media screen and (max-width:1280px) {
-        
-    .referral-hr-footer
-    {
-        top: 800px;
-        margin: 0
-    }
-    .referral-footer-div  {
-        
-        margin-left: 30%;
-    }
-}
 
 /* Referral - Media - 1024 */
 @media screen and (max-width:1024px){
@@ -927,35 +700,7 @@ header {
         font-family: sans-serif;
         margin-left: 5%
     }
-    .referral-hr-footer
-    {
-        top: 710px;
-        width: 730px !important;
-        padding-bottom: 100px
-    }
-
-    /* Footer */
-    .referral-footer-div {
-        width: 100%;
-        left: 0%;
-        margin-top: 300px !important
-    }
-
-    #referral-footer-image {
-        width: 200px;
-        height: 100px;
-    }
-
-    .referral-footer-paragraph {
-        font-size: 20px;
-        font-family: sans-serif;
-        /* position: absolute; */
-        top: -20px;
-        left: 40%
-    }
-
-
-
+   
 
 }
 
@@ -1031,35 +776,8 @@ header {
         font-weight: bolder !important;
     }
 
-    .referral-hr-footer
-    {
-        top: 800px;
-        width: 758px !important;
-        margin-left: 0px !important;
-        left: 0 !important;
-    }
-
-    /* Footer */
-
-    .referral-footer-div {
-        width: 94%;
-        margin-left: 0%;
-        /* position: absolute; */
-        margin-top: 500px !important
-    }
-
-    .referral-footer-paragraph {
-        font-size: 18px;
-        left: 200px;
-        width: 320px
-    }
-    #referral-footer-image {
-        width: 200px;
-        height: 60px;
-        padding-top: 20px;
-        padding-left: 20px
    
-    }
+    
 }
 
 /* Referral - Media - 414 */
@@ -1175,35 +893,8 @@ header {
         font-weight: bolder !important;
     }
 
-    .referral-hr-footer
-    {
-        top: 900px;
-        left:-310px;
-        width: 414px !important;
-    }
+   
 
-    /* Footer */
-    
-    .referral-footer-div {
-        width: 100%;
-        margin-left: 0%;
-        margin-top: 530px !important
-    }
-
-    .referral-footer-paragraph {
-        font-size: 16px;
-        margin-left: 0px;
-        top: 0 !important;
-        margin-top: 0 !important;
-        width: 300px;
-    }
-
-    #referral-footer-image {
-        width: 130px;
-        height: 50px;
-        padding-bottom: 10px;
-        margin: 0 auto
-    }
 
 }
 
@@ -1262,33 +953,7 @@ header {
         width: 50px
     }
 
-    .referral-hr-footer
-    {
-        top: 900px;
-        left:-312px;
-        width: 375px !important;
-    }
-
-    /* Footer */
-
-    .referral-footer-div {
-        width: 94%;
-        margin-left: 2%;
-        margin-top: 550px !important
-    }
-
-    .referral-footer-paragraph {
-        font-size: 16px;
-        margin-left: 70px;
-    }
-
-    #referral-footer-image {
-        width: 140px !important;
-        height: 40px !important;
-        margin: 0 auto;
-        padding-top: 0px;
-        padding-bottom: 0px;
-    }
+    
 }
 
 /* Referral - Media - 320 */
@@ -1343,82 +1008,9 @@ header {
     }
 
 
-    .referral-hr-footer
-    {
-        top: 870px;
-        left:-235px;
-        width: 320px !important;
-        margin-bottom: 20px !important;
-    }
-
-    /* Footer */
-
-    .referral-footer-div {
-        width: 90%;
-        margin-left: 0%;
-        /* position: absolute; */
-        top: 1260px;
-        margin-top: 200px
-    }
-
-    .referral-footer-paragraph {
-        font-size: 14px;
-        margin-left: 30px;
-        left: 0px;
-        width: 300px;
-    }
-
-    #referral-footer-image {
-        width: 130px !important;
-        height: 40px;
-        margin: 0 auto;
-        padding-top: 0px;
-        padding-bottom: 0px;
-        padding-left: 10px
-
-    }
-
 }
 
 /* ACTIVITY */
-
-.mainContainer
-{
-    background-color: #FFFDE8
-}
-body {
-    background-color: #FFFDE8
-}
-
-/* Header */
-
-header {
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 110px;
-    background-color: black;
-    font-size: 50px;
-    position: fixed;
-    z-index: 200;
-}
-
-#header-div {
-    border-bottom: 4px solid orange;
-    width: 100%;
-    height: 110px;
-    position: fixed;
-    z-index: 200;
-}
-
-.Logo_header {
-    width: 700px;
-    height: 90px;
-    position: absolute;
-    left: -120px;
-}
-
 
 /* Menu */
 
@@ -1503,12 +1095,6 @@ header {
 
 /* Activity */
 
- #activity-page {
-     top: 00px;
-     margin-left: 27.5%;
-     width: 72%;
- }
-
  #activity {color: orange !important}
 
   .activity-container h2 {
@@ -1516,10 +1102,9 @@ header {
     color: #2e2d2d;
     font-weight: bold;
     font-family: sans-serif;
-    
  }
 
- #activity-page .purchases q {
+ .purchases q {
     width: 200px;
     height: 40px;
     text-align: center;
@@ -1528,8 +1113,8 @@ header {
     color: #2e2d2d;
     font-weight: bold;
     font-family: sans-serif;
-    margin-top: 400px;
-    margin-left: 350px;
+    margin: auto;
+    display: block
  }
 
 #nopur {
@@ -1539,7 +1124,7 @@ header {
 
 .mainList2 {display: none}
 
-#activity-page .Transactions q {
+.Transactions q {
    width: 220px;
    height: 40px;
    text-align: center;
@@ -1548,11 +1133,11 @@ header {
    color: #2e2d2d;
    font-weight: bold;
    font-family: sans-serif;
-   margin-left: 320px;
-   margin-top: 70px;
+   margin: auto;
+   display: block
 }
 
-#activity-page #activity-page_thirdList {
+ #activity-page_thirdList {
     max-height: 300px
 }
  #Transactions-list
@@ -1562,7 +1147,6 @@ header {
      height: 100px !important;
      float:left;
  }
-
  
 #Transactions-list tr
 {
@@ -1627,53 +1211,7 @@ header {
   .tooltip1:hover .tooltiptext {
     visibility: visible;
   }
-.activity-hr-footer
-{
-    margin-top: 90px;
-    top: 0;
-}
 
-/* Footer */
-
-.activity-footer-div {
-    width: 90%;
-    margin-left: 2%;
-    margin-top: -320px !important;
-    height: 100;
-    padding-bottom: 2%
-}
-
-#activity-footer-image {
-    width: 200px;
-    height: 60px;
-}
-
-.activity-footer-paragraph {
-    font-size: 20px;
-    font-family: sans-serif;
-    top: -20px;
-    margin-left: 37% !important
-}
-
-/* Activity-Media-1280 */
-@media screen and (max-width:1280px) 
-{
-    
-    .activity-hr-footer
-    {
-        margin-top: 90px;
-        top: 0;
-    }
-
-
-    .activity-footer-div {
-        width: 90%;
-        margin-left: 5%;
-        margin-top: -320px !important;
-        height: 100;
-        padding-bottom: 2%
-    }
-}
 
 /* Activity-Media-1024 */
 @media screen and (max-width:1024px)
@@ -1724,17 +1262,17 @@ header {
 
     /* =============--media--================Activity=============================== */
 
-    #activity-page blockquote {
+    blockquote {
        font-size: 25px;
     }
 
-    #activity-page .purchases q {
+    .purchases q {
        width: 170px;
        height: 30px;
        font-size: 25px;
     }
 
-   #activity-page .Transactions q {
+   .Transactions q {
       width: 180px;
       height: 30px;
       font-size: 25px;
@@ -1784,20 +1322,6 @@ header {
        color: #2e2d2d;
    }
 
-   /* Footer */
-   .activity-hr-footer {
-       top: 0px;
-       margin-left: -768px
-   }
-   .activity-footer-div {
-        margin-top: -280px !important;
-        margin-left: 0
-   }
-
-   .activity-footer-paragraph {
-       margin-left: 32%;
-       width: 400px
-   }
 }
 
 /* Activity-Media-768 */
@@ -1807,11 +1331,6 @@ header {
     header {
         z-index: 2;
         width: 768px;
-    }
-
-    #activity-page {
-        height: 1000px;
-        z-index: 0;
     }
    
     .mainList {
@@ -1873,18 +1392,13 @@ header {
         top: 0px
     }
 
-    #activity-page {
-        margin-left: 0% !important;
-        width: 100%;
-    }
-  
 
-    #activity-page blockquote {
+     blockquote {
        font-size: 27px;
        margin-top: 150px
     }
 
-    #activity-page .purchases q {
+     .purchases q {
        height: 30px;
        font-size: 27px;
        margin-top: 200px !important
@@ -1896,10 +1410,10 @@ header {
     }
 
    
-   #activity-page .Transactions  {
+    .Transactions  {
        width: 700px !important
     }
-   #activity-page .Transactions q {
+    .Transactions q {
       height: 30px;
       font-size: 27px;
    }
@@ -1948,37 +1462,6 @@ header {
        color: #2e2d2d;
    }
 
-   .activity-hr-footer
-   {
-       top:100px !important;
-       width: 100%;
-       margin-left: 0px;
-       left: 0
-   }
-
-   /* Footer */
-
-   .activity-footer-div {
-       width: 100%;
-       margin-left: 0%;
-       margin-top:-200px !important;
-       display: block
-   }
-
-   #activity-footer-image {
-        width: 200px;
-        height: 60px;
-        margin-top: 30px;
-        padding-left: 2%
-
-   }
-
-   .activity-footer-paragraph {
-       font-size: 20px;
-       font-family: sans-serif;
-       margin-left: 210px !important;
-       padding-top: 40px
-   }
 
 }
 
@@ -2000,33 +1483,27 @@ header {
         display: none
     }
 
-    #activity-page {
-        margin-left: 0% !important;
-        width: 100%;
-        height: auto !important
-    }
-
-    #activity-page blockquote {
+   blockquote {
         margin-top: 100px;
         margin-left: 30px;
         font-size: 22px;
     }
-    #activity-page .purchases {
+     .purchases {
         height: 2px !important;
         margin-bottom: 0 
     }
-    #activity-page .purchases q {
+     .purchases q {
         height: 20px;
         font-size: 18px;
         margin-left: 150px;
     }
    
-    #activity-page .Transactions {
+    .Transactions {
         width: 380px !important;
         height: 10px;
         margin-top: 5px !important
     }
-    #activity-page .Transactions q {
+     .Transactions q {
         height: 18px;
         font-size: 18px;
         margin-left: 140px;
@@ -2074,42 +1551,6 @@ header {
         color: #2e2d2d;
     }
 
-    .activity-hr-footer
-    {
-        margin-left: 0px !important;
-        width: 412px;
-        margin-top: 0
-    }
-
-    /* Footer */
-    #footer-div {
-        top: 540px ;
-        margin-top: 0 !important
-    }
-    .activity-footer-div {
-        width: 100%;
-        margin-left: 0% ;
-        top: 000px !important;
-        margin-top:-20px !important;
-    }
-
-    #activity-footer-image {
-        width: 140px !important;
-        height: 50px;
-        margin: 0 auto;
-        padding-top: 10px;
-        padding-bottom:0px;
-        padding-left: 2% !important
-    }
-
-    .activity-footer-paragraph {
-        font-size: 15px;
-        font-family: sans-serif;
-        /* margin-top: -120px; */
-        margin-left: 60px !important;
-        width: 270px
-    }
-
     .useraccount {margin-left: 78% !important}
 
 }
@@ -2133,28 +1574,23 @@ header {
         display: none
     }
 
-    #activity-page {
-        width: 100%;height: auto;
-        z-index: 0;
-    }
-
-    #activity-page blockquote {
+    blockquote {
         top: 250px;
         margin-left: 30px;
         font-size: 22px;
     }
 
-    #activity-page .purchases q {
+    .purchases q {
        height: 20px;
        font-size: 18px;
        margin-left: 100px;
        top: 350px
     }
 
-    #activity-page .Transactions {
+    .Transactions {
         width: 360px !important
     }
-    #activity-page .Transactions q {
+    .Transactions q {
         height: 18px;
         font-size: 18px;
         margin-left: 100px;
@@ -2166,7 +1602,6 @@ header {
         height: 300px;
         float:left;
     }
-
     
     #Transactions-list tr
     {
@@ -2203,36 +1638,6 @@ header {
         color: #2e2d2d;
     }
 
-    .activity-hr-footer
-    {
-        margin-left: 0 !important;
-        top: 0px !important;
-        width: 100%;
-    }
-
-    /* Footer */
-
-    .activity-footer-div {
-       width: 100%;
-       margin-left: 0%;
-       margin-top: -110px !important
-    }
-
-    #activity-footer-image {
-        width: 130px !important;
-        height: 40px;
-       padding-bottom: 0px;
-       margin: 0 auto;
-       padding-left: 2%
-    }
-
-    .activity-footer-paragraph {
-       font-size: 15px;
-       font-family: sans-serif;
-       margin-left: 20px;
-       padding-top: 30px;
-       padding-bottom: 10px;
-    }
 }
 
 /* Activity-Media-320 */
@@ -2378,47 +1783,7 @@ header {
 
 }
 
-
 /* DASHBOARD */
-
-.mainContainer {
-    background-color: #FFFDE8
-}
-
-/* --------------------------------------------------------Header----------------------------------------- */
-
-header {
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 110px;
-    background-color: black;
-    font-size: 50px;
-    position: fixed;
-    z-index: 2000;
-}
-
-header div {
-    border-bottom: 4px solid orange;
-    background-color: black;
-    width: 100%;
-    height: 110px;
-    position: fixed;
-    z-index: 2000;
-}
-
-.Logo_header {
-    width: 700px;
-    height: 90px;
-    position: absolute;
-    left: -120px;
-    z-index: 22222;
-}
-
-body {
-    background-color: #FFFDE8
-}
 
 /*  --------------------------------------------------dashboard-page----------------------------------------*/
 
@@ -2443,24 +1808,24 @@ body {
     margin : auto;
 }
 #dashboard-page-circle {
-    width: 450px !important; 
+    width: 47% !important; 
     display: block;
-    height: 400px !important;
+    height: 100% !important;
     border: 20px solid #ff9100;
     border-radius: 50%;
     border-collapse: 2px solid #727272;
-    flex: 1;
+    flex-shrink: 1;
 }
 
 #dashboard-page-circle2 {
-    width: 450px !important;
+    width: 47% !important; 
     display: block;
-    height: 400px !important;
+    height: 100% !important;
     border: 20px solid #ff9100;
     border-radius: 50%;
     border-collapse: 2px solid #727272;
     margin-left: 6% !important;
-    flex: 1;
+    flex-shrink: 1;
 }
 
 #redeem {
@@ -2493,7 +1858,7 @@ body {
     border: none;
     display: block;
     margin: auto;
-    margin-top: 3%;
+    margin-top: 3% !important;
     cursor: pointer;
 }
 
@@ -2798,7 +2163,7 @@ body {
        flex-flow: row nowrap;
    }
 
-   .title-flex #dashboard-title {
+   .title-flex .dashboard-title {
         margin-left: 1.7em !important;
         font-size: 20px !important;
         font-weight: bolder;
@@ -2806,85 +2171,21 @@ body {
         flex: 1;
         width: auto;
     }
-    .dashboard-hr1 {
+    .dashboard-hr {
         flex: 2
     }
 
-    .dashboard-hr2-2 {
-        flex: 2
-    }
-    /*  */
-
-    .title-flex #dashboard-title2 {
-        margin-left: 2px;
-        font-size: 20px;
-        font-weight: bolder;
-        color: #2e2d2d;
-        flex: 1;
-    }
-
-    .dashboard-hr11 {
-        flex: 2 !important;
-    }
-    .dashboard-hr22 {
-        flex: 2 !important;
-    }
-    /*  */
-
-    #dashboard-page #dashboard-title3 {
-        margin-left: 30px;
-        font-size: 20px;
-        font-weight: bolder;
-        color: #2e2d2d;
-        flex: 1
-    }
-
-    .dashboard-hr111 {
-        flex: 2
-    }
-    .dashboard-hr222-2 {
+    .dashboard-hr {
         flex: 2
     }
    
 
-    
-
-/* ============================================Footer======================================= */
-
-    .dashboard-hr-footer
-    {
-        margin-top: 210px !important
-    }
-
-    #footer-div {
-        margin-top: 00px !important;
-        display: block
-    }
-    .dashboard-footer-div {
-        width: 70%;
-        margin-left: 28%;
-        margin-top: -370px;
-    }
-
-    #dashboard-footer-image {
-        width: 250px;
-        height: 60px;
-        padding-left: 1%;
-        padding-bottom: 1%
-    }
-
-    .dashboard-footer-paragraph {
-        font-size: 20px;
-        font-family: sans-serif;
-        margin-left: 35%
-    }
-
-
+/* Dashboard-Media-1280 */
 @media screen and (max-width:1280px) {
-    #dashboard-page-circle , #dashboard-page-circle2{
+    /* #dashboard-page-circle , #dashboard-page-circle2{
         width: 350px;
-        height: 350px;
-    }
+        height: 350px !important;
+    } */
 
     #dashboard-page-circle p:nth-of-type(1)
     , #dashboard-page-circle p:nth-of-type(2)
@@ -2893,15 +2194,10 @@ body {
         font-size: 34px;
     }
     
-    
     #miningBTC span, #miningBTC span {
         font-size: 23px
     }
-    .dashboard-footer-div {
-        width: 70%;
-        margin-left: 31%;
-        margin-top: -370px;
-    }
+  
 }
 
 /* Dashboard-Media-1024 */
@@ -2920,53 +2216,16 @@ body {
         left: 85%;
     }
 
-    .dashboard-hr1 {
-        width: 38%;
-        margin-left: -10px;
-        margin-top: 60px
-    }
-
-    .dashboard-hr2-2 {
-        width: 41.5%;
-        margin-left: 57.5%;
-        margin-top: -56px;
-    }
-
-    .dashboard-hr222-2 {
-        width: 40%;
-        margin-left: 59.5%;
-        margin-top: -55px
-    }
-    .dashboard-hr11 {
-        width: 37%;
-        margin-top: -15% !important;
-        margin-left: 0;
-    }
-
-    .dashboard-hr111 {
-        width: 37%;
-        left: 0px !important;
-        margin-left: 0;
-        margin-top: 10%
-    }
-
-    .dashboard-hr22-2 {
-        display: block;
-        width: 39.5%;
-        margin-left:60%;
-        margin-top: -50px
-    }
-
     /* ================---media--=================Circle================================== */
 
-    #dashboard-page-circle , #dashboard-page-circle2{
+    /* #dashboard-page-circle , #dashboard-page-circle2{
         width: 310px;
         height: 310px !important;
-    }
+    } */
     
     #redeem {
-        margin-top: -35% !important;
-        margin-left: 33%
+        padding: .175rem 0.5rem;
+        font-size: 0.8rem;
     }
     #circle-span {
         font-size: 20px !important;
@@ -2988,16 +2247,12 @@ body {
     #dashboard-page-circle  hr , #dashboard-page-circle2  hr {
         margin-top: -12% !important
     }
-    .dashboard-hr-footer
-    {
-        margin-top: 100px !important;
-        margin-left: -13px
-    }
+    
     /* ==================================================HASH History============================== */
 
-    #dashboard-page #dashboard-title {
-        margin-left: 38%;
-        font-size: 22px;
+    .title-flex .dashboard-title {
+        font-size: 15px !important;
+        margin-top: 10px
     }
 
     #no-hash {
@@ -3010,7 +2265,6 @@ body {
         height: 300px;
         float:left;
     }
-   
     
    #Hash-History-list tr
    {
@@ -3048,13 +2302,6 @@ body {
        height: 70px;
        color: #2e2d2d;
    }
-    /* .Hash-History_column .remain li {
-        width: 100px;
-        border: 1px solid ;
-        height: 35px;
-    }
-         */
-    
 
     #Hash-History-list .remain {
 
@@ -3074,11 +2321,6 @@ body {
 
     /* ==============================================Buy hash power=================================== */
 
-    #dashboard-page #dashboard-title2 {
-        left: 35%;
-        margin-top: -5% !important;
-        font-size: 22px;
-    }
 
     .slidecontainer {
         margin-top: 2.65%
@@ -3089,32 +2331,12 @@ body {
     }
     /*============================================== Mining History ===================================*/
 
-    #dashboard-page #dashboard-title3 {
-        margin-left: 38%;
-        margin-top: -30px;
-        font-size: 22px;
-        z-index: 2;
-    }
-
     canvas#chart1 {
         margin-top: 0px;
         margin-left: 0
     }
 
-    /*========================================= Footer============================== */
-    .dashboard-hr-footer {
-        top: 0;
-        margin-top: 30%
-    }
-    .dashboard-footer-div {
-        width: 70%;
-        margin-left: 27%;
-        margin-top: -40%;
-        top: 0
-    }
-
 }
-
 
 /* Dashboard-Media-768 */
 @media screen and (max-width:768px) {
@@ -3137,18 +2359,18 @@ body {
 
     /* ======================================Circle=========================================== */
     #dashboard-page-circle  {
-        width: 280px;
+        /* width: 280px; */
         display: block;
-        height: 280px;
+        /* height: 280px; */
         border: 20px solid #ff9100;
         border-radius: 50%;
         border-collapse: 2px solid #727272;
         padding: 0 !important;
     }
     #dashboard-page-circle2 {
-        width: 280px;
+        /* width: 280px; */
         display: block;
-        height: 280px;
+        /* height: 280px; */
         border: 20px solid #ff9100;
         border-radius: 50%;
         border-collapse: 2px solid #727272
@@ -3183,24 +2405,8 @@ body {
         font-family: sans-serif
     }
     /* ==================================================HASH History============================== */
-    #dashboard-page #dashboard-title {
-        margin-left: 42.2%;
-        font-family: sans-serif;
-        font-size: 25px;
-        font-weight: bolder;
-        color: #2e2d2d;
-        margin-top: -35px
-    }
-
-    .dashboard-hr1  {
-        width: 40%;
-        margin-left: 0;
-    }
-
-    .dashboard-hr2-2  {
-        width: 36.5% !important;
-        margin-left: 62.5%;
-        margin-top: -55px
+    .dashboard-title {
+        font-size: 14px !important;
     }
 
     #Hash-History-list
@@ -3210,7 +2416,6 @@ body {
         height: 300px;
         float:left;
     }
-
     
     #Hash-History-list tr
     {
@@ -3249,89 +2454,11 @@ body {
         color: #2e2d2d;
     }
 
-    /* ==============================================Buy hash power=================================== */
-
-    #dashboard-page #dashboard-title2 {
-        margin-left: 40%;
-        margin-top: -58px !important;
-        font-family: sans-serif;
-        font-size: 25px;
-        font-weight: bolder;
-        color: #2e2d2d
-    }
-
-    .dashboard-hr11 {
-        width: 37% !important;
-        margin-left: .5%
-    }
-
-    .dashboard-hr22-2 {
-        width: 32.5% !important;
-        margin-left: 66% !important;
-    }
-
-    /*============================================== Mining History ===================================*/
-
-    #dashboard-page #dashboard-title3 {
-        margin-left: 41%;
-        margin-top: -35px;
-        font-family: sans-serif;
-        font-size: 25px;
-        font-weight: bolder;
-        color: #2e2d2d
-    }
-    .dashboard-hr111{
-        width: 38%;
-        margin-left: 0.5%
-    }
-
-    .dashboard-hr222-2 {
-        width: 35.3% !important;
-        margin-left: 64%;
-    }
-
-    .dashboard-hr-footer
-    {
-        margin-top:0px !important;
-        width: 100%;
-        margin-left: 0;
-        left: 0 !important;
-    }
-
-    /* ============================================Footer======================================= */
-    #footer-div {
-        margin-top: 0px !important;
-        border-bottom: transparent;
-        margin-left: 0% !important;
-        display: block;
-    }
-    .dashboard-footer-div {
-        width: 70%;
-        margin-left: 2% !important;
-        margin-top: -300px;
-        border-bottom: transparent
-    }
-
-    #dashboard-footer-image {
-        width: 200px;
-        height: 60px;
-    }
-
-    .dashboard-footer-paragraph {
-        font-size: 20px;
-        border-bottom: transparent;
-        font-family: sans-serif;
-        top: -60px;
-        margin-left: 200px;
-        width: 440px
-    }
 
 }
 
-
 /* Dashboard-Media-414 */
 @media screen and (max-width:414px) {
-
 
     #dashboard-page {
         width: 100%;
@@ -3342,24 +2469,6 @@ body {
         display: none
     }
 
-    .dashboard-hr1-1 {
-        display: block;
-        top: 135px;
-        width: 30%;
-        left: -145px;
-    }
-
-    .dashboard-hr2-2 {
-        display: block;
-        top: 115px;
-        width: 30%;
-        left: 142px;
-    }
-
-    .dashboard-hr11 {
-        display: block;
-    }
-
     /* ======================================Circle=========================================== */
 
     .circle-container {
@@ -3367,18 +2476,19 @@ body {
         margin-top: -40px !important
     }
     #dashboard-page-circle {
-        width: 350px !important;
+        width: 100% !important;
         display: block;
-        height: 350px !important;
+        /* height: 350px !important; */
         margin-left: 0% !important;
         border: 20px solid #ff9100;
         border-radius: 50%;
         border-collapse: 2px solid #727272
     }
     #dashboard-page-circle2 {
-        width: 350px !important;
+        width: 100% !important;
+        /* width: 350px !important; */
         display: block;
-        height: 350px !important;
+        /* height: 350px !important; */
         border: 20px solid #ff9100;
         margin-left: 0% !important;
         border-radius: 50%;
@@ -3412,25 +2522,13 @@ body {
         font-family: sans-serif;
 
     }
+
+    #dashboard-page-circle hr , #dashboard-page-circle2 hr {
+        margin-top: -25px !important
+    }
     /* ==================================================HASH History============================== */
-    #dashboard-page #dashboard-title {
-        margin-left: 35.5%;
-        margin-top:-27px;
-        font-family: sans-serif;
-        font-size: 18px;
-        font-weight: bolder;
-        color: #2e2d2d
-    }
-
-    .dashboard-hr1  {
-        width: 33%;
-        left: 10px;
-    }
-
-    .dashboard-hr2-2  {
-        width: 33%;
-        left: 0%;
-        margin-top: -40px !important
+    .title-flex .dashboard-title {
+        font-size: 13px !important ;
     }
 
     #Hash-History-list
@@ -3440,7 +2538,6 @@ body {
         height: 150px;
         float:left;
     }
-
     
     #Hash-History-list tr
     {
@@ -3499,51 +2596,11 @@ body {
     }
 
     /* ==============================================Buy hash power=================================== */
-
-    #dashboard-page #dashboard-title2 {
-        margin-left: 30%;
-        font-family: sans-serif;
-        font-size: 20px;
-        font-weight: bolder;
-        margin-top: -30px !important;
-        color: #2e2d2d;
-    }
-
-    .dashboard-hr11 {
-        width: 26% !important;
-        margin-top: -50px !important;
-        left: -150px;
-    }
-
-    .dashboard-hr22-2 {
-        display: block;
-        width: 27.5% !important;
-        margin-left: 71% !important;
-        margin-top: -40px !important
-    }
+   
     #referralCode {
         width: 130px !important
     }
     /*============================================== Mining History ===================================*/
-
-    #dashboard-page #dashboard-title3 {
-        margin-left: 32.5%;
-        font-family: sans-serif;
-        font-size: 20px;
-        font-weight: bolder;
-        color: #2e2d2d
-    }
-    .dashboard-hr111{
-        width: 29%;
-        left: -145px;
-    }
-
-    .dashboard-hr222-2 {
-        display: block;
-        width: 28% !important;
-        margin-left: 69%;
-        margin-top: -40px !important
-    }
 
     canvas#chart1 {
         -moz-user-select: none;
@@ -3552,52 +2609,21 @@ body {
         margin-top: 50px;
     }
 
-    .dashboard-hr2 {
-        width: 40%;
-        left: 30%;
-    }
     #referralCode {
         width: 90px !important
     }
-    .dashboard-hr-footer
-    {
-        margin-top: 60px !important;
-        top: 0
-    }
-
-    /* ============================================Footer======================================= */
-    #footer-div {
-        margin-top: 0 !important;
-        height: 050px;
-        width: 100%;
-    }
-    .dashboard-footer-div {
-        width: 100% !important;
-        left: 0%;
-        margin-top: -100px !important
-    }
-
-    #dashboard-footer-image {
-        width: 130px;
-        height: 45px;
-        margin: 0 auto
-    }
-
-    .dashboard-footer-paragraph {
-        font-size: 15px;
-        font-family: sans-serif;
-        top: -60px;
-        margin-left: 80px;
-        width: 280px
-    }
+   
     .pandel-button {
      padding: .375rem 1.75rem;
      font-size: 1rem;
      line-height: 1.5;
     }
 
-}
+    .dashboard-hr {
+        flex: 1
+    }
 
+}
 
 /* Dashboard-Media-375 */
 @media screen and (max-width:375px) {
@@ -3609,9 +2635,9 @@ body {
 
     /* ======================================Circle=========================================== */
     #dashboard-page-circle , #dashboard-page-circle2 {
-        width: 280px !important;
+        /* width: 280px !important; */
         display: block;
-        height: 280px !important;
+        /* height: 280px !important; */
         border: 20px solid #ff9100;
         border-radius: 50%;
         border-collapse: 2px solid #727272
@@ -3644,31 +2670,15 @@ body {
         font-family: sans-serif
     }
     /* ==================================================HASH History============================== */
-    #dashboard-page #dashboard-title {
-        margin-left: 35.5%;
-        margin-top:-20px;
-        font-family: sans-serif;
-        font-size: 17px;
-        font-weight: bolder;
-        color: #2e2d2d
-    }
-
-    .dashboard-hr1  {
-        width: 33%;
-        left: 10px;
-    }
-
-    .dashboard-hr2-2  {
-        width: 33%;
-        left: 0%;
-        margin-top: -7px
+    .title-flex .dashboard-title {
+        font-size: 11px !important;
     }
 
     #Hash-History-list
     {
         margin-top: 30px;
         width: 100%;
-        height: 300px;
+        height: 120px !important;
         float:left;
     }
     
@@ -3714,49 +2724,8 @@ body {
         border: 1px solid ;
         font-size: 12px
     }
-
-    /* ==============================================Buy hash power=================================== */
-
-    #dashboard-page #dashboard-title2 {
-        margin-left: 30%;
-        font-family: sans-serif;
-        font-size: 18px;
-        font-weight: bolder;
-        color: #2e2d2d
-    }
-
-    .dashboard-hr11 {
-        width: 26%;
-        left: -150px;
-    }
-
-    .dashboard-hr22-2 {
-        display: block;
-        width: 27%;
-        margin-left: 71.2%;
-        margin-top: -10px
-    }
   
     /*============================================== Mining History ===================================*/
-
-    #dashboard-page #dashboard-title3 {
-        margin-left: 32.5%;
-        font-family: sans-serif;
-        font-size: 18px;
-        font-weight: bolder;
-        color: #2e2d2d
-    }
-    .dashboard-hr111{
-        width: 29%;
-        left: -145px;
-    }
-
-    .dashboard-hr222-2 {
-        display: block;
-        width: 29%;
-        margin-left: 69%;
-        margin-top: -10px
-    }
 
     canvas#chart1 {
         -moz-user-select: none;
@@ -3768,52 +2737,10 @@ body {
         margin-left: 20px
     }
 
-    .dashboard-hr2 {
-        width: 40%;
-        left: 30%;
-    }
-
-    .dashboard-hr-footer
-    {
-        margin-top: -20px !important;
-        top: 0;
-        width: 100%
-    }
-
-    /* ============================================Footer======================================= */
-    #footer-div {
-        top: 0 !important;
-        height: 050px;
-        width: 100%;
-    }
-    .dashboard-footer-div {
-        width: 100% !important;
-        left: 0%;
-    }
-
-    #dashboard-footer-image {
-        width: 120px;
-        height: 40px;
-        padding-bottom: 10px;
-        margin: 0 auto
-    }
-
-    .dashboard-footer-paragraph {
-        font-size: 15px;
-        font-family: sans-serif;
-        margin-left: 40px;
-        width: 280px;
-        padding-top: 10px;
-        padding-bottom: 20px
-
-    }
-
 }
-
 
 /* Dashboard-Media-320 */
 @media screen and (max-width: 320px) {
-
 
      /* ======================================Circle=========================================== */
      #dashboard-page-circle , #dashboard-page-circle2 {
@@ -3830,7 +2757,6 @@ body {
         font-weight: bolder;
         margin-left: 20% !important
     }
-
 
     #dashboard-page-circle p {
         font-size: 18px !important;
@@ -3849,32 +2775,15 @@ body {
         font-family: sans-serif
     }
     /* ==================================================HASH History============================== */
-    #dashboard-page #dashboard-title {
-        margin-left: 34%;
-        margin-top:-20px;
-        font-family: sans-serif;
-        font-size: 15px;
-        font-weight: bolder;
-        color: #2e2d2d
-    }
-
-    .dashboard-hr1  {
-        width: 30%;
-        left: 10px;
-    }
-
-    .dashboard-hr2-2  {
-        width: 28%;
-        left: 0%;
-        margin-top: -5px;
-        margin-left: 63%
+    .title-flex .dashboard-title {
+        font-size: 10px !important;
     }
 
     #Hash-History-list
     {
         margin-top: 30px;
         width: 100%;
-        height: 300px;
+        height: 130px;
         float:left;
     }
     
@@ -3929,25 +2838,6 @@ body {
     }
     /* ==============================================Buy hash power=================================== */
 
-    #dashboard-page #dashboard-title2 {
-        margin-left: 30%;
-        font-family: sans-serif;
-        font-size: 16px;
-        font-weight: bolder;
-        color: #2e2d2d
-    }
-
-    .dashboard-hr11 {
-        width: 26% !important;
-        left: -150px;
-    }
-
-    .dashboard-hr22-2 {
-        display: block;
-        width: 27.6% !important;
-        margin-left: 72.2% !important;
-        margin-top: -8px
-    }
     #referralCode {
         width: 75px !important
     }
@@ -3957,24 +2847,6 @@ body {
     }
     /*============================================== Mining History ===================================*/
 
-    #dashboard-page #dashboard-title3 {
-        margin-left: 32.5%;
-        font-family: sans-serif;
-        font-size: 16px;
-        font-weight: bolder;
-        color: #2e2d2d
-    }
-    .dashboard-hr111{
-        width: 29%;
-    }
-
-    .dashboard-hr222-2 {
-        display: block;
-        width: 30.5% !important;
-        margin-left: 69%;
-        margin-top: -8px
-    }
-
     canvas#chart1 {
         -moz-user-select: none;
         -webkit-user-select: none;
@@ -3983,40 +2855,6 @@ body {
         width: 280px !important;
         height: 200px !important;
         margin-left: 5px
-    }
-
-    .dashboard-hr-footer
-    {
-        margin-top: 0;
-        top: 0;
-        width: 100%
-    }
-    
-    /* ============================================Footer======================================= */
-    #footer-div {
-        top: 0 !important;
-        height: 050px;
-        width: 100%;
-    }
-    .dashboard-footer-div {
-        width: 100% !important;
-        left: 0%;
-    }
-
-    #dashboard-footer-image {
-        width: 90px;
-        height: 35px;
-        margin: 0 auto;
-        padding-left: 1%
-    }
-
-    .dashboard-footer-paragraph {
-        font-size: 13px;
-        font-family: sans-serif;
-        top: -60px;
-        margin-left:20px;
-        width: 280px;
-        padding-top: 20px
     }
 
 }

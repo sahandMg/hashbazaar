@@ -53,7 +53,7 @@
           .contact-container form {
             width: 90%;
           }
-          .panel-header {
+          .panel-header1 {
              margin-top: 4%;
              font-size: 1.1rem;
              letter-spacing: 0.5px

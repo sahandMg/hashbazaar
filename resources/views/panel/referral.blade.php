@@ -17,6 +17,7 @@
         </ul>
         <blockquote>My Referral ID : </blockquote>
         <p>{{$user->code}}</p>
+        <a href="{{route('index',['code'=>$user->code])}}">http://hashbazaar.com/share</a>
         <dl>Total Benefits Till Now (USD) :</dl>
         <p>$ {{$user->referral->total_benefit}}</p>
         <div class="referral-page_secondList">

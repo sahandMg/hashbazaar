@@ -4,6 +4,14 @@
     <!-- class="masthead pb-3" -->
     <?php
     $settings = DB::table('settings')->first();
+          if(isset($code)){
+              $user = DB::table('users')->where('code',$code)->first();
+              $referralCode = DB::table('expired_codes')->where('code',$code)->first();
+
+              if(!is_null($user) && is_null($referralCode)){
+                  $name = $user->name;
+              }
+          }
     ?>
     <header id="header" >
        
@@ -117,7 +125,7 @@
                 <br/>
                 <h4 class="text-center">We help you to invest in bitcoin mining.</h4>
                 <br/>
-                <p class="text-center">You are invited by <b> Felan</b> so you can utilize 10% discount for your first order.</p>
+                <p class="text-center">You are invited by <b> {{isset($name)?$name:'noBody'}}</b> so you can utilize 10% discount for your first order.</p>
                 <p class="text-center">Nice to have you in our cryptocurrency investment community.</p>
             </div>
         </div>
@@ -159,7 +167,10 @@
         var modal = document.getElementById('myModal');
 
         // blade if for detecting link
-        modal.style.display = "block";
+        if({!! isset($name) !!}){
+
+            modal.style.display = "block";
+        }
 
         // Get the button that opens the modal
         // var btn = document.getElementById("myBtn");

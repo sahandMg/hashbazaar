@@ -385,7 +385,7 @@ class PaymentController extends Controller
                  * ============================
                  */
                 $share_level = DB::table('referrals')->where('code',$code)->first()->share_level;
-                $share_value = DB::table('shares')->where('level',$share_level)->first()->value;
+                $share_value = DB::table('sharings')->where('level',$share_level)->first()->value;
                 $hash = new BitHash();
                 $hash->hash = $hashPower * $share_value;
                 $hash->user_id = $codeCaller->id;

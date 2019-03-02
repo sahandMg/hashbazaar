@@ -78,21 +78,20 @@
 
                     <tr>
 
-                        <td>
-                            @foreach($hashes as $hash)
+                        @foreach($hashes as $hash)
+                            <td>
+
                                 <span>{{$hash->hash}}TH/S</span>
-                            @endforeach
-                                
-                        </td>
 
-                        <td>
-                            @foreach($hashes as $hash)
-                            
-                                <span>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}}    </span> 
-                                @endforeach
+                            </td>
+                        @endforeach
 
-                        </td>
+                        @foreach($hashes as $hash)
+                                <td>
+                                        <span>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}}    </span>
+                                </td>
 
+                        @endforeach
                         <td> 
                                 @foreach($hashes as $hash)
 
@@ -100,26 +99,19 @@
                                 @endforeach
 
                         </td>
-
-                        <td>
                             @foreach($hashes as $key => $hash)
-                                
+                                <td>
+                           <div class="remain">
+                                                <div class="progress1">
+                                                    <div class="progress-bar1" role="progressbar1" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%">
+                                                        <span class="title">{{$remainedLife[$key]}}%</span>
 
-                                
-                                    <div class="remain">
-                                        <div class="progress1">
-                                            <div class="progress-bar1" role="progressbar1" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%">
-                                                <span class="title">{{$remainedLife[$key]}}%</span>
-
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
 
-                                
-                                    @endforeach
-
-                                
-                        </td>
+                                </td>
+                            @endforeach
 
                     </tr>
                     

@@ -15,10 +15,16 @@ use Illuminate\Support\Facades\Mail;
 
 class PageController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
 
         // Artisan::call('crypto:update');
-        return view('index');
+        if($request->has('code')){
+            $code = $request->code;
+            return view('index',compact('code'));
+        }else{
+
+            return view('index');
+        }
     }
 /*
 Gets user message for form

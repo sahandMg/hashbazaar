@@ -215,8 +215,8 @@
                     {{-- <form style="padding: 20px;" method="POST" action="{{route('dashboard')}}"> --}}
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
 
-                       <input id='referralCode' type="text" name="referralCode" style="margin-top:5px" class="aplybtntext">
-                       <input id='hiddenCodeValue' type="hidden" name="code" style="margin-top:5px" class="aplybtntext">
+                       <input id='referralCode' type="text" name="referralCode" style="margin-top:5px" >
+                       <input id='hiddenCodeValue' type="hidden" name="code" style="margin-top:5px" class="aplybtn1text">
 
                           <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> Apply </button>
 

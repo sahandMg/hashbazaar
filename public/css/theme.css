@@ -211,7 +211,7 @@ header img { height: 175px;margin-bottom: 4%; }
     }
     #header-navbar-menu {
       background: black;;
-      height: 420px;
+      height: 460px !important;
       text-align: left;
       left: 0px;
       top: 82px;
@@ -249,8 +249,10 @@ header img { height: 175px;margin-bottom: 4%; }
        right: 25px;
      }
       .signup {
-       border: thin solid transparent;height:40px;
+       border: thin solid transparent;height:50px;
       border-bottom: 2px solid orange !important;
+      margin-bottom: 10px !important
+
      }
      #sg {
       border-bottom: 2px solid transparent !important;
@@ -260,8 +262,9 @@ header img { height: 175px;margin-bottom: 4%; }
       background: transparent !important;
       border-top: transparent !important;
       border-right: transparent !important;
-      /* border-bottom: 2px solid orange !important; */
+      border-bottom: 2px solid transparent !important;
       border-left: transparent !important;
+      margin-left: -10px;
      }
      .login {
        background: transparent !important;
@@ -269,7 +272,7 @@ header img { height: 175px;margin-bottom: 4%; }
       border-top: transparent !important;
       border-right: transparent !important;
       border-left: transparent !important;
-       color: #43A047;height:37px;
+      color: #43A047;height:47px;
     }
     #lg {
       border-bottom: 2px solid transparent !important;
@@ -370,7 +373,7 @@ header img { height: 175px;margin-bottom: 4%; }
      #header-navbar-menu {
       left: -0px;
       margin-left: -50px;
-      height: 350px;
+      height: 375px !important;
       border-bottom-left-radius: 0px;
       border-bottom-right-radius:0px
     }
@@ -402,7 +405,7 @@ header img { height: 175px;margin-bottom: 4%; }
   #header-navbar-menu {
     left: -0px;
     margin-left: -40px;
-    height: 325px !important;
+    height: 375px !important;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px
 
@@ -430,7 +433,6 @@ header img { height: 175px;margin-bottom: 4%; }
   #header-navbar-menu {
     left: -0px;
     margin-left: -45px;
-    height: 345px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px
 

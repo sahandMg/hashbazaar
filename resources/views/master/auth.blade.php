@@ -50,15 +50,15 @@
         </div>
         <div id="header-navbar-menu">
             <ul>
-                <li class="navbar-list small"><a href="{{route('index')}}">Home</a></li>
-                <li class="navbar-list small"><a href="#">About</a></li>
-                <li class="navbar-list small"><a href="{{route('customerService')}}">FAQ</a></li>
-                <li class="navbar-list small"><a href="http://blog.hashbazaar.com/">Blog</a></li>
+                <li class="navbar-list small1"><a href="{{route('index')}}">Home</a></li>
+                <li class="navbar-list small1"><a href="#">About</a></li>
+                <li class="navbar-list small1"><a href="{{route('customerService')}}">FAQ</a></li>
+                <li class="navbar-list small1"><a href="http://blog.hashbazaar.com/">Blog</a></li>
                 @if(Auth::guard('user')->check())
-                    <li class="navbar-list small signup"><a href="{{route('dashboard')}}" >Dashboard</a></li>
+                    <li class="navbar-list small1 signup"><a href="{{route('dashboard')}}" >Dashboard</a></li>
                 @else
-                    <li class="navbar-list small signup"><a href="{{route('signup')}}" >Sign Up</a></li>
-                    <li class="navbar-list small login"><a href="{{route('login')}}" >Log In</a></li>
+                    <li class="navbar-list small1 signup"><a href="{{route('signup')}}" >Sign Up</a></li>
+                    <li class="navbar-list small1 login"><a href="{{route('login')}}" >Log In</a></li>
                 @endif
             </ul>
 

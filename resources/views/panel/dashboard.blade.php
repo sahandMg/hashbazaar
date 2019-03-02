@@ -12,37 +12,45 @@
 
     ?>
     <!-- Dashboard Page -->
-        <div id="dashboard-page">
+        <div id="dashboard-page" class="panel-container ">
             <!-- Circle -->
-             <div id="dashboard-page-circle">
-                <span id="circle-span">Total Mining</span>
-                <p>&nbsp;<span id="miningBTC"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; <span style="color: orange;">BTC</span> </p>
-                <hr style="width: 84%; text-align:center; margin-top: 02%; ">
-                <p><span id="miningDollar"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua;">USD</span></p>
+             <div class="circle-container">
 
-                <button id="redeem" disabled onclick="redeem()"> Redeem ! </button>
+                <div id="dashboard-page-circle" >
+                    <span id="circle-span">Total Mining</span>
+                    <p>&nbsp;<span id="miningBTC"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; <span style="color: orange;">BTC</span> </p>
+                    <hr style="width: 84%; text-align:center;">
+                    <p><span id="miningDollar"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua;">USD</span></p>
+    
+                    <button id="redeem" disabled onclick="redeem()"> Redeem ! </button>
+    
+    
+                </div>
+    
+                <div id="dashboard-page-circle2">
+                    <span id="circle-span">Daily Mining</span>
+                    <p>&nbsp;<span id="miningBTC2"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; <span style="color: orange;">BTC</span> </p>
+                    <hr style="width: 84%; text-align:center;">
+                    <p><span id="miningDollar2"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua;">USD</span></p>
+    
+                    <button id="redeem" disabled onclick="redeem()"> Redeem ! </button>
+    
+    
+                </div> 
 
 
-            </div>
-
-            <div id="dashboard-page-circle2">
-                <span id="circle-span">Total Mining</span>
-                <p>&nbsp;<span id="miningBTC2"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; <span style="color: orange;">BTC</span> </p>
-                <hr style="width: 84%; text-align:center; margin-top: 02%; ">
-                <p><span id="miningDollar2"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua;">USD</span></p>
-
-                <button id="redeem" disabled onclick="redeem()"> Redeem ! </button>
-
-
-            </div> 
+             </div>
             <!-- Hash History -->
             
-            <hr class="dashboard-hr1">
-            <p id="dashboard-title">Hash History</p>
-            <hr class="dashboard-hr2-2"> 
+            <div class="title-flex">
+            
+                    <hr class="dashboard-hr1"/>
+                    <h1 id="dashboard-title">Hash History</h1>
+                    <hr class="dashboard-hr2-2"/>
+            
+            </div> 
 
             <div class="Hash-History">
-
                 <table id="Hash-History-list">
                     @if(!$hashes->isEmpty())
 
@@ -99,8 +107,8 @@
 
                                 
                                     <div class="remain">
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%">
+                                        <div class="progress1">
+                                            <div class="progress-bar1" role="progressbar1" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%">
                                                 <span class="title">{{$remainedLife[$key]}}%</span>
 
                                             </div>
@@ -122,9 +130,8 @@
                            
        
                 </table>
-
-             </div> 
-        {{-- <div class="Hash-History_column"> Hash Power
+            </div> 
+             {{-- <div class="Hash-History_column"> Hash Power
                         <ul>
                             @foreach($hashes as $hash)
                             <li>{{$hash->hash}} TH/S</li>
@@ -174,9 +181,13 @@
 
 
             <!--   Buy hash power -->
-            <hr  class="dashboard-hr11">
-            <p id="dashboard-title2">Buy Hash Power</p>
-            <hr class="dashboard-hr22-2">
+            <div class="title-flex">
+                <hr  class="dashboard-hr11"/>
+
+                <h1 id="dashboard-title2">Buy Hash Power</h1>
+
+                <hr  class="dashboard-hr11"/>
+            </div>
             <h5 id="demo"></h5>
             <div class="slidecontainer">
                 @if(count($errors->all()) > 0)
@@ -194,21 +205,23 @@
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <input type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="myRange">
                     <div style="text-align: left;font-weight: 700;padding-bottom:10px">
-                      <p>Hash allocation cost : <span id="cost"></span> dollar</p>
-                      <p>Maitanace fee: {{$settings->maintenance_fee_per_th_per_day}} dollar per Th/day</p>
+                      <p style="color:black">Hash allocation cost : <span id="cost"></span> dollar</p>
+                      <p style="color:black">Maitanace fee: {{$settings->maintenance_fee_per_th_per_day}} dollar per Th/day</p>
                       <small>(include all electricity, cooling, development, and servicing costs )</small>
-                      <p>Income : At this time We predict {{$settings->bitcoin_income_per_month_per_th}} BTC/month for every Th.</p>
-                      <small style="padding-bottom:20px">(Changes may happen depends on bitcoin price and bitcoin network difficulty changes.)</small>
+                      <p style="color:black">Income : At this time We predict {{$settings->bitcoin_income_per_month_per_th}} BTC/month for every Th.</p>
+                      <small >(Changes may happen depends on bitcoin price and bitcoin network difficulty changes.)</small>
                     </div>
-                    <span class="rfrcode" >Referral Code:</span>
-                    {{--<form style="padding: 20px;" method="POST" action="{{route('dashboard')}}">--}}
+                    <p class="rfrcode">Referral Code:</p>
+                    {{-- <form style="padding: 20px;" method="POST" action="{{route('dashboard')}}"> --}}
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
+
                        <input id='referralCode' type="text" name="referralCode" style="margin-top:5px" class="aplybtntext">
                        <input id='hiddenCodeValue' type="hidden" name="code" style="margin-top:5px" class="aplybtntext">
 
                           <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> Apply </button>
+
       
-                         {{--</form>--}}
+                         {{-- </form> --}}
                     <button class="pandel-button" type="submit">Order</button>
                  </form>
                 @else
@@ -218,28 +231,21 @@
 
 
             <!-- Mining History -->
-            <hr class="dashboard-hr111" >
-            <p id="dashboard-title3">Mining History</p>
-            <hr class="dashboard-hr222-2" >
+            <div class="title-flex">
 
+                <hr class="dashboard-hr111" >
+                <h3 id="dashboard-title3">Mining History</h3>
+                <hr class="dashboard-hr222-2" >
+
+            </div> 
 
             <div class="chart-container" >
                     <canvas id="chart1"></canvas>
             </div> 
 
 
-             <hr class="dashboard-hr-footer" style="left: -10px"> 
     </div>
-
-    {{-- Footer --}}
-    <div id="footer-div">
-            <div class="dashboard-footer-div" >
-                <p class="dashboard-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
-                <img id="dashboard-footer-image" src="{{URL::asset('img/Logo_footer.png')}}" alt="">
-
-            </div>
-    </div> 
-
+   
 
         <style type="text/css">
 
@@ -351,8 +357,8 @@
         
          }
 
-.progress {    border: 1px solid;}
-.progress-bar {
+.progress1 {    border: 1px solid;}
+.progress-bar1 {
     background-color: #ff9100;
     text-align: center;
     color: white;
@@ -360,7 +366,7 @@
   -webkit-animation: progress 1.5s ease-in-out forwards;
           animation: progress 1.5s ease-in-out forwards;
 }
-.progress-bar .title {
+.progress-bar1 .title {
   opacity: 0;
   -webkit-animation: show 0.35s forwards ease-in-out 0.5s;
           animation: show 0.35s forwards ease-in-out 0.5s;
@@ -409,7 +415,7 @@
                 $(document).ready(function(){
 
                     $('.user-img').click(function(){
-                        $('.list').toggle(500);
+                        $('.list1').toggle(500);
                     });
                     
                     var numItems = $('#Hash-History-list tr').length;

@@ -1,5 +1,4 @@
 /* User Account */
-
 .useraccount {
     position: absolute;
     top: 0px;
@@ -11,7 +10,7 @@
     border-bottom: transparent;
     cursor: unset;
 }
-.useraccount .list {
+.useraccount .list1 {
     width: 101% !important;
     height: 100% !important;
     border-radius: 0px;
@@ -19,10 +18,10 @@
     margin-left:0%;
     background-color: black !important;
 }
-.useraccount .list  {
+.useraccount .list1  {
     margin-left: -705px
 }
-.useraccount .list:after {
+.useraccount .list1:after {
     content: '';
     position: absolute;
     border-left:18px solid transparent;
@@ -34,7 +33,7 @@
     display: none
 }
 
-.useraccount .list ul li {
+.useraccount .list1 ul li {
     list-style-type: none;
     width: 100%;
     padding-bottom: 20px;
@@ -48,7 +47,7 @@
     cursor: pointer;
     border-bottom: 2px solid orange
 }
-.useraccount .list ul li a {
+.useraccount .list1 ul li a {
     width:400px !important;
     position: relative;
     margin-left:320px !important
@@ -60,7 +59,8 @@
     border-bottom: transparent !important;
     position: relative;
     top: 20px;
-    margin-left: 0px
+    margin-left: 0px;
+    
 }
 #logouticon a {
     text-decoration: none;
@@ -87,8 +87,10 @@
     left: -6.5vh !important;
     top: 0vh !important;
 }
-#logouticon:hover:before {background-color: transparent;
-border: transparent}
+#logouticon:hover:before {
+    background-color: transparent;
+    border: transparent
+}
 .user-img
 {
     width: 40px;
@@ -128,7 +130,7 @@ border: transparent}
     margin-top: -100px
 }
 body {
-    background-color: #FFFDE8
+    background-color: #FFFDE8 !important
 }
 
 ul {
@@ -166,22 +168,22 @@ header {
 }
 
 /* Menu */
-.container {
+.container1 {
     width: 370px;
     background: rgb(39, 38, 38);
-    border-top: 4px solid orange;
+    border-top: 0px solid orange;
     position: fixed;
     top: 120px;
     height: 100%;
     left: 0
 }
 
-.container .mainList {
+.container1 .mainList {
     background: white;
     width: 370px;
 }
 
-.container .navbar {
+.container1 .navbar {
     height: 100px;
     border-bottom: 2px solid #727272;
     background: rgb(39, 38, 38);
@@ -205,37 +207,37 @@ div ul .navbar #welcome {
     text-decoration: none
 }
 
-.container .mainList .sub {
+.container1 .mainList .sub {
     color: orange;
     height: 60px;
     border-bottom: 2px solid #727272;
     font-size: 30px;
     background: rgb(39, 38, 38);
-    padding-bottom: 0px !important;
     text-align: center;
     font-family: sans-serif
 }
 
-.container .mainList .sub a {
+.container1 .mainList .sub a {
     color: orange;
     text-decoration: none;
-    padding-top: 20px;
+    padding-top: 10px !important;
+    padding-bottom: 20px !important;
     position: relative;
     left: -40px;
     top: 30%
 }
 
-.container .mainList .sub a:hover {
+.container1 .mainList .sub a:hover {
     color: white;
 }
 #dashboard:hover , #referral:hover {color:white !important}
-.container .mainList .sub {
+.container1 .mainList .sub {
     color: orange;
     height: 60px;
     border-bottom: 2px solid #727272;
     font-size: 30px;
     background: rgb(39, 38, 38);
-    padding-bottom: 10px;
+    padding-bottom: 20px !important;
     text-align: center;
     font-family: sans-serif
 }
@@ -259,7 +261,7 @@ div ul .navbar #welcome {
     background-size: 100% 100%;
     position: absolute;
     left: -60px;
-    top: 15px
+    top: 5px
 }
 
 #activity:before {
@@ -270,7 +272,7 @@ div ul .navbar #welcome {
     background-size: 100% 100%;
     position: absolute;
     left: -80px;
-    top: 15px
+    top: 5px
 }
 
 #referral:before {
@@ -281,7 +283,7 @@ div ul .navbar #welcome {
     background-size: 100% 100%;
     position: absolute;
     left: -80px;
-    top: 15px
+    top: 5px
 }
 
 #setting:before {
@@ -292,20 +294,20 @@ div ul .navbar #welcome {
     background-size: 100% 100%;
     position: absolute;
     left: -85px;
-    top: 15px
+    top: 5px
 }
 
 .contact {
     border-bottom: 1px solid transparent !important
 }
 
-#contact {
+#contact1 {
 color: orange !important}
 
-#contact:hover {
+#contact1:hover {
     color: white !important
 }
-#contact:before {
+#contact1:before {
     content: "";
     background-image: url("../img/contact.svg");
     width: 35px;
@@ -313,7 +315,7 @@ color: orange !important}
     background-size: 100% 100%;
     position: absolute;
     left: -80px;
-    top: 18px
+    top: 8px
 }
 #logouticon2:before{
     content: '';
@@ -324,7 +326,7 @@ color: orange !important}
     background-size: 100% 100%;
     position: absolute;
     left: -80px;
-    top: 18px
+    top: 8px
 }
 
 
@@ -405,7 +407,7 @@ color: orange !important}
 }
 
 .flex-item.two {
-    border-left: 2px solid 
+    border-left: 2px solid black !important
 }
 
  
@@ -726,7 +728,7 @@ color: orange !important}
 #footer-div {
     width: 100%;
     margin-left: 0%;
-    margin-top: 35% !important
+    margin-top: 36% !important
 }
 
 .setting-footer-paragraph {
@@ -739,6 +741,7 @@ color: orange !important}
 #setting-footer-image {
     width: 200px;
     height: 60px;
+    margin-left: 2% !important
 }
 
 
@@ -752,15 +755,15 @@ color: orange !important}
     }
     /* ---------------=====Media====-------------Main Container--------------------------- */
     
-    .container {
+    .container1 {
         width: 270px !important;
     }
 
-    .container .mainList {
+    .container1 .mainList {
         width: 270px !important
     }
 
-    .container .mainList .navbar .Logo_In_NavBar{
+    .container1 .mainList .navbar .Logo_In_NavBar{
         width: 210px;
         height: 370px;
         left: 30px;
@@ -774,13 +777,13 @@ color: orange !important}
         left: 70px;
     }
 
-    .container .mainList .sub {
+    .container1 .mainList .sub {
         height: 60px;
         font-size: 25px;
         padding-bottom: 10px;
     }
 
-    .container .mainList .sub a {
+    .container1 .mainList .sub a {
         left: -10px;
         top: 30%
     }
@@ -806,7 +809,7 @@ color: orange !important}
         left: -55px;
     }
 
-    #contact:before {
+    #contact1:before {
         content: "";
         width: 30px;
         height: 30px;
@@ -827,12 +830,12 @@ color: orange !important}
         left: -55px;
     }
 
-    #logouticon a:before{
+    #logouticon2:before{
         content: "";
-        width: 30px;
-        height: 30px;
-        left: -40px !important;
-        margin-top: -7px
+        width: 35px;
+        height: 35px;
+        left: -50px !important;
+        margin-top: -3px
     }
         
     .setting-information input#submit
@@ -946,7 +949,7 @@ color: orange !important}
             padding-bottom: 5px
         }
 
-        .useraccount .list {
+        .useraccount .list1 {
             height:337px !important;
         }
         .useraccount {
@@ -1071,13 +1074,13 @@ color: orange !important}
         left: 30px !important;
         margin-top: 15px
     }
-    .container {
+    .container1 {
         display: none;
     }
     .mainContainer {
         display: none
     }
-    .container{
+    .container1{
         position:  relative;
         top: 22px;
         width: 100%;
@@ -1085,7 +1088,7 @@ color: orange !important}
         float: left;
     }
 
-    .useraccount .list {
+    .useraccount .list1 {
         
         display: none;
     }
@@ -1138,7 +1141,7 @@ color: orange !important}
         top: 0px
     }
 
-    #contact:before {
+    #contact1:before {
         content: "";
         background-image: url("img/contact.svg");
         width: 20px;
@@ -1221,7 +1224,7 @@ color: orange !important}
         left: 0%;
     }
 
-    .useraccount .list {
+    .useraccount .list1 {
         
         display: none;
     }
@@ -1231,14 +1234,14 @@ color: orange !important}
 /*  - Media - 414 */
 @media screen and (max-width: 414px) {
     /* --------user account list */
-    .useraccount .list {
+    .useraccount .list1 {
         /* height: 267px !important; */
         margin-left: -86% !important;
         /* top: 80px; */
         width: 103% !important;
         margin-top: 83px
     }
-    .useraccount .list ul li a {
+    .useraccount .list1 ul li a {
         margin-left:160px !important;
         /* width: 103% !important */
     }
@@ -1271,7 +1274,7 @@ color: orange !important}
         position: absolute;
         top: 5px
     }
-    .container {
+    .container1 {
         display: none;
     }
   
@@ -1537,8 +1540,9 @@ color: orange !important}
     }
 
     #setting-footer-image {
-        width: 125px;
-        height: 50px;
+        width: 145px;
+        height: 40px;
+        padding: 10px
     }
 
     .setting-footer-paragraph {
@@ -1568,7 +1572,7 @@ color: orange !important}
     .useraccount {
         margin-left:76% !important;
     }
-    .useraccount .list ul li a {
+    .useraccount .list1 ul li a {
         margin-left:150px !important
     }    
     #header-div a img{
@@ -1725,9 +1729,9 @@ color: orange !important}
     .navigation-menu {
         display: block;
     }
-    .useraccount .list ul li a {margin-left: -35px}
+    .useraccount .list1 ul li a {margin-left: -35px}
 
-    .useraccount .list ul li a {
+    .useraccount .list1 ul li a {
         margin-left:130px !important
     }  
     #logouticon {margin-left: 0px}
@@ -1778,7 +1782,7 @@ color: orange !important}
         top: 0px
     }
 
-    #contact:before {
+    #contact1:before {
         content: "";
         background-image: url("img/contact.svg");
         width: 15px;

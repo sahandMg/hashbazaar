@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{URL::asset('css/contact-referral-activity-dashboard.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/cssreset.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/main.css')}}">
-    <!-- <link rel="stylesheet" href="{{URL::asset('bootstrap/css/bootstrap.min.css')}}"> -->
+    <link type="text/css" rel="stylesheet" href="{{URL::asset('bootstrap/css/bootstrap.min.css')}}"> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
     <link rel="stylesheet" href="../fonts/font-awesome.min.css">
@@ -36,7 +36,7 @@
             <div class="bar2"></div>
             <div class="bar3"></div>
         </div>
-        <div class="list">
+        <div class="list1">
 
             <ul>
                 <li class="user-account-list sub2"> <a href="{{route('dashboard')}}" id="dashboard2">Dashboard</a></li>
@@ -44,7 +44,7 @@
                 <li class="user-account-list sub2"> <a href="{{route('referral')}}" id="referral2">Referral</a> </li>
                 <li class="user-account-list sub2"> <a href="{{route('setting')}}" id="setting2">Setting</a></li>
                 <li class="user-account-list sub2"> <a href="{{route('contact')}}" id="contact2">Contact</a></li>
-                <li class="user-account-list" id="logouticon"><a href="{{route('logout')}}">Log Out</a></li>
+                <li class="user-account-list sub2" id="logouticon"><a href="{{route('logout')}}">Log Out</a></li>
 
             </ul>
         </div>
@@ -57,15 +57,82 @@
 
 @yield('content')
 
+   <hr/> 
+   <footer>
+       <p class="text-center">© 2018 HashBazaar. All rights reserved</p>
+       <img src="{{URL::asset('img/Logo_footer.png')}}" alt="HashBazaar">
+   </footer>
 
+    <!-- Container -->
+    <style type="text/css">
+       .panel-container {
+         margin-top: 125px;   
+         margin-left: 370px;
+         display: flex;flex-direction: column;
+       }
+       @media screen and (max-width:1024px) {
+          .panel-container {
+            margin-left: 280px;
+          }
+        }
+
+        @media screen and (max-width:768px) {
+          .panel-container {
+            margin-left: 0px;
+          }
+        }
+        @media screen and (max-width:415px) {
+          .panel-container {
+            margin-left: 0px;
+            margin-top: 85px;  
+          }
+        }
+        footer img {
+            width: auto;
+            height: 60px;
+            margin-left: 2%;
+        }
+        footer p {  margin-bottom: 2% ;color: black;font-size: 1.2rem;}
+        footer {
+            margin-left: 370px;
+            padding: 0px;
+        }
+
+        @media screen and (max-width:1024px) {
+          footer img {
+            height: 40px;
+          }
+          footer {
+            margin-left: 280px;
+          }
+        }
+
+        @media screen and (max-width:768px) {
+          footer {
+            margin: 0px;
+            padding-bottom: 2%;
+          }
+          footer img {
+            height: 40px;
+          }
+        }
+
+        @media screen and (max-width: 414px) {
+          footer p {  margin-bottom: 2% ;color: black;font-size: 0.9rem;}
+          footer {
+            padding-bottom: 4%;
+          }
+          footer img {
+            height: 30px;
+            margin-left: 4%;
+          }
+        }
+    </style>
 
 
 <!-- Container -->
 <div class="mainContainer">
-
-
-    <nav class="container">
-
+    <nav class="container1">
         <ul class="mainList">
             
             <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="{{URL::asset('img/Logo_In_NavBar.svg')}}" alt="Logo_In_NavBar"></a>
@@ -74,7 +141,7 @@
             <li class="sub"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
             <li class="sub"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
             <li class="sub"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
-            <li class="sub"> <a href="{{route('contact')}}" id="contact">Contact</a></li>
+            <li class="sub"> <a href="{{route('contact')}}" id="contact1">Contact</a></li>
             <li class="sub"> <a href="{{route('logout')}}" id="logouticon2">Log Out</a></li>
 
         </ul>
@@ -96,7 +163,7 @@
         $(document).ready(function(){
             $('.navigation-menu').click(function(){
                 $('#header-navbar-menu').toggle();
-                $('.useraccount .list').toggle();
+                $('.useraccount .list1').toggle();
                 $('.navigation-menu').toggleClass('change');
             })
         });

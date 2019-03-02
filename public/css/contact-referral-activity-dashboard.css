@@ -11,7 +11,7 @@
     cursor: pointer;
     font-size: 17px
 }
-.useraccount .list {
+.useraccount .list1 {
     width: 200px;
     height: 110px;
     border-radius: 10px;
@@ -21,10 +21,10 @@
     box-shadow: 2px 3px 10px 1px silver;
     display: none;
 }
-.useraccount .list  {
+.useraccount .list1  {
     margin-left: -135px
 }
-.useraccount .list:after {
+.useraccount .list1:after {
     content: '';
     position: absolute;
     border-left:18px solid transparent;
@@ -38,7 +38,7 @@
     -ms-transition: all 1s;
 }
 
-.useraccount .list ul li {
+.useraccount .list1 ul li {
     list-style-type: none;
     width: 200px;
     padding-bottom: 20px;
@@ -95,7 +95,10 @@
 #logouticon {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    display: none !important
 }
+
+#logouticon a {border-bottom: transparent}
 #logouticon:hover {
     background-color: black;
     height: 33px;
@@ -202,9 +205,9 @@ header {
     font-weight: bolder;
     color: #2e2d2d;
     font-family: sans-serif;
-    width: 500px;
+    width: auto;
     margin-top: 160px;
-    margin-left: 300px;
+    margin-left: 220px;
 }
 #contact-page input
 {
@@ -278,7 +281,8 @@ form.contact-page p:nth-of-type(1) {
 #contact-footer-image {
     width: 250px;
     height: 60px;
-    
+    padding-left: 1%;
+    padding-bottom: 1%;
 }
 
 /* Contact - Media - 1280 */
@@ -294,7 +298,7 @@ form.contact-page p:nth-of-type(1) {
 @media screen and (max-width:1024px){
     /* ----------------------------Main Container--------------------------- */
 
-    .useraccount .list {
+    .useraccount .list1 {
         display: none;
     }
 
@@ -358,7 +362,7 @@ form.contact-page p:nth-of-type(1) {
         z-index: 2;
     }
 
-    .useraccount .list {
+    .useraccount .list1 {
         display: none;
     }
 
@@ -426,7 +430,7 @@ form.contact-page p:nth-of-type(1) {
         
     }
 
-    .useraccount .list {
+    .useraccount .list1 {
         display: none;
     }
 }
@@ -513,7 +517,8 @@ form.contact-page p:nth-of-type(1) {
         width: 130px;
         height: 40px;
         margin: 0 auto;
-        padding-top: 10px
+        padding-top: 10px;
+        padding-left: 10px
     }
 
     .contact-footer-paragraph {
@@ -588,7 +593,7 @@ form.contact-page p:nth-of-type(1) {
     }
 
     #contact-footer-image {
-        width: 100px;
+        width: 120px !important;
         height: 50px;
         margin: 0 auto
     }
@@ -672,7 +677,8 @@ form.contact-page p:nth-of-type(1) {
     #contact-footer-image {
         width: 100px;
         height: 50px;
-        margin: 0 auto
+        margin: 0 auto;
+        padding-bottom: 10px
     }
 
     .contact-footer-paragraph {
@@ -698,9 +704,7 @@ body {
     background-color: #FFFDE8
 
 }
-.container-contact2 {
-    display: none
-}
+
 /* Header */
 
 header {
@@ -737,6 +741,7 @@ header {
     margin-top: 200px;
     margin-left: 27.5%;
     width: 70%;
+    z-index: 999
 }
 
 #referral-page q  {
@@ -771,7 +776,7 @@ header {
      font-size: 25px;
      font-family: sans-serif;
      color: #2e2d2d;
-     margin-top: -20px;
+     margin-top: -55px;
      margin-left: 240px;
  }
 
@@ -821,7 +826,7 @@ header {
 
 .referral-hr-footer
 {
-    top: 1020px;
+    top: 820px;
     width: 75% !important;
     margin-left:-40px !important;
     margin: 0
@@ -839,6 +844,8 @@ header {
     width: 250px;
     height: 60px;
     left: 30%;
+    padding-bottom: 1%;
+    padding-left: 1%
 }
 
 .referral-footer-paragraph {
@@ -848,11 +855,12 @@ header {
     margin-left:30%
 }
 
+/* Referral - Media - 1280 */
 @media screen and (max-width:1280px) {
         
     .referral-hr-footer
     {
-        top: 980px;
+        top: 800px;
         margin: 0
     }
     .referral-footer-div  {
@@ -860,7 +868,6 @@ header {
         margin-left: 30%;
     }
 }
-
 
 /* Referral - Media - 1024 */
 @media screen and (max-width:1024px){
@@ -873,24 +880,21 @@ header {
         left: 85%;
     }
 
-
 /* =======----media----==========================Referral==================================== */
 
 
     #referral-page q  {
         font-size: 25px;
-    color: #2e2d2d;
-    font-weight: bold;
-    font-family: sans-serif;
-    /* position: absolute; */
-    top: 80px;
-    left: 40px;
+        color: #2e2d2d;
+        font-weight: bold;
+        font-family: sans-serif;
+        top: 80px;
+        left: 40px;
     }
 
     .referral-page_firstList {
         font-size: 20px
     }
-
 
     #referral-page blockquote {
         font-size: 20px;
@@ -912,35 +916,29 @@ header {
         width: 120px;
         margin-top: 15%;
         font-size: 30px;
-
     }
-
 
     .referral-page_secondList_column
     {
         flex-grow: 1;
-        /* position: relative; */
         top: 500px;
         font-size: 20px;
         color: #2e2d2d;
         font-family: sans-serif;
         margin-left: 5%
-
-
     }
     .referral-hr-footer
     {
-        top: 850px;
+        top: 710px;
         width: 730px !important;
-
+        padding-bottom: 100px
     }
 
     /* Footer */
     .referral-footer-div {
         width: 100%;
         left: 0%;
-        /* position: absolute; */
-        top: 1000px
+        margin-top: 300px !important
     }
 
     #referral-footer-image {
@@ -991,16 +989,13 @@ header {
         width: 100%;
     }
 
-
     #referral-page q  {
         font-size: 27px;
     }
 
     #referral-page_firstList {
         font-size: 22px
-
     }
-
 
     #referral-page blockquote {
         font-size: 22px;
@@ -1011,14 +1006,13 @@ header {
     }
 
     #referral-page dl {
-    font-size: 22px;
+        font-size: 22px;
     }
 
     #referral-page p:nth-of-type(2) {
         font-size: 25px;
         font-family: sans-serif;
         color: #2e2d2d;
-        /* position: absolute; */
         top: 400px;
         margin-left: 410px;
 
@@ -1028,10 +1022,7 @@ header {
     {
         top: 480px;
         font-size: 20px;
-
-
     }
-
 
     .referral-page_secondList_column ul li {
         width: 100px;
@@ -1042,11 +1033,10 @@ header {
 
     .referral-hr-footer
     {
-        top: 900px;
+        top: 800px;
         width: 758px !important;
         margin-left: 0px !important;
         left: 0 !important;
-
     }
 
     /* Footer */
@@ -1055,7 +1045,7 @@ header {
         width: 94%;
         margin-left: 0%;
         /* position: absolute; */
-        margin-top: 400px !important
+        margin-top: 500px !important
     }
 
     .referral-footer-paragraph {
@@ -1104,7 +1094,6 @@ header {
         width: 100%;
     }
 
-
     #referral-page q  {
         font-size: 20px;
         color: #2e2d2d;
@@ -1112,7 +1101,6 @@ header {
         font-family: sans-serif;
         top: 60px;
         margin-left: 30px
-
     }
 
     .referral-page_firstList {
@@ -1125,7 +1113,6 @@ header {
         font-size: 17px;
         width: 350px
     }
-
 
     #referral-page blockquote {
         font-size: 20px;
@@ -1200,7 +1187,7 @@ header {
     .referral-footer-div {
         width: 100%;
         margin-left: 0%;
-        margin-top: 300px !important
+        margin-top: 530px !important
     }
 
     .referral-footer-paragraph {
@@ -1208,12 +1195,13 @@ header {
         margin-left: 0px;
         top: 0 !important;
         margin-top: 0 !important;
-        width: 300px
+        width: 300px;
     }
 
     #referral-footer-image {
         width: 130px;
         height: 50px;
+        padding-bottom: 10px;
         margin: 0 auto
     }
 
@@ -1286,7 +1274,7 @@ header {
     .referral-footer-div {
         width: 94%;
         margin-left: 2%;
-        margin-top: 350px !important
+        margin-top: 550px !important
     }
 
     .referral-footer-paragraph {
@@ -1295,11 +1283,11 @@ header {
     }
 
     #referral-footer-image {
-        width: 120px;
-        height: 40px;
+        width: 140px !important;
+        height: 40px !important;
         margin: 0 auto;
-        padding-top: 20px;
-        padding-bottom: 10px;
+        padding-top: 0px;
+        padding-bottom: 0px;
     }
 }
 
@@ -1381,11 +1369,11 @@ header {
     }
 
     #referral-footer-image {
-        width: 120px !important;
+        width: 130px !important;
         height: 40px;
         margin: 0 auto;
-        padding-top: 20px;
-        padding-bottom: 10px;
+        padding-top: 0px;
+        padding-bottom: 0px;
         padding-left: 10px
 
     }
@@ -1523,14 +1511,12 @@ header {
 
  #activity {color: orange !important}
 
- #activity-page blockquote {
+  .activity-container h2 {
     font-size: 30px;
     color: #2e2d2d;
     font-weight: bold;
     font-family: sans-serif;
-    margin-top: 210px;
-    margin-left: 40px;
-    margin-bottom: 20px
+    
  }
 
  #activity-page .purchases q {
@@ -1550,7 +1536,6 @@ header {
     font-size: 30px;
     margin: 15% 35%
 }
-
 
 .mainList2 {display: none}
 
@@ -1619,11 +1604,11 @@ header {
     margin-top: -5px;
 }
 
-.tooltip {
+.tooltip1 {
     position: relative;
   }
   
-  .tooltip .tooltiptext {
+  .tooltip1 .tooltiptext {
     visibility: hidden;
     width: auto;
     background-color: black;
@@ -1639,7 +1624,7 @@ header {
     margin-left: -50%
   }
   
-  .tooltip:hover .tooltiptext {
+  .tooltip1:hover .tooltiptext {
     visibility: visible;
   }
 .activity-hr-footer
@@ -1673,20 +1658,7 @@ header {
 /* Activity-Media-1280 */
 @media screen and (max-width:1280px) 
 {
-    .container-activity {
-        width: 340px !important;
-        height: 100%;
-        background: rgb(39, 38, 38);
-        border-top: 4px solid orange;
-        position: fixed;
-        top: 110px;
-    }
     
-    .container-activity .mainList {
-        background: white;
-        width: 340px !important;
-        top: 150px
-    }
     .activity-hr-footer
     {
         margin-top: 90px;
@@ -2028,61 +2000,6 @@ header {
         display: none
     }
 
-    #dashboard:before {
-        content: "";
-        background-image: url("img/Dashboard.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -20px;
-        top: 0px
-    }
-
-    #activity:before {
-        content: "";
-        background-image: url("img/Activity.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -20px;
-        top: 0px
-    }
-
-    #referral:before {
-        content: "";
-        background-image: url("img/Referral.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -20px;
-        top: 0px
-    }
-
-    #setting:before {
-        content: "";
-        background-image: url("img/Setting.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -20px;
-        top: 0px
-    }
-
-    #contact:before {
-        content: "";
-        background-image: url("img/contact.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -20px;
-        top: 0px
-    }
-
     #activity-page {
         margin-left: 0% !important;
         width: 100%;
@@ -2107,7 +2024,7 @@ header {
     #activity-page .Transactions {
         width: 380px !important;
         height: 10px;
-        margin-top: 1px
+        margin-top: 5px !important
     }
     #activity-page .Transactions q {
         height: 18px;
@@ -2177,12 +2094,12 @@ header {
     }
 
     #activity-footer-image {
-        width: 130px;
+        width: 140px !important;
         height: 50px;
         margin: 0 auto;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        padding-left: 2%
+        padding-top: 10px;
+        padding-bottom:0px;
+        padding-left: 2% !important
     }
 
     .activity-footer-paragraph {
@@ -2201,10 +2118,6 @@ header {
 @media screen and (max-width:375px) 
 {
 
-    .container-activity {
-        display: none;
-    }
-
     .Logo_header {
         width: 300px;
         height: 90px;
@@ -2215,72 +2128,14 @@ header {
         z-index: 2;
         width: 375px;
     }
-    #activity-page {
-        height: auto;
-        z-index: 0;
-    }
   
     .mainList {
         display: none
     }
 
-    #dashboard:before {
-        content: "";
-        background-image: url("img/Dashboard.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -20px;
-        top: 0px
-    }
-
-    #activity:before {
-        content: "";
-        background-image: url("img/Activity.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -20px;
-        top: 0px
-    }
-
-    #referral:before {
-        content: "";
-        background-image: url("img/Referral.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -20px;
-        top: 0px
-    }
-
-    #setting:before {
-        content: "";
-        background-image: url("img/Setting.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -20px;
-        top: 0px
-    }
-
-    #contact:before {
-        content: "";
-        background-image: url("img/contact.svg");
-        width: 15px;
-        height: 15px;
-        background-size: 100% 100%;
-        position: absolute;
-        left: -20px;
-        top: 0px
-    }
-
     #activity-page {
-        width: 100%;
+        width: 100%;height: auto;
+        z-index: 0;
     }
 
     #activity-page blockquote {
@@ -2364,9 +2219,9 @@ header {
     }
 
     #activity-footer-image {
-        width: 120px;
+        width: 130px !important;
         height: 40px;
-       padding-bottom: 10px;
+       padding-bottom: 0px;
        margin: 0 auto;
        padding-left: 2%
     }
@@ -2569,7 +2424,6 @@ body {
 
 #dashboard-page {
     width: 72.3%;
-    height: 1800px;
     margin-left: 27.7%;
     margin-top:150px;
     box-sizing: border-box;
@@ -2579,30 +2433,68 @@ body {
 #dashboard {color: orange !important}
 
 /* ======================================Circle=========================================== */
-#dashboard-page-circle {
-    width: 400px;
-    display: block;
-    height: 400px;
-    border: 20px solid #ff9100;
-    border-radius: 50%;
-    margin-left: 50% !important;
-    margin-top: 4%;
-    border-collapse: 2px solid #727272
-}
 
-#dashboard-page-circle2 {
-    width: 400px;
+.circle-container {
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    width: 85%;
+    flex-flow: row wrap;
+    margin : auto;
+}
+#dashboard-page-circle {
+    width: 450px !important; 
     display: block;
-    height: 400px;
+    height: 400px !important;
     border: 20px solid #ff9100;
     border-radius: 50%;
     border-collapse: 2px solid #727272;
-    margin-top: -45%;
+    flex: 1;
+}
+
+#dashboard-page-circle2 {
+    width: 450px !important;
+    display: block;
+    height: 400px !important;
+    border: 20px solid #ff9100;
+    border-radius: 50%;
+    border-collapse: 2px solid #727272;
+    margin-left: 6% !important;
+    flex: 1;
 }
 
 #redeem {
-    margin-top: 10%;
-    margin-left: 38%;
+    /* margin-top: 0%; */
+    /* margin-left: 38%; */
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .475rem 2rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    color: #212529;
+    background-color: #42dca3;
+    border-color: #42dca3;
+    font-family: Cabin,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    text-transform: uppercase;
+    border-radius: 0;
+    border-radius: 100px 100px 100px 100px;
+    border: none;
+    display: block;
+    margin: auto;
+    margin-top: 3%;
+    cursor: pointer;
 }
 
 #circle-span {
@@ -2611,58 +2503,57 @@ body {
     font-family: sans-serif;
     color: #727272;
     position: absolute;
-    margin-top: 100px;
+    margin-top: 70px;
     font-weight: bolder;
     margin-left: 7.5%;
 }
 
 #dashboard-page-circle p:nth-of-type(1) {
-    font-size: 42px;
+    font-size: 35px;
     text-align: center;
     color: rgb(41, 37, 37);
-    margin-top: 35%;
+    margin-top: 31%;
     font-weight: bolder;
-    font-family: sans-serif
+    font-family: sans-serif;
+    padding:0 !important;
 }
 
 #dashboard-page-circle p:nth-of-type(2) {
-    font-size: 42px;
+    font-size: 35px;
     text-align: center;
     color: rgb(41, 37, 37);
-    margin-top: 2%;
+    margin-top: -4%;
     font-weight: bolder;
+    padding:0 !important;
     font-family: sans-serif
 }
 #dashboard-page-circle2 p:nth-of-type(1) {
-    font-size: 42px;
+    font-size: 35px;
     text-align: center;
     color: rgb(41, 37, 37);
-    margin-top: 35%;
+    margin-top: 31%;
     font-weight: bolder;
+    padding:0 !important;
     font-family: sans-serif
 }
 
 #dashboard-page-circle2 p:nth-of-type(2) {
-    font-size: 42px;
+    font-size: 35px;
+    padding:0 !important;
     text-align: center;
     color: rgb(41, 37, 37);
-    margin-top: 2%;
+    margin-top: -4% !important;
     font-weight: bolder;
     font-family: sans-serif
 }
 #miningBTC span, #miningBTC span {
-    font-size: 27px
+    font-size: 25px
 }
-
+#dashboard-page-circle  hr , #dashboard-page-circle2  hr {
+    margin-top: -10% !important
+}
 /* ==================================================HASH History============================== */
-#dashboard-page #dashboard-title {
-    margin-left: 40%;
-    margin-top: -2%;
-    font-family: sans-serif;
-    font-size: 25px;
-    font-weight: bolder;
-    color: #2e2d2d
-}
+
 
 #no-hash {
     font-size: 30px;
@@ -2670,14 +2561,14 @@ body {
 }
 
 .Hash-History {
-    max-height: 300px;
-
+    max-height: 350px !important;
+    margin-left: 7%
 }
 #Hash-History-list
  {
-     margin-top: 30px;
+     margin-bottom: 70px;
      width: 100%;
-     max-height: 300px;
+     max-height: 300px !important;
      float:left;
  }
 
@@ -2690,8 +2581,8 @@ body {
     color: #2e2d2d;
     font-weight: bolder;
     font-family: sans-serif;
-     width: 95%;
-     margin-left: 5%;
+    width: 95%;
+    margin-left: 5%;
     text-align: left;
     display: block
 }
@@ -2721,34 +2612,31 @@ body {
 
 #Hash-History-list .remain {
     width: 180px; margin: 0px auto;
-    /* height:30px; */
     border: thin solid ;
-
 }
 
-.progress {    border: 1px solid;}
-.progress-bar {
+.progress1 {    border: 1px solid;}
+.progress-bar1 {
     background-color: #ff9100;
     text-align: center;
     color: white;
-  width: 0;
-  -webkit-animation: progress 1.5s ease-in-out forwards;
-          animation: progress 1.5s ease-in-out forwards;
+    width: 0;
+    -webkit-animation: progress 1.5s ease-in-out forwards;
+    animation: progress 1.5s ease-in-out forwards;
 }
-.progress-bar .title {
-  opacity: 0;
-  -webkit-animation: show 0.35s forwards ease-in-out 0.5s;
-          animation: show 0.35s forwards ease-in-out 0.5s;
+.progress-bar1 .title {
+    opacity: 0;
+    -webkit-animation: show 0.35s forwards ease-in-out 0.5s;
+    animation: show 0.35s forwards ease-in-out 0.5s;
 }
 
 #Hash-History-list .remain {
-
     width: 160px !important;
     text-align: center !important;
     color: white !important;
 }
 
-#Hash-History-list .remain .progress {
+#Hash-History-list .remain .progress1 {
     width:98% !important;
     background-color: white !important;
     border: 1px solid black !important;
@@ -2761,7 +2649,7 @@ body {
 /* ==============================================Buy hash power=================================== */
 
 #demo {
-    margin-top: 8%;
+    margin-top: 0%;
     margin-left: 44%;
     font-size: 25px;
     font-weight: bolder;
@@ -2775,6 +2663,7 @@ body {
     margin-left: 8%;
     top: 0%;
     left: 0;
+    margin-bottom: 4% !important;
 }
 
 .slider {
@@ -2806,15 +2695,6 @@ body {
     height: 25px;
     background: #15BEA4;
     cursor: pointer;
-}
-
-#dashboard-page #dashboard-title2 {
-    margin-left: 38%;
-    margin-top: -4% !important;
-    font-family: sans-serif;
-    font-size: 25px;
-    font-weight: bolder;
-    color: #2e2d2d;
 }
 
 .pandel-button {
@@ -2849,21 +2729,23 @@ body {
     cursor: pointer;
 }
 
-.rfrcode {
+ .rfrcode {
     color: black;
     font-weight: bolder;
     font-size: 1.2em;
-    margin-top: 5% !important;
-    padding-top: 5% !important
+    padding-top: 25px !important;
+    display: inline
 }
-.aplybtntext {
+ .aplybtn1text {
     display: inline-block !important;
-    padding: 5px;
+    padding:5px;
+    padding-bottom: 0px !important;
     border: transparent;
-    margin-top: 10px;
     border-bottom: 1px solid black !important;
+    background-color: #FFFDE8;
+    margin-left: 10px;
 }
-.aplybtn {
+ .btn {
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
@@ -2886,23 +2768,16 @@ body {
     -ms-transition: all .3s ease-in-out;
     text-transform: uppercase;
     border-radius: 0;
-    border-radius: 100px 100px 100px 100px;
+    border-radius: 100px 100px 100px 100px !important;
     border: none;
     display: inline-block;
     cursor: pointer;
-    margin-top: 10px
+    margin-top: -9px;
+    margin-left: 17px
 }
 
-/*============================================== Mining History ===================================*/
 
-    #dashboard-page #dashboard-title3 {
-        margin-left: 39%;
-        margin-top: -2%;
-        font-family: sans-serif;
-        font-size: 25px;
-        font-weight: bolder;
-        color: #2e2d2d;
-    }
+/*============================================== Mining History ===================================*/
 
     canvas#chart1 {
         -moz-user-select: none;
@@ -2912,49 +2787,75 @@ body {
         margin-left: 20%
     }
 
+   /* ------------------------ ---------------title flex ------------------------------------ */
+
+   .title-flex
+   {
+       width: 100%;
+       display: flex;
+       display: -ms-flexbox;
+       display: -webkit-flex;
+       flex-flow: row nowrap;
+   }
+
+   .title-flex #dashboard-title {
+        margin-left: 1.7em !important;
+        font-size: 20px !important;
+        font-weight: bolder;
+        color: #2e2d2d;
+        flex: 1;
+        width: auto;
+    }
     .dashboard-hr1 {
-        width: 38%;
-        margin-left: -0px;
-        margin-top: 60px
-    }
-    .dashboard-hr1-1  { display: none}
-
-    .dashboard-hr222-2 {
-        width: 40%;
-        margin-left: 59.5%;
-        margin-top: -15px
-    }
-    .dashboard-hr11 {
-        width: 37%;
-        margin-top: 5% !important;
-        margin-left: 0;
-    }
-
-    .dashboard-hr111 {
-        width: 37%;
-        left: 0px !important;
-        margin-left: 0;
-        margin-top: 10%
-    }
-
-    .dashboard-hr22-2 {
-        display: block;
-        width: 39.5%;
-        margin-left:59.5%;
-        margin-top: -24px
+        flex: 2
     }
 
     .dashboard-hr2-2 {
-        width: 41.5%;
-        margin-left: 57.5%;
-        margin-top: -16px;
+        flex: 2
     }
-    .dashboard-hr-footer
-    {
-        margin-top: 230px !important
+    /*  */
+
+    .title-flex #dashboard-title2 {
+        margin-left: 2px;
+        font-size: 20px;
+        font-weight: bolder;
+        color: #2e2d2d;
+        flex: 1;
     }
 
+    .dashboard-hr11 {
+        flex: 2 !important;
+    }
+    .dashboard-hr22 {
+        flex: 2 !important;
+    }
+    /*  */
+
+    #dashboard-page #dashboard-title3 {
+        margin-left: 30px;
+        font-size: 20px;
+        font-weight: bolder;
+        color: #2e2d2d;
+        flex: 1
+    }
+
+    .dashboard-hr111 {
+        flex: 2
+    }
+    .dashboard-hr222-2 {
+        flex: 2
+    }
+   
+
+    
+
 /* ============================================Footer======================================= */
+
+    .dashboard-hr-footer
+    {
+        margin-top: 210px !important
+    }
+
     #footer-div {
         margin-top: 00px !important;
         display: block
@@ -2968,6 +2869,7 @@ body {
     #dashboard-footer-image {
         width: 250px;
         height: 60px;
+        padding-left: 1%;
         padding-bottom: 1%
     }
 
@@ -2984,21 +2886,16 @@ body {
         height: 350px;
     }
 
-    #dashboard-page-circle2 {
-        margin-left: 4%;
-        margin-top: -42% !important
-    }
-
     #dashboard-page-circle p:nth-of-type(1)
     , #dashboard-page-circle p:nth-of-type(2)
     , #dashboard-page-circle2 p:nth-of-type(1)
     , #dashboard-page-circle2 p:nth-of-type(2) {
-        font-size: 35px;
+        font-size: 34px;
     }
     
     
     #miningBTC span, #miningBTC span {
-        font-size: 27px
+        font-size: 23px
     }
     .dashboard-footer-div {
         width: 70%;
@@ -3015,7 +2912,6 @@ body {
         font-size: 17px;
         left: 70px;
     }
-  
 
     .sub:after {
         width: 1em;
@@ -3033,17 +2929,17 @@ body {
     .dashboard-hr2-2 {
         width: 41.5%;
         margin-left: 57.5%;
-        margin-top: -16px;
+        margin-top: -56px;
     }
 
     .dashboard-hr222-2 {
         width: 40%;
         margin-left: 59.5%;
-        margin-top: -15px
+        margin-top: -55px
     }
     .dashboard-hr11 {
         width: 37%;
-        margin-top: 5%;
+        margin-top: -15% !important;
         margin-left: 0;
     }
 
@@ -3057,35 +2953,40 @@ body {
     .dashboard-hr22-2 {
         display: block;
         width: 39.5%;
-        margin-left:59.5%;
-        margin-top: -14px
+        margin-left:60%;
+        margin-top: -50px
     }
 
     /* ================---media--=================Circle================================== */
 
     #dashboard-page-circle , #dashboard-page-circle2{
         width: 310px;
-        height: 310px;
+        height: 310px !important;
     }
-    #dashboard-page-circle2 {
-        margin-top: -47% !important;
-        margin-left: 2%
+    
+    #redeem {
+        margin-top: -35% !important;
+        margin-left: 33%
     }
-    #circle-span {
-        font-size: 20px !important;
-    }
-
     #circle-span {
         font-size: 20px !important;
         margin-top: 70px;
     }
     #dashboard-page-circle p {
-        font-size: 30px !important;
+        font-size: 22px !important;
         margin-top: 40%;
     }
+
+    #dashboard-page-circle p:nth-of-type(1) , #dashboard-page-circle2 p:nth-of-type(1) {
+        font-size: 22px !important;
+        margin-top: 42%;
+    }
     #dashboard-page-circle2 p {
-        font-size: 30px !important;
+        font-size: 22px !important;
         margin-top: 40%;
+    }
+    #dashboard-page-circle  hr , #dashboard-page-circle2  hr {
+        margin-top: -12% !important
     }
     .dashboard-hr-footer
     {
@@ -3162,7 +3063,7 @@ body {
         color: white !important;
     }
 
-    #Hash-History-list .remain .progress {
+    #Hash-History-list .remain .progress1 {
         width:98% !important;
         background-color: white !important;
         border: 1px solid black !important;
@@ -3175,15 +3076,22 @@ body {
 
     #dashboard-page #dashboard-title2 {
         left: 35%;
-        top: 870px;
+        margin-top: -5% !important;
         font-size: 22px;
     }
+
+    .slidecontainer {
+        margin-top: 2.65%
+    }
    
+    .dashboard-page {
+        margin-top: -5.6%
+    }
     /*============================================== Mining History ===================================*/
 
     #dashboard-page #dashboard-title3 {
         margin-left: 38%;
-        margin-top: -16px;
+        margin-top: -30px;
         font-size: 22px;
         z-index: 2;
     }
@@ -3201,7 +3109,7 @@ body {
     .dashboard-footer-div {
         width: 70%;
         margin-left: 27%;
-        margin-top: -50%;
+        margin-top: -40%;
         top: 0
     }
 
@@ -3211,20 +3119,19 @@ body {
 /* Dashboard-Media-768 */
 @media screen and (max-width:768px) {
 
-    .container {
+    .container1 {
         display: none
     }
     .mainContainer {display: none}
-    .container .mainList { display: none}
+    .container1 .mainList { display: none}
 
     #dashboard-page {
-        height: 1800px;
         margin-left: 0 !important;
         width: 98%;
         z-index: 0;
     }
    
-    .container {
+    .container1 {
         border-bottom: transparent
     }
 
@@ -3235,10 +3142,7 @@ body {
         height: 280px;
         border: 20px solid #ff9100;
         border-radius: 50%;
-        margin-left: 56% !important;
-        margin-top: 4%;
         border-collapse: 2px solid #727272;
-        margin-right: 0%;
         padding: 0 !important;
     }
     #dashboard-page-circle2 {
@@ -3247,8 +3151,6 @@ body {
         height: 280px;
         border: 20px solid #ff9100;
         border-radius: 50%;
-        margin-left: 5%;
-        margin-top: -43% !important;
         border-collapse: 2px solid #727272
     }
     #circle-span {
@@ -3256,24 +3158,27 @@ body {
         text-align: center;
         font-family: sans-serif;
         color: #727272;
-        margin-top: 8%;
+        margin-top: 5% !important;
         font-weight: bolder;
-        margin-left: 12%;
+        margin-left: 9% !important;
     }
 
     #dashboard-page-circle p {
         font-size: 45px;
         text-align: center;
         color: rgb(41, 37, 37);
-        margin-top: 40%;
+        margin-top: 30% !important;
         font-weight: bolder;
         font-family: sans-serif
+    }
+    #dashboard-page-circle p:nth-of-type(2) {
+        margin-top: -3% !important
     }
     #dashboard-page-circle2 p {
         font-size: 45px;
         text-align: center;
         color: rgb(41, 37, 37);
-        margin-top: 40%;
+        margin-top: 30% !important;
         font-weight: bolder;
         font-family: sans-serif
     }
@@ -3284,18 +3189,18 @@ body {
         font-size: 25px;
         font-weight: bolder;
         color: #2e2d2d;
-        margin-top: -20px
+        margin-top: -35px
     }
 
     .dashboard-hr1  {
         width: 40%;
-        margin-left: 0
+        margin-left: 0;
     }
 
     .dashboard-hr2-2  {
         width: 36.5% !important;
         margin-left: 62.5%;
-        margin-top: -15px
+        margin-top: -55px
     }
 
     #Hash-History-list
@@ -3348,7 +3253,7 @@ body {
 
     #dashboard-page #dashboard-title2 {
         margin-left: 40%;
-        margin-top: -20px;
+        margin-top: -58px !important;
         font-family: sans-serif;
         font-size: 25px;
         font-weight: bolder;
@@ -3369,7 +3274,7 @@ body {
 
     #dashboard-page #dashboard-title3 {
         margin-left: 41%;
-        margin-top: -20px;
+        margin-top: -35px;
         font-family: sans-serif;
         font-size: 25px;
         font-weight: bolder;
@@ -3387,7 +3292,7 @@ body {
 
     .dashboard-hr-footer
     {
-        margin-top:170px !important;
+        margin-top:0px !important;
         width: 100%;
         margin-left: 0;
         left: 0 !important;
@@ -3395,7 +3300,7 @@ body {
 
     /* ============================================Footer======================================= */
     #footer-div {
-        margin-top: 00px !important;
+        margin-top: 0px !important;
         border-bottom: transparent;
         margin-left: 0% !important;
         display: block;
@@ -3403,7 +3308,7 @@ body {
     .dashboard-footer-div {
         width: 70%;
         margin-left: 2% !important;
-        margin-top: -420px;
+        margin-top: -300px;
         border-bottom: transparent
     }
 
@@ -3427,12 +3332,8 @@ body {
 /* Dashboard-Media-414 */
 @media screen and (max-width:414px) {
 
-    .container-dashboard {
-        display: none
-    }
 
     #dashboard-page {
-        height: 0px !important;
         width: 100%;
         z-index: 0;
     }
@@ -3460,58 +3361,61 @@ body {
     }
 
     /* ======================================Circle=========================================== */
+
+    .circle-container {
+        flex-flow: column wrap;
+        margin-top: -40px !important
+    }
     #dashboard-page-circle {
-        width: 250px;
+        width: 350px !important;
         display: block;
-        height: 250px;
+        height: 350px !important;
+        margin-left: 0% !important;
         border: 20px solid #ff9100;
         border-radius: 50%;
-        margin-left: 10% !important;
-        left: 0%;
-        margin-top:-8% !important;
         border-collapse: 2px solid #727272
     }
     #dashboard-page-circle2 {
-        width: 250px;
+        width: 350px !important;
         display: block;
-        height: 250px;
+        height: 350px !important;
         border: 20px solid #ff9100;
+        margin-left: 0% !important;
         border-radius: 50%;
-        margin-left: 10% !important;
-        left: 0%;
-        margin-top:5% !important;
+        margin-top: 4% !important;
         border-collapse: 2px solid #727272
     }
     #circle-span {
-        font-size: 15px !important;
+        font-size: 22px !important;
         text-align: center;
         font-family: sans-serif;
         color: #727272;
-        margin-top: 15%;
+        margin-top: 13% !important;
         font-weight: bolder;
-        margin-left: 20%;
+        margin-left: 23% !important;
     }
 
     #dashboard-page-circle p {
         font-size: 20px !important;
         text-align: center;
         color: rgb(41, 37, 37);
-        top: 40%;
+        margin-top: 40% !important;
         font-weight: bolder;
-        font-family: sans-serif
+        font-family: sans-serif;
     }
     #dashboard-page-circle2 p {
         font-size: 20px !important;
         text-align: center;
         color: rgb(41, 37, 37);
-        top: 40%;
+        margin-top: 40% !important;
         font-weight: bolder;
-        font-family: sans-serif
+        font-family: sans-serif;
+
     }
     /* ==================================================HASH History============================== */
     #dashboard-page #dashboard-title {
         margin-left: 35.5%;
-        margin-top:-20px;
+        margin-top:-27px;
         font-family: sans-serif;
         font-size: 18px;
         font-weight: bolder;
@@ -3526,7 +3430,7 @@ body {
     .dashboard-hr2-2  {
         width: 33%;
         left: 0%;
-        margin-top: -7px
+        margin-top: -40px !important
     }
 
     #Hash-History-list
@@ -3556,7 +3460,7 @@ body {
         font-weight: normal !important;
         width: 150px;
         margin-top: 10px;
-        width: 5%;
+        width: 41% !important;
         font-size: 18px;
         margin-left: 0% !important;
         height: 40px;
@@ -3569,7 +3473,7 @@ body {
         width: 150px;
         margin-left: 0% !important;
         margin-top: 10px;
-        width: 27%;
+        width: 40% !important;
         font-size: 13px;
         height: 40px;
         color: #2e2d2d;
@@ -3585,7 +3489,7 @@ body {
         color: white !important;
     }
 
-    #Hash-History-list .remain .progress {
+    #Hash-History-list .remain .progress1 {
         width:98% !important;
         background-color: white !important;
         border: 1px solid black !important;
@@ -3601,11 +3505,13 @@ body {
         font-family: sans-serif;
         font-size: 20px;
         font-weight: bolder;
+        margin-top: -30px !important;
         color: #2e2d2d;
     }
 
     .dashboard-hr11 {
         width: 26% !important;
+        margin-top: -50px !important;
         left: -150px;
     }
 
@@ -3613,9 +3519,11 @@ body {
         display: block;
         width: 27.5% !important;
         margin-left: 71% !important;
-        margin-top: -10px
+        margin-top: -40px !important
     }
-
+    #referralCode {
+        width: 130px !important
+    }
     /*============================================== Mining History ===================================*/
 
     #dashboard-page #dashboard-title3 {
@@ -3634,7 +3542,7 @@ body {
         display: block;
         width: 28% !important;
         margin-left: 69%;
-        margin-top: -10px
+        margin-top: -40px !important
     }
 
     canvas#chart1 {
@@ -3648,23 +3556,25 @@ body {
         width: 40%;
         left: 30%;
     }
-
+    #referralCode {
+        width: 90px !important
+    }
     .dashboard-hr-footer
     {
-        margin-top: 100px !important;
+        margin-top: 60px !important;
         top: 0
     }
 
     /* ============================================Footer======================================= */
     #footer-div {
-        margin-top: 200 !important;
+        margin-top: 0 !important;
         height: 050px;
         width: 100%;
     }
     .dashboard-footer-div {
         width: 100% !important;
         left: 0%;
-        margin-top: 1750px !important
+        margin-top: -100px !important
     }
 
     #dashboard-footer-image {
@@ -3676,7 +3586,6 @@ body {
     .dashboard-footer-paragraph {
         font-size: 15px;
         font-family: sans-serif;
-        /* position: absolute; */
         top: -60px;
         margin-left: 80px;
         width: 280px
@@ -3700,26 +3609,19 @@ body {
 
     /* ======================================Circle=========================================== */
     #dashboard-page-circle , #dashboard-page-circle2 {
-        width: 250px;
+        width: 280px !important;
         display: block;
-        height: 250px;
+        height: 280px !important;
         border: 20px solid #ff9100;
         border-radius: 50%;
-        /* position: relative; */
-        margin-left: 12%;
-        left: 0%;
-        top: 4%;
         border-collapse: 2px solid #727272
     }
-    #dashboard-page-circle2 {
-        margin-left: 12% !important
-    }
+    
     #circle-span {
         font-size: 15px !important;
         text-align: center;
         font-family: sans-serif;
         color: #727272;
-        /* position: absolute; */
         margin-top: 15%;
         font-weight: bolder;
         margin-left: 20%;
@@ -3729,7 +3631,6 @@ body {
         font-size: 20px !important;
         text-align: center;
         color: rgb(41, 37, 37);
-        /* position: relative; */
         top: 40%;
         font-weight: bolder;
         font-family: sans-serif
@@ -3738,14 +3639,12 @@ body {
         font-size: 20px !important;
         text-align: center;
         color: rgb(41, 37, 37);
-        /* position: relative; */
         top: 40%;
         font-weight: bolder;
         font-family: sans-serif
     }
     /* ==================================================HASH History============================== */
     #dashboard-page #dashboard-title {
-        /* position: absolute; */
         margin-left: 35.5%;
         margin-top:-20px;
         font-family: sans-serif;
@@ -3772,7 +3671,6 @@ body {
         height: 300px;
         float:left;
     }
-
     
     #Hash-History-list tr
     {
@@ -3810,7 +3708,6 @@ body {
         height: 70px;
         color: #2e2d2d;
     }
-   
 
     #Hash-History-list .remain {
         width: 65px !important;
@@ -3821,7 +3718,6 @@ body {
     /* ==============================================Buy hash power=================================== */
 
     #dashboard-page #dashboard-title2 {
-        /* position: absolute; */
         margin-left: 30%;
         font-family: sans-serif;
         font-size: 18px;
@@ -3840,13 +3736,10 @@ body {
         margin-left: 71.2%;
         margin-top: -10px
     }
-
   
     /*============================================== Mining History ===================================*/
 
-
     #dashboard-page #dashboard-title3 {
-        /* position: absolute; */
         margin-left: 32.5%;
         font-family: sans-serif;
         font-size: 18px;
@@ -3869,7 +3762,6 @@ body {
         -moz-user-select: none;
         -webkit-user-select: none;
         -ms-user-select: none;
-        /* position: relative; */
         margin-top: 50px;
         width: 330px !important;
         height: 200px !important;
@@ -3883,7 +3775,7 @@ body {
 
     .dashboard-hr-footer
     {
-        margin-top: 00px !important;
+        margin-top: -20px !important;
         top: 0;
         width: 100%
     }
@@ -3897,8 +3789,6 @@ body {
     .dashboard-footer-div {
         width: 100% !important;
         left: 0%;
-        /* position: absolute; */
-        margin-top: 1680px !important
     }
 
     #dashboard-footer-image {
@@ -3911,15 +3801,12 @@ body {
     .dashboard-footer-paragraph {
         font-size: 15px;
         font-family: sans-serif;
-        /* position: absolute; */
-        top: -60px;
         margin-left: 40px;
         width: 280px;
         padding-top: 10px;
         padding-bottom: 20px
 
     }
-
 
 }
 
@@ -3930,24 +3817,18 @@ body {
 
      /* ======================================Circle=========================================== */
      #dashboard-page-circle , #dashboard-page-circle2 {
-        width: 200px;
         display: block;
-        height: 200px;
         border: 20px solid #ff9100;
         border-radius: 50%;
-        margin-left: 11%;
         border-collapse: 2px solid #727272
     }
         
-        #dashboard-page-circle2 {margin-left: 10% !important; }
     #circle-span {
-        font-size: 13px !important;
         text-align: center;
         font-family: sans-serif;
         color: #727272;
-        margin-top: 15%;
         font-weight: bolder;
-        margin-left: 20%;
+        margin-left: 20% !important
     }
 
 
@@ -3996,7 +3877,6 @@ body {
         height: 300px;
         float:left;
     }
-
     
     #Hash-History-list tr
     {
@@ -4033,20 +3913,19 @@ body {
         height: 70px;
         color: #2e2d2d;
     }
-   
 
     #Hash-History-list .remain {
         width: 70px !important;
         border: 1px solid ;
         font-size: 12px;
-        height: 15px
+        height: 20px !important
     }
-    #Hash-History-list .remain .progress-bar{
-        height: 15px
+    #Hash-History-list .remain .progress-bar1{
+        height: 20px !important
     }
-    #Hash-History-list .remain .progress-bar .title{
+    #Hash-History-list .remain .progress-bar1 .title{
         text-align: center;
-        padding-top: 5%;
+        padding-top: 1% !important
     }
     /* ==============================================Buy hash power=================================== */
 
@@ -4069,7 +3948,13 @@ body {
         margin-left: 72.2% !important;
         margin-top: -8px
     }
-
+    #referralCode {
+        width: 75px !important
+    }
+    .btn-primary {
+        padding: 0.1em .5em !important;
+        margin-left: 0
+    }
     /*============================================== Mining History ===================================*/
 
     #dashboard-page #dashboard-title3 {
@@ -4106,7 +3991,7 @@ body {
         top: 0;
         width: 100%
     }
-
+    
     /* ============================================Footer======================================= */
     #footer-div {
         top: 0 !important;
@@ -4116,7 +4001,6 @@ body {
     .dashboard-footer-div {
         width: 100% !important;
         left: 0%;
-        margin-top: 1540px !important
     }
 
     #dashboard-footer-image {

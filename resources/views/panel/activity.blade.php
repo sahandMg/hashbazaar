@@ -13,9 +13,9 @@ foreach ($hashes as $key=> $hash){
 ?>
 
 
-<div id="activity-page">
+<div  class="panel-container activity-container">
 
-    <blockquote>Recent Activities</blockquote> 
+    <h2 class="text-center">Recent Activities</h2> 
 
     <div class="purchases">
         <q>Purchases</q>
@@ -76,8 +76,8 @@ foreach ($hashes as $key=> $hash){
 
                             
                                 <div class="remain">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%;width: {{$remainedLife[$key]}}%;">
+                                    <div class="progress1">
+                                        <div class="progress-bar1" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%;width: {{$remainedLife[$key]}}%;">
                                             <span class="title">{{$remainedLife[$key]}}%</span>
 
                                         </div>
@@ -141,7 +141,7 @@ foreach ($hashes as $key=> $hash){
                             0.01  
                         </td>
 
-                        <td class="tooltip"> 
+                        <td class="tooltip1"> 
                             778dsad...
                             
                             <span class="tooltiptext">778dsadDSAB Hhbjbdsa89dsax</span>
@@ -164,29 +164,20 @@ foreach ($hashes as $key=> $hash){
 
 
 
-</div> 
-<hr class="activity-hr-footer" style="position: relative;"> 
+        </div> 
+    </div> 
+</div>
 
-
-<!-- Footer -->
- <div id="footer-div">
-
-    <div class="activity-footer-div">
-        <p class="activity-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
-        
-        <img id="activity-footer-image" src="{{asset('img/Logo_footer.png')}}" alt="" ></div>
-        {{-- {{asset('img/Logo_footer.png')}} --}}
-</div> 
 
 <!-- Container -->
-@include('panel.master.sidebar')
+{{-- @include('panel.master.sidebar') --}}
 
 
 <script>// ------------user account--------------------
     $(document).ready(function(){
 
         $('.user-img').click(function(){
-            $('.list').toggle(500);
+            $('.list1').toggle(500);
         })
     
                     var activitySecondListNumItems = $('#Transactions-list tr').length;
@@ -204,7 +195,7 @@ foreach ($hashes as $key=> $hash){
     })
     // =---------------------------------------</script>
     <style type="text/css">
-        .progress-bar .title {
+        .progress-bar1 .title {
           opacity: 1;
         }
       </style>

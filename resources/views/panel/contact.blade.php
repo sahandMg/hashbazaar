@@ -4,30 +4,63 @@
 @endsection
 @section('content')
     <!-- Contact Page -->
-    <div id="contact-page">
-
-        <h1> Let Us know Your Questions!</h1>
-        <form class="contact-page" method="post" action="{{route('contact')}}">
+    <div class="panel-container contact-container">
+        <h2 class="panel-header text-center"> Let Us know Your Questions!</h2>
+        <form method="post" action="{{route('contact')}}">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <input type="hidden" name="name" id="Name" value="{{Auth::guard('user')->user()->name}}">
-
             <input type="hidden" name="email" id="Email" value="{{Auth::guard('user')->user()->email}}">
-
-            <textarea name="message" id="" cols="30" rows="10" placeholder="Your message ..."></textarea>
+            <textarea class="form-control" rows="5" name="message" placeholder="Your message ..."></textarea>
             <button class="pandel-button">Send</button>
         </form>
-
-
-        <div id="footer-div">
-            <hr class="contact-hr-footer">
-            <div class="contact-footer-div" >
-            <p class="contact-footer-paragraph">© 2018 HashBazaar. All rights reserved</p>
-            <img id="contact-footer-image" src="{{URL::asset('img/Logo_footer.png')}}" alt="">
-
-            </div>
-        </div>
+        <br/><br/>
+        <br/><br/><br/>
+        <br/>
+        <br/>
+        <br/>
     </div>
   
+   <style type="text/css">
+        .panel-header {
+            margin-top: 2%;
+            font-size: 2rem;
+            color: #2e2d2d;
+           font-weight: bold;
+           font-family: sans-serif;
+        }
+        .contact-container form {
+            width: 70%;
+            margin: auto;
+        }
+        @media screen and (max-width:1024px) {
+          .contact-container form {
+            width: 70%;
+          }
+          .panel-header {
+             font-size: 1.8rem;
+           }
+        }
+
+        @media screen and (max-width:768px) {
+          .contact-container form {
+            width: 80%;
+          }
+          .panel-header {
+             font-size: 1.5rem;
+           }
+        }
+        @media screen and (max-width:415px) {
+          .contact-container form {
+            width: 90%;
+          }
+          .panel-header {
+             margin-top: 4%;
+             font-size: 1.1rem;
+             letter-spacing: 0.5px
+           }
+        }
+   </style>
+
 
     <script>
     
@@ -37,7 +70,7 @@
         $(document).ready(function(){
     
             $('.user-img').click(function(){
-                $('.list').toggle(500);
+                $('.list1').toggle(500);
             })
         })
         

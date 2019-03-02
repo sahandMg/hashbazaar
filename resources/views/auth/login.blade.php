@@ -32,7 +32,7 @@
 							Forgot
 						</span>
 
-						<a href="#" class="txt2">
+						<a href="{{route('passwordReset')}}" class="txt2">
 							Password?
 						</a>
 					</div>

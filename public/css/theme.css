@@ -239,6 +239,8 @@ header img { height: 175px;margin-bottom: 4%; }
        margin-left: 0 !important;
        padding-bottom: 20px;
        border-bottom: 2px solid rgb(255, 187, 0);
+        /* margin-left: -30px; */
+        padding-left: 10px;
      }
      #header-navbar-menu ul li:hover:after {
       width: 0%;
@@ -338,6 +340,11 @@ header img { height: 175px;margin-bottom: 4%; }
       border-bottom-right-radius: 0%;
     }
 
+    
+  #header-navbar-menu  ul li{
+    /* margin-left: -30px; */
+    padding-left: 20px;
+  }
     .advantages-detail {
       margin-top: 4%;
     }
@@ -378,7 +385,7 @@ header img { height: 175px;margin-bottom: 4%; }
     #header-navbar-menu  ul li{
       margin-top: 5px;
       padding-bottom: 8px;
-      margin-left: -30px;
+      padding-left: 10px;
     }
 
     .navigation-menu {
@@ -400,7 +407,7 @@ header img { height: 175px;margin-bottom: 4%; }
   #header-navbar-menu {
     left: -0px;
     margin-left: -40px;
-    height: 375px !important;
+    height: 410px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px
 
@@ -409,7 +416,8 @@ header img { height: 175px;margin-bottom: 4%; }
   #header-navbar-menu  ul li{
     margin-top: 5px;
     padding-bottom: 8px;
-    margin-left: -30px;
+    /* margin-left: -30px; */
+    padding-left: 10px;
   }
 
 }

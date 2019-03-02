@@ -87,7 +87,7 @@
      }
      @media screen and (max-width:375px){
         #header-navbar-menu {
-         height: 300px !important;
+         height: 330px !important;
          border-bottom-left-radius: 5%;
          border-bottom-right-radius: 5%
 
@@ -122,21 +122,21 @@
        });
 
         //            $(document).ready(function(){
-//                $('.navigation-menu').click(function(){
-//                $('.navigation-menu').toggleClass('change');
-//                $('#header-navbar-menu').toggle(9990000000000000000)
-//                // $('.login').show();
-//                // $('.signup').show();
-//                })
+        //        $('.navigation-menu').click(function(){
+        //        $('.navigation-menu').toggleClass('change');
+        //        $('#header-navbar-menu').toggle(9990000000000000000)
+        //        // $('.login').show();
+        //        // $('.signup').show();
+        //        })
 
 
-//            $(document).ready(function(){
-//                $('.navigation-menu').click(function(){
-//                $('.navigation-menu').toggleClass('change');
-//                $('#header-navbar-menu').toggle(9990000000000000000)
-//                // $('.login').show();
-//                // $('.signup').show();
-//                })
+        //    $(document).ready(function(){
+        //        $('.navigation-menu').click(function(){
+        //        $('.navigation-menu').toggleClass('change');
+        //        $('#header-navbar-menu').toggle(9990000000000000000)
+        //        // $('.login').show();
+        //        // $('.signup').show();
+        //        })
      </script>
 
 </body>

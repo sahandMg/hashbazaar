@@ -1,16 +1,16 @@
 /* User Account */
-
+/* 
 .useraccount {
     position: absolute;
     top: 0px;
     margin-left:90%;
     width: 0px;
     left: 0;
-    background-color: transparent;
+    background-color: transparent; 
     border-bottom: transparent;
     cursor: pointer;
     font-size: 17px
-}
+} 
 .useraccount .list1 {
     width: 200px;
     height: 110px;
@@ -65,7 +65,7 @@
     position: relative;
     left: 3vh;
     top: 3vh
-}
+}*/
 @media screen and (max-width:1024px) {
         
     #usericon:before {
@@ -79,19 +79,6 @@
     }
 
 }
-#usericon {
-    border-bottom: 1px solid;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-#usericon:hover{
-    background-color: black;
-    color: white;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
 #logouticon {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -107,11 +94,6 @@
     border-bottom-right-radius: 10px;
 }
 
-#usericon:hover::before ,#logouticon:hover::before{
-    border: 1px solid white;
-    border-radius: 15%;
-    background-color: white
-}
 
 #logouticon:before{
     content: '';
@@ -125,18 +107,6 @@
     top: 3vh;
 }
 
-.user-img
-{
-    width: 40px;
-    height: 40px;
-    margin-left: 30%;
-    margin-top: 20px;
-    border:2px solid rgb(224, 210, 210);
-    border-radius: 50%;
-    background-color: white;
-    position: absolute;
-    cursor: pointer;
-}
 
 /* CONTACT */
 

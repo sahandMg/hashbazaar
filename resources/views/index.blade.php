@@ -114,9 +114,11 @@
             <span class="close">&times;</span>
             <div>
                 <h2 class="text-center">Welcome to Hashbazaar</h2>
-                <h3 class="text-center">We help you to invest in bitcoin mining.</h3>
-                <p>You are invited by one our referral link so you can utilize 10% discount for your first order.</p>
-                <p>Nice to have you in our cryptocurrency investment community.</p>
+                <br/>
+                <h4 class="text-center">We help you to invest in bitcoin mining.</h4>
+                <br/>
+                <p class="text-center">You are invited by <b> Felan</b> so you can utilize 10% discount for your first order.</p>
+                <p class="text-center">Nice to have you in our cryptocurrency investment community.</p>
             </div>
         </div>
 
@@ -141,13 +143,14 @@
         output.innerHTML = slider.value+' Th'; // Display the default slider value
         var cost = document.getElementById("cost"); cost.innerHTML = slider.value * 50 ;
         var hashInput = document.getElementById("hash");
-        hashInput.value = slider.value;
+        console.log("slider");console.log(slider.value);
+        // hashInput.value = slider.value;
         // Update the current slider value (each time you drag the slider handle)
         slider.oninput = function() {
             console.log("input change");
             output.innerHTML = this.value+' Th';
             cost.innerHTML = slider.value * 50 ;
-            hashInput.value = slider.value;
+            // hashInput.value = slider.value;
         }
 
         // Get the modal

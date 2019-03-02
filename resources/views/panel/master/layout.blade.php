@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
     <link rel="stylesheet" href="../fonts/font-awesome.min.css">
-    <!-- <link rel="stylesheet" href="{{URL::asset('css/theme.css')}}"> -->
+    {{-- <link rel="stylesheet" href="{{URL::asset('css/theme.css')}}">  --}}
     <link rel="icon" href="../img/favicon.ico" type="image/x-icon"/>
         @yield('title')
     <script src="{{URL::asset('js/jquery-3.3.1.js')}}"></script>
@@ -26,6 +26,17 @@
 <body>
 <header>
 
+<<<<<<< HEAD
+    <div id="header-div"> 
+       <a href="http://hashbazaar.com"> <img class="Logo_header" src="{{URL::asset('img/Logo_header.svg')}}" alt="Logo_header"></a> 
+    </div>
+    <div class="navigation-menu" >
+        <div class="bar1 test2"></div>
+        <div class="bar2 test2"></div>
+        <div class="bar3 test2"></div>
+    </div>
+    <div class="useraccount">
+=======
     <div id="header-div">
         <a href=""> <img class="Logo_header" src="{{URL::asset('img/Logo_header.svg')}}" alt="Logo_header"></a> 
     </div>
@@ -34,7 +45,11 @@
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
+
         </div>
+
+        
+>>>>>>> a778057e112b2869ffe73a3a12a7ffa1685ee69b
         <div class="list1">
             <ul>
                 <li class="user-account-list sub2"> <a href="{{route('dashboard')}}" id="dashboard2">Dashboard</a></li>
@@ -42,7 +57,7 @@
                 <li class="user-account-list sub2"> <a href="{{route('referral')}}" id="referral2">Referral</a> </li>
                 <li class="user-account-list sub2"> <a href="{{route('setting')}}" id="setting2">Setting</a></li>
                 <li class="user-account-list sub2"> <a href="{{route('contact')}}" id="contact2">Contact</a></li>
-                <li class="user-account-list sub2" id="logouticon"><a href="{{route('logout')}}">Log Out</a></li>
+                <li class="user-account-list sub2" id="logouticon"><a href="{{route('logout')}}" >Log Out</a></li>
             </ul>
         </div>
     </div>
@@ -57,13 +72,36 @@
    <footer>
        <p class="text-center">© 2018 HashBazaar. All rights reserved</p>
        <img class="test2" src="{{URL::asset('img/Logo_footer.png')}}" alt="HashBazaar">
-       <div class="test2" style="color: black;">
-          <h6>test</h6>
-        </div>
    </footer>
 
     <!-- Container -->
     <style type="text/css">
+
+
+header {
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flexbox;
+  flex-flow: row nowrap
+}
+
+#header-div {
+  flex: 1;
+}
+
+.navigation-menu {
+  flex: 1;
+  z-index: 11111111;
+  position: absolute;
+  right: 100px
+}
+
+
+
+
+/*  */
        .panel-container {
          margin-top: 125px;   
          margin-left: 370px;
@@ -79,11 +117,15 @@
           .panel-container {
             margin-left: 0px;
           }
+
         }
         @media screen and (max-width:415px) {
           .panel-container {
             margin-left: 0px;
             margin-top: 85px;  
+          }
+          .navigation-menu {
+            right: 50px
           }
         }
         footer img {
@@ -163,8 +205,8 @@
             console.log("dashboard");
             $('.navigation-menu').click(function(){
               console.log("navigation-menu");
-                $('#header-navbar-menu').toggle();
-                $('.useraccount .list1').toggle();
+                $('#header-navbar-menu').toggle(1);
+                $('.useraccount .list1').toggle(1);
                 $('.navigation-menu').toggleClass('change');
             })
             $('h1').click(function(){

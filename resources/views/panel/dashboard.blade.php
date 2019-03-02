@@ -22,7 +22,7 @@
                     <hr style="width: 84%; text-align:center;">
                     <p><span id="miningDollar"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua;">USD</span></p>
     
-                    <button id="redeem" disabled onclick="redeem()"> Redeem ! </button>
+                    {{-- <button id="redeem" disabled onclick="redeem()"> Redeem ! </button> --}}
     
     
                 </div>
@@ -33,7 +33,7 @@
                     <hr style="width: 84%; text-align:center;">
                     <p><span id="miningDollar2"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua;">USD</span></p>
     
-                    <button id="redeem" disabled onclick="redeem()"> Redeem ! </button>
+                    {{-- <button id="redeem" disabled onclick="redeem()"> Redeem ! </button> --}}
     
     
                 </div> 
@@ -399,9 +399,8 @@
 }
 
 </style>
-                <script>
 
-
+<script>
 
                 // ------------user account--------------------
                 $(document).ready(function(){
@@ -622,5 +621,5 @@
 
             });
 
-                    </script>
+</script>
 @endsection

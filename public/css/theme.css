@@ -331,7 +331,7 @@ header img { height: 175px;margin-bottom: 4%; }
       top: 82px;
       flex: 10;
       width: 100% !important;
-      display: none;
+      /*display: none;*/
       margin-left: -95px;
       border-bottom-left-radius: 0%;
       border-bottom-right-radius: 0%;
@@ -358,7 +358,8 @@ header img { height: 175px;margin-bottom: 4%; }
       height: 380px;
      }
      #sharePlan h3 { letter-spacing: 0px;margin-top: 2%; }
-     #myModal h2 {font-size: 20px;}
+     #myModal h2 {font-size: 1.1rem; margin-top: 2%;}
+     #myModal h4 {font-size: 1rem;}
      .responsive-circle {
        height: 40px;
        width: 40px;

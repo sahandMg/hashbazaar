@@ -26,18 +26,16 @@
 <body>
 <header>
 
-
-    <div id="header-div"> <a href="http://hashbazaar.com"> <img class="Logo_header" src="{{URL::asset('img/Logo_header.svg')}}" alt="Logo_header"></a> </div>
+    <div id="header-div">
+        <a href=""> <img class="Logo_header" src="{{URL::asset('img/Logo_header.svg')}}" alt="Logo_header"></a> 
+    </div>
     <div class="useraccount">
-
-        {{-- <img class="user-img" src="{{URL::asset('../img/user-circle-solid.svg')}}" alt=""> --}}
-        <div class="navigation-menu">
+        <div class="navigation-menu test2" id="responsive-nav">
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
         </div>
         <div class="list1">
-
             <ul>
                 <li class="user-account-list sub2"> <a href="{{route('dashboard')}}" id="dashboard2">Dashboard</a></li>
                 <li class="user-account-list sub2"> <a href="{{route('activity')}}" id="activity2">Activity</a></li>
@@ -45,12 +43,10 @@
                 <li class="user-account-list sub2"> <a href="{{route('setting')}}" id="setting2">Setting</a></li>
                 <li class="user-account-list sub2"> <a href="{{route('contact')}}" id="contact2">Contact</a></li>
                 <li class="user-account-list sub2" id="logouticon"><a href="{{route('logout')}}">Log Out</a></li>
-
             </ul>
         </div>
-
-       
     </div>
+    
 </header>
 
 
@@ -60,7 +56,10 @@
    <hr/> 
    <footer>
        <p class="text-center">© 2018 HashBazaar. All rights reserved</p>
-       <img src="{{URL::asset('img/Logo_footer.png')}}" alt="HashBazaar">
+       <img class="test2" src="{{URL::asset('img/Logo_footer.png')}}" alt="HashBazaar">
+       <div class="test2" style="color: black;">
+          <h6>test</h6>
+        </div>
    </footer>
 
     <!-- Container -->
@@ -159,14 +158,31 @@
             s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
     </script>
 
-    <script>
+    <script type="text/javascript">
         $(document).ready(function(){
+            console.log("dashboard");
             $('.navigation-menu').click(function(){
+              console.log("navigation-menu");
                 $('#header-navbar-menu').toggle();
                 $('.useraccount .list1').toggle();
                 $('.navigation-menu').toggleClass('change');
             })
+            $('h1').click(function(){
+              console.log("h1 click");
+            })
         });
+        $(document).ready(function(){
+         $(".test2").on('click', function () {
+            console.log("div click");
+          });
+        });
+         // console.log("js run af sdafa ");
+         // var myEl = document.getElementById('test');
+         // console.log(myEl);
+         // myEl.addEventListener('click', function(event) {
+         //       console.log("js run af sdafa asdfsdf ");
+         //       alert('Hello world');
+         //    });
     </script>
 </body>
 </html>

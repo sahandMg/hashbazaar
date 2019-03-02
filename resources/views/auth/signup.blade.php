@@ -8,7 +8,7 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 
-				<form method="post" action="{{route('signup')}}" class="login100-form validate-form p-l-55 p-r-55 p-t-178">
+				<form method="post" action="{{route('signup')}}" class="login100-form validate-form p-l-55 p-r-55 p-t-148">
 
 					<ul>
 						@foreach($errors->all() as $error)

@@ -26,6 +26,7 @@
 <body>
 <header>
 
+<<<<<<< HEAD
     <div id="header-div"> 
        <a href="http://hashbazaar.com"> <img class="Logo_header" src="{{URL::asset('img/Logo_header.svg')}}" alt="Logo_header"></a> 
     </div>
@@ -38,6 +39,16 @@
             <div class="bar1 test2"></div>
             <div class="bar2 test2"></div>
             <div class="bar3 test2"></div>
+=======
+    <div id="header-div">
+        <a href=""> <img class="Logo_header" src="{{URL::asset('img/Logo_header.svg')}}" alt="Logo_header"></a> 
+    </div>
+    <div class="useraccount">
+        <div class="navigation-menu test2" id="responsive-nav">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+>>>>>>> 532dfd00a010ff477a37ab3a27ed1a59cbbce009
         </div>
 
         
@@ -52,6 +63,7 @@
             </ul>
         </div>
     </div>
+    
 </header>
 
 
@@ -62,9 +74,6 @@
    <footer>
        <p class="text-center">© 2018 HashBazaar. All rights reserved</p>
        <img class="test2" src="{{URL::asset('img/Logo_footer.png')}}" alt="HashBazaar">
-       <div class="test2" style="color: black;">
-          <h6>test</h6>
-        </div>
    </footer>
 
     <!-- Container -->

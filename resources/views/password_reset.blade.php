@@ -16,7 +16,7 @@
 					</span>
 
                     <div class="wrap-input100 validate-input m-b-26 login100" style="color: black">
-                           <span>...</span> 
+                           <span>Please enter your email to send password</span> 
                     </div>
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">

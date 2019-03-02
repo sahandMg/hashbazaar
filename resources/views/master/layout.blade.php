@@ -104,18 +104,20 @@
 
         $(document).ready(function(){
              $('.navigation-menu').click(function(){
-                console.log("navigation");
+                console.log("navigation test");
                 // $('#header-navbar-menu').toggle();
                 if(flag == 0) {
                   flag = 1 ;
                   $('#header-navbar-menu').show();
+                  $('.navigation-menu').addClass( "change" );
                 } else {
                   flag = 0 ;
                   $('#header-navbar-menu').hide();
+                  $('.navigation-menu').removeClass( "change" );
                 }
                 // $('.login').show();
                 // $('.signup').show();
-                $('.navigation-menu')[0].toggleClass('change');
+                // $('.navigation-menu')[0].toggleClass('change');
             });
        });
 

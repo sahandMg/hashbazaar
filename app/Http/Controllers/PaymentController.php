@@ -362,6 +362,7 @@ class PaymentController extends Controller
         $orderID = DB::table('crypto_payments')->where('PaymentID',$paymentID)->first()->orderID;
         $hashPower = BitHash::where('order_id',$orderID)->first();
         $mining = Mining::where('order_id',$orderID)->first();
+        $settings = Setting::first();
         if(is_null($hashPower) || is_null($mining)){
 
             \Log::warning('PaymentID : '.$orderID);
@@ -380,11 +381,23 @@ class PaymentController extends Controller
                     $message->subject ('Payment Confirmed !');
                 });
 
+                $code = DB::table('expired_codes')->where('user_id',$user->id)->where('user_id',0)->first()->code;
+                $codeCaller = DB::table('users')->where('code',$code)->first();// code caller user
                 /*
                  * reward new th to the caller
                  */
-                DB::table('expired_codes')->where('user_id',$user->id)
-                    ->where('used',0)->update(['used'=>1]);
+                DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->update(['used'=>1]);
+                $share_level = DB::table('referrals')->where('code',$code)->first()->share_level;
+                $share_value = DB::table('shares')->where('level',$share_level)->first()->value;
+                $hash = new BitHash();
+                $hash->hash = $hashPower * $share_value;
+                $hash->user_id = $codeCaller->id;
+                $hash->order_id = $orderID;
+                $hash->confirmed = 1;
+                $hash->life = $settings->hash_life;
+                $hash->remained_day = Carbon::now()->diffInDays(Carbon::now()->addYears($hash->life));
+                $hash->save();
+
 
             }
 

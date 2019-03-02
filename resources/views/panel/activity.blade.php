@@ -13,9 +13,9 @@ foreach ($hashes as $key=> $hash){
 ?>
 
 
-<div id="activity-page">
+<div  class="panel-container activity-container">
 
-    <blockquote>Recent Activities</blockquote> 
+    <h2 class="text-center">Recent Activities</h2> 
 
     <div class="purchases">
         <q>Purchases</q>
@@ -164,22 +164,13 @@ foreach ($hashes as $key=> $hash){
 
 
 
-</div> 
-<hr class="activity-hr-footer" style="position: relative;"> 
+        </div> 
+    </div> 
+</div>
 
-
-<!-- Footer -->
- <div id="footer-div">
-
-    <div class="activity-footer-div">
-        <p class="activity-footer-paragraph" style="color:black" style="color:black">© 2018 HashBazaar. All rights reserved</p>
-        
-        <img id="activity-footer-image" src="{{asset('img/Logo_footer.png')}}" alt="" ></div>
-        {{-- {{asset('img/Logo_footer.png')}} --}}
-</div> 
 
 <!-- Container -->
-@include('panel.master.sidebar')
+{{-- @include('panel.master.sidebar') --}}
 
 
 <script>// ------------user account--------------------

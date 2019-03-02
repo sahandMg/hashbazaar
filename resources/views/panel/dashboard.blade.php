@@ -12,7 +12,7 @@
 
     ?>
     <!-- Dashboard Page -->
-        <div id="dashboard-page">
+        <div id="dashboard-page" class="panel-container ">
             <!-- Circle -->
              <div class="circle-container">
 
@@ -42,12 +42,15 @@
              </div>
             <!-- Hash History -->
             
-            <hr class="dashboard-hr1">
-            <h1 id="dashboard-title">Hash History</h1>
-            <hr class="dashboard-hr2-2"> 
+            <div class="title-flex">
+            
+                    <hr class="dashboard-hr1"/>
+                    <h1 id="dashboard-title">Hash History</h1>
+                    <hr class="dashboard-hr2-2"/>
+            
+            </div> 
 
             <div class="Hash-History">
-
                 <table id="Hash-History-list">
                     @if(!$hashes->isEmpty())
 
@@ -127,8 +130,7 @@
                            
        
                 </table>
-
-             </div> 
+            </div> 
              {{-- <div class="Hash-History_column"> Hash Power
                         <ul>
                             @foreach($hashes as $hash)
@@ -179,9 +181,13 @@
 
 
             <!--   Buy hash power -->
-            <hr  class="dashboard-hr11">
-            <h2 id="dashboard-title2">Buy Hash Power<h2>
-            <hr class="dashboard-hr22-2">
+            <div class="title-flex">
+                <hr  class="dashboard-hr11"/>
+
+                <h1 id="dashboard-title2">Buy Hash Power</h1>
+
+                <hr  class="dashboard-hr11"/>
+            </div>
             <h5 id="demo"></h5>
             <div class="slidecontainer">
                 @if(count($errors->all()) > 0)
@@ -222,28 +228,21 @@
 
 
             <!-- Mining History -->
-            <hr class="dashboard-hr111" >
-            <h3 id="dashboard-title3">Mining History</h3>
-            <hr class="dashboard-hr222-2" >
+            <div class="title-flex">
 
+                <hr class="dashboard-hr111" >
+                <h3 id="dashboard-title3">Mining History</h3>
+                <hr class="dashboard-hr222-2" >
+
+            </div> 
 
             <div class="chart-container" >
                     <canvas id="chart1"></canvas>
             </div> 
 
 
-             <hr class="dashboard-hr-footer" style="left: -10px"> 
     </div>
-
-    {{-- Footer --}}
-    <div id="footer-div">
-            <div class="dashboard-footer-div" >
-                <p class="dashboard-footer-paragraph" style="color:black">© 2018 HashBazaar. All rights reserved</p>
-                <img id="dashboard-footer-image" src="{{URL::asset('img/Logo_footer.png')}}" alt="">
-
-            </div>
-    </div> 
-
+   
 
         <style type="text/css">
 

@@ -8,7 +8,7 @@
             $user = Auth::guard('user')->user();
 
     ?>
-    <div id="referral-page"  style="display: flex;flex-direction: column;">
+    <div id="referral-page" class="panel-container " style="display: flex;flex-direction: column;">
         <q>Notice :</q>
         <ul class="referral-page_firstList">
             <li>Appropriately harness low-risk high-yield “outside the box” thinking.</li>
@@ -33,19 +33,11 @@
 
 
 
-        <!-- <hr class="referral-hr-footer" style="position: absolute;;"> -->
 
 
     </div>
 
 
-<!-- Footer -->
-    <!-- <div id="footer-div">
-        <div class="referral-footer-div">
-            <p class="referral-footer-paragraph" style="color:black">© 2018 HashBazaar. All rights reserved</p>
-            <img id="referral-footer-image" src="{{URL::asset('img/Logo_footer.png')}}" alt="">
-        </div>
-    </div> -->
    
 
     <script>// ------------user account--------------------

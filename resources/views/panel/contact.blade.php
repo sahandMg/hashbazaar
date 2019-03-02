@@ -5,7 +5,7 @@
 @section('content')
     <!-- Contact Page -->
     <div class="panel-container contact-container">
-        <h1 class="text-center"> Let Us know Your Questions!</h1>
+        <h2 class="panel-header text-center"> Let Us know Your Questions!</h2>
         <form method="post" action="{{route('contact')}}">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <input type="hidden" name="name" id="Name" value="{{Auth::guard('user')->user()->name}}">
@@ -21,10 +21,12 @@
     </div>
   
    <style type="text/css">
-        .contact-container h1 {
+        .panel-header {
             margin-top: 2%;
-            color: black;
             font-size: 2rem;
+            color: #2e2d2d;
+           font-weight: bold;
+           font-family: sans-serif;
         }
         .contact-container form {
             width: 70%;
@@ -34,7 +36,7 @@
           .contact-container form {
             width: 70%;
           }
-          .contact-container h1 {
+          .panel-header {
              font-size: 1.8rem;
            }
         }
@@ -43,7 +45,7 @@
           .contact-container form {
             width: 80%;
           }
-          .contact-container h1 {
+          .panel-header {
              font-size: 1.5rem;
            }
         }
@@ -51,7 +53,7 @@
           .contact-container form {
             width: 90%;
           }
-          .contact-container h1 {
+          .panel-header {
              margin-top: 4%;
              font-size: 1.1rem;
              letter-spacing: 0.5px

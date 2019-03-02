@@ -7,7 +7,7 @@
 <script src="../js/jquery-3.3.1.js"></script>
 <!-- ---------------------------------------------------------------------------------------------- -->
 
-<div id="setting-page">
+<div id="setting-page" class="panel-container ">
 
     <div class="setting-flex">
 
@@ -110,16 +110,7 @@
 
                 <p id="make-wallet-title2">Need To Change Your Address ?</p>
     </div>
-
-
-
-<!-- Footer -->
-<footer id="footer-div" >
-        <hr id="setting-hr-footer">
-        <p class="setting-footer-paragraph" style="color:black">© 2018 HashBazaar. All rights reserved</p>
-        <img id="setting-footer-image" src="{{asset('img/Logo_footer.png')}}" alt="">
-
-</footer>
+</div>
 
 <script>
     $.noConflict();

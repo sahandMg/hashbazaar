@@ -13,6 +13,7 @@
             <li class="sub"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
             <li class="sub"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
             <li class="sub"> <a href="{{route('contact')}}" id="contact1">Contact</a></li>
+            <li class="sub" id="logouticon2"><a href="{{route('logout')}}">Log Out</a></li>
 
         </ul>
 

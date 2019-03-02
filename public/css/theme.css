@@ -227,10 +227,11 @@ header img { height: 175px;margin-bottom: 4%; }
      #header-navbar-menu  ul 
      {
        margin-top: 80px;
-       margin-left: -38px !important;
+       margin-left: 0px !important;
        padding-bottom: 20px;
        left: 0;
      }
+
      #header-navbar-menu  ul li
      {
        margin-top: 10px;
@@ -249,11 +250,11 @@ header img { height: 175px;margin-bottom: 4%; }
        right: 25px;
      }
       .signup {
-       border: thin solid transparent;height:50px;
-      border-bottom: 2px solid orange !important;
-      margin-bottom: 10px !important
-
-     }
+        border: thin solid transparent;height:50px;
+        border-bottom: 2px solid orange !important;
+        margin-bottom: 10px !important;
+        margin-left:-5px !important
+      }
      #sg {
       border-bottom: 2px solid transparent !important;
 

@@ -212,7 +212,6 @@ header {
        font-size: 1.8rem;
      }
 }
-
 @media screen and (max-width:768px) {
     .contact-container form {
       width: 80%;
@@ -299,7 +298,6 @@ form.contact-page p:nth-of-type(1) {
     margin-left:180px;
     margin-top: 380px;
 }
-
 
 /* Contact - Media - 1024 */
 @media screen and (max-width:1024px){
@@ -389,9 +387,6 @@ form.contact-page p:nth-of-type(1) {
     }
 
   
-    .useraccount .list1 {
-        display: none;
-    }
 }
 
 /* Contact - Media - 414 */
@@ -549,9 +544,7 @@ form.contact-page p:nth-of-type(1) {
 
 }
 
-
 /* REFERRAL */
-
 
 #referral {color: orange !important}
 
@@ -640,7 +633,6 @@ form.contact-page p:nth-of-type(1) {
     font-size: 30px;
     font-weight: bolder !important
 }
-
 
 /* Referral - Media - 1024 */
 @media screen and (max-width:1024px){
@@ -1803,24 +1795,25 @@ form.contact-page p:nth-of-type(1) {
     display: flex;
     display: -ms-flexbox;
     display: -webkit-flex;
-    width: 85%;
+    width: 100%;
     flex-flow: row wrap;
     margin : auto;
 }
 #dashboard-page-circle {
-    width: 44% !important; 
+    width: 400px !important; 
     display: block;
-    height: 100% !important;
+    height: 400px !important;
     border: 20px solid #ff9100;
     border-radius: 50%;
+    margin-left: 6% !important;
     border-collapse: 2px solid #727272;
     flex-shrink: 1;
 }
 
 #dashboard-page-circle2 {
-    width: 44% !important; 
+    width: 400px !important; 
     display: block;
-    height: 100% !important;
+    height: 400px !important;
     border: 20px solid #ff9100;
     border-radius: 50%;
     border-collapse: 2px solid #727272;
@@ -1868,16 +1861,16 @@ form.contact-page p:nth-of-type(1) {
     font-family: sans-serif;
     color: #727272;
     position: absolute;
-    margin-top: 40px;
+    margin-top: 5%;
     font-weight: bolder;
-    margin-left: 6%;
+    margin-left: 8% !important;
 }
 
 #dashboard-page-circle p:nth-of-type(1) {
     font-size: 33px;
     text-align: center;
     color: rgb(41, 37, 37);
-    margin-top: 27% !important;
+    margin-top: 37% !important;
     font-weight: bolder;
     font-family: sans-serif;
     padding:0 !important;
@@ -1896,7 +1889,7 @@ form.contact-page p:nth-of-type(1) {
     font-size: 33px;
     text-align: center;
     color: rgb(41, 37, 37);
-    margin-top: 27%;
+    margin-top: 37%;
     font-weight: bolder;
     padding:0 !important;
     font-family: sans-serif
@@ -2178,7 +2171,7 @@ form.contact-page p:nth-of-type(1) {
     .dashboard-hr {
         flex: 2
     }
-   
+/*    
 @media screen and (min-width:1840px) {
     #dashboard-page {
         width: 82.3% !important;
@@ -2241,12 +2234,14 @@ form.contact-page p:nth-of-type(1) {
     #circle-span {
         margin-left: 7% !important
     }
-} 
+}  */
 /* Dashboard-Media-1280 */
 @media screen and (max-width:1280px) {
     #dashboard-page-circle ,
     #dashboard-page-circle2 {
-        width: 44% !important;
+        width: 350px !important;
+        height: 350px !important;
+        margin-left: 10% !important
     }
 
     #dashboard-page-circle p:nth-of-type(1)
@@ -2287,8 +2282,9 @@ form.contact-page p:nth-of-type(1) {
     /* ================---media--=================Circle================================== */
 
     #dashboard-page-circle , #dashboard-page-circle2{
-        width: 45% !important;
-        /* height: 310px !important; */
+        width: 300px !important;
+        height: 300px !important;
+        margin-left: 5% !important
     }
     
     #redeem {
@@ -2431,19 +2427,21 @@ form.contact-page p:nth-of-type(1) {
 
     /* ======================================Circle=========================================== */
     #dashboard-page-circle  {
-        /* width: 280px; */
+        width: 280px;
         display: block;
-        /* height: 280px; */
+        height: 280px;
         border: 20px solid #ff9100;
         border-radius: 50%;
         border-collapse: 2px solid #727272;
         padding: 0 !important;
+        margin-left: 10% !important
     }
     #dashboard-page-circle2 {
-        /* width: 280px; */
+        width: 280px;
         display: block;
-        /* height: 280px; */
+        height: 280px;
         border: 20px solid #ff9100;
+        margin-left: 3% !important;
         border-radius: 50%;
         border-collapse: 2px solid #727272
     }
@@ -2548,23 +2546,22 @@ form.contact-page p:nth-of-type(1) {
         margin-top: -40px !important
     }
     #dashboard-page-circle {
-        width: 90% !important;
+        width: 300px !important;
         height: 80% !important;
         display: block;
-        /* height: 350px !important; */
-        margin-left: 0% !important;
+        height: 300px !important;
+        margin-left: 13% !important;
         border: 20px solid #ff9100;
         border-radius: 50%;
         border-collapse: 2px solid #727272
     }
     #dashboard-page-circle2 {
-        width: 90% !important;
-        height: 80% !important;
-        /* width: 350px !important; */
+        width: 300px !important;
+        height: 300px !important;
         display: block;
         /* height: 350px !important; */
         border: 20px solid #ff9100;
-        margin-left: 0% !important;
+        margin-left: 13% !important;
         border-radius: 50%;
         margin-top: 4% !important;
         border-collapse: 2px solid #727272
@@ -2576,7 +2573,7 @@ form.contact-page p:nth-of-type(1) {
         color: #727272;
         margin-top: 13% !important;
         font-weight: bolder;
-        margin-left: 20% !important;
+        margin-left: 15% !important;
     }
 
     #dashboard-page-circle p {
@@ -2709,22 +2706,22 @@ form.contact-page p:nth-of-type(1) {
 
     /* ======================================Circle=========================================== */
     #dashboard-page-circle , #dashboard-page-circle2 {
-        /* width: 280px !important; */
+        width: 280px !important;
         display: block;
-        /* height: 280px !important; */
+        height: 280px !important;
         border: 20px solid #ff9100;
         border-radius: 50%;
         border-collapse: 2px solid #727272
     }
     
     #circle-span {
-        font-size: 15px !important;
+        font-size: 18px !important;
         text-align: center;
         font-family: sans-serif;
         color: #727272;
         margin-top: 15%;
         font-weight: bolder;
-        margin-left: 20%;
+        margin-left: 18% !important;
     }
 
     #dashboard-page-circle p {
@@ -2821,7 +2818,8 @@ form.contact-page p:nth-of-type(1) {
         display: block;
         border: 20px solid #ff9100;
         border-radius: 50%;
-        border-collapse: 2px solid #727272
+        border-collapse: 2px solid #727272;
+        margin-left: 5% !important
     }
         
     #circle-span {

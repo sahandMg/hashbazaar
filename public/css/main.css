@@ -30,7 +30,7 @@
     margin-left: 140px;
     top:-18px;
     transition: all 1s;
-    display: none
+    display: block
 }
 
 .useraccount .list1 ul li {

@@ -26,7 +26,6 @@
 <body>
 <header>
 
-<<<<<<< HEAD
     <div id="header-div"> 
        <a href="http://hashbazaar.com"> <img class="Logo_header" src="{{URL::asset('img/Logo_header.svg')}}" alt="Logo_header"></a> 
     </div>
@@ -39,18 +38,9 @@
             <div class="bar1 test2"></div>
             <div class="bar2 test2"></div>
             <div class="bar3 test2"></div>
-=======
-
-    <div id="header-div"> <a > <img class="Logo_header" src="{{URL::asset('img/Logo_header.svg')}}" alt="Logo_header"></a> </div>
-    <div class="useraccount">
-
-        {{-- <img class="user-img" src="{{URL::asset('../img/user-circle-solid.svg')}}" alt=""> --}}
-        <div class="navigation-menu" id="responsive-nav">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
->>>>>>> 467082ed6f53ee2b8ce0542c120584ba10f423b0
         </div>
+
+        
         <div class="list1">
             <ul>
                 <li class="user-account-list sub2"> <a href="{{route('dashboard')}}" id="dashboard2">Dashboard</a></li>
@@ -178,8 +168,8 @@
             console.log("dashboard");
             $('.navigation-menu').click(function(){
               console.log("navigation-menu");
-                $('#header-navbar-menu').toggle();
-                $('.useraccount .list1').toggle();
+                $('#header-navbar-menu').toggle(999999999999999);
+                $('.useraccount .list1').toggle(9999999999999);
                 $('.navigation-menu').toggleClass('change');
             })
             $('h1').click(function(){

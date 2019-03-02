@@ -119,6 +119,8 @@ Route::post('subscription','AuthController@post_subscription')->name('subscripti
 
 Route::get('login','AuthController@login')->name('login');
 
+Route::get('about','PageController@aboutUs')->name('aboutUs');
+
 Route::post('login','AuthController@post_login')->name('login');
 
 Route::get('login/google','AuthController@redirectToProvider')->name('redirectToProvider');

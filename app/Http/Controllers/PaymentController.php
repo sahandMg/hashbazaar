@@ -6,6 +6,7 @@ use App\BitHash;
 use App\Crawling\CoinMarketCap;
 use function App\CryptpBox\lib\cryptobox_selcoin;
 use function App\CryptpBox\lib\run_sql;
+use App\ExpiredCode;
 use App\Log;
 use App\Mining;
 use App\Setting;
@@ -126,9 +127,18 @@ class PaymentController extends Controller
          $hash->user_id = Auth::guard('user')->id();
          $hash->order_id = $orderID;
          $hash->confirmed = 0;
+         $hash->referral_code = $request->code;
          $hash->life = $settings->hash_life;
          $hash->remained_day = Carbon::now()->diffInDays(Carbon::now()->addYears($hash->life));
          $hash->save();
+
+        $expiring = ExpiredCode::where('user_id',Auth::guard('user')->id())->where('used',0)
+            ->orderBy('id','desc')
+            ->first();
+            if(!is_null($expiring)){
+                $expiring->update(['used'=>1]);
+                $expiring->save();
+            }
 
         $settings->update(['available_th'=>$settings->available_th - $hash->hash]);
         $settings->save();
@@ -352,6 +362,7 @@ class PaymentController extends Controller
         $orderID = DB::table('crypto_payments')->where('PaymentID',$paymentID)->first()->orderID;
         $hashPower = BitHash::where('order_id',$orderID)->first();
         $mining = Mining::where('order_id',$orderID)->first();
+        $settings = Setting::first();
         if(is_null($hashPower) || is_null($mining)){
 
             \Log::warning('PaymentID : '.$orderID);
@@ -369,6 +380,25 @@ class PaymentController extends Controller
                     $message->to ($user->email);
                     $message->subject ('Payment Confirmed !');
                 });
+
+                $code = DB::table('expired_codes')->where('user_id',$user->id)->where('user_id',0)->first()->code;
+                $codeCaller = DB::table('users')->where('code',$code)->first();// code caller user
+                /*
+                 * reward new th to the caller
+                 */
+                DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->update(['used'=>1]);
+                $share_level = DB::table('referrals')->where('code',$code)->first()->share_level;
+                $share_value = DB::table('shares')->where('level',$share_level)->first()->value;
+                $hash = new BitHash();
+                $hash->hash = $hashPower * $share_value;
+                $hash->user_id = $codeCaller->id;
+                $hash->order_id = $orderID;
+                $hash->confirmed = 1;
+                $hash->life = $settings->hash_life;
+                $hash->remained_day = Carbon::now()->diffInDays(Carbon::now()->addYears($hash->life));
+                $hash->save();
+
+
             }
 
             Mail::send('email.paymentReceived',[],function($message)use($user){

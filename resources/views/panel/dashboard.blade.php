@@ -214,9 +214,12 @@
                     <p class="rfrcode">Referral Code:</p>
                     {{-- <form style="padding: 20px;" method="POST" action="{{route('dashboard')}}"> --}}
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
-                       <input id='referralCode' type="text" name="referralCode" style="margin-top:5px" class="aplybtn1text">
-      
-                          <button type="button" onclick="sendCode()" class="btn btn-primary"> Apply </button>
+
+                       <input id='referralCode' type="text" name="referralCode" style="margin-top:5px" class="aplybtntext">
+                       <input id='hiddenCodeValue' type="hidden" name="code" style="margin-top:5px" class="aplybtntext">
+
+                          <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> Apply </button>
+
       
                          {{-- </form> --}}
                     <button class="pandel-button" type="submit">Order</button>
@@ -449,28 +452,28 @@
                         console.log(response.data)
                     })
                 };
-                var activateDiscount = 0;
+                var activateDiscount = {!! $apply_discount !!};// $apply_discount == 0 Or 1
                 var thPrice = {!! $settings->usd_per_hash !!}
-                {{--function sendCode() {--}}
+                function sendCode() {
 
-                    {{--var code = document.getElementById('referralCode').value;--}}
+                    var code = document.getElementById('referralCode').value;
 
-                    {{--axios.post('{{route('SendCode')}}',{referralCode:code}).then(function (response) {--}}
+                    axios.post('{{route('SendCode')}}',{referralCode:code}).then(function (response) {
 
-                        {{--var resp = response.data--}}
-                        {{--if(resp['type'] == 'error'){--}}
-                            {{--alert(resp['body'])--}}
+                        var resp = response.data;
+                        if(resp['type'] == 'error'){
+                            alert(resp['body'])
 
-                        {{--}else{--}}
+                        }else{
 
-                            {{--alert(resp['body']);--}}
+                            alert(resp['body']);
+                            document.getElementById('hiddenCodeValue').value = code;
+                            thPrice = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!}
+                            activateDiscount = 1;
+                        }
 
-                            {{--thPrice = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!}--}}
-                            {{--activateDiscount = 1;--}}
-                        {{--}--}}
-
-                    {{--});--}}
-                {{--}--}}
+                    });
+                };
 
                  // =---------------------------------------
 
@@ -507,13 +510,20 @@
                     var output = document.getElementById("demo");
                     var cost = document.getElementById("cost");
                     output.innerHTML = slider.value+' Th';
+                    if(activateDiscount == 1){
+
+                        thPrice = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!}
+                    }
                     cost.innerHTML = slider.value * thPrice ;
                     // Display the default slider value
                     
                     slider.oninput = function() {
-                            console.log("input change");
                         output.innerHTML = this.value+' Th';
-                        cost.innerHTML = slider.value;
+                        if(activateDiscount == 1){
+
+                            thPrice = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!}
+                        }
+                        cost.innerHTML = slider.value  * thPrice;
                         };
 
                     //    ==================================chart==============

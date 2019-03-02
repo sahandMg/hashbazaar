@@ -33,7 +33,13 @@ class PanelController extends Controller
 
 
         $hashes = BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->get();
-        return view('panel.dashboard',compact('hashes'));
+        $unusedCodes = DB::table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('used',0)->count();
+        if($unusedCodes > 0){
+            $apply_discount = 1;
+        }else{
+            $apply_discount = 0;
+        }
+        return view('panel.dashboard',compact('hashes','apply_discount'));
     }
 
     /*
@@ -99,12 +105,25 @@ class PanelController extends Controller
 
     /*
      * Apply referral code
+     * check if a referral code is active or not
      */
     public function postDashboard(Request $request,Hash $hash){
 
+
         $code = $request->referralCode;
+        $is_active_Code = DB::table('expired_codes')
+            ->where('user_id',Auth::guard('user')->id())
+            ->where('used',0)->count();
+        if($is_active_Code > 0){
+
+            return [
+                'type'=>'error',
+                'body'=>'Your previous referral code has not been used yet !'
+            ];
+        }
         $referralUser = DB::table('users')->where('code',$code)->where('id','!=',Auth::id())->first();
         $is_expired = DB::table('expired_codes')->where('code',$code)->first();
+
         // check if the code is used before
         if(!is_null($is_expired)){
 

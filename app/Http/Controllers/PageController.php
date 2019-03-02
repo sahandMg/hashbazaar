@@ -60,4 +60,9 @@ Gets user message for form
         return view('faq.index');
     }
 
+    public function aboutUs(){
+
+        return view('about');
+    }
+
 }

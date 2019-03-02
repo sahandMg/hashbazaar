@@ -331,7 +331,7 @@ header img { height: 175px;margin-bottom: 4%; }
       top: 82px;
       flex: 10;
       width: 100% !important;
-      display: none;
+      /*display: none;*/
       margin-left: -95px;
       border-bottom-left-radius: 0%;
       border-bottom-right-radius: 0%;

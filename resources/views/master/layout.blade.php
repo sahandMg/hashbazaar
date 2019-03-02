@@ -100,35 +100,41 @@
         (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";
             s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
 
-
+        var flag = 0 ;
 
         $(document).ready(function(){
              $('.navigation-menu').click(function(){
                 console.log("navigation");
-                $('#header-navbar-menu').toggle();
-                $('.login').show();
-                $('.signup').show();
-                $('.navigation-menu').toggleClass('change');
+                // $('#header-navbar-menu').toggle();
+                if(flag == 0) {
+                  flag = 1 ;
+                  $('#header-navbar-menu').show();
+                } else {
+                  flag = 0 ;
+                  $('#header-navbar-menu').hide();
+                }
+                // $('.login').show();
+                // $('.signup').show();
+                $('.navigation-menu')[0].toggleClass('change');
             });
-
-//            $(document).ready(function(){
-//                $('.navigation-menu').click(function(){
-//                $('.navigation-menu').toggleClass('change');
-//                $('#header-navbar-menu').toggle(9990000000000000000)
-//                // $('.login').show();
-//                // $('.signup').show();
-//                })
-
-
-//            $(document).ready(function(){
-//                $('.navigation-menu').click(function(){
-//                $('.navigation-menu').toggleClass('change');
-//                $('#header-navbar-menu').toggle(9990000000000000000)
-//                // $('.login').show();
-//                // $('.signup').show();
-//                })
-//
        });
+
+        //            $(document).ready(function(){
+//                $('.navigation-menu').click(function(){
+//                $('.navigation-menu').toggleClass('change');
+//                $('#header-navbar-menu').toggle(9990000000000000000)
+//                // $('.login').show();
+//                // $('.signup').show();
+//                })
+
+
+//            $(document).ready(function(){
+//                $('.navigation-menu').click(function(){
+//                $('.navigation-menu').toggleClass('change');
+//                $('#header-navbar-menu').toggle(9990000000000000000)
+//                // $('.login').show();
+//                // $('.signup').show();
+//                })
      </script>
 
 </body>

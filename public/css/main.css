@@ -115,12 +115,15 @@
     display: block
 }
 
-.navigation-menu{height:30px !important;
+.navigation-menu{
+    height:30px !important;
     margin-top:0px;
     background-color: transparent !important;
     border-bottom: transparent !important;
-    display: none
-    
+    display: none;
+    display: inline-block;
+    cursor: pointer;
+    box-sizing: border-box;
 }
 /* CONTACT */
 
@@ -961,7 +964,7 @@ color: orange !important}
             border-bottom: transparent;
             margin-top: 43px;
             display: block;
-
+            width: 35px;
         }
         .navigation-menu .bar1, .bar2, .bar3 {
             width: 35px;
@@ -1251,6 +1254,7 @@ color: orange !important}
     .navigation-menu {
         margin-top: 25px;
         display: block;
+        width: 35px;
     }
 
     /*  */

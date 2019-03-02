@@ -384,7 +384,7 @@ class PaymentController extends Controller
                 $code = DB::table('expired_codes')->where('user_id',$user->id)->where('user_id',0)->first()->code;
                 $codeCaller = DB::table('users')->where('code',$code)->first();// code caller user
                 /*
-                 * reward new th to the caller
+                 * reward new th to the code caller
                  */
                 DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->update(['used'=>1]);
                 $share_level = DB::table('referrals')->where('code',$code)->first()->share_level;

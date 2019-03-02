@@ -13,8 +13,6 @@
 						    {{-- <li><a href="https://twitter.com" class="socialnet-flex" id="twttr">
                                 <img src="img/icons/tweet.svg" alt=""></a></li> --}}
         </ul>
-    </div>
-
-    
+    </div>   
 </footer>
 

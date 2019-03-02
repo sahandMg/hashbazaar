@@ -113,32 +113,15 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <div>
-                <h2 class="text-center">You must register first </h2>
-                <div class="form">
-                    <form method="post" action="{{route('subscribe')}}" class="register-form">
-                        <input type="hidden" name="_token" value="{{csrf_token()}}">
-                        <input type="text"  hidden name="hash" id="hash"/>
-                        @if($errors->all())
-                            @foreach($errors->all() as $error)
-                                <span style="color: #ae5856;">{{$error}}</span><br>
-                            @endforeach
-                        @endif
-
-                        <input type="text" name="name" placeholder="name"/>
-                        <input type="text" name="email" placeholder="email address"/>
-                        <!-- <span style="color: #ae5856;">error</span> -->
-                        <input type="password" name="password" placeholder="password"/>
-                        <!-- <span style="color: #ae5856;">error</span> -->
-                        <input type="password" name='confirm_password' placeholder="type password again"/>
-                        <button type="submit" id="registerButton">register</button>
-                    </form>
-                </div>
+                <h2 class="text-center">Welcome to Hashbazaar</h2>
+                <h3 class="text-center">We help you to invest in bitcoin mining.</h3>
+                <p>You are invited by one our referral link so you can utilize 10% discount for your first order.</p>
+                <p>Nice to have you in our cryptocurrency investment community.</p>
             </div>
         </div>
 
     </div>
 
-    {{-- -------------- --}}
 
 
     <script src="js/jquery.min.js"></script>
@@ -170,17 +153,20 @@
         // Get the modal
         var modal = document.getElementById('myModal');
 
+        // blade if for detecting link
+        modal.style.display = "block";
+
         // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
+        // var btn = document.getElementById("myBtn");
 
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
 
         // When the user clicks on the button, open the modal
-        btn.onclick = function() {
+        // btn.onclick = function() {
             // modal.style.display = "block";
-            window.location.href='http://hashbazaar.com/signup';
-        }
+            // window.location.href='http://hashbazaar.com/signup';
+        // }
 
         // When the user clicks on <span> (x), close the modal
         span.onclick = function() {

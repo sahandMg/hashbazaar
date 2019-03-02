@@ -2476,7 +2476,7 @@ form.contact-page p:nth-of-type(1) {
         margin-top: -40px !important
     }
     #dashboard-page-circle {
-        /* width: 350px !important; */
+        width: 100% !important;
         display: block;
         /* height: 350px !important; */
         margin-left: 0% !important;
@@ -2485,6 +2485,7 @@ form.contact-page p:nth-of-type(1) {
         border-collapse: 2px solid #727272
     }
     #dashboard-page-circle2 {
+        width: 100% !important;
         /* width: 350px !important; */
         display: block;
         /* height: 350px !important; */

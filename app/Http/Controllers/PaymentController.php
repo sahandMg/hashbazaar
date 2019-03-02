@@ -6,6 +6,7 @@ use App\BitHash;
 use App\Crawling\CoinMarketCap;
 use function App\CryptpBox\lib\cryptobox_selcoin;
 use function App\CryptpBox\lib\run_sql;
+use App\ExpiredCode;
 use App\Log;
 use App\Mining;
 use App\Setting;
@@ -126,9 +127,18 @@ class PaymentController extends Controller
          $hash->user_id = Auth::guard('user')->id();
          $hash->order_id = $orderID;
          $hash->confirmed = 0;
+         $hash->referral_code = $request->code;
          $hash->life = $settings->hash_life;
          $hash->remained_day = Carbon::now()->diffInDays(Carbon::now()->addYears($hash->life));
          $hash->save();
+
+        $expiring = ExpiredCode::where('user_id',Auth::guard('user')->id())->where('used',0)
+            ->orderBy('id','desc')
+            ->first();
+            if(!is_null($expiring)){
+                $expiring->update(['used'=>1]);
+                $expiring->save();
+            }
 
         $settings->update(['available_th'=>$settings->available_th - $hash->hash]);
         $settings->save();
@@ -369,6 +379,13 @@ class PaymentController extends Controller
                     $message->to ($user->email);
                     $message->subject ('Payment Confirmed !');
                 });
+
+                /*
+                 * reward new th to the caller
+                 */
+                DB::table('expired_codes')->where('user_id',$user->id)
+                    ->where('used',0)->update(['used'=>1]);
+
             }
 
             Mail::send('email.paymentReceived',[],function($message)use($user){

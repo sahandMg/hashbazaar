@@ -17,6 +17,7 @@ foreach ($hashes as $key=> $hash){
     <h2 class="text-center">Recent Activities</h2> 
     <div class="purchases">
         <q>Purchases</q>
+        <br>
       <div class="container">
         <table class="table custom-table" style="color: black;">
                 @if(!$hashes->isEmpty())
@@ -29,25 +30,26 @@ foreach ($hashes as $key=> $hash){
                  </tr>
                </thead>
                <tbody>
+               @foreach($hashes as $hash)
                 <tr>
                     <td>
-                        @foreach($hashes as $hash)
+
                             <span>{{$hash->hash}}TH/S</span>
-                        @endforeach         
+
                     </td>
                     <td>
-                        @foreach($hashes as $hash)
-                           <span>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}}    </span> 
-                            @endforeach
+
+                           <span>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}}    </span>
+
                     </td>
-                    <td> 
-                            @foreach($hashes as $hash)
+                    <td>
+
                             <span>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}   </span>
-                            @endforeach
+
                     </td>
 
                     <td>
-                        @foreach($hashes as $key => $hash)
+
                                 <div class="remain">
                                     <div class="progress1">
                                         <div class="progress-bar1" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%;width: {{$remainedLife[$key]}}%;">
@@ -55,10 +57,11 @@ foreach ($hashes as $key=> $hash){
 
                                         </div>
                                     </div>
-                                </div>  
-                          @endforeach    
+                                </div>
+
                     </td>
                 </tr>
+               @endforeach
                </tbody> 
                 
 

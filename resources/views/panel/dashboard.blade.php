@@ -209,11 +209,11 @@
                 <hr class="dashboard-hr" >
 
             </div> 
-
-            <div class="chart-container" >
-                    <canvas id="chart1"></canvas>
+          <div style="margin-right: 20px;">
+            <div class="ct-chart">
+                    <!-- <canvas id="chart1"></canvas> chart-container -->
             </div> 
-
+          </div>
 
     </div>
    
@@ -376,11 +376,17 @@
     opacity: 1;
   }
 }
-
+.ct-series-a .ct-area, .ct-series-a .ct-slice-donut-solid, .ct-series-a .ct-slice-pie {
+    fill: #ff9100;
+}
+.ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point, .ct-series-a .ct-slice-donut {
+    stroke: #ff9100;
+}
+.ct-label { color: black; }
 </style>
 
 <script>
-
+      
                 // ------------user account--------------------
                 $(document).ready(function(){
 
@@ -503,101 +509,26 @@
                 var data = [];
                 var labels = [];
             axios.get('{{route('chartData').'?user='. Auth::guard('user')->user()->code}}').then(function (response) {
+                
 
                 dateTime = response.data;
                 console.log(dateTime);
-
+                var timeLabels= [];
+                var data= [];
                 if(dateTime !== 404){
-
                     for(i=0 ; i < dateTime.length ; i++){
-
-                        data.push({t:moment(dateTime[i].time, dateFormat).valueOf(),y: dateTime[i].mined});
-
-                        labels.push(moment(dateTime[i].time, dateFormat));
-
+                        timeLabels.push(dateTime[i].time);
+                        data.push(dateTime[i].mined);
                     }
                 }
-
-
-//            labels.push(moment('April 01 2017', dateFormat));labels.push(moment('April 03 2017', dateFormat));labels.push(moment('April 04 2017', dateFormat));
-
-//                data.push({t:moment('April 01 2017', dateFormat).valueOf(),y: 22});data.push({t:moment('April 03 2017', dateFormat).valueOf(),y: 28.96930236878253});data.push({t: moment('April 04 2017', dateFormat).valueOf(), y: 29.96930236878253});
-                var ctx = document.getElementById('chart1').getContext('2d');
-               var chartContainer = document.getElementById('chartContainer');
-                console.log(screen.width);
-                var screenWidth = screen.width ;
-                // if(screenWidth > 1024) {
-                //     console.log(" > 1024");
-                //     ctx.canvas.parentNode.style.height = '300px';
-                //     ctx.canvas.parentNode.style.width = '700px';
-                //     // chartContainer.style.width = "700px";
-                //     // chartContainer.style.height = "300px";
-                // } else if(screenWidth > 767) {
-                //     console.log(" > 768");
-                //     ctx.canvas.parentNode.style.height = '250px';
-                //     ctx.canvas.parentNode.style.width = '650px';
-                //     // chartContainer.style.width = "600px";
-                //     // chartContainer.style.height = "200px";
-                // } else if(screenWidth > 413) {
-                //     console.log(" > 414");
-                //     ctx.canvas.parentNode.style.height = '300px';
-                //     ctx.canvas.parentNode.style.width = '300px';
-                //     // chartContainer.style.width = "300px";
-                //     // chartContainer.style.height = "300px";
-                // } else if(screenWidth > 300) {
-                //     console.log(" > 320");
-                //     ctx.canvas.parentNode.style.height = '200px';
-                //     ctx.canvas.parentNode.style.width = '280px';
-                //     // chartContainer.style.width = "280px";
-                //     // chartContainer.style.height = "200px";
-                // } else {
-                //     console.log("else");
-                //     ctx.canvas.parentNode.style.height = '300px';
-                //     ctx.canvas.parentNode.style.width = '700px';
-                //     // chartContainer.style.width = "700px";
-                //     // chartContainer.style.height = "300px";
-                // }
-
-                var color = Chart.helpers.color;
-                var cfg = {
-                    type: 'bar',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: 'Your revenue',
-                            backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
-                            borderColor: window.chartColors.red,
-                            data: data,
-                            type: 'line',
-                            pointRadius: 0,
-                            fill: false,
-                            lineTension: 0,
-                            borderWidth: 2
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        scales: {
-                            xAxes: [{
-                                type: 'time',
-                                distribution: 'series',
-                                ticks: {
-                                    source: 'labels'
-                                }
-                            }],
-                            yAxes: [{
-                                scaleLabel: {
-                                    display: true,
-                                    labelString: 'USD ($)'
-                                }
-                            }]
-                        }
-                    }
-                };
-                var chart = new Chart(ctx, cfg);
-
-
+                var data2D = [];data2D.push(data);
+                new Chartist.Line('.ct-chart', {
+                  labels: timeLabels,
+                   series: data2D
+                }, {
+                    low: 0,
+                    showArea: true
+                });
             });
 
 </script>

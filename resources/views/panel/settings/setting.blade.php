@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 
-<script src="../js/jquery-3.3.1.js"></script>
+<script src="{{asset('js/jquery-3.3.1.js')}}"></script>
 <!-- ---------------------------------------------------------------------------------------------- -->
 
 <div id="setting-page" class="panel-container ">
@@ -65,12 +65,12 @@
 
                 <q>OR</q>
 
-                <blockquote>Change Your Wallet Address</blockquote>
-                {{-- <form id="setting-wallet" action=""> --}}
-                    <input type="text" id="textwallet">
-
-                    <input type="button" class="buttonwallet" value="Submit">
-                {{-- </form> --}}
+                <blockquote>Submit Your Wallet Address</blockquote>
+                 <form id="setting-wallet" method="post" action="{{route('wallet')}}">
+                     <input type="hidden" name="_token" value="{{csrf_token()}}">
+                    <input type="text" id="textwallet" name="wallet">
+                    <input type="submit" class="buttonwallet" value="Submit">
+                 </form>
 
 
 

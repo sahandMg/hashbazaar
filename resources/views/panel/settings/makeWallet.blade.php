@@ -1,46 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="../js/jquery-3.3.1.js"></script>
-        <title>Hash Bazaar - Make Wallet</title>
-    <link rel="stylesheet" href="../css/setting-make wallet.css">
-    <link rel="stylesheet" href="../css/cssreset.css">
-    <script src="/public/js/jquery-3.3.1.js"></script>
-
-    <script>
-
-    </script>
-</head>
-
-<body>
-    <!-- Header -->
-    <header>
-
-
-        
-               <div><a href="http://hashbazaar.com"> <img class="Logo_header" src="../img/Logo_header.svg" alt="Logo_header"> </a></div>    
-               <div class="useraccount">
-
-                <img class="user-img" src="../img/user-circle-solid.svg" alt="">
-    
-                <div class="list1">
-
-                    <ul>
-
-                        <li class="user-account-list" id="usericon">User Account</li>
-                        <li class="user-account-list" id="logouticon">Log Out</li>
-    
-                    </ul>
-                </div>
-
-            </div>
-    </header>
-
-
+@extends('panel.master.layout')
+@section('title')
+    <title>HashBazaar | Wallet</title>
+@endsection
+@section('content')
     <!-- Setting Page -->
 
     <div id="setting-page">
@@ -52,7 +14,6 @@
 
 
             </div>
-
           
 
             <div class="flex-item-two flex-item"><a href="{{route('changePassword')}}" class="change">Change Password</a></div>
@@ -76,14 +37,14 @@
 
             <div class="address">
 
-                <div class="address-img"><img  src="img/SampleQR.svg" alt=""></div>
+                <div class="address-img"><img  src="{{asset('img/SampleQR.svg')}}" alt=""></div>
 
                 <div class="address-box">
                         <input type="text" placeholder="SDKnsdakndnj12n1k1lkmdsalm">
 
-                     <a href="mail-icon"><img class="icon" src="../img/Mail.svg" alt=""></a>
-                    <a href="link-icon"><img class="icon" src="../img/Link.svg" alt=""></a>
-                     <a href="copy-icon"><img class="icon" src="../img/Copy.svg" alt=""></a>
+                     <a href="mail-icon"><img class="icon" src="{{asset('img/Mail.svg')}}" alt=""></a>
+                    <a href="link-icon"><img class="icon" src="{{asset('img/Link.svg')}}" alt=""></a>
+                     <a href="copy-icon"><img class="icon" src="{{asset('img/Copy.svg')}}" alt=""></a>
                 </div>
 
                 <div class="change-address">
@@ -135,6 +96,5 @@
     
     // =---------------------------------------
     </script>
-</body>
-
-</html>
+    @include('master.footer')
+@endsection

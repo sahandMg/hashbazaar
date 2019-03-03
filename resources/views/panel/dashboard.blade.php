@@ -102,53 +102,6 @@
                
                     </table>
             </div> 
-             {{-- <div class="Hash-History_column"> Hash Power
-                        <ul>
-                            @foreach($hashes as $hash)
-                            <li>{{$hash->hash}} TH/S</li>
-                             @endforeach 
-                        </ul>
-                    </div> --}}
-
-
-                    {{-- <div class="Hash-History_column"> Started at
-                        <ul>
-                            @foreach($hashes as $hash)
-                                <li>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}} </li>
-                                @endforeach
-
-                            </ul>
-                    </div> --}}
-
-                    {{-- <div class="Hash-History_column"> Ends at
-                        <ul>
-                             @foreach($hashes as $hash)
-                            <li>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}</li>
-                            @endforeach
-
-                        </ul>
-                    </div> --}}
-
-                    {{-- <div class="Hash-History_column"> Remain
-                        <ul>
-                            @foreach($hashes as $key => $hash)
-
-                            <li>
-                                <div class="remain">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%">
-                                            <span class="title">{{$remainedLife[$key]}}%</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </li>
-
-                            @endforeach
-
-                        </ul>
-                    </div> --}}
 
 
             <!--   Buy hash power -->
@@ -165,7 +118,7 @@
                     <ul>
                         @foreach($errors as $error)
                             <li>{{$error}}</li>
-                         @endforeach
+                        @endforeach
                     </ul>
                 @endif
                 @if(session()->has('error'))
@@ -186,8 +139,8 @@
                     {{-- <form style="padding: 20px;" method="POST" action="{{route('dashboard')}}"> --}}
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
 
-                       <input id='referralCode' type="text" name="referralCode" style="margin-top:5px" >
-                       <input id='hiddenCodeValue' type="hidden" name="code" style="margin-top:5px" class="aplybtn1text">
+                       <input id='referralCode' type="text" name="referralCode" class="aplybtn1text" style="margin-top:5px" >
+                       <input id='hiddenCodeValue' type="hidden" name="code" style="margin-top:5px" >
 
                           <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> Apply </button>
 

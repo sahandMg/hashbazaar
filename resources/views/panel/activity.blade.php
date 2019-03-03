@@ -173,8 +173,9 @@ foreach ($hashes as $key=> $hash){
         .activity-container h2 {
             margin-top: 4%;
         }
-        .custom-table thead th {
-            border-bottom: 0px;
+        .custom-table thead  {
+            border-bottom: 30px !important;
+            font-weight: bolder;
         }
         .custom-table th{
             border-top: 0px;

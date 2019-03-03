@@ -198,12 +198,14 @@ header {
             })
             $('h1').click(function(){
               console.log("h1 click");
-            })
+            });
+
         });
-        $(document).ready(function(){
-         $(".test2").on('click', function () {
-            console.log("div click");
-          });
+        
+          $(document).ready(function(){
+          $(".test2").on('click', function () {
+              console.log("div click");
+            });
         });
          // console.log("js run af sdafa ");
          // var myEl = document.getElementById('test');
@@ -212,6 +214,8 @@ header {
          //       console.log("js run af sdafa asdfsdf ");
          //       alert('Hello world');
          //    });
+
+
     </script>
 </body>
 </html>

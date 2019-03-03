@@ -112,16 +112,8 @@ class PanelController extends Controller
 
 
         $code = $request->referralCode;
-        $is_active_Code = DB::table('expired_codes')
-            ->where('user_id',Auth::guard('user')->id())
-            ->where('used',0)->count();
-        if($is_active_Code > 0){
 
-            return [
-                'type'=>'error',
-                'body'=>'Your previous referral code has not been used yet !'
-            ];
-        }
+
         $referralUser = DB::table('users')->where('code',$code)->where('id','!=',Auth::id())->first();
         $is_expired = DB::table('expired_codes')->where('code',$code)->first();
 
@@ -131,6 +123,18 @@ class PanelController extends Controller
             return [
                 'type'=>'error',
                 'body'=>'Expired code entered'
+            ];
+        }
+
+        $is_active_Code = DB::table('expired_codes')
+            ->where('user_id',Auth::guard('user')->id())
+            ->where('used',0)->count();
+
+        if($is_active_Code > 0){
+
+            return [
+                'type'=>'error',
+                'body'=>'Your previous referral code has not been used yet !'
             ];
         }
         // check code validation

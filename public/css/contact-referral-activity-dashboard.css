@@ -1894,12 +1894,19 @@ form.contact-page p:nth-of-type(1) {
     max-height: 350px !important;
     margin-left: 7%
 }
-#Hash-History-list
+
+.Hash-History table thead {
+    margin-bottom: 50px !important
+}
+
+.Hash-History table tbody {
+    margin-top: 50px !important
+}
+.Hash-History
  {
-     margin-bottom: 70px;
-     width: 100%;
-     max-height: 300px !important;
-     float:left;
+     max-height: 400px !important;
+     margin-bottom: 50px;
+     margin-top: 20px;
  }
 
  
@@ -2143,7 +2150,7 @@ form.contact-page p:nth-of-type(1) {
     .dashboard-hr {
         flex: 2
     }
-/*    
+   /*  
 @media screen and (min-width:1840px) {
     #dashboard-page {
         width: 82.3% !important;
@@ -2515,55 +2522,39 @@ form.contact-page p:nth-of-type(1) {
 
     .circle-container {
         flex-flow: column wrap;
-        margin-top: -40px !important
+        margin-top: -40px !important;
+        margin-left:  10%!important;
+        margin-bottom: 40px;
+        width: auto
     }
     #dashboard-page-circle {
         width: 300px !important;
         height: 80% !important;
         display: block;
         height: 300px !important;
-        margin-left: 13% !important;
-        border: 20px solid #ff9100;
+        margin-left: 3% !important;
         border-radius: 50%;
-        border-collapse: 2px solid #727272
     }
     #dashboard-page-circle2 {
         width: 300px !important;
         height: 300px !important;
         display: block;
-        /* height: 350px !important; */
-        border: 20px solid #ff9100;
-        margin-left: 13% !important;
         border-radius: 50%;
         margin-top: 4% !important;
-        border-collapse: 2px solid #727272
     }
     #circle-span {
         font-size: 22px !important;
-        text-align: center;
-        font-family: sans-serif;
-        color: #727272;
         margin-top: 13% !important;
-        font-weight: bolder;
         margin-left: 15% !important;
     }
 
     #dashboard-page-circle p {
         font-size: 20px !important;
-        text-align: center;
-        color: rgb(41, 37, 37);
         margin-top: 35% !important;
-        font-weight: bolder;
-        font-family: sans-serif;
     }
     #dashboard-page-circle2 p {
         font-size: 20px !important;
-        text-align: center;
-        color: rgb(41, 37, 37);
         margin-top: 35% !important;
-        font-weight: bolder;
-        font-family: sans-serif;
-
     }
 
     #dashboard-page-circle hr , #dashboard-page-circle2 hr {
@@ -2591,9 +2582,6 @@ form.contact-page p:nth-of-type(1) {
         flex-grow: 1;
         margin-top: 0px;
         font-size: 12px;
-        color: #2e2d2d;
-        font-weight: bolder;
-        font-family: sans-serif;
         width: 95%;
         margin-left: 5%;
         text-align: left;
@@ -2608,11 +2596,9 @@ form.contact-page p:nth-of-type(1) {
         font-size: 18px;
         margin-left: 0% !important;
         height: 40px;
-        color: #2e2d2d;
     }
 
     #Hash-History-list tr td { 
-        font-weight: bolder;
         font-weight: normal !important;
         width: 150px;
         margin-left: 0% !important;
@@ -2620,16 +2606,13 @@ form.contact-page p:nth-of-type(1) {
         width: 40% !important;
         font-size: 13px;
         height: 40px;
-        color: #2e2d2d;
     }
 
     #Hash-History-list tr td:nth-of-type(2) ,  #Hash-History-list tr th:nth-of-type(2)  {
         display: none
     }
     #Hash-History-list .remain {
-
         width: 100px !important;
-        text-align: center !important;
         color: white !important;
     }
 
@@ -2637,7 +2620,6 @@ form.contact-page p:nth-of-type(1) {
         width:98% !important;
         background-color: white !important;
         border: 1px solid black !important;
-        text-align: center !important;
         height: 100% !important;
         padding-top: 0px !important
     }
@@ -2645,8 +2627,19 @@ form.contact-page p:nth-of-type(1) {
     /* ==============================================Buy hash power=================================== */
    
     #referralCode {
-        width: 130px !important
+        width: 180px !important;
     }
+
+    .aplybtn1text {
+        display: block !important
+    }
+
+   .aplybtn {
+       margin-left: 220px;
+       display: inline !important;
+       margin-top: -60px !important;
+
+   }
     /*============================================== Mining History ===================================*/
 
     canvas#chart1 {
@@ -2654,10 +2647,6 @@ form.contact-page p:nth-of-type(1) {
         -webkit-user-select: none;
         -ms-user-select: none;
         margin-top: 50px;
-    }
-
-    #referralCode {
-        width: 90px !important
     }
    
     .pandel-button {
@@ -2885,11 +2874,11 @@ form.contact-page p:nth-of-type(1) {
     /* ==============================================Buy hash power=================================== */
 
     #referralCode {
-        width: 75px !important
+        width: 145px !important
     }
     .btn-primary {
         padding: 0.1em .5em !important;
-        margin-left: 0
+        margin-left: 170px
     }
     /*============================================== Mining History ===================================*/
 

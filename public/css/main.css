@@ -1,4 +1,7 @@
 /* User Account */
+.Active {
+    color: White;
+}
 .useraccount {
     position: absolute;
     top: 0px;
@@ -170,11 +173,12 @@ header {
 }
 
 .Logo_header {
-    width: 700px;
+    width: auto;
     height: 90px;
     position: fixed;
-    left: -120px;
+    left: 0px;
     z-index: 2000;
+    margin: 10px
 }
 
 /* Menu */
@@ -201,11 +205,11 @@ header {
 }
 
 .Logo_In_NavBar {
-    width: 250px;
-    height: 400px;
+    width: auto;
+    height: 50px;
     left: 50px;
     position: absolute;
-    top: -170px
+    top: 5px
 }
 
 div ul .navbar #welcome {
@@ -774,12 +778,11 @@ color: orange !important}
     }
 
     .container1 .mainList .navbar .Logo_In_NavBar{
-        width: 210px;
-        height: 370px;
+        width: auto;
+        height: 40px;
         left: 30px;
         position: absolute;
-        top: -160px;
-
+        top: 5px;
     }
 
     div ul .navbar #welcome {
@@ -1080,8 +1083,8 @@ color: orange !important}
         z-index: 2;
     }
     .Logo_header {
-        width: 400px;
-        left: 30px !important;
+        width: auto;
+        left: 20px !important;
         margin-top: 15px
     }
     .container1 {
@@ -1278,10 +1281,10 @@ color: orange !important}
     #header-div {height:80px}
 
     .Logo_header {
-        width: 200px ;
-        height: 80px;
+        width: auto ;
+        height: 50px;
         left: 30px !important;
-        margin-top: 0px;
+        margin-top: 13px;
         position: absolute;
         top: 5px
     }
@@ -1570,11 +1573,11 @@ color: orange !important}
 /*  - Media - 375 */
 @media screen and (max-width: 375px) {
     .Logo_header {
-        width: 200px !important;
-        height: 90px;
+        width: auto !important;
+        height: 40px;
         position: absolute;
         left: 30px !important;
-        margin-top: 0px;
+        margin-top: 23px;
         top: 0px
     }
     .navigation-menu {
@@ -1722,11 +1725,11 @@ color: orange !important}
 /*  - Media - 320 */
 @media screen and (max-width:320px) {
     .Logo_header {
-        width: 180px !important;
-        height: 80px;
+        width: auto !important;
+        height: 35px;
         position: absolute;
-        left: 10px;
-        margin-top: 0px;
+        left: 0px !important;
+        margin-top: 20px;
         top: 5px
     }
             

@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="{{URL::asset('css/contact-referral-activity-dashboard.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/cssreset.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/main.css')}}">
+
     <link type="text/css" rel="stylesheet" href="{{URL::asset('bootstrap/css/bootstrap.min.css')}}">
+
+    {{--<link rel="stylesheet" href="{{URL::asset('css/chartist.min.css')}}">--}}
+    {{--<link type="text/css" rel="stylesheet" href="{{URL::asset('bootstrap/css/bootstrap.min.css')}}"> --}}
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
     <link rel="stylesheet" href="../fonts/font-awesome.min.css">
@@ -15,6 +20,7 @@
     <link rel="icon" href="../img/favicon.ico" type="image/x-icon"/>
     @yield('title')
     <script src="{{URL::asset('js/jquery-3.3.1.js')}}"></script>
+    <script src="{{URL::asset('js/chartist.min.js')}}"></script>
     <script  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
@@ -179,6 +185,7 @@
 
 </div>
 
+<<<<<<< HEAD
 <script type="text/javascript">
     window.$crisp=[];window.CRISP_WEBSITE_ID="792f282f-edde-46b8-8b02-d38ca5cb92c2";
     (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";
@@ -211,5 +218,43 @@
     //       alert('Hello world');
     //    });
 </script>
+=======
+    <script type="text/javascript">
+          window.$crisp=[];window.CRISP_WEBSITE_ID="792f282f-edde-46b8-8b02-d38ca5cb92c2";
+        (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";
+            s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            console.log("dashboard");
+            $('.navigation-menu').click(function(){
+              console.log("navigation-menu");
+                $('#header-navbar-menu').toggle(1);
+                $('.useraccount .list1').toggle(1);
+                $('.navigation-menu').toggleClass('change');
+            })
+            $('h1').click(function(){
+              console.log("h1 click");
+            });
+
+        });
+        
+          $(document).ready(function(){
+          $(".test2").on('click', function () {
+              console.log("div click");
+            });
+        });
+         // console.log("js run af sdafa ");
+         // var myEl = document.getElementById('test');
+         // console.log(myEl);
+         // myEl.addEventListener('click', function(event) {
+         //       console.log("js run af sdafa asdfsdf ");
+         //       alert('Hello world');
+         //    });
+
+
+    </script>
+>>>>>>> b3ef39e02432a7c25fece1561f13364cc02d5036
 </body>
 </html>

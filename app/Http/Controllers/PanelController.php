@@ -11,6 +11,7 @@ use App\MiningReport;
 use App\Referral;
 use App\ReferralCode;
 use App\Sharing;
+use App\Wallet;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
@@ -241,14 +242,33 @@ class PanelController extends Controller
         return view('panel.settings.changePassword');
     }
 
+    public function post_wallet(Request $request){
+
+        $this->validate($request,['wallet'=>'required']);
+
+        $wallet = new Wallet();
+        $wallet->addr = $request->wallet;
+        $wallet->user_id = Auth::guard('user')->id();
+        $wallet->active = 1;
+        $wallet->save();
+
+        return redirect()->route('makeWallet');
+
+    }
+
     public function wallet(){
 
+        if(!is_null(Auth::guard('user')->user()->wallet)){ // user has a wallet
+
+            return redirect()->route('makeWallet');
+        }
         return view('panel.settings.wallet');
     }
 
     public function makeWallet(){
 
-        return view('panel.settings.makeWallet');
+        $wallet = Auth::guard('user')->user()->wallet();
+        return view('panel.settings.makeWallet',compact('wallet'));
     }
 
     public function referral(){

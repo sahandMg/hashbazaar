@@ -38,4 +38,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
         return $this->hasOne(Referral::class);
     }
+    public function wallet(){
+
+        return $this->hasOne(Wallet::class);
+    }
 }

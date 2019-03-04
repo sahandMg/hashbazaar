@@ -168,6 +168,8 @@ Route::group(['middleware'=>'block','prefix'=>'panel'],function(){
 
     Route::get('setting/wallet','PanelController@wallet')->name('wallet');
 
+    Route::post('setting/wallet','PanelController@post_wallet')->name('wallet');
+
     Route::get('setting/wallet-make','PanelController@makeWallet')->name('makeWallet');
 
     Route::get('referral','PanelController@referral')->name('referral');

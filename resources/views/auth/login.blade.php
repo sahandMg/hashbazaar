@@ -12,6 +12,9 @@
 							<li style="color: red;margin-bottom: 1%;">{{$error}}</li>
 						@endforeach
 					</ul>
+					@if(session()->has('error'))
+						<p style="color: red">{{session('error')}}</p>
+					@endif
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
 						<span class="login100-form-title">
 						Log In

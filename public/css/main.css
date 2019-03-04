@@ -1,4 +1,7 @@
 /* User Account */
+.Active {
+    color: White;
+}
 .useraccount {
     position: absolute;
     top: 0px;
@@ -170,9 +173,14 @@ header {
     width: auto;
     height: 90px;
     position: fixed;
+<<<<<<< HEAD
     left: 20px;
     top: 10px;
+=======
+    left: 0px;
+>>>>>>> 1d9187b95ac1dc81c94eb41e15ef5db20a9fff1c
     z-index: 2000;
+    margin: 10px
 }
 
 /* Menu */
@@ -203,7 +211,11 @@ header {
     height: 50px;
     left: 50px;
     position: absolute;
+<<<<<<< HEAD
     top: 0px
+=======
+    top: 5px
+>>>>>>> 1d9187b95ac1dc81c94eb41e15ef5db20a9fff1c
 }
 
 div ul .navbar #welcome {
@@ -725,11 +737,15 @@ color: orange !important}
     }
 
     .container1 .mainList .navbar .Logo_In_NavBar{
-        width: 210px;
-        height: 370px;
+        width: auto;
+        height: 40px;
         left: 30px;
         position: absolute;
+<<<<<<< HEAD
         top: -160px;
+=======
+        top: 5px;
+>>>>>>> 1d9187b95ac1dc81c94eb41e15ef5db20a9fff1c
     }
 
     div ul .navbar #welcome {
@@ -1001,8 +1017,13 @@ color: orange !important}
     }
     .Logo_header {
         width: auto;
+<<<<<<< HEAD
         left: 30px !important;
         margin-top: 10px
+=======
+        left: 20px !important;
+        margin-top: 15px
+>>>>>>> 1d9187b95ac1dc81c94eb41e15ef5db20a9fff1c
     }
     .container1 {
         display: none;
@@ -1161,9 +1182,15 @@ color: orange !important}
 
     .Logo_header {
         width: auto ;
+<<<<<<< HEAD
         height: 40px;
         left: 30px !important;
         margin-top: 20px;
+=======
+        height: 50px;
+        left: 30px !important;
+        margin-top: 13px;
+>>>>>>> 1d9187b95ac1dc81c94eb41e15ef5db20a9fff1c
         position: absolute;
         top: 5px
     }
@@ -1413,11 +1440,19 @@ color: orange !important}
 @media screen and (max-width: 375px) {
     .Logo_header {
         width: auto !important;
+<<<<<<< HEAD
         height: 35px;
         position: absolute;
         left: 30px !important;
         margin-top: 20px;
         top: 5px
+=======
+        height: 40px;
+        position: absolute;
+        left: 30px !important;
+        margin-top: 23px;
+        top: 0px
+>>>>>>> 1d9187b95ac1dc81c94eb41e15ef5db20a9fff1c
     }
     .navigation-menu {
         display: block;
@@ -1545,9 +1580,15 @@ color: orange !important}
 @media screen and (max-width:320px) {
     .Logo_header {
         width: auto !important;
+<<<<<<< HEAD
         height: 40px;
         position: absolute;
         left: 10px;
+=======
+        height: 35px;
+        position: absolute;
+        left: 0px !important;
+>>>>>>> 1d9187b95ac1dc81c94eb41e15ef5db20a9fff1c
         margin-top: 20px;
         top: 5px
     }

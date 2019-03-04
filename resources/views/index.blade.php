@@ -4,6 +4,14 @@
     <!-- class="masthead pb-3" -->
     <?php
     $settings = DB::table('settings')->first();
+          if(isset($code)){
+              $user = DB::table('users')->where('code',$code)->first();
+              $referralCode = DB::table('expired_codes')->where('code',$code)->first();
+
+              if(!is_null($user) && is_null($referralCode)){
+                  $name = $user->name;
+              }
+          }
     ?>
     <header id="header" >
        
@@ -117,7 +125,7 @@
                 <br/>
                 <h4 class="text-center">We help you to invest in bitcoin mining.</h4>
                 <br/>
-                <p class="text-center">You are invited by <b> Felan</b> so you can utilize 10% discount for your first order.</p>
+                <p class="text-center">You are invited by <b> {{isset($name)?$name:'noBody'}}</b> so you can utilize 10% discount for your first order.</p>
                 <p class="text-center">Nice to have you in our cryptocurrency investment community.</p>
             </div>
         </div>
@@ -126,10 +134,10 @@
 
 
 
-    <script src="js/jquery.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{asset('js/jquery.min.js')}}"></script>
+    <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src="js/Bazar.js"></script>
+    <script src="{{asset('js/Bazar.js')}}"></script>
     <style type="text/css">
         p {
             margin: 0px;padding: 0px;padding-top: 5px;
@@ -138,10 +146,11 @@
     <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="792f282f-edde-46b8-8b02-d38ca5cb92c2";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
     <script type="text/javascript">
         console.log("js run");
+        var sliderValue = {!! \App\Setting::first()->usd_per_hash !!}
         var slider = document.getElementById("myRange");
         var output = document.getElementById("demo");
         output.innerHTML = slider.value+' Th'; // Display the default slider value
-        var cost = document.getElementById("cost"); cost.innerHTML = slider.value * 50 ;
+        var cost = document.getElementById("cost"); cost.innerHTML = slider.value * sliderValue ;
         var hashInput = document.getElementById("hash");
         console.log("slider");console.log(slider.value);
         // hashInput.value = slider.value;
@@ -149,15 +158,19 @@
         slider.oninput = function() {
             console.log("input change");
             output.innerHTML = this.value+' Th';
-            cost.innerHTML = slider.value * 50 ;
-            // hashInput.value = slider.value;
+            cost.innerHTML = slider.value * sliderValue ;
+
+
         }
 
         // Get the modal
         var modal = document.getElementById('myModal');
 
         // blade if for detecting link
-        modal.style.display = "block";
+        if({!! isset($name) !!}){
+
+            modal.style.display = "block";
+        }
 
         // Get the button that opens the modal
         // var btn = document.getElementById("myBtn");

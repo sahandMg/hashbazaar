@@ -135,10 +135,7 @@ class PaymentController extends Controller
         $expiring = ExpiredCode::where('user_id',Auth::guard('user')->id())->where('used',0)
             ->orderBy('id','desc')
             ->first();
-            if(!is_null($expiring)){
-                $expiring->update(['used'=>1]);
-                $expiring->save();
-            }
+//
 
         $settings->update(['available_th'=>$settings->available_th - $hash->hash]);
         $settings->save();
@@ -369,7 +366,7 @@ class PaymentController extends Controller
         }else{
 
             $user = $hashPower->user;
-            if($payment_details['confirmed'] == 1){
+            if($payment_details['confirmed'] == 1){ //second callback
                 $hashPower->update(['confirmed'=>1]);
                 $hashPower->save();
                 $mining->update(['block' => 0]);
@@ -381,14 +378,14 @@ class PaymentController extends Controller
                     $message->subject ('Payment Confirmed !');
                 });
 
-                $code = DB::table('expired_codes')->where('user_id',$user->id)->where('user_id',0)->first()->code;
+                $code = DB::table('expired_codes')->where('user_id',$user->id)->orderBy('id','desc')->first()->code;
                 $codeCaller = DB::table('users')->where('code',$code)->first();// code caller user
                 /*
-                 * reward new th to the caller
+                 * reward new th to the code caller
+                 * ============================
                  */
-                DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->update(['used'=>1]);
                 $share_level = DB::table('referrals')->where('code',$code)->first()->share_level;
-                $share_value = DB::table('shares')->where('level',$share_level)->first()->value;
+                $share_value = DB::table('sharings')->where('level',$share_level)->first()->value;
                 $hash = new BitHash();
                 $hash->hash = $hashPower * $share_value;
                 $hash->user_id = $codeCaller->id;
@@ -398,9 +395,17 @@ class PaymentController extends Controller
                 $hash->remained_day = Carbon::now()->diffInDays(Carbon::now()->addYears($hash->life));
                 $hash->save();
 
+                $mining = new Mining();
+                $mining->mined_btc = 0;
+                $mining->mined_usd = 0;
+                $mining->user_id = $codeCaller->id;
+                $mining->order_id = $orderID;
+                $mining->block = 0;
+                $mining->save();
 
+            //  =======================================
             }
-
+            DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->update(['used'=>1]);
             Mail::send('email.paymentReceived',[],function($message)use($user){
                 $message->from ('Admin@HashBazaar');
                 $message->to ($user->email);

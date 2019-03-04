@@ -7,14 +7,18 @@
     <link rel="stylesheet" href="{{URL::asset('css/contact-referral-activity-dashboard.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/cssreset.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/main.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('css/chartist.min.css')}}">
-    <link type="text/css" rel="stylesheet" href="{{URL::asset('bootstrap/css/bootstrap.min.css')}}"> 
+
+    <link type="text/css" rel="stylesheet" href="{{URL::asset('bootstrap/css/bootstrap.min.css')}}">
+
+    {{--<link rel="stylesheet" href="{{URL::asset('css/chartist.min.css')}}">--}}
+    {{--<link type="text/css" rel="stylesheet" href="{{URL::asset('bootstrap/css/bootstrap.min.css')}}"> --}}
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
     <link rel="stylesheet" href="../fonts/font-awesome.min.css">
     {{-- <link rel="stylesheet" href="{{URL::asset('css/theme.css')}}">  --}}
     <link rel="icon" href="../img/favicon.ico" type="image/x-icon"/>
-        @yield('title')
+    @yield('title')
     <script src="{{URL::asset('js/jquery-3.3.1.js')}}"></script>
     <script src="{{URL::asset('js/chartist.min.js')}}"></script>
     <script  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" ></script>
@@ -26,10 +30,11 @@
 
 </head>
 <body>
+
 <header>
 
-    <div id="header-div"> 
-       <a href="http://hashbazaar.com"> <img class="Logo_header" src="{{URL::asset('img/Logo_header.svg')}}" alt="Logo_header"></a> 
+    <div id="header-div">
+        <a href="http://hashbazaar.com"> <img class="Logo_header" src="{{URL::asset('img/Logo_header.svg')}}" alt="Logo_header"></a>
     </div>
     <div class="navigation-menu" >
         <div class="bar1 test2"></div>
@@ -48,121 +53,120 @@
             </ul>
         </div>
     </div>
-    
-</header>
 
+</header>
 
 
 @yield('content')
 
-   <hr/> 
-   <footer>
-       <p class="text-center">© 2018 HashBazaar. All rights reserved</p>
-       <img class="test2" src="{{URL::asset('img/Logo_footer.png')}}" alt="HashBazaar">
-   </footer>
+<hr/>
+<footer>
+    <p class="text-center">© 2018 HashBazaar. All rights reserved</p>
+    <img class="test2" src="{{URL::asset('img/Logo_footer.png')}}" alt="HashBazaar">
+</footer>
 
-    <!-- Container -->
-    <style type="text/css">
-
-
-header {
-  display: flex;
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-flexbox;
-  flex-flow: row nowrap
-}
-
-#header-div {
-  flex: 1;
-}
-
-.navigation-menu {
-  flex: 1;
-  z-index: 11111111;
-  position: absolute;
-  right: 100px
-}
+<!-- Container -->
+<style type="text/css">
 
 
+    header {
+        display: flex;
+        display: -ms-flexbox;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-flexbox;
+        flex-flow: row nowrap
+    }
+
+    #header-div {
+        flex: 1;
+    }
+
+    .navigation-menu {
+        flex: 1;
+        z-index: 11111111;
+        position: absolute;
+        right: 100px
+    }
 
 
-/*  */
-       .panel-container {
-         margin-top: 125px;   
-         margin-left: 370px;
-         display: flex;flex-direction: column;
-       }
-       @media screen and (max-width:1024px) {
-          .panel-container {
+
+
+    /*  */
+    .panel-container {
+        margin-top: 125px;
+        margin-left: 370px;
+        display: flex;flex-direction: column;
+    }
+    @media screen and (max-width:1024px) {
+        .panel-container {
             margin-left: 280px;
-          }
+        }
+    }
+
+    @media screen and (max-width:768px) {
+        .panel-container {
+            margin-left: 0px;
         }
 
-        @media screen and (max-width:768px) {
-          .panel-container {
+    }
+    @media screen and (max-width:415px) {
+        .panel-container {
             margin-left: 0px;
-          }
-
+            margin-top: 85px;
         }
-        @media screen and (max-width:415px) {
-          .panel-container {
-            margin-left: 0px;
-            margin-top: 85px;  
-          }
-          .navigation-menu {
+        .navigation-menu {
             right: 50px
-          }
         }
+    }
+    footer img {
+        width: auto;
+        height: 60px;
+        margin-left: 2%;
+    }
+    footer p {  margin-bottom: 2% ;color: black;font-size: 1.2rem;}
+    footer {
+        margin-left: 370px;
+        padding: 0px;
+    }
+
+    @media screen and (max-width:1024px) {
         footer img {
-            width: auto;
-            height: 60px;
-            margin-left: 2%;
-        }
-        footer p {  margin-bottom: 2% ;color: black;font-size: 1.2rem;}
-        footer {
-            margin-left: 370px;
-            padding: 0px;
-        }
-
-        @media screen and (max-width:1024px) {
-          footer img {
             height: 40px;
-          }
-          footer {
-            margin-left: 280px;
-          }
         }
+        footer {
+            margin-left: 280px;
+        }
+    }
 
-        @media screen and (max-width:768px) {
-          footer {
+    @media screen and (max-width:768px) {
+        footer {
             margin: 0px;
             padding-bottom: 2%;
-          }
-          footer img {
-            height: 40px;
-          }
         }
+        footer img {
+            height: 40px;
+        }
+    }
 
-        @media screen and (max-width: 414px) {
-          footer p {  margin-bottom: 2% ;color: black;font-size: 0.9rem;}
-          footer {
+    @media screen and (max-width: 414px) {
+        footer p {  margin-bottom: 2% ;color: black;font-size: 0.9rem;}
+        footer {
             padding-bottom: 4%;
-          }
-          footer img {
+        }
+        footer img {
             height: 30px;
             margin-left: 4%;
-          }
         }
-    </style>
+    }
+</style>
 
 
 <!-- Container -->
 <div class="mainContainer">
     <nav class="container1">
         <ul class="mainList">
-            
+
             <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="{{URL::asset('img/Logo_In_NavBar.svg')}}" alt="Logo_In_NavBar"></a>
                 <a href="" id="welcome">{{Auth::guard('user')->user()->name}}</a> </li>
             <li class="sub dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
@@ -181,6 +185,40 @@ header {
 
 </div>
 
+<<<<<<< HEAD
+<script type="text/javascript">
+    window.$crisp=[];window.CRISP_WEBSITE_ID="792f282f-edde-46b8-8b02-d38ca5cb92c2";
+    (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";
+        s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        console.log("dashboard");
+        $('.navigation-menu').click(function(){
+            console.log("navigation-menu");
+            $('#header-navbar-menu').toggle(1);
+            $('.useraccount .list1').toggle(1);
+            $('.navigation-menu').toggleClass('change');
+        })
+        $('h1').click(function(){
+            console.log("h1 click");
+        })
+    });
+    $(document).ready(function(){
+        $(".test2").on('click', function () {
+            console.log("div click");
+        });
+    });
+    // console.log("js run af sdafa ");
+    // var myEl = document.getElementById('test');
+    // console.log(myEl);
+    // myEl.addEventListener('click', function(event) {
+    //       console.log("js run af sdafa asdfsdf ");
+    //       alert('Hello world');
+    //    });
+</script>
+=======
     <script type="text/javascript">
           window.$crisp=[];window.CRISP_WEBSITE_ID="792f282f-edde-46b8-8b02-d38ca5cb92c2";
         (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";
@@ -198,12 +236,14 @@ header {
             })
             $('h1').click(function(){
               console.log("h1 click");
-            })
+            });
+
         });
-        $(document).ready(function(){
-         $(".test2").on('click', function () {
-            console.log("div click");
-          });
+        
+          $(document).ready(function(){
+          $(".test2").on('click', function () {
+              console.log("div click");
+            });
         });
          // console.log("js run af sdafa ");
          // var myEl = document.getElementById('test');
@@ -212,6 +252,9 @@ header {
          //       console.log("js run af sdafa asdfsdf ");
          //       alert('Hello world');
          //    });
+
+
     </script>
+>>>>>>> b3ef39e02432a7c25fece1561f13364cc02d5036
 </body>
 </html>

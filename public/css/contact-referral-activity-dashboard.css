@@ -66,7 +66,7 @@
     left: 3vh;
     top: 3vh
 }*/
-@media screen and (max-width:1024px) {
+@media screen and (max-width:1025px) {
         
     #usericon:before {
         left: 2vh;
@@ -174,7 +174,7 @@ header {
     margin: auto;
 }
 
-@media screen and (max-width:1024px) {
+@media screen and (max-width:1025px) {
     .contact-container form {
       width: 70%;
     }
@@ -182,7 +182,7 @@ header {
        font-size: 1.8rem;
      }
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:769px) {
     .contact-container form {
       width: 80%;
     }
@@ -270,7 +270,7 @@ form.contact-page p:nth-of-type(1) {
 }
 
 /* Contact - Media - 1024 */
-@media screen and (max-width:1024px){
+@media screen and (max-width:1025px){
     /* ----------------------------Main Container--------------------------- */
 
     .useraccount .list1 {
@@ -309,7 +309,7 @@ form.contact-page p:nth-of-type(1) {
 }
 
 /* Contact - Media - 768 */
-@media screen and (max-width:768px) {
+@media screen and (max-width:769px) {
     body {
         background-color: #FFFDE8
     }
@@ -360,7 +360,7 @@ form.contact-page p:nth-of-type(1) {
 }
 
 /* Contact - Media - 414 */
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 415px) {
 
     body {
         background-color: #FFFDE8
@@ -421,7 +421,7 @@ form.contact-page p:nth-of-type(1) {
 }
 
 /* Contact - Media - 375 */
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 376px) {
 
       /* Contact */
 
@@ -465,7 +465,7 @@ form.contact-page p:nth-of-type(1) {
 }
 
 /* Contact - Media - 320 */
-@media screen and (max-width:320px) {
+@media screen and (max-width:321px) {
     .Logo_header {
         width: 200px;
         height: 90px;
@@ -605,7 +605,7 @@ form.contact-page p:nth-of-type(1) {
 }
 
 /* Referral - Media - 1024 */
-@media screen and (max-width:1024px){
+@media screen and (max-width:1025px){
     /* ---------------=====Media====-------------Main Container--------------------------- */
 
     .sub:after {
@@ -667,7 +667,7 @@ form.contact-page p:nth-of-type(1) {
 }
 
 /* Referral - Media - 768 */
-@media screen and (max-width:768px) {
+@media screen and (max-width:769px) {
 
         #header-div {
             border-bottom: 4px solid orange;
@@ -743,7 +743,7 @@ form.contact-page p:nth-of-type(1) {
 }
 
 /* Referral - Media - 414 */
-@media screen and (max-width:414px) {
+@media screen and (max-width:415px) {
     #header-div {
         border-bottom: 4px solid orange;
         width: 100%;
@@ -861,7 +861,7 @@ form.contact-page p:nth-of-type(1) {
 }
 
 /* Referral - Media - 375 */
-@media screen and (max-width:375px) {
+@media screen and (max-width:376px) {
    
     .Logo_header {
         width: 200px;
@@ -919,7 +919,7 @@ form.contact-page p:nth-of-type(1) {
 }
 
 /* Referral - Media - 320 */
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 321px) {
  
 
     .referral-page_firstList {
@@ -1180,7 +1180,7 @@ form.contact-page p:nth-of-type(1) {
 
 
 /* Activity-Media-1024 */
-@media screen and (max-width:1024px)
+@media screen and (max-width:1025px)
 {
     /* ---------------=====Media====-------------Main Container--------------------------- */
 
@@ -1291,7 +1291,7 @@ form.contact-page p:nth-of-type(1) {
 }
 
 /* Activity-Media-768 */
-@media screen and (max-width: 768px) 
+@media screen and (max-width: 769px) 
 {
 
     header {
@@ -1434,7 +1434,7 @@ form.contact-page p:nth-of-type(1) {
 }
 
 /* Activity-Media-414 */
-@media screen and (max-width:414px) 
+@media screen and (max-width:415px) 
 {
 
     .Logo_header {
@@ -1528,7 +1528,7 @@ form.contact-page p:nth-of-type(1) {
 }
 
 /* Activity-Media-375 */
-@media screen and (max-width:375px) 
+@media screen and (max-width:376px) 
 {
 
     .Logo_header {
@@ -1613,7 +1613,7 @@ form.contact-page p:nth-of-type(1) {
 }
 
 /* Activity-Media-320 */
-@media screen and (max-width: 320px) 
+@media screen and (max-width: 321px) 
 {
 
     .Logo_header {
@@ -2146,7 +2146,7 @@ form.contact-page p:nth-of-type(1) {
     }
 }  */
 /* Dashboard-Media-1280 */
-@media screen and (max-width:1280px) {
+@media screen and (max-width:1281px) {
     #dashboard-page-circle ,
     #dashboard-page-circle2 {
         width: 350px !important;
@@ -2174,7 +2174,7 @@ form.contact-page p:nth-of-type(1) {
 }
 
 /* Dashboard-Media-1024 */
-@media screen and (max-width:1024px){
+@media screen and (max-width:1025px){
     /* ---------------=====Media====-------------Main Container--------------------------- */
     
     div ul .navbar #welcome {
@@ -2317,7 +2317,7 @@ form.contact-page p:nth-of-type(1) {
 }
 
 /* Dashboard-Media-768 */
-@media screen and (max-width:768px) {
+@media screen and (max-width:769px) {
 
     .container1 {
         display: none
@@ -2438,7 +2438,7 @@ form.contact-page p:nth-of-type(1) {
 }
 
 /* Dashboard-Media-414 */
-@media screen and (max-width:414px) {
+@media screen and (max-width:415px) {
         
     #dashboard-page {
         width: 100%;
@@ -2454,8 +2454,8 @@ form.contact-page p:nth-of-type(1) {
     .circle-container {
         flex-flow: column wrap;
         margin-top: -40px !important;
-        margin-left: 10% !important;
-        width: 90%;
+        margin-left: 0% !important;
+        width: 100%;
         margin-bottom: 40px
     }
     #dashboard-page-circle {
@@ -2463,9 +2463,10 @@ form.contact-page p:nth-of-type(1) {
         height: 80% !important;
         display: block;
         height: 300px !important;
-        margin-left: 3% !important;
         border: 20px solid #ff9100;
         border-radius: 50%;
+        display: block;
+        margin: auto !important;
     }
     #dashboard-page-circle2 {
         width: 300px !important;
@@ -2473,8 +2474,9 @@ form.contact-page p:nth-of-type(1) {
         display: block;
         /* height: 350px !important; */
         border: 20px solid #ff9100;
-        margin-left: 6% !important;
         border-radius: 50%;
+        display: block;
+        margin: auto !important;
         margin-top: 4% !important;
     }
     #circle-span {
@@ -2497,7 +2499,11 @@ form.contact-page p:nth-of-type(1) {
     }
     /* ==================================================HASH History============================== */
     .title-flex .dashboard-title {
-        font-size: 13px !important ;
+        font-size: 16px !important ;
+    }
+
+    .title-flex .dashboard-hr { 
+        flex: 0.8
     }
 
     #Hash-History-list
@@ -2594,7 +2600,7 @@ form.contact-page p:nth-of-type(1) {
 }
 
 /* Dashboard-Media-375 */
-@media screen and (max-width:375px) {
+@media screen and (max-width:376px) {
 
     .useraccount {
         top: 10px;
@@ -2639,9 +2645,11 @@ form.contact-page p:nth-of-type(1) {
     }
     /* ==================================================HASH History============================== */
     .title-flex .dashboard-title {
-        font-size: 11px !important;
+        font-size: 15px !important;
     }
-
+    .title-flex .dashboard-hr {
+        flex: 0.7
+    }
     #Hash-History-list
     {
         margin-top: 30px;
@@ -2708,7 +2716,7 @@ form.contact-page p:nth-of-type(1) {
 }
 
 /* Dashboard-Media-320 */
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 321px) {
 
      /* ======================================Circle=========================================== */
 
@@ -2720,7 +2728,6 @@ form.contact-page p:nth-of-type(1) {
         border: 20px solid #ff9100;
         border-radius: 50%;
         border-collapse: 2px solid #727272;
-        margin-left: 5% !important
     }
         
     #circle-span {
@@ -2747,7 +2754,10 @@ form.contact-page p:nth-of-type(1) {
     }
     /* ==================================================HASH History============================== */
     .title-flex .dashboard-title {
-        font-size: 10px !important;
+        font-size: 15px !important;
+    }
+    .title-flex .dashboard-hr {
+        flex: 0.5
     }
 
     #Hash-History-list

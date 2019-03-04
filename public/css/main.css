@@ -711,7 +711,7 @@ color: orange !important}
 
 
 /*  - Media - 1024 */
-@media screen and (max-width:1024px){
+@media screen and (max-width:1025px){
         
     #usericon:before {
         position: relative;
@@ -873,7 +873,7 @@ color: orange !important}
 
 }
 /*  - Media - 768 */
-@media screen and (max-width:768px) {
+@media screen and (max-width:769px) {
     /* user account list */
         .useraccount {display:block !important;}
 
@@ -1131,7 +1131,7 @@ color: orange !important}
     }
 }
 /*  - Media - 414 */
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 415px) {
     /* --------user account list */
     .useraccount .list1 {
         margin-left: -86% !important;
@@ -1414,7 +1414,7 @@ color: orange !important}
     }
 }
 /*  - Media - 375 */
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 376px) {
     .Logo_header {
         width: auto !important;
         height: 35px;
@@ -1546,7 +1546,7 @@ color: orange !important}
   
 }
 /*  - Media - 320 */
-@media screen and (max-width:320px) {
+@media screen and (max-width:321px) {
     .Logo_header {
         width: auto !important;
         height: 40px;

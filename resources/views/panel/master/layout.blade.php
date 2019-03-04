@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{URL::asset('css/main.css')}}">
 
     <link type="text/css" rel="stylesheet" href="{{URL::asset('bootstrap/css/bootstrap.min.css')}}">
-
+    <link rel="stylesheet" href="{{URL::asset('css/chartist.min.css')}}">
     {{--<link rel="stylesheet" href="{{URL::asset('css/chartist.min.css')}}">--}}
     {{--<link type="text/css" rel="stylesheet" href="{{URL::asset('bootstrap/css/bootstrap.min.css')}}"> --}}
 

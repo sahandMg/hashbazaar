@@ -4,44 +4,38 @@
 @endsection
 @section('content')
 
-<script src="{{asset('js/jquery-3.3.1.js')}}"></script>
-<!-- ---------------------------------------------------------------------------------------------- -->
 
 <div id="setting-page" class="panel-container ">
-
     <div class="setting-flex">
-
         <div class="flex-item one"><a href="#">User Information</a></div>
-
-
         <div class="flex-item two"><a href="#">Wallet</a></div>
 
     </div>
-
     @if(count($errors->all()) > 0)
-
         <ul>
             @foreach($errors->all() as $error)
                 <li>{{$error}}</li>
              @endforeach
         </ul>
       @endif
-
     @if(session()->has('message'))
         <p>{{session('message')}}</p>
     @endif
     <div class="setting-information">
         <form action="{{route('setting')}}" method="post">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
-            <q>User Information </q> <br>
-
+            <!-- <q>User Information </q>  -->
+            <!-- <br/> -->
             <p id="textbefore">Name</p>
-            <input type="text" name="text" id="text" value="{{Auth::guard('user')->user()->name}}" disabled="disabled"> <br>
+            <input type="text" name="text" id="text" value="{{Auth::guard('user')->user()->name}}" disabled="disabled"> 
+            <!-- <br> -->
             <p id="textbefore">Email</p>
 
-            <input type="email" name="email" id="email" value="{{Auth::guard('user')->user()->email}}" disabled="disabled"> <br> <br> <br>
+            <input type="email" name="email" id="email" value="{{Auth::guard('user')->user()->email}}" disabled="disabled"/> 
+            <!-- <br> <br> <br> -->
 
-            <q>Password</q> <br>
+            <q>Password</q> 
+            <!-- <br> -->
             <p id="textbefore">Current Password</p>
 
             <input type="password" name="pass" id="cur-password" placeholder="Current Password"> <br>

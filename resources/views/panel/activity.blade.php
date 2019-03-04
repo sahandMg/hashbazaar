@@ -82,24 +82,10 @@ foreach ($hashes as $key=> $hash){
             <table id="Transactions-list" class="table custom-table" >
                     <thead>
                     <tr>
-                        <th class="Transactions_column"> 
-                            Date  
-                        </th>
-
-                        <th class="Transactions_column"> 
-                            BTC 
-                           
-                        </th>
-
-                        <th class="Transactions_column"> 
-                            Address
-                            
-                        </th>
-
-                        <th class="Transactions_column"> 
-                            Status
-                            
-                        </th>
+                        <th class="Transactions_column"> Date </th>
+                        <th class="Transactions_column"> BTC </th>
+                        <th class="Transactions_column">Address</th>
+                        <th class="Transactions_column">Status</th>
 
                     </tr>
                 </thead>
@@ -155,8 +141,18 @@ foreach ($hashes as $key=> $hash){
             $('.list1').toggle(500);
         })
     
-                    var activitySecondListNumItems = $('#Transactions-list tr').length;
-                    if( activitySecondListNumItems > 3){
+                    var activitySecondListNumItems = $('.container .table tr').length;
+                    var activityThirdListNumItems = $('#activity-page_thirdList .table tr').length;
+
+                    if( activitySecondListNumItems > 4){
+                        $('.container').css('overflow-y' , "scroll")
+                    }
+                    else {
+                        $('.container').css('overflow-y' , "hidden")
+
+                    };
+
+                    if( activityThirdListNumItems > 3){
                         $('#activity-page_thirdList').css('overflow-y' , "scroll")
                     }
                     else {
@@ -165,7 +161,7 @@ foreach ($hashes as $key=> $hash){
                     }
 
 
-                  
+                      
 
     })
     // =---------------------------------------</script>

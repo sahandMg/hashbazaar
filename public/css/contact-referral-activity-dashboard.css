@@ -1098,9 +1098,13 @@ form.contact-page p:nth-of-type(1) {
    margin: auto;
    display: block
 }
-
+.container ,
  #activity-page_thirdList {
     max-height: 300px
+}
+
+.container table {
+    height: 150px
 }
  #Transactions-list
  {
@@ -1722,29 +1726,6 @@ form.contact-page p:nth-of-type(1) {
     }
    
 
-     .activity-hr-footer
-     {
-         margin-left: 0;
-         top: 0px !important;
-         width: 100%;
-     }
-     .activity-footer-div {
-        width: 100%;
-        margin-left: 0%;
-        margin-top: -120px !important
-     }
-    .activity-footer-paragraph {
-        font-size: 12px;
-        font-family: sans-serif;
-        width: 260px;
-        margin-left: 0
-    }
-    #activity-footer-image  {
-        width: 90px;
-        height: 35px;
-        margin: 0 auto
-    }
-
 }
 
 /* DASHBOARD */
@@ -1890,67 +1871,13 @@ form.contact-page p:nth-of-type(1) {
     margin: 15% 37%
 }
 
-.Hash-History {
+.Hash-History  {
     max-height: 350px !important;
-<<<<<<< HEAD
     margin-left: 7% !important;
-=======
-    margin-left: 7%
 }
-
-.Hash-History table thead {
-    margin-bottom: 50px !important
+.Hash-History table {
+    height: 150px !important
 }
-
-.Hash-History table tbody {
-    margin-top: 50px !important
-}
-.Hash-History
- {
-     max-height: 400px !important;
-     margin-bottom: 50px;
-     margin-top: 20px;
- }
-
- 
-#Hash-History-list tr
-{
-    flex-grow: 1;
-    margin-top: 30px;
-    font-size: 15px;
-    color: #2e2d2d;
-    font-weight: bolder;
-    font-family: sans-serif;
-    width: 95%;
-    margin-left: 5%;
-    text-align: left;
-    display: block
-}
-
-#Hash-History-list tr th  {
-    font-weight: normal !important;
-    width: 150px;
-    margin-top: 10px;
-    width: 29.4%;
-    font-size: 24px;
-    margin-left: -2% !important;
-    height: 70px;
-    color: #2e2d2d;
-}
-
-#Hash-History-list tr td { 
-    font-weight: bolder;
-    font-weight: normal !important;
-    width: 150px;
-    margin-left: 0% !important;
-    margin-top: 10px;
-     width: 26.4%;
-     font-size: 20px;
-    height: 70px;
-    color: #2e2d2d;
->>>>>>> 1d9187b95ac1dc81c94eb41e15ef5db20a9fff1c
-}
-
 #Hash-History-list .remain {
     width: 180px; margin: 0px auto;
     border: thin solid ;
@@ -2527,15 +2454,9 @@ form.contact-page p:nth-of-type(1) {
     .circle-container {
         flex-flow: column wrap;
         margin-top: -40px !important;
-<<<<<<< HEAD
         margin-left: 10% !important;
         width: 90%;
         margin-bottom: 40px
-=======
-        margin-left:  10%!important;
-        margin-bottom: 40px;
-        width: auto
->>>>>>> 1d9187b95ac1dc81c94eb41e15ef5db20a9fff1c
     }
     #dashboard-page-circle {
         width: 300px !important;
@@ -2543,22 +2464,16 @@ form.contact-page p:nth-of-type(1) {
         display: block;
         height: 300px !important;
         margin-left: 3% !important;
-<<<<<<< HEAD
         border: 20px solid #ff9100;
-=======
->>>>>>> 1d9187b95ac1dc81c94eb41e15ef5db20a9fff1c
         border-radius: 50%;
     }
     #dashboard-page-circle2 {
         width: 300px !important;
         height: 300px !important;
         display: block;
-<<<<<<< HEAD
         /* height: 350px !important; */
         border: 20px solid #ff9100;
         margin-left: 6% !important;
-=======
->>>>>>> 1d9187b95ac1dc81c94eb41e15ef5db20a9fff1c
         border-radius: 50%;
         margin-top: 4% !important;
     }
@@ -2647,7 +2562,6 @@ form.contact-page p:nth-of-type(1) {
     /* ==============================================Buy hash power=================================== */
    
     #referralCode {
-<<<<<<< HEAD
         width: 200px !important
     }
     .aplybtn {
@@ -2658,21 +2572,6 @@ form.contact-page p:nth-of-type(1) {
         display: block;
     }
     
-=======
-        width: 180px !important;
-    }
-
-    .aplybtn1text {
-        display: block !important
-    }
-
-   .aplybtn {
-       margin-left: 220px;
-       display: inline !important;
-       margin-top: -60px !important;
-
-   }
->>>>>>> 1d9187b95ac1dc81c94eb41e15ef5db20a9fff1c
     /*============================================== Mining History ===================================*/
 
     canvas#chart1 {
@@ -2911,11 +2810,7 @@ form.contact-page p:nth-of-type(1) {
     /* ==============================================Buy hash power=================================== */
 
     #referralCode {
-<<<<<<< HEAD
         width: 155px !important
-=======
-        width: 145px !important
->>>>>>> 1d9187b95ac1dc81c94eb41e15ef5db20a9fff1c
     }
     .btn-primary {
         padding: 0.1em .5em !important;

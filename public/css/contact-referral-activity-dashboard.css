@@ -519,7 +519,7 @@ form.contact-page p:nth-of-type(1) {
 #referral {color: orange !important}
 
 #referral-page {
-    margin-top: 200px;
+    margin-top: 100px;
     margin-left: 27.5%;
     width: 70%;
     z-index: 999
@@ -583,6 +583,7 @@ form.contact-page p:nth-of-type(1) {
      display: flex;
      flex-flow: row wrap;
      float: left;
+     margin-bottom: 30px
  }
 
  .referral-page_secondList_column
@@ -694,6 +695,7 @@ form.contact-page p:nth-of-type(1) {
     #referral-page {
         margin-left: 0%;
         width: 100%;
+        margin-top: 50px;
     }
 
     #referral-page q  {
@@ -769,7 +771,7 @@ form.contact-page p:nth-of-type(1) {
     /* Referral */
 
     #referral-page {
-        margin-top: 100px;
+        margin-top: 10px;
         margin-left: 0%;
         width: 100%;
     }
@@ -1677,8 +1679,15 @@ form.contact-page p:nth-of-type(1) {
         left: -22px;
         top: 0px
     }
-   
-    #activity-page .Transactions {
+    .activity-container h2 {
+        margin-left: 0 !important;
+        font-size: 20px !important
+    }
+
+    .activity-container q {
+        margin-left: 75px !important
+    }
+    .Transactions {
         width: 310px !important
     }
     #Transactions-list
@@ -1751,6 +1760,7 @@ form.contact-page p:nth-of-type(1) {
     width: 100%;
     flex-flow: row wrap;
     margin : auto;
+    padding-bottom: 5%
 }
 #dashboard-page-circle {
     width: 400px !important; 
@@ -1875,8 +1885,8 @@ form.contact-page p:nth-of-type(1) {
     max-height: 350px !important;
     margin-left: 7% !important;
 }
-.Hash-History table {
-    height: 150px !important
+.Hash-History table thead tr {
+    height: 150px !important;
 }
 #Hash-History-list .remain {
     width: 180px; margin: 0px auto;
@@ -2080,6 +2090,14 @@ form.contact-page p:nth-of-type(1) {
 
     .dashboard-hr {
         flex: 2
+    }
+
+    .hash {
+        padding-left: 3% !important
+    }
+
+    .min {
+        padding-left: 1% !important
     }
    /*  
 @media screen and (min-width:1840px) {
@@ -2385,10 +2403,12 @@ form.contact-page p:nth-of-type(1) {
         font-family: sans-serif
     }
     /* ==================================================HASH History============================== */
-    .dashboard-title {
-        font-size: 14px !important;
+    .title-flex .dashboard-title {
+        font-size: 19px !important;
     }
-
+    .title-flex .dashboard-hr {
+        flex: 1.5
+    }
     #Hash-History-list
     {
         margin-top: 30px;
@@ -2650,6 +2670,13 @@ form.contact-page p:nth-of-type(1) {
     .title-flex .dashboard-hr {
         flex: 0.7
     }
+
+    .hash {
+        padding-left: 5% !important
+    }
+    .min {
+        padding-left: 3% !important
+    }
     #Hash-History-list
     {
         margin-top: 30px;
@@ -2721,7 +2748,7 @@ form.contact-page p:nth-of-type(1) {
      /* ======================================Circle=========================================== */
 
      .circle-container {
-         margin-left: 2% !important
+         margin-left: 0% !important
      }
      #dashboard-page-circle , #dashboard-page-circle2 {
         display: block;

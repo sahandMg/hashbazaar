@@ -45,7 +45,7 @@
             <div class="title-flex">
             
                     <hr class="dashboard-hr"/>
-                    <h1 class="dashboard-title">Hash History</h1>
+                    <h1 class="dashboard-title hash">Hash History</h1>
                     <hr class="dashboard-hr"/>
             
             </div> 
@@ -54,7 +54,7 @@
                     <table class="table custom-table" style="color: black;">
                             @if(!$hashes->isEmpty())
                           <thead>
-                            <tr style="height:70px !important">
+                            <tr style="height:70px !important;font-weight:bold">
                                 <th>Hash Power</th>
                                 <th>Started at</th>
                                 <th>Ends at</th>
@@ -159,7 +159,7 @@
             <div class="title-flex">
 
                 <hr class="dashboard-hr" >
-                <h3 class="dashboard-title">Mining History</h3>
+                <h3 class="dashboard-title min">Mining History</h3>
                 <hr class="dashboard-hr" >
 
             </div> 

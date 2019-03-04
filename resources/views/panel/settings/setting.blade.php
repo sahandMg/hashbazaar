@@ -24,18 +24,18 @@
     <div class="setting-information">
         <form action="{{route('setting')}}" method="post">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
-            <!-- <q>User Information </q>  -->
-            <!-- <br/> -->
+             <q>User Information </q>  
+             <br/> -
             <p id="textbefore">Name</p>
             <input type="text" name="text" id="text" value="{{Auth::guard('user')->user()->name}}" disabled="disabled"> 
-            <!-- <br> -->
+             <br> 
             <p id="textbefore">Email</p>
 
             <input type="email" name="email" id="email" value="{{Auth::guard('user')->user()->email}}" disabled="disabled"/> 
-            <!-- <br> <br> <br> -->
+             <br> <br> <br> 
 
             <q>Password</q> 
-            <!-- <br> -->
+            <br> 
             <p id="textbefore">Current Password</p>
 
             <input type="password" name="pass" id="cur-password" placeholder="Current Password"> <br>
@@ -100,7 +100,7 @@
                         <input type="text" placeholder="SDKnsdakndnj12n1k1lkmdsalm"><br>
                         <input type="submit" class="pandel-button a4" value="Submit" >
                     </form>
-                </div>
+            </div>
 
         </div><!-- address -->
          

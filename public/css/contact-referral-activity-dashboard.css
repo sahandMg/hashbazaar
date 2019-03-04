@@ -1892,6 +1892,9 @@ form.contact-page p:nth-of-type(1) {
 
 .Hash-History {
     max-height: 350px !important;
+<<<<<<< HEAD
+    margin-left: 7% !important;
+=======
     margin-left: 7%
 }
 
@@ -1945,6 +1948,7 @@ form.contact-page p:nth-of-type(1) {
      font-size: 20px;
     height: 70px;
     color: #2e2d2d;
+>>>>>>> 1d9187b95ac1dc81c94eb41e15ef5db20a9fff1c
 }
 
 #Hash-History-list .remain {
@@ -2523,9 +2527,15 @@ form.contact-page p:nth-of-type(1) {
     .circle-container {
         flex-flow: column wrap;
         margin-top: -40px !important;
+<<<<<<< HEAD
+        margin-left: 10% !important;
+        width: 90%;
+        margin-bottom: 40px
+=======
         margin-left:  10%!important;
         margin-bottom: 40px;
         width: auto
+>>>>>>> 1d9187b95ac1dc81c94eb41e15ef5db20a9fff1c
     }
     #dashboard-page-circle {
         width: 300px !important;
@@ -2533,12 +2543,22 @@ form.contact-page p:nth-of-type(1) {
         display: block;
         height: 300px !important;
         margin-left: 3% !important;
+<<<<<<< HEAD
+        border: 20px solid #ff9100;
+=======
+>>>>>>> 1d9187b95ac1dc81c94eb41e15ef5db20a9fff1c
         border-radius: 50%;
     }
     #dashboard-page-circle2 {
         width: 300px !important;
         height: 300px !important;
         display: block;
+<<<<<<< HEAD
+        /* height: 350px !important; */
+        border: 20px solid #ff9100;
+        margin-left: 6% !important;
+=======
+>>>>>>> 1d9187b95ac1dc81c94eb41e15ef5db20a9fff1c
         border-radius: 50%;
         margin-top: 4% !important;
     }
@@ -2627,6 +2647,18 @@ form.contact-page p:nth-of-type(1) {
     /* ==============================================Buy hash power=================================== */
    
     #referralCode {
+<<<<<<< HEAD
+        width: 200px !important
+    }
+    .aplybtn {
+        margin-left: 70% !important;
+        margin-top: -60px !important
+    }
+    .rfrcode {
+        display: block;
+    }
+    
+=======
         width: 180px !important;
     }
 
@@ -2640,6 +2672,7 @@ form.contact-page p:nth-of-type(1) {
        margin-top: -60px !important;
 
    }
+>>>>>>> 1d9187b95ac1dc81c94eb41e15ef5db20a9fff1c
     /*============================================== Mining History ===================================*/
 
     canvas#chart1 {
@@ -2779,6 +2812,10 @@ form.contact-page p:nth-of-type(1) {
 @media screen and (max-width: 320px) {
 
      /* ======================================Circle=========================================== */
+
+     .circle-container {
+         margin-left: 2% !important
+     }
      #dashboard-page-circle , #dashboard-page-circle2 {
         display: block;
         border: 20px solid #ff9100;
@@ -2874,7 +2911,11 @@ form.contact-page p:nth-of-type(1) {
     /* ==============================================Buy hash power=================================== */
 
     #referralCode {
+<<<<<<< HEAD
+        width: 155px !important
+=======
         width: 145px !important
+>>>>>>> 1d9187b95ac1dc81c94eb41e15ef5db20a9fff1c
     }
     .btn-primary {
         padding: 0.1em .5em !important;

@@ -51,6 +51,50 @@
             </div> 
 
             <div class="Hash-History">
+<<<<<<< HEAD
+                    <table class="table custom-table" style="color: black;">
+                            @if(!$hashes->isEmpty())
+                          <thead>
+                            <tr style="height:70px !important">
+                                <th>Hash Power</th>
+                                <th>Started at</th>
+                                <th>Ends at</th>
+                                <th>Remain</th>
+                             </tr>
+                           </thead>
+                           <tbody >
+                            <tr style="height:80px !important">
+                                <td>
+                                    @foreach($hashes as $hash)
+                                        <span>{{$hash->hash}}TH/S</span>
+                                    @endforeach         
+                                </td>
+                                <td>
+                                    @foreach($hashes as $hash)
+                                       <span>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}}    </span> 
+                                        @endforeach
+                                </td>
+                                <td> 
+                                        @foreach($hashes as $hash)
+                                        <span>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}   </span>
+                                        @endforeach
+                                </td>
+            
+                                <td>
+                                    @foreach($hashes as $key => $hash)
+                                            <div class="remain">
+                                                <div class="progress1">
+                                                    <div class="progress-bar1" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%;width: {{$remainedLife[$key]}}%;">
+                                                        <span class="title">{{$remainedLife[$key]}}%</span>
+            
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                      @endforeach    
+                                </td>
+                            </tr>
+                           </tbody> 
+=======
 
 
                 <table id="Hash-History-list">
@@ -112,6 +156,7 @@
                             {{--</tr>--}}
                            {{--</tbody> --}}
 
+>>>>>>> 1d9187b95ac1dc81c94eb41e15ef5db20a9fff1c
                             
                         </th>
 
@@ -195,7 +240,11 @@
                     {{-- <form style="padding: 20px;" method="POST" action="{{route('dashboard')}}"> --}}
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
 
+<<<<<<< HEAD
+                       <input id='referralCode' type="text" name="referralCode" style="margin-top:5px" class="aplybtn1text">
+=======
                        <input id='referralCode' type="text" name="referralCode" class="aplybtn1text" style="margin-top:5px" >
+>>>>>>> 1d9187b95ac1dc81c94eb41e15ef5db20a9fff1c
                        <input id='hiddenCodeValue' type="hidden" name="code" style="margin-top:5px" >
 
                           <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> Apply </button>

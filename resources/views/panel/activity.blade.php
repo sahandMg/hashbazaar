@@ -22,7 +22,7 @@ foreach ($hashes as $key=> $hash){
         <table class="table custom-table" style="color: black;">
                 @if(!$hashes->isEmpty())
               <thead>
-                <tr>
+                <tr  style="height:70px !important">
                     <th>Hash Power</th>
                     <th>Started at</th>
                     <th>Ends at</th>

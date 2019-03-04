@@ -78,38 +78,45 @@
 
 
     
-        <div class="make-wallet">
+ <div class="make-wallet">
 
-                <p id="make-wallet-title">Current Bitcoin Wallet Address</p>
+        <div class="title-flex2">
+                <hr class="dashboard-hr2"/>
+                <h1 class="dashboard-title2">Current Bitcoin Wallet Address</h1>
+                <hr class="dashboard-hr2"/>
+        </div> 
 
+        
+        <div class="address">
 
-                <div class="address">
+            <div class="address-img"><img  src="../img/SampleQR.svg" alt=""></div>
 
-                    <div class="address-img"><img  src="../img/SampleQR.svg" alt=""></div>
+            <div class="address-box">
+                <input type="text" placeholder="SDKnsdakndnj12n1k1lkmdsalm">
 
-                    <div class="address-box">
-                            <input type="text" placeholder="SDKnsdakndnj12n1k1lkmdsalm">
+                <a href="mail-icon"><img class="icon" src="../img/Mail.svg" alt=""></a>
+                <a href="link-icon"><img class="icon" src="../img/Link.svg" alt=""></a>
+                <a href="copy-icon"><img class="icon" src="../img/Copy.svg" alt=""></a>
+            </div>
 
-                         <a href="mail-icon"><img class="icon" src="../img/Mail.svg" alt=""></a>
-                        <a href="link-icon"><img class="icon" src="../img/Link.svg" alt=""></a>
-                         <a href="copy-icon"><img class="icon" src="../img/Copy.svg" alt=""></a>
-                    </div>
-
-                    <div class="change-address">
-
-                        <form action="">
+            <div class="change-address">
+                    
+        
+                    <form action="">
                         <input type="text" placeholder="SDKnsdakndnj12n1k1lkmdsalm"><br>
+                        <input type="submit" class="pandel-button a4" value="Submit" >
+                    </form>
+                </div>
 
-                        <input type="submit" class="pandel-button" value="Submit" >
-                        </form>
-                    </div>
+        </div><!-- address -->
+         
+        <div class="title-flex2 a3">
+                <hr class="dashboard-hr2"/>
+                <h1 class="dashboard-title2">Need To Change Your Address ?</h1>
+                <hr class="dashboard-hr2"/>
+        </div> 
 
-
-
-                </div><!-- address -->
-
-                <p id="make-wallet-title2">Need To Change Your Address ?</p>
-    </div>
+ </div>
 </div>
 
 <script>

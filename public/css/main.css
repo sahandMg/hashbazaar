@@ -6,10 +6,8 @@
     width: 100%;
     height: 500px;
     left: 0;
-    /* border: 2px solid red; */
     border-bottom: transparent;
     cursor: unset;
-    /* background-color: black !important; */
     z-index: 999;
 }
 .useraccount .list1 {
@@ -72,7 +70,6 @@
 #logouticon a {
     text-decoration: none;
     color: orange;
-
 }
 #logouticon:hover {
     height:100% !important;
@@ -170,10 +167,11 @@ header {
 }
 
 .Logo_header {
-    width: 700px;
+    width: auto;
     height: 90px;
     position: fixed;
-    left: -120px;
+    left: 20px;
+    top: 10px;
     z-index: 2000;
 }
 
@@ -201,11 +199,11 @@ header {
 }
 
 .Logo_In_NavBar {
-    width: 250px;
-    height: 400px;
+    width: auto;
+    height: 50px;
     left: 50px;
     position: absolute;
-    top: -170px
+    top: 0px
 }
 
 div ul .navbar #welcome {
@@ -339,7 +337,6 @@ color: orange !important}
     top: 8px
 }
 
-
 .pandel-button {
     text-align: center;
     white-space: nowrap;
@@ -419,12 +416,11 @@ color: orange !important}
 .flex-item.two {
     border-left: 2px solid black !important
 }
-
  
 /* ------------setting-information---------- */
 .setting-information  {
     margin-top: 10%;
-    display: block ;
+    display: none ;
 }
 
 .setting-information q:nth-of-type(1) {
@@ -604,49 +600,32 @@ color: orange !important}
 /* ----------Make Wallet----------- */
 
 .make-wallet {
-    display: none;
-}
-#make-wallet-title {
-    font-size: 30px;
-    color: #2e2d2d;
-    position: relative;
-    top: 90px;
-    margin-left: 28%;
-    font-weight: bolder;
-    font-family: sans-serif;
+    display: block;
+    margin-bottom: 250px !important
 }
 
 .address {
     width: 000px;
     height: 0px;
-    margin-top: 100px;
+    margin-top: 00px;
 }
 
 .address .address-img {
     width: 170px;
     height: 170px;
     position: relative;
-    top: 50px;
+    top: 0px;
     left: 100px
 }
 
 .address .address-box .icon {
     width: 25px;
     height: 25px;
+    margin-top: -150px;
     padding: 5px;
 }
 .address .address-box {
     float: left;
-}
-.address .address-box div {
-    float: left;
-    border: 4px solid silver;
-    border-radius: 50%;
-    margin-left: 20px;
-    position: relative;
-    top: 2px;
-    height: 40px;
-    left: 250px;
 }
 
 .address-box {
@@ -656,7 +635,7 @@ color: orange !important}
 
 .address-box input {
     position: relative;
-    top: -50px;
+    top: -130px;
     width: 380px;
     height: 30px;
     left: 170px;
@@ -665,44 +644,28 @@ color: orange !important}
     background-color: #FFFDE8
 }
 
-.address-box input::placeholder {
+.address-box input::placeholder ,
+.change-address input::placeholder {
     text-align: center;
     font-size: 22px
 }
 
 .change-address {
     position: relative;
-    top: 270px;
+    margin-top: 150px;
     margin-left: 400px;
 }
 
-.change-address input {
-    background-color: #FFFDE8
-}
-
-.change-address input {
+.change-address input:nth-of-type(1) {
     width: 380px;
     height: 30px;
-    left: -100px;
+    background-color: #FFFDE8;
+    left: -120px;
     position: relative;
-    top: 00px;
+    top: 00px !important;
     border: 1px solid transparent;
-    border-bottom: 1px solid silver
-}
-
-.change-address input::placeholder {
-    text-align: center;
-    font-size: 22px
-}
-
-#make-wallet-title2 {
-    font-size: 30px;
-    color: #2e2d2d;
-    position: relative;
-    top: 290px;
-    margin-left: 27%;
-    font-weight: bolder;
-    font-family: sans-serif;
+    border-bottom: 1px solid silver;
+    margin-bottom: 50px
 }
 
 .address-box a {
@@ -710,49 +673,37 @@ color: orange !important}
     margin-left: 25px;
     position: relative;
 }
-
-.make-wallet input#makewalletsubmit {
-    width: 120px !important;
-    height: 60px !important;
-    background-color:#15BEA4 !important;
-    font-size: 20px !important;
-    border-radius: 8% !important;
-    color: white;
-    font-family: sans-serif;
-    position: absolute;
-    left:50px;
-    top: 80px;
+.a3 {
+    margin-top: 230px !important
 }
+/* ------------------------ ---------------title flex ------------------------------------ */
 
-/* ------------------------ */
-
-#setting-hr-footer {
-    width: 99.8%;
-    display: block;
-}
-#makewallet-footer-div {
+.title-flex2
+{
     width: 100%;
-    margin-left: 0%;
-    margin-top: 50%
-}
-#footer-div {
-    width: 100%;
-    margin-left: 0%;
-    margin-top: 36% !important
-}
-
-.setting-footer-paragraph {
-    font-size: 20px;
-    font-family: sans-serif;
-    top: -60px;
-    margin-left: 30%
+    display: flex !;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+    margin-top: 11%;
+    z-index: 111111111
 }
 
-#setting-footer-image {
-    width: 200px;
-    height: 60px;
-    margin-left: 2% !important
-}
+.title-flex2 .dashboard-title2 {
+     margin-left: 1.5em !important;
+     font-size: 20px !important;
+     font-weight: bolder;
+     color: #2e2d2d;
+     flex: 3;
+     width: auto;
+ }
+ .dashboard-hr2 {
+     flex: 2 !important
+ }
+
+ .dashboard-hr2 {
+     flex: 2 !important
+ }
 
 
 /*  - Media - 1024 */
@@ -779,7 +730,6 @@ color: orange !important}
         left: 30px;
         position: absolute;
         top: -160px;
-
     }
 
     div ul .navbar #welcome {
@@ -873,12 +823,11 @@ color: orange !important}
     }
     
     /* Make wallet */
-    
-    #make-wallet-title {
-        margin-left: 17%;
-        left: 0
+    .title-flex2 .dashboard-title2 {
+        font-size: 15px !important;
+        margin-top: 10px
     }
-    
+   
     .address .address-img {
         width: 140px;
         height: 140px;
@@ -903,14 +852,14 @@ color: orange !important}
     }
 
     .change-address {
-        top: 270px;
+        top: 20px;
         width: 300px;
-        margin-left: 300px;
+        margin-left: 230px;
     }
 
-    .change-address input {
+    .change-address input:nth-of-type(1) {
         width: 300px;
-        left: -100px;
+        left: -10px;
         top: -50px;
     }
 
@@ -918,34 +867,7 @@ color: orange !important}
         font-size: 18px
     }
 
-    #make-wallet-title2 {
-        margin-left: 17%;
-    }
-
-    .make-wallet input#makewalletsubmit {
-        left:0px;
-    }
-    #makewallet-footer-div {
-        margin-top: 630px;
-        margin-left: 0%
-    }
-
-    /* Footer */
-
-    #setting-hr-footer
-    {
-        width: 100%;
-        /* top:980px */;
-    }
-
-    #footer-div {
-        margin-left:0%;
-        margin-top: 40% !important
-    }
-
 }
-
-
 /*  - Media - 768 */
 @media screen and (max-width:768px) {
     /* user account list */
@@ -962,9 +884,7 @@ color: orange !important}
         .useraccount .list1 {
             height:337px !important;
         }
-        /* .useraccount {
-            margin-left:83% !important;
-        } */
+       
         /* Bar */
         .navigation-menu {
             background: transparent;
@@ -1080,9 +1000,9 @@ color: orange !important}
         z-index: 2;
     }
     .Logo_header {
-        width: 400px;
+        width: auto;
         left: 30px !important;
-        margin-top: 15px
+        margin-top: 10px
     }
     .container1 {
         display: none;
@@ -1169,23 +1089,18 @@ color: orange !important}
         margin-left: 0% !important;
     }
 
-
     /* ------------setting-information---------- */
     .setting-information  {
         margin-left: 0%;
         width: 100%;
-    }
-        
-    .make-wallet input#makewalletsubmit {
-        top: 60px;
     }
 
     form {
         border-bottom: 2px solid transparent
     }
 
-      /* Wallet */
-      .wallet1 p {
+    /* Wallet */
+    .wallet1 p {
         margin: 5% 24%;
     }
     
@@ -1201,37 +1116,9 @@ color: orange !important}
         width: 350px;
         margin-left: 25%;
     }
-    /* Footer */
 
-    .hr-footer {
-        top: 800px
-    }
-    #makewallet-footer-div {
-    margin-top: 530px;
-        
-    }
-
-    #setting-wallet #textwallet {
-        width: 300px !important; 
-        margin-left: 32%
-    }
-
-    #footer-div {
-        top:960px;
-        width: 96%;
-        margin-left: 0% !important;
-        left: 0 !important;
-        margin-top:60px;
-    }
-    .footer-paragraph {
-        font-size: 18px;
-        top: -60px;
-        left: 230px
-
-    }
-
-    #footer-image {
-        left: 0%;
+    .dashboard-title2 {
+        font-size: 14px !important;
     }
 
     .useraccount .list1 {
@@ -1239,21 +1126,16 @@ color: orange !important}
         display: none;
     }
 }
-
-
 /*  - Media - 414 */
 @media screen and (max-width: 414px) {
     /* --------user account list */
     .useraccount .list1 {
-        /* height: 267px !important; */
         margin-left: -86% !important;
-        /* top: 80px; */
         width: 103% !important;
         margin-top: 80px
     }
     .useraccount .list1 ul li a {
         margin-left:200px !important;
-        /* width: 103% !important */
     }
     .useraccount {
         margin-left:76% !important;
@@ -1278,10 +1160,10 @@ color: orange !important}
     #header-div {height:80px}
 
     .Logo_header {
-        width: 200px ;
-        height: 80px;
+        width: auto ;
+        height: 40px;
         left: 30px !important;
-        margin-top: 0px;
+        margin-top: 20px;
         position: absolute;
         top: 5px
     }
@@ -1367,9 +1249,6 @@ color: orange !important}
     #logouticon {
         margin-left: 0px
     }
-    .hr-footer {
-        top: 800px
-    }
 
     /* Setting Page */
 
@@ -1442,7 +1321,6 @@ color: orange !important}
     .setting-information input::placeholder { font-size: 15px};
     .setting-information input::-ms-value { font-size: 13px};
 
-
      /* Wallet */
      .wallet1 p {
         font-size: 15px;
@@ -1473,17 +1351,14 @@ color: orange !important}
         line-height: 1.3;
         border-radius: 30px;
         margin-top: 15%;
-
     }
     
     /* ----------Make Wallet----------- */
-
-    .make-wallet {
-        display: none
+    .title-flex2 .dashboard-title2 {
+        font-size: 8px !important ;
     }
-    #make-wallet-title {
-        font-size:20px;
-        margin-left: 15%;
+    .make-wallet {
+        display: block
     }
 
     .address .address-img {
@@ -1492,15 +1367,22 @@ color: orange !important}
         left: 10px
     }
 
-
     .address-box {
         position: relative;
         left: 40px;
+        top: 0;
     }
 
+    .address-box a {
+        left: 100px;
+        margin-left: 25px;
+        top: -30px !important;
+        position: relative;
+    }
     .address-box input {
         width: 200px;
         left: 100px;
+        margin-top: 40px;
     }
 
     .address-box input::placeholder {
@@ -1509,73 +1391,33 @@ color: orange !important}
     }
 
     .change-address {
-        top: 170px;
-        margin-left: 100px;
+        top: 30px;
+        margin-left: 50px;
+        margin-top: 0px
     }
 
-    .change-address input {
+    .change-address input:nth-of-type(1) {
         width:200px;
-        left: 00px;
-        top: -70px;
+        left: 50px;
+        top: 20px !important;
     }
 
     .change-address input::placeholder {
         font-size:13px
     }
-
-    #make-wallet-title2 {
-        font-size: 18px;
-        top: 190px;
-        margin-left: 17%;
+    .a3 {
+        margin-top: 50px !important
     }
-
-
-    .make-wallet input#makewalletsubmit {
-        width: 100px !important;
-        height: 40px !important;
-        left:50px;
-        top: 60px;
-    }
-
-
-/* Footer */
-    #makewallet-footer-div {
-        margin-top: 200px
-
-    }
-    #footer-div {
-        width: 96% !important;
-        margin-left: 0%;
-        display: block;
-        margin-top: 100px !important
-    }
-
-    #setting-footer-image {
-        width: 145px;
-        height: 40px;
-        padding: 10px
-    }
-
-    .setting-footer-paragraph {
-        font-size: 13px;
-        font-family: sans-serif;
-        top: 0px;
-        width: 280px;
-        margin-left: 20%
-    }
-
 }
-
-
 /*  - Media - 375 */
 @media screen and (max-width: 375px) {
     .Logo_header {
-        width: 200px !important;
-        height: 90px;
+        width: auto !important;
+        height: 35px;
         position: absolute;
         left: 30px !important;
-        margin-top: 0px;
-        top: 0px
+        margin-top: 20px;
+        top: 5px
     }
     .navigation-menu {
         display: block;
@@ -1653,10 +1495,6 @@ color: orange !important}
     #logouticon a:before {
         left:-40px
     }
-    #setting-hr-footer {
-        width: 100%;
-        display: block;
-    }
 
     /* Wallet */
     .wallet1 p {
@@ -1693,40 +1531,24 @@ color: orange !important}
 
     }
     /* make-wallet */
-    .make-wallet input#makewalletsubmit {
-        left:50px;
-        top: 60px;
-    }
-    #makewallet-footer-div {
-        margin-top: 500px
 
-    }
-    #footer-div {
-        margin-top: 100px
+    .title-flex2 .dashboard-title2 {
+        font-size: 7px !important;
     }
 
-    #setting-footer-image {
-        width: 125px;
-        height: 50px;
+    .change-address input:nth-of-type(1) {
+        left: 40px
     }
-
-    .setting-footer-paragraph {
-        font-size: 13px;
-        font-family: sans-serif;
-        top: 0px;
-        width: 280px;
-        margin-left: 20%
-    }
+  
 }
-
 /*  - Media - 320 */
 @media screen and (max-width:320px) {
     .Logo_header {
-        width: 180px !important;
-        height: 80px;
+        width: auto !important;
+        height: 40px;
         position: absolute;
         left: 10px;
-        margin-top: 0px;
+        margin-top: 20px;
         top: 5px
     }
             
@@ -1770,7 +1592,6 @@ color: orange !important}
         top: 0px
     }
 
-
     #referral:before {
         content: "";
         background-image: url("img/Referral.svg");
@@ -1803,7 +1624,6 @@ color: orange !important}
         left: -22px;
         top: 0px
     }
-
     
   /* Wallet */
     .wallet1 p {
@@ -1841,23 +1661,20 @@ color: orange !important}
 
     }
     /* ----------Make Wallet----------- */
+    .title-flex2 .dashboard-title2 {
+        font-size: 6px !important;
+    }
 
     .make-wallet {
-        display: none
-    }
-    #make-wallet-title {
-        font-size:15px;
-        margin-left: 12%;
+        display: block
     }
 
     .address .address-img {
         width: 100px;
         height: 100px;
-        left: 100px;
-        top: 20px;
-
+        left: 110px;
+        top: 00px;
     }
-
 
     .address-box {
         position: relative;
@@ -1873,57 +1690,28 @@ color: orange !important}
     .address-box input::placeholder {
         font-size: 12px
     }
-
-    .change-address {
-        top: 200px;
-        margin-left:60px;
+        
+    .address-box a {
+        left: 30px;
+        margin-left: 25px;
+        position: relative;
     }
 
-    .change-address input {
+    .change-address input:nth-of-type(1) {
         width:200px;
         top: -70px;
+        left: 10px
     }
 
     .change-address input::placeholder {
         font-size:12px
     }
 
-    #make-wallet-title2 {
-        font-size: 13px;
-        top: 230px;
-        margin-left: 17%;
+    .a4 {
+        margin-left: 40px !important;
+        margin-top: 1% !important
     }
-
-    .make-wallet input#makewalletsubmit {
-        left:50px;
-        top: 60px;
-    }
-    #makewallet-footer-div {
-        width: 100%;
-        margin-left: 0%;
-        margin-top:600px
-    }
-        
-    #footer-div {
-        width: 100%;
-        margin-left: 0%;
-        margin-top: 100px
-
-    }
-
-
-    #setting-footer-image {
-        width: 100px;
-        height: 40px;
-    }
-
-    .setting-footer-paragraph {
-        font-size: 12px;
-        font-family: sans-serif;
-        top: 0px;
-        width: 280px;
-        margin-left: 13%
-    }
+  
 
 }
 

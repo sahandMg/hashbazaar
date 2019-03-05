@@ -82,7 +82,7 @@
 
         <div class="title-flex2">
                 <hr class="dashboard-hr2"/>
-                <h1 class="dashboard-title2">Current Bitcoin Wallet Address</h1>
+                <h2 class="dashboard-title2">Current Bitcoin Wallet Address</h2>
                 <hr class="dashboard-hr2"/>
         </div> 
 
@@ -94,9 +94,17 @@
             <div class="address-box">
                 <input type="text" placeholder="SDKnsdakndnj12n1k1lkmdsalm">
 
+<<<<<<< HEAD
+                <div class="div-icons-flex">
+                    <a href="mail-icon"><img class="icon" src="../img/Mail.svg" alt=""></a>
+                    <a href="link-icon"><img class="icon" src="../img/Link.svg" alt=""></a>
+                    <a href="copy-icon"><img class="icon" src="../img/Copy.svg" alt=""></a>
+                </div>
+=======
                 <a><img class="icon" src="../img/Mail.svg" alt=""></a>
                 <a><img class="icon" src="../img/Link.svg" alt=""></a>
                 <a class="coppyIcon" style="cursor: pointer;"><img class="icon" src="../img/Copy.svg" alt=""></a>
+>>>>>>> 8b1ab6973fe5feb23fb9ccb8292175e9ae90b28f
             </div>
 
             <div class="change-address">
@@ -112,7 +120,7 @@
          
         <div class="title-flex2 a3">
                 <hr class="dashboard-hr2"/>
-                <h1 class="dashboard-title2">Need To Change Your Address ?</h1>
+                <h2 class="dashboard-title2">Need To Change Your Address ?</h2>
                 <hr class="dashboard-hr2"/>
         </div> 
 
@@ -209,15 +217,15 @@ function copyToClipboard(elem) {
 
 
 
-        $('#clickhear').click(function(){
-            $('.setting-information').hide();
-            $('.wallet1').hide();
-            $('.make-wallet').show()
+        // $('#clickhear').click(function(){
+        //     $('.setting-information').hide();
+        //     $('.wallet1').hide();
+        //     $('.make-wallet').show()
 
-            $('.two a').css('color','orange');
-            $('.one a').css('color','#2e2d2d');
+        //     $('.two a').css('color','orange');
+        //     $('.one a').css('color','#2e2d2d');
 
-        })
+        // })
     })
 
 </script>

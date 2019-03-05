@@ -1810,13 +1810,12 @@ form.contact-page p:nth-of-type(1) {
 
 #circle-span {
     font-size: 27px;
-    /* text-align: center !important;
-    justify-content: center;
-    justify-items: center; */
-    font-family: sans-serif;
+    text-align: center !important;
+    font-family: sans-serif !important;
     color: #727272;
-    position: absolute;
-    margin-top: 5%;
+    /* position: absolute; */
+    margin: auto !important;
+    margin-top: 20% !important;
     font-weight: bolder;
     display: block !important;
     /* margin-left: 7.5% */
@@ -1826,7 +1825,7 @@ form.contact-page p:nth-of-type(1) {
     font-size: 33px;
     text-align: center;
     color: rgb(41, 37, 37);
-    margin-top: 37% !important;
+    margin-top: 7% !important;
     font-weight: bolder;
     font-family: sans-serif;
     padding:0 !important;
@@ -1845,7 +1844,7 @@ form.contact-page p:nth-of-type(1) {
     font-size: 33px;
     text-align: center;
     color: rgb(41, 37, 37);
-    margin-top: 37%;
+    margin-top: 7%;
     font-weight: bolder;
     padding:0 !important;
     font-family: sans-serif
@@ -2175,8 +2174,7 @@ form.contact-page p:nth-of-type(1) {
     }
 
     #circle-span {
-        margin-left: 5% !important;
-        margin-top: 3% !important
+        margin-top:19% !important
     }
 
   
@@ -2212,25 +2210,18 @@ form.contact-page p:nth-of-type(1) {
     }
     #circle-span {
         font-size: 20px !important;
-        margin-top: 50px !important;
-        margin-left: 6% !important
     }
     #dashboard-page-circle p {
         font-size: 22px !important;
-        margin-top: 40%;
     }
 
     #dashboard-page-circle p:nth-of-type(1) , #dashboard-page-circle2 p:nth-of-type(1) {
         font-size: 22px !important;
-        margin-top: 42% !important;
     }
     #dashboard-page-circle p:nth-of-type(2) , #dashboard-page-circle2 p:nth-of-type(2){
         font-size: 22px !important;
     }
-    #dashboard-page-circle2 p {
-        font-size: 22px !important;
-        margin-top: 40%;
-    }
+   
     #dashboard-page-circle  hr , #dashboard-page-circle2  hr {
         margin-top: -12% !important
     }
@@ -2369,16 +2360,12 @@ form.contact-page p:nth-of-type(1) {
         text-align: center;
         font-family: sans-serif;
         color: #727272;
-        margin-top: 5% !important;
-        font-weight: bolder;
-        margin-left: 9% !important;
     }
 
     #dashboard-page-circle p {
         font-size: 45px;
         text-align: center;
         color: rgb(41, 37, 37);
-        margin-top: 30% !important;
         font-weight: bolder;
         font-family: sans-serif
     }
@@ -2389,7 +2376,6 @@ form.contact-page p:nth-of-type(1) {
         font-size: 45px;
         text-align: center;
         color: rgb(41, 37, 37);
-        margin-top: 30% !important;
         font-weight: bolder;
         font-family: sans-serif
     }
@@ -2492,17 +2478,13 @@ form.contact-page p:nth-of-type(1) {
     }
     #circle-span {
         font-size: 22px !important;
-        margin-top: 13% !important;
-        margin-left: 15% !important;
     }
 
     #dashboard-page-circle p {
         font-size: 20px !important;
-        margin-top: 35% !important;
     }
     #dashboard-page-circle2 p {
         font-size: 20px !important;
-        margin-top: 35% !important;
     }
 
     #dashboard-page-circle hr , #dashboard-page-circle2 hr {
@@ -2633,16 +2615,13 @@ form.contact-page p:nth-of-type(1) {
         text-align: center;
         font-family: sans-serif;
         color: #727272;
-        margin-top: 15%;
         font-weight: bolder;
-        margin-left: 18% !important;
     }
 
     #dashboard-page-circle p {
         font-size: 20px !important;
         text-align: center;
         color: rgb(41, 37, 37);
-        top: 40%;
         font-weight: bolder;
         font-family: sans-serif
     }
@@ -2650,7 +2629,6 @@ form.contact-page p:nth-of-type(1) {
         font-size: 20px !important;
         text-align: center;
         color: rgb(41, 37, 37);
-        top: 40%;
         font-weight: bolder;
         font-family: sans-serif
     }
@@ -2753,7 +2731,6 @@ form.contact-page p:nth-of-type(1) {
         font-family: sans-serif;
         color: #727272;
         font-weight: bolder;
-        margin-left: 20% !important
     }
 
     #dashboard-page-circle p {

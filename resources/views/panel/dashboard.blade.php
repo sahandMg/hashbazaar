@@ -17,7 +17,7 @@
              <div class="circle-container">
 
                 <div id="dashboard-page-circle" >
-                    <h1 id="circle-span" class="text-center">Total Mining</h1>
+                    <h2 id="circle-span" class="text-center">Total Mining</h2>
                     <p>&nbsp;<span id="miningBTC"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; <span style="color: orange;">BTC</span> </p>
                     <hr style="width: 84%; text-align:center;">
                     <p><span id="miningDollar"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua;">USD</span></p>
@@ -28,7 +28,7 @@
                 </div>
     
                 <div id="dashboard-page-circle2">
-                    <span id="circle-span">Daily Mining</span>
+                    <h2 id="circle-span" class="text-center">Daily Mining</h2>
                     <p>&nbsp;<span id="miningBTC2"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; <span style="color: orange;">BTC</span> </p>
                     <hr style="width: 84%; text-align:center;">
                     <p><span id="miningDollar2"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua;">USD</span></p>
@@ -45,7 +45,7 @@
             <div class="title-flex" >
             
                     <hr class="dashboard-hr"/>
-                    <h1 class="dashboard-title hash">Hash History</h1>
+                    <h3 class="dashboard-title hash">Hash History</h3>
                     <hr class="dashboard-hr"/>
             
             </div> 
@@ -211,7 +211,7 @@
             <div class="title-flex">
                 <hr  class="dashboard-hr"/>
 
-                <h1 class="dashboard-title">Buy Hash Power</h1>
+                <h3 class="dashboard-title">Buy Hash Power</h3>
 
                 <hr  class="dashboard-hr"/>
             </div>

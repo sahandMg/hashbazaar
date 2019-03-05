@@ -61,7 +61,7 @@
     </div>
 
     <script>
-
+         console.log("wallet *******")
         // ------------user account--------------------
         $(document).ready(function(){
 

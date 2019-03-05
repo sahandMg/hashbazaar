@@ -199,8 +199,6 @@
                             <p id="no-hash"> NO Hash History</p>
                         @endif
 
-
-
                 </table>
 
             </div> 
@@ -241,15 +239,12 @@
                     {{-- <form style="padding: 20px;" method="POST" action="{{route('dashboard')}}"> --}}
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
 
-<<<<<<< HEAD
+
 
                        <input id='referralCode' type="text" name="referralCode" style="margin-top:5px" class="aplybtn1text">
 
                        {{--<input id='referralCode' type="text" name="referralCode" class="aplybtn1text" style="margin-top:5px" >--}}
 
-=======
-                       <input id='referralCode' type="text" name="referralCode" style="margin-top:5px" class="aplybtn1text">
->>>>>>> 899b2b6a833cfd001750a57f6a05940e227ca638
                        <input id='hiddenCodeValue' type="hidden" name="code" style="margin-top:5px" >
 
                           <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> Apply </button>

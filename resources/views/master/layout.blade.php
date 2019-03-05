@@ -48,6 +48,7 @@
                 <li class="navbar-list small1 a1"><a href="{{route('index')}}">Home</a></li>
                 <li class="navbar-list small1 a1"><a href="{{route('aboutUs')}}">About</a></li>
                 <li class="navbar-list small1 a1"><a href="{{route('customerService')}}">FAQ</a></li>
+                <li class="navbar-list small1 a1"><a href="{{route('affiliate')}}">Affiliate</a></li>
                 <li class="navbar-list small1 a1"><a href="http://blog.hashbazaar.com">Blog</a></li>
                 @if(Auth::guard('user')->check())
                     <li class="navbar-list small1 dashboard"><a href="{{route('dashboard')}}" >Dashboard</a></li>

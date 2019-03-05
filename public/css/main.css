@@ -1602,7 +1602,9 @@ color: orange !important}
         left: -22px;
         top: 0px
     }
-    
+    .setting-information {
+        margin-top: 15% !important
+    }
     .setting-information input#cur-password {
         margin-left: 15%;
         margin-bottom: 20px;
@@ -1618,6 +1620,9 @@ color: orange !important}
         margin-left: 15%;
     }
   /* Wallet */
+  .wallet1 {
+      padding: 10%
+  }
     .wallet1 p {
         /* font-size: 15px;
         margin: 5% 20%; */
@@ -1650,36 +1655,71 @@ color: orange !important}
     }
     /* ----------Make Wallet----------- */
     .title-flex2 .dashboard-title2 {
-        font-size: 6px !important;
+        font-size:10px !important;
+    }
+    .title-flex2 .dashboard-hr2 {
+        flex: 0.7 !important
+    } 
+    .a3 {
+        margin-top: 180px !important
+
+    }
+    .make-wallet {
+        display: block
     }
 
-
+    .setting-information {
+        display: none;
+    }
+    .address {
+        padding-top: 10%
+    }
+    .address {
+        display: flex;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: -moz-flex;
+        flex-flow: column nowrap;
+    }
     .address .address-img {
         width: 100px;
         height: 100px;
-        left: 110px;
+        left:110px;
         top: 00px;
+        flex: 1;
+        margin-top: -30px
     }
 
     .address-box {
         position: relative;
         left: 40px;
-        top: 100px
+        top: 100px;
+        flex: 1
     }
 
     .address-box input {
-        width: 200px;
-        left: 20px;
+        width: 170px;
+        left: 40px;
     }
 
     .address-box input::placeholder {
         font-size: 12px
     }
-        
+    .div-icons-flex {
+        display: flex;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: -moz-flex;
+        flex-flow: row nowrap;
+        width: 50%
+    }
     .address-box a {
         left: 30px;
         margin-left: 25px;
         position: relative;
+        float: left !important;
+        display: inline !important;
+        flex: 1;
     }
 
     .change-address {

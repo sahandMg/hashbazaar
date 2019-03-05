@@ -82,7 +82,7 @@
 
         <div class="title-flex2">
                 <hr class="dashboard-hr2"/>
-                <h1 class="dashboard-title2">Current Bitcoin Wallet Address</h1>
+                <h2 class="dashboard-title2">Current Bitcoin Wallet Address</h2>
                 <hr class="dashboard-hr2"/>
         </div> 
 
@@ -94,9 +94,11 @@
             <div class="address-box">
                 <input type="text" placeholder="SDKnsdakndnj12n1k1lkmdsalm">
 
-                <a href="mail-icon"><img class="icon" src="../img/Mail.svg" alt=""></a>
-                <a href="link-icon"><img class="icon" src="../img/Link.svg" alt=""></a>
-                <a href="copy-icon"><img class="icon" src="../img/Copy.svg" alt=""></a>
+                <div class="div-icons-flex">
+                    <a href="mail-icon"><img class="icon" src="../img/Mail.svg" alt=""></a>
+                    <a href="link-icon"><img class="icon" src="../img/Link.svg" alt=""></a>
+                    <a href="copy-icon"><img class="icon" src="../img/Copy.svg" alt=""></a>
+                </div>
             </div>
 
             <div class="change-address">
@@ -112,7 +114,7 @@
          
         <div class="title-flex2 a3">
                 <hr class="dashboard-hr2"/>
-                <h1 class="dashboard-title2">Need To Change Your Address ?</h1>
+                <h2 class="dashboard-title2">Need To Change Your Address ?</h2>
                 <hr class="dashboard-hr2"/>
         </div> 
 

@@ -24,7 +24,7 @@
     <div class="setting-information">
         <form name="profile" action="{{route('setting')}}" method="post">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
-             <legend>User Information </legend>  
+             <legend class="coppyIcon">User Information </legend>  
 
             <label id="textbefore">Name
             <input type="text" name="text" id="text" value="{{Auth::guard('user')->user()->name}}" disabled="disabled"> 
@@ -94,18 +94,24 @@
             <div class="address-box">
                 <input type="text" placeholder="SDKnsdakndnj12n1k1lkmdsalm">
 
+<<<<<<< HEAD
                 <div class="div-icons-flex">
                     <a href="mail-icon"><img class="icon" src="../img/Mail.svg" alt=""></a>
                     <a href="link-icon"><img class="icon" src="../img/Link.svg" alt=""></a>
                     <a href="copy-icon"><img class="icon" src="../img/Copy.svg" alt=""></a>
                 </div>
+=======
+                <a><img class="icon" src="../img/Mail.svg" alt=""></a>
+                <a><img class="icon" src="../img/Link.svg" alt=""></a>
+                <a class="coppyIcon" style="cursor: pointer;"><img class="icon" src="../img/Copy.svg" alt=""></a>
+>>>>>>> 8b1ab6973fe5feb23fb9ccb8292175e9ae90b28f
             </div>
 
             <div class="change-address">
                     
         
                     <form action="">
-                        <input type="text" placeholder="SDKnsdakndnj12n1k1lkmdsalm"><br>
+                        <input type="text" id="copyTarget" value="SDKnsdakndnj12n1k1lkmdsalm" placeholder="SDKnsdakndnj12n1k1lkmdsalm"><br>
                         <input type="submit" class="pandel-button a4" value="Submit" >
                     </form>
             </div>
@@ -123,7 +129,66 @@
 
 <script>
     // $.noConflict();
+    console.log("setting wallet *******")
+    $( ".coppyIcon" ).click(function() {
+       console.log("coppyIcon click");
+       alertify.success('Wallet address copy to clipboard');
+       copyToClipboard(document.getElementById("copyTarget"));
+    });
 
+    // document.getElementById("copyButton").addEventListener("click", function() {
+    
+    // });
+
+function copyToClipboard(elem) {
+      // create hidden text element, if it doesn't already exist
+    var targetId = "_hiddenCopyText_";
+    var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
+    var origSelectionStart, origSelectionEnd;
+    if (isInput) {
+        // can just use the original source element for the selection and copy
+        target = elem;
+        origSelectionStart = elem.selectionStart;
+        origSelectionEnd = elem.selectionEnd;
+    } else {
+        // must use a temporary form element for the selection and copy
+        target = document.getElementById(targetId);
+        if (!target) {
+            var target = document.createElement("textarea");
+            target.style.position = "absolute";
+            target.style.left = "-9999px";
+            target.style.top = "0";
+            target.id = targetId;
+            document.body.appendChild(target);
+        }
+        target.textContent = elem.textContent;
+    }
+    // select the content
+    var currentFocus = document.activeElement;
+    target.focus();
+    target.setSelectionRange(0, target.value.length);
+    
+    // copy the selection
+    var succeed;
+    try {
+          succeed = document.execCommand("copy");
+    } catch(e) {
+        succeed = false;
+    }
+    // restore original focus
+    if (currentFocus && typeof currentFocus.focus === "function") {
+        currentFocus.focus();
+    }
+    
+    if (isInput) {
+        // restore prior selection
+        elem.setSelectionRange(origSelectionStart, origSelectionEnd);
+    } else {
+        // clear temporary content
+        target.textContent = "";
+    }
+    return succeed;
+ }
     $(document).ready(function(){
         $('.one a').css('color','orange');
 
@@ -152,15 +217,15 @@
 
 
 
-        $('#clickhear').click(function(){
-            $('.setting-information').hide();
-            $('.wallet1').hide();
-            $('.make-wallet').show()
+        // $('#clickhear').click(function(){
+        //     $('.setting-information').hide();
+        //     $('.wallet1').hide();
+        //     $('.make-wallet').show()
 
-            $('.two a').css('color','orange');
-            $('.one a').css('color','#2e2d2d');
+        //     $('.two a').css('color','orange');
+        //     $('.one a').css('color','#2e2d2d');
 
-        })
+        // })
     })
 
 </script>

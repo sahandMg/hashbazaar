@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{URL::asset('css/contact-referral-activity-dashboard.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/cssreset.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/main.css')}}">
-
+    <link rel="stylesheet" href="{{URL::asset('css/alertify.min.css')}}">
     <link type="text/css" rel="stylesheet" href="{{URL::asset('bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/chartist.min.css')}}">
     {{--<link rel="stylesheet" href="{{URL::asset('css/chartist.min.css')}}">--}}
@@ -27,7 +27,7 @@
     <script src="{{URL::asset('js/utils.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
+    <script src="{{URL::asset('js/alertify.min.js')}}"></script>
 </head>
 <body>
 

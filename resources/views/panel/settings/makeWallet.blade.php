@@ -44,7 +44,7 @@
 
                      <a href="mail-icon"><img class="icon" src="{{asset('img/Mail.svg')}}" alt=""></a>
                     <a href="link-icon"><img class="icon" src="{{asset('img/Link.svg')}}" alt=""></a>
-                     <a href="copy-icon"><img class="icon" src="{{asset('img/Copy.svg')}}" alt=""></a>
+                   <img class="icon" src="{{asset('img/Copy.svg')}}" alt="">
                 </div>
 
                 <div class="change-address">
@@ -85,7 +85,7 @@
    
 
     <script>
-
+       console.log("make wallet")
         // ------------user account--------------------
         $(document).ready(function(){
     
@@ -94,6 +94,7 @@
             })
         })
     
+   
     // =---------------------------------------
     </script>
     @include('master.footer')

@@ -71,4 +71,9 @@ Gets user message for form
         return view('about');
     }
 
+    public function affiliate(){
+
+        return view('affiliate');
+    }
+
 }

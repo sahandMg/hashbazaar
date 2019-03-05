@@ -35,7 +35,7 @@ class makeQuery
         $ref->total_sharing_num = 0;
         $ref->total_sharing_income = 0;
         $ref->user_income_share = 0;
-        $ref->share_level = 0;
+        $ref->share_level = 1;
         $ref->save();
     }
 }

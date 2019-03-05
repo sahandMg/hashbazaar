@@ -387,9 +387,9 @@ class PaymentController extends Controller
                 $share_level = DB::table('referrals')->where('code',$code)->first()->share_level;
                 $share_value = DB::table('sharings')->where('level',$share_level)->first()->value;
                 $hash = new BitHash();
-                $hash->hash = $hashPower * $share_value;
+                $hash->hash = $hashPower->hash * $share_value;
                 $hash->user_id = $codeCaller->id;
-                $hash->order_id = $orderID;
+                $hash->order_id = 'referral';
                 $hash->confirmed = 1;
                 $hash->life = $settings->hash_life;
                 $hash->remained_day = Carbon::now()->diffInDays(Carbon::now()->addYears($hash->life));
@@ -399,7 +399,7 @@ class PaymentController extends Controller
                 $mining->mined_btc = 0;
                 $mining->mined_usd = 0;
                 $mining->user_id = $codeCaller->id;
-                $mining->order_id = $orderID;
+                $mining->order_id = 'referral';
                 $mining->block = 0;
                 $mining->save();
 

@@ -32,11 +32,54 @@
             </div>
         </div>
 
+   <div class="container" style="max-height: 500px;padding: 0px;">
+     <div class="row" style="max-width: 300px;margin: auto;">
+      <div class="referal-left-text">
+         <h3></h3>
+         <h3>300</h3>
+         <h3>200</h3>
+         <h3>100</h3>
+      </div>
+      <div class="referal">
+        <div class="referal-level referal-level-4">
+        </div>
+        <div class="referal-level referal-level-3">
+        </div>
+        <div class="referal-level referal-level-2">
+        </div>
+        <div class="referal-level referal-level-1">
+        </div>
+      </div>
+      <div class="horizontal-lines-container">
+         <span class="referal-percent referal-percent-1">3%</span>
+         <div class="line line-vertical-1"></div>
+         <span class="referal-percent referal-percent-2">2%</span>
+         <div class="line line-vertical-2"></div>
+         <span class="referal-percent referal-percent-3">1.5%</span>
+         <div class="line line-vertical-3"></div>
+         <span class="referal-percent referal-percent-4">1%</span>
+         <div class="line line-vertical-4"></div>
+      </div>
+      <div  class="circle-output-container">
+        <div class="circle circle-1">
+           <h3 class="text-center">30TH</h3>
+        </div>
+        <div class="circle circle-2">
+           <h3 class="text-center">20TH</h3>
+        </div>
+        <div class="circle circle-3">
+           <h3 class="text-center">15TH</h3>
+        </div>
+        <div class="circle circle-4">
+           <h3 class="text-center">10TH</h3>
+        </div>
+      </div>
+     </div>
+   </div>
 
 
 
-
-    </div>
+</div>
 
 
    
@@ -50,4 +93,210 @@
         })
         
          // =---------------------------------------</script>
+
+          <style type="text/css">
+       .circle-output-container {
+        display: flex;
+        flex-direction: column; 
+       }
+       .vertical-line  {
+          height: 2px;
+          background-color: black;
+          -ms-transform: rotate(90deg); /* IE 9 */
+          -webkit-transform: rotate(90deg); /* Safari */
+          transform: rotate(90deg); /* Standard syntax */
+          margin-left: -50px;
+       }
+       .line-top-1 {
+          margin-top: 99px;
+          width: 100px;
+          /*background-color: red;*/
+       }
+       .line-top-2 {
+          margin-top: 73px;
+          width: 50px;
+          margin-left: -25px;
+          /*background-color: blue;*/
+       }
+       .line-top-3 {
+          margin-top: 48px;
+          width: 50px;
+          margin-left: -25px;
+          /*background-color: black;*/
+       }
+       .line-top-4 {
+          margin-top: 72.5px;
+          width: 100px;
+          /*background-color: green;*/
+       }
+       .line-top-5 {
+          height: 2px;
+          background-color: black;
+          width: 30px;
+          margin-top: -100px;
+       }
+      .horizontal-lines-container {
+        width: 80px;
+        display: flex;
+        flex-direction: column; 
+        text-align: center;
+      }
+      .referal-percent {
+        margin-top: 25px;
+        /*margin-left: 5px;*/
+      }
+      .line{
+        width: 80px;
+        background-color: #707070;
+        /*margin-top: 49px;*/
+        margin-bottom: 49px;
+        height: 2px;
+      }
+      .circle {
+        width: 70px;
+        height: 70px;
+        border-radius: 35px;
+        border: #707070 1px solid;
+        margin-top: 16px;
+        margin-bottom: 14px;
+        margin-left: -1px;
+        color: #707070;
+      }
+      .circle h3 {
+        margin-top: 20px;
+        font-size: 1.2rem;
+      } 
+      .referal-left-text {
+          display: flex;
+          flex-direction: column;
+          padding-right: 4px;
+          text-align: right;
+       }
+       .referal-left-text h3 {
+         margin: 0px; padding: 0px;font-size: 1rem;
+         margin-bottom: 85.5px;
+         color: black;
+       }
+      .referal-level {
+        height: 100px;
+        width: 100px;
+        text-align: center;
+      }
+     .referal-level h3 {
+        font-size: 1.1rem;
+     }
+     .referal {
+        display: flex;
+        flex-direction: column;
+        border-bottom: black 1px solid;
+        border-left: black 1px solid;
+        border-right: black 1px solid;
+        width: 105px;
+        padding: 1.5px;
+     }
+     .referal-level-4 {
+        /*background-color: green;*/
+     }
+     .referal-level-3 {
+        /*background-color: blue;*/
+     }
+     .referal-level-2 {
+        /*background-color: brown;*/
+     }
+     .referal-level-1 {
+        /*background-color: yellow;*/
+     }
+   </style>
+   <script type="text/javascript">
+     var referalPeople = 0 ;
+     var allTerraHash = 0 ;
+     var heightEachLevel = 100 ;
+     var level1 = 100;
+     var level2 = 200;
+     var level3 = 300;
+     var level4 = 400;
+     var offsetForDiv = 30;
+     var calculateMargin;
+     var height; var offsetForDivTemp;
+     
+     $(".btn-plus").click(function(){
+        referalPeople = referalPeople + 10;
+        refresh();
+      });
+     $(".btn-mines").click(function(){
+        referalPeople = referalPeople - 1;
+        refresh();
+      });
+
+     function refresh() {
+      $(".referal-level").empty();
+      if(referalPeople <= level1) {
+       if(referalPeople < 30) {
+        calculateMargin = level1 - (referalPeople+offsetForDiv) ;
+        } else { calculateMargin = level1 - (referalPeople) ;  }
+       height = heightEachLevel - calculateMargin;
+       $(".referal-level-1").append(`<div class="referal-number"><h3>`+referalPeople+`, `+allTerraHash+`TH</h3><div>`);
+       $(".referal-number").css( { marginTop : calculateMargin+"px", 'height': height+"px"} );
+       $(".referal-number").css('background-color', '#FFEC19');
+       $(".line-vertical-4").css('background-color', '#FFEC19');
+       $(".line-top-4").css('background-color', '#FFEC19');
+       $(".line-top-3").css('background-color', '#FFEC19');
+       $(".line-top-5").css('background-color', '#FFEC19');
+       $(".circle-4").css("border", "#FFEC19 solid 2px"); 
+       $(".circle-4").css("color", "black"); 
+       $(".referal-percent-4").css("color", "black"); 
+       $(".referal-percent-4").css("font-weight", "700");
+      } else if( referalPeople <= level2) {
+       if(referalPeople < 30+level1) {
+        calculateMargin = level2 - (referalPeople+offsetForDiv) ;
+       } else { calculateMargin = level2 - (referalPeople) ;  }
+       height = heightEachLevel - calculateMargin;
+       $(".referal-level-1").css('background-color', '#FFEC19');
+       $(".referal-level-2").append(`<div class="referal-number"><h3>`+referalPeople+`, `+allTerraHash+`TH</h3><div>`);
+       $(".referal-number").css( { marginTop : calculateMargin+"px", 'height': height+"px"} );
+       $(".referal-number").css('background-color', '#FFC100');
+       $(".line-vertical-3").css('background-color', '#FFC100');
+       $(".line-top-3").css('background-color', '#FFC100');
+       $(".line-top-5").css('background-color', '#FFC100');
+       $(".circle-3").css("border", "#FFC100 solid 2px"); 
+       $(".circle-3").css("color", "black"); 
+       $(".referal-percent-3").css("color", "black"); 
+       $(".referal-percent-3").css("font-weight", "700");
+      } else if( referalPeople <= level3) {
+       if(referalPeople < 30+level2) {
+        calculateMargin = level3 - (referalPeople+offsetForDiv) ;
+       } else { calculateMargin = level3 - (referalPeople) ;  }
+       height = heightEachLevel - calculateMargin;
+       $(".referal-level-1").css('background-color', '#FFEC19');
+       $(".referal-level-2").css('background-color', '#FFC100');
+       $(".referal-level-3").append(`<div class="referal-number"><h3>`+referalPeople+`, `+allTerraHash+`TH</h3><div>`);
+       $(".referal-number").css( { marginTop : calculateMargin+"px", 'height': height+"px"} );
+       $(".referal-number").css('background-color', '#FF9800');
+       $(".line-vertical-2").css('background-color', '#FF9800');
+       $(".line-top-2").css('background-color', '#FF9800');
+       $(".line-top-5").css('background-color', '#FF9800');
+       $(".circle-2").css("border", "#FF9800 solid 2px"); 
+       $(".circle-2").css("color", "black"); 
+       $(".referal-percent-2").css("color", "black");
+       $(".referal-percent-2").css("font-weight", "700");
+      } else {
+       $(".referal-level-1").css('background-color', '#FFEC19');
+       $(".referal-level-2").css('background-color', '#FFC100');
+       $(".referal-level-3").css('background-color', '#FF9800');
+       $(".referal-level-4").append(`<div class="referal-number"><h3>`+referalPeople+`, `+allTerraHash+`TH</h3><div>`);
+       $(".referal-number").css( { marginTop : 30+"px", 'height': "70px"} );
+       $(".referal-number").css('background-color', '#FF5607');
+       $(".line-vertical-1").css('background-color', '#FF5607');
+       $(".line-top-1").css('background-color', '#FF5607');
+       $(".line-top-2").css('background-color', '#FF5607');
+       $(".line-top-5").css('background-color', '#FF5607');
+       $(".circle-1").css("border", "#FF5607 solid 2px"); 
+       $(".circle-1").css("color", "black"); 
+       $(".referal-percent-1").css("color", "black"); 
+       $(".referal-percent-1").css("font-weight", "700");
+      }
+     }
+     refresh();
+
+   </script>
 @endsection

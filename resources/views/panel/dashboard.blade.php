@@ -17,7 +17,7 @@
              <div class="circle-container">
 
                 <div id="dashboard-page-circle" >
-                    <span id="circle-span">Total Mining</span>
+                    <span id="circle-span" class="text-center">Total Mining</span>
                     <p>&nbsp;<span id="miningBTC"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; <span style="color: orange;">BTC</span> </p>
                     <hr style="width: 84%; text-align:center;">
                     <p><span id="miningDollar"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua;">USD</span></p>
@@ -45,7 +45,7 @@
             <div class="title-flex">
             
                     <hr class="dashboard-hr"/>
-                    <h1 class="dashboard-title">Hash History</h1>
+                    <h1 class="dashboard-title hash">Hash History</h1>
                     <hr class="dashboard-hr"/>
             
             </div> 
@@ -55,7 +55,7 @@
                     <table class="table custom-table" style="color: black;">
                             @if(!$hashes->isEmpty())
                           <thead>
-                            <tr style="height:70px !important">
+                            <tr style="height:70px !important;font-weight:bold">
                                 <th>Hash Power</th>
                                 <th>Started at</th>
                                 <th>Ends at</th>
@@ -93,7 +93,7 @@
                                       @endforeach    
                                 </td>
                             </tr>
-                           </tbody> 
+                           </tbody>
 
 
 
@@ -198,8 +198,9 @@
                         @else
                             <p id="no-hash"> NO Hash History</p>
                         @endif
-                           
-       
+
+
+
                 </table>
 
             </div> 
@@ -240,11 +241,15 @@
                     {{-- <form style="padding: 20px;" method="POST" action="{{route('dashboard')}}"> --}}
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
 
+<<<<<<< HEAD
 
                        <input id='referralCode' type="text" name="referralCode" style="margin-top:5px" class="aplybtn1text">
 
                        {{--<input id='referralCode' type="text" name="referralCode" class="aplybtn1text" style="margin-top:5px" >--}}
 
+=======
+                       <input id='referralCode' type="text" name="referralCode" style="margin-top:5px" class="aplybtn1text">
+>>>>>>> 899b2b6a833cfd001750a57f6a05940e227ca638
                        <input id='hiddenCodeValue' type="hidden" name="code" style="margin-top:5px" >
 
                           <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> Apply </button>
@@ -263,7 +268,7 @@
             <div class="title-flex">
 
                 <hr class="dashboard-hr" >
-                <h3 class="dashboard-title">Mining History</h3>
+                <h3 class="dashboard-title min">Mining History</h3>
                 <hr class="dashboard-hr" >
 
             </div> 
@@ -452,12 +457,12 @@
                         $('.list1').toggle(500);
                     });
                     
-                    var numItems = $('#Hash-History-list tr').length;
+                    var numItems = $('.table tr').length;
 
 
 
-                    if( numItems > 2)
-                        $('#Hash-History-list').css('overflow-y' , "scroll");
+                    // if( numItems > 2)
+                    //     $('#Hash-History-list').css('overflow-y' , "scroll");
 
                     // alert($('#Hash-History-list tr').length);
 //                    console.log($('#Hash-History-list tr').length)

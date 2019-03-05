@@ -121,6 +121,8 @@ Route::get('login','AuthController@login')->name('login');
 
 Route::get('about','PageController@aboutUs')->name('aboutUs');
 
+Route::get('affiliate','PageController@affiliate')->name('affiliate');
+
 Route::post('login','AuthController@post_login')->name('login');
 
 Route::get('password-reser','AuthController@passwordReset')->name('passwordReset');

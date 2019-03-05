@@ -22,48 +22,54 @@
         <p>{{session('message')}}</p>
     @endif
     <div class="setting-information">
-        <form action="{{route('setting')}}" method="post">
+        <form name="profile" action="{{route('setting')}}" method="post">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
-             <q>User Information </q>  
-             <br/> -
-            <p id="textbefore">Name</p>
+             <legend>User Information </legend>  
+
+            <label id="textbefore">Name
             <input type="text" name="text" id="text" value="{{Auth::guard('user')->user()->name}}" disabled="disabled"> 
-             <br> 
-            <p id="textbefore">Email</p>
-
+            </label>
+            
+            <label id="textbefore">Email
             <input type="email" name="email" id="email" value="{{Auth::guard('user')->user()->email}}" disabled="disabled"/> 
-             <br> <br> <br> 
+            </label>
 
-            <q>Password</q> 
-            <br> 
-            <p id="textbefore">Current Password</p>
 
-            <input type="password" name="pass" id="cur-password" placeholder="Current Password"> <br>
-            <p id="textbefore">New Password</p>
+             <legend>Password</legend> 
+            <label id="textbefore">Current Password
+            <input type="password" name="pass" id="cur-password" placeholder="Current Password">  <br>
+            </label>
 
-            <input type="password" name="newpass" id="newpassword" placeholder="New Password"> <br>
-            <p id="textbefore">Confirm Password</p>
+            <label id="textbefore">New Password
+            <input type="password" name="newpass" id="newpassword" placeholder="New Password">
+            </label>
 
-            <input type="password" name="confirm" id="Confirmpassword" placeholder="confirm Password">
+            <label id="textbefore">Confirm Password
+            <input type="password" name="confirm" id="Confirmpassword" placeholder="Confirm Password">
+            </label>
+
 
             <input type="submit" value="Submit" class="pandel-button">
         </form>
 
     </div>
 
-    <div class="wallet1">
+    <div class="wallet1 text-center" >
 
-            <p>Still Don’t Have a Bitcoin Wallet? Click <a href="https://www.blockchain.com/" target="_blank" id="clickhear"
+            <p class="text-center">Still Don’t Have a Bitcoin Wallet? Click <a href="https://www.blockchain.com/" target="_blank" id="clickhear"
                 style="color:orange;text-decoration: none;font-weight: bold;">Hear</a> To Make One!
                 </p>
 
-                <q>OR</q>
+                <h2 style="color:black" class="text-center">OR</h2>
 
-                <blockquote>Submit Your Wallet Address</blockquote>
-                 <form id="setting-wallet" method="post" action="{{route('wallet')}}">
-                     <input type="hidden" name="_token" value="{{csrf_token()}}">
-                    <input type="text" id="textwallet" name="wallet">
-                    <input type="submit" class="buttonwallet" value="Submit">
+                <h2 class="text-center" style="color:black">Submit Your Wallet Address</h2>
+
+
+                
+                 <form id="setting-wallet" class="text-center" method="post" action="{{route('wallet')}}">
+                     <input class="text-center" type="hidden" name="_token" value="{{csrf_token()}}">
+                    <input class="text-center" type="text" id="textwallet" name="wallet">
+                    <input  type="submit" class="buttonwallet text-center" value="Submit">
                  </form>
 
 

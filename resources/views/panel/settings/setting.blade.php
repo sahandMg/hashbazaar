@@ -114,9 +114,9 @@
 </div>
 
 <script>
-    $.noConflict();
+    // $.noConflict();
 
-    jQuery(document).ready(function($){
+    $(document).ready(function(){
         $('.one a').css('color','orange');
 
 

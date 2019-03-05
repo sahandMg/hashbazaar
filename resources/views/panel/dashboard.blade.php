@@ -17,7 +17,7 @@
              <div class="circle-container">
 
                 <div id="dashboard-page-circle" >
-                    <span id="circle-span" class="text-center">Total Mining</span>
+                    <h1 id="circle-span" class="text-center">Total Mining</h1>
                     <p>&nbsp;<span id="miningBTC"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; <span style="color: orange;">BTC</span> </p>
                     <hr style="width: 84%; text-align:center;">
                     <p><span id="miningDollar"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua;">USD</span></p>
@@ -42,7 +42,7 @@
              </div>
             <!-- Hash History -->
             
-            <div class="title-flex">
+            <div class="title-flex" >
             
                     <hr class="dashboard-hr"/>
                     <h1 class="dashboard-title hash">Hash History</h1>
@@ -50,11 +50,11 @@
             
             </div> 
 
-            <div class="Hash-History">
+            <div class="container pur">
                     <table class="table custom-table" style="color: black;">
                             @if(!$hashes->isEmpty())
                           <thead>
-                            <tr style="height:70px !important;font-weight:bold">
+                            <tr style="font-weight:bold">
                                 <th>Hash Power</th>
                                 <th>Started at</th>
                                 <th>Ends at</th>
@@ -62,7 +62,7 @@
                              </tr>
                            </thead>
                            <tbody >
-                            <tr style="height:80px !important">
+                            <tr>
                                 <td>
                                     @foreach($hashes as $hash)
                                         <span>{{$hash->hash}}TH/S</span>

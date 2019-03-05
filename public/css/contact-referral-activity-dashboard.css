@@ -1088,33 +1088,33 @@ form.contact-page p:nth-of-type(1) {
 
 .mainList2 {display: none}
 
-.Transactions q {
-   width: 220px;
+.purchases h2 {
+   width: 30%;
    height: 40px;
    text-align: center;
    border-bottom: 2px solid #3a393986;
-   font-size: 30px;
+   /* font-size: 30px; */
    color: #2e2d2d;
    font-weight: bold;
    font-family: sans-serif;
    margin: auto;
    display: block
 }
-.container ,
- #activity-page_thirdList {
+.container 
+{
     max-height: 300px;
 }
 
 .container table {
     height: 150px
 }
- #Transactions-list
+ /* #Transactions-list
  {
      margin-top: 30px;
      width: 100%;
      height: 100px !important;
      float:left;
-     /* margin-left: -30px !important */
+     margin-left: -30px !important 
  }
  
 #Transactions-list tr
@@ -1155,7 +1155,7 @@ form.contact-page p:nth-of-type(1) {
 }
 #Transactions-list tr td:nth-of-type(3) {
     margin-top: -5px;
-}
+} */
 
 .tooltip1 {
     position: relative;
@@ -1235,18 +1235,11 @@ form.contact-page p:nth-of-type(1) {
        font-size: 25px;
     }
 
-    .purchases q {
-       width: 170px;
-       height: 30px;
+    .purchases h2 {
        font-size: 25px;
     }
 
-   .Transactions q {
-      width: 180px;
-      height: 30px;
-      font-size: 25px;
-    }
-    #Transactions-list
+    /* #Transactions-list
     {
         margin-top: 30px;
         width: 98%;
@@ -1289,7 +1282,7 @@ form.contact-page p:nth-of-type(1) {
         font-size: 20px;
        height: 70px;
        color: #2e2d2d;
-   }
+   } */
 
 }
 
@@ -1361,13 +1354,7 @@ form.contact-page p:nth-of-type(1) {
         top: 0px
     }
 
-
-     blockquote {
-       font-size: 27px;
-       margin-top: 150px
-    }
-
-     .purchases q {
+     .purchases h2 {
        height: 30px;
        font-size: 27px;
        padding-bottom: 40px;
@@ -1378,9 +1365,8 @@ form.contact-page p:nth-of-type(1) {
         font-size: 25px;
         margin: 15% 35%
     }
-
    
-    .Transactions  {
+    /* .Transactions  {
        width: 700px !important
     }
     .Transactions q {
@@ -1431,7 +1417,7 @@ form.contact-page p:nth-of-type(1) {
        width: 30.8%;
        font-size: 20px;
        color: #2e2d2d;
-   }
+   } */
 
 
 }
@@ -1454,34 +1440,33 @@ form.contact-page p:nth-of-type(1) {
         display: none
     }
 
-   blockquote {
-        margin-top: 100px;
-        margin-left: 30px;
-        font-size: 22px;
-    }
      .purchases {
         /*height: 2px !important;*/
         margin-bottom: 0 
     }
-     .purchases q {
+     .purchases h2 {
         height: 20px;
         font-size: 18px;
+        width: 40%;
+        padding-bottom: 20px
         /*margin-left: 150px;*/
     }
    
-    .container .custom-table th:nth-of-type(2) ,
-        .container .custom-table td:nth-of-type(2) {
-            display: none
-        }
-    .Transactions {
+    .container.pur .custom-table th:nth-of-type(2) ,
+    .container.pur .custom-table td:nth-of-type(2) {
+        display: none
+    }
+
+    
+    /* .Transactions {
         width: 380px !important;
-        /*height: 10px;*/
+        height: 10px;
         margin-top: 5px !important
     }
      .Transactions q {
         height: 18px;
         font-size: 18px;
-        /*margin-left: 140px;*/
+        margin-left: 140px;
     }
     #Transactions-list
     {
@@ -1524,7 +1509,7 @@ form.contact-page p:nth-of-type(1) {
         width:28.5%;
         font-size: 13px;
         color: #2e2d2d;
-    }
+    } */
 
     .useraccount {margin-left: 78% !important}
 
@@ -1555,14 +1540,15 @@ form.contact-page p:nth-of-type(1) {
         font-size: 22px;
     }
 
-    .purchases q {
+    .purchases h2 {
        height: 20px;
        font-size: 18px;
-       margin-left: 100px;
-       top: 350px
+       /* margin-left: 100px; */
+       width: 42%;
+       /* top: 350px */
     }
 
-    .Transactions {
+    /* .Transactions {
         width: 360px !important
     }
     .Transactions q {
@@ -1611,7 +1597,7 @@ form.contact-page p:nth-of-type(1) {
         width: 29%;
         font-size: 13px;
         color: #2e2d2d;
-    }
+    } */
 
 }
 
@@ -1681,14 +1667,17 @@ form.contact-page p:nth-of-type(1) {
         top: 0px
     }
     .activity-container h2 {
-        margin-left: 0 !important;
+        /* margin-left: 0 !important; */
         font-size: 20px !important
     }
-
-    .activity-container q {
-        margin-left: 75px !important
+    .container .custom-table tbody tr td {
+        font-size: 15px !important
     }
-    .Transactions {
+    .purchases h2 {
+        width: 45%;
+        font-size: 15px !important
+    }
+    /* .Transactions {
         width: 310px !important
     }
     #Transactions-list
@@ -1733,7 +1722,7 @@ form.contact-page p:nth-of-type(1) {
         width: 35%;
         font-size: 12px;
         color: #2e2d2d;
-    }
+    } */
    
 
 }
@@ -1821,14 +1810,16 @@ form.contact-page p:nth-of-type(1) {
 
 #circle-span {
     font-size: 27px;
-    text-align: center !important;
+    /* text-align: center !important;
+    justify-content: center;
+    justify-items: center; */
     font-family: sans-serif;
     color: #727272;
     position: absolute;
     margin-top: 5%;
     font-weight: bolder;
     display: block !important;
-    margin-left: 7.5%
+    /* margin-left: 7.5% */
 }
 
 #dashboard-page-circle p:nth-of-type(1) {
@@ -1882,18 +1873,16 @@ form.contact-page p:nth-of-type(1) {
     font-size: 30px;
     margin: 15% 37%
 }
-
+/* 
 .Hash-History  {
     max-height: 350px !important;
     margin-left: 0% !important;
 }
-.Hash-History table thead tr {
-    height: 150px !important;
-}
+
 #Hash-History-list .remain {
     width: 180px; margin: 0px auto;
     border: thin solid ;
-}
+} */
 
 .progress1 {    border: 1px solid;}
 .progress-bar1 {
@@ -1909,7 +1898,7 @@ form.contact-page p:nth-of-type(1) {
     -webkit-animation: show 0.35s forwards ease-in-out 0.5s;
     animation: show 0.35s forwards ease-in-out 0.5s;
 }
-
+/* 
 #Hash-History-list .remain {
     width: 160px !important;
     text-align: center !important;
@@ -1924,7 +1913,7 @@ form.contact-page p:nth-of-type(1) {
     height: 100% !important;
     padding-top: 0px !important
 }
- 
+  */
 
 /* ==============================================Buy hash power=================================== */
 
@@ -2256,7 +2245,7 @@ form.contact-page p:nth-of-type(1) {
     #no-hash {
         font-size: 25px;
     }
-    #Hash-History-list
+    /* #Hash-History-list
     {
         margin-top: 30px;
         width: 100%;
@@ -2315,7 +2304,7 @@ form.contact-page p:nth-of-type(1) {
         text-align: center !important;
         height: 100% !important;
         padding-top: 0px !important
-    }
+    } */
 
     /* ==============================================Buy hash power=================================== */
 
@@ -2411,7 +2400,7 @@ form.contact-page p:nth-of-type(1) {
     .title-flex .dashboard-hr {
         flex: 1.5
     }
-    #Hash-History-list
+    /* #Hash-History-list
     {
         margin-top: 30px;
         width: 100%;
@@ -2454,7 +2443,7 @@ form.contact-page p:nth-of-type(1) {
         font-size: 20px;
         height: 70px;
         color: #2e2d2d;
-    }
+    } */
 
 
 }
@@ -2528,15 +2517,15 @@ form.contact-page p:nth-of-type(1) {
         flex: 0.8
     }
 
-    #Hash-History-list
+    /* #Hash-History-list
     {
         margin-top: 30px;
         width: 100%;
         height: 150px;
         float:left;
-    }
+    } */
     
-    .Hash-History .custom-table th:nth-of-type(2) ,
+    /* .Hash-History .custom-table th:nth-of-type(2) ,
     .Hash-History .custom-table td:nth-of-type(2) {
         display: none
     }
@@ -2585,7 +2574,7 @@ form.contact-page p:nth-of-type(1) {
         border: 1px solid black !important;
         height: 100% !important;
         padding-top: 0px !important
-    }
+    } */
 
     /* ==============================================Buy hash power=================================== */
    
@@ -2679,7 +2668,7 @@ form.contact-page p:nth-of-type(1) {
     .min {
         padding-left: 3% !important
     }
-    #Hash-History-list
+    /* #Hash-History-list
     {
         margin-top: 30px;
         width: 100%;
@@ -2728,7 +2717,7 @@ form.contact-page p:nth-of-type(1) {
         width: 65px !important;
         border: 1px solid ;
         font-size: 12px
-    }
+    } */
   
     /*============================================== Mining History ===================================*/
 
@@ -2789,7 +2778,7 @@ form.contact-page p:nth-of-type(1) {
         flex: 0.5
     }
 
-    #Hash-History-list
+    /* #Hash-History-list
     {
         margin-top: 30px;
         width: 100%;
@@ -2845,7 +2834,7 @@ form.contact-page p:nth-of-type(1) {
     #Hash-History-list .remain .progress-bar1 .title{
         text-align: center;
         padding-top: 1% !important
-    }
+    } */
     /* ==============================================Buy hash power=================================== */
 
     #referralCode {

@@ -16,9 +16,9 @@ foreach ($hashes as $key=> $hash){
 <div  class="panel-container activity-container">
     <h2 class="text-center">Recent Activities</h2> 
     <div class="purchases">
-        <q>Purchases</q>
+        <h2>Purchases</h2>
         <br>
-      <div class="container">
+      <div class="container pur">
         <table class="table custom-table" style="color: black;">
                 @if(!$hashes->isEmpty())
               <thead>
@@ -75,13 +75,13 @@ foreach ($hashes as $key=> $hash){
         
     </div> 
 
-    <div class="Transactions">
-        <q>Transactions </q>
-        <div id="activity-page_thirdList">
+    <div class="purchases">
+        <h2>Transactions </h2>
+        <div class="container">
 
-            <table id="Transactions-list" class="table custom-table" >
-                    <thead>
-                    <tr>
+            <table  class="table custom-table" style="color: black;">
+                <thead  style="font-weight:bold">
+                    <tr  style="height:90px !important">
                         <th class="Transactions_column"> Date </th>
                         <th class="Transactions_column"> BTC </th>
                         <th class="Transactions_column">Address</th>
@@ -104,7 +104,7 @@ foreach ($hashes as $key=> $hash){
                         <td class="tooltip1"> 
                             778dsad...
                             
-                            <span class="tooltiptext">778dsadDSAB Hhbjbdsa89dsax</span>
+                            <span class="tooltiptext">778dsadDSABHhbjbdsa89dsax</span>
 
                         </td>
 

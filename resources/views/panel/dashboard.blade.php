@@ -174,6 +174,9 @@
 
         <style type="text/css">
 
+            .custom-table th {
+                border-top: 0
+            }
          .dashboard-page p {
           margin: 0px;padding: 0px;padding-top: 5px; font-size: 18px;line-height: 1.6;
          }

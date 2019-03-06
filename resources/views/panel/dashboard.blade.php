@@ -69,8 +69,10 @@
                                 <td>
 
                                         <span>{{$hash->hash}}TH/S</span>
+                                        <div class="box sample"></div>
 
                                 </td>
+                                
                                 <td>
 
                                        <span>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}}    </span> 
@@ -198,6 +200,8 @@
                         {{--</tr>--}}
                             {{--@endforeach--}}
 
+                       
+                       
                         @else
                             <p id="no-hash"> NO Hash History</p>
                         @endif

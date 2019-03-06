@@ -1867,7 +1867,6 @@ form.contact-page p:nth-of-type(1) {
 }
 /* ==================================================HASH History============================== */
 
-
 #no-hash {
     font-size: 30px;
     margin: 15% 37%
@@ -2088,6 +2087,46 @@ form.contact-page p:nth-of-type(1) {
 
     .min {
         padding-left: 1% !important
+    }
+    /* Stamp Style */
+    .Hash-History div.box
+    {
+        width:20px !important;
+        height:20px !important;
+        display:inline-block;
+        vertical-align:top;
+        box-sizing:border-box;
+        /* padding-left:150px; */
+        color:#999;
+        position:relative;
+        /* border: thin solid; */
+    }
+
+    .Hash-History div.box.sample:after
+    {
+        content:"SAMPLE";
+        position:absolute;
+        top:5px;
+        left:30px;
+        z-index:1;
+        font-family:Arial,sans-serif;
+        -webkit-transform: rotate(-15deg); /* Safari */
+        -moz-transform: rotate(-15deg); /* Firefox */
+        -ms-transform: rotate(-15deg); /* IE */
+        -o-transform: rotate(-15deg); /* Opera */
+        transform: rotate(-15deg);
+        font-size:12px;
+        color:green;
+        background:#fff;
+        border:solid 4px green;
+        padding:5px;
+        border-radius:5px;
+        zoom:1;
+    /*     filter:alpha(opacity=20); */
+    /*     opacity:0.2; */
+        -webkit-text-shadow: 0 0 2px green;
+        text-shadow: 0 0 2px green;
+        box-shadow: 0 0 2px green;
     }
    /*  
 @media screen and (min-width:1840px) {
@@ -2507,11 +2546,39 @@ form.contact-page p:nth-of-type(1) {
         float:left;
     } */
     
-    /* .Hash-History .custom-table th:nth-of-type(2) ,
+     .Hash-History .custom-table th:nth-of-type(2) ,
     .Hash-History .custom-table td:nth-of-type(2) {
         display: none
     }
-    #Hash-History-list tr
+
+
+    .Hash-History div.box.sample:after
+    {
+        content:"SAMPLE";
+        position:absolute;
+        top:5px;
+        z-index:1;
+        font-family:Arial,sans-serif;
+        -webkit-transform: rotate(-15deg); /* Safari */
+        -moz-transform: rotate(-15deg); /* Firefox */
+        -ms-transform: rotate(-15deg); /* IE */
+        -o-transform: rotate(-15deg); /* Opera */
+        transform: rotate(-15deg);
+        color:green;
+        font-size: 13px;
+        left: 15px;
+        background:#fff;
+        border:solid 2px green;
+        padding:5px;
+        border-radius:5px;
+        zoom:1;
+    /*     filter:alpha(opacity=20); */
+    /*     opacity:0.2; */
+        -webkit-text-shadow: 0 0 2px green;
+        text-shadow: 0 0 2px green;
+        box-shadow: 0 0 2px green;
+    }
+   /* #Hash-History-list tr
     {
         flex-grow: 1;
         margin-top: 0px;
@@ -2646,6 +2713,12 @@ form.contact-page p:nth-of-type(1) {
     .min {
         padding-left: 3% !important
     }
+   
+    .Hash-History div.box.sample:after {
+        font-size: 12px;
+        left: 10px;
+        top: 0
+    }
     /* #Hash-History-list
     {
         margin-top: 30px;
@@ -2754,7 +2827,13 @@ form.contact-page p:nth-of-type(1) {
     .title-flex .dashboard-hr {
         flex: 0.5
     }
-
+    .Hash-History .custom-table tbody td {
+        font-size: 13px
+    }
+    .Hash-History div.box.sample:after {
+        font-size: 10px;
+        top: 0
+    }
     /* #Hash-History-list
     {
         margin-top: 30px;

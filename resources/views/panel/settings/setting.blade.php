@@ -210,15 +210,15 @@ function copyToClipboard(elem) {
 
 
 
-        $('#clickhear').click(function(){
-            $('.setting-information').hide();
-            $('.wallet1').hide();
-            $('.make-wallet').show()
+        // $('#clickhear').click(function(){
+        //     $('.setting-information').hide();
+        //     $('.wallet1').hide();
+        //     $('.make-wallet').show()
 
-            $('.two a').css('color','orange');
-            $('.one a').css('color','#2e2d2d');
+        //     $('.two a').css('color','orange');
+        //     $('.one a').css('color','#2e2d2d');
 
-        })
+        // })
     })
 
 </script>

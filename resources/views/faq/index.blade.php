@@ -314,7 +314,7 @@
                             <li class="faq-question-list">
                                 <h5 class="faq-question">When Can I get my profit?</h5>
                                 <div class="faq-answer">
-                                  <p>You can withdraw your mining output at 00:00 every day.</p>
+                                  <p>You can withdraw your mining output after increasing to 0.01BTC.</p>
                                 </div>
                             </li>                           
                         </ul>

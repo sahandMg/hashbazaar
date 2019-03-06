@@ -100,106 +100,6 @@
                            @endforeach
                            </tbody>
 
-
-
-                {{--<table id="Hash-History-list">--}}
-                    {{--@if(!$hashes->isEmpty())--}}
-
-                    {{--<tr>--}}
-                        {{--<th class="Hash-History_column"> --}}
-                            {{--Hash Power  --}}
-                        {{--</th>--}}
-
-                        {{--<th class="Hash-History_column"> --}}
-                            {{--Started at--}}
-                           {{----}}
-                        {{--</th>--}}
-
-                        {{--<th class="Hash-History_column"> --}}
-                            {{--Ends at--}}
-
-                    {{--<table class="table custom-table" style="color: black;">--}}
-                            {{--@if(!$hashes->isEmpty())--}}
-                          {{--<thead >--}}
-                            {{--<tr style="font-weight:bolder;">--}}
-                                {{--<th>Hash Power</th>--}}
-                                {{--<th>Started at</th>--}}
-                                {{--<th>Ends at</th>--}}
-                                {{--<th>Remain</th>--}}
-                             {{--</tr>--}}
-                           {{--</thead>--}}
-                           {{--<tbody>--}}
-                            {{--<tr>--}}
-                                {{--<td>--}}
-                                    {{--@foreach($hashes as $hash)--}}
-                                        {{--<span>{{$hash->hash}}TH/S</span>--}}
-                                    {{--@endforeach         --}}
-                                {{--</td>--}}
-                                {{--<td>--}}
-                                    {{--@foreach($hashes as $hash)--}}
-                                       {{--<span>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}}    </span> --}}
-                                        {{--@endforeach--}}
-                                {{--</td>--}}
-                                {{--<td> --}}
-                                        {{--@foreach($hashes as $hash)--}}
-                                        {{--<span>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}   </span>--}}
-                                        {{--@endforeach--}}
-                                {{--</td>--}}
-            {{----}}
-                                {{--<td>--}}
-                                    {{--@foreach($hashes as $key => $hash)--}}
-                                            {{--<div class="remain">--}}
-                                                {{--<div class="progress1">--}}
-                                                    {{--<div class="progress-bar1" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%;width: {{$remainedLife[$key]}}%;">--}}
-                                                        {{--<span class="title">{{$remainedLife[$key]}}%</span>--}}
-            {{----}}
-                                                    {{--</div>--}}
-                                                {{--</div>--}}
-                                            {{--</div>  --}}
-                                      {{--@endforeach    --}}
-                                {{--</td>--}}
-                            {{--</tr>--}}
-                           {{--</tbody> --}}
-
-
-                            
-                        {{--</th>--}}
-
-                        {{--<th class="Hash-History_column"> --}}
-                            {{--Remain--}}
-                            {{----}}
-                        {{--</th>--}}
-
-                        {{--</tr>--}}
-                            {{--@foreach($hashes as $key => $hash)--}}
-                        {{--<tr>--}}
-
-
-                                {{--<td>--}}
-                                    {{--<span>{{$hash->hash}}TH/S</span>--}}
-                                {{--</td>--}}
-                                {{--<td>--}}
-                                    {{--<span>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}}    </span>--}}
-                                {{--</td>--}}
-                                {{--<td>--}}
-                                    {{--<span>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}   </span>--}}
-                                {{--</td>--}}
-
-
-                                {{--<td>--}}
-                                    {{--<div class="remain">--}}
-                                        {{--<div class="progress1">--}}
-                                            {{--<div class="progress-bar1" role="progressbar1" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%">--}}
-                                                {{--<span class="title">{{$remainedLife[$key]}}%</span>--}}
-
-                                            {{--</div>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-
-                                {{--</td>--}}
-                        {{--</tr>--}}
-                            {{--@endforeach--}}
-
                        
                        
                         @else
@@ -234,9 +134,12 @@
                 @if($settings->available_th > 0)
                 <form class="dashboard-page" method="post" action="{{route('payment')}}">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
+                    <input type="hidden" id="thpricew" value="50">
                     <input type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="myRange">
                     <div style="text-align: left;font-weight: 700;padding-bottom:10px">
-                      <p style="color:black">Hash allocation cost : <span id="cost"></span> dollar</p>
+                      <p style="color:black">Hash allocation cost : <span id="cost"></span> dollar
+                         <span id="doReferalCode"></span> 
+                      </p>
                       <p style="color:black">Maitanace fee: {{$settings->maintenance_fee_per_th_per_day}} dollar per Th/day</p>
                       <small>(include all electricity, cooling, development, and servicing costs )</small>
                       <p style="color:black">Income : At this time We predict {{$settings->bitcoin_income_per_month_per_th}} BTC/month for every Th.</p>
@@ -455,7 +358,7 @@
 
 <script>
       
-                // ------------user account--------------------
+                // // ------------ scroll for many data in table  --------------------
                 $(document).ready(function(){
 
                     $('.user-img').click(function(){
@@ -463,17 +366,6 @@
                     });
                     
                     var numItems = $('.table tr').length;
-
-
-
-                    // if( numItems > 2)
-                    //     $('#Hash-History-list').css('overflow-y' , "scroll");
-
-                    // alert($('#Hash-History-list tr').length);
-//                    console.log($('#Hash-History-list tr').length)
-
-
-
                     
                     if( numItems > 3)
                     {
@@ -486,7 +378,7 @@
                     }
                     
                 });
-
+                // for get profit
                 var user = {!! json_encode(\Illuminate\Support\Facades\Auth::guard('user')->user()->code) !!}
 
                 function redeem(id) {
@@ -496,8 +388,15 @@
                         console.log(response.data)
                     })
                 };
+                 // referal code
                 var activateDiscount = {!! $apply_discount !!};// $apply_discount == 0 Or 1
-                var thPrice = {!! $settings->usd_per_hash !!}
+                var thPrice = {!! $settings->usd_per_hash !!};
+                var thPriceAfterCode ;
+                var slider = document.getElementById("myRange");
+                var output = document.getElementById("demo");
+                var costAfterCode = document.getElementById("doReferalCode");
+                var cost = document.getElementById('cost');
+                // for checking referal code
                 function sendCode() {
 
                     var code = document.getElementById('referralCode').value;
@@ -506,25 +405,40 @@
 
                         var resp = response.data;
                         if(resp['type'] == 'error'){
-                            alert(resp['body'])
-
-                        } else {
-                             
-                            alert(resp['body']);
+                            alertify.error(resp['body']);
+                        }else{
+                            alertify.success(resp['body']);
                             document.getElementById('hiddenCodeValue').value = code;
-                            thPrice = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!}
+                            thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!};
+                            costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
+                            console.log(thPrice);
                             activateDiscount = 1;
                         }
 
                     });
                 };
 
-                 // =---------------------------------------
+                 output.innerHTML = slider.value+' Th';
+                cost.innerHTML = slider.value * thPrice ;
+                    if(activateDiscount == 1){
+                        thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!};
+                        costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
+                    }
+                    
+                    // Display the default slider value
+                    
+                    slider.oninput = function() {
+                        output.innerHTML = this.value+' Th';
+                        if(activateDiscount == 1){
+                            thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!};
+                            costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
+                        }
+                        cost.innerHTML = slider.value  * thPrice;
+                        };
+
+                  // for geting total earn
 
                 axios.post({!! json_encode('totalEarn') !!},{'user':user}).then(function (response) {
-//                     console.log(id);
-//                     console.log(response.data);
-                    // console.log("response.data");
                     if(response.data[0] == 0){
 
                         document.getElementById('miningBTC').innerHTML = 0;
@@ -548,27 +462,6 @@
                     }
 
                 });
-
-
-                    var slider = document.getElementById("myRange");
-                    var output = document.getElementById("demo");
-                    var cost = document.getElementById("cost");
-                    output.innerHTML = slider.value+' Th';
-                    if(activateDiscount == 1){
-
-                        thPrice = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!}
-                    }
-                    cost.innerHTML = slider.value * thPrice ;
-                    // Display the default slider value
-                    
-                    slider.oninput = function() {
-                        output.innerHTML = this.value+' Th';
-                        if(activateDiscount == 1){
-
-                            thPrice = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!}
-                        }
-                        cost.innerHTML = slider.value  * thPrice;
-                        };
 
                     //    ==================================chart==============
                 var dateFormat = 'YYYY DD MMMM';

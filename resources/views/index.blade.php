@@ -36,7 +36,7 @@
             <h3 class="fontTheme">choose your investment planS</h3>
         </div>
         <div class="container">
-          <form>
+          <form action="" method="post">
             <h5 id="demo"></h5>
             <div class="slidecontainer">
                 <input name="hashNumber" type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" class="slider" id="myRange">

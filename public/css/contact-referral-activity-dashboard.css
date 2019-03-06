@@ -1871,12 +1871,12 @@ form.contact-page p:nth-of-type(1) {
     font-size: 30px;
     margin: 15% 37%
 }
-/* 
+/*  
 .Hash-History  {
     max-height: 350px !important;
     margin-left: 0% !important;
-}
-
+} */
+/*
 #Hash-History-list .remain {
     width: 180px; margin: 0px auto;
     border: thin solid ;
@@ -2159,39 +2159,26 @@ form.contact-page p:nth-of-type(1) {
         font-size: 24px;
     }
 
-}
+}*/
 
 @media screen and (min-width:1600px) {
 
+    #dashboard-page {
+        width: 72.3% !important;
+        margin-left: 23.7% !important;
+    }
 
+    .circle-container {
+        margin-left: 0 !important
+    }
     #dashboard-page-circle ,
     #dashboard-page-circle2 {
-        width: 35% !important;
-        margin-left: 10% !important
+        margin-left: 13% !important
     }
 
-    #Hash-History-list tr th  {
-        width: 160px;
-        width: 29.8%;
-    }
-
-    #Hash-History-list tr td { 
-        width: 160px;
-        width: 27.8%;
-    }
+    
 }
 
-@media screen and (min-width:1400px) {
-    #dashboard-page-circle ,
-    #dashboard-page-circle2 {
-        width: 40% !important;
-        margin-left: 10% !important
-    }
-
-    #circle-span {
-        margin-left: 7% !important
-    }
-}  */
 /* Dashboard-Media-1280 */
 @media screen and (max-width:1281px) {
     #dashboard-page-circle ,

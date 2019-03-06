@@ -2104,7 +2104,7 @@ form.contact-page p:nth-of-type(1) {
 
     .Hash-History div.box.sample:after
     {
-        content:"SAMPLE";
+        content:"REWARD";
         position:absolute;
         top:5px;
         left:30px;
@@ -2554,20 +2554,10 @@ form.contact-page p:nth-of-type(1) {
 
     .Hash-History div.box.sample:after
     {
-        content:"SAMPLE";
         position:absolute;
         top:5px;
-        z-index:1;
-        font-family:Arial,sans-serif;
-        -webkit-transform: rotate(-15deg); /* Safari */
-        -moz-transform: rotate(-15deg); /* Firefox */
-        -ms-transform: rotate(-15deg); /* IE */
-        -o-transform: rotate(-15deg); /* Opera */
-        transform: rotate(-15deg);
-        color:green;
         font-size: 13px;
         left: 15px;
-        background:#fff;
         border:solid 2px green;
         padding:5px;
         border-radius:5px;

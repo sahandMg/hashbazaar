@@ -167,7 +167,7 @@
         var modal = document.getElementById('myModal');
 
         // blade if for detecting link
-        if({!! isset($name) !!}){
+        if({!! json_encode(isset($name)) !!}){
 
             modal.style.display = "block";
         }

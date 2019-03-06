@@ -234,13 +234,9 @@
                 @if($settings->available_th > 0)
                 <form class="dashboard-page" method="post" action="{{route('payment')}}">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
-                    <input type="hidden" id="thpricew" value="50">
-
                     <input type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="myRange">
                     <div style="text-align: left;font-weight: 700;padding-bottom:10px">
-                      <p style="color:black">Hash allocation cost : <span id="cost"></span> dollar
-                         <span id="doReferalCode"></span> 
-                      </p>
+                      <p style="color:black">Hash allocation cost : <span id="cost"></span> dollar</p>
                       <p style="color:black">Maitanace fee: {{$settings->maintenance_fee_per_th_per_day}} dollar per Th/day</p>
                       <small>(include all electricity, cooling, development, and servicing costs )</small>
                       <p style="color:black">Income : At this time We predict {{$settings->bitcoin_income_per_month_per_th}} BTC/month for every Th.</p>
@@ -459,7 +455,7 @@
 
 <script>
       
-                // ------------ scroll for many data in table  --------------------
+                // ------------user account--------------------
                 $(document).ready(function(){
 
                     $('.user-img').click(function(){
@@ -467,6 +463,17 @@
                     });
                     
                     var numItems = $('.table tr').length;
+
+
+
+                    // if( numItems > 2)
+                    //     $('#Hash-History-list').css('overflow-y' , "scroll");
+
+                    // alert($('#Hash-History-list tr').length);
+//                    console.log($('#Hash-History-list tr').length)
+
+
+
                     
                     if( numItems > 3)
                     {
@@ -479,7 +486,7 @@
                     }
                     
                 });
-                // for get profit
+
                 var user = {!! json_encode(\Illuminate\Support\Facades\Auth::guard('user')->user()->code) !!}
 
                 function redeem(id) {
@@ -489,57 +496,35 @@
                         console.log(response.data)
                     })
                 };
-                // referal code
                 var activateDiscount = {!! $apply_discount !!};// $apply_discount == 0 Or 1
-                var thPrice = {!! $settings->usd_per_hash !!};
-                var thPriceAfterCode ;
-                var slider = document.getElementById("myRange");
-                var output = document.getElementById("demo");
-                var costAfterCode = document.getElementById("doReferalCode");
-                var cost = document.getElementById('cost');
-                // for checking referal code
+                var thPrice = {!! $settings->usd_per_hash !!}
                 function sendCode() {
+
                     var code = document.getElementById('referralCode').value;
+
                     axios.post('{{route('SendCode')}}',{referralCode:code}).then(function (response) {
-                        console.log(response);
+
                         var resp = response.data;
                         if(resp['type'] == 'error'){
-                            alertify.error(resp['body']);
-                        }else{
-                            alertify.success(resp['body']);
-                            // alert(resp['body']);
+                            alert(resp['body'])
+
+                        } else {
+                             
+                            alert(resp['body']);
                             document.getElementById('hiddenCodeValue').value = code;
-                            thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!};
-                            costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
-                            console.log(thPrice);
+                            thPrice = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!}
                             activateDiscount = 1;
                         }
+
                     });
                 };
 
-                
-                output.innerHTML = slider.value+' Th';
-
-                cost.innerHTML = slider.value * thPrice ;
-                    if(activateDiscount == 1){
-                        thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!};
-                        costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
-                    }
-                    
-                    // Display the default slider value
-                    
-                    slider.oninput = function() {
-                        output.innerHTML = this.value+' Th';
-                        if(activateDiscount == 1){
-                            thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!};
-                            costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
-                        }
-                        cost.innerHTML = slider.value  * thPrice;
-                        };
-
-                 // for geting total earn
+                 // =---------------------------------------
 
                 axios.post({!! json_encode('totalEarn') !!},{'user':user}).then(function (response) {
+//                     console.log(id);
+//                     console.log(response.data);
+                    // console.log("response.data");
                     if(response.data[0] == 0){
 
                         document.getElementById('miningBTC').innerHTML = 0;
@@ -563,8 +548,29 @@
                     }
 
                 });
-                   
-                //    ==================================chart==============
+
+
+                    var slider = document.getElementById("myRange");
+                    var output = document.getElementById("demo");
+                    var cost = document.getElementById("cost");
+                    output.innerHTML = slider.value+' Th';
+                    if(activateDiscount == 1){
+
+                        thPrice = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!}
+                    }
+                    cost.innerHTML = slider.value * thPrice ;
+                    // Display the default slider value
+                    
+                    slider.oninput = function() {
+                        output.innerHTML = this.value+' Th';
+                        if(activateDiscount == 1){
+
+                            thPrice = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!}
+                        }
+                        cost.innerHTML = slider.value  * thPrice;
+                        };
+
+                    //    ==================================chart==============
                 var dateFormat = 'YYYY DD MMMM';
                 var date = moment('April 01 2017', dateFormat);
                 var dateTime = [];

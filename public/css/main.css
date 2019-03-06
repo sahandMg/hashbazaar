@@ -1603,7 +1603,8 @@ color: orange !important}
         top: 0px
     }
     .setting-information {
-        margin-top: 15% !important
+        margin-top: 15% !important;
+        display: block
     }
     .setting-information input#cur-password {
         margin-left: 15%;
@@ -1665,12 +1666,9 @@ color: orange !important}
 
     }
     .make-wallet {
-        display: block
+        display: none
     }
 
-    .setting-information {
-        display: none;
-    }
     .address {
         padding-top: 10%
     }

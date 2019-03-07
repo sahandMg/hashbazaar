@@ -1,84 +1,4 @@
-/* User Account */
-/* 
-.useraccount {
-    position: absolute;
-    top: 0px;
-    margin-left:90%;
-    width: 0px;
-    left: 0;
-    background-color: transparent; 
-    border-bottom: transparent;
-    cursor: pointer;
-    font-size: 17px
-} 
-.useraccount .list1 {
-    width: 200px;
-    height: 110px;
-    border-radius: 10px;
-    margin-top: 100px;
-    margin-left:0%;
-    background-color: white;
-    box-shadow: 2px 3px 10px 1px silver;
-    display: none;
-}
-.useraccount .list1  {
-    margin-left: -135px
-}
-.useraccount .list1:after {
-    content: '';
-    position: absolute;
-    border-left:18px solid transparent;
-    border-right:18px solid transparent;
-    border-bottom: 18px solid white;
-    margin-left: 140px;
-    top:-18px;
-    transition: all 1s;
-    -webkit-transition: all 1s;
-    -moz-transition: all 1s;
-    -ms-transition: all 1s;
-}
 
-.useraccount .list1 ul li {
-    list-style-type: none;
-    width: 200px;
-    padding-bottom: 20px;
-    text-align: center;
-    left: 0;
-    margin-left: 0px;
-    position: relative; 
-    font-family: sans-serif;
-    font-weight: bold;
-    transition: all .5s ease-in;
-    -webkit-transition: all .5s ease-in;
-    -moz-transition: all .5s ease-in;
-    -ms-transition: all .5s ease-in;
-    cursor: pointer;
-}
-
-#usericon:before {
-    content: '';
-    display: block;
-    width: 20px;
-    height: 20px;
-    background-image: url("../img/user-solid.svg");
-    background-size: 100% 100%;
-    position: relative;
-    left: 3vh;
-    top: 3vh
-}*/
-@media screen and (max-width:1025px) {
-        
-    #usericon:before {
-        left: 2vh;
-        top: 2vh
-    }
-        
-    #logouticon:before{
-        left: 2vh !important;
-        top: 2vh !important
-    }
-
-}
 #logouticon {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -93,7 +13,6 @@
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-
 
 #logouticon:before{
     content: '';
@@ -209,15 +128,6 @@ header {
     height: auto !important;
 }
 
-#contact-page h1 {
-    font-size: 30px;
-    font-weight: bolder;
-    color: #2e2d2d;
-    font-family: sans-serif;
-    width: auto;
-    margin-top: 160px;
-    margin-left: 220px;
-}
 #contact-page input
 {
     background-color: #FFFDE8
@@ -284,10 +194,6 @@ form.contact-page p:nth-of-type(1) {
         left: 85%;
     }
 
-    #contact-page h1 {
-        margin-left: 150px;
-        font-size: 30px
-    }
     #contact-page input:nth-of-type(1) {
         margin-left: 150px
     }
@@ -303,8 +209,6 @@ form.contact-page p:nth-of-type(1) {
         height: 150px;
         border: 2px solid black;
     }
-   
-    
 
 }
 
@@ -331,12 +235,6 @@ form.contact-page p:nth-of-type(1) {
         top: 0px;
         margin-left: 0%;
         width: 100%;
-    }
-
-    #contact-page h1 {
-        font-size: 30px;
-        width: 500px;
-        left: 170px;
     }
 
     #contact-page input:nth-of-type(1){
@@ -388,13 +286,6 @@ form.contact-page p:nth-of-type(1) {
         margin-top: 100px
     }
 
-    #contact-page h1 {
-        font-size: 20px;
-        width: 280px;
-        margin-left: 70px !important;
-        top: 50px
-    }
-
     #contact-page input:nth-of-type(1){
         margin-left: 100px !important;
         margin-top: 40px;
@@ -430,13 +321,6 @@ form.contact-page p:nth-of-type(1) {
         margin-left: 0%;
         width: 100%;
         margin-top: 100px
-    }
-
-    #contact-page h1 {
-        font-size: 20px;
-        width: 280px;
-        margin-left: 50px !important;
-        top: 50px
     }
 
     #contact-page input:nth-of-type(1){
@@ -482,13 +366,6 @@ form.contact-page p:nth-of-type(1) {
         margin-top: 100px
     }
 
-    #contact-page h1 {
-        font-size: 15px;
-        width: 260px;
-        margin-left: 55px !important;
-        top: 50px
-    }
-
     #contact-page input:nth-of-type(1){
         margin-left: 80px;
         margin-top: 40px;
@@ -525,24 +402,6 @@ form.contact-page p:nth-of-type(1) {
     z-index: 999
 }
 
-#referral-page q  {
-    font-size: 30px;
-   color: #2e2d2d;
-   font-weight: bold;
-   font-family: sans-serif;
-   margin-top: 120px !important;
-   margin-left: 40px
-}
-
-.referral-page_firstList {
-    list-style-type:inherit;
-    margin-top: 40px;
-    margin-left: 60px;
-    color: #2e2d2d;
-    font-family: sans-serif;
-    line-height: 2;
-    font-size: 25px
-}
 
 #referral-page blockquote {
     font-size: 25px;
@@ -553,7 +412,7 @@ form.contact-page p:nth-of-type(1) {
     margin-left: 40px;
  }
 
- #referral-page p {
+ #referral-page #myReferralId {
      font-size: 25px;
      font-family: sans-serif;
      color: #2e2d2d;
@@ -561,22 +420,6 @@ form.contact-page p:nth-of-type(1) {
      margin-left: 240px;
  }
 
- #referral-page dl {
-    font-size: 25px;
-    color: #2e2d2d;
-    font-weight: bold;
-    font-family: sans-serif;
-    margin-top: 40px;
-    margin-left: 40px;
-}
-
-#referral-page p:nth-of-type(2) {
-    font-size: 25px;
-    font-family: sans-serif;
-    color: #2e2d2d;
-    top: 400px;
-    margin-left: 410px;
-}
 
 .referral-page_secondList
  {
@@ -617,36 +460,15 @@ form.contact-page p:nth-of-type(1) {
     }
 
 /* =======----media----==========================Referral==================================== */
-
-
-    #referral-page q  {
-        font-size: 25px;
-        color: #2e2d2d;
-        font-weight: bold;
-        font-family: sans-serif;
-        top: 80px;
-        left: 40px;
+    #referral-page div.container.yek {
+        margin-bottom: 1100px !important
     }
-
-    .referral-page_firstList {
-        font-size: 20px
-    }
-
     #referral-page blockquote {
         font-size: 20px;
     }
 
-    #referral-page p {
+    #referral-page #myReferralId {
         font-size: 20px;
-    }
-
-    #referral-page dl {
-    font-size: 20px;
-    }
-
-    #referral-page p:nth-of-type(2) {
-        font-size: 20px;
-
     }
     .referral-page_secondList_column ul li {
         width: 120px;
@@ -695,36 +517,15 @@ form.contact-page p:nth-of-type(1) {
     #referral-page {
         margin-left: 0%;
         width: 100%;
-        margin-top: 50px;
-    }
-
-    #referral-page q  {
-        font-size: 27px;
-    }
-
-    #referral-page_firstList {
-        font-size: 22px
+        margin-top: 150px;
     }
 
     #referral-page blockquote {
         font-size: 22px;
     }
 
-    #referral-page p {
+    #referral-page #myReferralId{
         font-size: 22px;
-    }
-
-    #referral-page dl {
-        font-size: 22px;
-    }
-
-    #referral-page p:nth-of-type(2) {
-        font-size: 25px;
-        font-family: sans-serif;
-        color: #2e2d2d;
-        top: 400px;
-        margin-left: 410px;
-
     }
 
     .referral-page_secondList_column
@@ -739,7 +540,6 @@ form.contact-page p:nth-of-type(1) {
         font-size: 27px;
         font-weight: bolder !important;
     }
-
    
     
 }
@@ -771,64 +571,27 @@ form.contact-page p:nth-of-type(1) {
     /* Referral */
 
     #referral-page {
-        margin-top: 10px;
+        margin-top: 80px;
         margin-left: 0%;
         width: 100%;
     }
 
-    #referral-page q  {
-        font-size: 20px;
-        color: #2e2d2d;
-        font-weight: bold;
-        font-family: sans-serif;
-        top: 60px;
-        margin-left: 30px
-    }
-
-    .referral-page_firstList {
-        list-style-type:inherit;
-        top: 100px;
-        margin-left: 50px;
-        color: #2e2d2d;
-        font-family: sans-serif;
-        line-height: 2;
-        font-size: 17px;
-        width: 350px
+    #referral-page div.container.yek {
+        margin-bottom: 1350px !important
     }
 
     #referral-page blockquote {
         font-size: 20px;
         color: #2e2d2d;
-        font-weight: bold;
-        font-family: sans-serif;
         top: 330px;
         margin-left: 30px;
     }
 
-    #referral-page p {
+    #referral-page #myReferralId {
         font-size: 20px;
-        font-family: sans-serif;
         color: #2e2d2d;
-        top: 310px;
-        margin-left: 180px;
-    }
-
-    #referral-page dl {
-        font-size: 17px;
-        color: #2e2d2d;
-        font-weight: bold;
-        font-family: sans-serif;
-        top: 400px;
-        margin-left: 30px;
-    }
-
-    #referral-page p:nth-of-type(2) {
-        font-size: 17px;
-        font-family: sans-serif;
-        color: #2e2d2d;
-        top: 400px;
-        margin-left: 280px;
-        width: 50px
+        margin-top: -45px;
+        margin-left: 190px;
     }
 
     .referral-page_secondList
@@ -872,106 +635,39 @@ form.contact-page p:nth-of-type(1) {
         left: 40px;
     }
 
-    .referral-page_firstList {
-        list-style-type:inherit;
-        top: 100px;
-        margin-left: 40px;
-        color: #2e2d2d;
-        font-family: sans-serif;
-        line-height: 2;
-        font-size: 17px;
-        width: 280px
-    }
     #referral-page blockquote {
         font-size: 18px;
-        color: #2e2d2d;
-        font-weight: bold;
         font-family: sans-serif;
         top: 330px;
         margin-left: 30px;
     }
 
-    #referral-page p {
+    #referral-page #myReferralId {
         font-size: 18px;
-        font-family: sans-serif;
         color: #2e2d2d;
-        top: 310px;
-        margin-left: 160px;
+        margin-top: -40px;
+        margin-left: 170px;
     }
-
-    #referral-page dl {
-        font-size: 16px;
-        color: #2e2d2d;
-        font-weight: bold;
-        font-family: sans-serif;
-        top: 400px;
-        margin-left: 30px;
-    }
-
-    #referral-page p:nth-of-type(2) {
-        font-size: 17px;
-        font-family: sans-serif;
-        color: #2e2d2d;
-        top: 400px;
-        margin-left: 280px;
-        width: 50px
-    }
-
     
 }
 
 /* Referral - Media - 320 */
 @media screen and (max-width: 321px) {
- 
-
-    .referral-page_firstList {
-        list-style-type:inherit;
-        top: 100px;
-        margin-left: 40px;
-        color: #2e2d2d;
-        font-family: sans-serif;
-        line-height: 2;
-        font-size: 15px;
-        width: 250px
-    }
-
     #referral-page blockquote {
         font-size: 16px;
         color: #2e2d2d;
-        font-weight: bold;
-        font-family: sans-serif;
         top: 330px;
         margin-left: 30px;
     }
 
-    #referral-page p {
+    #referral-page #myReferralId {
         font-size: 15px;
-        font-family: sans-serif;
-        color: #2e2d2d;
-        top: 315px;
-        margin-left: 140px;
+        margin-left: 150px;
     }
 
-    #referral-page dl {
-        font-size: 15px;
-        color: #2e2d2d;
-        font-weight: bold;
-        font-family: sans-serif;
-        top: 400px;
-        margin-left: 30px;
-        line-height: 1.5
+    #referral-page div.container.yek {
+        margin-bottom: 1700px !important
     }
-
-     #referral-page p:nth-of-type(2) {
-        font-size: 17px;
-        font-family: sans-serif;
-        color: #2e2d2d;
-        top: 425px;
-        margin-left:250px;
-        width: 50px
-    }
-
-
 }
 
 /* ACTIVITY */
@@ -1108,55 +804,7 @@ form.contact-page p:nth-of-type(1) {
 .container table {
     height: 150px
 }
- /* #Transactions-list
- {
-     margin-top: 30px;
-     width: 100%;
-     height: 100px !important;
-     float:left;
-     margin-left: -30px !important 
- }
  
-#Transactions-list tr
-{
-    flex-grow: 1;
-    margin-top: 30px;
-    font-size: 15px;
-    color: #2e2d2d;
-    font-weight: bolder;
-    font-family: sans-serif;
-     width: 97%;
-     margin-left: 2%;
-    text-align: left;
-    display: block
-}
-
-#Transactions-list tr th  {
-    font-weight: normal !important;
-    width: 150px;
-    margin-top: 10px;
-    width: 30.4%;
-    font-size: 24px;
-    margin-left: -2% !important;
-    height: 40px;
-    color: #2e2d2d;
-}
-
-#Transactions-list tr td { 
-    font-weight: bolder;
-    font-weight: normal !important;
-    width: 150px;
-    margin-left: 0% !important;
-    margin-top: 00px;
-    width: 30.2%;
-    font-size: 20px;
-    height: 70px;
-    color: #2e2d2d;
-}
-#Transactions-list tr td:nth-of-type(3) {
-    margin-top: -5px;
-} */
-
 .tooltip1 {
     position: relative;
   }
@@ -1239,50 +887,6 @@ form.contact-page p:nth-of-type(1) {
        font-size: 25px;
     }
 
-    /* #Transactions-list
-    {
-        margin-top: 30px;
-        width: 98%;
-        height: 300px;
-        float:left;
-    }
-    
-    #Transactions-list tr
-   {
-       flex-grow: 1;
-       margin-top: 30px;
-       font-size: 15px;
-       color: #2e2d2d;
-       font-weight: bolder;
-       font-family: sans-serif;
-        width: 95%;
-        margin-left: 5%;
-       text-align: left;
-       display: block
-   }
-   
-   #Transactions-list tr th  {
-       font-weight: normal !important;
-       width: 150px;
-       margin-top: 10px;
-       width: 29.6%;
-       font-size: 24px;
-       margin-left: -2% !important;
-       height: 40px;
-       color: #2e2d2d;
-   }
-   
-   #Transactions-list tr td { 
-       font-weight: bolder;
-       font-weight: normal !important;
-       width: 150px;
-       margin-left: 0% !important;
-       margin-top: 10px;
-        width: 29.4%;
-        font-size: 20px;
-       height: 70px;
-       color: #2e2d2d;
-   } */
 
 }
 
@@ -1358,7 +962,6 @@ form.contact-page p:nth-of-type(1) {
        height: 30px;
        font-size: 27px;
        padding-bottom: 40px;
-       /*margin-top: 200px !important*/
     }
        
     #nopur {
@@ -1366,58 +969,6 @@ form.contact-page p:nth-of-type(1) {
         margin: 15% 35%
     }
    
-    /* .Transactions  {
-       width: 700px !important
-    }
-    .Transactions q {
-      height: 30px;
-      font-size: 27px;
-      padding-bottom: 40px;
-   }
-
-   #Transactions-list
-   {
-       margin-top: 30px;
-       width: 85%;
-       height: 300px;
-       float:left;
-   }
-
-   
-   #Transactions-list tr
-   {
-       flex-grow: 1;
-       margin-top: 30px;
-       font-size: 15px;
-       color: #2e2d2d;
-       font-weight: bolder;
-       font-family: sans-serif;
-       width: 95%;
-       margin-left: 15%;
-       text-align: left;
-       display: block
-   }
-
-   #Transactions-list tr th  {
-       font-weight: normal !important;
-       width: 150px;
-       margin-top: 10px;
-       width: 29.7%;
-       font-size: 24px;
-       margin-left: 0% !important;
-       color: #2e2d2d;
-   }
-
-   #Transactions-list tr td { 
-       font-weight: bolder;
-       font-weight: normal !important;
-       width: 150px;
-       margin-left: 0% !important;
-       margin-top: 10px;
-       width: 30.8%;
-       font-size: 20px;
-       color: #2e2d2d;
-   } */
 
 
 }
@@ -1441,7 +992,6 @@ form.contact-page p:nth-of-type(1) {
     }
 
      .purchases {
-        /*height: 2px !important;*/
         margin-bottom: 0 
     }
      .purchases h2 {
@@ -1449,67 +999,12 @@ form.contact-page p:nth-of-type(1) {
         font-size: 18px;
         width: 40%;
         padding-bottom: 20px
-        /*margin-left: 150px;*/
     }
    
     .container.pur .custom-table th:nth-of-type(2) ,
     .container.pur .custom-table td:nth-of-type(2) {
         display: none
     }
-
-    
-    /* .Transactions {
-        width: 380px !important;
-        height: 10px;
-        margin-top: 5px !important
-    }
-     .Transactions q {
-        height: 18px;
-        font-size: 18px;
-        margin-left: 140px;
-    }
-    #Transactions-list
-    {
-        margin-top: 30px;
-        width: 100%;
-        height: 300px;
-        float:left;
-    }
-    
-    #Transactions-list tr
-    {
-        flex-grow: 1;
-        margin-top: 0px;
-        font-size: 12px;
-        color: #2e2d2d;
-        font-weight: bolder;
-        font-family: sans-serif;
-        width: 95%;
-        margin-left: 5%;
-        text-align: left;
-        display: block
-    }
-
-    #Transactions-list tr th  {
-        font-weight: normal !important;
-        width: 150px;
-        margin-top: 10px;
-        width: 28%;
-        font-size: 18px;
-        margin-left: 0% !important;
-        color: #2e2d2d;
-    }
-
-    #Transactions-list tr td { 
-        font-weight: bolder;
-        font-weight: normal !important;
-        width: 150px;
-        margin-left: 0% !important;
-        margin-top: 10px;
-        width:28.5%;
-        font-size: 13px;
-        color: #2e2d2d;
-    } */
 
     .useraccount {margin-left: 78% !important}
 
@@ -1543,62 +1038,10 @@ form.contact-page p:nth-of-type(1) {
     .purchases h2 {
        height: 20px;
        font-size: 18px;
-       /* margin-left: 100px; */
        width: 42%;
-       /* top: 350px */
     }
 
-    /* .Transactions {
-        width: 360px !important
-    }
-    .Transactions q {
-        height: 18px;
-        font-size: 18px;
-        margin-left: 100px;
-    }
-    #Transactions-list
-    {
-        margin-top: 30px;
-        width: 100%;
-        height: 300px;
-        float:left;
-    }
     
-    #Transactions-list tr
-    {
-        flex-grow: 1;
-        margin-top: 00px;
-        font-size: 12px;
-        color: #2e2d2d;
-        font-weight: bolder;
-        font-family: sans-serif;
-        width: 95%;
-        margin-left: 5%;
-        text-align: left;
-        display: block
-    }
-
-    #Transactions-list tr th  {
-        font-weight: normal !important;
-        width: 150px;
-        margin-top: 10px;
-        width: 28.8%;
-        font-size: 16px;
-        margin-left: 0% !important;
-        color: #2e2d2d;
-    }
-
-    #Transactions-list tr td { 
-        font-weight: bolder;
-        font-weight: normal !important;
-        width: 150px;
-        margin-left: 0% !important;
-        margin-top: 10px !important;
-        width: 29%;
-        font-size: 13px;
-        color: #2e2d2d;
-    } */
-
 }
 
 /* Activity-Media-320 */
@@ -1677,52 +1120,6 @@ form.contact-page p:nth-of-type(1) {
         width: 45%;
         font-size: 15px !important
     }
-    /* .Transactions {
-        width: 310px !important
-    }
-    #Transactions-list
-    {
-        margin-top: 30px;
-        width: 100%;
-        height: 000px;
-        float:left;
-    }
-
-    
-    #Transactions-list tr
-    {
-        flex-grow: 1;
-        margin-top: 00px;
-        font-size: 12px;
-        color: #2e2d2d;
-        font-weight: bolder;
-        font-family: sans-serif;
-        width: 95%;
-        margin-left: 5%;
-        text-align: left;
-        display: block
-    }
-
-    #Transactions-list tr th  {
-        font-weight: normal !important;
-        width: 150px;
-        margin-top: 10px;
-        width: 28.6%;
-        font-size: 14px;
-        margin-left: 0% !important;
-        color: #2e2d2d;
-    }
-
-    #Transactions-list tr td { 
-        font-weight: bolder;
-        font-weight: normal !important;
-        width: 150px;
-        margin-left: 0% !important;
-        margin-top: 10px !important;
-        width: 35%;
-        font-size: 12px;
-        color: #2e2d2d;
-    } */
    
 
 }
@@ -1871,16 +1268,6 @@ form.contact-page p:nth-of-type(1) {
     font-size: 30px;
     margin: 15% 37%
 }
-/*  
-.Hash-History  {
-    max-height: 350px !important;
-    margin-left: 0% !important;
-} */
-/*
-#Hash-History-list .remain {
-    width: 180px; margin: 0px auto;
-    border: thin solid ;
-} */
 
 .progress1 {    border: 1px solid;}
 .progress-bar1 {
@@ -1896,22 +1283,6 @@ form.contact-page p:nth-of-type(1) {
     -webkit-animation: show 0.35s forwards ease-in-out 0.5s;
     animation: show 0.35s forwards ease-in-out 0.5s;
 }
-/* 
-#Hash-History-list .remain {
-    width: 160px !important;
-    text-align: center !important;
-    color: white !important;
-}
-
-#Hash-History-list .remain .progress1 {
-    width:98% !important;
-    background-color: white !important;
-    border: 1px solid black !important;
-    text-align: center !important;
-    height: 100% !important;
-    padding-top: 0px !important
-}
-  */
 
 /* ==============================================Buy hash power=================================== */
 
@@ -2280,66 +1651,6 @@ form.contact-page p:nth-of-type(1) {
     #no-hash {
         font-size: 25px;
     }
-    /* #Hash-History-list
-    {
-        margin-top: 30px;
-        width: 100%;
-        height: 300px;
-        float:left;
-    }
-    
-   #Hash-History-list tr
-   {
-       flex-grow: 1;
-       margin-top: 30px;
-       font-size: 15px;
-       color: #2e2d2d;
-       font-weight: bolder;
-       font-family: sans-serif;
-        width: 95%;
-        margin-left: 5%;
-       text-align: left;
-       display: block
-   }
-   
-   #Hash-History-list tr th  {
-       font-weight: normal !important;
-       width: 150px;
-       margin-top: 10px;
-       width: 28.9%;
-       font-size: 24px;
-       margin-left: -2% !important;
-       height: 70px;
-       color: #2e2d2d;
-   }
-   
-   #Hash-History-list tr td { 
-       font-weight: bolder;
-       font-weight: normal !important;
-       width: 150px;
-       margin-left: 0% !important;
-       margin-top: 10px;
-        width: 26.4%;
-        font-size: 20px;
-       height: 70px;
-       color: #2e2d2d;
-   }
-
-    #Hash-History-list .remain {
-
-        width: 130px !important;
-        text-align: center !important;
-        color: white !important;
-    }
-
-    #Hash-History-list .remain .progress1 {
-        width:98% !important;
-        background-color: white !important;
-        border: 1px solid black !important;
-        text-align: center !important;
-        height: 100% !important;
-        padding-top: 0px !important
-    } */
 
     /* ==============================================Buy hash power=================================== */
 
@@ -2430,50 +1741,6 @@ form.contact-page p:nth-of-type(1) {
     .title-flex .dashboard-hr {
         flex: 1.5
     }
-    /* #Hash-History-list
-    {
-        margin-top: 30px;
-        width: 100%;
-        height: 300px;
-        float:left;
-    }
-    
-    #Hash-History-list tr
-    {
-        flex-grow: 1;
-        margin-top: 30px;
-        font-size: 15px;
-        color: #2e2d2d;
-        font-weight: bolder;
-        font-family: sans-serif;
-        width: 95%;
-        margin-left: 5%;
-        text-align: left;
-        display: block
-    }
-
-    #Hash-History-list tr th  {
-        font-weight: normal !important;
-        width: 150px;
-        margin-top: 10px;
-        width: 29.2%;
-        font-size: 24px;
-        margin-left: 0% !important;
-        height: 40px;
-        color: #2e2d2d;
-    }
-
-    #Hash-History-list tr td { 
-        font-weight: bolder;
-        font-weight: normal !important;
-        width: 150px;
-        margin-left: 0% !important;
-        margin-top: 10px;
-        width: 28%;
-        font-size: 20px;
-        height: 70px;
-        color: #2e2d2d;
-    } */
 
 
 }
@@ -2573,52 +1840,6 @@ form.contact-page p:nth-of-type(1) {
         text-shadow: 0 0 2px green;
         box-shadow: 0 0 2px green;
     }
-   /* #Hash-History-list tr
-    {
-        flex-grow: 1;
-        margin-top: 0px;
-        font-size: 12px;
-        width: 95%;
-        margin-left: 5%;
-        text-align: left;
-        display: block
-    }
-
-    #Hash-History-list tr th  {
-        font-weight: normal !important;
-        width: 150px;
-        margin-top: 10px;
-        width: 41% !important;
-        font-size: 18px;
-        margin-left: 0% !important;
-        height: 40px;
-    }
-
-    #Hash-History-list tr td { 
-        font-weight: normal !important;
-        width: 150px;
-        margin-left: 0% !important;
-        margin-top: 10px;
-        width: 40% !important;
-        font-size: 13px;
-        height: 40px;
-    }
-
-    #Hash-History-list tr td:nth-of-type(2) ,  #Hash-History-list tr th:nth-of-type(2)  {
-        display: none
-    }
-    #Hash-History-list .remain {
-        width: 100px !important;
-        color: white !important;
-    }
-
-    #Hash-History-list .remain .progress1 {
-        width:98% !important;
-        background-color: white !important;
-        border: 1px solid black !important;
-        height: 100% !important;
-        padding-top: 0px !important
-    } */
 
     /* ==============================================Buy hash power=================================== */
    
@@ -2714,57 +1935,7 @@ form.contact-page p:nth-of-type(1) {
         left: 10px;
         top: 0
     }
-    /* #Hash-History-list
-    {
-        margin-top: 30px;
-        width: 100%;
-        height: 120px !important;
-        float:left;
-    }
-    
-    #Hash-History-list tr
-    {
-        flex-grow: 1;
-        margin-top: 00px;
-        font-size: 12px;
-        color: #2e2d2d;
-        font-weight: bolder;
-        font-family: sans-serif;
-        width: 95%;
-        margin-left: 5%;
-        text-align: left;
-        display: block
-    }
-
-    #Hash-History-list tr th  {
-        font-weight: normal !important;
-        width: 150px;
-        margin-top: 10px;
-        width: 28.4%;
-        font-size: 16px;
-        margin-left: 0% !important;
-        height: 70px;
-        color: #2e2d2d;
-    }
-
-    #Hash-History-list tr td { 
-        font-weight: bolder;
-        font-weight: normal !important;
-        width: 150px;
-        margin-left: 0% !important;
-        margin-top: 10px !important;
-        width: 29%;
-        font-size: 13px;
-        height: 70px;
-        color: #2e2d2d;
-    }
-
-    #Hash-History-list .remain {
-        width: 65px !important;
-        border: 1px solid ;
-        font-size: 12px
-    } */
-  
+ 
     /*============================================== Mining History ===================================*/
 
     canvas#chart1 {
@@ -2829,63 +2000,7 @@ form.contact-page p:nth-of-type(1) {
         font-size: 10px;
         top: 0
     }
-    /* #Hash-History-list
-    {
-        margin-top: 30px;
-        width: 100%;
-        height: 130px;
-        float:left;
-    }
-    
-    #Hash-History-list tr
-    {
-        flex-grow: 1;
-        margin-top: 00px;
-        font-size: 12px;
-        color: #2e2d2d;
-        font-weight: bolder;
-        font-family: sans-serif;
-        width: 95%;
-        margin-left: 5%;
-        text-align: left;
-        display: block
-    }
-
-    #Hash-History-list tr th  {
-        font-weight: normal !important;
-        margin-top: 10px;
-        width: 41%;
-        font-size: 14px;
-        margin-left: 10% !important;
-        height: 40px;
-        color: #2e2d2d;
-    }
-
-    #Hash-History-list tr td { 
-        font-weight: bolder;
-        font-weight: normal !important;
-        width: 150px;
-        margin-left: 0% !important;
-        margin-top: 10px !important;
-        width: 37.5%;
-        font-size: 12px;
-        height: 70px;
-        color: #2e2d2d;
-    }
-
-    #Hash-History-list .remain {
-        width: 70px !important;
-        border: 1px solid ;
-        font-size: 12px;
-        height: 20px !important
-    }
-    #Hash-History-list .remain .progress-bar1{
-        height: 20px !important
-    }
-    #Hash-History-list .remain .progress-bar1 .title{
-        text-align: center;
-        padding-top: 1% !important
-    } */
+ 
     /* ==============================================Buy hash power=================================== */
 
     #referralCode {

@@ -12,6 +12,7 @@
                   $name = $user->name;
               }
           }
+
     ?>
     <header id="header" >
        
@@ -132,8 +133,6 @@
 
     </div>
 
-
-
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
@@ -167,6 +166,7 @@
         var modal = document.getElementById('myModal');
 
         // blade if for detecting link
+
         if({!! json_encode(isset($name)) !!}){
 
             modal.style.display = "block";

@@ -80,7 +80,6 @@ Route::get('job',function(){
 
 Route::get('test',function (){
 
-    event(new \App\Events\ReferralQuery(Auth::user()));
 });
 
 Route::get('test2',function(){

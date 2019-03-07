@@ -28,7 +28,13 @@
     <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="{{URL::asset('js/alertify.min.js')}}"></script>
+    <style>
+        .activeLink{
+            font-color:white;
+        }
+    </style>
 </head>
+
 <body>
 
 <header>
@@ -44,7 +50,7 @@
     <div class="useraccount">
         <div class="list1">
             <ul>
-                <li class="user-account-list sub2"> <a href="{{route('dashboard')}}" id="dashboard2">Dashboard</a></li>
+                <li class="{{request()->route()->getName() =='dashboard'?'activeLink':'activeLink'}}"> <a href="{{route('dashboard')}}" id="dashboard2">Dashboard</a></li>
                 <li class="user-account-list sub2"> <a href="{{route('activity')}}" id="activity2">Activity</a></li>
                 <li class="user-account-list sub2"> <a href="{{route('referral')}}" id="referral2">Referral</a> </li>
                 <li class="user-account-list sub2"> <a href="{{route('setting')}}" id="setting2">Setting</a></li>
@@ -167,12 +173,13 @@
     <nav class="container1">
         <ul class="mainList">
 
-            <li class="navbar"> <a href="" id="welcome">Welcome {{Auth::guard('user')->user()->name}}</a> </li>
-            <li class="sub dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
-            <li class="sub"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
-            <li class="sub"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
-            <li class="sub"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
-            <li class="sub"> <a href="{{route('contact')}}" id="contact1">Contact</a></li>
+            <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="{{URL::asset('img/Logo_In_NavBar.svg')}}" alt="Logo_In_NavBar"></a>
+                <a href="" id="welcome">{{Auth::guard('user')->user()->name}}</a> </li>
+            <li class="{{request()->route()->getName() =='dashboard'?'activeLink':'sub dashboard'}}"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
+            <li class="{{request()->route()->getName() =='activity'?'activeLink':'sub dashboard'}}"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
+            <li class="{{request()->route()->getName() =='referral'?'activeLink':'sub'}}"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
+            <li class="{{request()->route()->getName() =='setting'?'activeLink':'sub'}}"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
+            <li class="{{request()->route()->getName() =='contact'?'activeLink':'sub'}}"> <a href="{{route('contact')}}" id="contact1">Contact</a></li>
             <li class="sub"> <a href="{{route('logout')}}" id="logouticon2">Log Out</a></li>
 
         </ul>

@@ -28,56 +28,10 @@
         </p>
         <a href="{{route('index',['code'=>$user->code])}}">http://hashbazaar.com/share</a>
 
-   {{-- <div class="container" style="max-height: 500px;padding: 0px;">
-     <div class="row" style="max-width: 300px;margin: auto;">
-      <div class="referal-left-text">
-         <h3></h3>
-         <h3>300</h3>
-         <h3>200</h3>
-         <h3>100</h3>
-      </div>
-      <div class="referal">
-        <div class="referal-level referal-level-4">
-        </div>
-        <div class="referal-level referal-level-3">
-        </div>
-        <div class="referal-level referal-level-2">
-        </div>
-        <div class="referal-level referal-level-1">
-        </div>
-      </div>
-      <div class="horizontal-lines-container">
-         <span class="referal-percent referal-percent-1">3%</span>
-         <div class="line line-vertical-1"></div>
-         <span class="referal-percent referal-percent-2">2%</span>
-         <div class="line line-vertical-2"></div>
-         <span class="referal-percent referal-percent-3">1.5%</span>
-         <div class="line line-vertical-3"></div>
-         <span class="referal-percent referal-percent-4">1%</span>
-         <div class="line line-vertical-4"></div>
-      </div>
-      <div  class="circle-output-container">
-        <div class="circle circle-1">
-           <h3 class="text-center">30TH</h3>
-        </div>
-        <div class="circle circle-2">
-           <h3 class="text-center">20TH</h3>
-        </div>
-        <div class="circle circle-3">
-           <h3 class="text-center">15TH</h3>
-        </div>
-        <div class="circle circle-4">
-           <h3 class="text-center">10TH</h3>
-        </div>
-      </div>
-     </div>
-
-     
-   </div> --}}
+   
 
    <div class="container yek" style="color: black;margin-top: 50px;margin-bottom:1010px">
-          
-          <div class="container" style="max-height: 500px;padding: 0px;">
+         <div class="container" style="max-height: 500px;padding: 0px;">
                <div class="row" style="max-width: 300px;margin: auto;">
                 <div class="referal-left-text">
                    <h3></h3>
@@ -120,7 +74,53 @@
                   </div>
                 </div>
                </div>
-             </div> 
+          
+               
+             </div>
+          {{-- <div class="container" style="max-height: 500px;padding: 0px;">
+               <div class="row" style="max-width: 300px;margin: auto;">
+                <div class="referal-left-text">
+                   <h3></h3>
+                   <h3>300</h3>
+                   <h3>200</h3>
+                   <h3>100</h3>
+                </div>
+                <div class="referal">
+                  <div class="referal-level referal-level-4">
+                  </div>
+                  <div class="referal-level referal-level-3">
+                  </div>
+                  <div class="referal-level referal-level-2">
+                  </div>
+                  <div class="referal-level referal-level-1">
+                  </div>
+                </div>
+                <div class="horizontal-lines-container">
+                   <span class="referal-percent referal-percent-1">3%</span>
+                   <div class="line line-vertical-1"></div>
+                   <span class="referal-percent referal-percent-2">2%</span>
+                   <div class="line line-vertical-2"></div>
+                   <span class="referal-percent referal-percent-3">1.5%</span>
+                   <div class="line line-vertical-3"></div>
+                   <span class="referal-percent referal-percent-4">1%</span>
+                   <div class="line line-vertical-4"></div>
+                </div>
+                <div  class="circle-output-container">
+                  <div class="circle circle-1">
+                     <h3 class="text-center">30TH</h3>
+                  </div>
+                  <div class="circle circle-2">
+                     <h3 class="text-center">20TH</h3>
+                  </div>
+                  <div class="circle circle-3">
+                     <h3 class="text-center">15TH</h3>
+                  </div>
+                  <div class="circle circle-4">
+                     <h3 class="text-center">10TH</h3>
+                  </div>
+                </div>
+               </div>
+             </div>  --}}
              <br/>
 
          <p>You can join our affiliate program through different ways. Share your dedicated referral code or link wherever you want.</p>
@@ -199,6 +199,13 @@
             })
         })
             
+             // $.noConflict();
+         console.log("setting wallet *******")
+         $( ".coppyIcon" ).click(function() {
+            console.log("coppyIcon click");
+            alertify.success('Wallet address copy to clipboard');
+            copyToClipboard(document.getElementById("copyTarget"));
+         });
       function copyToClipboard(elem) {
             // create hidden text element, if it doesn't already exist
          var targetId = "_hiddenCopyText_";

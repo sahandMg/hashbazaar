@@ -31,7 +31,7 @@
    
 
    <div class="container yek" style="color: black;margin-top: 50px;margin-bottom:1010px">
-         <div class="container" style="max-height: 500px;padding: 0px;">
+         <div class="container" style="max-height: 500px;padding: 0px;min-width: 310px;">
                <div class="row" style="max-width: 300px;margin: auto;">
                 <div class="referal-left-text">
                    <h3></h3>

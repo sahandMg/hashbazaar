@@ -389,7 +389,6 @@
                     var code = document.getElementById('referralCode').value;
 
                     axios.post('{{route('SendCode')}}',{referralCode:code}).then(function (response) {
-
                         var resp = response.data;
                         if(resp['type'] == 'error'){
                             alert(resp['body'])

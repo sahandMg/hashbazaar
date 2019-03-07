@@ -5,7 +5,7 @@
 	<p>You can join our affiliate program through different ways. Share your dedicated referral code or link wherever you want.</p>
    <p>Your referral will get a 5% discount on their first purchase, and you will get a free hashpower upgrade as your affiliate reward from Hashbazaar depend on your level as the following table.</p>
    
-   <table class="table table-bordered">
+   <table class="table table-bordered text-center">
       <thead>
          <tr>
             <th>Total number of referrals</th>

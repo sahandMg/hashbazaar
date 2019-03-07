@@ -412,7 +412,7 @@ form.contact-page p:nth-of-type(1) {
     margin-left: 40px;
  }
 
- #referral-page #myReferralId {
+ #referral-page .myReferralId {
      font-size: 25px;
      font-family: sans-serif;
      color: #2e2d2d;
@@ -467,7 +467,7 @@ form.contact-page p:nth-of-type(1) {
         font-size: 20px;
     }
 
-    #referral-page #myReferralId {
+    #referral-page .myReferralId {
         font-size: 20px;
     }
     .referral-page_secondList_column ul li {
@@ -524,7 +524,7 @@ form.contact-page p:nth-of-type(1) {
         font-size: 22px;
     }
 
-    #referral-page #myReferralId{
+    #referral-page .myReferralId{
         font-size: 22px;
     }
 
@@ -571,7 +571,7 @@ form.contact-page p:nth-of-type(1) {
     /* Referral */
 
     #referral-page {
-        margin-top: 80px;
+        margin-top: 110px;
         margin-left: 0%;
         width: 100%;
     }
@@ -583,11 +583,11 @@ form.contact-page p:nth-of-type(1) {
     #referral-page blockquote {
         font-size: 20px;
         color: #2e2d2d;
-        top: 330px;
+        margin-top: -40px;
         margin-left: 30px;
     }
 
-    #referral-page #myReferralId {
+    #referral-page .myReferralId {
         font-size: 20px;
         color: #2e2d2d;
         margin-top: -45px;
@@ -604,8 +604,10 @@ form.contact-page p:nth-of-type(1) {
     .referral-page_secondList_column
     {
         flex-grow: 1;
-        top: 500px;
-        font-size: 20px;
+        flex-shrink: 1;
+        top: 000px !important;
+        margin-top: 000px !important;
+        font-size: 15px;
         color: #2e2d2d;
         font-family: sans-serif;
         margin-left: 0px;;
@@ -615,8 +617,8 @@ form.contact-page p:nth-of-type(1) {
 
     .referral-page_secondList_column ul li {
         width: auto;
-        margin-top: 5%;
-        font-size: 30px;
+        margin-top: 2%;
+        font-size: 20px;
         font-weight: bolder !important;
     }
 
@@ -642,7 +644,7 @@ form.contact-page p:nth-of-type(1) {
         margin-left: 30px;
     }
 
-    #referral-page #myReferralId {
+    #referral-page .myReferralId {
         font-size: 18px;
         color: #2e2d2d;
         margin-top: -40px;
@@ -660,7 +662,7 @@ form.contact-page p:nth-of-type(1) {
         margin-left: 30px;
     }
 
-    #referral-page #myReferralId {
+    #referral-page .myReferralId {
         font-size: 15px;
         margin-left: 150px;
     }

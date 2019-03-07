@@ -202,20 +202,13 @@ header {
     font-family: sans-serif;
 }
 
-.Logo_In_NavBar {
-    width: auto;
-    height: 50px;
-    left: 50px;
-    position: absolute;
-    top: 0px
-}
 
 div ul .navbar #welcome {
-    font-size: 20px;
+    font-size: 30px;
     color: white;
     position: absolute;
-    left: 110px;
-    top: 70px;
+    left: 50px;
+    margin-top: 0px;
     text-decoration: none
 }
 
@@ -720,7 +713,6 @@ color: orange !important}
         left: 1vh; 
         top: 2vh !important
     }
-
     
     /* ---------------=====Media====-------------Main Container--------------------------- */
     
@@ -732,17 +724,10 @@ color: orange !important}
         width: 270px !important
     }
 
-    .container1 .mainList .navbar .Logo_In_NavBar{
-        width: auto;
-        height: 40px;
-        left: 30px;
-        position: absolute;
-        top: 5px;
-    }
 
     div ul .navbar #welcome {
-        font-size: 17px;
-        left: 70px;
+        font-size: 27px !important;
+        left: 30px;
     }
 
     .container1 .mainList .sub {

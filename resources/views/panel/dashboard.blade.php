@@ -69,7 +69,7 @@
                                 <td>
 
                                         <span>{{$hash->hash}}TH/S</span>
-                                        <div class="box sample"></div>
+                                        <div class="box reward"></div>
 
                                 </td>
                                 
@@ -138,7 +138,7 @@
                     <input type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="myRange">
                     <div style="text-align: left;font-weight: 700;padding-bottom:10px">
                       <p style="color:black">Hash allocation cost : <span id="cost"></span> dollar
-                         <span id="doReferalCode"></span> 
+                         <span id="doReferalCode" style=""></span>
                       </p>
                       <p style="color:black">Maitanace fee: {{$settings->maintenance_fee_per_th_per_day}} dollar per Th/day</p>
                       <small>(include all electricity, cooling, development, and servicing costs )</small>
@@ -313,7 +313,46 @@
   -webkit-animation: show 0.35s forwards ease-in-out 0.5s;
           animation: show 0.35s forwards ease-in-out 0.5s;
 }
+@-webkit-keyframes myanimate {
+  0% {
+    -webkit-text-shadow: 0 0 0px orange;
+                         text-shadow: 0 0 0px orange;
+                         box-shadow: 0 0 0px orange;
+  }
 
+  50% {
+    -webkit-text-shadow: 0 0 4px orange;
+                         text-shadow: 0 0 4px orange;
+                         box-shadow: 0 0 4px orange;
+  }
+
+  100% {
+    -webkit-text-shadow: 0 0 0px orange;
+                         text-shadow: 0 0 0px orange;
+                         box-shadow: 0 0 0px orange;
+  }
+}
+
+@keyframes myanimate {
+  0% {
+    -webkit-text-shadow: 0 0 0px orange;
+                         text-shadow: 0 0 0px orange;
+                         box-shadow: 0 0 0px orange;
+  }
+
+  50% {
+    -webkit-text-shadow: 0 0 4px orange;
+                         text-shadow: 0 0 4px orange;
+                         box-shadow: 0 0 4px orange;
+  }
+
+  100% {
+    -webkit-text-shadow: 0 0 0px orange;
+                         text-shadow: 0 0 0px orange;
+                         box-shadow: 0 0 0px orange;
+  }
+
+}
 @-webkit-keyframes progress {
   from {
     width: 0;
@@ -410,7 +449,7 @@
                             alertify.success(resp['body']);
                             document.getElementById('hiddenCodeValue').value = code;
                             thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!};
-                            costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
+                            costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode ) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
                             console.log(thPrice);
                             activateDiscount = 1;
                         }
@@ -422,7 +461,7 @@
                 cost.innerHTML = slider.value * thPrice ;
                     if(activateDiscount == 1){
                         thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!};
-                        costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
+                        costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
                     }
                     
                     // Display the default slider value
@@ -431,7 +470,7 @@
                         output.innerHTML = this.value+' Th';
                         if(activateDiscount == 1){
                             thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!};
-                            costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
+                            costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
                         }
                         cost.innerHTML = slider.value  * thPrice;
                         };

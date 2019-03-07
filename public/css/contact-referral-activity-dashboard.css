@@ -1964,6 +1964,21 @@ form.contact-page p:nth-of-type(1) {
     cursor: pointer;
 }
 
+#doReferalCode {
+    border: 2px solid orange;
+    /* -webkit-text-shadow: 0 0 2px orange;
+    text-shadow: 0 0 2px orange;
+    box-shadow: 0 0 2px orange; */
+    animation-fill-mode:backwards;
+    -webkit-animation-fill-mode:backwards;
+    border: 1px solid orange;
+    animation:myanimate 1s;
+    animation-iteration-count:infinite;
+    -webkit-animation:myanimate 1s;
+    
+    
+}
+
 .pandel-button {
     text-align: center;
     white-space: nowrap;
@@ -2088,7 +2103,7 @@ form.contact-page p:nth-of-type(1) {
     .min {
         padding-left: 1% !important
     }
-    /* Stamp Style */
+    /* reward Style */
     .Hash-History div.box
     {
         width:20px !important;
@@ -2102,7 +2117,7 @@ form.contact-page p:nth-of-type(1) {
         /* border: thin solid; */
     }
 
-    .Hash-History div.box.sample:after
+    .Hash-History div.box.reward:after
     {
         content:"REWARD";
         position:absolute;
@@ -2539,7 +2554,7 @@ form.contact-page p:nth-of-type(1) {
     }
 
 
-    .Hash-History div.box.sample:after
+    .Hash-History div.box.reward:after
     {
         position:absolute;
         top:5px;
@@ -2691,7 +2706,7 @@ form.contact-page p:nth-of-type(1) {
         padding-left: 3% !important
     }
    
-    .Hash-History div.box.sample:after {
+    .Hash-History div.box.reward:after {
         font-size: 12px;
         left: 10px;
         top: 0

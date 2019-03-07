@@ -167,8 +167,7 @@
     <nav class="container1">
         <ul class="mainList">
 
-            <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="{{URL::asset('img/Logo_In_NavBar.svg')}}" alt="Logo_In_NavBar"></a>
-                <a href="" id="welcome">{{Auth::guard('user')->user()->name}}</a> </li>
+            <li class="navbar"> <a href="" id="welcome">Welcome {{Auth::guard('user')->user()->name}}</a> </li>
             <li class="sub dashboard"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
             <li class="sub"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
             <li class="sub"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>

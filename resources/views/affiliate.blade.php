@@ -3,8 +3,62 @@
 <div class="container" style="color: black;margin-top: 120px;">
 	<h2 class="text-center" style="margin-bottom: 2%;">Affiliate program</h2>
 	<p>You can join our affiliate program through different ways. Share your dedicated referral code or link wherever you want.</p>
-	<p>Your referral will get a 5% discount on their first purchase, and you will get a free hashpower upgrade as your affiliate reward from Hashbazaar depend on your level as the following table.</p>
-	<div class="container" style="max-height: 500px;padding: 0px;">
+   <p>Your referral will get a 5% discount on their first purchase, and you will get a free hashpower upgrade as your affiliate reward from Hashbazaar depend on your level as the following table.</p>
+   
+   <table class="table table-bordered">
+      <thead>
+         <tr>
+            <th>Total number of referrals</th>
+            <th rowspan="2" class="text-center">Referral group</th>
+            <th>Your affiliate reward</th>
+         </tr>
+
+         <tr>
+            <th>Total Number of people used your referral code or link</th>
+            <th>% of referrals first order</th>
+         </tr>
+      </thead>
+
+      <tbody class="text-center" style="font-family:sans-serif">
+         <tr>
+            <td>0 <     < 500 </td>
+            <td>C</td>
+            <td>1%</td>
+         </tr>
+
+         <tr>
+            <td>500 <   < 100 </td>
+            <td>B</td>
+            <td>2%</td>
+         </tr>
+
+         <tr>
+            <td>1K <    < 10K</td>
+            <td>A</td>
+            <td>3%</td>
+         </tr>
+
+         <tr>
+            <td>10K <    < 100K </td>
+            <td>A+</td>
+            <td>4%</td>
+         </tr>
+
+         <tr>
+            <td>100K <    < 1M</td>
+            <td>A++</td>
+            <td>5%</td>
+         </tr>
+
+         <tr>
+            <td>< 1M</td>
+            <td>A++</td>
+            <td>10%</td>
+         </tr>
+      </tbody>
+   </table>
+
+   <div class="container" style="max-height: 500px;padding: 0px;">
      <div class="row" style="max-width: 300px;margin: auto;">
       <div class="referal-left-text">
          <h3></h3>

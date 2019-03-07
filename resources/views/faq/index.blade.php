@@ -7,6 +7,7 @@
     .faq-container {
         margin-top: 10%;color: black;
     }
+    .faq-container h2 { margin-bottom: 2%; }
     .faq-section {
         cursor: pointer;
         background: rgb(235, 233, 233);
@@ -41,10 +42,11 @@
     .faq-answer li {
         list-style: disc;
      }
+     .faq-answer { margin-top: 1%; }
      .faq-answer ul {
         margin-bottom: 2%;
      }
-     .faq-answer p {margin-bottom: 1%;}
+     .faq-answer p { margin-bottom: 1%;}
     @media only screen and (max-width: 576px) {
         .faq-container {
           margin-top: 20%;
@@ -74,7 +76,7 @@
         font-size: 0.8rem;
        }
        .faq-answer ul {
-        padding-left: 25px;
+        /*padding-left: 25px;*/
         margin-bottom: 10px;
        }
        .faq-section img {
@@ -162,8 +164,8 @@
                             <li class="faq-question-list">
                                 <h5 class="faq-question">How does mining make profit for the miner? </h5>
                                 <div class="faq-answer">
-                                 <p style="margin-bottom: 2%;"> The miner is rewarded in two ways:</p>
-                                 <ul style="margin-bottom: 2%;">
+                                 <p style="margin-bottom: 1%;"> The miner is rewarded in two ways:</p>
+                                 <ul style="margin-bottom: 2%;margin-left: 2%;">
                                    <li>Transaction validation fee.</li>
                                    <li>The new block mining reward.</li>
                                  </ul>
@@ -209,7 +211,7 @@
                                  <p>
                                   If you want to mine yourself consider the challenges that will be mentioned in following bullets: 
                                  </p>
-                                 <ul>
+                                 <ul style="margin-left: 2%;">
                                      <li>Shipping costs</li>
                                      <li>Customs duties</li>
                                      <li>Delivery times</li>
@@ -250,7 +252,7 @@
                                   Choose the amount of money you want to invest (Choose the amount of hash power you want to purchase)
                                  </p>
                                  <p>
-                                  Pay your invoice with bitcoin (If you have no bitcoin you should buy it first from any online or offline merchant.)
+                                  Pay your invoice.
                                  </p>
                                  <p>
                                   And then your mining will be started.
@@ -268,7 +270,7 @@
                                  </p>
                                 </div>
                             </li> 
-                            <li class="faq-question-list">
+                           <!--  <li class="faq-question-list">
                                 <h5 class="faq-question">How can I pay the invoice?</h5>
                                 <div class="faq-answer">
                                  <p>
@@ -278,8 +280,8 @@
                                   If you have no bitcoin you should buy it first from any online or offline merchant. You can find a list of sellers from <a href="https://www.bitpremier.com/buy-bitcoins">here</a>.
                                  </p>
                                 </div>
-                            </li> 
-                            <li class="faq-question-list">
+                            </li> --> 
+                            <!-- <li class="faq-question-list">
                                 <h5 class="faq-question">What can I do if I have no bitcoin yet?</h5>
                                 <div class="faq-answer">
                                  <p>
@@ -289,7 +291,7 @@
                                   If you have no bitcoin you should buy it first from any online or offline merchant. You can find a list of sellers from <a href="https://www.bitpremier.com/buy-bitcoins">here</a>.
                                  </p>
                                 </div>
-                            </li>   
+                            </li>  -->  
                             <li class="faq-question-list">
                                 <h5 class="faq-question">How can I find the predicted return from my panel?</h5>
                                 <div class="faq-answer">
@@ -301,7 +303,7 @@
                             <li class="faq-question-list">
                                 <h5 class="faq-question">What parameters is predicted return based on?</h5>
                                 <div class="faq-answer">
-                                  <ul>
+                                  <ul style="margin-left: 2%;">
                                       <li>Mining difficulty</li>
                                       <li>Total network hash rate</li>
                                       <li>Blocks mined per day</li>
@@ -312,7 +314,7 @@
                             <li class="faq-question-list">
                                 <h5 class="faq-question">When Can I get my profit?</h5>
                                 <div class="faq-answer">
-                                  <p>You can withdraw your mining output at 00:00 every day.</p>
+                                  <p>You can withdraw your mining output after increasing to 0.01BTC.</p>
                                 </div>
                             </li>                           
                         </ul>

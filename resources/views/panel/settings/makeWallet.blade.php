@@ -14,7 +14,7 @@
 
 
             </div>
-          
+
 
             <div class="flex-item-two flex-item"><a href="{{route('changePassword')}}" class="change">Change Password</a></div>
 
@@ -69,7 +69,7 @@
     <hr class="make-wallet-hr-footer" style="position: relative;top: 570px">
 
 
-    </div> 
+    </div>
 
 
 
@@ -82,19 +82,18 @@
 
             </div>
 
-   
+
 
     <script>
        console.log("make wallet")
         // ------------user account--------------------
         $(document).ready(function(){
-    
+
             $('.user-img').click(function(){
                 $('.list1').toggle(500);
             })
         })
-    
-   
+
     // =---------------------------------------
     </script>
     @include('master.footer')

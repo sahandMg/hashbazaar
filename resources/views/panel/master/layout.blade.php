@@ -176,6 +176,7 @@
             <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="{{URL::asset('img/Logo_In_NavBar.svg')}}" alt="Logo_In_NavBar"></a>
                 <a href="" id="welcome">{{Auth::guard('user')->user()->name}}</a> </li>
             <li class="{{request()->route()->getName() =='dashboard'?'activeLink':'sub dashboard'}}"> <a href="{{route('dashboard')}}" id="dashboard">Dashboard</a></li>
+            <li class="{{request()->route()->getName() =='activity'?'activeLink':'sub dashboard'}}"> <a href="{{route('activity')}}" id="activity">Activity</a></li>
             <li class="{{request()->route()->getName() =='referral'?'activeLink':'sub'}}"> <a href="{{route('referral')}}" id="referral">Referral</a> </li>
             <li class="{{request()->route()->getName() =='setting'?'activeLink':'sub'}}"> <a href="{{route('setting')}}" id="setting">Setting</a></li>
             <li class="{{request()->route()->getName() =='contact'?'activeLink':'sub'}}"> <a href="{{route('contact')}}" id="contact1">Contact</a></li>

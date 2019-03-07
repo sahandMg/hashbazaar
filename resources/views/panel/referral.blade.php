@@ -9,17 +9,7 @@
 
     ?>
     <div id="referral-page" class="panel-container " style="display: flex;flex-direction: column;">
-        <q>Notice :</q>
-        <ul class="referral-page_firstList">
-            <li>Appropriately harness low-risk high-yield “outside the box” thinking.</li>
-            <li>Appropriately harness low-risk high-yield “outside the box” thinking.</li>
-            <li>Appropriately harness low-risk high-yield “outside the box” thinking.</li>
-        </ul>
-        <blockquote>My Referral ID : </blockquote>
-        <p>{{$user->code}}</p>
-        <a href="{{route('index',['code'=>$user->code])}}">http://hashbazaar.com/share</a>
-        <dl>Total Benefits Till Now (USD) :</dl>
-        <p>$ {{$user->referral->total_benefit}}</p>
+        
         <div class="referral-page_secondList">
             <div class="referral-page_secondList_column">Number of Sharing
                 <ul><li>{{$user->referral->total_sharing_num}}</li></ul>
@@ -32,52 +22,169 @@
             </div>
         </div>
 
-   <div class="container" style="max-height: 500px;padding: 0px;">
-     <div class="row" style="max-width: 300px;margin: auto;">
-      <div class="referal-left-text">
-         <h3></h3>
-         <h3>300</h3>
-         <h3>200</h3>
-         <h3>100</h3>
-      </div>
-      <div class="referal">
-        <div class="referal-level referal-level-4">
-        </div>
-        <div class="referal-level referal-level-3">
-        </div>
-        <div class="referal-level referal-level-2">
-        </div>
-        <div class="referal-level referal-level-1">
-        </div>
-      </div>
-      <div class="horizontal-lines-container">
-         <span class="referal-percent referal-percent-1">3%</span>
-         <div class="line line-vertical-1"></div>
-         <span class="referal-percent referal-percent-2">2%</span>
-         <div class="line line-vertical-2"></div>
-         <span class="referal-percent referal-percent-3">1.5%</span>
-         <div class="line line-vertical-3"></div>
-         <span class="referal-percent referal-percent-4">1%</span>
-         <div class="line line-vertical-4"></div>
-      </div>
-      <div  class="circle-output-container">
-        <div class="circle circle-1">
-           <h3 class="text-center">30TH</h3>
-        </div>
-        <div class="circle circle-2">
-           <h3 class="text-center">20TH</h3>
-        </div>
-        <div class="circle circle-3">
-           <h3 class="text-center">15TH</h3>
-        </div>
-        <div class="circle circle-4">
-           <h3 class="text-center">10TH</h3>
-        </div>
-      </div>
-     </div>
-   </div>
+        <blockquote>My Referral ID : </blockquote>
+        <p id="myReferralId">{{$user->code}}
+            <a class="coppyIcon" style="cursor: pointer;"><img class="icon" src="../img/Copy.svg" alt=""></a>
+        </p>
+        <a href="{{route('index',['code'=>$user->code])}}">http://hashbazaar.com/share</a>
 
+   
 
+   <div class="container yek" style="color: black;margin-top: 50px;margin-bottom:1010px">
+         <div class="container" style="max-height: 500px;padding: 0px;min-width: 310px;">
+               <div class="row" style="max-width: 300px;margin: auto;">
+                <div class="referal-left-text">
+                   <h3></h3>
+                   <h3>300</h3>
+                   <h3>200</h3>
+                   <h3>100</h3>
+                </div>
+                <div class="referal">
+                  <div class="referal-level referal-level-4">
+                  </div>
+                  <div class="referal-level referal-level-3">
+                  </div>
+                  <div class="referal-level referal-level-2">
+                  </div>
+                  <div class="referal-level referal-level-1">
+                  </div>
+                </div>
+                <div class="horizontal-lines-container">
+                   <span class="referal-percent referal-percent-1">3%</span>
+                   <div class="line line-vertical-1"></div>
+                   <span class="referal-percent referal-percent-2">2%</span>
+                   <div class="line line-vertical-2"></div>
+                   <span class="referal-percent referal-percent-3">1.5%</span>
+                   <div class="line line-vertical-3"></div>
+                   <span class="referal-percent referal-percent-4">1%</span>
+                   <div class="line line-vertical-4"></div>
+                </div>
+                <div  class="circle-output-container">
+                  <div class="circle circle-1">
+                     <h3 class="text-center">30TH</h3>
+                  </div>
+                  <div class="circle circle-2">
+                     <h3 class="text-center">20TH</h3>
+                  </div>
+                  <div class="circle circle-3">
+                     <h3 class="text-center">15TH</h3>
+                  </div>
+                  <div class="circle circle-4">
+                     <h3 class="text-center">10TH</h3>
+                  </div>
+                </div>
+               </div>
+          
+               
+             </div>
+          {{-- <div class="container" style="max-height: 500px;padding: 0px;">
+               <div class="row" style="max-width: 300px;margin: auto;">
+                <div class="referal-left-text">
+                   <h3></h3>
+                   <h3>300</h3>
+                   <h3>200</h3>
+                   <h3>100</h3>
+                </div>
+                <div class="referal">
+                  <div class="referal-level referal-level-4">
+                  </div>
+                  <div class="referal-level referal-level-3">
+                  </div>
+                  <div class="referal-level referal-level-2">
+                  </div>
+                  <div class="referal-level referal-level-1">
+                  </div>
+                </div>
+                <div class="horizontal-lines-container">
+                   <span class="referal-percent referal-percent-1">3%</span>
+                   <div class="line line-vertical-1"></div>
+                   <span class="referal-percent referal-percent-2">2%</span>
+                   <div class="line line-vertical-2"></div>
+                   <span class="referal-percent referal-percent-3">1.5%</span>
+                   <div class="line line-vertical-3"></div>
+                   <span class="referal-percent referal-percent-4">1%</span>
+                   <div class="line line-vertical-4"></div>
+                </div>
+                <div  class="circle-output-container">
+                  <div class="circle circle-1">
+                     <h3 class="text-center">30TH</h3>
+                  </div>
+                  <div class="circle circle-2">
+                     <h3 class="text-center">20TH</h3>
+                  </div>
+                  <div class="circle circle-3">
+                     <h3 class="text-center">15TH</h3>
+                  </div>
+                  <div class="circle circle-4">
+                     <h3 class="text-center">10TH</h3>
+                  </div>
+                </div>
+               </div>
+             </div>  --}}
+             <br/>
+
+         <p>You can join our affiliate program through different ways. Share your dedicated referral code or link wherever you want.</p>
+         <p>Your referral will get a 5% discount on their first purchase, and you will get a free hashpower upgrade as your affiliate reward from Hashbazaar depend on your level as the following table.</p>
+         
+
+         <table class="table table-bordered text-center">
+            <thead style="font-weight:bold">
+               <tr>
+                  <th>Total number of referrals</th>
+                  <th rowspan="2" class="text-center">Referral group</th>
+                  <th>Your affiliate reward</th>
+               </tr>
+      
+               <tr>
+                  <th>Total Number of people used your referral code or link</th>
+                  <th>% of referrals first order</th>
+               </tr>
+            </thead>
+      
+            <tbody class="text-center" style="font-family:sans-serif">
+               <tr>
+                  <td>0 <     < 500 </td>
+                  <td>C</td>
+                  <td>1%</td>
+               </tr>
+      
+               <tr>
+                  <td>500 <   < 100 </td>
+                  <td>B</td>
+                  <td>2%</td>
+               </tr>
+      
+               <tr>
+                  <td>1K <    < 10K</td>
+                  <td>A</td>
+                  <td>3%</td>
+               </tr>
+      
+               <tr>
+                  <td>10K <    < 100K </td>
+                  <td>A+</td>
+                  <td>4%</td>
+               </tr>
+      
+               <tr>
+                  <td>100K <    < 1M</td>
+                  <td>A++</td>
+                  <td>5%</td>
+               </tr>
+      
+               <tr>
+                  <td>< 1M</td>
+                  <td>A++</td>
+                  <td>10%</td>
+               </tr>
+            </tbody>
+         </table>
+      
+         
+         <p>For instance if you reach 100 referrals you will get 1% of total hash power that is purchased by them as your referral group “C”.</p>
+         <p>If you reach 500 from now on your affiliate reward will be increased to 2%. In other words if you reach for instance 800 referrals, you will get 1% of total hash power that is purchased by 500 referrals from group “c”  and 2% of total hash power that is purchased by 300 referrals from group “B”. </p>
+         <p>Note that all the affiliate rewards will be given by Hashbazaar to our promoters to encourage others to join the future of cryptocurrency transaction system and also gain profit from their investment.</p>
+      </div>
 
 </div>
 
@@ -91,10 +198,73 @@
                 $('.list1').toggle(500);
             })
         })
+            
+             // $.noConflict();
+         console.log("setting wallet *******")
+         $( ".coppyIcon" ).click(function() {
+            console.log("coppyIcon click");
+            alertify.success('Wallet address copy to clipboard');
+            copyToClipboard(document.getElementById("copyTarget"));
+         });
+      function copyToClipboard(elem) {
+            // create hidden text element, if it doesn't already exist
+         var targetId = "_hiddenCopyText_";
+         var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
+         var origSelectionStart, origSelectionEnd;
+         if (isInput) {
+            // can just use the original source element for the selection and copy
+            target = elem;
+            origSelectionStart = elem.selectionStart;
+            origSelectionEnd = elem.selectionEnd;
+         } else {
+            // must use a temporary form element for the selection and copy
+            target = document.getElementById(targetId);
+            if (!target) {
+                  var target = document.createElement("textarea");
+                  target.style.position = "absolute";
+                  target.style.left = "-9999px";
+                  target.style.top = "0";
+                  target.id = targetId;
+                  document.body.appendChild(target);
+            }
+            target.textContent = elem.textContent;
+         }
+         // select the content
+         var currentFocus = document.activeElement;
+         target.focus();
+         target.setSelectionRange(0, target.value.length);
+         
+         // copy the selection
+         var succeed;
+         try {
+               succeed = document.execCommand("copy");
+         } catch(e) {
+            succeed = false;
+         }
+         // restore original focus
+         if (currentFocus && typeof currentFocus.focus === "function") {
+            currentFocus.focus();
+         }
+         
+         if (isInput) {
+            // restore prior selection
+            elem.setSelectionRange(origSelectionStart, origSelectionEnd);
+         } else {
+            // clear temporary content
+            target.textContent = "";
+         }
+         return succeed;
+      }
         
          // =---------------------------------------</script>
 
           <style type="text/css">
+          .icon {
+            width: 35px;
+            height: 35px;
+            margin-top: -10px;
+            padding: 5px;
+         }
        .circle-output-container {
         display: flex;
         flex-direction: column; 

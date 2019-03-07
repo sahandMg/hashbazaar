@@ -138,7 +138,7 @@
                     <input type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="myRange">
                     <div style="text-align: left;font-weight: 700;padding-bottom:10px">
                       <p style="color:black">Hash allocation cost : <span id="cost"></span> dollar
-                         <span id="doReferalCode" style=""></span>
+                         <span id="doReferalCode" style="animation-iteration-count:infinite"></span>
                       </p>
                       <p style="color:black">Maitanace fee: {{$settings->maintenance_fee_per_th_per_day}} dollar per Th/day</p>
                       <small>(include all electricity, cooling, development, and servicing costs )</small>

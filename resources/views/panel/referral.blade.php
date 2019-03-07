@@ -9,12 +9,6 @@
 
     ?>
     <div id="referral-page" class="panel-container " style="display: flex;flex-direction: column;">
-        <q>Notice :</q>
-        <ul class="referral-page_firstList">
-            <li>Appropriately harness low-risk high-yield “outside the box” thinking.</li>
-            <li>Appropriately harness low-risk high-yield “outside the box” thinking.</li>
-            <li>Appropriately harness low-risk high-yield “outside the box” thinking.</li>
-        </ul>
         <blockquote>My Referral ID : </blockquote>
         <p>{{$user->code}}</p>
         <a href="{{route('index',['code'=>$user->code])}}">http://hashbazaar.com/share</a>

@@ -1,6 +1,16 @@
 /* User Account */
 .Active {
-    color: White;
+    color: White !important;
+    text-decoration: none !important;
+    display: block !important;
+    height: 60px !important;
+    border-bottom: 2px solid #727272 !important;
+    font-size: 30px !important;
+    background: rgb(39, 38, 38) !important;
+    text-align: center !important;
+    padding-bottom: 20px !important;
+    text-align: center !important;
+    font-family: sans-serif !important
 }
 .useraccount {
     position: absolute;

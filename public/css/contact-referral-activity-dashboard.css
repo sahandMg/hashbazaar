@@ -1339,21 +1339,19 @@ form.contact-page p:nth-of-type(1) {
 }
 
 #doReferalCode {
-    border: 2px solid orange;
+    border-top:1px solid orange !important;
+    border-bottom: 1px solid orange !important;
     /* -webkit-text-shadow: 0 0 2px orange;
     text-shadow: 0 0 2px orange;
     box-shadow: 0 0 2px orange; */
     animation-fill-mode:backwards;
     -webkit-animation-fill-mode:backwards;
-    border: 1px solid orange;
     animation:myanimate 2s;
     animation-iteration-count:infinite;
     animation-duration: 2s;
     animation-direction: alternate;
     animation-play-state: running;
     -webkit-animation:myanimate 2s;
-    
-    
 }
 
 .pandel-button {

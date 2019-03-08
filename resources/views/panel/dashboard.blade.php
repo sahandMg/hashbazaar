@@ -101,8 +101,6 @@
                             </tr>
                            @endforeach
                            </tbody>
-
-                       
                        
                         @else
                             <p id="no-hash"> NO Hash History</p>
@@ -316,20 +314,22 @@
 @-webkit-keyframes myanimate {
   0% {
     -webkit-text-shadow: 0 0 0px orange;
-                         text-shadow: 0 0 0px orange;
-                         box-shadow: 0 0 0px orange;
+    text-shadow: 0 0 0px orange;
+    box-shadow: 0 0 0px orange;
   }
 
   50% {
     -webkit-text-shadow: 0 0 4px orange;
-                         text-shadow: 0 0 4px orange;
-                         box-shadow: 0 0 4px orange;
+    text-shadow: 0 0 4px orange;
+    box-shadow: 0 0 4px orange;
+    border-right: 2px solid orange;
+    border-left: 2px solid orange;
   }
 
   100% {
     -webkit-text-shadow: 0 0 0px orange;
-                         text-shadow: 0 0 0px orange;
-                         box-shadow: 0 0 0px orange;
+    text-shadow: 0 0 0px orange;
+    box-shadow: 0 0 0px orange;
   }
 }
 
@@ -341,9 +341,9 @@
   }
 
   50% {
-    -webkit-text-shadow: 0 0 4px orange;
-                         text-shadow: 0 0 4px orange;
-                         box-shadow: 0 0 4px orange;
+    -webkit-text-shadow: 0 0 3px orange;
+                         text-shadow: 0 0 3px orange;
+                         box-shadow: 0 0 6px orange;
   }
 
   100% {

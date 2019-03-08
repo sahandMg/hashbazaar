@@ -22,11 +22,17 @@
             </div>
         </div>
 
-        <blockquote>My Referral ID : </blockquote>
-        <p id="myReferralId">{{$user->code}}
+        <blockquote>My Referral ID: </blockquote>
+        <p class="myReferralId" id="copyTarget">{{$user->code}}
             <a class="coppyIcon" style="cursor: pointer;"><img class="icon" src="../img/Copy.svg" alt=""></a>
         </p>
-        <a href="{{route('index',['code'=>$user->code])}}">http://hashbazaar.com/share</a>
+
+        <blockquote style="margin-top:0%">My Referral LINK:</blockquote>
+        <p class="shareReferralId" style="padding-left:1%"> 
+         <a href="{{route('index',['code'=>$user->code])}}">http://hashbazaar.com/share</a>
+         <a class="coppyIcon" style="cursor: pointer;"><img class="icon" src="../img/Copy.svg" alt=""></a>
+
+        </p>
 
    
 
@@ -199,11 +205,10 @@
             })
         })
             
-             // $.noConflict();
          console.log("setting wallet *******")
          $( ".coppyIcon" ).click(function() {
             console.log("coppyIcon click");
-            alertify.success('Wallet address copy to clipboard');
+            alertify.success('Referral code copy to clipboard');
             copyToClipboard(document.getElementById("copyTarget"));
          });
       function copyToClipboard(elem) {

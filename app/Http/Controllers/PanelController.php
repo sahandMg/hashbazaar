@@ -32,7 +32,6 @@ class PanelController extends Controller
     public function dashboard(){
 
 
-
         $hashes = BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->get();
         $unusedCodes = DB::table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('used',0)->count();
         if($unusedCodes > 0){
@@ -75,10 +74,10 @@ class PanelController extends Controller
         $data = [];
         for($i = 0 ; $i <= date('t') ; $i++){
             $time = Carbon::now()->subDay($i);
-            $reports = MiningReport::whereDate('created_at',$time)->where('user_id',1)->get();
+            $reports = MiningReport::whereDate('created_at',$time)->where('user_id',$user->id)->get();
             if(count($reports) > 0){
                 $totalUsd =  $reports->sum('mined_usd');
-                $data[$i] = ['time'=>$time->format('Y d M') , 'mined'=>$totalUsd];
+                $data[$i] = ['time'=>$time->format('d M') , 'mined'=>$totalUsd];
             }
 
         }
@@ -112,11 +111,8 @@ class PanelController extends Controller
 
 
         $code = $request->referralCode;
-
-
         $referralUser = DB::table('users')->where('code',$code)->where('id','!=',Auth::id())->first();
         $is_expired = DB::table('expired_codes')->where('code',$code)->first();
-        return 200;
         // check if the code is used before
         if(!is_null($is_expired)){
 
@@ -205,28 +201,28 @@ class PanelController extends Controller
         return view('panel.settings.setting');
     }
 
-    public function post_setting(Request $request){
-
-        $this->validate($request,[
-            'pass'=>'required|min:8',
-            'newpass'=>'required|min:8',
-            'confirm'=>'required|same:newpass',
-        ]);
-        $user = Auth::guard('user')->user();
-        $user->update([
-            'password'=>Hash::make($request->newpass)
-
-        ]);
-        $user->save();
-        return redirect()->back()->with(['message'=>'Password Changed']);
-    }
+//    public function post_setting(Request $request){
+//
+//        $this->validate($request,[
+//            'pass'=>'required|min:8',
+//            'newpass'=>'required|min:8',
+//            'confirm'=>'required|same:newpass',
+//        ]);
+//        $user = Auth::guard('user')->user();
+//        $user->update([
+//            'password'=>Hash::make($request->newpass)
+//
+//        ]);
+//        $user->save();
+//        return redirect()->back()->with(['message'=>'Password Changed']);
+//    }
 
     public function userInfo(){
 
         return view('panel.settings.userInfo');
     }
 
-    public function post_userInfo(Request $request){
+    public function post_setting(Request $request){
 
         $user = Auth::guard('user')->user();
         $input = $request->all();
@@ -235,10 +231,24 @@ class PanelController extends Controller
             $user->update(['email'=>$input['email']]);
         }
 
-        if(isset($input['password'])){
+        if(Hash::check($input['password'],$user->password)){
 
-            $user->update(['password'=> Hash::make($input['password'])]);
+            if(isset($input['password'])){
+                $this->validate($request,[
+                    'password' => 'required|min:6',
+                    'newpass' => 'required|min:6',
+                    'confirm' => 'required|same:newpass',
+                ]);
+                $user->update(['password' => bcrypt($input['newpass'])]);
+            }
+            return redirect()->back()->with(['message'=>'Password changed']);
+        }else{
+            return redirect()->back()->with(['error'=>'current password is wrong']);
         }
+
+
+
+
     }
 
     public function changePassword(){
@@ -249,14 +259,20 @@ class PanelController extends Controller
     public function post_wallet(Request $request){
 
         $this->validate($request,['wallet'=>'required']);
+        $wallet = DB::table('wallets')->where('addr',$request->wallet)->first();
+        if(is_null($wallet)){
+            $wallet = new Wallet();
+            $wallet->addr = $request->wallet;
+            $wallet->user_id = Auth::guard('user')->id();
+            $wallet->active = 1;
+            $wallet->save();
+            return redirect()->route('makeWallet');
+        }else{
+            return redirect()->back()->with(['error'=>'You have entered a wallet address before']);
+        }
 
-        $wallet = new Wallet();
-        $wallet->addr = $request->wallet;
-        $wallet->user_id = Auth::guard('user')->id();
-        $wallet->active = 1;
-        $wallet->save();
 
-        return redirect()->route('makeWallet');
+
 
     }
 

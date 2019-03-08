@@ -124,9 +124,9 @@ Route::get('affiliate','PageController@affiliate')->name('affiliate');
 
 Route::post('login','AuthController@post_login')->name('login');
 
-Route::get('password-reser','AuthController@passwordReset')->name('passwordReset');
+Route::get('password-reset','AuthController@passwordReset')->name('passwordReset');
 
-Route::post('password-reser','AuthController@post_passwordReset')->name('passwordReset');
+Route::post('password-reset','AuthController@post_passwordReset')->name('passwordReset');
 
 Route::get('login/google','AuthController@redirectToProvider')->name('redirectToProvider');
 

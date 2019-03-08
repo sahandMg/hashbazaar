@@ -251,20 +251,20 @@ class AuthController extends Controller
     public function post_passwordReset(Request $request){
 
         $this->validate($request,[
-            'email'=> 'required|email',
-            'password'=>'required|min:6',
-            'confirm'=>'required|same:password'
+            'email'=> 'required|email'
         ]);
 
         $user = User::where('email',$request->email)->first();
         $pass = strtolower(str_random(10));
-        $user->passowrd = bcrypt($pass);
+        $user->password = bcrypt($pass);
         $user->save();
-        Mail::send('email.password',['pass'=>$pass,'user'=>$user],function($message) use($user){
+        Mail::send('email.reset_password',['pass'=>$pass,'user'=>$user],function($message) use($user){
             $message->from ('Admin@HashBazaar');
             $message->to ($user->email);
             $message->subject ('Password Reset');
         });
+
+        return redirect()->route('login')->with(['message'=>'An Email with a new password has been sent to your email address']);
 
     }
 

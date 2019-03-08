@@ -341,9 +341,9 @@
   }
 
   50% {
-    -webkit-text-shadow: 0 0 4px orange;
-                         text-shadow: 0 0 4px orange;
-                         box-shadow: 0 0 4px orange;
+    -webkit-text-shadow: 0 0 3px orange;
+                         text-shadow: 0 0 3px orange;
+                         box-shadow: 0 0 6px orange;
   }
 
   100% {

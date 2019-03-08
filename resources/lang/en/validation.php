@@ -129,6 +129,17 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+
+        'password' => [
+            'required' => 'please enter your password'
+        ],
+        'newpass' => [
+            'required' => 'please enter your new password'
+        ],
+        'confirm' => [
+            'required' => 'please confirm your password',
+            'same'  => 'password not matches'
+        ]
     ],
 
     /*

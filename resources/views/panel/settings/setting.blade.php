@@ -13,16 +13,15 @@
     </div>
     @if(count($errors->all()) > 0)
         <ul>
-            @foreach($errors->all() as $error)
-                <li>{{$error}}</li>
-             @endforeach
+            @include('formError')
         </ul>
       @endif
-    @if(session()->has('message'))
-        <p>{{session('message')}}</p>
-    @endif
+    @include('formMessage')
+    @include('sessionError')
+
     <div class="setting-information">
         <form name="profile" action="{{route('setting')}}" method="post">
+
             <input type="hidden" name="_token" value="{{csrf_token()}}">
              <legend class="coppyIcon">User Information </legend>  
 
@@ -37,7 +36,7 @@
 
              <legend>Password</legend> 
             <label id="textbefore">Current Password
-            <input type="password" name="pass" id="cur-password" placeholder="Current Password">  <br>
+            <input type="password" name="password" id="cur-password" placeholder="Current Password">  <br>
             </label>
 
             <label id="textbefore">New Password
@@ -47,7 +46,6 @@
             <label id="textbefore">Confirm Password
             <input type="password" name="confirm" id="Confirmpassword" placeholder="Confirm Password">
             </label>
-
 
             <input type="submit" value="Submit" class="pandel-button">
         </form>

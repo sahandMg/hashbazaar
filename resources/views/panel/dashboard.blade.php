@@ -69,7 +69,9 @@
                                 <td>
 
                                         <span>{{$hash->hash}}TH/S</span>
+                                    @if($hash->order_id == 'referral')
                                         <div class="box reward"></div>
+                                        @endif
 
                                 </td>
                                 
@@ -128,9 +130,7 @@
                         @endforeach
                     </ul>
                 @endif
-                @if(session()->has('error'))
-                    <p>{{session('error')}}</p>
-                  @endif
+                @include('sessionError')
                 @if($settings->available_th > 0)
                 <form class="dashboard-page" method="post" action="{{route('payment')}}">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -441,6 +441,7 @@
                     var code = document.getElementById('referralCode').value;
 
                     axios.post('{{route('SendCode')}}',{referralCode:code}).then(function (response) {
+
                         var resp = response.data;
                         if(resp['type'] == 'error'){
                             alertify.error(resp['body']);

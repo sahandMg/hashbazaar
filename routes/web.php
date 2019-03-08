@@ -189,7 +189,7 @@ Route::group(['middleware'=>'block','prefix'=>'panel'],function(){
 
     Route::get('payment/confirm','PaymentController@confirmPayment')->name('confirmPayment');
 
-    Route::get('redeem','PaymentController@redeem')->name('redeem');
+    Route::post('redeem','PaymentController@redeem')->name('redeem');
 
     Route::get('chart','PanelController@chartData')->name('chartData');
 
@@ -206,6 +206,8 @@ Route::group(['prefix' => '@admin'], function () {
     Route::get('home',['as'=>'adminHome','uses'=>'AdminController@index']);
     Route::get('transactions',['as'=>'adminTransactions','uses'=>'AdminController@transactions']);
     Route::get('get-transactions',['as'=>'adminGetTransactions','uses'=>'AdminController@getTransactions']);Route::get('redeems',['as'=>'adminRedeems','uses'=>'AdminController@adminRedeems']);
+
+    Route::get('checkout',['as'=>'adminCheckout','uses'=>'AdminController@adminCheckout']);
 
     Route::get('redeems',['as'=>'adminRedeems','uses'=>'AdminController@adminRedeems']);
     Route::get('get-redeems',['as'=>'adminGetRedeems','uses'=>'AdminController@adminGetRedeems']);

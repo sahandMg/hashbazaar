@@ -116,4 +116,11 @@ class AdminController extends Controller
             }
         }
     }
+
+    public function adminCheckout(){
+
+        $users = User::all();
+
+        return view('admin.users.checkout',compact('users'));
+    }
 }

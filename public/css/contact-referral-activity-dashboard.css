@@ -1369,6 +1369,7 @@ form.contact-page p:nth-of-type(1) {
     animation-direction: alternate;
     animation-play-state: running;
     -webkit-animation:myanimate 2s;
+    padding: 2px !important;
 }
 
 .pandel-button {

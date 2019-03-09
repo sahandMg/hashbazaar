@@ -28,9 +28,9 @@
         </p>
 
         <blockquote style="margin-top:0%">My Referral LINK:</blockquote>
-        <p class="shareReferralId" style="padding-left:1%"> 
+        <p class="shareReferralId" id="copyTarget2" style="padding-left:1%"> 
          <a href="{{route('index',['code'=>$user->code])}}">http://hashbazaar.com/share</a>
-         <a class="coppyIcon" style="cursor: pointer;"><img class="icon" src="../img/Copy.svg" alt=""></a>
+         <a class="coppyIcon2" style="cursor: pointer;"><img class="icon" src="../img/Copy.svg" alt=""></a>
 
         </p>
 
@@ -205,11 +205,18 @@
             })
         })
             
-         console.log("setting wallet *******")
+         console.log("copy Target 1 *******")
          $( ".coppyIcon" ).click(function() {
             console.log("coppyIcon click");
-            alertify.success('Referral code copy to clipboard');
+            alertify.success('Referral Code Copy To Clipboard');
             copyToClipboard(document.getElementById("copyTarget"));
+         });
+
+         console.log("copy Target 1  *******")
+         $( ".coppyIcon2" ).click(function() {
+            console.log("coppyIcon2 click");
+            alertify.success('Referral LINK Copy To Clipboard');
+            copyToClipboard(document.getElementById("copyTarget2"));
          });
       function copyToClipboard(elem) {
             // create hidden text element, if it doesn't already exist

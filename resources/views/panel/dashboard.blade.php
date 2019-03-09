@@ -136,7 +136,7 @@
                     <input type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="myRange">
                     <div style="text-align: left;font-weight: 700;padding-bottom:10px">
                       <p style="color:black">Hash allocation cost : <span id="cost"></span> dollar
-                         <span id="doReferalCode" style="animation-iteration-count:infinite"></span>
+                         <span id="doReferalCode" style="animation-iteration-count:infinite;padding:2px"></span>
                       </p>
                       <p style="color:black">Maitanace fee: {{$settings->maintenance_fee_per_th_per_day}} dollar per Th/day</p>
                       <small>(include all electricity, cooling, development, and servicing costs )</small>
@@ -445,6 +445,7 @@
                         var resp = response.data;
                         if(resp['type'] == 'error'){
                             alertify.error(resp['body']);
+                            $('#doReferalCode').hide()
                         }else{
                             alertify.success(resp['body']);
                             document.getElementById('hiddenCodeValue').value = code;
@@ -452,6 +453,7 @@
                             costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode ) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
                             console.log(thPrice);
                             activateDiscount = 1;
+                            $('#doReferalCode').show()
                         }
 
                     });
@@ -460,9 +462,12 @@
                  output.innerHTML = slider.value+' Th';
                 cost.innerHTML = slider.value * thPrice ;
                     if(activateDiscount == 1){
+                        $('#doReferalCode').show()
                         thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!};
                         costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
                     }
+                    else
+                    $('#doReferalCode').hide()
                     
                     // Display the default slider value
                     

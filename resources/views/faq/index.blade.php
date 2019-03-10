@@ -327,9 +327,9 @@
                 <script>
                 
                 
-                    $.noConflict();
+                    // $.noConflict();
                 
-                    jQuery(document).ready(function ($) {
+                    // jQuery(document).ready(function ($) {
                         $('.faq-answer').hide();
                         $('.faq-customerservice-questions').hide();
                         $('.faq-questions-section').children().eq(0).show();
@@ -349,7 +349,7 @@
                          })
                 
                      
-                    })
+                    // })
                 
                 
                 

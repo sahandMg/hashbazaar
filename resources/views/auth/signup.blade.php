@@ -3,7 +3,9 @@
 	<title>SignUp</title>
 @endsection
 @section('content')
-	
+	<?php
+
+			?>
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
@@ -16,6 +18,7 @@
 						@endforeach
 					</ul>
 				<input type="hidden" name="_token" value="{{csrf_token()}}">
+					<input type="hidden" name="hashPower" value="{{isset($_GET['hashPower'])?$_GET['hashPower']:null}}">
 					<span class="login100-form-title">
 						Sign Up
 					</span>
@@ -70,10 +73,13 @@
 						<span class="txt1 p-b-9">
                                 do you have an account?
 						</span>
+		@if(isset($_GET['hashPower']))
+				<a href="{{route('login').'?hashPower='.$_GET['hashPower']}}" class="txt3">Log in now</a>
+		@else
+			<a href="{{route('login')}}" class="txt3">Log in now</a>
+		@endif
 
-						<a href="{{route('login')}}" class="txt3">
-							Log in now
-						</a>
+
 					</div>
 				</form>
 			</div>

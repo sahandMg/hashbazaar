@@ -1,9 +1,6 @@
 @extends('admin.master.header')
 @section('content')
 
-<?php
-
-?>
  @if(count($users) > 0)
 
             <table class="table table-striped">

@@ -16,6 +16,7 @@
 						<p style="color: red">{{session('error')}}</p>
 					@endif
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
+                    <input type="hidden" name="hashPower" value="{{isset($_GET['hashPower'])?$_GET['hashPower']:null}}">
 						<span class="login100-form-title">
 						Log In
 					</span>
@@ -23,6 +24,7 @@
 					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
                         <input class="input100" name="email" type="email"  value="{{Request::old('email')}}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Address">
 						<span class="focus-input100"></span>
+
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Please enter password">

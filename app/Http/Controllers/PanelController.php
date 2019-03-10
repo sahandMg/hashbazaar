@@ -32,12 +32,17 @@ class PanelController extends Controller
     public function dashboard(){
 
 
+
         $hashes = BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->get();
         $unusedCodes = DB::table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('used',0)->count();
         if($unusedCodes > 0){
             $apply_discount = 1;
         }else{
             $apply_discount = 0;
+        }
+        if(session()->has('hashPower')){
+            $hashPower = session('hashPower');
+            return view('panel.dashboard',compact('hashes','apply_discount','hashPower'));
         }
         return view('panel.dashboard',compact('hashes','apply_discount'));
     }

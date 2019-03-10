@@ -110,6 +110,16 @@
             </li>
 
 
+            @if(Request::route()->getName() == 'adminCheckout')
+                <li  class="active">
+            @else
+                <li>
+                    @endif
+                    <a href="{{route('adminCheckout')}}">
+                        <i class="fas fa-question"></i>
+                        <span style="padding-left: 20px">Checkout</span>
+                    </a>
+                </li>
         </ul>
 
     </nav>
@@ -163,5 +173,6 @@
                 });
             });
         </script>
+</div>
 </body>
 </html>

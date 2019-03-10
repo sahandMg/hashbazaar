@@ -393,7 +393,7 @@ form.contact-page p:nth-of-type(1) {
 
 /* REFERRAL */
 
-#referral {color: orange !important}
+#referral {color: orange;}
 
 #referral-page {
     margin-top: 100px;
@@ -775,7 +775,7 @@ form.contact-page p:nth-of-type(1) {
 
 /* Activity */
 
- #activity {color: orange !important}
+ #activity {color: orange ;}
 
   .activity-container h2 {
     font-size: 30px;
@@ -1156,7 +1156,7 @@ form.contact-page p:nth-of-type(1) {
     display: block;
 }
 
-#dashboard {color: orange !important}
+#dashboard {color: orange ;}
 
 /* ======================================Circle=========================================== */
 

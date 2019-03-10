@@ -27,9 +27,9 @@
             <a class="coppyIcon" style="cursor: pointer;"><img class="icon" src="../img/Copy.svg" alt=""></a>
         </p>
 
-        <blockquote style="margin-top:0%">My Referral LINK:</blockquote>
+        <blockquote style="margin-top:0%">My Referral LINK: </blockquote>
         <p class="shareReferralId" id="copyTarget2" style="padding-left:1%"> 
-         <a href="{{route('index',['code'=>$user->code])}}">http://hashbazaar.com/share</a>
+         <a href="{{route('index',['code'=>$user->code])}}">{{route('index',['code'=>$user->code])}}</a>
          <a class="coppyIcon2" style="cursor: pointer;"><img class="icon" src="../img/Copy.svg" alt=""></a>
 
         </p>

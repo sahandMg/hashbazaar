@@ -130,37 +130,28 @@
                 @endif
                 @include('sessionError')
                 @if($settings->available_th > 0)
-                <form class="dashboard-page" method="post" action="{{route('payment')}}">
-                    <input type="hidden" name="_token" value="{{csrf_token()}}">
-                    <input type="hidden" id="thprice" value="50">
-                    <input type="range" min="1" max="{{$settings->available_th}}" value="{{isset($hashPower)?$hashPower:$settings->available_th/2}}" name="hash" class="slider" id="myRange">
-                    <div style="text-align: left;font-weight: 700;padding-bottom:10px">
+
+                <!-- <form class="dashboard-page" method="post" action="{{route('payment')}}"> -->
+                    <!-- <input type="hidden" name="_token" value="{{csrf_token()}}"> -->
+                    <input type="hidden" id="thpricew" value="50">
+                    <input type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="myRange">
+                    <div class="buy-hashpower-text" style="text-align: left;font-weight: 700;padding-bottom:10px">
+
                       <p style="color:black">Hash allocation cost : <span id="cost"></span> dollar
-                         <span id="doReferalCode" style="animation-iteration-count:infinite"></span>
+                         <span id="doReferalCode" style="animation-iteration-count:infinite;padding:2px"></span>
                       </p>
                       <p style="color:black">Maitanace fee: {{$settings->maintenance_fee_per_th_per_day}} dollar per Th/day</p>
-                      <small>(include all electricity, cooling, development, and servicing costs )</small>
+                      <small style="color: #707070;">(include all electricity, cooling, development, and servicing costs )</small>
                       <p style="color:black">Income : At this time We predict {{$settings->bitcoin_income_per_month_per_th}} BTC/month for every Th.</p>
-                      <small >(Changes may happen depends on bitcoin price and bitcoin network difficulty changes.)</small>
+                      <small  style="color: #707070;">(Changes may happen depends on bitcoin price and bitcoin network difficulty changes.)</small>
                     </div>
                     <p class="rfrcode">Referral Code:</p>
-                    {{-- <form style="padding: 20px;" method="POST" action="{{route('dashboard')}}"> --}}
-                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                    <input id='referralCode' type="text" name="referralCode" style="margin-top:5px" class="aplybtn1text"/>
+                    <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> Apply </button>
 
 
-
-                       <input id='referralCode' type="text" name="referralCode" style="margin-top:5px" class="aplybtn1text">
-
-                       {{--<input id='referralCode' type="text" name="referralCode" class="aplybtn1text" style="margin-top:5px" >--}}
-
-                       <input id='hiddenCodeValue' type="hidden" name="code" style="margin-top:5px" >
-
-                          <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> Apply </button>
-
-
-                         {{-- </form> --}}
-                    <button class="pandel-button" type="submit">Order</button>
-                 </form>
+                    <button id="orderBtn" class="pandel-button" type="submit">Order</button>
+                 <!-- </form> -->
                 @else
                   <p> TH Not Available !</p>
                 @endif
@@ -182,11 +173,75 @@
           </div>
 
     </div>
-   
+   <!-- The Modal -->
+    <div id="myModal" class="modal" style="color: black;">
 
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div>
+                <!-- <h2 class="text-center">Welcome to Hashbazaar</h2> -->
+                <br/>
+                <!-- <h4 class="text-center">You have to pay your invoic with bitcoin. If you do not have bitcoin , you can purchase it from this list.</h4>
+                <br/> -->
+                <p class="text-center">You have to pay your invoic with bitcoin. If you do not have bitcoin , you can purchase it from this <a href="https://www.bitpremier.com/buy-bitcoins"> list</a>.</p>
+                <br/><br/>
+               <form class="dashboard-page" method="post" action="{{route('payment')}}">
+                <input type="hidden" name="_token" value="{{csrf_token()}}">
+                <input id='hiddenCodeValue' type="hidden" name="code" style="margin-top:5px" >
+                <input type="range" hidden min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="hiddenRange">
+                <button class="pandel-button" type="submit">Continue</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        // Get the modal
+        var modal = document.getElementById('myModal');
+        modal.style.display = "none";
+
+        var orderBtn = document.getElementById('orderBtn');
+        orderBtn.onclick = function() {
+            modal.style.display = "block";
+        }
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
         <style type="text/css">
-
-            .custom-table th {
+        .modal-content p {
+          font-size: 20px;
+        }
+        .buy-hashpower-text p{
+              margin-bottom: 0px;
+        }
+        .buy-hashpower-text small{
+             font-size: 86%;
+        }
+         .modal {
+           overflow: auto; /* Enable scroll if needed */
+           background-color: rgb(0,0,0); /* Fallback color */
+           background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+         }
+          .modal-content {
+            width: 80%;
+            margin: auto;
+            margin-top: 20%;
+            padding: 2%;
+          } 
+          .custom-table th {
                 border-top: 0
             }
          .dashboard-page p {
@@ -207,13 +262,17 @@
             margin-top: 5%;
          }
 
-         @media screen and (max-width:414px) {
+         @media screen and (max-width:415px) {
            .dashboard-page p {
              padding-top: 5px; font-size: 15px;line-height: 1.4;
            }
            .dashboard-page small {
              font-size: 13px;
             }
+           .modal-content {
+             width: 95%;
+             padding: 2%;
+            } 
          }
          canvas#chart1 {
             margin: auto;
@@ -432,6 +491,8 @@
                 var thPrice = {!! $settings->usd_per_hash !!};
                 var thPriceAfterCode ;
                 var slider = document.getElementById("myRange");
+                var hiddenRange = document.getElementById("hiddenRange");
+                hiddenRange.value = slider.value;
                 var output = document.getElementById("demo");
                 var costAfterCode = document.getElementById("doReferalCode");
                 var cost = document.getElementById('cost');
@@ -445,6 +506,7 @@
                         var resp = response.data;
                         if(resp['type'] == 'error'){
                             alertify.error(resp['body']);
+                            $('#doReferalCode').hide()
                         }else{
                             alertify.success(resp['body']);
                             document.getElementById('hiddenCodeValue').value = code;
@@ -452,6 +514,7 @@
                             costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode ) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
                             console.log(thPrice);
                             activateDiscount = 1;
+                            $('#doReferalCode').show()
                         }
 
                     });
@@ -460,13 +523,17 @@
                  output.innerHTML = slider.value+' Th';
                 cost.innerHTML = slider.value * thPrice ;
                     if(activateDiscount == 1){
+                        $('#doReferalCode').show()
                         thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!};
                         costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
                     }
+                    else
+                    $('#doReferalCode').hide()
                     
                     // Display the default slider value
                     
                     slider.oninput = function() {
+                        hiddenRange.value = this.value;
                         output.innerHTML = this.value+' Th';
                         if(activateDiscount == 1){
                             thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!};

@@ -80,6 +80,7 @@ Route::get('job',function(){
 
 Route::get('test',function (){
 
+    return $share_value = DB::table('sharings')->where('level',5)->first()->value;
 });
 
 Route::get('test2',function(){
@@ -116,11 +117,11 @@ Route::get('subscription','AuthController@subscription')->name('subscription');
 
 Route::post('subscription','AuthController@post_subscription')->name('subscription');
 
-Route::get('login','AuthController@login')->name('login');
-
 Route::get('about','PageController@aboutUs')->name('aboutUs');
 
 Route::get('affiliate','PageController@affiliate')->name('affiliate');
+
+Route::get('login/{hashpower?}','AuthController@login')->name('login');
 
 Route::post('login','AuthController@post_login')->name('login');
 
@@ -132,7 +133,7 @@ Route::get('login/google','AuthController@redirectToProvider')->name('redirectTo
 
 Route::get('login/google/callback','AuthController@handleProviderCallback')->name('handleProviderCallback');
 
-Route::get('signup','AuthController@signup')->name('signup');
+Route::get('signup/{hashpower?}','AuthController@signup')->name('signup');
 
 Route::post('signup','AuthController@post_signup')->name('signup');
 

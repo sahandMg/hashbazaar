@@ -132,8 +132,8 @@
                 @if($settings->available_th > 0)
                 <form class="dashboard-page" method="post" action="{{route('payment')}}">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
-                    <input type="hidden" id="thpricew" value="50">
-                    <input type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="myRange">
+                    <input type="hidden" id="thprice" value="50">
+                    <input type="range" min="1" max="{{$settings->available_th}}" value="{{isset($hashPower)?$hashPower:$settings->available_th/2}}" name="hash" class="slider" id="myRange">
                     <div style="text-align: left;font-weight: 700;padding-bottom:10px">
                       <p style="color:black">Hash allocation cost : <span id="cost"></span> dollar
                          <span id="doReferalCode" style="animation-iteration-count:infinite"></span>

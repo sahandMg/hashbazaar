@@ -142,9 +142,9 @@ class AuthController extends Controller
         return redirect()->route('dashboard');
     }
 
-    public function login(){
-
-        return view('auth.login');
+    public function login(Request $request){
+        $hashPower = $request->hashPower;
+        return view('auth.login',compact('hashPower'));
     }
 
     public function post_login(Request $request){
@@ -163,7 +163,14 @@ class AuthController extends Controller
             }
 
             Auth::guard('user')->user()->update(['ip'=>Helpers::userIP(),'country'=>$country]);
-            return redirect()->route('dashboard');
+
+            if($request->has(['hashPower'])){
+                $hashPower = $request->hashPower;
+                    return redirect()->route('dashboard')->with(['hashPower'=>$hashPower]);
+                }else{
+
+                    return redirect()->route('dashboard');
+                }
         }else{
 
             return redirect()->back()->with(['error'=>'Wrong email or password']);

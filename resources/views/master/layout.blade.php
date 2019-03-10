@@ -16,7 +16,7 @@
         @yield('title')
     @endif
     <!-- <link rel="icon" href="img/TabLogo.png"> -->
-    <link rel="stylesheet" href="{{asset('css/blog.css')}}">
+    <!-- <link rel="stylesheet" href="{{asset('css/blog.css')}}"> -->
     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
@@ -27,9 +27,9 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/login.css')}}">
     <script src="{{asset('js/jquery-3.3.1.js')}}"></script>
     <script src="{{asset('js/jquery.animate-colors.js')}}"></script>
-    <script src="{{asset('js/jquery-3.3.1.js')}}"></script>
+<!--     <script src="{{asset('js/jquery-3.3.1.js')}}"></script>
     <script src="{{asset('js/jquery.animate-colors.js')}}"></script>
-    <script src="{{asset('js/jquery-3.3.1.js')}}"></script>
+    <script src="{{asset('js/jquery-3.3.1.js')}}"></script> -->
 
 </head>
 

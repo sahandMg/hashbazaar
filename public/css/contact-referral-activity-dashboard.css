@@ -396,12 +396,9 @@ form.contact-page p:nth-of-type(1) {
 #referral {color: orange;}
 
 #referral-page {
-    margin-top: 100px;
     margin-left: 27.5%;
     width: 70%;
-    z-index: 999
 }
-
 
 #referral-page blockquote {
     font-size: 25px;
@@ -412,14 +409,37 @@ form.contact-page p:nth-of-type(1) {
     margin-left: 40px;
  }
 
- #referral-page .myReferralId , .shareReferralId {
+ .ref-flex {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    flex: row wrap;
+    margin-top: 10px;
+}
+
+.ref-flex p  {
+    flex: 3;
+    text-align: left;
+}
+.ref-flex  blockquote {
+    flex: 1;
+}
+
+ #referral-page .myReferralId  {
      font-size: 25px;
      font-family: sans-serif;
      color: #2e2d2d;
      margin-top: -55px;
      margin-left: 240px;
  }
-
+ .shareReferralId {
+    font-size: 25px;
+    font-family: sans-serif;
+    color: #2e2d2d;
+    /* margin-top: -55px; */
+    /* margin-left: 240px; */
+ }
 
 .referral-page_secondList
  {
@@ -460,17 +480,21 @@ form.contact-page p:nth-of-type(1) {
     }
 
 /* =======----media----==========================Referral==================================== */
-    #referral-page div.container.yek {
+    /* #referral-page div.container.yek {
         margin-bottom: 1100px !important
-    }
+    } */
     #referral-page blockquote {
-        font-size: 20px;
+        font-size: 18px;
     }
 
-    #referral-page .myReferralId , .shareReferralId{
+    #referral-page .myReferralId  {
      margin-top: -47px;
      font-size: 20px;
     }
+    .shareReferralId {
+        font-size: 18px;
+    }
+    
     .referral-page_secondList_column ul li {
         width: 120px;
         margin-top: 15%;
@@ -522,8 +546,9 @@ form.contact-page p:nth-of-type(1) {
     }
 
     #referral-page blockquote {
-        font-size: 22px;
+        font-size: 18px;
     }
+
 
     #referral-page .myReferralId{
         font-size: 22px;
@@ -577,15 +602,23 @@ form.contact-page p:nth-of-type(1) {
         width: 100%;
     }
 
-    #referral-page div.container.yek {
+    /* #referral-page div.container.yek {
         margin-bottom: 1350px !important
-    }
+    } */
 
     #referral-page blockquote {
-        font-size: 20px;
+        font-size: 16px;
         color: #2e2d2d;
         margin-top: -40px;
         margin-left: 30px;
+    }
+
+    .ref-flex p  {
+        flex: 1.5;
+        text-align: left;
+    }
+    .ref-flex  blockquote {
+        flex: 1;
     }
 
     #referral-page .myReferralId {
@@ -593,14 +626,14 @@ form.contact-page p:nth-of-type(1) {
         color: #2e2d2d;
         margin-top: -45px;
         margin-left: 190px;
+        
     }
 
     #referral-page .shareReferralId {
-        font-size: 20px;
+        font-size: 14px;
         color: #2e2d2d;
-        margin-top: -15px;
-        margin-left: 100px;
     }
+    
     .referral-page_secondList
     {
         display: flex;
@@ -644,49 +677,63 @@ form.contact-page p:nth-of-type(1) {
         left: 40px;
     }
 
-    #referral-page blockquote {
-        font-size: 18px;
+    .ref-flex p  {
+        flex: 0.5 !important;
+        text-align: left;
+    }
+    .ref-flex  blockquote {
+        flex: 1 !important;
+        font-size: 14px !important;
         font-family: sans-serif;
         top: 330px;
         margin-left: 30px;
     }
-
+    #referral-page blockquote:nth-of-type(1) {
+        font-size: 16px;
+        font-family: sans-serif;
+        top: 330px;
+        margin-left: 30px;
+    }
+    
     #referral-page .myReferralId {
         font-size: 18px;
         color: #2e2d2d;
         margin-top: -40px;
-        margin-left: 170px;
+        margin-left: 150px;
     }
 
     #referral-page .shareReferralId {
-        font-size: 18px;
         color: #2e2d2d;
-        margin-top: -10px;
-        margin-left: 80px;
+        font-size: 14px
     }
     
 }
 
 /* Referral - Media - 320 */
 @media screen and (max-width: 321px) {
-    #referral-page blockquote {
+    #referral-page blockquote:nth-of-type(1) {
         font-size: 16px;
         color: #2e2d2d;
         top: 330px;
         margin-left: 30px;
     }
 
+    .ref-flex blockquote {
+        font-size:16px !important;
+        flex: 2 !important
+    }
     #referral-page .myReferralId {
-        font-size: 15px;
+        font-size: 13px;
         margin-left: 150px;
     }
     #referral-page .shareReferralId  {
-        font-size: 15px;
-        margin-left: 70px;
+        font-size: 13px !important;
+        margin-top: 30px;
+        margin-left: -50px
     }
-    #referral-page div.container.yek {
+    /* #referral-page div.container.yek {
         margin-bottom: 1700px !important
-    }
+    } */
 
 }
 

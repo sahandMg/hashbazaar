@@ -73,14 +73,11 @@
 @yield('content')
 
 @if(Auth::guard('user')->check())
- <style>
-     #header-navbar-menu {
-         height: 390px
-     }
+ {{-- <style>
+     
 
      @media screen and (max-width:420px){
         #header-navbar-menu {
-         height: 300px;
          border-bottom-left-radius: 5%;
          border-bottom-right-radius: 5%
 
@@ -88,13 +85,12 @@
      }
      @media screen and (max-width:375px){
         #header-navbar-menu {
-         height: 330px !important;
          border-bottom-left-radius: 5%;
          border-bottom-right-radius: 5%
 
         }
      }
- </style>
+ </style> --}}
 @endif
     <script type="text/javascript">
           window.$crisp=[];window.CRISP_WEBSITE_ID="792f282f-edde-46b8-8b02-d38ca5cb92c2";

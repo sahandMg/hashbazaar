@@ -3,102 +3,99 @@
     <title>Referrals</title>
 @endsection
 @section('content')
-    <!-- Referral Page -->
+    
     <?php
             $user = Auth::guard('user')->user();
 
     ?>
-    <div id="referral-page" class="panel-container " style="display: flex;flex-direction: column;">
+<!-- Referral Page -->
+<div id="referral-page" class="panel-container " >
         
-        <div class="referral-page_secondList">
-            <div class="referral-page_secondList_column">Number of Sharing
-                <ul><li>{{$user->referral->total_sharing_num}}</li></ul>
-            </div>
-            <div class="referral-page_secondList_column">Total Sharing Income (USD)
-              <ul><li>$ {{$user->referral->total_sharing_income}}</li></ul>
-            </div>
-            <div class="referral-page_secondList_column">My Benefit (USD)
-                    <ul><li>$ {{$user->referral->user_income_share}}</li></ul>
-            </div>
-        </div>
+   <div class="referral-page_secondList">
+      <div class="referral-page_secondList_column">Number of Sharing
+         <ul><li>{{$user->referral->total_sharing_num}}</li></ul>
+      </div>
+      <div class="referral-page_secondList_column">Total Sharing Income (USD)
+         <ul><li>$ {{$user->referral->total_sharing_income}}</li></ul>
+      </div>
+      <div class="referral-page_secondList_column">My Benefit (USD)
+         <ul><li>$ {{$user->referral->user_income_share}}</li></ul>
+      </div>
+   </div>
 
-        <blockquote>My Referral ID: </blockquote>
-        <p class="myReferralId" id="copyTarget">{{$user->code}}
-            <a class="coppyIcon" style="cursor: pointer;"><img class="icon" src="../img/Copy.svg" alt=""></a>
-        </p>
+   <blockquote>My Referral ID: </blockquote>
+   <p class="myReferralId" id="copyTarget">{{$user->code}}
+      <a class="coppyIcon" style="cursor: pointer;"><img class="icon" src="../img/Copy.svg" alt=""></a>
+   </p>
 
-        <blockquote style="margin-top:0%">My Referral LINK: </blockquote>
-        <p class="shareReferralId" id="copyTarget2" style="padding-left:1%"> 
+   <div class="ref-flex">
+      <blockquote style="margin-top:0%">My Referral LINK: </blockquote>
+      <p class="shareReferralId" id="copyTarget2" style="padding-left:1%"> 
          <a href="{{route('index',['code'=>$user->code])}}">{{route('index',['code'=>$user->code])}}</a>
          <a class="coppyIcon2" style="cursor: pointer;"><img class="icon" src="../img/Copy.svg" alt=""></a>
-
-        </p>
-
-   
+      </p>
+   </div>
 
    <div class="container yek" style="color: black;margin-top: 50px;">
-       
-         <br/>
-        <p>You can join our affiliate program through different ways. Share your dedicated referral code or link wherever you want.</p>
-   <p>Your referral will get a 3% discount on their first purchase, and you will get a free hashpower upgrade as your affiliate reward from Hashbazaar depend on your level as the following table.</p>
+      <br/>
+      <p>You can join our affiliate program through different ways. Share your dedicated referral code or link wherever you want.</p>
+      <p>Your referral will get a 3% discount on their first purchase, and you will get a free hashpower upgrade as your affiliate reward from Hashbazaar depend on your level as the following table.</p>
    
-   <table class="table table-bordered text-center">
-      <thead>
-         <tr>
-            <th>Total number of referrals</th>
-            <th rowspan="2" class="text-center">Referral group</th>
-            <th>Your affiliate reward</th>
-         </tr>
+      <table class="table table-bordered text-center">
+         <thead>
+            <tr>
+               <th>Total number of referrals</th>
+               <th rowspan="2" class="text-center">Referral group</th>
+               <th>Your affiliate reward</th>
+            </tr>
 
-         <tr>
-            <th>Total Number of people used your referral code or link</th>
-            <th>% of referrals first order</th>
-         </tr>
-      </thead>
+            <tr>
+               <th>Total Number of people used your referral code or link</th>
+               <th>% of referrals first order</th>
+            </tr>
+         </thead>
 
-      <tbody class="text-center" style="font-family:sans-serif">
-         <tr>
-            <td>0 <     < 500 </td>
-            <td>C</td>
-            <td>2.5%</td>
-         </tr>
+         <tbody class="text-center" style="font-family:sans-serif">
+            <tr>
+               <td>0 <     < 500 </td>
+               <td>C</td>
+               <td>2.5%</td>
+            </tr>
 
-         <tr>
-            <td>500 <   < 100 </td>
-            <td>B</td>
-            <td>3.5%</td>
-         </tr>
+            <tr>
+               <td>500 <   < 100 </td>
+               <td>B</td>
+               <td>3.5%</td>
+            </tr>
 
-         <tr>
-            <td>1K <    < 10K</td>
-            <td>A</td>
-            <td>4.5%</td>
-         </tr>
+            <tr>
+               <td>1K <    < 10K</td>
+               <td>A</td>
+               <td>4.5%</td>
+            </tr>
 
-         <tr>
-            <td>10K <    < 100K </td>
-            <td>A+</td>
-            <td>5.5%</td>
-         </tr>
+            <tr>
+               <td>10K <    < 100K </td>
+               <td>A+</td>
+               <td>5.5%</td>
+            </tr>
 
-         <tr>
-            <td>100K <    </td>
-            <td>A++</td>
-            <td>6.5%</td>
-         </tr>
-       </tbody>
-     </table>
-     <p>For instance if you reach 100 referrals you will get 2.5% of total hash power that is purchased by them as your referral group “C”.</p>
-    <p>If you reach 500 from now on your affiliate reward will be increased to 3.5%. In other words if you reach for instance 800 referrals, you will get 2.5% of total hash power that is purchased by 500 referrals from group “C”  and 3.5% of total hash power that is purchased by 300 referrals from group “B”. </p>
-    <p>Note that all the affiliate rewards will be given by Hashbazaar to our promoters to encourage others to join the future of cryptocurrency transaction system and also gain profit from their investment.</p>
-  </div>
+            <tr>
+               <td>100K <    </td>
+               <td>A++</td>
+               <td>6.5%</td>
+            </tr>
+         </tbody>
+      </table>
 
+      <p>For instance if you reach 100 referrals you will get 2.5% of total hash power that is purchased by them as your referral group “C”.</p>
+      <p>If you reach 500 from now on your affiliate reward will be increased to 3.5%. In other words if you reach for instance 800 referrals, you will get 2.5% of total hash power that is purchased by 500 referrals from group “C”  and 3.5% of total hash power that is purchased by 300 referrals from group “B”. </p>
+      <p>Note that all the affiliate rewards will be given by Hashbazaar to our promoters to encourage others to join the future of cryptocurrency transaction system and also gain profit from their investment.</p>
+   </div>
 </div>
-
-
    
 
-    <script>// ------------user account--------------------
+<script>
         $(document).ready(function(){
     
             $('.user-img').click(function(){
@@ -169,9 +166,9 @@
          return succeed;
       }
         
-         // =---------------------------------------</script>
+</script>
 
-      <style type="text/css">
+<style type="text/css">
        .icon {
             width: 35px;
             height: 35px;
@@ -315,8 +312,9 @@
         width: 105px;
       }
      }
-   </style>
-   <script type="text/javascript">
+</style>
+
+<script type="text/javascript">
      var referalPeople = 101000 ;
      var allTerraHash = 5000 ;
      var level1NumCode = 500; var level2NumCode = 500;
@@ -496,9 +494,9 @@
           level3Full();
           // circle 2
           level4Full();
-//          if( ((level5-level4)/level5NumCode) > 3 ) {
-              height = 40; calculateMargin = 60;
-//          } else {  height = parseInt( (level5NumCode*100) / (level5-level4) );calculateMargin = 100 - height; }
+      //          if( ((level5-level4)/level5NumCode) > 3 ) {
+         height = 40; calculateMargin = 60;
+      //          } else {  height = parseInt( (level5NumCode*100) / (level5-level4) );calculateMargin = 100 - height; }
        // circle 1
        $(".referal-level-1").append(`<div class="referal-number"><h3>`+level5NumCode+`, `+level5Hash+`TH</h3><div>`);
        $(".referal-number").css( { marginTop : calculateMargin+"px", 'height': height+"px"} );
@@ -516,5 +514,5 @@
      }
      refresh();
     
-   </script>
+</script>
 @endsection

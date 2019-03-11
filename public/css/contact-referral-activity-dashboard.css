@@ -598,8 +598,9 @@ form.contact-page p:nth-of-type(1) {
     }
 
     .ref-flex p  {
-        flex: 1.5;
+        /* flex: 1.5; */
         text-align: left;
+        margin-top: 25px;
     }
     .ref-flex  blockquote {
         flex: 1;
@@ -665,8 +666,9 @@ form.contact-page p:nth-of-type(1) {
         height: 1650px !important
     }
     .ref-flex p  {
-        flex: 1.5 !important;
+        /* flex: 1.5 !important; */
         text-align: left;
+        margin-top: 21px
     }
 
     .ref-flex p .tooltiptext {

@@ -30,8 +30,12 @@
 
    <div class="ref-flex">
       <blockquote style="margin-top:0%">My Referral LINK: </blockquote>
-      <p class="shareReferralId" id="copyTarget2" style="padding-left:1%"> 
-         <a href="{{route('index',['code'=>$user->code])}}">{{route('index',['code'=>$user->code])}}</a>
+      <p class="shareReferralId"  style="padding-left:1%"> 
+         <span class="tooltip1" style="color:green"> http://hashbazaar.com/...
+            <a style="margin-top:15%"
+             class="tooltiptext"  id="copyTarget2"
+             href="{{route('index',['code'=>$user->code])}}">{{route('index',['code'=>$user->code])}}</a>
+         </span>
          <a class="coppyIcon2" style="cursor: pointer;"><img class="icon" src="../img/Copy.svg" alt=""></a>
       </p>
    </div>

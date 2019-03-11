@@ -26,7 +26,9 @@ use GuzzleHttp\Client as GuzzleClient;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+
 use Psr\Log\LoggerInterface;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Stevebauman\Location\Facades\Location;
 use Symfony\Component\DomCrawler\Crawler;
 use Psr\Http\Message\ResponseInterface;
@@ -80,7 +82,8 @@ Route::get('job',function(){
 
 Route::get('test',function (){
 
-    return $share_value = DB::table('sharings')->where('level',5)->first()->value;
+    return QrCode::size(100)->generate('Make me into a QrCode!');
+
 });
 
 Route::get('test2',function(){

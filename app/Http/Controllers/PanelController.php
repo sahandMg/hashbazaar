@@ -264,7 +264,7 @@ class PanelController extends Controller
     public function post_wallet(Request $request){
 
         $this->validate($request,['wallet'=>'required']);
-        $wallet = DB::table('wallets')->where('addr',$request->wallet)->first();
+        $wallet = DB::table('wallets')->where('user_id',Auth::guard('user')->id())->first();
         if(is_null($wallet)){
             $wallet = new Wallet();
             $wallet->addr = $request->wallet;

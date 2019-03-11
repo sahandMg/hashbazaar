@@ -160,7 +160,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Stevebauman\Location\LocationServiceProvider::class,
-        LaravelQRCode\Providers\QRCodeServiceProvider::class,
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -225,7 +225,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Location' => Stevebauman\Location\Facades\Location::class,
-        'QRCode' => LaravelQRCode\Facades\QRCode::class,
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class
 
 
     ],

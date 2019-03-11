@@ -86,18 +86,17 @@
 
         
         <div class="address">
-
-            <div class="address-img"><img  src="../img/SampleQR.svg" alt=""></div>
+            @if(!is_null(Auth::guard('user')->user()->wallet))
+                <div class="address-img">{!! QrCode::size(150)->generate(Auth::guard('user')->user()->wallet->addr) !!}</div>
 
             <div class="address-box">
-                <input type="text" placeholder="SDKnsdakndnj12n1k1lkmdsalm">
+                <input type="text" placeholder="{{Auth::guard('user')->user()->wallet->addr}}">
                 <div class="div-icons-flex">
-                    <a><img class="icon" src="../img/Mail.svg" alt=""></a>
-                    <a><img class="icon" src="../img/Link.svg" alt=""></a>
+                    <a href="https://blockstream.info/address/{{!is_null(Auth::guard('user')->user()->wallet)?Auth::guard('user')->user()->wallet->addr:null}}"><img class="icon" src="../img/Link.svg" alt=""></a>
                     <a class="coppyIcon" style="cursor: pointer;"><img class="icon" src="../img/Copy.svg" alt=""></a>
                 </div>
             </div>
-
+            @endif
             <div class="change-address">
                     
         
@@ -120,7 +119,10 @@
 
 <script>
     // $.noConflict();
+
+
     console.log("setting wallet *******")
+    var wallet = {!! json_encode(Auth::guard('user')->user()->wallet) !!}
     $( ".coppyIcon" ).click(function() {
        console.log("coppyIcon click");
        alertify.success('Wallet address copy to clipboard');
@@ -184,6 +186,7 @@ function copyToClipboard(elem) {
         $('.one a').css('color','orange');
 
 
+
         $('.one').click(function(){
             $('.setting-information').show();
             $('.wallet1').hide();
@@ -197,10 +200,16 @@ function copyToClipboard(elem) {
 
 
         $('.two').click(function(){
-            $('.setting-information').hide();
-            $('.wallet1').show();
-            $('.make-wallet').hide()
 
+            $('.setting-information').hide();
+            if(wallet !== null){
+                $('.wallet1').hide();
+                $('.make-wallet').show()
+            }else{
+
+                $('.wallet1').show();
+                $('.make-wallet').hide()
+            }
             $('.two a').css('color','orange');
             $('.one a').css('color','#2e2d2d');
 
@@ -208,15 +217,21 @@ function copyToClipboard(elem) {
 
 
 
-        // $('#clickhear').click(function(){
-        //     $('.setting-information').hide();
-        //     $('.wallet1').hide();
-        //     $('.make-wallet').show()
+        //============ wallet ===============
+        console.log(wallet !== null)
+        $('.setting-information').hide();
 
-        //     $('.two a').css('color','orange');
-        //     $('.one a').css('color','#2e2d2d');
+        if(wallet !== null){
+            $('.wallet1').hide();
+            $('.make-wallet').show()
+        }else{
 
-        // })
+            $('.wallet1').show();
+            $('.make-wallet').hide()
+        }
+
+
+
     })
 
 </script>

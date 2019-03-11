@@ -398,6 +398,8 @@ form.contact-page p:nth-of-type(1) {
 #referral-page {
     margin-left: 27.5%;
     width: 70%;
+    margin-bottom: 0 !important;
+    height: 1200px !important;
 }
 
 #referral-page blockquote {
@@ -437,8 +439,6 @@ form.contact-page p:nth-of-type(1) {
     font-size: 25px;
     font-family: sans-serif;
     color: #2e2d2d;
-    /* margin-top: -55px; */
-    /* margin-left: 240px; */
  }
 
 .referral-page_secondList
@@ -483,6 +483,10 @@ form.contact-page p:nth-of-type(1) {
     /* #referral-page div.container.yek {
         margin-bottom: 1100px !important
     } */
+
+    #referral-page {
+        height: 100% !important;
+    }
     #referral-page blockquote {
         font-size: 18px;
     }
@@ -538,10 +542,10 @@ form.contact-page p:nth-of-type(1) {
         }
 
         /* ==================================Referral================================ */
-
     #referral-page {
         margin-left: 0%;
         width: 100%;
+        height: 1350px !important;
         margin-top: 150px;
     }
 
@@ -595,11 +599,12 @@ form.contact-page p:nth-of-type(1) {
     }
 
     /* Referral */
-
+    
     #referral-page {
         margin-top: 110px;
         margin-left: 0%;
         width: 100%;
+        height: 1500px !important
     }
 
     /* #referral-page div.container.yek {
@@ -676,7 +681,9 @@ form.contact-page p:nth-of-type(1) {
         position: absolute;
         left: 40px;
     }
-
+    #referral-page  {
+        height: 1650px !important
+    }
     .ref-flex p  {
         flex: 0.5 !important;
         text-align: left;
@@ -717,7 +724,9 @@ form.contact-page p:nth-of-type(1) {
         top: 330px;
         margin-left: 30px;
     }
-
+    #referral-page {
+        height: 1900px !important
+    }
     .ref-flex blockquote {
         font-size:16px !important;
         flex: 2 !important

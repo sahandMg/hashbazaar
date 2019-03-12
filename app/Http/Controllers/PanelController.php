@@ -154,7 +154,6 @@ class PanelController extends Controller
          */
         else{
             $referralUser = Referral::where('code',$code)->where('id','!=',Auth::id())->first();
-            $sharings = Sharing::all()->toArray();
 //            dd($sharings[0]);
             $expireCode = new ExpiredCode();
             $expireCode->user_id = Auth::guard('user')->id();
@@ -164,26 +163,7 @@ class PanelController extends Controller
                 'total_sharing_num' => $referralUser->total_sharing_num + 1
             ]);
             $referralUser->save();
-            $total_sharing_num = $referralUser->total_sharing_num;
 
-            for($i=0 ; $i<count($sharings); $i++){
-
-                if($sharings[$i]['sharing_number'] <= $total_sharing_num ){
-
-                    $referralUser->update([
-                        'share_level' => $sharings[$i]['level']
-                    ]);
-                    $referralUser->save();
-                }
-
-
-
-//                elseif( $sharings[0] <= $total_sharing_num && $total_sharing_num < $sharings[1]){
-//
-//                }elseif( $sharings[1] <= $total_sharing_num && $total_sharing_num < $sharings[2]){
-//
-//                }elseif( $sharings[2] >= $total_sharing_num){}
-            }
 
             return [
                 'type'=>'message',

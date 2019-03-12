@@ -11,6 +11,7 @@ use App\Log;
 use App\Mining;
 use App\Redeem;
 use App\Setting;
+use App\Sharing;
 use App\Transaction;
 use App\User;
 use Carbon\Carbon;
@@ -133,11 +134,6 @@ class PaymentController extends Controller
          $hash->life = $settings->hash_life;
          $hash->remained_day = Carbon::now()->diffInDays(Carbon::now()->addYears($hash->life));
          $hash->save();
-
-        $expiring = ExpiredCode::where('user_id',Auth::guard('user')->id())->where('used',0)
-            ->orderBy('id','desc')
-            ->first();
-//
 
         $settings->update(['available_th'=>$settings->available_th - $hash->hash]);
         $settings->save();
@@ -389,6 +385,21 @@ class PaymentController extends Controller
                          * reward new th to the code caller
                          * ============================
                          */
+
+                        $sharings = Sharing::all()->toArray();
+                        $total_sharing_num = $referralUser->total_sharing_num;
+
+                        for($i=0 ; $i<count($sharings); $i++){
+
+                            if($sharings[$i]['sharing_number'] > $total_sharing_num ){
+
+                                $referralUser->update([
+                                    'share_level' => $sharings[$i]['level']
+                                ]);
+                                $referralUser->save();
+                            }
+                        }
+
                         $share_level = DB::table('referrals')->where('code',$code)->first()->share_level;
                         $share_value = DB::table('sharings')->where('level',$share_level)->first()->value;
                         $hash = new BitHash();

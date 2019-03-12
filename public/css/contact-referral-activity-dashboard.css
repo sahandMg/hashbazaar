@@ -214,15 +214,9 @@ form.contact-page p:nth-of-type(1) {
 
 /* Contact - Media - 768 */
 @media screen and (max-width:769px) {
-    body {
-        background-color: #FFFDE8
-    }
+    
     header {
         z-index: 2;
-    }
-
-    .useraccount .list1 {
-        display: none;
     }
 
     .mainList {
@@ -260,12 +254,6 @@ form.contact-page p:nth-of-type(1) {
 /* Contact - Media - 414 */
 @media screen and (max-width: 415px) {
 
-    body {
-        background-color: #FFFDE8
-    }
-    header {
-        z-index: 2;
-    }
     .Logo_header {
         width: 300px;
         height: 90px;
@@ -393,15 +381,14 @@ form.contact-page p:nth-of-type(1) {
 
 /* REFERRAL */
 
-#referral {color: orange !important}
+#referral {color: orange;}
 
 #referral-page {
-    margin-top: 100px;
     margin-left: 27.5%;
     width: 70%;
-    z-index: 999
+    margin-bottom: 0 !important;
+    height: 1250px !important;
 }
-
 
 #referral-page blockquote {
     font-size: 25px;
@@ -412,14 +399,35 @@ form.contact-page p:nth-of-type(1) {
     margin-left: 40px;
  }
 
- #referral-page .myReferralId , .shareReferralId {
+ .ref-flex {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    flex: row wrap;
+    margin-top: 10px;
+}
+
+.ref-flex p  {
+    flex: 3;
+    text-align: left;
+}
+.ref-flex  blockquote {
+    flex: 1;
+}
+
+ #referral-page .myReferralId  {
      font-size: 25px;
      font-family: sans-serif;
      color: #2e2d2d;
      margin-top: -55px;
      margin-left: 240px;
  }
-
+ .shareReferralId {
+    font-size: 25px;
+    font-family: sans-serif;
+    color: #2e2d2d;
+ }
 
 .referral-page_secondList
  {
@@ -450,27 +458,28 @@ form.contact-page p:nth-of-type(1) {
 
 /* Referral - Media - 1024 */
 @media screen and (max-width:1025px){
-    /* ---------------=====Media====-------------Main Container--------------------------- */
-
-    .sub:after {
-        width: 1em;
-        height: 1em;
-        content: "";
-        left: 85%;
-    }
+   
 
 /* =======----media----==========================Referral==================================== */
-    #referral-page div.container.yek {
+    /* #referral-page div.container.yek {
         margin-bottom: 1100px !important
+    } */
+
+    #referral-page {
+        height: 100% !important;
     }
     #referral-page blockquote {
-        font-size: 20px;
+        font-size: 18px;
     }
 
-    #referral-page .myReferralId , .shareReferralId{
+    #referral-page .myReferralId  {
      margin-top: -47px;
      font-size: 20px;
     }
+    .shareReferralId {
+        font-size: 18px;
+    }
+    
     .referral-page_secondList_column ul li {
         width: 120px;
         margin-top: 15%;
@@ -501,9 +510,7 @@ form.contact-page p:nth-of-type(1) {
             z-index: 2;
 
         }
-        header {
-            z-index: 2;
-        }
+      
         .Logo_header {
             height: 90px;
             position: absolute;
@@ -514,16 +521,17 @@ form.contact-page p:nth-of-type(1) {
         }
 
         /* ==================================Referral================================ */
-
     #referral-page {
         margin-left: 0%;
         width: 100%;
+        height: 1350px !important;
         margin-top: 150px;
     }
 
     #referral-page blockquote {
-        font-size: 22px;
+        font-size: 18px;
     }
+
 
     #referral-page .myReferralId{
         font-size: 22px;
@@ -570,37 +578,50 @@ form.contact-page p:nth-of-type(1) {
     }
 
     /* Referral */
-
+    
     #referral-page {
         margin-top: 110px;
         margin-left: 0%;
         width: 100%;
+        height: 1500px !important
     }
 
-    #referral-page div.container.yek {
+    /* #referral-page div.container.yek {
         margin-bottom: 1350px !important
-    }
+    } */
 
     #referral-page blockquote {
-        font-size: 20px;
+        font-size: 16px;
         color: #2e2d2d;
         margin-top: -40px;
         margin-left: 30px;
     }
 
+    .ref-flex p  {
+        /* flex: 1.5; */
+        text-align: left;
+        margin-top: 25px;
+    }
+    .ref-flex  blockquote {
+        flex: 1;
+    }
+
+    .ref-flex p .tooltiptext {
+        margin-left: -200px
+    }
     #referral-page .myReferralId {
         font-size: 20px;
         color: #2e2d2d;
         margin-top: -45px;
         margin-left: 190px;
+        
     }
 
     #referral-page .shareReferralId {
-        font-size: 20px;
+        font-size: 14px;
         color: #2e2d2d;
-        margin-top: -15px;
-        margin-left: 100px;
     }
+    
     .referral-page_secondList
     {
         display: flex;
@@ -629,8 +650,6 @@ form.contact-page p:nth-of-type(1) {
         font-weight: bolder !important;
     }
 
-   
-
 
 }
 
@@ -643,56 +662,78 @@ form.contact-page p:nth-of-type(1) {
         position: absolute;
         left: 40px;
     }
+    #referral-page  {
+        height: 1650px !important
+    }
+    .ref-flex p  {
+        /* flex: 1.5 !important; */
+        text-align: left;
+        margin-top: 21px
+    }
 
-    #referral-page blockquote {
-        font-size: 18px;
+    .ref-flex p .tooltiptext {
+        margin-left: -200px
+    }
+    .ref-flex  blockquote {
+        flex: 1 !important;
+        font-size: 14px !important;
         font-family: sans-serif;
         top: 330px;
         margin-left: 30px;
     }
-
+    #referral-page blockquote:nth-of-type(1) {
+        font-size: 16px;
+        font-family: sans-serif;
+        top: 330px;
+        margin-left: 30px;
+    }
+    
     #referral-page .myReferralId {
         font-size: 18px;
         color: #2e2d2d;
         margin-top: -40px;
-        margin-left: 170px;
+        margin-left: 150px;
     }
 
     #referral-page .shareReferralId {
-        font-size: 18px;
         color: #2e2d2d;
-        margin-top: -10px;
-        margin-left: 80px;
+        font-size: 14px
     }
     
 }
 
 /* Referral - Media - 320 */
 @media screen and (max-width: 321px) {
-    #referral-page blockquote {
+    #referral-page blockquote:nth-of-type(1) {
         font-size: 16px;
         color: #2e2d2d;
         top: 330px;
         margin-left: 30px;
     }
-
+    #referral-page {
+        height: 1900px !important
+    }
+    .ref-flex blockquote {
+        font-size:16px !important;
+        flex: 2 !important
+    }
     #referral-page .myReferralId {
-        font-size: 15px;
+        font-size: 13px;
         margin-left: 150px;
     }
     #referral-page .shareReferralId  {
-        font-size: 15px;
-        margin-left: 70px;
+        font-size: 13px !important;
+        margin-top: 30px;
+        margin-left:-200px;
+        height: auto;
     }
-    #referral-page div.container.yek {
+    /* #referral-page div.container.yek {
         margin-bottom: 1700px !important
-    }
+    } */
 
 }
 
 /* ACTIVITY */
-
-/* Menu */
 
 .navbar {
     height: 130px;
@@ -701,81 +742,13 @@ form.contact-page p:nth-of-type(1) {
     font-family: helvetica
 }
 
-.sub:after {
-    background-image: url("img/Arrow.svg");
-    width: 1em;
-    height: 1em;
-    margin-top: 25px;
-    content: "";
-    left: 300px;
-    background-size: 100% 100%;
-    position: absolute;
-}
-
-#dashboard:before {
-    content: "";
-    background-image: url("img/Dashboard.svg");
-    width: 35px;
-    height: 35px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -60px;
-    top: 15px
-}
 #activity:hover{
     color: white !important;
-}
-#activity:before {
-    content: '';
-    background-image: url("img/Activity.svg");
-    width: 35px;
-    height: 35px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -80px;
-    top: 15px
-}
-
-#referral:before {
-    content: "";
-    background-image: url("img/Referral.svg");
-    width: 35px;
-    height: 35px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -80px;
-    top: 15px
-}
-
-#setting:before {
-    content: "";
-    background-image: url("img/Setting.svg");
-    width: 35px;
-    height: 35px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -85px;
-    top: 15px
-}
-
-.contact {
-    border-bottom: 1px solid transparent !important
-}
-
-#contact:before {
-    content: "";
-    background-image: url("img/contact.svg");
-    width: 35px;
-    height: 35px;
-    background-size: 100% 100%;
-    position: absolute;
-    left: -80px;
-    top: 18px
 }
 
 /* Activity */
 
- #activity {color: orange !important}
+ #activity {color: orange ;}
 
   .activity-container h2 {
     font-size: 30px;
@@ -809,7 +782,6 @@ form.contact-page p:nth-of-type(1) {
    height: 40px;
    text-align: center;
    border-bottom: 2px solid #3a393986;
-   /* font-size: 30px; */
    color: #2e2d2d;
    font-weight: bold;
    font-family: sans-serif;
@@ -848,7 +820,6 @@ form.contact-page p:nth-of-type(1) {
   .tooltip1:hover .tooltiptext {
     visibility: visible;
   }
-
 
 /* Activity-Media-1024 */
 @media screen and (max-width:1025px)
@@ -1156,7 +1127,7 @@ form.contact-page p:nth-of-type(1) {
     display: block;
 }
 
-#dashboard {color: orange !important}
+#dashboard {color: orange ;}
 
 /* ======================================Circle=========================================== */
 
@@ -1192,8 +1163,6 @@ form.contact-page p:nth-of-type(1) {
 }
 
 #redeem {
-    /* margin-top: 0%; */
-    /* margin-left: 38%; */
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
@@ -1230,12 +1199,10 @@ form.contact-page p:nth-of-type(1) {
     text-align: center !important;
     font-family: sans-serif !important;
     color: #727272;
-    /* position: absolute; */
     margin: auto !important;
     margin-top: 20% !important;
     font-weight: bolder;
     display: block !important;
-    /* margin-left: 7.5% */
 }
 
 #dashboard-page-circle p:nth-of-type(1) {
@@ -1358,9 +1325,6 @@ form.contact-page p:nth-of-type(1) {
 #doReferalCode {
     border-top:1px solid orange !important;
     border-bottom: 1px solid orange !important;
-    /* -webkit-text-shadow: 0 0 2px orange;
-    text-shadow: 0 0 2px orange;
-    box-shadow: 0 0 2px orange; */
     animation-fill-mode:backwards;
     -webkit-animation-fill-mode:backwards;
     animation:myanimate 2s;
@@ -1451,7 +1415,6 @@ form.contact-page p:nth-of-type(1) {
     margin-left: 17px
 }
 
-
 /*============================================== Mining History ===================================*/
 
     canvas#chart1 {
@@ -1504,10 +1467,8 @@ form.contact-page p:nth-of-type(1) {
         display:inline-block;
         vertical-align:top;
         box-sizing:border-box;
-        /* padding-left:150px; */
         color:#999;
         position:relative;
-        /* border: thin solid; */
     }
 
     .Hash-History div.box.reward:after
@@ -1536,38 +1497,7 @@ form.contact-page p:nth-of-type(1) {
         text-shadow: 0 0 2px green;
         box-shadow: 0 0 2px green;
     }
-   /*  
-@media screen and (min-width:1840px) {
-    #dashboard-page {
-        width: 82.3% !important;
-        margin-left: 20.7% !important;
-    }
-    #dashboard-page-circle , #dashboard-page-circle2 {
-        width: 31% !important
-    }
-    #dashboard-page-circle ,
-    #dashboard-page-circle2 {
-        margin-left: 10% !important
-    }
-
-    #circle-span {
-        margin-left:5% !important
-    }
-    #Hash-History-list tr th  {
-        width: 170px;
-        width: 30.5%;
-        font-size: 27px;
-        margin-left: 0 !important
-    }
-
-    #Hash-History-list tr td { 
-        width: 170px;
-        width: 28.8%;
-        margin-left: 0 !important;
-        font-size: 24px;
-    }
-
-}*/
+  
 
 @media screen and (min-width:1600px) {
 
@@ -1583,7 +1513,6 @@ form.contact-page p:nth-of-type(1) {
     #dashboard-page-circle2 {
         margin-left: 13% !important
     }
-
     
 }
 
@@ -1799,7 +1728,6 @@ form.contact-page p:nth-of-type(1) {
         width: 300px !important;
         height: 300px !important;
         display: block;
-        /* height: 350px !important; */
         border: 20px solid #ff9100;
         border-radius: 50%;
         display: block;
@@ -1828,14 +1756,6 @@ form.contact-page p:nth-of-type(1) {
     .title-flex .dashboard-hr { 
         flex: 0.8
     }
-
-    /* #Hash-History-list
-    {
-        margin-top: 30px;
-        width: 100%;
-        height: 150px;
-        float:left;
-    } */
     
      .Hash-History .custom-table th:nth-of-type(2) ,
     .Hash-History .custom-table td:nth-of-type(2) {
@@ -1853,8 +1773,6 @@ form.contact-page p:nth-of-type(1) {
         padding:5px;
         border-radius:5px;
         zoom:1;
-    /*     filter:alpha(opacity=20); */
-    /*     opacity:0.2; */
         -webkit-text-shadow: 0 0 2px green;
         text-shadow: 0 0 2px green;
         box-shadow: 0 0 2px green;

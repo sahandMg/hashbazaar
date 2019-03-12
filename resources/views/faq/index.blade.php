@@ -47,6 +47,11 @@
         margin-bottom: 2%;
      }
      .faq-answer p { margin-bottom: 1%;}
+    @media only screen and (max-width: 769px) {
+      .faq-container {
+          margin-top: 20%;
+        }
+    }
     @media only screen and (max-width: 576px) {
         .faq-container {
           margin-top: 20%;
@@ -108,15 +113,15 @@
                      <h2 class="text-center">Frequently asked questions</h2> 
                      <!-- customerservice-category  category-button one  -->
                     <div class="row">
-                        <div class="col-md-3 faq-section" style="background-color: #e8ad2c;">
+                        <div class="col-lg-3 col-md-3 faq-section" id="faqSection1" style="background-color: #e8ad2c;">
                           <h4>Bitcoin</h4>
                           <img src="img/bitcoin-faq.svg" />
                         </div>
-                        <div class="col-md-3 faq-section">
+                        <div class="col-lg-3 col-md-3 faq-section" id="faqSection2">
                            <h4>Mining</h4>
                            <img src="img/mining-faq.svg" />
                         </div>
-                        <div class="col-md-3 faq-section"><h4>Hash Bazaar</h4></div>
+                        <div class="col-lg-3 col-md-3 faq-section" id="faqSection3"><h4>Hash Bazaar</h4></div>
                     </div>
                     <br/><br/>
                  <div class="faq-questions-section">
@@ -327,29 +332,32 @@
                 <script>
                 
                 
-                    $.noConflict();
-                
-                    jQuery(document).ready(function ($) {
+                    // $.noConflict();
+                     
+                    // jQuery(document).ready(function ($) {
                         $('.faq-answer').hide();
                         $('.faq-customerservice-questions').hide();
                         $('.faq-questions-section').children().eq(0).show();
-
+                         console.log("js run");  
                         $('.faq-question').click(function(){
+                           console.log(".faq-question");
                             $('.faq-answer').hide();
                             $(this).parent().children().eq(1).show();
-                         })
+                         });
                           
                         $('.faq-section').click(function(){
+                            console.log("faq-section");
                             $('.faq-section').css('background-color' , 'rgb(235, 233, 233)');
                             $(this).css('background-color' , '#e8ad2c');
                             var listItem = $(this);
                             $('.faq-customerservice-questions').hide();
                             $('.faq-questions-section').children().eq($(this).index()).show();
-                            // $(this).parent().children().eq(1).show();
-                         })
-                
-                     
-                    })
+                            $(this).parent().children().eq(1).show();
+                         });
+
+                        // $('#faqSection2').click(function(){
+                        //       console.log("#faqSection2");
+                        //  });
                 
                 
                 

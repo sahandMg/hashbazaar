@@ -159,7 +159,7 @@
 
 
       @else
-        <p id="no-hash"> NO Hash History</p>
+        <p id="no-hash" style="color: black;"> NO Hash History</p>
       @endif
 
     </table>

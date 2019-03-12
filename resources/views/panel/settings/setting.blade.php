@@ -98,12 +98,13 @@
             </div>
             @endif
             <div class="change-address">
-                    
-        
-                    <form action="">
-                        <input type="text" id="copyTarget" value="SDKnsdakndnj12n1k1lkmdsalm" placeholder="SDKnsdakndnj12n1k1lkmdsalm"><br>
-                        <input type="submit" class="pandel-button a4" value="Submit" >
-                    </form>
+
+                <form action="{{route('editWallet')}}" method="POST">
+                    <input type="hidden" name="_token" value="{{csrf_token()}}">
+                    <input type="text" id="copyTarget" name="address"   placeholder="{{!is_null(Auth::guard('user')->user()->wallet)?Auth::guard('user')->user()->wallet->addr:'Your bitcoin wallet address'}}"><br>
+                    <input type="submit" class="pandel-button a4" value="Submit" >
+                </form>
+
             </div>
 
         </div><!-- address -->
@@ -112,7 +113,7 @@
                 <hr class="dashboard-hr2"/>
                 <h2 class="dashboard-title2">Need To Change Your Address ?</h2>
                 <hr class="dashboard-hr2"/>
-        </div> 
+        </div>
 
  </div>
 </div>

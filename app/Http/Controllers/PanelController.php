@@ -270,10 +270,11 @@ class PanelController extends Controller
         return view('panel.settings.wallet');
     }
 
-    public function makeWallet(){
+    public function editWallet(Request $request){
 
-        $wallet = Auth::guard('user')->user()->wallet();
-        return view('panel.settings.makeWallet',compact('wallet'));
+        $wallet = Auth::guard('user')->user()->wallet;
+        $wallet->update(['addr'=> $request->address]);
+        return redirect()->back()->with(['message'=>'New wallet address saved']);
     }
 
     public function referral(){

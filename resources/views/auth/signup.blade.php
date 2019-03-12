@@ -63,7 +63,7 @@
 							<img src="/public/img/twitter.svg" alt=""></a>
 						 --}}
 
-						<a href="#" class="socialnet-flex1" id="gp">
+						<a href="{{route('redirectToProvider')}}" class="socialnet-flex1" id="gp">
 							<img src="img/icons/googleicon.png" alt=""></a>
 						{{-- alt="Join With Google Account" --}}
 

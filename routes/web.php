@@ -175,7 +175,7 @@ Route::group(['middleware'=>'block','prefix'=>'panel'],function(){
 
     Route::post('setting/wallet','PanelController@post_wallet')->name('wallet');
 
-    Route::get('setting/wallet-make','PanelController@makeWallet')->name('makeWallet');
+    Route::post('setting/wallet-edit','PanelController@editWallet')->name('editWallet');
 
     Route::get('referral','PanelController@referral')->name('referral');
 

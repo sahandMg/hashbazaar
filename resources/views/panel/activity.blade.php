@@ -66,7 +66,7 @@ foreach ($hashes as $key=> $hash){
                 
 
                 @else
-                    <p id="no-hash"> NO Purchases</p>
+                    <p id="no-hash" style="color: black;"> NO Purchases</p>
                 @endif
                        
    

@@ -24,7 +24,7 @@
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-10" data-validate="Please enter your name">
-						<input class="input100" type="text" name="name" placeholder="name" value="{{Request::old('name')}}">
+						<input class="input100" type="text" name="name" placeholder="Username" value="{{Request::old('name')}}">
 						<span class="focus-input100"></span>
 					</div>
 

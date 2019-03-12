@@ -132,7 +132,7 @@
                                 <h5 class="faq-question">What is Bitcoin?</h5>
                                 <div class="faq-answer">
                                  <p>
-                                  The new generation of transaction system is based on block chain. People needs crypto currencies to deal in this new system. Bitcoin as the most important crypto is a digital and global money system currency. It allows people to send or receive money  across the internet. For more Information read about it in <a href="http://blog.hashbazaar.com/">Our blog</a>.
+                                  The new generation of transaction system is based on block chain. People need crypto currencies to deal in this new system. Bitcoin as the most important crypto is a digital and global money system currency. It allows people to send or receive money  across the internet. For more Information read about it in <a href="http://blog.hashbazaar.com/">Our blog</a>.
                                  </p>
                                 </div>
                             </li>
@@ -149,7 +149,7 @@
                                 <h5 class="faq-question">How can I invest on bitcoin?</h5>
                                 <div class="faq-answer">
                                  <p>
-                                  You can be a trader in bitcoin stock market (Like other stock markets) or invest on setting up a mining farm.
+                                  You can be a trader in bitcoin stock market (Like other stock markets) or invest in setting up a mining farm.
                                  </p>
                                 </div>
                             </li>                           
@@ -188,12 +188,18 @@
                                 <h5 class="faq-question">What Cryptocurrency cloud mining services are working now?</h5>
                                 <div class="faq-answer">
                                  <p>
-                                  There are many Cryptocurrency cloud mining services working now, like genesis-mining and hashflare. 
+                                  There are many Cryptocurrency cloud mining services working now, like genesis-mining, hashflare and so on. 
                                  </p>
                                  <p>
                                   What differences are there between the Cryptocurrency cloud mining services?
                                   They are different from each other in expected return on investment and maintenance fees specially Energy fees.
                                  </p>
+                                </div>
+                            </li> 
+                            <li class="faq-question-list">
+                                <h5 class="faq-question">What differences are there between the Cryptocurrency cloud mining services?</h5>
+                                <div class="faq-answer">
+                                 <p>They are different from each other in expected return on investment, maintenance fees and reliability.</p>
                                 </div>
                             </li>  
                             <li class="faq-question-list">
@@ -230,7 +236,7 @@
                                   If you can handle all the above problems then just compare your solo profit with the profit that you can get from hashbazaar.  
                                  </p>
                                  <p>
-                                  The incredible profit in Hash bazaar comes from the low electricity that we pay because the optimum locations that we consider to set up our farms or maybe from now on your farm..  
+                                  The better profit in Hash bazaar comes from the low electricity that we pay because the optimum locations that we consider to set up our farms or maybe from now on your farm..  
                                  </p>
                                </div>
                             </li>                           
@@ -271,7 +277,7 @@
                                   The amount of money you want to invest (The amount of hash power you want to purchase).
                                  </p>
                                  <p>
-                                  The predicted mining payout that can be found from your dashboard or other cryptocurrency calculator. 
+                                  The predicted mining payout. 
                                  </p>
                                 </div>
                             </li> 
@@ -298,10 +304,10 @@
                                 </div>
                             </li>  -->  
                             <li class="faq-question-list">
-                                <h5 class="faq-question">How can I find the predicted return from my panel?</h5>
+                                <h5 class="faq-question">How can I find the predicted return?</h5>
                                 <div class="faq-answer">
                                  <p>
-                                  You can find it from your dashboard.
+                                  You can use HashBazaar calculator and follow it from your dashboard or reffer to any other realiable international mining calculator.
                                  </p>
                                 </div>
                             </li>
@@ -319,7 +325,7 @@
                             <li class="faq-question-list">
                                 <h5 class="faq-question">When Can I get my profit?</h5>
                                 <div class="faq-answer">
-                                  <p>You can withdraw your mining output after increasing to 0.01BTC.</p>
+                                  <p>You can withdraw your mining output as soon as increasing to 0.01BTC.</p>
                                 </div>
                             </li>                           
                         </ul>

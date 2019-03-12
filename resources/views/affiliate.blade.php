@@ -56,7 +56,7 @@
     <div class="container" style="min-width: 320px;color: black;padding: 0px;">
      <div class="row peymane-container">
       <div class="referal-left-text">
-         <h3 class="referal-code-text">Referral code</h3>
+         <h3 class="referal-code-text">Number of Referrals</h3>
          <h3>100K</h3>
          <h3>10K</h3>
          <h3>1000</h3>
@@ -265,8 +265,8 @@
      var allTerraHash = 5000 ;
      var level1NumCode = 500; var level2NumCode = 500;
      var level3NumCode = 9000; var level4NumCode = 90000; var level5NumCode = 1000;
-     var level1Hash = 100; var level2Hash = 200;
-     var level3Hash = 400; var level4Hash = 800; var level5Hash = 1600;
+     var level1Hash = 1000; var level2Hash = 1000;
+     var level3Hash = 18000; var level4Hash = 180000; var level5Hash = 2000;
      var level1Percent = 0.025; var level2Percent = 0.035; var level3Percent = 0.045; 
      var level4Percent = 0.055; var level5Percent = 0.065; 
      var level1ReferalHash = parseInt(level1Hash*level1Percent);

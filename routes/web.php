@@ -124,7 +124,7 @@ Route::get('about','PageController@aboutUs')->name('aboutUs');
 
 Route::get('affiliate','PageController@affiliate')->name('affiliate');
 
-Route::get('login/{hashpower?}','AuthController@login')->name('login');
+Route::get('login/{hashpower?}','AuthController@login')->name('login')->middleware('guest');
 
 Route::post('login','AuthController@post_login')->name('login');
 
@@ -136,7 +136,7 @@ Route::get('login/google','AuthController@redirectToProvider')->name('redirectTo
 
 Route::get('login/google/callback','AuthController@handleProviderCallback')->name('handleProviderCallback');
 
-Route::get('signup/{hashpower?}','AuthController@signup')->name('signup');
+Route::get('signup/{hashpower?}','AuthController@signup')->name('signup')->middleware('guest');
 
 Route::post('signup','AuthController@post_signup')->name('signup');
 

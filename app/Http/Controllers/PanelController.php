@@ -251,7 +251,7 @@ class PanelController extends Controller
             $wallet->user_id = Auth::guard('user')->id();
             $wallet->active = 1;
             $wallet->save();
-            return redirect()->route('makeWallet');
+            return redirect()->route('setting');
         }else{
             return redirect()->back()->with(['error'=>'You have entered a wallet address before']);
         }
@@ -265,9 +265,9 @@ class PanelController extends Controller
 
         if(!is_null(Auth::guard('user')->user()->wallet)){ // user has a wallet
 
-            return redirect()->route('makeWallet');
+            return redirect()->route('settings');
         }
-        return view('panel.settings.wallet');
+        return view('panel.settings.setting');
     }
 
     public function editWallet(Request $request){

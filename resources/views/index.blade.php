@@ -34,7 +34,7 @@
     </header>
     <section  id="sharePlan" class="text-center" style="padding-top: 4%;color: #707070;">
         <div>
-            <h3 class="fontTheme">choose your investment planS</h3>
+            <h3 class="fontTheme">choose your investment plan</h3>
         </div>
         <div class="container">
           <form action="{{route('signup')}}" method="get">
@@ -44,10 +44,10 @@
             </div>
             <div style="text-align: left;font-weight: 700;">
                 <p>Hash allocation cost : <span id="cost"></span> dollar</p>
-                <p>Maitanace fee: {{$settings->maintenance_fee_per_th_per_day}} dollar per Th/day</p>
+                <p>Maintenance fee: {{$settings->maintenance_fee_per_th_per_day}} dollar per Th/day</p>
                 <small>(include all electricity, cooling, development, and servicing costs )</small>
-                <p>Income : At this time We predict {{$settings->bitcoin_income_per_month_per_th}} BTC/month for every Th.</p>
-                <small>(Changes may happen depends on bitcoin price and bitcoin network difficulty changes.)</small>
+                <p>Income : At this time We predict {{$settings->bitcoin_income_per_month_per_th}} BTC/month per Th.</p>
+                <small>(May be changed depends on bitcoin price and bitcoin network difficulty.)</small>
             </div>
             <div class="form-group fontTheme" style="margin-top: 2%;">
                 <button class="btn  btn-primary round-button-com" type="submit" style="width: 120px">Buy</button>
@@ -60,7 +60,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <h3 class="text-center"  style="color: #707070;">Working in the regions in which energy cost is in the lowest level</h3>
+                    <h3 class="text-center"  style="color: #707070;">Working in the regions in which energy cost is low</h3>
                     <img id="price" src="img/Pricing.svg">
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 advantages-detail">
@@ -72,7 +72,7 @@
                         </li>
                         <li>
                             <h5>Daily withdrawal</h5>
-                            <p>Withdraw your daily mining profit at 00:00 every day.</p>
+                            <p>Withdraw your mining output as soon as increasing to 0.01BTC.</p>
                         </li>
                         <li>
                             <h5>Activity report</h5>

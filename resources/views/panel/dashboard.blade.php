@@ -219,7 +219,6 @@
   </div>
   <!-- The Modal -->
   <div id="myModal" class="modal" style="color: black;">
-    <!-- Modal content -->
     <div class="modal-content">
       <span class="close">&times;</span>
       <div>
@@ -240,11 +239,27 @@
       </div>
     </div>
   </div>
+  <!-- The Modal First message-->
+  <div id="modalFirstTime" class="modal" style="color: black;">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span id="close" class="close">&times;</span>
+      <div class="text-center">
+          <br/>
+          <h2> Welcome to Hash Bazaar </h2>
+          <br/>
+          <p>Thanks for your registration. From now on you join our community.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script type="text/javascript">
         // Get the modal
         var modal = document.getElementById('myModal');
+        var modalFirstTime = document.getElementById('modalFirstTime');
+        
+        modalFirstTime.style.display = "block";
         modal.style.display = "none";
 
         var orderBtn = document.getElementById('orderBtn');
@@ -253,16 +268,23 @@
         }
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
+        var span2 = document.getElementsByClassName("close")[1];
 
         // When the user clicks on <span> (x), close the modal
         span.onclick = function() {
             modal.style.display = "none";
+        }
+        span2.onclick = function() {
+            modalFirstTime.style.display = "none";
         }
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
+            }
+            if (event.target == modalFirstTime) {
+                modalFirstTime.style.display = "none";
             }
         }
 </script>

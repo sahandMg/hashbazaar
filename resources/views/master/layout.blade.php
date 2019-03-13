@@ -11,7 +11,7 @@
           content="Bitcoin is the digital gold of the future & HashBazaar is the most cost effective cloud mining company on the market. Mine bitcoin through the cloud, get started today!"/>
     <meta name="google-site-verification" content="roNqWp-CmbNsSN2R6ggCv2ubJwFNikEs_WJ7E2P3WDw" />
     @if(request()->path() === '/')
-        <title>Hash Bazaar</title>
+        <title>Hash Bazaar - Cloud mining Company</title>
     @else
         @yield('title')
     @endif
@@ -40,7 +40,7 @@
     <div class="header-navbar">
         <div id="header-navbar-logo">
             <ul>
-                <li class="navbar-list big"><a href="http://hashbazaar.com"><img class="navbar-small-logo" src="{{asset('img/Logo_header.svg')}}" alt="Logo"></a>
+                <li class="navbar-list big"><a href="http://hashbazaar.com"><img class="navbar-small-logo" src="{{asset('img/Logo_header.svg')}}" alt="hash bazaar Logo"></a>
             </ul>
         </div>
         <div id="header-navbar-menu">

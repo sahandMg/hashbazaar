@@ -535,8 +535,9 @@ form.contact-page p:nth-of-type(1) {
 
     #referral-page .myReferralId{
         font-size: 22px;
+        
     }
-
+    
     .referral-page_secondList_column
     {
         top: 480px;
@@ -772,7 +773,8 @@ form.contact-page p:nth-of-type(1) {
 
 #nopur {
     font-size: 30px;
-    margin: 15% 35%
+    margin: auto;
+    display: block;
 }
 
 .mainList2 {display: none}
@@ -1253,7 +1255,8 @@ form.contact-page p:nth-of-type(1) {
 
 #no-hash {
     font-size: 30px;
-    margin: 15% 37%
+    margin: auto;
+    display: block
 }
 
 .progress1 {    border: 1px solid;}

@@ -384,10 +384,12 @@ class PaymentController extends Controller
                      'status' => 'paid'
                 ]);
 
-                Mail::send('email.paymentConfirmed',[],function($message) use($user){
+                $trans = DB::table('transactions')->where('code',$orderID)->first();
+
+                Mail::send('email.paymentConfirmed',['hashPower'=>$hashPower,'trans'=>$trans],function($message) use($user){
                     $message->from ('Admin@HashBazaar');
                     $message->to ($user->email);
-                    $message->subject ('Payment Confirmed !');
+                    $message->subject ('Payment Confirmed');
                 });
 
                 $referralUser = DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->first();

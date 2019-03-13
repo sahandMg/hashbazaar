@@ -44,7 +44,7 @@ return [
 
         'client_id' => '576127661859-3n9316ncp2div47c0of2oph630r9se1g.apps.googleusercontent.com',         // Your GitHub Client ID
         'client_secret' =>'J8ugu4r9J0fs0OcT8Unfao_4', // Your GitHub Client Secret
-        'redirect' => 'http://hashbazaar.com/login/google/callback',
+        'redirect' => 'http://hashbazaar.com/google/login/callback',
     ]
 
 

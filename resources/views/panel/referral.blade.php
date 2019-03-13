@@ -587,8 +587,6 @@
      }
      refresh();
     
-   //  ====================== replace =========================
-   var replaceAll = document.getElementsByClassName('myReferralId').innerText;
-   replaceAll = replaceAll.replace(" ", "");
+  
    </script>
 @endsection

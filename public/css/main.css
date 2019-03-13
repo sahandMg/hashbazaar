@@ -457,7 +457,7 @@ color: orange;}
     width: 300px;
     height: 30px;
     border: 3px solid transparent;
-    margin-left: 25.5%;
+    margin-left: 21%;
     border-bottom: 1px solid black;
     margin-bottom: 5%
 }
@@ -800,7 +800,12 @@ color: orange;}
         left: -50px !important;
         margin-top: -3px
     }
-        
+    .setting-information input#text {
+        margin-left: 19%
+    }
+    .setting-information input#email {
+        margin-left: 26.3%
+    }
     .setting-information input#submit
     {
         margin-left: 80%;
@@ -1282,6 +1287,9 @@ color: orange;}
     .setting-information input#Confirmpassword  {
         width: 230px;
     }
+    .setting-information input#text {
+        margin-left: 5% !important
+    }
     .setting-information input#email {
         margin-bottom: 20px;
         margin-left: 14%
@@ -1385,10 +1393,13 @@ color: orange;}
         margin-left: 50px;
         margin-top: 0px
     }
-
-    .change-address input:nth-of-type(1) {
+    .change-address .a2 {
+        margin:auto;
+        display: block
+    }
+    .change-address .a4 {
         width:200px;
-        left: 50px;
+        /* margin-left: 50px !important; */
         top: 20px !important;
     }
 
@@ -1485,7 +1496,21 @@ color: orange;}
     #logouticon a:before {
         left:-40px
     }
+    /*  ,
+    .setting-information input#cur-password ,
+    .setting-information input#newpassword  ,
+    .setting-information input#Confirmpassword  {
+        width: 230px;
+    } */
 
+
+    .setting-information input#text {
+        margin-left: 2.5% !important
+    }
+
+    .setting-information input#email {
+        margin-left: 12%
+    }
     /* Wallet */
     .wallet1 p {
         font-size: 15px;
@@ -1601,19 +1626,22 @@ color: orange;}
         margin-top: 15% !important;
         display: block 
     }
+    .setting-information input#text {
+        margin-left: 13% !important
+    }
     .setting-information input#cur-password {
-        margin-left: 15%;
+        margin-left: 13%;
         margin-bottom: 20px;
     }
 
     .setting-information input#newpassword {
         margin-bottom: 20px;
-        margin-left: 15%;
+        margin-left: 13%;
     }
 
     .setting-information input#Confirmpassword {
         margin-bottom: 20px;
-        margin-left: 15%;
+        margin-left: 13%;
     }
   /* Wallet */
   .wallet1 {
@@ -1657,7 +1685,7 @@ color: orange;}
         flex: 0.7 !important
     } 
     .a3 {
-        margin-top: 180px !important
+        margin-top: 220px !important
 
     }
     .make-wallet {
@@ -1677,10 +1705,11 @@ color: orange;}
     .address .address-img {
         width: 100px;
         height: 100px;
-        left:110px;
+        /* left:100px; */
         top: 00px;
         flex: 1;
-        margin-top: -30px
+        margin-top: -40px !important; 
+        margin-left: 80px !important;
     }
 
     .address-box {
@@ -1693,6 +1722,7 @@ color: orange;}
     .address-box input {
         width: 170px;
         left: 40px;
+        margin-top: 80px !important
     }
 
     .address-box input::placeholder {
@@ -1704,31 +1734,35 @@ color: orange;}
         display: -webkit-flex;
         display: -moz-flex;
         flex-flow: row nowrap;
-        width: 50%
+        width: 50%;
+
     }
     .address-box a {
         left: 30px;
-        margin-left: 25px;
+        margin-left: 45px;
         position: relative;
         display: inline !important;
         flex: 1;
     }
 
     .change-address {
-        margin-left: 0 !important
+        margin-left: 0 !important;
+        margin-top: 50px
     }
     .change-address input:nth-of-type(1) {
         width:200px;
-        top: -70px;
-        left: 60px !important
+        /* top: -70px; */
+        /* left: 60px !important */
     }
+
+    .change-address .a2
 
     .change-address input::placeholder {
         font-size:12px
     }
 
     .a4 {
-        margin-left: 100px !important;
+        
         margin-top: 1% !important
     }
   

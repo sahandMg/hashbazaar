@@ -762,31 +762,23 @@ form.contact-page p:nth-of-type(1) {
     color: #2e2d2d;
     font-weight: bold;
     font-family: sans-serif;
- }
-
- .purchases q {
-    width: 200px;
-    height: 40px;
     text-align: center;
-    border-bottom: 2px solid #3a393986;
-    font-size: 30px;
-    color: #2e2d2d;
-    font-weight: bold;
-    font-family: sans-serif;
     margin: auto;
-    display: block
  }
 
 #nopur {
     font-size: 30px;
-    margin: auto;
+    margin: auto ;
     display: block;
+    text-align: center;
+    justify-content: center;
+    /* margin-left: 38% !important */
 }
 
 .mainList2 {display: none}
 
 .purchases h2 {
-   width: 30%;
+   width: 35%;
    height: 40px;
    text-align: center;
    border-bottom: 2px solid #3a393986;
@@ -794,7 +786,8 @@ form.contact-page p:nth-of-type(1) {
    font-weight: bold;
    font-family: sans-serif;
    margin: auto;
-   display: block
+   display: block;
+
 }
 .container 
 {

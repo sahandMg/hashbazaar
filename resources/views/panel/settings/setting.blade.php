@@ -97,7 +97,7 @@
 
                 <form action="{{route('editWallet')}}" method="POST">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
-                    <input type="text" id="copyTarget" name="address"   placeholder="{{!is_null(Auth::guard('user')->user()->wallet)?Auth::guard('user')->user()->wallet->addr:'Your bitcoin wallet address'}}"><br>
+                    <input type="text" class="a2" id="copyTarget" name="address"   placeholder="{{!is_null(Auth::guard('user')->user()->wallet)?Auth::guard('user')->user()->wallet->addr:'Your bitcoin wallet address'}}"><br>
                     <input type="submit" class="pandel-button a4" value="Submit" >
                 </form>
 

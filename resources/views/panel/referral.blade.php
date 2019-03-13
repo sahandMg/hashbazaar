@@ -41,7 +41,7 @@
    </div>
 
    <br/>
-    <div class="container" style="min-width: 320px;color: black;padding: 0px;">
+   <div class="container" style="min-width: 320px;color: black;padding: 0px;">
      <div class="row peymane-container">
       <div class="referal-left-text">
          <h3 class="referal-code-text">Number of Referrals</h3>
@@ -100,7 +100,6 @@
         </div>
       </div>
      </div>
-   </div>
    <br/>
 
    <div class="container yek" style="color: black;margin-top: 0px;">
@@ -130,7 +129,7 @@
             </tr>
 
             <tr>
-               <td>500 <   < 100 </td>
+               <td>500 <   < 1000 </td>
                <td>B</td>
                <td>3.5%</td>
             </tr>
@@ -160,6 +159,7 @@
       <p>Note that all the affiliate rewards will be given by Hashbazaar to our promoters to encourage others to join the future of cryptocurrency transaction system and also gain profit from their investment.</p>
    </div>
 
+   </div>
 </div>
    
 

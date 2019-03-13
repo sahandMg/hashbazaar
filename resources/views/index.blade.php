@@ -61,7 +61,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <h3 class="text-center"  style="color: #707070;">Working in the regions in which energy cost is low</h3>
-                    <img id="price" src="img/Pricing.svg">
+                    <img id="price" src="img/Pricing.jpg" style="width: 100%;height: auto;">
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 advantages-detail">
                     <h3>Other advantages:</h3>
@@ -132,7 +132,13 @@
         </div>
 
     </div>
-
+    <style type="text/css">
+        .advantages h2 {margin-bottom: 3%;}
+        .advantages-detail h5 {margin-top: 3%;font-size: 1.1rem;}
+       /* .advantages-detail {
+            margin-top: 3%;
+        }*/
+    </style>
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>

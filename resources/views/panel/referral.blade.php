@@ -6,7 +6,10 @@
     
     <?php
             $user = Auth::guard('user')->user();
-
+            $settings = \App\Setting::first();
+            $sharings = \App\Sharing::get()->toArray();
+            $total_hash_from_referral = \Illuminate\Support\Facades\DB::table('bit_hashes')
+                    ->where('referral_code',Auth::guard('user')->user()->code)->sum('hash');
     ?>
 <!-- Referral Page -->
 <div id="referral-page" class="panel-container">
@@ -391,14 +394,26 @@
      }
    </style>
    <script type="text/javascript">
-     var referalPeople = 101000 ;
+       // total number of sharing
+     var referalPeople = {!! $user->referral->total_sharing_num !!} ;
      var allTerraHash = 5000 ;
-     var level1NumCode = 500; var level2NumCode = 500;
-     var level3NumCode = 9000; var level4NumCode = 90000; var level5NumCode = 1000;
-     var level1Hash = 1000; var level2Hash = 1000;
-     var level3Hash = 18000; var level4Hash = 180000; var level5Hash = 2000;
-     var level1Percent = 0.025; var level2Percent = 0.035; var level3Percent = 0.045; 
-     var level4Percent = 0.055; var level5Percent = 0.065; 
+     // number of sharing in each level
+       var level1NumCode = {!! $sharings[1]['sharing_number'] !!};
+       var level2NumCode = {!! $sharings[2]['sharing_number'] !!};
+       var level3NumCode = $sharings[3]['sharing_number'];
+       var level4NumCode = {!! $sharings[4]['sharing_number'] !!};
+       var level5NumCode = $sharings[5]['sharing_number'];
+       // number of terrahsah power in each level
+     var level1Hash = {!! $total_hash_from_referral !!}; var level2Hash = 0;
+     var level3Hash = 0; var level4Hash = 0; var level5Hash = 0;
+       // reward
+     var level1Percent = {!! $sharings[1]['value'] !!};
+       var level2Percent = {!! $sharings[2]['value'] !!};
+       var level3Percent = {!! $sharings[3]['value'] !!};
+     var level4Percent = {!! $sharings[4]['value'] !!};
+       var level5Percent = {!! $sharings[5]['value'] !!};
+
+
      var level1ReferalHash = parseInt(level1Hash*level1Percent);
      var level2ReferalHash = parseInt(level2Hash*level2Percent);
      var level3ReferalHash = parseInt(level3Hash*level3Percent);

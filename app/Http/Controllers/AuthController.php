@@ -241,7 +241,8 @@ class AuthController extends Controller
             'code'=> $user->code,
             'email'=>$user->email
         ];
-        event(new \App\Events\ReferralQuery(Auth::user()));
+        event(new \App\Events\ReferralQuery($user));
+        Auth::guard('user')->login($user);
         Mail::send('email.thanks',$data,function($message) use($data){
             $message->from ('Admin@HashBazaar');
             $message->to ($data['email']);

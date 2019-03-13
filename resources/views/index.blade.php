@@ -132,7 +132,13 @@
         </div>
 
     </div>
-
+    <style type="text/css">
+        .advantages h2 {margin-bottom: 3%;}
+        .advantages-detail h5 {margin-top: 3%;font-size: 1.1rem;}
+       /* .advantages-detail {
+            margin-top: 3%;
+        }*/
+    </style>
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>

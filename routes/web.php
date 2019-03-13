@@ -82,7 +82,7 @@ Route::get('job',function(){
 
 Route::get('test',function (){
 
-    dd(session('paymentData'));
+    return view('email.thanks');
 
 });
 

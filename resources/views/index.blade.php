@@ -72,7 +72,7 @@
                         </li>
                         <li>
                             <h5>Daily withdrawal</h5>
-                            <p>Withdraw your mining output as soon as increasing to 0.01BTC.</p>
+                            <p>Your mining output will be withdrawn as soon as increasing to 0.01BTC.</p>
                         </li>
                         <li>
                             <h5>Activity report</h5>

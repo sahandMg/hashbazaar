@@ -25,7 +25,7 @@
             <input type="hidden" name="_token" value="{{csrf_token()}}">
              <legend class="coppyIcon">User Information </legend>  
 
-            <label id="textbefore">Name
+            <label id="textbefore">Username
             <input type="text" name="text" id="text" value="{{Auth::guard('user')->user()->name}}" disabled="disabled"> 
             </label>
             
@@ -57,12 +57,8 @@
             <p class="text-center">Still Don’t Have a Bitcoin Wallet? Click <a href="https://www.blockchain.com/" target="_blank" id="clickhear"
                 style="color:orange;text-decoration: none;font-weight: bold;">Hear</a> To Make One!
                 </p>
-
                 <h2 style="color:black" class="text-center">OR</h2>
-
                 <h2 class="text-center" style="color:black">Submit Your Wallet Address</h2>
-
-
                 
                  <form id="setting-wallet" class="text-center" method="post" action="{{route('wallet')}}">
                      <input class="text-center" type="hidden" name="_token" value="{{csrf_token()}}">

@@ -16,15 +16,25 @@
   <!-- Circle -->
   <div class="circle-container">
     <div id="dashboard-page-circle" >
+<<<<<<< HEAD
       <h2 id="circle-span" class="text-center">Total Mining</h2>
       <p>&nbsp;<span id="miningBTC"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> <span style="color: orange;">BTC</span></p>
+=======
+      <h2 id="circle-span" class="text-center">Total Earn</h2>
+      <p>&nbsp;<span id="miningBTC"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; <span style="color: orange;">BTC</span> </p>
+>>>>>>> ef20ce14ba7ad2c33b9ceebb9e8e81600b38a1a6
       <hr style="width: 84%; text-align:center;">
       <p><span id="miningDollar"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> <span style="color: aqua;">USD</span></p>
       {{-- <button id="redeem" disabled onclick="redeem()"> Redeem ! </button> --}}
     </div>
     <div id="dashboard-page-circle2">
+<<<<<<< HEAD
       <h2 id="circle-span" class="text-center">Daily Mining</h2>
       <p>&nbsp;<span id="miningBTC2"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> <span style="color: orange;">BTC</span></p>
+=======
+      <h2 id="circle-span" class="text-center">Pending Payment</h2>
+      <p>&nbsp;<span id="miningBTC2"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; <span style="color: orange;">BTC</span> </p>
+>>>>>>> ef20ce14ba7ad2c33b9ceebb9e8e81600b38a1a6
       <hr style="width: 84%; text-align:center;">
       <p><span id="miningDollar2"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> <span style="color: aqua;">USD</span></p>
       {{-- <button id="redeem" disabled onclick="redeem()"> Redeem ! </button> --}}
@@ -191,10 +201,10 @@
       <p style="color:black">Hash allocation cost : <span id="cost"></span> dollar
         <span id="doReferalCode" style="animation-iteration-count:infinite;padding:2px"></span>
       </p>
-      <p style="color:black">Maitanace fee: {{$settings->maintenance_fee_per_th_per_day}} dollar per Th/day</p>
+      <p style="color:black">Maintenance fee: {{$settings->maintenance_fee_per_th_per_day}} dollar per Th/day</p>
       <small style="color: #707070;">(include all electricity, cooling, development, and servicing costs )</small>
-      <p style="color:black">Income : At this time We predict {{$settings->bitcoin_income_per_month_per_th}} BTC/month for every Th.</p>
-      <small  style="color: #707070;">(Changes may happen depends on bitcoin price and bitcoin network difficulty changes.)</small>
+      <p style="color:black">Income : At this time We predict {{$settings->bitcoin_income_per_month_per_th}} BTC/month per Th.</p>
+      <small  style="color: #707070;">(May be changed depends on bitcoin price and bitcoin network difficulty.)</small>
 
     </div>
     <p class="rfrcode">Referral Code:</p>

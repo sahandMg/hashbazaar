@@ -126,7 +126,7 @@
         display: flex;
         flex-direction: column; 
        }
-       .circle-output-container p {margin: 0px;padding: 0;font-size: 20px;}
+       .circle-output-container p {margin: 0px;padding: 0;font-size: 20px;line-height: 1;}
        .vertical-line  {
           height: 2px;
           background-color: black;
@@ -164,37 +164,38 @@
           margin-top: -100px;
        }
       .horizontal-lines-container {
-        width: 80px;
+        width: 60px;
         display: flex;
         flex-direction: column; 
         text-align: center;
       }
       .referal-percent {
-        margin-top: 25px;
+        margin-top: 17px;
         /*margin-left: 5px;*/
       }
       .line{
-        width: 80px;
+        width: 100%;
         background-color: #707070;
         /*margin-top: 49px;*/
-        margin-bottom: 49px;
+        margin-bottom: 61px;
         height: 2px;
       }
       .circle {
-        width: 70px;
-        height: 70px;
-        border-radius: 35px;
+        width: 85px;
+        height: 85px;
+        border-radius: 42.5px;
         border: #707070 1px solid;
         margin-top: 0px;
         margin-bottom: 0px;
         margin-left: -1px;
         color: #707070;
       }
-      .circle-1 {margin-top: 16px;}
+      .circle-1 {margin-top: 0px;}
       .circle-6 {color: black;border: black 1px solid;}
       .circle h3 {
-        margin-top: 20px;
-        font-size: 1.2rem;
+        margin-top: 30px;
+        font-size: 1.1rem;
+        letter-spacing: 0px;
       } 
       .referal-left-text {
           display: flex;
@@ -239,6 +240,10 @@
      .peymane-container {
           max-width: 500px;margin: auto;
      }
+     .referal-code-text {
+       max-width: 90px;
+       text-align: center; 
+     }
      @media screen and (max-width: 415px) {
       .referal-code-text {
          -ms-transform: rotate(-90deg);
@@ -247,13 +252,14 @@
          margin-top: 0px !important;
          margin-right: -40px !important;
          margin-bottom: 77px !important;;
+         max-width: 120px;
       }
       .peymane-container {
           max-width: 320px;
             margin-top: 30px;
       }
       .referal-left-text {
-        margin-left: -40px;
+        margin-left: -30px;
       }
       .referal {
         width: 105px;

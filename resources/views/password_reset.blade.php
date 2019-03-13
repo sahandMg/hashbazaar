@@ -9,6 +9,7 @@
 						@foreach($errors->all() as $error)
 							<li style="color: red;margin-bottom: 1%;">{{$error}}</li>
 						@endforeach
+						@include('sessionError')
 					</ul>
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
 						<span class="login100-form-title">

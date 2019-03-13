@@ -5,6 +5,8 @@
 @section('content')
 <?php
 $settings = DB::table('settings')->first();
+$hashes = App\BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->get();
+$trans = DB::table('transactions')->where('user_id',Auth::guard('user')->id())->get();
 foreach ($hashes as $key=> $hash){
 
     $remainedLife[$key] = floor((\Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($hash->created_at)->addYears($hash->life)))/($hash->life * 365) * 100) ;
@@ -77,52 +79,57 @@ foreach ($hashes as $key=> $hash){
 
     <div class="purchases">
         <h2>Transactions </h2>
-        <div class="container">
+        @if(!is_null($trans))
+            <div class="container">
 
-            <table  class="table custom-table" style="color: black;">
-                <thead  style="font-weight:bold">
-                    <tr  style="height:90px !important">
-                        <th class="Transactions_column"> Date </th>
-                        <th class="Transactions_column"> BTC </th>
-                        <th class="Transactions_column">Address</th>
-                        <th class="Transactions_column">Status</th>
+                <table  class="table custom-table" style="color: black;">
+                    <thead  style="font-weight:bold">
+                        <tr  style="height:90px !important">
+                            <th class="Transactions_column"> Date </th>
+                            <th class="Transactions_column"> BTC </th>
+                            <th class="Transactions_column">Address</th>
+                            <th class="Transactions_column">Status</th>
+                            <th class="Transactions_column">in/out</th>
 
-                    </tr>
-                </thead>
-                <tbody>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($trans as $item)
+                            <tr>
 
-                    <tr>
+                                <td>
+                                   {{\Carbon\Carbon::parse($item->created_at)->format('M d Y')}}
+                                </td>
 
-                        <td>
-                            10 Sep 2018
-                        </td>
+                                <td>
+                                    {{$item->amount_btc}}
+                                </td>
 
-                        <td>
-                            0.01  
-                        </td>
+                                <td class="tooltip1">
+                                    778dsad...
 
-                        <td class="tooltip1"> 
-                            778dsad...
-                            
-                            <span class="tooltiptext">778dsadDSABHhbjbdsa89dsax</span>
+                                    <span class="tooltiptext">{{$item->addr}}</span>
 
-                        </td>
+                                </td>
 
-                        <td>
-                            Pending                                
-                        </td>
+                                <td>
+                                    {{$item->status}}
+                                </td>
 
-                    </tr>
-                </tbody> 
-         
-                 
-                        <!-- <p id="no-hash"> NO Hash History</p> -->
-                   
-                          
-                          
-                </table>
+                                <td>
+                                    {{$item->checkout}}
+                                </td>
+
+                            </tr>
+                        @endforeach
+                    </tbody>
 
 
+                    </table>
+        @else
+
+            <p id="no-hash"> NO Hash History</p>
+       @endif
 
 
         </div> 

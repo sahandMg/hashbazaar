@@ -177,8 +177,8 @@ class PanelController extends Controller
 
     public function activity(){
 
-        $hashes = BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->get();
-        return view('panel.activity',compact('hashes'));
+
+        return view('panel.activity');
     }
 
     public function setting(){

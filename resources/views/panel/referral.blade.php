@@ -9,7 +9,11 @@
             $settings = \App\Setting::first();
             $sharings = \App\Sharing::get()->toArray();
             $total_hash_from_referral = \Illuminate\Support\Facades\DB::table('bit_hashes')
-                    ->where('referral_code',Auth::guard('user')->user()->code)->sum('hash');
+                    ->where('referral_code',Auth::guard('user')->user()->code)
+                    ->where('confirmed',1)
+                    ->sum('hash');
+            $benefit = \Illuminate\Support\Facades\DB::table('bit_hashes')
+            ->where('order_id','referral')->where('user_id',Auth::guard('user')->id())->sum('hash')
     ?>
 <!-- Referral Page -->
 <div id="referral-page" class="panel-container">
@@ -19,10 +23,10 @@
          <ul><li>{{$user->referral->total_sharing_num}}</li></ul>
       </div>
       <div class="referral-page_secondList_column">Total purchased hash power 
-         <ul><li>{{$user->referral->total_sharing_income}} Th</li></ul>
+         <ul><li>{{$total_hash_from_referral}} Th</li></ul>
       </div>
       <div class="referral-page_secondList_column">My Benefit
-         <ul><li>{{$user->referral->user_income_share}} Th</li></ul>
+         <ul><li>{{$benefit}} Th</li></ul>
       </div>
    </div>
 

@@ -9,7 +9,6 @@
 
                 $remainedLife[$key] = floor((\Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($hash->created_at)->addYears($hash->life)))/($hash->life * 365) * 100) ;
             }
-
     ?>
 <!-- Dashboard Page -->
 <div id="dashboard-page" class="panel-container ">
@@ -224,7 +223,7 @@
       <span class="close">&times;</span>
       <div>
           <br/>
-          <p class="text-center">You have to pay your invoic with bitcoin. If you do not have bitcoin , you can purchase it from this <a href="https://www.bitpremier.com/buy-bitcoins"> list</a>.</p>
+          <p class="text-center">You have to pay your invoice with bitcoin. If you do not have , you can purchase it from this <a href="https://www.bitpremier.com/buy-bitcoins"> list</a>.</p>
           <br/><br/>
           <form class="dashboard-page" method="post" action="{{route('payment')}}">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -240,12 +239,37 @@
       </div>
     </div>
   </div>
+    <!-- The Modal First message-->
+    <div id="modalFirstTime" class="modal" style="color: black;">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span id="close" class="close">&times;</span>
+            <div class="text-center">
+                <br/>
+                <h2> Welcome to Hash Bazaar </h2>
+                <br/>
+                <p>Thanks for your registration. From now on you join our community.</p>
+                <p>It means you have the permission to invest in Hash Bazaar by yourself and use your Investment ID as your referral code to invite your friends. More friends, more bonuses. You can find our reward program from your panel.</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script type="text/javascript">
         // Get the modal
         var modal = document.getElementById('myModal');
+        var modalFirstTime = document.getElementById('modalFirstTime');
+        // just first time
+        if({!! session()->has('pop') !!}){
+
+            modalFirstTime.style.display = "block";
+            {!! session()->forget('pop')!!}
+        }else{
+
         modal.style.display = "none";
+        }
+
+
 
         var orderBtn = document.getElementById('orderBtn');
         orderBtn.onclick = function() {
@@ -253,6 +277,11 @@
         }
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
+        var span2 = document.getElementsByClassName("close")[1];
+
+        span2.onclick = function() {
+            modalFirstTime.style.display = "none";
+        }
 
         // When the user clicks on <span> (x), close the modal
         span.onclick = function() {
@@ -263,6 +292,9 @@
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
+            }
+            if (event.target == modalFirstTime) {
+                modalFirstTime.style.display = "none";
             }
         }
 </script>

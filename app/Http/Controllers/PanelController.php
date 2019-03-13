@@ -117,7 +117,7 @@ class PanelController extends Controller
 
         $code = $request->referralCode;
         $referralUser = DB::table('users')->where('code',$code)->where('id','!=',Auth::id())->first();
-        $is_expired = DB::table('expired_codes')->where('code',$code)->first();
+        $is_expired = DB::table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('code',$code)->first();
         // check if the code is used before
         if(!is_null($is_expired)){
 

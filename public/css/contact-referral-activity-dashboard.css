@@ -475,6 +475,8 @@ form.contact-page p:nth-of-type(1) {
     #referral-page .myReferralId  {
      margin-top: -47px;
      font-size: 20px;
+     margin-left: 190px;
+
     }
     .shareReferralId {
         font-size: 18px;
@@ -535,8 +537,10 @@ form.contact-page p:nth-of-type(1) {
 
     #referral-page .myReferralId{
         font-size: 22px;
+        margin-left: 200px;
+        
     }
-
+    
     .referral-page_secondList_column
     {
         top: 480px;
@@ -603,7 +607,7 @@ form.contact-page p:nth-of-type(1) {
         margin-top: 25px;
     }
     .ref-flex  blockquote {
-        flex: 1;
+        flex: 3;
     }
 
     .ref-flex p .tooltiptext {
@@ -612,14 +616,16 @@ form.contact-page p:nth-of-type(1) {
     #referral-page .myReferralId {
         font-size: 20px;
         color: #2e2d2d;
-        margin-top: -45px;
-        margin-left: 190px;
+        margin-top: -15px;
+        margin-left: 50px;
         
     }
 
     #referral-page .shareReferralId {
-        font-size: 14px;
+        font-size: 20px;
         color: #2e2d2d;
+        margin-top: 30px;
+        margin-left: -350px;
     }
     
     .referral-page_secondList
@@ -675,7 +681,7 @@ form.contact-page p:nth-of-type(1) {
         margin-left: -200px
     }
     .ref-flex  blockquote {
-        flex: 1 !important;
+        flex: 3 !important;
         font-size: 14px !important;
         font-family: sans-serif;
         top: 330px;
@@ -691,13 +697,14 @@ form.contact-page p:nth-of-type(1) {
     #referral-page .myReferralId {
         font-size: 18px;
         color: #2e2d2d;
-        margin-top: -40px;
-        margin-left: 150px;
+        margin-top: 0px;
+        margin-left: 50px;
     }
 
     #referral-page .shareReferralId {
         color: #2e2d2d;
-        font-size: 14px
+        font-size: 18px;
+        margin-left: -300px
     }
     
 }
@@ -719,12 +726,12 @@ form.contact-page p:nth-of-type(1) {
     }
     #referral-page .myReferralId {
         font-size: 13px;
-        margin-left: 150px;
+        margin-left: 50px;
     }
     #referral-page .shareReferralId  {
         font-size: 13px !important;
         margin-top: 30px;
-        margin-left:-200px;
+        margin-left:-160px;
         height: auto;
     }
     /* #referral-page div.container.yek {
@@ -772,7 +779,8 @@ form.contact-page p:nth-of-type(1) {
 
 #nopur {
     font-size: 30px;
-    margin: 15% 35%
+    margin: auto;
+    display: block;
 }
 
 .mainList2 {display: none}
@@ -1222,7 +1230,8 @@ form.contact-page p:nth-of-type(1) {
     margin-top: -4%;
     font-weight: bolder;
     padding:0 !important;
-    font-family: sans-serif
+    font-family: sans-serif;
+    padding-left: 2.5% !important
 }
 #dashboard-page-circle2 p:nth-of-type(1) {
     font-size: 33px;
@@ -1241,7 +1250,9 @@ form.contact-page p:nth-of-type(1) {
     color: rgb(41, 37, 37);
     margin-top: -4% !important;
     font-weight: bolder;
-    font-family: sans-serif
+    font-family: sans-serif;
+    padding-left: 2.5% !important
+
 }
 #miningBTC span, #miningBTC span {
     font-size: 25px
@@ -1252,8 +1263,10 @@ form.contact-page p:nth-of-type(1) {
 /* ==================================================HASH History============================== */
 
 #no-hash {
-    font-size: 30px;
-    margin: 15% 37%
+    font-size: 2em;
+    margin: auto;
+    color: black;
+    margin-left: 35%;
 }
 
 .progress1 {    border: 1px solid;}
@@ -1540,6 +1553,12 @@ form.contact-page p:nth-of-type(1) {
         margin-top:19% !important
     }
 
+        
+    #no-hash {
+        font-size: 1.8em;
+        margin-left: 30%;
+    }
+
   
 }
 
@@ -1596,9 +1615,12 @@ form.contact-page p:nth-of-type(1) {
         margin-top: 10px
     }
 
+        
     #no-hash {
-        font-size: 25px;
+        font-size: 1.6em !important;
+        margin-left: 34%;
     }
+
 
     /* ==============================================Buy hash power=================================== */
 
@@ -1747,6 +1769,12 @@ form.contact-page p:nth-of-type(1) {
 
     #dashboard-page-circle hr , #dashboard-page-circle2 hr {
         margin-top: -25px !important
+    }
+
+        
+    #no-hash {
+        font-size: 1.3em !important;
+        margin-left: 25%;
     }
     /* ==================================================HASH History============================== */
     .title-flex .dashboard-title {
@@ -1922,6 +1950,12 @@ form.contact-page p:nth-of-type(1) {
         font-weight: bolder;
         font-family: sans-serif;
         font-size: 13px !important;
+    }
+
+        
+    #no-hash {
+        font-size: 1em !important;
+        margin-left: 25%;
     }
     /* ==================================================HASH History============================== */
     .title-flex .dashboard-title {

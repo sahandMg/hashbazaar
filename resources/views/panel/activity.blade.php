@@ -68,7 +68,7 @@ foreach ($hashes as $key=> $hash){
                 
 
                 @else
-                    <p id="no-hash" style="color: black;"> NO Purchases</p>
+                    <h6 id="no-hash" style="color: black;"> NO Purchases</h6>
                 @endif
                        
    
@@ -128,7 +128,7 @@ foreach ($hashes as $key=> $hash){
                     </table>
         @else
 
-            <p id="no-hash"> NO Hash History</p>
+            <h6 id="no-hash"> NO Hash History</h6>
        @endif
 
 

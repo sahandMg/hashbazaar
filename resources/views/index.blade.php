@@ -61,7 +61,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <h3 class="text-center"  style="color: #707070;">Working in the regions in which energy cost is low</h3>
-                    <img id="price" src="img/Pricing.svg">
+                    <img id="price" src="img/Pricing.jpg" style="width: 100%;height: auto;">
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 advantages-detail">
                     <h3>Other advantages:</h3>

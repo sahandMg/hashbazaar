@@ -223,10 +223,7 @@
     <div class="modal-content">
       <span class="close">&times;</span>
       <div>
-          <!-- <h2 class="text-center">Welcome to Hashbazaar</h2> -->
           <br/>
-          <!-- <h4 class="text-center">You have to pay your invoic with bitcoin. If you do not have bitcoin , you can purchase it from this list.</h4>
-          <br/> -->
           <p class="text-center">You have to pay your invoic with bitcoin. If you do not have bitcoin , you can purchase it from this <a href="https://www.bitpremier.com/buy-bitcoins"> list</a>.</p>
           <br/><br/>
           <form class="dashboard-page" method="post" action="{{route('payment')}}">

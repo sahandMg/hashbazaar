@@ -132,9 +132,9 @@ Route::get('password-reset','AuthController@passwordReset')->name('passwordReset
 
 Route::post('password-reset','AuthController@post_passwordReset')->name('passwordReset');
 
-Route::get('login/google','AuthController@redirectToProvider')->name('redirectToProvider');
+Route::get('google/login','AuthController@redirectToProvider')->name('redirectToProvider');
 
-Route::get('login/google/callback','AuthController@handleProviderCallback')->name('handleProviderCallback');
+Route::get('google/login/callback','AuthController@handleProviderCallback')->name('handleProviderCallback');
 
 Route::get('signup/{hashpower?}','AuthController@signup')->name('signup')->middleware('guest');
 

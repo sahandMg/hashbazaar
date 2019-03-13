@@ -12,14 +12,14 @@
 <div id="referral-page" class="panel-container">
         
    <div class="referral-page_secondList">
-      <div class="referral-page_secondList_column">Number of Sharing
+      <div class="referral-page_secondList_column">Number of referrals
          <ul><li>{{$user->referral->total_sharing_num}}</li></ul>
       </div>
-      <div class="referral-page_secondList_column">Total Sharing Income (USD)
-         <ul><li>$ {{$user->referral->total_sharing_income}}</li></ul>
+      <div class="referral-page_secondList_column">Total purchased hash power 
+         <ul><li>{{$user->referral->total_sharing_income}} Th</li></ul>
       </div>
-      <div class="referral-page_secondList_column">My Benefit (USD)
-         <ul><li>$ {{$user->referral->user_income_share}}</li></ul>
+      <div class="referral-page_secondList_column">My Benefit
+         <ul><li>{{$user->referral->user_income_share}} Th</li></ul>
       </div>
    </div>
 

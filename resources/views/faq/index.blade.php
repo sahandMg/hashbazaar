@@ -325,7 +325,7 @@
                             <li class="faq-question-list">
                                 <h5 class="faq-question">When Can I get my profit?</h5>
                                 <div class="faq-answer">
-                                  <p>You can withdraw your mining output as soon as increasing to 0.01BTC.</p>
+                                  <p>Your mining output will be withdrawn as soon as increasing to 0.01BTC.</p>
                                 </div>
                             </li>                           
                         </ul>

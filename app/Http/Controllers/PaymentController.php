@@ -18,6 +18,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\CryptpBox\lib\Cryptobox;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -57,12 +58,11 @@ class PaymentController extends Controller
             $amount = $request->amount;
 
         }else{
-            $amount = $request->hash * Config::get('const.hashPowerUsd')/$bitCoinPrice->price;
+            $amount = $request->hash * $settings->usd_per_hash * (1 - $request->discount)/$bitCoinPrice->price;
         }
         $period			= "NOEXPIRY";	  // one time payment, not expiry
         $def_language	= "en";			  // default Language in payment box
         $def_coin		= "bitcoin";      // default Coin in payment box
-
 
 
         // List of coins that you accept for payments
@@ -145,6 +145,14 @@ class PaymentController extends Controller
         $mining->order_id = $orderID;
         $mining->block = 1;
         $mining->save();
+
+        $trans = new Transaction();
+        $trans->amount_btc = $amount;
+        $trans->code = $orderID;
+        $trans->status = 'unpaid';
+        $trans->user_id = Auth::guard('user')->id();
+        $trans->checkout = 'out';
+        $trans->save();
 
 //        return view('payment.makePayment',compact('box','coins','def_coin','def_language'));
         session()->put('paymentData',['orderID'=>$orderID,'box'=>$box,'coins'=>$coins,'def_coin'=>$def_coin,'def_language'=>$def_language]);
@@ -336,7 +344,6 @@ class PaymentController extends Controller
              *  You need to modify file - cryptobox.newpayment.php
              *  Read more - https://gourl.io/api-php.html#ipn
              */
-
             if (in_array($box_status, array("cryptobox_newrecord", "cryptobox_updated")) && function_exists('cryptobox_new_payment'))
                 $this->cryptobox_new_payment($paymentID, $_POST, $box_status);
 
@@ -355,6 +362,7 @@ class PaymentController extends Controller
     public function cryptobox_new_payment($paymentID = 0, $payment_details = array(), $box_status = ""){
 
         $orderID = DB::table('crypto_payments')->where('PaymentID',$paymentID)->first()->orderID;
+        $paymentBox = DB::table('crypto_payments')->where('PaymentID',$paymentID)->first();
         $hashPower = BitHash::where('order_id',$orderID)->first();
         $mining = Mining::where('order_id',$orderID)->first();
         $settings = Setting::first();
@@ -369,6 +377,12 @@ class PaymentController extends Controller
                 $hashPower->save();
                 $mining->update(['block' => 0]);
                 $mining->save();
+        // update created transaction record
+                 DB::table('transactions')->where('code',$orderID)->update([
+                    'addr'=>$paymentBox->addr,
+                    'country'=>$paymentBox->countryID,
+                     'status' => 'paid'
+                ]);
 
                 Mail::send('email.paymentConfirmed',[],function($message) use($user){
                     $message->from ('Admin@HashBazaar');
@@ -419,15 +433,16 @@ class PaymentController extends Controller
                         $mining->save();
 
                         //  =======================================
-                        DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->update(['used'=>1]);
                     }
 
-                }//check if any referral code used
+                }
+            DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->update(['used'=>1]);
+                //check if any referral code used
 
             Mail::send('email.paymentReceived',[],function($message)use($user){
                 $message->from ('Admin@HashBazaar');
                 $message->to ($user->email);
-                $message->subject ('Payment Confirmed !');
+                $message->subject ('Payment Received !');
             });
         }
 
@@ -515,6 +530,7 @@ class PaymentController extends Controller
         $trans->amount_btc = $btcSum;
         $trans->status = 'paid';
         $trans->user_id = $user->id;
+        $trans->checkout = 'in';
         $trans->save();
 
         $redeem = new Redeem();

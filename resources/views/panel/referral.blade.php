@@ -40,7 +40,7 @@
       </p>
    </div>
 
-   <div class="container yek" style="color: black;margin-top: 50px;">
+   <div class="container yek" style="color: black;margin-top: 0px;">
       <br/>
       <p>You can join our affiliate program through different ways. Share your dedicated referral code or link wherever you want.</p>
       <p>Your referral will get a 3% discount on their first purchase, and you will get a free hashpower upgrade as your affiliate reward from Hashbazaar depend on your level as the following table.</p>

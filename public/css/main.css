@@ -541,7 +541,7 @@ color: orange;}
 
 /* Wallet 1 */
 .wallet1 {
-    display: none ;
+    display: none !important;
 }
 .wallet1 p {
     font-size: 19px;

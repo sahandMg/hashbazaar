@@ -121,7 +121,8 @@ class AuthController extends Controller
         $user->save();
 //        subscriptionMailJob::dispatch($user->email,$user->code);
         Auth::guard('user')->login($user);
-        event(new \App\Events\ReferralQuery(Auth::user()));
+
+        event(new \App\Events\ReferralQuery(Auth::guard('user')->user()));
         $data = [
             'code'=> $user->code,
             'email'=>$user->email
@@ -262,6 +263,10 @@ class AuthController extends Controller
         ]);
 
         $user = User::where('email',$request->email)->first();
+        if(is_null($user)){
+
+            return redirect()->back()->with(['error'=>'Email address not found']);
+        }
         $pass = strtolower(str_random(10));
         $user->password = bcrypt($pass);
         $user->save();

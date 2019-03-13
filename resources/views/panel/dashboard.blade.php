@@ -17,16 +17,16 @@
   <div class="circle-container">
     <div id="dashboard-page-circle" >
       <h2 id="circle-span" class="text-center">Total Mining</h2>
-      <p>&nbsp;<span id="miningBTC"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; <span style="color: orange;">BTC</span> </p>
+      <p>&nbsp;<span id="miningBTC"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> <span style="color: orange;">BTC</span></p>
       <hr style="width: 84%; text-align:center;">
-      <p><span id="miningDollar"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua;">USD</span></p>
+      <p><span id="miningDollar"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> <span style="color: aqua;">USD</span></p>
       {{-- <button id="redeem" disabled onclick="redeem()"> Redeem ! </button> --}}
     </div>
     <div id="dashboard-page-circle2">
       <h2 id="circle-span" class="text-center">Daily Mining</h2>
-      <p>&nbsp;<span id="miningBTC2"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; <span style="color: orange;">BTC</span> </p>
+      <p>&nbsp;<span id="miningBTC2"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> <span style="color: orange;">BTC</span></p>
       <hr style="width: 84%; text-align:center;">
-      <p><span id="miningDollar2"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> &nbsp; &nbsp; <span style="color: aqua;">USD</span></p>
+      <p><span id="miningDollar2"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> <span style="color: aqua;">USD</span></p>
       {{-- <button id="redeem" disabled onclick="redeem()"> Redeem ! </button> --}}
     </div> 
   </div>
@@ -159,7 +159,7 @@
 
 
       @else
-        <p id="no-hash" style="color: black;"> NO Hash History</p>
+        <h6 id="no-hash" > NO Hash History</h6>
       @endif
 
     </table>
@@ -231,6 +231,11 @@
           <br/><br/>
           <form class="dashboard-page" method="post" action="{{route('payment')}}">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
+              @if($apply_discount == 1)
+              <input type="hidden" name="discount" value="{{$settings->sharing_discount}}">
+              @else
+                  <input type="hidden" name="discount" value="0">
+              @endif
             <input id='hiddenCodeValue' type="hidden" name="code" style="margin-top:5px" >
             <input type="range" hidden min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="hiddenRange">
             <button class="pandel-button" type="submit">Continue</button>

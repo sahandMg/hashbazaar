@@ -397,19 +397,27 @@
      // number of sharing in each level
        var level1NumCode = {!! $sharings[1]['sharing_number'] !!};
        var level2NumCode = {!! $sharings[2]['sharing_number'] !!};
-       var level3NumCode = $sharings[3]['sharing_number'];
+       var level3NumCode = {!! $sharings[3]['sharing_number'] !!};
        var level4NumCode = {!! $sharings[4]['sharing_number'] !!};
-       var level5NumCode = $sharings[5]['sharing_number'];
+       var level5NumCode = {!! $sharings[5]['sharing_number'] !!};
        // number of terrahsah power in each level
      var level1Hash = {!! $total_hash_from_referral !!}; var level2Hash = 0;
      var level3Hash = 0; var level4Hash = 0; var level5Hash = 0;
        // reward
      var level1Percent = {!! $sharings[1]['value'] !!};
-       var level2Percent = {!! $sharings[2]['value'] !!};
-       var level3Percent = {!! $sharings[3]['value'] !!};
+     var level2Percent = {!! $sharings[2]['value'] !!};
+     var level3Percent = {!! $sharings[3]['value'] !!};
      var level4Percent = {!! $sharings[4]['value'] !!};
-       var level5Percent = {!! $sharings[5]['value'] !!};
+     var level5Percent = {!! $sharings[5]['value'] !!};
 
+     console.log("referalPeople");console.log(referalPeople);
+     console.log("level1NumCode");console.log(level1NumCode);
+     console.log("level2NumCode");console.log(level2NumCode);
+     console.log("level3NumCode");console.log(level3NumCode);
+     console.log("level4NumCode");console.log(level4NumCode);
+     console.log("level5NumCode");console.log(level5NumCode);
+     console.log("level1Hash");console.log(referalPeople);
+     console.log("level1Percent");console.log(level1Percent);
 
      var level1ReferalHash = parseInt(level1Hash*level1Percent);
      var level2ReferalHash = parseInt(level2Hash*level2Percent);
@@ -491,13 +499,14 @@
      function refresh() {
       $(".referal-level").empty();
       if(referalPeople <= level1) {
+        console.log("level1");
         init();
         // not float, I want int
-       if( (level1/level1NumCode) > 3 ) {
+       if( (level1/referalPeople) > 3 ) {
            height = 30; calculateMargin = 70;
-        } else {  height = parseInt( (level1NumCode*100) / level1 );calculateMargin = 100 - height; }
+        } else {  height = parseInt( (referalPeople*100) / level1 );calculateMargin = 100 - height; }
        // circle 5
-       $(".referal-level-5").append(`<div class="referal-number"><h3>`+level1NumCode+`, `+level1Hash+`TH</h3><div>`);
+       $(".referal-level-5").append(`<div class="referal-number"><h3>`+referalPeople+`, `+level1Hash+`TH</h3><div>`);
        $(".referal-number").css( { marginTop : calculateMargin+"px", 'height': height+"px"} );
        $(".referal-number").css('background-color', '#FFEC19');
        $(".line-vertical-5").css('background-color', '#FFEC19');
@@ -508,6 +517,7 @@
        setCircleValue(5, level1ReferalHash);
        setCircleValue(6, allReferalHash);
       } else if( referalPeople <= level2) {
+        console.log("level2");
         init();
           if( ((level2-level1)/level2NumCode) > 3 ) {
               height = 30; calculateMargin = 70;
@@ -527,6 +537,7 @@
        setCircleValue(4, level2ReferalHash);
        setCircleValue(6, allReferalHash);
       } else if( referalPeople <= level3) {
+        console.log("level3");
         init();
           if( ((level3-level2)/level3NumCode) > 3 ) {
               height = 30; calculateMargin = 70;
@@ -573,6 +584,7 @@
           setCircleValue(2, level4ReferalHash);
           setCircleValue(6, allReferalHash);
       } else {
+        console.log("level5");
         init();
           // circle 5
           level1Full();

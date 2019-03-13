@@ -231,6 +231,11 @@
           <br/><br/>
           <form class="dashboard-page" method="post" action="{{route('payment')}}">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
+              @if($apply_discount == 1)
+              <input type="hidden" name="discount" value="{{$settings->sharing_discount}}">
+              @else
+                  <input type="hidden" name="discount" value="0">
+              @endif
             <input id='hiddenCodeValue' type="hidden" name="code" style="margin-top:5px" >
             <input type="range" hidden min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="hiddenRange">
             <button class="pandel-button" type="submit">Continue</button>

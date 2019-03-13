@@ -1,9 +1,9 @@
 <?php
 
 $DB_HOST = 'localhost';
-$DB_USER = 'root';
-$DB_PASS = 'root';
-$DB_NAME = 'hashbaz';
+$DB_USER = 'hashbaza_admin';
+$DB_PASS = 'E+Y@z-{Le.w.';
+$DB_NAME = 'hashbaza_hashbazaar';
 $CALLBACK_SECRET = 'Mabcdas122olkdd';
 
 /*Blockonomics Configurations*/

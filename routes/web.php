@@ -82,7 +82,7 @@ Route::get('job',function(){
 
 Route::get('test',function (){
 
-    return QrCode::size(100)->generate('Make me into a QrCode!');
+    dd(session('paymentData'));
 
 });
 
@@ -188,8 +188,6 @@ Route::group(['middleware'=>'block','prefix'=>'panel'],function(){
     Route::get('payment','PaymentController@payment')->name('payment');
 
     Route::post('payment','PaymentController@postPayment')->name('payment');
-
-    Route::post('cryptobox.callback.php','PaymentController@paymentCallback')->name('paymentCallback');
 
     Route::get('payment/confirm','PaymentController@confirmPayment')->name('confirmPayment');
 

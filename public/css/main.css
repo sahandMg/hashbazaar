@@ -427,7 +427,7 @@ color: orange;}
 /* ------------setting-information---------- */
 .setting-information  {
     margin-top: 5%;
-    display: block ;
+    /* display: none !important ; */
 }
 
 .setting-information legend:nth-of-type(1) {
@@ -541,7 +541,7 @@ color: orange;}
 
 /* Wallet 1 */
 .wallet1 {
-    display: none !important;
+    display: block ;
 }
 .wallet1 p {
     font-size: 19px;

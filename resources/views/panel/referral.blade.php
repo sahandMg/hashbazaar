@@ -22,8 +22,8 @@
       <div class="referral-page_secondList_column">Number of referrals
          <ul><li>{{$user->referral->total_sharing_num}}</li></ul>
       </div>
-      <div class="referral-page_secondList_column">Total purchased hash power 
-         <ul><li>{{$total_hash_from_referral}} Th</li></ul>
+      <div class="referral-page_secondList_column">Total first referrals order 
+         <ul><li>{{$user->referral->total_sharing_income}} Th</li></ul>
       </div>
       <div class="referral-page_secondList_column">My Benefit
          <ul><li>{{$benefit}} Th</li></ul>

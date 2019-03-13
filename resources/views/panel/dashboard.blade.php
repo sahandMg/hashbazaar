@@ -218,7 +218,6 @@
   </div>
   <!-- The Modal -->
   <div id="myModal" class="modal" style="color: black;">
-    <!-- Modal content -->
     <div class="modal-content">
       <span class="close">&times;</span>
       <div>
@@ -253,6 +252,7 @@
             </div>
         </div>
     </div>
+
 </div>
 
 <script type="text/javascript">
@@ -283,10 +283,12 @@
             modalFirstTime.style.display = "none";
         }
 
+
         // When the user clicks on <span> (x), close the modal
         span.onclick = function() {
             modal.style.display = "none";
         }
+
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {

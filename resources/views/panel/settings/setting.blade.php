@@ -180,7 +180,7 @@ function copyToClipboard(elem) {
     return succeed;
  }
     $(document).ready(function(){
-        $('.one a').css('color','orange');
+        $('.two a').css('color','orange');
 
 
 

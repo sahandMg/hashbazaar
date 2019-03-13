@@ -505,7 +505,7 @@
                         $('.list1').toggle(500);
                     });
                     
-                    var numItems = $('.table tr').length;
+                    var numItems = $('.Hash-History .table tr').length;
                     
                     if( numItems > 3)
                     {

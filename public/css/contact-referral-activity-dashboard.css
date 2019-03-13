@@ -1062,7 +1062,9 @@ form.contact-page p:nth-of-type(1) {
     margin-top: -10% !important
 }
 /* ==================================================HASH History============================== */
-
+.Hash-History {
+    max-height: 300px !important;;
+}
 #no-hash {
     font-size: 2em;
     margin: auto;

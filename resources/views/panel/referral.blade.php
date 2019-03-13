@@ -590,5 +590,8 @@
      }
      refresh();
     
+   //  ====================== replace =========================
+   var replaceAll = document.getElementById('copyTarget').value;
+   replaceAll = replaceAll.replace(" ", "");
    </script>
 @endsection

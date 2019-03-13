@@ -40,34 +40,6 @@ body {
 
 /* Header */
 
-header {
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 110px;
-    background-color: black;
-    font-size: 50px;
-    position: fixed;
-    z-index: 2000;
-}
-
-#header-div {
-    border-bottom: 4px solid orange;
-    width: 100%;
-    height: 110px;
-    position: fixed;
-    z-index: 2000;
-}
-
-.Logo_header {
-    width: 700px;
-    height: 90px;
-    position: fixed;
-    left: -120px;
-    z-index: 2000;
-}
-
 /* Menu */
 
 .sub:after {
@@ -383,13 +355,6 @@ form.contact-page p:nth-of-type(1) {
 
 #referral {color: orange;}
 
-#referral-page {
-    margin-left: 27.5%;
-    width: 70%;
-    margin-bottom: 0 !important;
-    height: 1250px !important;
-}
-
 #referral-page blockquote {
     font-size: 25px;
     color: #2e2d2d;
@@ -415,201 +380,117 @@ form.contact-page p:nth-of-type(1) {
 .ref-flex  blockquote {
     flex: 1;
 }
-
  #referral-page .myReferralId  {
      font-size: 25px;
      font-family: sans-serif;
      color: #2e2d2d;
      margin-top: -55px;
      margin-left: 240px;
- }
+}
  .shareReferralId {
     font-size: 25px;
     font-family: sans-serif;
     color: #2e2d2d;
- }
-
+}
 .referral-page_secondList
  {
      display: flex;
      flex-flow: row wrap;
      float: left;
-     margin-bottom: 30px
+     margin-left: 5%;
+     margin-top: 5%;
  }
-
  .referral-page_secondList_column
 {
     flex-grow: 1;
-    margin-top: 50px;
     font-size: 25px;
     color: #2e2d2d;
     font-family: sans-serif;
-    left: 50px;;
-    height: 100px;
-    margin-left:40px
 }
-
 .referral-page_secondList_column ul li {
     width: auto;
-    margin-top: 5%;
     font-size: 30px;
     font-weight: bolder !important
+}
+.referral-page_secondList_column:nth-of-type(2) ul li {
+    margin-top: 3%
 }
 
 /* Referral - Media - 1024 */
 @media screen and (max-width:1025px){
-   
-
 /* =======----media----==========================Referral==================================== */
-    /* #referral-page div.container.yek {
-        margin-bottom: 1100px !important
-    } */
-
-    #referral-page {
-        height: 100% !important;
-    }
+    
     #referral-page blockquote {
         font-size: 18px;
     }
-
     #referral-page .myReferralId  {
      margin-top: -47px;
      font-size: 20px;
      margin-left: 190px;
-
     }
     .shareReferralId {
         font-size: 18px;
     }
-    
     .referral-page_secondList_column ul li {
         width: 120px;
-        margin-top: 15%;
         font-size: 30px;
     }
-
     .referral-page_secondList_column
     {
         flex-grow: 1;
-        top: 500px;
         font-size: 20px;
         color: #2e2d2d;
         font-family: sans-serif;
-        margin-left: 5%
     }
-   
 
 }
 
 /* Referral - Media - 768 */
 @media screen and (max-width:769px) {
-
-        #header-div {
-            border-bottom: 4px solid orange;
-            width: 100%;
-            height: 110px;
-            position: relative;
-            z-index: 2;
-
-        }
-      
-        .Logo_header {
-            height: 90px;
-            position: absolute;
-        }
-      
-        .mainList {
-            display: none
-        }
-
-        /* ==================================Referral================================ */
-    #referral-page {
-        margin-left: 0%;
-        width: 100%;
-        height: 1350px !important;
-        margin-top: 150px;
+    .mainList {
+        display: none
     }
-
+    /* ==================================Referral================================ */
     #referral-page blockquote {
         font-size: 18px;
     }
-
-
     #referral-page .myReferralId{
         font-size: 22px;
         margin-left: 200px;
-        
     }
-    
     .referral-page_secondList_column
     {
-        top: 480px;
         font-size: 20px;
     }
-
     .referral-page_secondList_column ul li {
-        width: 100px;
-        margin-top: 15%;
         font-size: 27px;
         font-weight: bolder !important;
     }
-   
     
 }
 
 /* Referral - Media - 414 */
 @media screen and (max-width:415px) {
-    #header-div {
-        border-bottom: 4px solid orange;
-        width: 100%;
-        height: 110px;
-        position: relative;
-        z-index: 2;
-
-    }
-    header {
-        z-index: 2;
-    }
-    .Logo_header {
-        width: 300px;
-        height: 90px;
-        position: absolute;
-        left:30px
-    }
-
     .mainList {
         display: none
     }
-
     /* Referral */
-    
     #referral-page {
         margin-top: 110px;
-        margin-left: 0%;
-        width: 100%;
-        height: 1500px !important
     }
-
-    /* #referral-page div.container.yek {
-        margin-bottom: 1350px !important
-    } */
-
     #referral-page blockquote {
         font-size: 16px;
         color: #2e2d2d;
         margin-top: -40px;
         margin-left: 30px;
     }
-
     .ref-flex p  {
-        /* flex: 1.5; */
         text-align: left;
         margin-top: 25px;
     }
     .ref-flex  blockquote {
         flex: 3;
     }
-
     .ref-flex p .tooltiptext {
         margin-left: -200px
     }
@@ -618,59 +499,49 @@ form.contact-page p:nth-of-type(1) {
         color: #2e2d2d;
         margin-top: -15px;
         margin-left: 50px;
-        
     }
-
     #referral-page .shareReferralId {
         font-size: 20px;
         color: #2e2d2d;
         margin-top: 30px;
         margin-left: -350px;
     }
-    
     .referral-page_secondList
     {
-        display: flex;
-        flex-flow: row wrap;
-        float: left;
+        margin-left: 7%;
+        margin-top: 0;
     }
-
     .referral-page_secondList_column
     {
         flex-grow: 1;
         flex-shrink: 1;
-        top: 000px !important;
-        margin-top: 000px !important;
         font-size: 15px;
         color: #2e2d2d;
+        margin-top: 0;
         font-family: sans-serif;
         margin-left: 0px;;
         height: 100px;
-        margin-left:40px
     }
-
     .referral-page_secondList_column ul li {
         width: auto;
         margin-top: 2%;
         font-size: 20px;
         font-weight: bolder !important;
     }
-
-
 }
 
 /* Referral - Media - 375 */
 @media screen and (max-width:376px) {
    
-    .Logo_header {
+    /* .Logo_header {
         width: 200px;
         height: 90px;
         position: absolute;
         left: 40px;
-    }
-    #referral-page  {
+    } */
+    /* #referral-page  {
         height: 1650px !important
-    }
+    } */
     .ref-flex p  {
         /* flex: 1.5 !important; */
         text-align: left;
@@ -684,16 +555,20 @@ form.contact-page p:nth-of-type(1) {
         flex: 3 !important;
         font-size: 14px !important;
         font-family: sans-serif;
-        top: 330px;
+        /* top: 330px; */
         margin-left: 30px;
     }
     #referral-page blockquote:nth-of-type(1) {
         font-size: 16px;
         font-family: sans-serif;
-        top: 330px;
+        /* top: 330px; */
         margin-left: 30px;
     }
-    
+    .referral-page_secondList
+    {
+        margin-left: 5% !important;
+        margin-top: 0%;
+    }  
     #referral-page .myReferralId {
         font-size: 18px;
         color: #2e2d2d;
@@ -714,11 +589,11 @@ form.contact-page p:nth-of-type(1) {
     #referral-page blockquote:nth-of-type(1) {
         font-size: 16px;
         color: #2e2d2d;
-        top: 330px;
+        /* top: 330px; */
         margin-left: 30px;
     }
     #referral-page {
-        height: 1900px !important
+        /* height: 1900px !important */
     }
     .ref-flex blockquote {
         font-size:16px !important;
@@ -757,22 +632,20 @@ form.contact-page p:nth-of-type(1) {
 
  #activity {color: orange ;}
 
-  .activity-container h2 {
+.activity-container h2 {
     font-size: 30px;
     color: #2e2d2d;
     font-weight: bold;
     font-family: sans-serif;
     text-align: center;
     margin: auto;
- }
-
+}
 #nopur {
     font-size: 30px;
     margin: auto ;
     display: block;
     text-align: center;
     justify-content: center;
-    /* margin-left: 38% !important */
 }
 
 .mainList2 {display: none}
@@ -787,22 +660,18 @@ form.contact-page p:nth-of-type(1) {
    font-family: sans-serif;
    margin: auto;
    display: block;
-
 }
-.container 
+.activity-container .container 
 {
     max-height: 300px;
 }
-
 .container table {
     height: 150px
 }
- 
 .tooltip1 {
     position: relative;
-  }
-  
-  .tooltip1 .tooltiptext {
+}
+.tooltip1 .tooltiptext {
     visibility: hidden;
     width: auto;
     background-color: black;
@@ -816,59 +685,51 @@ form.contact-page p:nth-of-type(1) {
     z-index: 1;
     margin-top: 20px;
     margin-left: -50%
-  }
-  
-  .tooltip1:hover .tooltiptext {
+}
+.tooltip1:hover .tooltiptext {
     visibility: visible;
-  }
+}
 
 /* Activity-Media-1024 */
 @media screen and (max-width:1025px)
 {
     /* ---------------=====Media====-------------Main Container--------------------------- */
-
     .sub:after {
         width: 1em;
         height: 1em;
         content: "";
         left: 85%;
     }
-
     #dashboard:before {
         content: "";
         width: 30px;
         height: 30px;
         left: -40px;
     }
-
     #activity:before {
         content: "";
         width: 30px;
         height: 30px;
         left: -55px;
     }
-
     #contact:before {
         content: "";
         width: 30px;
         height: 30px;
         left: -55px;
     }
-
     #setting:before {
         content: "";
         width: 30px;
         height: 30px;
         left: -55px;
     }
-
     #referral:before {
         content: "";
         width: 30px;
         height: 30px;
         left: -55px;
     }
-
     /* =============--media--================Activity=============================== */
 
     blockquote {
@@ -879,22 +740,14 @@ form.contact-page p:nth-of-type(1) {
        font-size: 25px;
     }
 
-
 }
 
 /* Activity-Media-768 */
 @media screen and (max-width: 769px) 
 {
-
-    header {
-        z-index: 2;
-        width: 768px;
-    }
-   
     .mainList {
         display: none
     }
-
     #dashboard:before {
         content: "";
         background-image: url("img/Dashboard.svg");
@@ -905,7 +758,6 @@ form.contact-page p:nth-of-type(1) {
         left: -30px;
         top: 0px
     }
-
     #activity:before {
         content: "";
         background-image: url("img/Activity.svg");
@@ -916,7 +768,6 @@ form.contact-page p:nth-of-type(1) {
         left: -30px;
         top: 0px
     }
-
     #referral:before {
         content: "";
         background-image: url("img/Referral.svg");
@@ -927,7 +778,6 @@ form.contact-page p:nth-of-type(1) {
         left: -30px;
         top: 0px
     }
-
     #setting:before {
         content: "";
         background-image: url("img/Setting.svg");
@@ -938,7 +788,6 @@ form.contact-page p:nth-of-type(1) {
         left: -30px;
         top: 0px
     }
-
     #contact:before {
         content: "";
         background-image: url("img/contact.svg");
@@ -949,44 +798,28 @@ form.contact-page p:nth-of-type(1) {
         left: -30px;
         top: 0px
     }
-
      .purchases h2 {
        height: 30px;
        font-size: 27px;
        padding-bottom: 40px;
     }
-       
     #nopur {
         font-size: 25px;
         margin: 15% 35%
     }
-   
-
 
 }
 
 /* Activity-Media-414 */
 @media screen and (max-width:415px) 
 {
-
-    .Logo_header {
-        width: 300px;
-        height: 90px;
-        position: absolute;
-        left: 20px;
-    }
-    header {
-        z-index: 2;
-    }
-   
     .mainList {
         display: none
     }
-
      .purchases {
         margin-bottom: 0 
     }
-     .purchases h2 {
+    .purchases h2 {
         height: 20px;
         font-size: 18px;
         width: 40%;
@@ -1005,27 +838,15 @@ form.contact-page p:nth-of-type(1) {
 /* Activity-Media-375 */
 @media screen and (max-width:376px) 
 {
-
-    .Logo_header {
-        width: 300px;
-        height: 90px;
-        position: absolute;
-        left: 20px;
-    }
-    header {
-        z-index: 2;
-        width: 375px;
-    }
-  
     .mainList {
         display: none
     }
-
+/* 
     blockquote {
         top: 250px;
         margin-left: 30px;
         font-size: 22px;
-    }
+    } */
 
     .purchases h2 {
        height: 20px;
@@ -1039,14 +860,6 @@ form.contact-page p:nth-of-type(1) {
 /* Activity-Media-320 */
 @media screen and (max-width: 321px) 
 {
-
-    .Logo_header {
-        width: 300px;
-        height: 90px;
-        position: absolute;
-        left: 10px;
-    }
- 
     #dashboard:before {
         content: "";
         background-image: url("img/Dashboard.svg");
@@ -1057,7 +870,6 @@ form.contact-page p:nth-of-type(1) {
         left: -22px;
         top: 0px
     }
-
     #activity:before {
         content: "";
         background-image: url("img/Activity.svg");
@@ -1068,7 +880,6 @@ form.contact-page p:nth-of-type(1) {
         left: -22px;
         top: 0px
     }
-
     #referral:before {
         content: "";
         background-image: url("img/Referral.svg");
@@ -1079,7 +890,6 @@ form.contact-page p:nth-of-type(1) {
         left: -22px;
         top: 0px
     }
-
     #setting:before {
         content: "";
         background-image: url("img/Setting.svg");
@@ -1090,7 +900,6 @@ form.contact-page p:nth-of-type(1) {
         left: -22px;
         top: 0px
     }
-
     #contact:before {
         content: "";
         background-image: url("img/contact.svg");
@@ -1102,7 +911,6 @@ form.contact-page p:nth-of-type(1) {
         top: 0px
     }
     .activity-container h2 {
-        /* margin-left: 0 !important; */
         font-size: 20px !important
     }
     .container .custom-table tbody tr td {

@@ -40,6 +40,68 @@
       </p>
    </div>
 
+   <br/>
+   <div class="container" style="min-width: 320px;color: black;padding: 0px;">
+     <div class="row peymane-container">
+      <div class="referal-left-text">
+         <h3 class="referal-code-text">Number of Referrals</h3>
+         <h3>100K</h3>
+         <h3>10K</h3>
+         <h3>1000</h3>
+         <h3>500</h3>
+      </div>
+      <div class="referal">
+        <div class="referal-level referal-level-1">
+        </div>
+        <div class="referal-level referal-level-2">
+        </div>
+        <div class="referal-level referal-level-3">
+        </div>
+        <div class="referal-level referal-level-4">
+        </div>
+        <div class="referal-level referal-level-5">
+        </div>
+      </div>
+      <div class="horizontal-lines-container">
+         <span class="referal-percent referal-percent-1">6.5%</span>
+         <div class="line line-vertical-1"></div>
+         <span class="referal-percent referal-percent-2">5.5%</span>
+         <div class="line line-vertical-2"></div>
+         <span class="referal-percent referal-percent-3">4.5%</span>
+         <div class="line line-vertical-3"></div>
+         <span class="referal-percent referal-percent-4">3.5%</span>
+         <div class="line line-vertical-4"></div>
+         <span class="referal-percent referal-percent-5">2.5%</span>
+         <div class="line line-vertical-5"></div>
+      </div>
+      <div  class="circle-output-container">
+      <div class="circle circle-1">
+           <h3 class="text-center">3TH</h3>
+        </div>
+        <p class="text-center">+</p>
+        <div class="circle circle-2">
+           <h3 class="text-center">3TH</h3>
+        </div>
+        <p class="text-center">+</p>
+        <div class="circle circle-3">
+           <h3 class="text-center">2TH</h3>
+        </div>
+        <p class="text-center">+</p>
+        <div class="circle circle-4">
+           <h3 class="text-center">1.5TH</h3>
+        </div>
+        <p class="text-center">+</p>
+        <div class="circle circle-5">
+           <h3 class="text-center">1TH</h3>
+        </div>
+        <p class="text-center">=</p>
+        <div class="circle circle-6">
+           <h3 class="text-center">7.5TH</h3>
+        </div>
+      </div>
+     </div>
+   <br/>
+
    <div class="container yek" style="color: black;margin-top: 0px;">
       <br/>
       <p>You can join our affiliate program through different ways. Share your dedicated referral code or link wherever you want.</p>
@@ -97,6 +159,7 @@
       <p>Note that all the affiliate rewards will be given by Hashbazaar to our promoters to encourage others to join the future of cryptocurrency transaction system and also gain profit from their investment.</p>
    </div>
 
+   </div>
 </div>
    
 
@@ -180,11 +243,14 @@
             margin-top: -10px;
             padding: 5px;
          }
+</style>
+ <style type="text/css">
+       
        .circle-output-container {
         display: flex;
         flex-direction: column; 
        }
-       .circle-output-container p {margin: 0px;padding: 0;font-size: 20px;}
+       .circle-output-container p {margin: 0px;padding: 0;font-size: 20px;line-height: 1;}
        .vertical-line  {
           height: 2px;
           background-color: black;
@@ -222,37 +288,38 @@
           margin-top: -100px;
        }
       .horizontal-lines-container {
-        width: 80px;
+        width: 60px;
         display: flex;
         flex-direction: column; 
         text-align: center;
       }
       .referal-percent {
-        margin-top: 25px;
+        margin-top: 17px;
         /*margin-left: 5px;*/
       }
       .line{
-        width: 80px;
+        width: 100%;
         background-color: #707070;
         /*margin-top: 49px;*/
-        margin-bottom: 49px;
+        margin-bottom: 61px;
         height: 2px;
       }
       .circle {
-        width: 70px;
-        height: 70px;
-        border-radius: 35px;
+        width: 85px;
+        height: 85px;
+        border-radius: 42.5px;
         border: #707070 1px solid;
         margin-top: 0px;
         margin-bottom: 0px;
         margin-left: -1px;
         color: #707070;
       }
-      .circle-1 {margin-top: 16px;}
+      .circle-1 {margin-top: 0px;}
       .circle-6 {color: black;border: black 1px solid;}
       .circle h3 {
-        margin-top: 20px;
-        font-size: 1.2rem;
+        margin-top: 30px;
+        font-size: 1.1rem;
+        letter-spacing: 0px;
       } 
       .referal-left-text {
           display: flex;
@@ -297,6 +364,10 @@
      .peymane-container {
           max-width: 500px;margin: auto;
      }
+     .referal-code-text {
+       max-width: 90px;
+       text-align: center; 
+     }
      @media screen and (max-width: 415px) {
       .referal-code-text {
          -ms-transform: rotate(-90deg);
@@ -305,27 +376,27 @@
          margin-top: 0px !important;
          margin-right: -40px !important;
          margin-bottom: 77px !important;;
+         max-width: 120px;
       }
       .peymane-container {
           max-width: 320px;
             margin-top: 30px;
       }
       .referal-left-text {
-        margin-left: -40px;
+        margin-left: -30px;
       }
       .referal {
         width: 105px;
       }
      }
-</style>
-
-<script type="text/javascript">
+   </style>
+   <script type="text/javascript">
      var referalPeople = 101000 ;
      var allTerraHash = 5000 ;
      var level1NumCode = 500; var level2NumCode = 500;
      var level3NumCode = 9000; var level4NumCode = 90000; var level5NumCode = 1000;
-     var level1Hash = 100; var level2Hash = 200;
-     var level3Hash = 400; var level4Hash = 800; var level5Hash = 1600;
+     var level1Hash = 1000; var level2Hash = 1000;
+     var level3Hash = 18000; var level4Hash = 180000; var level5Hash = 2000;
      var level1Percent = 0.025; var level2Percent = 0.035; var level3Percent = 0.045; 
      var level4Percent = 0.055; var level5Percent = 0.065; 
      var level1ReferalHash = parseInt(level1Hash*level1Percent);
@@ -499,9 +570,9 @@
           level3Full();
           // circle 2
           level4Full();
-      //          if( ((level5-level4)/level5NumCode) > 3 ) {
-         height = 40; calculateMargin = 60;
-      //          } else {  height = parseInt( (level5NumCode*100) / (level5-level4) );calculateMargin = 100 - height; }
+//          if( ((level5-level4)/level5NumCode) > 3 ) {
+              height = 40; calculateMargin = 60;
+//          } else {  height = parseInt( (level5NumCode*100) / (level5-level4) );calculateMargin = 100 - height; }
        // circle 1
        $(".referal-level-1").append(`<div class="referal-number"><h3>`+level5NumCode+`, `+level5Hash+`TH</h3><div>`);
        $(".referal-number").css( { marginTop : calculateMargin+"px", 'height': height+"px"} );
@@ -519,5 +590,5 @@
      }
      refresh();
     
-</script>
+   </script>
 @endsection

@@ -16,18 +16,18 @@
   <!-- Circle -->
   <div class="circle-container">
     <div id="dashboard-page-circle" >
-      <h2 id="circle-span" class="text-center">Total Mining</h2>
+      <h2 id="circle-span" class="text-center">Total Earn</h2>
       <p>&nbsp;<span id="miningBTC"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> <span style="color: orange;">BTC</span></p>
       <hr style="width: 84%; text-align:center;">
       <p><span id="miningDollar"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> <span style="color: aqua;">USD</span></p>
-      {{-- <button id="redeem" disabled onclick="redeem()"> Redeem ! </button> --}}
+      <!-- {{-- <button id="redeem" disabled onclick="redeem()"> Redeem ! </button> --}} -->
     </div>
     <div id="dashboard-page-circle2">
-      <h2 id="circle-span" class="text-center">Daily Mining</h2>
+      <h2 id="circle-span" class="text-center">Pending Payment</h2>
       <p>&nbsp;<span id="miningBTC2"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> <span style="color: orange;">BTC</span></p>
       <hr style="width: 84%; text-align:center;">
       <p><span id="miningDollar2"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> <span style="color: aqua;">USD</span></p>
-      {{-- <button id="redeem" disabled onclick="redeem()"> Redeem ! </button> --}}
+      <!-- {{-- <button id="redeem" disabled onclick="redeem()"> Redeem ! </button> --}} -->
     </div> 
   </div>
   <!-- Hash History -->

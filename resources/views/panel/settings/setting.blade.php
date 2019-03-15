@@ -183,7 +183,6 @@ function copyToClipboard(elem) {
         $('.two a').css('color','orange');
 
 
-
         $('.one').click(function(){
             $('.setting-information').show();
             $('.wallet1').hide();

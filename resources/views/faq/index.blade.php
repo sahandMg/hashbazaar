@@ -205,7 +205,7 @@
                                 <h5 class="faq-question">Where is “Hash Bazaar”? </h5>
                                 <div class="faq-answer">
                                  <p>
-                                  Hash Bazaar is profitable bazaar for purchasing your favorite hash power. 
+                                  Hash Bazaar is a profitable bazaar for purchasing your favorite hash power. 
                                  </p>
                                  <p>
                                   It is a Cryptocurrency cloud mining service that enables you to become a miner in our mining farms without having to deal with complex hardware and software setup. 

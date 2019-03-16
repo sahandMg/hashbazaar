@@ -17,7 +17,7 @@
     <header id="header" >
        
 
-        <div class="intro-body headerTheme">
+        <div class="intro-body headerTheme"  onclick="hideMe()">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9 col-md-10 col-sm-11 mx-auto">
@@ -32,7 +32,7 @@
             </div>
         </div>
     </header>
-    <section  id="sharePlan" class="text-center" style="padding-top: 4%;color: #707070;">
+    <section  id="sharePlan" class="text-center" style="padding-top: 4%;color: #707070;"  onclick="hideMe()">
         <div>
             <h3 class="fontTheme">choose your investment plan</h3>
         </div>
@@ -50,12 +50,12 @@
                 <small>(May be changed depends on bitcoin price and bitcoin network difficulty.)</small>
             </div>
             <div class="form-group fontTheme" style="margin-top: 2%;">
-                <button class="btn  btn-primary round-button-com" type="submit" style="width: 120px">Buy</button>
+                <button class="btn btn-primary round-button-com" onclick="btnDisable()" type="submit" style="width: 120px">Buy</button>
             </div>
            </form>
         </div>
     </section>
-    <section class="context-section backgroundGrey text-center pt-4 pb-4 advantages" style="color: #707070">
+    <section class="context-section backgroundGrey text-center pt-4 pb-4 advantages" style="color: #707070"  onclick="hideMe()">
         <h2>Our Advantages</h2>
         <div class="container">
             <div class="row">
@@ -87,7 +87,7 @@
             </div>
         </div>
     </section>
-    <section id="contact" class="text-center backgroundGrey">
+    <section id="contact" class="text-center backgroundGrey"  onclick="hideMe()">
         <div class="" style="background: white;padding-bottom:1px">
             <div class="col-lg-8 mx-auto">
                 <h2 class="fontTheme m-3">Let us know your questions</h2>
@@ -106,7 +106,7 @@
                                                                     placeholder="Message" id="messageTextBox"
                                                                     rows="5"></textarea></div>
                         <div class="form-group fontTheme">
-                            <button class="btn  btn-primary round-button-com" type="submit">Submit</button>
+                            <button class="btn btn-primary round-button-com" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -138,7 +138,86 @@
        /* .advantages-detail {
             margin-top: 3%;
         }*/
+
+        .pace {
+            -webkit-pointer-events: none;
+            pointer-events: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        .pace-inactive {
+            display: none;
+        }
+
+        .pace .pace-progress {
+            background: #29d;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            right: 100%;
+            width: 100%;
+            height: 2px;
+        }
+
+        .pace .pace-progress-inner {
+            display: block;
+            position: absolute;
+            right: 0px;
+            width: 100px;
+            height: 100%;
+            box-shadow: 0 0 10px #29d, 0 0 5px #29d;
+            opacity: 1.0;
+            -webkit-transform: rotate(3deg) translate(0px, -4px);
+            -moz-transform: rotate(3deg) translate(0px, -4px);
+            -ms-transform: rotate(3deg) translate(0px, -4px);
+            -o-transform: rotate(3deg) translate(0px, -4px);
+            transform: rotate(3deg) translate(0px, -4px);
+        }
+
+        .pace .pace-activity {
+            display: block;
+            position: fixed;
+            z-index: 2000;
+            top: 15px;
+            right: 15px;
+            width: 14px;
+            height: 14px;
+            border: solid 2px transparent;
+            border-top-color: #29d;
+            border-left-color: #29d;
+            border-radius: 10px;
+            -webkit-animation: pace-spinner 400ms linear infinite;
+            -moz-animation: pace-spinner 400ms linear infinite;
+            -ms-animation: pace-spinner 400ms linear infinite;
+            -o-animation: pace-spinner 400ms linear infinite;
+            animation: pace-spinner 400ms linear infinite;
+        }
+
+        @-webkit-keyframes pace-spinner {
+        0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+        }
+        @-moz-keyframes pace-spinner {
+        0% { -moz-transform: rotate(0deg); transform: rotate(0deg); }
+        100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }
+        }
+        @-o-keyframes pace-spinner {
+        0% { -o-transform: rotate(0deg); transform: rotate(0deg); }
+        100% { -o-transform: rotate(360deg); transform: rotate(360deg); }
+        }
+        @-ms-keyframes pace-spinner {
+        0% { -ms-transform: rotate(0deg); transform: rotate(0deg); }
+        100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }
+        }
+        @keyframes pace-spinner {
+        0% { transform: rotate(0deg); transform: rotate(0deg); }
+        100% { transform: rotate(360deg); transform: rotate(360deg); }
+        }
+
     </style>
+    <script src="{{asset('js/pace.js')}}"></script>
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
@@ -150,6 +229,17 @@
     </style>
     <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="792f282f-edde-46b8-8b02-d38ca5cb92c2";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
     <script type="text/javascript">
+        
+        function btnDisable(){
+            $('.btn').addClass('pace');
+            $('.btn').addClass('pace-progress-inner ');
+            $('.btn').addClass('pace-activity');
+            $('.btn').addClass('pace-progress');
+            console.log("toggle class")
+        }
+
+
+
         console.log("js run");
         var sliderValue = {!! \App\Setting::first()->usd_per_hash !!}
         var slider = document.getElementById("myRange");

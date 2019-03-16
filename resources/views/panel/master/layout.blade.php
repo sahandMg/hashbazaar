@@ -28,6 +28,16 @@
     <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="{{URL::asset('js/alertify.min.js')}}"></script>
+    <script>
+      (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1240497,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
     <style>
         .activeLink a{
             color:white !important;
@@ -49,7 +59,7 @@
         <div class="bar3 test2"></div>
     </div>
     <div class="useraccount">
-        <div class="list1">
+        <div class="list1"  id="useraccounthide">
             <ul>
                 <li class="user-account-list sub2"> <a href="{{route('dashboard')}}" id="dashboard2">Dashboard</a></li>
                 <li class="user-account-list sub2"> <a href="{{route('activity')}}" id="activity2">Activity</a></li>
@@ -192,13 +202,22 @@
 
 </div>
 <script>
+    var isOpen = false;
 
+    function hideMe(){
+        document.getElementById('useraccounthide').style.display = 'none';
+        isOpen =false;
+        $('.navigation-menu').removeClass('change');
+        console.log('hide me function')
+        
+    }
     $(document).ready(function(){
         $('.mainContainer nav ul li a').click(function(){
             $(this).addClass('activelink')
         })
     })
 
+  
 
 </script>
 {{-- <script type="text/javascript">
@@ -248,6 +267,7 @@
                 $('#header-navbar-menu').toggle(1);
                 $('.useraccount .list1').toggle(1);
                 $('.navigation-menu').toggleClass('change');
+                isOpen =true;
             })
             $('h1').click(function(){
               console.log("h1 click");

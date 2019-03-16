@@ -15,7 +15,7 @@ foreach ($hashes as $key=> $hash){
 ?>
 
 
-<div  class="panel-container activity-container">
+<div  class="panel-container activity-container"  onclick="hideMe()">
     <h2 class="text-center">Recent Activities</h2> 
     <div class="purchases">
         <h2>Purchases</h2>

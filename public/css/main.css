@@ -65,7 +65,7 @@
 .useraccount .list1 ul li a {
     width:400px !important;
     position: relative;
-    margin-left:320px !important
+    margin-left:370px !important
 }
 #logouticon {
     font-size: 20px;
@@ -75,9 +75,10 @@
     border-bottom: transparent !important;
     position: relative;
     top: 0px;
+    text-align: center;
     margin-left: 0px;
     display: block !important;
-    background-color: black
+    background-color: black;
     
 }
 #logouticon a {
@@ -90,7 +91,7 @@
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     border-bottom: transparent !important;
-    background-color: transparent !important
+    /* background-color: transparent !important */
 }
 
 #logouticon a:before{
@@ -718,7 +719,6 @@ color: orange;}
  .dashboard-hr2 {
      flex: 2 !important
  }
-
 
 /*  - Media - 1024 */
 @media screen and (max-width:1025px){

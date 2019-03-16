@@ -16,7 +16,7 @@
             ->where('order_id','referral')->where('user_id',Auth::guard('user')->id())->sum('hash')
     ?>
 <!-- Referral Page -->
-<div id="referral-page" class="panel-container">
+<div id="referral-page" class="panel-container"  onclick="hideMe()">
         
    <div class="referral-page_secondList">
       <div class="referral-page_secondList_column">Number of referrals

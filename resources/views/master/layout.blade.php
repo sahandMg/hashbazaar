@@ -25,15 +25,26 @@
     <link rel="icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="{{asset('css/util.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/login.css')}}">
+    <script src="{{asset('js/pace.js')}}"></script>
     <script src="{{asset('js/jquery-3.3.1.js')}}"></script>
     <script src="{{asset('js/jquery.animate-colors.js')}}"></script>
 <!--     <script src="{{asset('js/jquery-3.3.1.js')}}"></script>
     <script src="{{asset('js/jquery.animate-colors.js')}}"></script>
     <script src="{{asset('js/jquery-3.3.1.js')}}"></script> -->
-
+    <!-- Hotjar Tracking Code for http://hashbazaar.com/ -->
+   <script>
+      (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1240497,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
 </head>
 
-<body id="page-top" style="background: white" >
+<body id="page-top" style="background: white">
 <!-- class="masthead pb-3" -->
 <header id="header" >
     {{-- navbar  ../../public/img/Logo_header.svg.svg.svg   --}}
@@ -43,7 +54,7 @@
                 <li class="navbar-list big"><a href="http://hashbazaar.com"><img class="navbar-small-logo" src="{{asset('img/Logo_header.svg')}}" alt="hash bazaar Logo"></a>
             </ul>
         </div>
-        <div id="header-navbar-menu">
+        <div id="header-navbar-menu" >
             <ul>
                 <li class="navbar-list small1 a1"><a href="{{route('index')}}">Home</a></li>
                 <li class="navbar-list small1 a1"><a href="{{route('aboutUs')}}">About</a></li>
@@ -98,8 +109,17 @@
             s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
 
         var flag = 0 ;
+        var isOpen = false;
+        function hideMe(){
+                $('#header-navbar-menu').hide();
+                isOpen =false;
+                $('.navigation-menu').removeClass('change');
+                console.log('hide me function')
+        }
+        
 
         $(document).ready(function(){
+            
              $('.navigation-menu').click(function(){
                 console.log("navigation test");
                 // $('#header-navbar-menu').toggle();
@@ -107,10 +127,14 @@
                   flag = 1 ;
                   $('#header-navbar-menu').show();
                   $('.navigation-menu').addClass( "change" );
+                    isOpen =true;
+
                 } else {
                   flag = 0 ;
                   $('#header-navbar-menu').hide();
                   $('.navigation-menu').removeClass( "change" );
+                  isOpen =false;
+
                 }
                 // $('.login').show();
                 // $('.signup').show();

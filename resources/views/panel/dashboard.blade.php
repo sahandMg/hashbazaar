@@ -13,7 +13,7 @@
             $AppliedCode = isset($codes->code)?$codes->code:null;
     ?>
 <!-- Dashboard Page -->
-<div id="dashboard-page" class="panel-container ">
+<div id="dashboard-page" class="panel-container "  onclick="hideMe()">
   <!-- Circle -->
   <div class="circle-container">
     <div id="dashboard-page-circle" >

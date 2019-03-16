@@ -64,7 +64,11 @@ body {
     width: 70%;
     margin: auto;
 }
-
+@media screen and (max-width:1280px){
+    /* .contact-container form {
+        margin-left: 35%
+      } */
+}
 @media screen and (max-width:1025px) {
     .contact-container form {
       width: 70%;
@@ -1334,11 +1338,15 @@ form.contact-page p:nth-of-type(1) {
 
 /* Dashboard-Media-1280 */
 @media screen and (max-width:1281px) {
+
+    .circle-container {
+        margin-left: 0 !important
+    }
     #dashboard-page-circle ,
     #dashboard-page-circle2 {
         width: 350px !important;
         height: 350px !important;
-        margin-left: 10% !important
+        margin-left: 7% !important
     }
 
     #dashboard-page-circle p:nth-of-type(1)
@@ -1353,7 +1361,8 @@ form.contact-page p:nth-of-type(1) {
     }
 
     #circle-span {
-        margin-top:19% !important
+        margin-top:19% !important;
+        font-size: 23px
     }
 
         
@@ -1362,6 +1371,11 @@ form.contact-page p:nth-of-type(1) {
         margin-left: 30%;
     }
 
+    .Hash-History {
+        max-height: 300px !important;;
+        width: 90%;
+        margin:auto
+    }
   
 }
 
@@ -1507,6 +1521,13 @@ form.contact-page p:nth-of-type(1) {
         font-weight: bolder;
         font-family: sans-serif
     }
+
+        
+    .slidecontainer {
+        margin-top: -4%;
+    }
+
+
     /* ==================================================HASH History============================== */
     .title-flex .dashboard-title {
         font-size: 19px !important;
@@ -1620,6 +1641,7 @@ form.contact-page p:nth-of-type(1) {
     }
     .rfrcode {
         display: block;
+        padding-top: 0 !important
     }
     
     /*============================================== Mining History ===================================*/

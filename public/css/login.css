@@ -336,9 +336,9 @@ body, html {
 
 }
 
-.socialnet-flex1 a img {
+.socialnet-flex1 img {
   flex: 1;
-  width: 50px !important;
+  width: auto !important;
   height: 50px !important;
   border-radius: 50%;
   text-align: center;
@@ -446,7 +446,7 @@ body, html {
 
     
   .socialnet-flex1 img {
-    width: 40px;
+    width: auto;
     height: 40px;
     /* margin-left: 35px; */
   }

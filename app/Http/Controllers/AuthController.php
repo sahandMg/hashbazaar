@@ -139,7 +139,7 @@ class AuthController extends Controller
             $message->subject ('Subscription Email');
         });
 
-
+        session(['pop'=>1]);
         return redirect()->route('dashboard');
     }
 
@@ -162,15 +162,13 @@ class AuthController extends Controller
             }catch (\Exception $exception){
                 $country = 'fr';
             }
-
             Auth::guard('user')->user()->update(['ip'=>Helpers::userIP(),'country'=>$country]);
 
-            if($request->has(['hashPower'])){
+            if(!is_null($request->hashPower)){
                 $hashPower = $request->hashPower;
-                    return redirect()->route('dashboard')->with(['hashPower'=>$hashPower]);
-                }else{
-
-                    return redirect()->route('dashboard');
+                return redirect()->route('dashboard')->with(['hashPower'=>$hashPower]);
+            }else{
+                return redirect()->route('dashboard');
                 }
         }else{
 
@@ -241,13 +239,14 @@ class AuthController extends Controller
             'code'=> $user->code,
             'email'=>$user->email
         ];
-        event(new \App\Events\ReferralQuery(Auth::user()));
+        event(new \App\Events\ReferralQuery($user));
+        Auth::guard('user')->login($user);
         Mail::send('email.thanks',$data,function($message) use($data){
             $message->from ('Admin@HashBazaar');
             $message->to ($data['email']);
             $message->subject ('Subscription Email');
         });
-
+        session(['pop'=>1]);
         return redirect()->route('dashboard');
     }
 

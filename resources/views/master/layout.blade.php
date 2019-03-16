@@ -33,7 +33,7 @@
 
 </head>
 
-<body id="page-top" style="background: white" >
+<body id="page-top" style="background: white">
 <!-- class="masthead pb-3" -->
 <header id="header" >
     {{-- navbar  ../../public/img/Logo_header.svg.svg.svg   --}}
@@ -43,7 +43,7 @@
                 <li class="navbar-list big"><a href="http://hashbazaar.com"><img class="navbar-small-logo" src="{{asset('img/Logo_header.svg')}}" alt="hash bazaar Logo"></a>
             </ul>
         </div>
-        <div id="header-navbar-menu">
+        <div id="header-navbar-menu" >
             <ul>
                 <li class="navbar-list small1 a1"><a href="{{route('index')}}">Home</a></li>
                 <li class="navbar-list small1 a1"><a href="{{route('aboutUs')}}">About</a></li>
@@ -98,8 +98,17 @@
             s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
 
         var flag = 0 ;
+        var isOpen = false;
+        function hideMe(){
+                $('#header-navbar-menu').hide();
+                isOpen =false;
+                $('.navigation-menu').removeClass('change');
+                console.log('hide me function')
+        }
+        
 
         $(document).ready(function(){
+            
              $('.navigation-menu').click(function(){
                 console.log("navigation test");
                 // $('#header-navbar-menu').toggle();
@@ -107,10 +116,14 @@
                   flag = 1 ;
                   $('#header-navbar-menu').show();
                   $('.navigation-menu').addClass( "change" );
+                    isOpen =true;
+
                 } else {
                   flag = 0 ;
                   $('#header-navbar-menu').hide();
                   $('.navigation-menu').removeClass( "change" );
+                  isOpen =false;
+
                 }
                 // $('.login').show();
                 // $('.signup').show();

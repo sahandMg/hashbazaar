@@ -1,4 +1,4 @@
-<footer class="backgroundMoreGrey">
+<footer class="backgroundMoreGrey" onclick="hideMe()">
     <div class="container text-center">
         <p>© 2018 HashBazaar. All rights reserved</p>
     </div>

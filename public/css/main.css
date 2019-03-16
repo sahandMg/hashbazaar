@@ -75,9 +75,10 @@
     border-bottom: transparent !important;
     position: relative;
     top: 0px;
+    text-align: center;
     margin-left: 0px;
     display: block !important;
-    background-color: black
+    background-color: black;
     
 }
 #logouticon a {
@@ -90,7 +91,7 @@
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     border-bottom: transparent !important;
-    background-color: transparent !important
+    /* background-color: transparent !important */
 }
 
 #logouticon a:before{

@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <!-- Contact Page -->
-    <div class="panel-container contact-container">
+    <div class="panel-container contact-container"  onclick="hideMe()">
         <h2 class="panel-header text-center"> Let Us know Your Questions!</h2>
         <form method="post" action="{{route('contact')}}">
             <input type="hidden" name="_token" value="{{csrf_token()}}">

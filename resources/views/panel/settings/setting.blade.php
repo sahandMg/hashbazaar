@@ -5,7 +5,7 @@
 @section('content')
 
 
-<div id="setting-page" class="panel-container ">
+<div id="setting-page" class="panel-container " onclick="hideMe()">
     <div class="setting-flex">
         <div class="flex-item one"><a href="#">User Information</a></div>
         <div class="flex-item two"><a href="#">Wallet</a></div>
@@ -19,7 +19,7 @@
     @include('formMessage')
     @include('sessionError')
 
-    <div class="setting-information">
+    <div class="setting-information" onclick="hideMe()">
         <form name="profile" action="{{route('setting')}}" method="post">
 
             <input type="hidden" name="_token" value="{{csrf_token()}}">

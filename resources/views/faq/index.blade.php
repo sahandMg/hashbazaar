@@ -165,7 +165,7 @@
                                 <h5 class="faq-question">What does mining really mean?</h5>
                                 <div class="faq-answer">
                                  <p>
-                                  A lot of cryptocurrency transactions are made every day. Mining is the processing of making a cryptocurrency transaction valid.
+                                  A lot of cryptocurrency transactions are made every day. Mining is the process of making a cryptocurrency transaction valid.
                                  </p>
                                 </div>
                             </li>
@@ -193,10 +193,6 @@
                                  <p>
                                   There are many Cryptocurrency cloud mining services working now, like genesis-mining, hashflare and so on. 
                                  </p>
-                                 <p>
-                                  What differences are there between the Cryptocurrency cloud mining services?
-                                  They are different from each other in expected return on investment and maintenance fees specially Energy fees.
-                                 </p>
                                 </div>
                             </li> 
                             <li class="faq-question-list">
@@ -209,7 +205,7 @@
                                 <h5 class="faq-question">Where is “Hash Bazaar”? </h5>
                                 <div class="faq-answer">
                                  <p>
-                                  Hash Bazaar is the most profitable bazaar for purchasing your favorite hash power. 
+                                  Hash Bazaar is profitable bazaar for purchasing your favorite hash power. 
                                  </p>
                                  <p>
                                   It is a Cryptocurrency cloud mining service that enables you to become a miner in our mining farms without having to deal with complex hardware and software setup. 

@@ -10,6 +10,7 @@ use App\ExpiredCode;
 use App\Log;
 use App\Mining;
 use App\Redeem;
+use App\Referral;
 use App\Setting;
 use App\Sharing;
 use App\Transaction;
@@ -52,7 +53,6 @@ class PaymentController extends Controller
         // if userID is empty, system will autogenerate userID and save it in cookies
         $userFormat		= "SESSION";       // save userID in cookies (or you can use IPADDRESS, SESSION, MANUAL)
         $orderID		= str_random(10);	  // invoice #000383
-
         if(!$request->has('hash')){
 
             $amount = $request->amount;
@@ -63,7 +63,6 @@ class PaymentController extends Controller
         $period			= "NOEXPIRY";	  // one time payment, not expiry
         $def_language	= "en";			  // default Language in payment box
         $def_coin		= "bitcoin";      // default Coin in payment box
-
 
         // List of coins that you accept for payments
         //$coins = array('bitcoin', 'bitcoincash', 'bitcoinsv', 'litecoin', 'dash', 'dogecoin', 'speedcoin', 'reddcoin', 'potcoin', 'feathercoin', 'vertcoin', 'peercoin', 'monetaryunit', 'universalcurrency');
@@ -392,31 +391,43 @@ class PaymentController extends Controller
                     $message->subject ('Payment Confirmed');
                 });
 
-                $referralUser = DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->first();
-                    if(!is_null($referralUser)){
+//                $referralUser = DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->first();
+                $referralCode = $hashPower->referral_code;
+                $referralQuery = Referral::where('code',$referralCode)->first();
+                    // if any referral code used for hash ower purchasing
+                    if(!is_null($referralCode)){
 
-                        $code = $referralUser->code;
-                        $codeCaller = DB::table('users')->where('code',$code)->first();// code caller user
+                        $codeCaller = User::where('code',$referralCode)->first();// code caller user
                         /*
                          * reward new th to the code caller
                          * ============================
+                         * increasing share level
                          */
 
                         $sharings = Sharing::all()->toArray();
-                        $total_sharing_num = $referralUser->total_sharing_num;
+                        $total_sharing_num = $referralQuery->total_sharing_num;
 
                         for($i=0 ; $i<count($sharings); $i++){
 
-                            if($sharings[$i]['sharing_number'] > $total_sharing_num ){
+                            if($sharings[$i]['sharing_number'] < $total_sharing_num ){
 
-                                $referralUser->update([
-                                    'share_level' => $sharings[$i]['level']
-                                ]);
-                                $referralUser->save();
+                                if($i == count($sharings) - 1){
+
+                                    $referralQuery->update([
+                                        'share_level' => $sharings[$i]['level']
+                                    ]);
+                                    $referralQuery->save();
+                                }else{
+                                    $referralQuery->update([
+                                        'share_level' => $sharings[$i+1]['level']
+                                    ]);
+                                    $referralQuery->save();
+                                }
+
                             }
                         }
 
-                        $share_level = DB::table('referrals')->where('code',$code)->first()->share_level;
+                        $share_level = $referralQuery->share_level;
                         $share_value = DB::table('sharings')->where('level',$share_level)->first()->value;
                         $hash = new BitHash();
                         $hash->hash = $hashPower->hash * $share_value;
@@ -437,15 +448,19 @@ class PaymentController extends Controller
                         //  =======================================
                     }
 
-                }
-            DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->update(['used'=>1]);
+                }else{
+
+                DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->update(['used'=>1]);
                 //check if any referral code used
 
-            Mail::send('email.paymentReceived',[],function($message)use($user){
-                $message->from ('Admin@HashBazaar');
-                $message->to ($user->email);
-                $message->subject ('Payment Received !');
-            });
+                Mail::send('email.paymentReceived',[],function($message)use($user){
+                    $message->from ('Admin@HashBazaar');
+                    $message->to ($user->email);
+                    $message->subject ('Payment Received !');
+                });
+            }
+
+
         }
 
 

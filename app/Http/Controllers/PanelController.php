@@ -163,7 +163,7 @@ class PanelController extends Controller
                 'total_sharing_num' => $referralUser->total_sharing_num + 1
             ]);
             $referralUser->save();
-
+            session(['referralCode'=>$code]);
 
             return [
                 'type'=>'message',

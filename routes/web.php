@@ -80,11 +80,7 @@ Route::get('job',function(){
     return view('cryptoMailPage',compact('CryptoCrawl'));
 });
 
-Route::get('test',function (){
-
-    return view('email.thanks');
-
-});
+Route::get('test','PaymentController@cryptobox_new_payment');
 
 Route::get('test2',function(){
 
@@ -216,6 +212,8 @@ Route::group(['prefix' => '@admin'], function () {
 
     Route::get('users/list',['as'=>'adminGetUsersList','uses'=>'AdminController@adminGetUsersList']);
     Route::get('block-user',['as'=>'blockUser','uses'=>'AdminController@blockUser']);
+
+    Route::post('login-as-user',['as'=>'LoginAsUser','uses'=>'AdminController@LoginAsUser']);
 
 //   Voyager::routes();
 });

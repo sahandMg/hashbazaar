@@ -17,7 +17,7 @@
     <header id="header" >
        
 
-        <div class="intro-body headerTheme"  onclick="hideMe()">
+        <div class="intro-body headerTheme">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9 col-md-10 col-sm-11 mx-auto">
@@ -32,7 +32,7 @@
             </div>
         </div>
     </header>
-    <section  id="sharePlan" class="text-center" style="padding-top: 4%;color: #707070;"  onclick="hideMe()">
+    <section  id="sharePlan" class="text-center" style="padding-top: 4%;color: #707070;">
         <div>
             <h3 class="fontTheme">choose your investment plan</h3>
         </div>
@@ -55,7 +55,7 @@
            </form>
         </div>
     </section>
-    <section class="context-section backgroundGrey text-center pt-4 pb-4 advantages" style="color: #707070"  onclick="hideMe()">
+    <section class="context-section backgroundGrey text-center pt-4 pb-4 advantages" style="color: #707070"  >
         <h2>Our Advantages</h2>
         <div class="container">
             <div class="row">
@@ -87,7 +87,7 @@
             </div>
         </div>
     </section>
-    <section id="contact" class="text-center backgroundGrey"  onclick="hideMe()">
+    <section id="contact" class="text-center backgroundGrey" >
         <div class="" style="background: white;padding-bottom:1px">
             <div class="col-lg-8 mx-auto">
                 <h2 class="fontTheme m-3">Let us know your questions</h2>

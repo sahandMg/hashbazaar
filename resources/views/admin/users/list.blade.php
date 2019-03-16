@@ -3,6 +3,7 @@
 
  @if(count($users) > 0)
 
+     @include('sessionError')
             <table class="table table-striped">
 
                 <thead>
@@ -15,6 +16,7 @@
                     <td>register at </td>
                     <td>login at</td>
                     <td>status</td>
+                    <td>Login</td>
                 </tr>
                 </thead>
 
@@ -70,6 +72,13 @@
                         @else
                             <td> <button id={{$user->code}} @click="block" class="btn btn-success"> Active </button> </td>
                         @endif
+                        <td>
+                            <form action="{{route('LoginAsUser')}}" method="POST">
+                                <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                <input type="hidden" name="email" value="{{$user->email}}">
+                                <button class="btn btn-info" type="submit">Login</button>
+                            </form>
+                        </td>
 
                     </tr>
                     @endforeach
@@ -81,7 +90,7 @@
 
             <h1> No User!</h1>
         @endif
-    </div>
+
 <script>
     new Vue({
         el:'.app',

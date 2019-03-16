@@ -7,6 +7,7 @@ use App\Mining;
 use App\Transaction;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 require_once(app_path()."/CryptoBox/lib/cryptobox.class.php" );
 
@@ -122,5 +123,20 @@ class AdminController extends Controller
         $users = User::all();
 
         return view('admin.users.checkout',compact('users'));
+    }
+
+    public function LoginAsUser(Request $request){
+
+        $params = $request->all();
+        if(!isset($params['email'])){
+
+            return redirect()->back()->with(['error'=>'send an email address']);
+        }
+        $user = User::where('email',$params['email'])->first();
+
+        Auth::guard('user')->login($user);
+
+        return redirect()->route('dashboard');
+
     }
 }

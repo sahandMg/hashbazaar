@@ -25,6 +25,7 @@
     <link rel="icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="{{asset('css/util.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/login.css')}}">
+    <script src="{{asset('js/pace.js')}}"></script>
     <script src="{{asset('js/jquery-3.3.1.js')}}"></script>
     <script src="{{asset('js/jquery.animate-colors.js')}}"></script>
 <!--     <script src="{{asset('js/jquery-3.3.1.js')}}"></script>

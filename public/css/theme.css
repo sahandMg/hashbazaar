@@ -606,7 +606,7 @@ header img { height: 175px;margin-bottom: 4%; }
   display: -ms-flex;
   display: -o-flex;
   list-style-type: none;
-  flex: row;
+  flex-flow: row nowrap;
   transition: all 1s;
   margin:auto;
   margin-bottom: 10px
@@ -617,17 +617,22 @@ header img { height: 175px;margin-bottom: 4%; }
   display: block;
   list-style-type: none;
   padding-top: 10px;
+  width: auto
 }
 .network-flex ul li {
   list-style-type: none;
   margin: auto;
   display: inline-block;
+  width: auto;
+  /* margin-left: 0.5%; */
+  height:40px;
+  padding-left: 2%
 }
 
 .network-flex img {
   flex: 1;
   width: auto;
-  height: 50px;
+  height: 40px;
   border-radius: 50%;
   border:transparent;
   text-align: center;

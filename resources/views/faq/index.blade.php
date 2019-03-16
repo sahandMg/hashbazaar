@@ -109,7 +109,7 @@
        }
     }
 </style>  
-                <div class="container faq-container"  onclick="hideMe()">
+                <div class="container faq-container">
                      <h2 class="text-center">Frequently asked questions</h2> 
                      <!-- customerservice-category  category-button one  -->
                     <div class="row">

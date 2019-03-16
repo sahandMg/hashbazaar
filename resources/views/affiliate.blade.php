@@ -1,6 +1,6 @@
 @extends('master.layout')
 @section('content')
-<div class="container" style="color: black;margin-top: 120px;" onclick="hideMe()">
+<div class="container" style="color: black;margin-top: 120px;" >
 	<h2 class="text-center" style="margin-bottom: 2%;">Affiliate program</h2>
 	<p>You can join our affiliate program through different ways. Share your dedicated referral code or link wherever you want.</p>
    <p>Your referral will get a 3% discount on their first purchase, and you will get a free hashpower upgrade as your affiliate reward from Hashbazaar depend on your level as the following table.</p>

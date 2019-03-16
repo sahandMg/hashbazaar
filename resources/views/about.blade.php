@@ -1,7 +1,7 @@
 @extends('master.layout')
 @section('content')
   
-  <div class="container about-us-container"  onclick="hideMe()">
+  <div class="container about-us-container" >
   	 <h1 class="text-center">About us</h1>
   	 <p>Hash Bazaar is profitable bazaar for purchasing your favorite amount of hash power.</p>
   	 <p>It is a Cryptocurrency cloud mining service that enables you to become a miner in our mining farms without facing complex Challenges like Shipping costs, custom duties, delivery times, hardware setup, software setup, and considerable loud voice of mining and generated heat, hardware crash, slow down or completely breaks.</p>

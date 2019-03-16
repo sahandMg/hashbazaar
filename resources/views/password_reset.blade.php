@@ -1,7 +1,7 @@
 @extends('master.layout')
 @section('content')
 
-<div class="limiter">
+<div class="limiter" onclick="hideMe()">
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<form method="post" action="{{route('passwordReset')}}" class="login100-form validate-form p-l-55 p-r-55 p-t-178">

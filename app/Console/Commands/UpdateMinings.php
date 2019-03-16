@@ -107,7 +107,7 @@ class UpdateMinings extends Command
                     }
                 }
 
-                $total_paid_btc = Transaction::where('user_id',$user->id)->where('status','paid')->sum('amount_btc');
+                $total_paid_btc = Transaction::where('user_id',$user->id)->where('status','paid')->where('checkout','in')->sum('amount_btc');
                 $user->update(['total_mining'=>$minings->sum('mined_btc'),'pending'=> $minings->sum('mined_btc') - $total_paid_btc]);
                 $user->save();
             }

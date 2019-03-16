@@ -9,6 +9,8 @@
 
                 $remainedLife[$key] = floor((\Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($hash->created_at)->addYears($hash->life)))/($hash->life * 365) * 100) ;
             }
+    $codes = DB::table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('used',0)->first();
+            $AppliedCode = isset($codes->code)?$codes->code:null;
     ?>
 <!-- Dashboard Page -->
 <div id="dashboard-page" class="panel-container "  onclick="hideMe()">
@@ -197,7 +199,7 @@
 
     </div>
     <p class="rfrcode">Referral Code:</p>
-    <input id='referralCode' type="text" name="referralCode" style="margin-top:5px" class="aplybtn1text"/>
+    <input id='referralCode' type="text" placeholder="{{$AppliedCode}}" name="referralCode" style="margin-top:5px" class="aplybtn1text"/>
     <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> Apply </button>
     <button id="orderBtn" class="pandel-button" type="submit">Order</button>
     <!-- </form> -->
@@ -231,7 +233,7 @@
               @else
                   <input type="hidden" name="discount" value="0">
               @endif
-            <input id='hiddenCodeValue' type="hidden" name="code" style="margin-top:5px" >
+            <input id='hiddenCodeValue' type="hidden" name="code" style="margin-top:5px" value="{{$AppliedCode}}" >
             <input type="range" hidden min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="hiddenRange">
             <button class="pandel-button" type="submit">Continue</button>
           </form>
@@ -260,10 +262,10 @@
         var modal = document.getElementById('myModal');
         var modalFirstTime = document.getElementById('modalFirstTime');
         // just first time
-        if({!! session()->has('pop') !!}){
+        if({!! json_encode(session()->has('pop')) !!}){
 
             modalFirstTime.style.display = "block";
-            {!! session()->forget('pop')!!}
+            {!! json_encode(session()->forget('pop'))!!}
         }else{
 
         modal.style.display = "none";

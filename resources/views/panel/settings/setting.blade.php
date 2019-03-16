@@ -214,7 +214,7 @@ function copyToClipboard(elem) {
 
 
         //============ wallet ===============
-        console.log(wallet !== null)
+        console.log(wallet!== null )
         $('.setting-information').hide();
 
         if(wallet !== null){

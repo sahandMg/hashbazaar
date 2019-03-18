@@ -35,7 +35,7 @@ use Psr\Http\Message\ResponseInterface;
 use TCG\Voyager\Facades\Voyager;
 
 Route::get('job',function(){
-
+    dd(number_format(0.03122313,8));
     $cryptoName = [];
     $url = 'https://pay98.cash/%D9%82%DB%8C%D9%85%D8%AA-%D8%A7%D8%B1%D8%B2%D9%87%D8%A7%DB%8C-%D8%AF%DB%8C%D8%AC%DB%8C%D8%AA%D8%A7%D9%84';
     $config = [
@@ -80,31 +80,18 @@ Route::get('job',function(){
     return view('cryptoMailPage',compact('CryptoCrawl'));
 });
 
-Route::get('test','PaymentController@cryptobox_new_payment');
+Route::get('charge/create','PaymentController@createCharge');
+Route::get('charge/show/{id?}','PaymentController@getCharges');
+Route::get('charge/list','PaymentController@listCharges');
+Route::get('charge/cancel/{id?}','PaymentController@cancelCharge');
 
-Route::get('test2',function(){
+Route::get('checkout/list','PaymentController@listCheckouts');
+Route::get('checkout/create','PaymentController@createCheckout');
+Route::get('checkout/update/{productid?}','PaymentController@updateCheckout');
+Route::get('checkout/delete/{productid?}','PaymentController@deleteCheckout');
 
-    $fields = array(
-        'amount' => '100',
-        'email' => 'sahand.mg.ne@gmail.com',
-        'phone' => '021321',
-        'pin' => '7DC84A8791E676C3DD7C',
-        'description' => 'https://ssaa.com',
-        'callback' => 'dadsda',
-        'bank'=>'novin',
-        'ip'=> '192.168.1.1'
-    );
-    $fields2 = json_encode($fields);
-    $url = 'https://test.paystar.ir/api/create';
-    $ch = curl_init();
-    curl_setopt($ch,CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($fields));
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $result = curl_exec($ch);
-    curl_close($ch);
-    return $result;
-});
+Route::get('events/list','PaymentController@eventList');
+Route::get('events/show/{productid?}','PaymentController@eventShow');
 
 Route::get('/','PageController@index')->name('index');
 

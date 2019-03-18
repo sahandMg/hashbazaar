@@ -17,4 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('cryptobox.callback.php','PaymentController@paymentCallback')->name('paymentCallback');
+Route::any('cryptobox.callback.php','PaymentController@paymentCallback')->name('paymentCallback');

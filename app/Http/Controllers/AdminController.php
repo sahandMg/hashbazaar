@@ -14,6 +14,17 @@ require_once(app_path()."/CryptoBox/lib/cryptobox.class.php" );
 class AdminController extends Controller
 {
 
+    public $apikey;
+    public $publickey;
+    public $privatekey;
+    public function __construct()
+    {
+        $settings = DB::table('settings')->first();
+        $this->apikey = $settings->apikey;
+        $this->publickey = $settings->publickey;
+        $this->privatekey = $settings->privatekey;
+    }
+
     public function index(){
 
         return view('admin.index');
@@ -69,8 +80,8 @@ class AdminController extends Controller
 
         $all_keys = array(
             "bitcoin" => array(
-                "public_key" => "37917AAhw0Q9Speedcoin77SPDPUBUR2avCPSe9Rbpq8pX41HD",
-                "private_key" => "37917AAhw0Q9Speedcoin77SPDPRVxAI38mYYRe0eD3JKPEwvW"
+                "public_key" => $this->publickey,
+                "private_key" => $this->privatekey
             )
         );
         $transactions = DB::table('crypto_payments')->get();

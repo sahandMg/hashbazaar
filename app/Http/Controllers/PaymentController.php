@@ -30,6 +30,210 @@ require_once(app_path()."/CryptoBox/lib/cryptobox.class.php" );
 
 class PaymentController extends Controller
 {
+    public $apikey;
+    public $publickey;
+    public $privatekey;
+    public function __construct()
+    {
+        $settings = DB::table('settings')->first();
+        $this->apikey = $settings->apikey;
+        $this->publickey = $settings->publickey;
+        $this->privatekey = $settings->privatekey;
+    }
+
+    public function createCharge(Request $request){
+        $request = $request->all();
+        $url =  "https://api.commerce.coinbase.com/charges";
+        $payload = [
+        "name"=> $request['name'],
+       "description"=> $request['description'],
+       "local_price"=> [
+         "amount"=> $request['amount'],
+         "currency"=> "USD"
+       ],
+       "pricing_type"=> "fixed_price",
+       "metadata"=> [
+            "customer_id"=> "id_1005",
+         "customer_name"=> "Satoshi Nakamoto"
+       ],
+       "redirect_url"=> "http://hashbazaar.com/completed/page",
+       "cancel_url"=> "https://hashbazaar.com/canceled/page",
+
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array("X-CC-Api-Key:$this->apikey",
+            "X-CC-Version: 2018-03-22",'Content-Type: application/json'));
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        return($result);
+    }
+
+    // get specific charge record
+    public function getCharges(Request $request){
+        $id = $request->id;
+        $url =  "https://api.commerce.coinbase.com/charges/$id";
+
+        $ch = curl_init();
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array("X-CC-Api-Key:$this->apikey",
+            "X-CC-Version: 2018-03-22",'Content-Type: application/json'));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        return($result);
+    }
+
+
+    // get list of charges
+    public function listCharges(Request $request){
+
+        $url =  "https://api.commerce.coinbase.com/charges";
+        $ch = curl_init();
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array("X-CC-Api-Key:$this->apikey",
+            "X-CC-Version: 2018-03-22",'Content-Type: application/json'));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        return($result);
+    }
+
+    // cancel a specific charge
+    public function cancelCharge(Request $request){
+        $id = $request->id;
+        $url =  "https://api.commerce.coinbase.com/charges/$id/cancel";
+        $ch = curl_init();
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER,array("X-CC-Api-Key:$this->apikey",
+            "X-CC-Version: 2018-03-22",'Content-Type: application/json'));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        return($result);
+
+    }
+// define new product
+// required amount , name , description
+    public function createCheckout(Request $request){
+        $amount = $request->amount;
+        $name = $request->name;
+        $description = $request->description;
+        $url =  "https://api.commerce.coinbase.com/checkouts";
+        $payload = [
+            "name"=> $name,
+            "description"=> $description,
+            "local_price"=> [
+                "amount"=> $amount,
+                "currency"=> "USD"
+            ],
+            "pricing_type"=> "fixed_price",
+            "requested_info"=> ["email"]
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array("X-CC-Api-Key:$this->apikey",
+            "X-CC-Version: 2018-03-22",'Content-Type: application/json'));
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
+        curl_close($ch);
+        return($result);
+    }
+
+    public function listCheckouts(Request $request){
+
+        $url =  "https://api.commerce.coinbase.com/checkouts";
+        $ch = curl_init();
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array("X-CC-Api-Key:$this->apikey",
+            "X-CC-Version: 2018-03-22"));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        return($result);
+
+
+    }
+// update a product
+// name, description,amount,productid
+    public function updateCheckout(Request $request){
+        $request = $request->all();
+        $productId = $request['productid'];
+        $payload = [
+            "name"=> $request['name'],
+            "description"=> $request['description'],
+            "local_price"=> [
+                "amount"=> $request['amount'],
+                "currency"=> "USD"
+            ],
+            "requested_info"=> ["email"]
+        ];
+        $url =  "https://api.commerce.coinbase.com/checkouts/$productId";
+        $ch = curl_init();
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array("X-CC-Api-Key:$this->apikey",
+            "X-CC-Version: 2018-03-22",'Content-Type: application/json'));
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        return($result);
+    }
+    // delete product
+    public function deleteCheckout(Request $request){
+        $productId = $request->productid;
+        $url =  "https://api.commerce.coinbase.com/checkouts/$productId";
+        $ch = curl_init();
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array("X-CC-Api-Key:$this->apikey",
+            "X-CC-Version: 2018-03-22",'Content-Type: application/json'));
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        return $result;
+    }
+
+    public function eventList(){
+        $url = "https://api.commerce.coinbase.com/events";
+        $ch = curl_init();
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array("X-CC-Api-Key:$this->apikey",
+            "X-CC-Version: 2018-03-22",'Content-Type: application/json'));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
+        curl_close($ch);
+        return $result;
+    }
+
+    public function eventShow(Request $request){
+        $productId = $request->productid;
+        $url = "https://api.commerce.coinbase.com/events/$productId";
+        $ch = curl_init();
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array("X-CC-Api-Key:$this->apikey",
+            "X-CC-Version: 2018-03-22",'Content-Type: application/json'));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        return $result;
+    }
+
+
 
     public function postPayment(Request $request){
 
@@ -60,6 +264,7 @@ class PaymentController extends Controller
         }else{
             $amount = $request->hash * $settings->usd_per_hash * (1 - $request->discount)/$bitCoinPrice->price;
         }
+//        dd($request->all());
         $period			= "NOEXPIRY";	  // one time payment, not expiry
         $def_language	= "en";			  // default Language in payment box
         $def_coin		= "bitcoin";      // default Coin in payment box
@@ -71,8 +276,8 @@ class PaymentController extends Controller
         // Demo Keys; for tests	(example - 5 coins)
         $all_keys = array(
             "bitcoin" => array(
-                "public_key" => "37917AAhw0Q9Speedcoin77SPDPUBUR2avCPSe9Rbpq8pX41HD",
-                "private_key" => "37917AAhw0Q9Speedcoin77SPDPRVxAI38mYYRe0eD3JKPEwvW"
+                "public_key" => $this->publickey,
+                "private_key" => $this->privatekey
             )
         );
 
@@ -114,7 +319,7 @@ class PaymentController extends Controller
             "userID"      	=> $userID, 	// unique identifier for every user
             "userFormat"  	=> $userFormat, 	// save userID in COOKIE, IPADDRESS, SESSION  or MANUAL
             "amount"   	  	=> $amount, // product price in btc/bch/bsv/ltc/doge/etc OR setup price in USD below
-            "amountUSD"   	=> 0,	    // we use product price in USD
+            "amountUSD"   	=> null,	    // we use product price in USD
              "period"      	=> $period, 	// payment valid period
             "language"	  	=> $def_language    // text on EN - english, FR - french, etc
         );
@@ -153,7 +358,7 @@ class PaymentController extends Controller
         $trans->checkout = 'out';
         $trans->save();
 
-//        return view('payment.makePayment',compact('box','coins','def_coin','def_language'));
+//        return view('payment.makePayment',compact('orderID','box','coins','def_coin','def_language'));
         session()->put('paymentData',['orderID'=>$orderID,'box'=>$box,'coins'=>$coins,'def_coin'=>$def_coin,'def_language'=>$def_language]);
         return redirect()->route('payment');
     }
@@ -186,8 +391,8 @@ class PaymentController extends Controller
 
         $all_keys = array(
             "bitcoin" => array(
-                "public_key" => "37917AAhw0Q9Speedcoin77SPDPUBUR2avCPSe9Rbpq8pX41HD",
-                "private_key" => "37917AAhw0Q9Speedcoin77SPDPRVxAI38mYYRe0eD3JKPEwvW"
+                "public_key" => $this->publickey,
+                "private_key" => $this->privatekey
             )
         );
         $orderID = $trans->orderID;
@@ -205,7 +410,7 @@ class PaymentController extends Controller
             "orderID"     	=> $orderID, 		// order id or product name
             "userID"      	=> $userID, 	// unique identifier for every user
             "userFormat"  	=> $userFormat, 	// save userID in COOKIE, IPADDRESS, SESSION  or MANUAL
-            "amount"   	  	=> $amount, // product price in btc/bch/bsv/ltc/doge/etc OR setup price in USD below
+            "amount"   	  	=> number_format($amount,8), // product price in btc/bch/bsv/ltc/doge/etc OR setup price in USD below
             "amountUSD"   	=> 0,	    // we use product price in USD
             "period"      	=> $period, 	// payment valid period
             "language"	  	=> $def_language    // text on EN - english, FR - french, etc

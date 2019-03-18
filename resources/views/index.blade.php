@@ -6,9 +6,7 @@
     $settings = DB::table('settings')->first();
           if(isset($code)){
               $user = DB::table('users')->where('code',$code)->first();
-              $referralCode = DB::table('expired_codes')->where('code',$code)->first();
-
-              if(!is_null($user) && is_null($referralCode)){
+              if(!is_null($user)){
                   $name = $user->name;
               }
           }

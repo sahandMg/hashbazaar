@@ -42,14 +42,15 @@
 <body>
 
 <?php
-use Illuminate\Support\Facades\URL;$data = session('paymentData');
+use Illuminate\Support\Facades\URL;
+$data = session('paymentData');
 // Text above payment box
 $custom_text  = "<p class='lead'>Use This Code to Follow Up Your Transaction</p>";
 $custom_text .= "<p id='orderID' class='lead'>"."Transaction ID :  ".$data['orderID']."</p>";
 $box = $data['box'];
 // Display payment box
 echo $box->display_cryptobox_bootstrap($data['coins'], $data['def_coin'],$data['def_language'] , $custom_text, 70, 200, true, URL::asset("img/Logo_footer.svg"), "https://www.dovera.sk/media/micro_2015_cukrovka/img/svg/icon--checkmark.svg", 250, "", "curl", false);
-//echo $box->display_cryptobox_bootstrap($coins, $def_coin, $def_language, $custom_text, 70, 200, true, "default", "default", 250, "", "curl", true);
+//echo $box->display_cryptobox_bootstrap($coins, $def_coin, $def_language,$custom_text, 70, 200, true, URL::asset("img/Logo_footer.svg"), "https://www.dovera.sk/media/micro_2015_cukrovka/img/svg/icon--checkmark.svg", 250, "", "curl", false);
 
 // You can setup method='curl' in function above and use code below on this webpage -
 // if successful bitcoin payment received .... allow user to access your premium data/files/products, etc.
@@ -87,7 +88,7 @@ echo $box->display_cryptobox_bootstrap($data['coins'], $data['def_coin'],$data['
             resp = response.data;
             console.log(resp);
 
-            if(resp === 200 && {!! !isset($_GET['amount']) !!}){
+            if(resp === 200 && {!! json_encode(!isset($_GET['amount'])) !!}){
 //               if(document.getElementById('refresh2') !== null) {
 //                   console.log("refresh is null");
                    document.getElementById('refreshForm').submit();

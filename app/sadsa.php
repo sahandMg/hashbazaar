@@ -3166,6 +3166,7 @@ class Auth extends CI_Controller {
         {
             $this->data['wm_code'] = rand(1000000,9999999);
             $this->session->set_userdata('wm_code', "{$this->data['wm_code']}");
+            \Carbon\Carbon::parse('Your Time')->addMinutes(30);
         }
         else
         {

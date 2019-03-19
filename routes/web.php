@@ -35,7 +35,15 @@ use Psr\Http\Message\ResponseInterface;
 use TCG\Voyager\Facades\Voyager;
 
 Route::get('job',function(){
-    dd(number_format(0.03122313,8));
+
+    $url = 'http://ip-api.com/php/192.119.12.118';
+    unserialize(file_get_contents($url))['countryCode'];
+    $ch = curl_init($url); // such as http://example.com/example.xml
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    $data = curl_exec($ch);
+    curl_close($ch);
+    dd($data);
     $cryptoName = [];
     $url = 'https://pay98.cash/%D9%82%DB%8C%D9%85%D8%AA-%D8%A7%D8%B1%D8%B2%D9%87%D8%A7%DB%8C-%D8%AF%DB%8C%D8%AC%DB%8C%D8%AA%D8%A7%D9%84';
     $config = [

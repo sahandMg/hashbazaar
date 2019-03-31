@@ -29,7 +29,7 @@
     @media screen and (max-width: 414px) {
           footer p {  margin-bottom: 2% ;color: black;font-size: 0.9rem;}
           footer {
-            padding-bottom: 4%;
+            /* padding-bottom: 4%; */
           }
           footer img {
             height: 30px;

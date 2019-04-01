@@ -623,7 +623,7 @@
 
                   // for geting total earn
 
-                axios.post({!! json_encode('totalEarn') !!},{'user':user}).then(function (response) {
+                axios.post({!! json_encode(route('totalEarn')) !!},{'user':user}).then(function (response) {
                     if(response.data[0] == 0){
 
                         document.getElementById('miningBTC').innerHTML = 0;

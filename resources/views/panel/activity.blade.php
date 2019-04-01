@@ -32,7 +32,7 @@ foreach ($hashes as $key=> $hash){
                  </tr>
                </thead>
                <tbody>
-               @foreach($hashes as $hash)
+               @foreach($hashes as $key=>$hash)
                 <tr>
                     <td>
 
@@ -52,14 +52,14 @@ foreach ($hashes as $key=> $hash){
 
                     <td>
 
-                                <div class="remain">
-                                    <div class="progress1">
-                                        <div class="progress-bar1" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%;width: {{$remainedLife[$key]}}%;">
-                                            <span class="title">{{$remainedLife[$key]}}%</span>
+                        <div class="remain">
+                            <div class="progress1">
+                                <div class="progress-bar1" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%;width: {{$remainedLife[$key]}}%;">
+                                    <span class="title">{{$remainedLife[$key]}}%</span>
 
-                                        </div>
-                                    </div>
                                 </div>
+                            </div>
+                        </div>
 
                     </td>
                 </tr>

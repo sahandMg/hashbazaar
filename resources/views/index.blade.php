@@ -70,7 +70,7 @@
                         </li>
                         <li>
                             <h5>Daily withdrawal</h5>
-                            <p>Your mining output will be withdrawn as soon as increasing to 0.01BTC.</p>
+                            <p>Your mining output will be withdrawn as soon as increasing to 0.01 BTC.</p>
                         </li>
                         <li>
                             <h5>Activity report</h5>
@@ -124,7 +124,7 @@
                 <br/>
                 <h4 class="text-center">We help you to invest in bitcoin mining.</h4>
                 <br/>
-                <p class="text-center">You are invited by <b> {{isset($name)?$name:'noBody'}}</b> so you can utilize 10% discount for your first order.</p>
+                <p class="text-center">You are invited by <b> {{isset($name)?$name:'noBody'}}</b> so you can utilize {{$settings->sharing_discount * 100}}% discount for your first order.</p>
                 <p class="text-center">Nice to have you in our cryptocurrency investment community.</p>
             </div>
         </div>

@@ -44,7 +44,7 @@ class DeleteTh extends Command
     public function handle()
     {
         $unpaids = BitHash::where('confirmed',0)->get();
-        $unpaidMining = Mining::where('block',1)->get();
+        $unpaidMinings = Mining::where('block',1)->get();
         $settings = Setting::first();
         foreach ($unpaids as $key => $unpaid){
 
@@ -65,16 +65,24 @@ class DeleteTh extends Command
                         'amount' => $trans->amount,
                         'created_at' => $trans->txDate
                     ];
-
                     Mail::send('email.unconfirmedPayment',$data,function ($message) use($data){
 
                         $message->to($data['email']);
                         $message->from('admin@hashbazaar.com');
                         $message->subject('Unsuccessful Payment');
                     });
+
                 }
 
+                $unpaid->delete();
+
             }
+        }
+
+
+        foreach ($unpaidMinings as $unpaidMining){
+
+            $unpaidMining->delete();
         }
     }
 }

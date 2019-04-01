@@ -106,9 +106,6 @@
         right: 100px
     }
 
-
-
-
     /*  */
     .panel-container {
         margin-top: 125px;

@@ -1,17 +1,4 @@
 /* User Account */
-.Active {
-    color: White !important;
-    text-decoration: none !important;
-    display: block !important;
-    height: 60px !important;
-    border-bottom: 2px solid #727272 !important;
-    font-size: 30px !important;
-    background: rgb(39, 38, 38) !important;
-    text-align: center !important;
-    padding-bottom: 20px !important;
-    text-align: center !important;
-    font-family: sans-serif !important
-}
 .useraccount {
     position: absolute;
     top: 0px;
@@ -47,7 +34,6 @@
     transition: all 1s;
     display: block
 }
-
 .useraccount .list1 ul li {
     list-style-type: none;
     width: 100%;
@@ -79,7 +65,6 @@
     margin-left: 0px;
     display: block !important;
     background-color: black;
-    
 }
 #logouticon a {
     text-decoration: none;
@@ -91,9 +76,7 @@
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     border-bottom: transparent !important;
-    /* background-color: transparent !important */
 }
-
 #logouticon a:before{
     content: '';
     display: block;
@@ -121,7 +104,6 @@
     position: absolute;
     cursor: pointer;
 }
-
 .sub2 {display:none}
 
 .useraccount .sub2:hover {color: white !important}
@@ -132,7 +114,6 @@
     text-decoration: none !important;
     display: block
 }
-
 .navigation-menu{
     height:30px !important;
     margin-top:0px;
@@ -229,42 +210,37 @@ div ul .navbar #welcome {
     border-bottom: 2px solid #727272;
     font-size: 30px;
     background: rgb(39, 38, 38);
+    padding-bottom: 40px !important;
     text-align: center;
-    font-family: sans-serif
+    font-family: sans-serif;
+    display:block;
+    margin:auto;
 }
 
 .container1 .mainList .sub a {
     color: orange;
     text-decoration: none;
-    padding-top: 10px !important;
+    padding-top: -10px !important;
     padding-bottom: 20px !important;
     position: relative;
-    left: -40px;
-    top: 30%
+    left: -20px;
+    top: 30%;
+    display:block;
+    margin: auto;
 }
 
 .container1 .mainList .sub a:hover {
     color: white;
 }
 #dashboard:hover , #referral:hover {color:white !important}
-.container1 .mainList .sub {
-    color: orange;
-    height: 60px;
-    border-bottom: 2px solid #727272;
-    font-size: 30px;
-    background: rgb(39, 38, 38);
-    padding-bottom: 20px !important;
-    text-align: center;
-    font-family: sans-serif
-}
 
 .sub:after {
     background-image: url("../img/Arrow.svg");
     width: 1em;
     height: 1em;
-    margin-top: 17px;
+    margin-top: -50px;
     content: "";
-    left: 300px;
+    left: 320px;
     background-size: 100% 100%;
     position: absolute;
 }
@@ -276,8 +252,8 @@ div ul .navbar #welcome {
     height: 35px;
     background-size: 100% 100%;
     position: absolute;
-    left: -60px;
-    top: 5px
+    left: 50px;
+    top: 5px;
 }
 
 #activity:before {
@@ -287,7 +263,7 @@ div ul .navbar #welcome {
     height: 35px;
     background-size: 100% 100%;
     position: absolute;
-    left: -80px;
+    left: 50px;
     top: 5px
 }
 
@@ -298,7 +274,7 @@ div ul .navbar #welcome {
     height: 35px;
     background-size: 100% 100%;
     position: absolute;
-    left: -80px;
+    left: 50px;
     top: 5px
 }
 
@@ -309,7 +285,7 @@ div ul .navbar #welcome {
     height: 35px;
     background-size: 100% 100%;
     position: absolute;
-    left: -85px;
+    left: 50px;
     top: 5px
 }
 
@@ -330,7 +306,7 @@ color: orange;}
     height: 35px;
     background-size: 100% 100%;
     position: absolute;
-    left: -80px;
+    left: 50px;
     top: 8px
 }
 #logouticon2:before{
@@ -341,8 +317,8 @@ color: orange;}
     background-image: url("../img/sign-out-alt-solid.svg");
     background-size: 100% 100%;
     position: absolute;
-    left: -80px;
-    top: 8px
+    left: 50px;
+    top: 5px
 }
 
 .pandel-button {
@@ -722,12 +698,6 @@ color: orange;}
 
 /*  - Media - 1024 */
 @media screen and (max-width:1025px){
-        
-    #usericon:before {
-        position: relative;
-        left: 1vh; 
-        top: 2vh !important
-    }
     
     /* ---------------=====Media====-------------Main Container--------------------------- */
     
@@ -748,63 +718,63 @@ color: orange;}
     .container1 .mainList .sub {
         height: 60px;
         font-size: 25px;
-        padding-bottom: 10px;
+        padding-bottom: 20px !important
     }
-
     .container1 .mainList .sub a {
-        left: -10px;
-        top: 30%
+        margin-left: 20px;
     }
-
     .sub:after {
         width: 1em;
         height: 1em;
         content: "";
         left: 85%;
+        margin-top:-40px
     }
 
     #dashboard:before {
         content: "";
         width: 30px;
         height: 30px;
-        left: -40px;
+        left: 25px;
     }
 
     #activity:before {
         content: "";
         width: 30px;
         height: 30px;
-        left: -55px;
+        left: 25px;
     }
 
     #contact1:before {
         content: "";
         width: 30px;
         height: 30px;
-        left: -55px;
+        left: 25px;
     }
 
     #setting:before {
         content: "";
         width: 30px;
         height: 30px;
-        left: -55px;
+        left: 25px;
     }
 
     #referral:before {
         content: "";
         width: 30px;
         height: 30px;
-        left: -55px;
+        left: 25px;
     }
 
     #logouticon2:before{
         content: "";
         width: 35px;
         height: 35px;
-        left: -50px !important;
+        left: 25px !important;
         margin-top: -3px
     }
+
+    /* ===========================Setting========================= */
     .setting-information input#text {
         margin-left: 19%
     }

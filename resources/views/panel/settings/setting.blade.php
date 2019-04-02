@@ -86,7 +86,7 @@
                 <div class="address-img">{!! QrCode::size(150)->generate(Auth::guard('user')->user()->wallet->addr) !!}</div>
 
             <div class="address-box">
-                <input type="text" placeholder="{{Auth::guard('user')->user()->wallet->addr}}">
+                <input type="text" id="copyTarget" value="{{Auth::guard('user')->user()->wallet->addr}}" readonly>
                 <div class="div-icons-flex">
                     <a href="https://blockstream.info/address/{{!is_null(Auth::guard('user')->user()->wallet)?Auth::guard('user')->user()->wallet->addr:null}}"><img class="icon" src="../img/Link.svg" alt=""></a>
                     <a class="coppyIcon" style="cursor: pointer;"><img class="icon" src="../img/Copy.svg" alt=""></a>
@@ -97,7 +97,7 @@
 
                 <form action="{{route('editWallet')}}" method="POST">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
-                    <input type="text" class="a2" id="copyTarget" name="address"   placeholder="{{!is_null(Auth::guard('user')->user()->wallet)?Auth::guard('user')->user()->wallet->addr:'Your bitcoin wallet address'}}"><br>
+                    <input type="text" class="a2"  name="address"   placeholder="{{!is_null(Auth::guard('user')->user()->wallet)?Auth::guard('user')->user()->wallet->addr:'Your bitcoin wallet address'}}"><br>
                     <input type="submit" class="pandel-button a4" value="Submit" >
                 </form>
 

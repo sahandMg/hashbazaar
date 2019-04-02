@@ -635,7 +635,10 @@ color: orange;}
     background-color: #FFFDE8
 }
 
-.address-box input::placeholder ,
+.address-box input {
+    text-align: center !important;
+    font-size: 22px
+}
 .change-address input::placeholder {
     text-align: center;
     font-size: 22px
@@ -1322,7 +1325,7 @@ color: orange;}
     
     /* ----------Make Wallet----------- */
     .title-flex2 .dashboard-title2 {
-        font-size:10px !important ;
+        font-size:8px !important ;
         margin-top: 10px !important
     }
     .title-flex2 {
@@ -1364,7 +1367,8 @@ color: orange;}
     .address-box input {
         width: 200px;
         left: 70px;
-        margin-top: 80px !important
+        margin-top: 80px !important;
+        font-size:18px
     }
 
     .address-box input::placeholder {
@@ -1391,8 +1395,8 @@ color: orange;}
         margin-left: 100px !important;
         margin-top: 100px;
     }
-    .change-address input:nth-of-type(2) {
-        margin-left: 110px !important;
+    .change-address input.a2 {
+        margin-left: 20px !important;
         width:200px !important;
     }
 
@@ -1403,7 +1407,7 @@ color: orange;}
     .a4 {
         margin: auto;
         display:block;
-        margin-left: 10%
+        margin-left: 15%
     }
    
 }
@@ -1547,11 +1551,11 @@ color: orange;}
 
     .change-address {
         margin-left: 70px !important;
-        margin-top: 70px;
+        margin-top: 80px;
         display:block;
     }
     .change-address input.a2 {
-        margin-left: 130px !important;
+        margin-left: 20px !important;
         width:200px !important;
         margin:auto;
         display:block
@@ -1759,7 +1763,7 @@ color: orange;}
     }
 
     .change-address input.a2 {
-        margin-left: 160px !important;
+        margin-left: 50px !important;
 
     }
 

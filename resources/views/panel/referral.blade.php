@@ -423,12 +423,19 @@
      console.log("level1Hash");console.log(referalPeople);
      console.log("level1Percent");console.log(level1Percent);
 
-     var level1ReferalHash = parseInt(level1Hash*level1Percent);
-     var level2ReferalHash = parseInt(level2Hash*level2Percent);
-     var level3ReferalHash = parseInt(level3Hash*level3Percent);
-     var level4ReferalHash = parseInt(level4Hash*level4Percent);
-     var level5ReferalHash = parseInt(level5Hash*level5Percent);
-     var allReferalHash = level1ReferalHash + level2ReferalHash + level3ReferalHash + level4ReferalHash + level5ReferalHash ;
+     var level1ReferalHash = Math.floor(level1Hash*level1Percent).toFixed(1);
+     var level2ReferalHash = Math.floor(level2Hash*level2Percent).toFixed(1);
+     var level3ReferalHash = Math.floor(level3Hash*level3Percent).toFixed(1);
+     var level4ReferalHash = Math.floor(level4Hash*level4Percent).toFixed(1);
+     var level5ReferalHash = Math.floor(level5Hash*level5Percent).toFixed(1);
+     console.log("level1ReferalHash");console.log(level1ReferalHash);
+     console.log("level2ReferalHash");console.log(level2ReferalHash);
+     console.log("level3ReferalHash");console.log(level3ReferalHash);
+     console.log("level4ReferalHash");console.log(level4ReferalHash);
+     console.log("level5ReferalHash");console.log(level5ReferalHash);
+     var allReferalHash =Math.floor( parseFloat(level1ReferalHash) + parseFloat(level2ReferalHash) + parseFloat(level3ReferalHash) + parseFloat(level4ReferalHash) + parseFloat(level5ReferalHash) ).toFixed(1);
+     // allReferalHash = allReferalHash.toFixed(1);
+     console.log("allReferalHash");console.log(allReferalHash);
      var heightEachLevel = 100 ;
      // for visualiztion
      var level1 = 500;

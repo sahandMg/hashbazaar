@@ -120,9 +120,19 @@
 	<p>If you reach 500 from now on your affiliate reward will be increased to 3.5%. In other words if you reach for instance 800 referrals, you will get 2.5% of total hash power that is purchased by 500 referrals from group “C”  and 3.5% of total hash power that is purchased by 300 referrals from group “B”. </p>
 	<p>Note that all the affiliate rewards will be given by Hashbazaar to our promoters to encourage others to join the future of cryptocurrency transaction system and also gain profit from their investment.</p>
 </div>
-
+<div class="form-group fontTheme">
+    <a href="{{route('signup')}}" class="btn btn-primary round-button-com" style="margin: auto;display: block;width: 150px;">Get Starting</a>
+</div>
     <style type="text/css">
-       
+       /*.round-button-com {
+         border-radius: 100px 100px 100px 100px;
+         border: none;
+        }
+        .btn-primary {
+            color: #212529;
+            background-color: #42dca3;
+            border-color: #42dca3;
+        }*/
        .circle-output-container {
         display: flex;
         flex-direction: column; 

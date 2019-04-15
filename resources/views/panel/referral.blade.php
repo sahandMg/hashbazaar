@@ -161,6 +161,97 @@
       <p>For instance if you reach 100 referrals you will get 2.5% of total hash power that is purchased by them as your referral group “C”.</p>
       <p>If you reach 500 from now on your affiliate reward will be increased to 3.5%. In other words if you reach for instance 800 referrals, you will get 2.5% of total hash power that is purchased by 500 referrals from group “C”  and 3.5% of total hash power that is purchased by 300 referrals from group “B”. </p>
       <p>Note that all the affiliate rewards will be given by Hashbazaar to our promoters to encourage others to join the future of cryptocurrency transaction system and also gain profit from their investment.</p>
+
+      <table class="table table-bordered text-center">
+         <thead>
+            <tr>
+               <th>Banner Size (px)</th>
+               <th>Banner Download</th>
+            </tr>
+         </thead>
+         <tbody class="text-center" style="font-family:sans-serif">
+            <tr>
+               <td>120x600 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>160x600 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>200x200 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <<td>240x400 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>250x250 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>250x360 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>300x50 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>300x250 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>300x600 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>300x1050 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>320x50 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>320x100 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>336x280 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>468x60 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>580x400 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>728x90 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>930x180 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>970x90 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>970x250 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>980x120 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+         </tbody>
+      </table>
    </div>
 
    </div>

@@ -161,6 +161,97 @@
       <p>For instance if you reach 100 referrals you will get 2.5% of total hash power that is purchased by them as your referral group “C”.</p>
       <p>If you reach 500 from now on your affiliate reward will be increased to 3.5%. In other words if you reach for instance 800 referrals, you will get 2.5% of total hash power that is purchased by 500 referrals from group “C”  and 3.5% of total hash power that is purchased by 300 referrals from group “B”. </p>
       <p>Note that all the affiliate rewards will be given by Hashbazaar to our promoters to encourage others to join the future of cryptocurrency transaction system and also gain profit from their investment.</p>
+
+      <table class="table table-bordered text-center">
+         <thead>
+            <tr>
+               <th>Banner Size (px)</th>
+               <th>Banner Download</th>
+            </tr>
+         </thead>
+         <tbody class="text-center" style="font-family:sans-serif">
+            <tr>
+               <td>120x600 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>160x600 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>200x200 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <<td>240x400 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>250x250 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>250x360 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>300x50 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>300x250 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>300x600 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>300x1050 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>320x50 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>320x100 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>336x280 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>468x60 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>580x400 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>728x90 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>930x180 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>970x90 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>970x250 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+            <tr>
+               <td>980x120 </td>
+               <td><a href="">Download here</a></td>
+            </tr>
+         </tbody>
+      </table>
    </div>
 
    </div>
@@ -423,12 +514,19 @@
      console.log("level1Hash");console.log(referalPeople);
      console.log("level1Percent");console.log(level1Percent);
 
-     var level1ReferalHash = parseInt(level1Hash*level1Percent);
-     var level2ReferalHash = parseInt(level2Hash*level2Percent);
-     var level3ReferalHash = parseInt(level3Hash*level3Percent);
-     var level4ReferalHash = parseInt(level4Hash*level4Percent);
-     var level5ReferalHash = parseInt(level5Hash*level5Percent);
-     var allReferalHash = level1ReferalHash + level2ReferalHash + level3ReferalHash + level4ReferalHash + level5ReferalHash ;
+     var level1ReferalHash = Math.floor(level1Hash*level1Percent).toFixed(1);
+     var level2ReferalHash = Math.floor(level2Hash*level2Percent).toFixed(1);
+     var level3ReferalHash = Math.floor(level3Hash*level3Percent).toFixed(1);
+     var level4ReferalHash = Math.floor(level4Hash*level4Percent).toFixed(1);
+     var level5ReferalHash = Math.floor(level5Hash*level5Percent).toFixed(1);
+     console.log("level1ReferalHash");console.log(level1ReferalHash);
+     console.log("level2ReferalHash");console.log(level2ReferalHash);
+     console.log("level3ReferalHash");console.log(level3ReferalHash);
+     console.log("level4ReferalHash");console.log(level4ReferalHash);
+     console.log("level5ReferalHash");console.log(level5ReferalHash);
+     var allReferalHash =Math.floor( parseFloat(level1ReferalHash) + parseFloat(level2ReferalHash) + parseFloat(level3ReferalHash) + parseFloat(level4ReferalHash) + parseFloat(level5ReferalHash) ).toFixed(1);
+     // allReferalHash = allReferalHash.toFixed(1);
+     console.log("allReferalHash");console.log(allReferalHash);
      var heightEachLevel = 100 ;
      // for visualiztion
      var level1 = 500;

@@ -18,3 +18,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::any('cryptobox.callback.php','PaymentController@paymentCallback')->name('paymentCallback');
+
+Route::any('payment/confirmed',['as'=>'PaymentConfirmed','uses'=>'PaymentController@PaymentConfirmed']);
+Route::any('payment/created',['as'=>'PaymentCreated','uses'=>'PaymentController@PaymentCreated']);
+Route::get('payment/failed',['as'=>'PaymentFailed','uses'=>'PaymentController@PaymentFailed']);
+Route::get('payment/pending',['as'=>'PaymentPending','uses'=>'PaymentController@PaymentPending']);

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\BitCoinPrice;
 use App\BitHash;
+use App\CustomCode;
 use App\Events\Contact;
 use App\ExpiredCode;
 use App\Message;
@@ -35,7 +37,7 @@ class PanelController extends Controller
 
         $hashes = BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->get();
         $unusedCodes = DB::table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('used',0)->count();
-        if($unusedCodes > 0){
+        if($unusedCodes > 0 || session()->has('custom_code')){
             $apply_discount = 1;
         }else{
             $apply_discount = 0;
@@ -53,6 +55,8 @@ class PanelController extends Controller
 
     public function totalEarn(Request $request){
 // getting bitcoin price in usd
+        $bitCoinPriceInst = new BitCoinPrice();
+        $bitCoinPrice = $bitCoinPriceInst->getPrice()->price;
         $user = DB::table('users')->where('code',$request->user)->first();
         if(is_null($user)){
             return 404;
@@ -62,7 +66,7 @@ class PanelController extends Controller
             return [0,0];
         }
         else{
-            return $userEarn = [$mining->sum('mined_btc'),$mining->sum('mined_usd')];
+            return $userEarn = [$mining->sum('mined_btc'),$bitCoinPrice * $mining->sum('mined_btc')];
         }
     }
     /*
@@ -72,7 +76,8 @@ class PanelController extends Controller
 
         $user = DB::table('users')->where('code',$request->user)->first();
         $reports = MiningReport::where('user_id',$user->id)->get();
-
+        $btcPriceInst = new BitCoinPrice();
+        $btcPrice = $btcPriceInst->getPrice()->price;
         if(count($reports) == 0){
             return 404;
         }
@@ -81,7 +86,7 @@ class PanelController extends Controller
             $time = Carbon::now()->subDay($i);
             $reports = MiningReport::whereDate('created_at',$time)->where('user_id',$user->id)->get();
             if(count($reports) > 0){
-                $totalUsd =  $reports->sum('mined_usd');
+                $totalUsd =  $reports->sum('mined_btc')*$btcPrice;
                 $data[$i] = ['time'=>$time->format('d M') , 'mined'=>$totalUsd];
             }
 
@@ -118,6 +123,44 @@ class PanelController extends Controller
         $code = $request->referralCode;
         $referralUser = DB::table('users')->where('code',$code)->where('id','!=',Auth::id())->first();
         $is_expired = DB::table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('code',$code)->first();
+
+        // check if it is a custom code or not
+
+        $customCode = CustomCode::where('code',$code)->first();
+
+
+        if(isset($customCode) && $customCode->expired == 0){
+
+            // use user_id column as an array that contains user ids that applied the discount code
+            // first check if current user is in the array or not
+
+            $users_id = in_array(Auth::guard('user')->id(),unserialize($customCode->user_id));
+
+            if(!$users_id){
+                $ids = unserialize($customCode->user_id);
+                array_push($ids,Auth::guard('user')->id());
+                $customCode->update(['user_id'=> serialize($ids)]);
+                $customCode->update(['sharing_number'=> $customCode->sharing_number + 1]);
+                session(['custom_code'=>$customCode->code]);
+                session(['discount'=> 0.1]);
+                return [
+                    'type'=>'custom',
+                    'body'=>'code accepted',
+                    'code'=>$customCode->code,
+                    'discount'=>$customCode->discount
+                ];
+
+            }else{
+
+                return [
+                    'type'=>'error',
+                    'body'=>"Expired code entered",
+                ];
+            }
+
+
+
+        }
         // check if the code is used before
         if(!is_null($is_expired)){
 
@@ -230,9 +273,6 @@ class PanelController extends Controller
         }else{
             return redirect()->back()->with(['error'=>'current password is wrong']);
         }
-
-
-
 
     }
 

@@ -12,6 +12,8 @@
 */
 
 use App\BitHash;
+use App\CoinBaseCharge;
+use App\CustomCode;
 use App\Jobs\subscriptionMailJob;
 use App\Mining;
 use App\MiningReport;
@@ -88,7 +90,19 @@ Route::get('job',function(){
     return view('cryptoMailPage',compact('CryptoCrawl'));
 });
 
-Route::get('charge/create','PaymentController@createCharge');
+Route::get('mail',function (){
+
+
+    session()->forget('custom_code');
+
+
+
+
+
+});
+
+
+Route::post('charge/create','PaymentController@createCharge')->name('chargeCreate');
 Route::get('charge/show/{id?}','PaymentController@getCharges');
 Route::get('charge/list','PaymentController@listCharges');
 Route::get('charge/cancel/{id?}','PaymentController@cancelCharge');
@@ -97,6 +111,7 @@ Route::get('checkout/list','PaymentController@listCheckouts');
 Route::get('checkout/create','PaymentController@createCheckout');
 Route::get('checkout/update/{productid?}','PaymentController@updateCheckout');
 Route::get('checkout/delete/{productid?}','PaymentController@deleteCheckout');
+
 
 Route::get('events/list','PaymentController@eventList');
 Route::get('events/show/{productid?}','PaymentController@eventShow');

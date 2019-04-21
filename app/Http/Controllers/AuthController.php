@@ -241,6 +241,11 @@ class AuthController extends Controller
         ];
         event(new \App\Events\ReferralQuery($user));
         Auth::guard('user')->login($user);
+        Mail::send('email.newUser',['user'=>$user],function($message) use($data){
+            $message->from ('Admin@HashBazaar');
+            $message->to ('info@hashbazaar.com');
+            $message->subject ('New User');
+        });
         Mail::send('email.thanks',$data,function($message) use($data){
             $message->from ('Admin@HashBazaar');
             $message->to ($data['email']);

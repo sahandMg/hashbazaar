@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\BitHash;
+use App\CoinBaseCharge;
+use App\CoinBaseCheckout;
 use App\Crawling\CoinMarketCap;
 use function App\CryptpBox\lib\cryptobox_selcoin;
 use function App\CryptpBox\lib\run_sql;
+use App\Events\CoinBaseNewProduct;
 use App\ExpiredCode;
 use App\Log;
 use App\Mining;
@@ -33,34 +36,45 @@ class PaymentController extends Controller
     public $apikey;
     public $publickey;
     public $privatekey;
+    public $th_usd;
+    public $hash_life;
     public function __construct()
     {
         $settings = DB::table('settings')->first();
         $this->apikey = $settings->apikey;
         $this->publickey = $settings->publickey;
         $this->privatekey = $settings->privatekey;
+        $this->th_usd = $settings->usd_per_hash;
+        $this->hash_life = $settings->hash_life;
     }
-
+// runs when a user click on shopping and redirects to coinbase payment page
     public function createCharge(Request $request){
+
+        $settings = Setting::first();
         $request = $request->all();
+        $discount = $request['discount'];
+        $hash = $request['hash'];
+        $name =  $request['hash'].'T Hash Power';
+        $description = 'HashBazaar Bitcoin Cloud Mining';
+        $amount = $this->th_usd * $hash * (1- $discount);
+        $referralCode = $request['code'];
         $url =  "https://api.commerce.coinbase.com/charges";
         $payload = [
-        "name"=> $request['name'],
-       "description"=> $request['description'],
-       "local_price"=> [
-         "amount"=> $request['amount'],
+        "name"=> $name,
+        "description"=> $description,
+        "local_price"=> [
+         "amount"=> $amount,
          "currency"=> "USD"
        ],
        "pricing_type"=> "fixed_price",
        "metadata"=> [
-            "customer_id"=> "id_1005",
-         "customer_name"=> "Satoshi Nakamoto"
+         "customer_id"=> Auth::id(),
+         "customer_name"=> Auth::user()->name
        ],
-       "redirect_url"=> "http://hashbazaar.com/completed/page",
-       "cancel_url"=> "https://hashbazaar.com/canceled/page",
+       "redirect_url"=> "https://hashbazaar.com/payment/success",
+       "cancel_url"=> "https://hashbazaar.com/payment/canceled",
 
         ];
-
         $ch = curl_init();
         curl_setopt($ch,CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array("X-CC-Api-Key:$this->apikey",
@@ -70,23 +84,92 @@ class PaymentController extends Controller
         $result = curl_exec($ch);
         curl_close($ch);
 
-        return($result);
+        $result = json_decode($result,true)['data'];
+        // record charge query in database
+        $newCharge = new CoinBaseCharge();
+        $newCharge->user_id = Auth::id();
+        $newCharge->transaction_id = $result['code'];
+        $newCharge->bitcoin_address = $result['addresses']['bitcoin'];
+        $newCharge->charge_id = $result['id'];
+        $newCharge->product_name = $result['name'];
+        $newCharge->product_price = $result['pricing']['local']['amount'];
+        $newCharge->product_btc = $result['pricing']['bitcoin']['amount'];
+        $newCharge->expires_at = $result['expires_at'];
+        $newCharge->status = 'new';
+        $newCharge->save();
+        // creates a new product if it's not available in checkout database
+        try{
+
+            $query = CoinBaseCheckout::where('name',$result['name'])->firstOrFail();
+            $checkout_id = $query->checkout_id;
+        }catch (\Exception $ex){
+
+            $info = [
+                'name'=>$name,
+                'description'=>$description,
+                'amount' => $this->th_usd * $hash
+            ];
+            $checkout_id = $this->createCheckout($info);
+        }
+
+        // create database record
+
+        $hashRecord = new BitHash();
+        $hashRecord->hash = $hash;
+        $hashRecord->user_id = Auth::guard('user')->id();
+        $hashRecord->order_id = $result['code'];
+        $hashRecord->confirmed = 0;
+        $hashRecord->referral_code = $referralCode;
+        $hashRecord->life = $this->hash_life;
+        $hashRecord->remained_day = Carbon::now()->diffInDays(Carbon::now()->addYears($hashRecord->life));
+        $hashRecord->save();
+
+        $settings->update(['available_th'=>$settings->available_th - $hash]);
+        $settings->save();
+
+        $mining = new Mining();
+        $mining->mined_btc = 0;
+        $mining->mined_usd = 0;
+        $mining->user_id = Auth::guard('user')->id();
+        $mining->order_id = $result['code'];
+        $mining->block = 1;
+        $mining->save();
+
+        $trans = new Transaction();
+        $trans->amount_btc = $amount;
+        $trans->code = $result['code'];
+        $trans->status = 'unpaid';
+        $trans->user_id = Auth::guard('user')->id();
+        $trans->checkout = 'out';
+        $trans->save();
+
+
+
+        return redirect('https://commerce.coinbase.com/charges/'.$result['code']);
+//        return redirect('https://commerce.coinbase.com/checkout/dd47f6ee-9166-4f7a-8cbf-856811ac0df4');
     }
 
     // get specific charge record
-    public function getCharges(Request $request){
-        $id = $request->id;
+    public function getCharges($id){
+
         $url =  "https://api.commerce.coinbase.com/charges/$id";
 
-        $ch = curl_init();
-        curl_setopt($ch,CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array("X-CC-Api-Key:$this->apikey",
-            "X-CC-Version: 2018-03-22",'Content-Type: application/json'));
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $result = curl_exec($ch);
-        curl_close($ch);
+        try{
 
-        return($result);
+            $ch = curl_init();
+            curl_setopt($ch,CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array("X-CC-Api-Key:$this->apikey",
+                "X-CC-Version: 2018-03-22",'Content-Type: application/json'));
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $result = curl_exec($ch);
+            curl_close($ch);
+            return $result;
+        }catch (\Exception $exception){
+
+            return $exception;
+        }
+
+
     }
 
 
@@ -102,7 +185,7 @@ class PaymentController extends Controller
         $result = curl_exec($ch);
         curl_close($ch);
 
-        return($result);
+        dd(json_decode($result,true));
     }
 
     // cancel a specific charge
@@ -120,12 +203,14 @@ class PaymentController extends Controller
         return($result);
 
     }
+
+
 // define new product
 // required amount , name , description
-    public function createCheckout(Request $request){
-        $amount = $request->amount;
-        $name = $request->name;
-        $description = $request->description;
+    public function createCheckout(array $info){
+        $amount = $info['amount'];
+        $name = $info['name'];
+        $description = $info['description'];
         $url =  "https://api.commerce.coinbase.com/checkouts";
         $payload = [
             "name"=> $name,
@@ -135,7 +220,7 @@ class PaymentController extends Controller
                 "currency"=> "USD"
             ],
             "pricing_type"=> "fixed_price",
-            "requested_info"=> ["email"]
+            "requested_info" => []
         ];
 
         $ch = curl_init();
@@ -146,10 +231,17 @@ class PaymentController extends Controller
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $result = curl_exec($ch);
         curl_close($ch);
-        return($result);
+        $result = json_decode($result,true)['data'];
+        $newCheckout = new CoinBaseCheckout();
+        $newCheckout->name = $result['name'];
+        $newCheckout->description = $result['description'];
+        $newCheckout->checkout_id = $result['id'];
+        $newCheckout->price = $result['local_price']['amount'];
+        $newCheckout->save();
+        return $result['id'];
     }
 
-    public function listCheckouts(Request $request){
+    private function listCheckouts(){
 
         $url =  "https://api.commerce.coinbase.com/checkouts";
         $ch = curl_init();
@@ -160,7 +252,7 @@ class PaymentController extends Controller
         $result = curl_exec($ch);
         curl_close($ch);
 
-        return($result);
+        return(json_decode($result,true));
 
 
     }
@@ -207,6 +299,20 @@ class PaymentController extends Controller
         return $result;
     }
 
+    public function showCheckout(Request $request){
+
+        $url =  "https://api.commerce.coinbase.com/checkouts".$request->checkout_id;
+        $ch = curl_init();
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array("X-CC-Api-Key:$this->apikey",
+            "X-CC-Version: 2018-03-22"));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
+        curl_close($ch);
+        return(json_decode($result,true));
+
+    }
+
     public function eventList(){
         $url = "https://api.commerce.coinbase.com/events";
         $ch = curl_init();
@@ -216,7 +322,7 @@ class PaymentController extends Controller
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $result = curl_exec($ch);
         curl_close($ch);
-        return $result;
+        dd(json_decode($result,true));
     }
 
     public function eventShow(Request $request){
@@ -234,6 +340,131 @@ class PaymentController extends Controller
     }
 
 
+    public function PaymentConfirmed(Request $request){
+
+        $event = $request->all();
+
+        $transaction_id = $event['event']['data']['code'];
+        if($event['event']['type'] == 'charge:confirmed'){
+
+            $confirmedCharge = $this->getCharges('TBMZD7QA');
+            $charge = json_decode($confirmedCharge,true)['data'];
+            $address = $charge['addresses']['bitcoin'];
+//            This means the payment is successful
+            if(isset($charge['confirmed_at'])){
+
+                $this->confirmMining($transaction_id,$address);
+            }
+        }
+
+
+
+
+
+
+    }
+
+    private function confirmMining($transaction_id,$address)
+    {
+
+        $orderID = $transaction_id;
+        $hashPower = BitHash::where('order_id', $orderID)->first();
+        $mining = Mining::where('order_id', $orderID)->first();
+        $settings = Setting::first();
+        $coinbaseChargeRecord = CoinBaseCharge::where('transaction_id', $transaction_id)->first();
+        $coinbaseChargeRecord->update(['status'=>'confirmed']);
+        $user = $coinbaseChargeRecord->user;
+        $hashPower->update(['confirmed' => 1]);
+        $hashPower->save();
+        $mining->update(['block' => 0]);
+        $mining->save();
+        // update created transaction record
+        DB::table('transactions')->where('code', $orderID)->update([
+            'addr' => $address,
+            'country' => $user->country,
+            'status' => 'paid'
+        ]);
+
+        $trans = DB::table('transactions')->where('code', $orderID)->first();
+
+        Mail::send('email.paymentConfirmed', ['hashPower' => $hashPower, 'trans' => $trans], function ($message) use ($user) {
+            $message->from('Admin@HashBazaar');
+            $message->to($user->email);
+            $message->subject('Payment Confirmed');
+        });
+
+//                $referralUser = DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->first();
+        $referralCode = $hashPower->referral_code;
+        $referralQuery = Referral::where('code', $referralCode)->first();
+        // if any referral code used for hash owner purchasing
+        if (!is_null($referralCode)) {
+
+            $codeCaller = User::where('code', $referralCode)->first();// code caller user
+            /*
+             * reward new th to the code caller
+             * ============================
+             * increasing share level
+             */
+
+            $sharings = Sharing::all()->toArray();
+            $total_sharing_num = $referralQuery->total_sharing_num;
+
+            for ($i = 0; $i < count($sharings); $i++) {
+
+                if ($sharings[$i]['sharing_number'] < $total_sharing_num) {
+
+                    if ($i == count($sharings) - 1) {
+
+                        $referralQuery->update([
+                            'share_level' => $sharings[$i]['level']
+                        ]);
+                        $referralQuery->save();
+                    } else {
+                        $referralQuery->update([
+                            'share_level' => $sharings[$i + 1]['level']
+                        ]);
+                        $referralQuery->save();
+                    }
+
+                }
+            }
+
+            $share_level = $referralQuery->share_level;
+            $share_value = DB::table('sharings')->where('level', $share_level)->first()->value;
+            $hash = new BitHash();
+            $hash->hash = $hashPower->hash * $share_value;
+            $hash->user_id = $codeCaller->id;
+            $hash->order_id = 'referral';
+            $hash->confirmed = 1;
+            $hash->life = $settings->hash_life;
+            $hash->remained_day = Carbon::now()->diffInDays(Carbon::now()->addYears($hash->life));
+            $hash->save();
+            $mining = new Mining();
+            $mining->mined_btc = 0;
+            $mining->mined_usd = 0;
+            $mining->user_id = $codeCaller->id;
+            $mining->order_id = 'referral';
+            $mining->block = 0;
+            $mining->save();
+        }
+    }
+// create new charge
+    public function PaymentCreated(Request $request){
+
+        $event = $request->all();
+        $transaction_id = $event['event']['data']['code'];
+        $user = CoinBaseCharge::where('transaction_id', $transaction_id)->first()->user;
+        $query = DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->first();
+        if(!is_null($query)){
+            DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->update(['used'=>1]);
+        }
+
+        // TODO Place this code in callback from gateway
+        if(session()->has('custom_code')){
+            session()->forget('custom_code');
+        }
+
+    }
 
     public function postPayment(Request $request){
 

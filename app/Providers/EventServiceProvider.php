@@ -23,6 +23,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         'App\Events\ReferralQuery' => [
             'App\Listeners\makeQuery'
+        ],
+        'App\Events\CoinBaseNewProduct' => [
+            'App\Listeners\makeProduct'
         ]
     ];
 

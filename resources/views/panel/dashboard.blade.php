@@ -227,10 +227,14 @@
           <p class="text-center">You have to pay your invoice with bitcoin. If you do not have , you can purchase it from this <a href="https://www.bitpremier.com/buy-bitcoins"> list</a></p>
           <p class="text-center"><b>Or</b><p/>
           <br/>
-          <form class="dashboard-page" method="post" action="{{route('payment')}}">
+          <form class="dashboard-page" method="post" action="{{route('chargeCreate')}}">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
               @if($apply_discount == 1)
-              <input type="hidden" name="discount" value="{{$settings->sharing_discount}}">
+                  @if(session()->has('custom_code'))
+                    <input type="hidden" name="discount" value="{{session('discount')}}">
+                  @else
+                      <input type="hidden" name="discount" value="{{$settings->sharing_discount}}">
+                  @endif
               @else
                   <input type="hidden" name="discount" value="0">
               @endif 
@@ -547,7 +551,7 @@
                     if( numItems > 3)
                     {
                         $('.Hash-History').css('overflow-y' , "scroll");
-                    console.log("numItems > 3");
+//                    console.log("numItems > 3");
                     } else {
                         $('.Hash-History').css('overflow-y' , "hidden");
                     console.log("numItems < 3");
@@ -575,6 +579,7 @@
                 var output = document.getElementById("demo");
                 var costAfterCode = document.getElementById("doReferalCode");
                 var cost = document.getElementById('cost');
+                var resp
                 // for checking referal code
                 function sendCode() {
 
@@ -582,16 +587,28 @@
 
                     axios.post('{{route('SendCode')}}',{referralCode:code}).then(function (response) {
 
-                        var resp = response.data;
+                         resp = response.data;
+
                         if(resp['type'] == 'error'){
                             alertify.error(resp['body']);
                             $('#doReferalCode').hide()
-                        }else{
+                        }else if(resp['type'] == 'message'){
                             alertify.success(resp['body']);
                             document.getElementById('hiddenCodeValue').value = code;
                             thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!};
                             costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode ) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
                             console.log(thPrice);
+                            activateDiscount = 1;
+                            $('#doReferalCode').show()
+                        }
+                        // custom discount code
+                        else{
+
+                            alertify.success(resp['body']);
+                            document.getElementById('hiddenCodeValue').value = resp['code'];
+                            thPriceAfterCode = {!! $settings->usd_per_hash!!} * (1 -(resp['discount']));
+                            costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode ) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
+//                            console.log(thPrice);
                             activateDiscount = 1;
                             $('#doReferalCode').show()
                         }
@@ -603,8 +620,18 @@
                 cost.innerHTML = slider.value * thPrice ;
                     if(activateDiscount == 1){
                         $('#doReferalCode').show()
-                        thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!};
-                        costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
+                        // check if custom code applied or not
+
+                        if({!! json_encode(session()->has('custom_code')) !!} || resp['code'] != 'undefined' ){
+
+                            thPriceAfterCode = {!! json_encode($settings->usd_per_hash * (1 - session('discount'))) !!} ;
+                            costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode ) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
+                        }else{
+
+                            thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!};
+                            costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
+                        }
+
                     }
                     else
                     $('#doReferalCode').hide()
@@ -612,11 +639,21 @@
                     // Display the default slider value
                     
                     slider.oninput = function() {
+                        console.log({!! json_encode(session()->has('custom_code')) !!})
                         hiddenRange.value = this.value;
                         output.innerHTML = this.value+' Th';
                         if(activateDiscount == 1){
-                            thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!};
-                            costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
+
+                            if({!! json_encode(session()->has('custom_code')) !!} || resp['code'] != 'undefined'){
+
+                                thPriceAfterCode = {!! json_encode($settings->usd_per_hash * (1 - session('discount'))) !!} ;
+                                costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode ) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
+                            }else{
+
+                                thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!};
+                                costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
+                            }
+
                         }
                         cost.innerHTML = slider.value  * thPrice;
                         };
@@ -624,6 +661,7 @@
                   // for geting total earn
 
                 axios.post({!! json_encode(route('totalEarn')) !!},{'user':user}).then(function (response) {
+
                     if(response.data[0] == 0){
 
                         document.getElementById('miningBTC').innerHTML = 0;
@@ -658,7 +696,7 @@
                 
 
                 dateTime = response.data;
-                console.log(dateTime);
+//                console.log(dateTime);
                 var timeLabels= [];
                 var data= [];
                 if(dateTime !== 404){

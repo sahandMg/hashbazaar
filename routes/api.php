@@ -21,5 +21,6 @@ Route::any('cryptobox.callback.php','PaymentController@paymentCallback')->name('
 
 Route::any('payment/confirmed',['as'=>'PaymentConfirmed','uses'=>'PaymentController@PaymentConfirmed']);
 Route::any('payment/created',['as'=>'PaymentCreated','uses'=>'PaymentController@PaymentCreated']);
-Route::get('payment/failed',['as'=>'PaymentFailed','uses'=>'PaymentController@PaymentFailed']);
-Route::get('payment/pending',['as'=>'PaymentPending','uses'=>'PaymentController@PaymentPending']);
+Route::any('payment/failed',['as'=>'PaymentFailed','uses'=>'PaymentController@PaymentFailed']);
+Route::any('payment/pending',['as'=>'PaymentPending','uses'=>'PaymentController@PaymentPending']);
+Route::any('payment/delayed',['as'=>'PaymentDelayed','uses'=>'PaymentController@PaymentDelayed']);

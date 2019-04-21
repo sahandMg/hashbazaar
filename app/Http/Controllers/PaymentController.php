@@ -448,7 +448,7 @@ class PaymentController extends Controller
             $mining->save();
         }
     }
-// create new charge
+// Executes when a new charge is create
     public function PaymentCreated(Request $request){
 
         $event = $request->all();
@@ -464,6 +464,27 @@ class PaymentController extends Controller
             session()->forget('custom_code');
         }
 
+    }
+
+    public function PaymentFailed(Request $request){
+
+        $event = $request->all();
+        $transaction_id = $event['event']['data']['code'];
+        CoinBaseCharge::where('transaction_id', $transaction_id)->first()->update(['status'=>'failed']);
+    }
+
+    public function PaymentPending(Request $request){
+
+        $event = $request->all();
+        $transaction_id = $event['event']['data']['code'];
+        CoinBaseCharge::where('transaction_id', $transaction_id)->first()->update(['status'=>'pending']);
+    }
+
+    public function PaymentDelayed(Request $request){
+
+        $event = $request->all();
+        $transaction_id = $event['event']['data']['code'];
+        CoinBaseCharge::where('transaction_id', $transaction_id)->first()->update(['status'=>'delayed']);
     }
 
     public function postPayment(Request $request){

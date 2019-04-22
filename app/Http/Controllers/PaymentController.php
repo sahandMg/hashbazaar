@@ -482,6 +482,17 @@ class PaymentController extends Controller
         CoinBaseCharge::where('transaction_id', $transaction_id)->first()->update(['status'=>'delayed']);
     }
 
+    public function PaymentCanceled(){
+
+        return view('PaymentCanceled');
+    }
+
+     public function PaymentSuccess(){
+
+        return view('PaymentSuccess');
+    }
+
+
     public function postPayment(Request $request){
 
         DEFINE("CRYPTOBOX_PHP_FILES_PATH", app_path()."/CryptoBox/lib/");        	// path to directory with files: cryptobox.class.php / cryptobox.callback.php / cryptobox.newpayment.php;

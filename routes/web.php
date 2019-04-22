@@ -149,6 +149,10 @@ Route::post('signup','AuthController@post_signup')->name('signup');
 Route::get('pricing','PageController@Pricing');
 
 Route::get('received/{orderID?}','PaymentController@checkPaymentReceived')->name('checkPaymentReceived');
+
+Route::get('payment/canceled','PaymentController@PaymentCanceled')->name('PaymentCanceled');
+
+ Route::get('payment/success','PaymentController@PaymentSuccess')->name('PaymentSuccess');
 /*
 ===============================================================================
                                 User Panel Routes

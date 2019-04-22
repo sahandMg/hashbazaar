@@ -357,11 +357,6 @@ class PaymentController extends Controller
             }
         }
 
-
-
-
-
-
     }
 
     private function confirmMining($transaction_id,$address)

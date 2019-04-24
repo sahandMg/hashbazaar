@@ -64,6 +64,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 advantages-detail">
                     <h3>Other advantages:</h3>
                     <ul>
+                    
                         <li>
                             <h5>Instant mining</h5>
                             <p>Start mining immediately after confirming payment without any concerns and challenges.</p>

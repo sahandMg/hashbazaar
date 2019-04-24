@@ -81,6 +81,122 @@ a {
 #header-navbar-menu ul li:hover:after {
   width: 100%;
 }
+#header-navbar-menu ul .signup {
+  -webkit-animation-name: singup;
+  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+  animation-name: singup;
+  animation-duration: 2s;
+  animation-iteration-count: 2;
+  position: relative;
+  
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes singup {
+  0%{
+      -ms-transform: rotate(0deg); /* IE 9 */
+      -webkit-transform: rotate(0deg); /* Safari 3-8 */
+      transform: rotate(0deg);
+  }
+
+  20%{
+    -ms-transform: rotate(20deg); /* IE 9 */
+    -webkit-transform: rotate(20deg); /* Safari 3-8 */
+    transform: rotate(20deg);
+  }
+
+  30%{
+    -ms-transform: rotate(10deg); /* IE 9 */
+    -webkit-transform: rotate(10deg); /* Safari 3-8 */
+    transform: rotate(10deg);
+  }
+
+  40%{
+    -ms-transform: rotate(-20deg); /* IE 9 */
+    -webkit-transform: rotate(-20deg); /* Safari 3-8 */
+    transform: rotate(-20deg);
+  }
+
+  50%{
+    -ms-transform: rotate(-10deg); /* IE 9 */
+    -webkit-transform: rotate(-10deg); /* Safari 3-8 */
+    transform: rotate(-10deg);
+  }
+
+  60%{
+    -ms-transform: rotate(20deg); /* IE 9 */
+    -webkit-transform: rotate(20deg); /* Safari 3-8 */
+    transform: rotate(20deg);
+  }
+
+  80%{
+    -ms-transform: rotate(-20deg); /* IE 9 */
+    -webkit-transform: rotate(-20deg); /* Safari 3-8 */
+    transform: rotate(-20deg);
+
+  }
+
+  100%{
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Safari 3-8 */
+    transform: rotate(0deg);
+  }
+}
+
+/* Standard syntax */
+@keyframes singup {
+  
+    0%{
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -webkit-transform: rotate(0deg); /* Safari 3-8 */
+        transform: rotate(0deg);
+    }
+
+    20%{
+      -ms-transform: rotate(20deg); /* IE 9 */
+      -webkit-transform: rotate(20deg); /* Safari 3-8 */
+      transform: rotate(20deg);
+    }
+
+    30%{
+      -ms-transform: rotate(10deg); /* IE 9 */
+      -webkit-transform: rotate(10deg); /* Safari 3-8 */
+      transform: rotate(10deg);
+    }
+
+    40%{
+      -ms-transform: rotate(-20deg); /* IE 9 */
+      -webkit-transform: rotate(-20deg); /* Safari 3-8 */
+      transform: rotate(-20deg);
+    }
+
+    50%{
+      -ms-transform: rotate(-10deg); /* IE 9 */
+      -webkit-transform: rotate(-10deg); /* Safari 3-8 */
+      transform: rotate(-10deg);
+    }
+
+    60%{
+      -ms-transform: rotate(20deg); /* IE 9 */
+      -webkit-transform: rotate(20deg); /* Safari 3-8 */
+      transform: rotate(20deg);
+    }
+
+    80%{
+      -ms-transform: rotate(-20deg); /* IE 9 */
+      -webkit-transform: rotate(-20deg); /* Safari 3-8 */
+      transform: rotate(-20deg);
+
+    }
+
+    100%{
+      -ms-transform: rotate(0deg); /* IE 9 */
+      -webkit-transform: rotate(0deg); /* Safari 3-8 */
+      transform: rotate(0deg);
+    }
+}
+
 
 #header-navbar-menu ul .login:after , .signup:after {
   background: transparent !important;
@@ -152,6 +268,37 @@ header img { height: 175px;margin-bottom: 4%; }
 }
 .advantages li {
   margin-bottom: 2%;
+}
+
+.animated {
+  -webkit-animation-name: buttonArrow; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+  animation-name: buttonArrow;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  position: relative;
+  padding-top:10px !important
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes buttonArrow {
+  0%   {margin-top:0px;}
+  5%  {margin-top:5px;}
+  10%  {margin-top:0px;}
+  15%  {margin-top:5px;}
+  20%  {margin-top:0px;}
+  100% {margin-top:0px;}
+}
+
+/* Standard syntax */
+@keyframes buttonArrow {
+  0%   {margin-top:0px;}
+  5%  {margin-top:5px;}
+  10%  {margin-top:0px;}
+  15%  {margin-top:5px;}
+  20%  {margin-top:0px;}
+  100% {margin-top:0px;}
 }
 
 @media only screen and (max-width:1280px) {

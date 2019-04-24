@@ -24,3 +24,4 @@ Route::any('payment/created',['as'=>'PaymentCreated','uses'=>'PaymentController@
 Route::any('payment/failed',['as'=>'PaymentFailed','uses'=>'PaymentController@PaymentFailed']);
 Route::any('payment/pending',['as'=>'PaymentPending','uses'=>'PaymentController@PaymentPending']);
 Route::any('payment/delayed',['as'=>'PaymentDelayed','uses'=>'PaymentController@PaymentDelayed']);
+Route::any('payment/resolved',['as'=>'PaymentResolved','uses'=>'PaymentController@PaymentResolved']);

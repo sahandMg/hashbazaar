@@ -230,13 +230,11 @@
           <form class="dashboard-page" method="post" action="{{route('chargeCreate')}}">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
               @if($apply_discount == 1)
-                  @if(session()->has('custom_code'))
-                    <input type="hidden" name="discount" value="{{session('discount')}}">
-                  @else
-                      <input type="hidden" name="discount" value="{{$settings->sharing_discount}}">
-                  @endif
+
+                  <input id="discount" type="hidden" name="discount" value="{{$discount}}">
+
               @else
-                  <input type="hidden" name="discount" value="0">
+                  <input id="discount" type="hidden" name="discount" value="0">
               @endif 
             <input id='hiddenCodeValue' type="hidden" name="code" style="margin-top:5px" value="{{$AppliedCode}}" >
             <input type="range" hidden min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="hiddenRange">
@@ -571,6 +569,7 @@
                 };
                  // referal code
                 var activateDiscount = {!! $apply_discount !!};// $apply_discount == 0 Or 1
+                var discount = {!! $discount !!}
                 var thPrice = {!! $settings->usd_per_hash !!};
                 var thPriceAfterCode ;
                 var slider = document.getElementById("myRange");
@@ -579,7 +578,7 @@
                 var output = document.getElementById("demo");
                 var costAfterCode = document.getElementById("doReferalCode");
                 var cost = document.getElementById('cost');
-                var resp
+                var resp = [];
                 // for checking referal code
                 function sendCode() {
 
@@ -592,65 +591,65 @@
                         if(resp['type'] == 'error'){
                             alertify.error(resp['body']);
                             $('#doReferalCode').hide()
-                        }else if(resp['type'] == 'message'){
+                        }else{
                             alertify.success(resp['body']);
                             document.getElementById('hiddenCodeValue').value = code;
-                            thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!};
+                            document.getElementById('discount').value = resp['discount'];
+                            thPriceAfterCode = {!! $settings->usd_per_hash !!} * (1 - resp['discount'] );
                             costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode ) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
                             console.log(thPrice);
                             activateDiscount = 1;
                             $('#doReferalCode').show()
                         }
                         // custom discount code
-                        else{
+                        {{--else{--}}
 
-                            alertify.success(resp['body']);
-                            document.getElementById('hiddenCodeValue').value = resp['code'];
-                            thPriceAfterCode = {!! $settings->usd_per_hash!!} * (1 -(resp['discount']));
-                            costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode ) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
-//                            console.log(thPrice);
-                            activateDiscount = 1;
-                            $('#doReferalCode').show()
-                        }
+                            {{--alertify.success(resp['body']);--}}
+                            {{--document.getElementById('hiddenCodeValue').value = resp['code'];--}}
+                            {{--thPriceAfterCode = {!! $settings->usd_per_hash!!} * (1 -(resp['discount']));--}}
+                            {{--costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode ) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;--}}
+{{--//                            console.log(thPrice);--}}
+                            {{--activateDiscount = 1;--}}
+                            {{--$('#doReferalCode').show()--}}
+                        {{--}--}}
 
                     });
                 };
-
                  output.innerHTML = slider.value+' Th';
                 cost.innerHTML = slider.value * thPrice ;
                     if(activateDiscount == 1){
                         $('#doReferalCode').show()
                         // check if custom code applied or not
+                        if({!! json_encode($discount == 0) !!}){
 
-                        if({!! json_encode(session()->has('custom_code')) !!} || resp['code'] != 'undefined' ){
+                            thPriceAfterCode = {!! $settings->usd_per_hash !!} * (1 - resp['discount'] );;
+                            costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
 
-                            thPriceAfterCode = {!! json_encode($settings->usd_per_hash * (1 - session('discount'))) !!} ;
-                            costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode ) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
                         }else{
 
-                            thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!};
+                            thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $discount) !!};
                             costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
                         }
-
                     }
                     else
                     $('#doReferalCode').hide()
                     
                     // Display the default slider value
-                    
+//                console.log(document.getElementById('discount').value)
                     slider.oninput = function() {
-                        console.log({!! json_encode(session()->has('custom_code')) !!})
+                        console.log(resp)
                         hiddenRange.value = this.value;
                         output.innerHTML = this.value+' Th';
                         if(activateDiscount == 1){
 
-                            if({!! json_encode(session()->has('custom_code')) !!} || resp['code'] != 'undefined'){
+                            if({!! json_encode($discount == 0) !!}){
 
-                                thPriceAfterCode = {!! json_encode($settings->usd_per_hash * (1 - session('discount'))) !!} ;
-                                costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode ) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
+                                thPriceAfterCode = {!! $settings->usd_per_hash !!} * (1 - resp['discount'] );;
+                                costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
+
                             }else{
 
-                                thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $settings->sharing_discount) !!};
+                                thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $discount) !!};
                                 costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
                             }
 

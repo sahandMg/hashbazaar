@@ -12,9 +12,11 @@ use App\Mining;
 use App\MiningReport;
 use App\Referral;
 use App\ReferralCode;
+use App\Setting;
 use App\Sharing;
 use App\Wallet;
 use Carbon\Carbon;
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,30 +25,40 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Artisan;
 use App\Jobs\CryptoJob;
+use Illuminate\Support\Facades\Response;
+use League\Flysystem\Exception;
+
 class PanelController extends Controller
 {
-
+    public $settings;
     public function __construct()
     {
         $this->middleware('auth');
+        $this->settings = Setting::first();
     }
 
     public function dashboard(){
 
-
-
         $hashes = BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->get();
-        $unusedCodes = DB::table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('used',0)->count();
-        if($unusedCodes > 0 || session()->has('custom_code')){
+        $unusedCodes = DB::table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('used',0)->first();
+        if(!is_null($unusedCodes)){
+
+            if($unusedCodes->is_custom == 1){
+                $discount = CustomCode::where('code',$unusedCodes->code)->first()->discount;
+            }else{
+                $discount = $this->settings->sharing_discount;
+            }
             $apply_discount = 1;
         }else{
             $apply_discount = 0;
+            $discount = 0;
         }
+
         if(session()->has('hashPower')){
             $hashPower = session('hashPower');
-            return view('panel.dashboard',compact('hashes','apply_discount','hashPower'));
+            return view('panel.dashboard',compact('hashes','apply_discount','hashPower','discount'));
         }
-        return view('panel.dashboard',compact('hashes','apply_discount'));
+        return view('panel.dashboard',compact('hashes','apply_discount','discount'));
     }
 
     /*
@@ -120,45 +132,54 @@ class PanelController extends Controller
     public function postDashboard(Request $request,Hash $hash){
 
 
-        $code = $request->referralCode;
+        $code = strtolower($request->referralCode);
         $referralUser = DB::table('users')->where('code',$code)->where('id','!=',Auth::id())->first();
         $is_expired = DB::table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('code',$code)->first();
-
+        $settings = Setting::first();
         // check if it is a custom code or not
 
         $customCode = CustomCode::where('code',$code)->first();
 
 
-        if(isset($customCode) && $customCode->expired == 0){
+        if(isset($customCode) && $customCode->expired == 0 && is_null($is_expired)){
 
             // use user_id column as an array that contains user ids that applied the discount code
             // first check if current user is in the array or not
 
-            $users_id = in_array(Auth::guard('user')->id(),unserialize($customCode->user_id));
+//            $users_id = in_array(Auth::guard('user')->id(),unserialize($customCode->user_id));
 
-            if(!$users_id){
-                $ids = unserialize($customCode->user_id);
-                array_push($ids,Auth::guard('user')->id());
-                $customCode->update(['user_id'=> serialize($ids)]);
+//            if(!$users_id){
+//                $ids = unserialize($customCode->user_id);
+//                array_push($ids,Auth::guard('user')->id());
+//                $customCode->update(['user_id'=> serialize($ids)]);
                 $customCode->update(['sharing_number'=> $customCode->sharing_number + 1]);
-                session(['custom_code'=>$customCode->code]);
-                session(['discount'=> 0.1]);
+//                session(['custom_code'=>$customCode->code]);
+//                session(['discount'=> 0.1]);
+                $expireCode = new ExpiredCode();
+                $expireCode->user_id = Auth::guard('user')->id();
+                $expireCode->code = $code;
+                $expireCode->is_custom = 1;
+                $expireCode->save();
+//                return [
+//                    'type'=>'custom',
+//                    'body'=>'code accepted',
+//                    'code'=>$customCode->code,
+//                    'discount'=>$customCode->discount
+//                ];
                 return [
-                    'type'=>'custom',
+                    'type'=>'message',
                     'body'=>'code accepted',
-                    'code'=>$customCode->code,
-                    'discount'=>$customCode->discount
+                    'discount' => $customCode->discount
                 ];
 
-            }else{
-
-                return [
-                    'type'=>'error',
-                    'body'=>"Expired code entered",
-                ];
-            }
-
-
+//            }
+//            else{
+//
+//                return [
+//                    'type'=>'error',
+//                    'body'=>"Expired code entered",
+//                ];
+//            }
 
         }
         // check if the code is used before
@@ -197,7 +218,7 @@ class PanelController extends Controller
          */
         else{
             $referralUser = Referral::where('code',$code)->where('id','!=',Auth::id())->first();
-//            dd($sharings[0]);
+
             $expireCode = new ExpiredCode();
             $expireCode->user_id = Auth::guard('user')->id();
             $expireCode->code = $code;
@@ -210,7 +231,8 @@ class PanelController extends Controller
 
             return [
                 'type'=>'message',
-                'body'=>'code accepted'
+                'body'=>'code accepted',
+                'discount'=> $settings->sharing_discount
             ];
 
         }
@@ -349,5 +371,21 @@ class PanelController extends Controller
         event(new Contact($data));
 
         return redirect()->back()->with(['message'=>'Your message has been sent!']);
+    }
+
+    public function downloadBanner($name = null){
+
+         if( file_exists("gifs/$name.gif")){
+
+            $file =  "gifs/$name.gif";
+             $headers = array(
+                 'Content-Type: application/gif',
+             );
+
+             return Response::download($file, $name.'.gif', $headers);
+         }
+
+         abort(404);
+
     }
 }

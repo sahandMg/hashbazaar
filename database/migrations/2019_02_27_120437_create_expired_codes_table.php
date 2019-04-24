@@ -18,6 +18,7 @@ class CreateExpiredCodesTable extends Migration
             $table->unsignedInteger('user_id');
             $table->string('code');
             $table->unsignedInteger('used')->default(0);
+            $table->boolean('is_custom')->default(0);
             $table->timestamps();
         });
     }

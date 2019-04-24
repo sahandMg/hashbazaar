@@ -92,8 +92,12 @@ Route::get('job',function(){
 
 Route::get('mail',function (){
 
-
-    session()->forget('custom_code');
+    $user = User::first();
+    Mail::send('email.newUser',['user'=>$user],function($message){
+        $message->from ('support@hashbazaar.com');
+        $message->to ('s23.moghadam@gmail.com');
+        $message->subject ('New User');
+    });
 
 
 
@@ -150,9 +154,10 @@ Route::get('pricing','PageController@Pricing');
 
 Route::get('received/{orderID?}','PaymentController@checkPaymentReceived')->name('checkPaymentReceived');
 
-Route::get('payment/canceled','PaymentController@PaymentCanceled')->name('PaymentCanceled');
+Route::get('payment/canceled','PaymentController@PaymentCanceled')->name('PaymentCanceled')->middleware('auth');
 
- Route::get('payment/success','PaymentController@PaymentSuccess')->name('PaymentSuccess');
+Route::get('payment/success','PaymentController@PaymentSuccess')->name('PaymentSuccess')->middleware('auth');
+
 /*
 ===============================================================================
                                 User Panel Routes
@@ -204,6 +209,8 @@ Route::group(['middleware'=>'block','prefix'=>'panel'],function(){
     Route::post('redeem','PaymentController@redeem')->name('redeem');
 
     Route::get('chart','PanelController@chartData')->name('chartData');
+
+    Route::get('banner/{name?}',['as'=>'banner','uses'=>'PanelController@downloadBanner']);
 
 });
 

@@ -8,6 +8,7 @@ use App\CoinBaseCheckout;
 use App\Crawling\CoinMarketCap;
 use function App\CryptpBox\lib\cryptobox_selcoin;
 use function App\CryptpBox\lib\run_sql;
+use App\CustomCode;
 use App\Events\CoinBaseNewProduct;
 use App\ExpiredCode;
 use App\Log;
@@ -49,7 +50,7 @@ class PaymentController extends Controller
     }
 // runs when a user click on shopping and redirects to coinbase payment page
     public function createCharge(Request $request){
-
+//        dd($request->all());
         $settings = Setting::first();
         $request = $request->all();
         $discount = $request['discount'];
@@ -113,13 +114,18 @@ class PaymentController extends Controller
         }
 
         // create database record
-
+        $custom_code = CustomCode::where('code',$referralCode)->first();
         $hashRecord = new BitHash();
         $hashRecord->hash = $hash;
         $hashRecord->user_id = Auth::guard('user')->id();
         $hashRecord->order_id = $result['code'];
         $hashRecord->confirmed = 0;
-        $hashRecord->referral_code = $referralCode;
+        // a custom code is not involved in affiliate
+        if(isset($custom_code)){
+            $hashRecord->referral_code = null;
+        }else{
+            $hashRecord->referral_code = $referralCode;
+        }
         $hashRecord->life = $this->hash_life;
         $hashRecord->remained_day = Carbon::now()->diffInDays(Carbon::now()->addYears($hashRecord->life));
         $hashRecord->save();
@@ -357,11 +363,6 @@ class PaymentController extends Controller
             }
         }
 
-
-
-
-
-
     }
 
     private function confirmMining($transaction_id,$address)
@@ -459,10 +460,6 @@ class PaymentController extends Controller
             DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->update(['used'=>1]);
         }
 
-        // TODO Place this code in callback from gateway
-        if(session()->has('custom_code')){
-            session()->forget('custom_code');
-        }
 
     }
 
@@ -471,6 +468,12 @@ class PaymentController extends Controller
         $event = $request->all();
         $transaction_id = $event['event']['data']['code'];
         CoinBaseCharge::where('transaction_id', $transaction_id)->first()->update(['status'=>'failed']);
+        $allocated_hash = BitHash::where('order_id',$transaction_id)->first();
+        $allocated_mining = Mining::where('order_id',$transaction_id)->first();
+        $settings = Setting::first();
+        $settings->update(['available_th'=> $settings->available_th + $allocated_hash->hash]);
+        $allocated_hash->delete();
+        $allocated_mining->delete();
     }
 
     public function PaymentPending(Request $request){
@@ -487,14 +490,33 @@ class PaymentController extends Controller
         CoinBaseCharge::where('transaction_id', $transaction_id)->first()->update(['status'=>'delayed']);
     }
 
+    public function PaymentResolved(Request $request){
+
+        $event = $request->all();
+        $transaction_id = $event['event']['data']['code'];
+        CoinBaseCharge::where('transaction_id', $transaction_id)->first()->update(['status'=>'resolved']);
+    }
+    /*
+     * Payment Callbacks
+     */
     public function PaymentCanceled(){
 
-        return view('PaymentCanceled');
+        // TODO Place this code in callback from gateway
+        if(session()->has('custom_code')){
+            session()->forget('custom_code');
+        }
+
+        return view('payment.PaymentCanceled');
     }
 
      public function PaymentSuccess(){
 
-        return view('PaymentSuccess');
+         // TODO Place this code in callback from gateway
+         if(session()->has('custom_code')){
+             session()->forget('custom_code');
+         }
+
+        return view('payment.PaymentSuccess');
     }
 
 

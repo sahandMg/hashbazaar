@@ -142,10 +142,11 @@ class PaymentController extends Controller
         $mining->save();
 
         $trans = new Transaction();
-        $trans->amount_btc = $amount;
+        $trans->amount_btc = $newCharge->product_btc;
         $trans->code = $result['code'];
         $trans->status = 'unpaid';
         $trans->user_id = Auth::guard('user')->id();
+        $trans->addr = $newCharge->bitcoin_address;
         $trans->checkout = 'out';
         $trans->save();
 

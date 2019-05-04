@@ -19,9 +19,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9 col-md-10 col-sm-11 mx-auto">
-                        <h1 class="text-center">Bitcoin Investment</h1><img src="img/LOGO.svg">
-                        <h3>JOIN OUR MINING FARMS</h3>
-                        <h3 style="margin: 0px;">FILL YOUR POCKETS WITH BITCOIN</h3>
+                        <h1 class="text-center">{{__('BITCOIN INVESTMENT')}}</h1><img src="img/LOGO.svg">
+                        <h3>{{__('JOIN OUR MINING FARMS')}}</h3>
+                        <br>
+                        <h3 style="margin: 0px;">{{__('FILL YOUR POCKETS WITH BITCOIN')}}</h3>
                         <a class="btn btn-link btn-circle js-scroll-trigger responsive-circle"
                            style="border-color: red;color: red" role="button"
                            href="#sharePlan"><i
@@ -32,7 +33,7 @@
     </header>
     <section  id="sharePlan" class="text-center" style="padding-top: 4%;color: #707070;">
         <div>
-            <h3 class="fontTheme">choose your investment plan</h3>
+            <h3 class="fontTheme">{{__('CHOOSE YOUR INVESTMENT PLAN')}}</h3>
         </div>
         <div class="container">
           <form action="{{route('signup')}}" method="get">
@@ -41,18 +42,19 @@
                 <input name="hashPower" type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" class="slider" id="myRange">
             </div>
             <div style="text-align: left;font-weight: 700;">
-                <p>Hash allocation cost : <span id="cost"></span> dollar</p>
-                <p>Maintenance fee: {{$settings->maintenance_fee_per_th_per_day}} dollar per Th/day</p>
-                <small>(include all electricity, cooling, development, and servicing costs )</small>
-                <p>Income : At this time We predict {{$settings->bitcoin_income_per_month_per_th}} BTC/month per Th.</p>
-                <small>(May be changed depends on bitcoin price and bitcoin network difficulty.)</small>
+                <p>{{__("Hash allocation cost :")}} <span id="cost"></span> {{__("dollar")}} </p>
+                <p>{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day}} {{__('dollar per Th/day')}}</p>
+                <small>{{__("(include all electricity, cooling, development, and servicing costs )")}}</small>
+                <p>{{__('Income : At this time We predict')}} {{$settings->bitcoin_income_per_month_per_th}} {{__('BTC/month per Th')}}</p>
+                <small>{{__("(May be changed depends on bitcoin price and bitcoin network difficulty)")}}</small>
             </div>
             <div class="form-group fontTheme" style="margin-top: 2%;">
-                <button class="btn btn-primary round-button-com" onclick="btnDisable()" type="submit" style="width: 120px">Buy</button>
+                <button class="btn btn-primary round-button-com" onclick="btnDisable()" type="submit" style="width: 120px">{{__('BUY')}}</button>
             </div>
            </form>
         </div>
     </section>
+
     <section class="context-section backgroundGrey text-center pt-4 pb-4 advantages" style="color: #707070"  >
         <h2>Our Advantages</h2>
         <div class="container">
@@ -62,24 +64,24 @@
                     <img id="price" alt="electricity price" src="img/Pricing.jpg" style="width: 100%;height: auto;">
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 advantages-detail">
-                    <h3>Other advantages:</h3>
+                    <h3>{{__('OTHER ADVANTAGES: ')}}</h3>
                     <ul>
                     
                         <li>
-                            <h5>Instant mining</h5>
-                            <p>Start mining immediately after confirming payment without any concerns and challenges.</p>
+                            <h5>{{__("INSTANT MINING")}}</h5>
+                            <p>{{__('Start mining immediately after confirming payment without any concerns and challenges.')}}</p>
                         </li>
                         <li>
-                            <h5>Daily withdrawal</h5>
-                            <p>Your mining output will be withdrawn as soon as increasing to 0.01 BTC.</p>
+                            <h5>{{__('DAILY WITHDRAWAL')}}</h5>
+                            <p>{{__("Your mining output will be withdrawn as soon as increasing to 0.01 BTC.")}}</p>
                         </li>
                         <li>
-                            <h5>Activity report</h5>
-                            <p>Keep track of your transaction from your panel.</p>
+                            <h5>{{__("ACTIVITY REPORT")}}</h5>
+                            <p>{{__("Keep track of your transaction from your panel.")}}</p>
                         </li>
                         <li>
-                            <h5>Statistical details</h5>
-                            <p>Track your real time mining output at any point from any location.</p>
+                            <h5>{{(__('STATISTICAL DETAILS'))}}</h5>
+                            <p>{{__("Track your real time mining output at any point from any location.")}}</p>
                         </li>
                     </ul>
                 </div>
@@ -89,7 +91,7 @@
     <section id="contact" class="text-center backgroundGrey" >
         <div class="" style="background: white;padding-bottom:1px">
             <div class="col-lg-8 mx-auto">
-                <h2 class="fontTheme m-3">Let us know your questions</h2>
+                <h2 class="fontTheme m-3">{{__('LET US KNOW YOUR QUESTIONS')}}</h2>
             </div>
         </div>
         <div class="container p-5">
@@ -98,14 +100,14 @@
                     <form method="POST" action="{{route('message')}}">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <div class="form-group fontTheme"><input class="form-control" type="text" name="name"
-                                                                 placeholder="name" id="nameTextBox"></div>
+                                                                 placeholder="{{__('name')}}" id="nameTextBox"></div>
                         <div class="form-group fontTheme"><input class="form-control" type="email" name="email"
-                                                                 placeholder="email" id="emailTextBox"></div>
+                                                                 placeholder="{{__('email')}}" id="emailTextBox"></div>
                         <div class="form-group fontTheme"><textarea class="form-control mx-auto" name="message"
-                                                                    placeholder="Message" id="messageTextBox"
+                                                                    placeholder="{{__('Message')}}" id="messageTextBox"
                                                                     rows="5"></textarea></div>
                         <div class="form-group fontTheme">
-                            <button class="btn btn-primary round-button-com" type="submit">Submit</button>
+                            <button class="btn btn-primary round-button-com" type="submit">{{__('SUBMIT')}}</button>
                         </div>
                     </form>
                 </div>

@@ -92,16 +92,27 @@ Route::get('job',function(){
 
 Route::get('mail',function (){
 
-    $user = User::first();
-    Mail::send('email.newUser',['user'=>$user],function($message){
-        $message->from ('support@hashbazaar.com');
-        $message->to ('s23.moghadam@gmail.com');
-        $message->subject ('New User');
-    });
+//    $user = User::first();
+//    Mail::send('email.newUser',['user'=>$user],function($message){
+//        $message->from ('support@hashbazaar.com');
+//        $message->to ('s23.moghadam@gmail.com');
+//        $message->subject ('New User');
+//    });
 
+    $hashes = BitHash::where('user_id', 1)->where('confirmed',1)->get();
+    if (!$hashes->isEmpty()) {
+        foreach ($hashes as $item => $hash) {
+            $remainedDay = Carbon::now()->diffInDays(Carbon::parse($hash->created_at)->addYears($hash->life));
+            $hash->update(['remained_day' => $remainedDay]);
+            $hash->save();
+            $hashPower[$item] = $hash->hash;
+            $maintenance_inBTC = 0.1 / 5200 * $hashPower[$item];
+            $userEarn[$item] = 0.01 * ($hashPower[$item] / 14) - $maintenance_inBTC;
 
+        }
 
-
+        dd( array_sum($userEarn));
+    }
 
 });
 

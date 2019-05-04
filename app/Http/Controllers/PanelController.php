@@ -39,7 +39,7 @@ class PanelController extends Controller
 
     public function dashboard(){
 
-        $hashes = BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->get();
+        $hashes = BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->orderBy('created_at','acs')->get();
         $unusedCodes = DB::table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('used',0)->first();
         if(!is_null($unusedCodes)){
 

@@ -41,7 +41,7 @@
             <div class="slidecontainer">
                 <input name="hashPower" type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" class="slider" id="myRange">
             </div>
-            <div style="text-align: left;font-weight: 700;">
+            <div class="invest-plan" style="font-weight: 700;">
                 <p>{{__("Hash allocation cost :")}} <span id="cost"></span> {{__("dollar")}} </p>
                 <p>{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day}} {{__('dollar per Th/day')}}</p>
                 <small>{{__("(include all electricity, cooling, development, and servicing costs )")}}</small>
@@ -97,7 +97,7 @@
         <div class="container p-5">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <form method="POST" action="{{route('message')}}">
+                    <form class="contact-form" method="POST" action="{{route('message')}}">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <div class="form-group fontTheme"><input class="form-control" type="text" name="name"
                                                                  placeholder="{{__('name')}}" id="nameTextBox"></div>
@@ -133,6 +133,20 @@
         </div>
 
     </div>
+    @if(Config::get('app.locale') == 'fa')
+    <style type="text/css">
+      .invest-plan {
+         text-align: right;
+      }
+      .contact-form {direction: rtl;}
+    </style>
+    @else
+    <style type="text/css">
+      .invest-plan {
+         text-align: left;
+      }
+    </style>
+    @endif
     <style type="text/css">
         .advantages h2 {margin-bottom: 3%;}
         .advantages-detail h5 {margin-top: 3%;font-size: 1.1rem;}

@@ -18,9 +18,7 @@
 
     <!-- <link rel="icon" href="img/TabLogo.png"> -->
     <!-- <link rel="stylesheet" href="{{asset('css/blog.css')}}"> -->
-    @if(Config::get('app.locale') == 'fa')
-        @else
-      @endif
+    
     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
@@ -60,11 +58,19 @@
         </div>
         <div id="header-navbar-menu" >
             <ul>
+                @if(Config::get('app.locale') == 'fa')
+                <!-- <li class="navbar-list small1 a1"><a href="http://blog.hashbazaar.com">{{__('Blog')}}</a></li> -->
+                <li class="navbar-list small1 a1"><a href="{{route('affiliate')}}">{{__('Affiliate')}}</a></li>
+                <li class="navbar-list small1 a1"><a href="{{route('customerService')}}">{{__('FAQ')}}</a></li>
+                <li class="navbar-list small1 a1"><a href="{{route('aboutUs')}}">{{__('About')}}</a></li>
+                <li class="navbar-list small1 a1"><a href="{{route('index')}}">{{__('Home')}}</a></li>
+                @else
                 <li class="navbar-list small1 a1"><a href="{{route('index')}}">{{__('Home')}}</a></li>
                 <li class="navbar-list small1 a1"><a href="{{route('aboutUs')}}">{{__('About')}}</a></li>
                 <li class="navbar-list small1 a1"><a href="{{route('customerService')}}">{{__('FAQ')}}</a></li>
                 <li class="navbar-list small1 a1"><a href="{{route('affiliate')}}">{{__('Affiliate')}}</a></li>
                 <li class="navbar-list small1 a1"><a href="http://blog.hashbazaar.com">{{__('Blog')}}</a></li>
+                @endif
                 @if(Auth::guard('user')->check())
                     <li class="navbar-list small1 dashboard"><a href="{{route('dashboard')}}" >{{__('Dashboard')}}</a></li>
                 @else

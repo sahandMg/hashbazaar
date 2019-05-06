@@ -3,6 +3,11 @@
     <title>FAQ</title>
 @endsection
 @section('content')
+@if(Config::get('app.locale') == 'fa')
+    <style type="text/css">
+      .faq-question-list-container {text-align: right;direction: rtl;}
+    </style>
+   @endif
 <style type="text/css">
     .faq-container {
         margin-top: 10%;color: black;

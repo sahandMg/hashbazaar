@@ -36,7 +36,7 @@
             </label>
 
 
-             <legend>{{__("Password")}}</legend>
+             <legend>{{__("Change Password")}}</legend>
             <label id="textbefore">{{__("Current Password")}}
             <input type="password" name="password" id="cur-password" placeholder="{{__("Current Password")}}">  <br>
             </label>

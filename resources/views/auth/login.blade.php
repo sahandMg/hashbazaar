@@ -18,7 +18,7 @@
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <input type="hidden" name="hashPower" value="{{isset($_GET['hashPower'])?$_GET['hashPower']:null}}">
 						<span class="login100-form-title">
-						Log In
+						{{__("Login")}}
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
@@ -34,17 +34,17 @@
 
 					<div class="text-right p-t-13 p-b-23">
 						<span class="txt1">
-							Forgot
+
 						</span>
 
 						<a href="{{route('passwordReset')}}" class="txt2">
-							Password?
+							{{__("Forgot Password?")}}
 						</a>
 					</div>
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							Log in
+							{{__("Login")}}
 						</button>
 					</div>
 
@@ -64,11 +64,11 @@
 
 					<div class="flex-col-c p-t-0 p-b-40">
 						<span class="txt1 p-b-9">
-							Don’t have an account?
+							{{__("Don’t have an account?")}}
 						</span>
 
 						<a href="{{route('signup')}}" class="txt3">
-							Sign up now
+							{{__("Sign up now")}}
 						</a>
 					</div>
 				</form>

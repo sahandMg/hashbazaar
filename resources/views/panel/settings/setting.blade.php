@@ -1,14 +1,14 @@
 @extends('panel.master.layout')
 @section('title')
-    <title>Settings</title>
+    <title>{{__("Settings")}}</title>
 @endsection
 @section('content')
 
 
 <div id="setting-page" class="panel-container " onclick="hideMe()">
     <div class="setting-flex">
-        <div class="flex-item one"><a href="#">User Information</a></div>
-        <div class="flex-item two"><a href="#">Wallet</a></div>
+        <div class="flex-item one"><a href="#">{{__("User Information")}}</a></div>
+        <div class="flex-item two"><a href="#">{{__("Wallet")}}</a></div>
 
     </div>
     @if(count($errors->all()) > 0)
@@ -23,47 +23,47 @@
         <form name="profile" action="{{route('setting')}}" method="post">
 
             <input type="hidden" name="_token" value="{{csrf_token()}}">
-             <legend class="coppyIcon">User Information </legend>  
+             <legend class="coppyIcon">{{__("User Information")}} </legend>
 
-            <label id="textbefore">Username
+            <label id="textbefore">{{__("Username")}}
             <input type="text" name="text" id="text" value="{{Auth::guard('user')->user()->name}}" disabled="disabled"> 
             </label>
             
-            <label id="textbefore">Email
+            <label id="textbefore">{{__("Email")}}
             <input type="email" name="email" id="email" value="{{Auth::guard('user')->user()->email}}" disabled="disabled"/> 
             </label>
 
 
-             <legend>Password</legend> 
-            <label id="textbefore">Current Password
-            <input type="password" name="password" id="cur-password" placeholder="Current Password">  <br>
+             <legend>{{__("Password")}}</legend>
+            <label id="textbefore">{{__("Current Password")}}
+            <input type="password" name="password" id="cur-password" placeholder="{{__("Current Password")}}">  <br>
             </label>
 
-            <label id="textbefore">New Password
-            <input type="password" name="newpass" id="newpassword" placeholder="New Password">
+            <label id="textbefore">{{__("New Password")}}
+            <input type="password" name="newpass" id="newpassword" placeholder="{{__("New Password")}}">
             </label>
 
-            <label id="textbefore">Confirm Password
-            <input type="password" name="confirm" id="Confirmpassword" placeholder="Confirm Password">
+            <label id="textbefore">{{__("Confirm Password")}}
+            <input type="password" name="confirm" id="Confirmpassword" placeholder="{{__("Confirm Password")}}">
             </label>
 
-            <input type="submit" value="Submit" class="pandel-button">
+            <input type="submit" value="{{__("Submit")}}" class="pandel-button">
         </form>
 
     </div>
 
     <div class="wallet1 text-center" >
 
-            <p class="text-center">Still Don’t Have a Bitcoin Wallet? Click <a href="https://www.blockchain.com/" target="_blank" id="clickhear"
-                style="color:orange;text-decoration: none;font-weight: bold;">Hear</a> To Make One!
+            <p class="text-center">{{__("Still Don’t Have a Bitcoin Wallet? Click")}} <a href="https://www.blockchain.com/" target="_blank" id="clickhear"
+                style="color:orange;text-decoration: none;font-weight: bold;">‌{{__("Hear To Make One!")}}</a>
                 </p>
-                <h2 style="color:black" class="text-center">OR</h2>
-                <h2 class="text-center" style="color:black">Submit Your Wallet Address</h2>
+                <h2 style="color:black" class="text-center">{{__("OR")}}</h2>
+                <h2 class="text-center" style="color:black">{{__("Submit Your Wallet Address")}}</h2>
                 
                  <form id="setting-wallet" class="text-center" method="post" action="{{route('wallet')}}">
                      <input class="text-center" type="hidden" name="_token" value="{{csrf_token()}}">
                     <input class="text-center" type="text" id="textwallet" name="wallet">
-                    <input  type="submit" class="buttonwallet text-center" value="Submit">
+                    <input  type="submit" class="buttonwallet text-center" value="{{__("Submit")}}">
                  </form>
 
 
@@ -76,7 +76,7 @@
 
         <div class="title-flex2">
                 <hr class="dashboard-hr2"/>
-                <h2 class="dashboard-title2">Current Bitcoin Wallet Address</h2>
+                <h2 class="dashboard-title2">{{__("Current Bitcoin Wallet Address")}}</h2>
                 <hr class="dashboard-hr2"/>
         </div> 
 
@@ -98,7 +98,7 @@
                 <form action="{{route('editWallet')}}" method="POST">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <input type="text" class="a2"  name="address"   placeholder="{{!is_null(Auth::guard('user')->user()->wallet)?Auth::guard('user')->user()->wallet->addr:'Your bitcoin wallet address'}}"><br>
-                    <input type="submit" class="pandel-button a4" value="Submit" >
+                    <input type="submit" class="pandel-button a4" value="{{__("Submit")}}" >
                 </form>
 
             </div>
@@ -107,7 +107,7 @@
          
         <div class="title-flex2 a3">
                 <hr class="dashboard-hr2"/>
-                <h2 class="dashboard-title2">Need To Change Your Address ?</h2>
+                <h2 class="dashboard-title2">{{__("Need To Change Your Address ?")}}</h2>
                 <hr class="dashboard-hr2"/>
         </div>
 

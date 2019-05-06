@@ -5,13 +5,13 @@
 @section('content')
     <!-- Contact Page -->
     <div class="panel-container contact-container"  onclick="hideMe()">
-        <h2 class="panel-header text-center"> Let Us know Your Questions!</h2>
+        <h2 class="panel-header text-center"> {{__("LET US KNOW YOUR QUESTIONS")}}</h2>
         <form method="post" action="{{route('contact')}}">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <input type="hidden" name="name" id="Name" value="{{Auth::guard('user')->user()->name}}">
             <input type="hidden" name="email" id="Email" value="{{Auth::guard('user')->user()->email}}">
-            <textarea class="form-control" rows="5" name="message" placeholder="Your message ..."></textarea>
-            <button class="pandel-button">Send</button>
+            <textarea class="form-control" rows="5" name="message" placeholder="{{__("Your message ...")}}"></textarea>
+            <button class="pandel-button">{{__("Send")}}</button>
         </form>
         <br/><br/>
         <br/><br/><br/>

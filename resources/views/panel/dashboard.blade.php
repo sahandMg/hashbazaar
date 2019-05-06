@@ -188,7 +188,7 @@
     <!-- <input type="hidden" name="_token" value="{{csrf_token()}}"> -->
     <input type="hidden" id="thpricew" value="50">
     <input type="range" min="1" max="{{$settings->available_th}}" value="{{isset($hashPower)?$hashPower:$settings->available_th/2}}" name="hash" class="slider" id="myRange">
-    <div class="buy-hashpower-text" style="text-align: left;font-weight: 700;padding-bottom:10px">
+    <div class="buy-hashpower-text" style="font-weight: 700;padding-bottom:10px">
       <p style="color:black">{{__("Hash allocation cost :")}} <span id="cost"></span> {{__("dollar")}}
           <span id="doReferalCode" style="animation-iteration-count:infinite;padding:2px"></span>
       </p>
@@ -305,7 +305,15 @@
             }
         }
 </script>
-
+@if(Config::get('app.locale') == 'fa')
+    <style type="text/css">
+      .buy-hashpower-text {direction: rtl;text-align: right;}
+    </style>
+ @else
+    <style type="text/css">
+      .buy-hashpower-text {direction: ltr;text-align: left;}
+    </style>
+ @endif
 <style type="text/css">
 
   .modal-content p {

@@ -190,7 +190,18 @@ body, html {
   -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
   -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
 }
+input[type='password'] , input[type='email'] , input[type='text'] {
+  border: 2px solid green;
+}
 
+input[type='password']:focus , input[type='email']:focus , input[type='text']:focus {
+  border: 2px solid orange !important;
+}
+input[type='password']:placeholder-shown ,
+input[type='email']:placeholder-shown ,
+input[type='text']:placeholder-shown {
+  border-color:red;
+}
 
 /*==================================================================
 [ Form ]*/
@@ -270,9 +281,9 @@ body, html {
   transition: all 0.4s;
 }
 
-.input100:focus + .focus-input100 {
+/* .input100:focus + .focus-input100 {
   width: calc(100% + 20px);
-}
+} */
 
 /*------------------------------------------------------------------
 [ Button ]*/
@@ -419,6 +430,15 @@ body, html {
 .alert-validate:hover:before {
   visibility: visible;
   opacity: 1;
+}
+
+
+input[(password)]{
+  border: 2px solid green;
+}
+
+input:placeholder-shown {
+  border-color:red;
 }
 
 @media screen and (max-width: 992px) {

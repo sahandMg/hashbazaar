@@ -1,6 +1,6 @@
 @extends('master.layout')
 @section('title')
-	<title>SignUp</title>
+	<title>{{__("SignUp")}}</title>
 @endsection
 @section('content')
 	<?php
@@ -20,26 +20,26 @@
 				<input type="hidden" name="_token" value="{{csrf_token()}}">
 					<input type="hidden" name="hashPower" value="{{isset($_GET['hashPower'])?$_GET['hashPower']:null}}">
 					<span class="login100-form-title">
-						Sign Up
+						{{__("SignUp")}}
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-10" data-validate="Please enter your name">
-						<input class="input100" type="text" name="name" placeholder="Username" value="{{Request::old('name')}}">
+						<input class="input100" type="text" name="name" placeholder="{{__("Username")}}" value="{{Request::old('name')}}">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input email m-b-10" data-validate = "Please enter email" >
-						<input class="input100" type="email" name="email" placeholder="Email" value="{{Request::old('email')}}">
+						<input class="input100" type="email" name="email" placeholder="{{__("Email")}}" value="{{Request::old('email')}}">
 						<span class="focus-input100"></span>
 					</div>
                     
                     <div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
-                            <input class="input100" type="password" name="password" placeholder="Password">
+                            <input class="input100" type="password" name="password" placeholder="{{__("Password")}}">
                             <span class="focus-input100"></span>
                     </div>
 
                     <div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
-                            <input class="input100" type="password" name="confirm_password" placeholder="Confirm password">
+                            <input class="input100" type="password" name="confirm_password" placeholder="{{__("Confirm password")}}">
                             <span class="focus-input100"></span>
                     </div>
 
@@ -50,7 +50,7 @@
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-                            Sign Up
+                            {{__("SignUp")}}
                         </button>
 					</div>
 
@@ -71,12 +71,12 @@
 
 					<div class="flex-col-c p-t-0 p-b-40">
 						<span class="txt1 p-b-9">
-                                do you have an account?
+                                {{__("do you have an account?")}}
 						</span>
 		@if(isset($_GET['hashPower']))
 				<a href="{{route('login').'?hashPower='.$_GET['hashPower']}}" class="txt3">Log in now</a>
 		@else
-			<a href="{{route('login')}}" class="txt3">Log in now</a>
+			<a href="{{route('login')}}" class="txt3">{{__("Log in now")}}</a>
 		@endif
 
 

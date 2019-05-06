@@ -145,5 +145,11 @@
   "OR":"یا",
   "Submit Your Wallet Address":"آدرس کیف پول خود را ثبت کنید",
   "Send":"ارسال",
-  "Your message ...":"متن پیام ..."
+  "Your message ...":"متن پیام ...",
+  "Reset Password":"بازیابی پسورد",
+  "Please enter your email to send password":"ایمیل خود را جهت بازیابی پسورد وارد کنید",
+  "SignUp":"ثبت نام",
+  "Confirm password":"تکرار کلمه عبور",
+  "do you have an account?":"حساب کاربری دارید؟",
+  "Log in now":"وارد شوید"
 }

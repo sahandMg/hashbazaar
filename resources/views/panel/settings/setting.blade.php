@@ -23,7 +23,7 @@
         <form name="profile" action="{{route('setting')}}" method="post">
 
             <input type="hidden" name="_token" value="{{csrf_token()}}">
-             <legend class="coppyIcon">User Information </legend>  
+             <legend>User Information </legend>  
 
             <label id="textbefore">Username
             <input type="text" name="text" id="text" value="{{Auth::guard('user')->user()->name}}" disabled="disabled"> 

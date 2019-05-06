@@ -15,8 +15,10 @@
     @else
         @yield('title')
     @endif
+
     <!-- <link rel="icon" href="img/TabLogo.png"> -->
     <!-- <link rel="stylesheet" href="{{asset('css/blog.css')}}"> -->
+    
     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
@@ -25,7 +27,7 @@
     <link rel="icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="{{asset('css/util.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/login.css')}}">
-    
+
     <script src="{{asset('js/jquery-3.3.1.js')}}"></script>
     <script src="{{asset('js/jquery.animate-colors.js')}}"></script>
 <!--     <script src="{{asset('js/jquery-3.3.1.js')}}"></script>
@@ -56,16 +58,24 @@
         </div>
         <div id="header-navbar-menu" >
             <ul>
-                <li class="navbar-list small1 a1"><a href="{{route('index')}}">Home</a></li>
-                <li class="navbar-list small1 a1"><a href="{{route('aboutUs')}}">About</a></li>
-                <li class="navbar-list small1 a1"><a href="{{route('customerService')}}">FAQ</a></li>
-                <li class="navbar-list small1 a1"><a href="{{route('affiliate')}}">Affiliate</a></li>
-                <li class="navbar-list small1 a1"><a href="http://blog.hashbazaar.com">Blog</a></li>
-                @if(Auth::guard('user')->check())
-                    <li class="navbar-list small1 dashboard"><a href="{{route('dashboard')}}" >Dashboard</a></li>
+                @if(Config::get('app.locale') == 'fa')
+                <!-- <li class="navbar-list small1 a1"><a href="http://blog.hashbazaar.com">{{__('Blog')}}</a></li> -->
+                <li class="navbar-list small1 a1"><a href="{{route('affiliate')}}">{{__('Affiliate')}}</a></li>
+                <li class="navbar-list small1 a1"><a href="{{route('customerService')}}">{{__('FAQ')}}</a></li>
+                <li class="navbar-list small1 a1"><a href="{{route('aboutUs')}}">{{__('About')}}</a></li>
+                <li class="navbar-list small1 a1"><a href="{{route('index')}}">{{__('Home')}}</a></li>
                 @else
-                <li class="navbar-list small1 signup"><a href="{{route('signup')}}" id="sg" >Sign Up</a></li>
-                <li class="navbar-list small1 login"><a href="{{route('login')}}" id="lg" >Log In</a></li>
+                <li class="navbar-list small1 a1"><a href="{{route('index')}}">{{__('Home')}}</a></li>
+                <li class="navbar-list small1 a1"><a href="{{route('aboutUs')}}">{{__('About')}}</a></li>
+                <li class="navbar-list small1 a1"><a href="{{route('customerService')}}">{{__('FAQ')}}</a></li>
+                <li class="navbar-list small1 a1"><a href="{{route('affiliate')}}">{{__('Affiliate')}}</a></li>
+                <li class="navbar-list small1 a1"><a href="http://blog.hashbazaar.com">{{__('Blog')}}</a></li>
+                @endif
+                @if(Auth::guard('user')->check())
+                    <li class="navbar-list small1 dashboard"><a href="{{route('dashboard')}}" >{{__('Dashboard')}}</a></li>
+                @else
+                <li class="navbar-list small1 signup"><a href="{{route('signup')}}" id="sg" >{{__('Sign Up')}}</a></li>
+                <li class="navbar-list small1 login"><a href="{{route('login')}}" id="lg" >{{__('Log In')}}</a></li>
                 @endif
             </ul>
 
@@ -85,7 +95,7 @@
 
 @if(Auth::guard('user')->check())
  {{-- <style>
-     
+
 
      @media screen and (max-width:420px){
         #header-navbar-menu {
@@ -116,10 +126,10 @@
                 $('.navigation-menu').removeClass('change');
                 console.log('hide me function')
         }
-        
+
 
         $(document).ready(function(){
-            
+
              $('.navigation-menu').click(function(){
                 console.log("navigation test");
                 // $('#header-navbar-menu').toggle();

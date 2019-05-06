@@ -1,12 +1,12 @@
 @extends('panel.master.layout')
 @section('title')
-    <title>Activity</title>
+    <title>{{__("Activity")}}</title>
 @endsection
 @section('content')
 <?php
 $settings = DB::table('settings')->first();
-$hashes = App\BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->get();
-$trans = DB::table('transactions')->where('user_id',Auth::guard('user')->id())->get();
+$hashes = App\BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->orderBy('created_at','acs')->get();
+$trans = DB::table('transactions')->where('user_id',Auth::guard('user')->id())->orderBy('created_at','acs')->get();
 foreach ($hashes as $key=> $hash){
 
     $remainedLife[$key] = floor((\Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($hash->created_at)->addYears($hash->life)))/($hash->life * 365) * 100) ;
@@ -16,19 +16,19 @@ foreach ($hashes as $key=> $hash){
 
 
 <div  class="panel-container activity-container"  onclick="hideMe()">
-    <h2 class="text-center">Recent Activities</h2> 
+    <h2 class="text-center">{{__("Recent Activities")}}</h2>
     <div class="purchases">
-        <h2>Purchases</h2>
+        <h2>{{__("Purchases")}}</h2>
         <br>
       <div class="container pur">
         <table class="table custom-table" style="color: black;">
                 @if(!$hashes->isEmpty())
               <thead>
                 <tr  style="height:70px !important">
-                    <th>Hash Power</th>
-                    <th>Started at</th>
-                    <th>Ends at</th>
-                    <th>Remain</th>
+                    <th>{{__("Hash Power")}}</th>
+                    <th>{{__("Started at")}}</th>
+                    <th>{{__("Ends at")}}</th>
+                    <th>{{__("Remain")}}</th>
                  </tr>
                </thead>
                <tbody>
@@ -68,7 +68,7 @@ foreach ($hashes as $key=> $hash){
                 
 
                 @else
-                    <h6 id="nopur" style="color: black;"> NO Purchases</h6>
+                    <h6 id="nopur" style="color: black;"> {{__("NO Purchases")}}</h6>
                 @endif
                        
    
@@ -78,18 +78,18 @@ foreach ($hashes as $key=> $hash){
     </div> 
 
     <div class="purchases">
-        <h2>Transactions </h2>
+        <h2>{{__("Transactions")}} </h2>
         @if(!is_null($trans))
             <div class="container">
 
                 <table  class="table custom-table" style="color: black;">
                     <thead  style="font-weight:bold">
                         <tr  style="height:90px !important">
-                            <th class="Transactions_column"> Date </th>
+                            <th class="Transactions_column"> {{__("Date")}} </th>
                             <th class="Transactions_column"> BTC </th>
-                            <th class="Transactions_column">Address</th>
-                            <th class="Transactions_column">Status</th>
-                            <th class="Transactions_column">in/out</th>
+                            <th class="Transactions_column">{{__("Address")}}</th>
+                            <th class="Transactions_column">{{__("Status")}}</th>
+                            <th class="Transactions_column">{{__("in/out")}}</th>
 
                         </tr>
                     </thead>
@@ -128,7 +128,7 @@ foreach ($hashes as $key=> $hash){
                     </table>
         @else
 
-            <h6 id="no-hash"> NO Hash History</h6>
+            <h6 id="no-hash"> {{__("NO Hash History")}}</h6>
        @endif
 
 

@@ -17,14 +17,14 @@
   <!-- Circle -->
   <div class="circle-container">
     <div id="dashboard-page-circle" >
-      <h2 id="circle-span" class="text-center">Total Earn</h2>
+      <h2 id="circle-span" class="text-center">{{__("Total Earn")}}</h2>
       <p>&nbsp;<span id="miningBTC"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> <span style="color: orange;">BTC</span></p>
       <hr style="width: 84%; text-align:center;">
       <p><span id="miningDollar"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> <span style="color: aqua;">USD</span></p>
       <!-- {{-- <button id="redeem" disabled onclick="redeem()"> Redeem ! </button> --}} -->
     </div>
     <div id="dashboard-page-circle2">
-      <h2 id="circle-span" class="text-center">Pending Payment</h2>
+      <h2 id="circle-span" class="text-center">{{__("Pending Payment")}}</h2>
       <p>&nbsp;<span id="miningBTC2"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> <span style="color: orange;">BTC</span></p>
       <hr style="width: 84%; text-align:center;">
       <p><span id="miningDollar2"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> <span style="color: aqua;">USD</span></p>
@@ -34,7 +34,7 @@
   <!-- Hash History -->
   <div class="title-flex" >
     <hr class="dashboard-hr"/>
-    <h3 class="dashboard-title hash">Hash History</h3>
+    <h3 class="dashboard-title hash">{{__("Hash History")}}</h3>
     <hr class="dashboard-hr"/>
   </div> 
   <div class="Hash-History">
@@ -43,10 +43,10 @@
       @if(!$hashes->isEmpty())
       <thead>
         <tr style="font-weight:bold">
-          <th>Hash Power</th>
-          <th>Started at</th>
-          <th>Ends at</th>
-          <th>Remain</th>
+          <th>{{__("Hash Power")}}</th>
+          <th>{{__("Started at")}}</th>
+          <th>{{__("Ends at")}}</th>
+          <th>{{__("Remain")}}</th>
         </tr>
       </thead>
       <tbody >
@@ -169,7 +169,7 @@
   <!--   Buy hash power -->
   <div class="title-flex">
     <hr class="dashboard-hr"/>
-    <h3 class="dashboard-title">Buy Hash Power</h3>
+    <h3 class="dashboard-title">{{__("Buy Hash Power")}}</h3>
     <hr class="dashboard-hr"/>
   </div>
   <h5 id="demo"></h5>
@@ -189,19 +189,19 @@
     <input type="hidden" id="thpricew" value="50">
     <input type="range" min="1" max="{{$settings->available_th}}" value="{{isset($hashPower)?$hashPower:$settings->available_th/2}}" name="hash" class="slider" id="myRange">
     <div class="buy-hashpower-text" style="text-align: left;font-weight: 700;padding-bottom:10px">
-      <p style="color:black">Hash allocation cost : <span id="cost"></span> dollar
-        <span id="doReferalCode" style="animation-iteration-count:infinite;padding:2px"></span>
+      <p style="color:black">{{__("Hash allocation cost :")}} <span id="cost"></span> {{__("dollar")}}
+          <span id="doReferalCode" style="animation-iteration-count:infinite;padding:2px"></span>
       </p>
-      <p style="color:black">Maintenance fee: {{$settings->maintenance_fee_per_th_per_day}} dollar per Th/day</p>
-      <small style="color: #707070;">(include all electricity, cooling, development, and servicing costs )</small>
-      <p style="color:black">Income : At this time We predict {{$settings->bitcoin_income_per_month_per_th}} BTC/month per Th.</p>
-      <small  style="color: #707070;">(May be changed depends on bitcoin price and bitcoin network difficulty.)</small>
+      <p style="color:black">{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day}} {{__('dollar per Th/day')}}</p>
+      <small style="color: #707070;">{{__("(include all electricity, cooling, development, and servicing costs )")}}</small>
+      <p style="color:black">{{__('Income : At this time We predict')}} {{$settings->bitcoin_income_per_month_per_th}} {{__('BTC/month per Th')}}</p>
+      <small  style="color: #707070;">{{__("(May be changed depends on bitcoin price and bitcoin network difficulty)")}}</small>
 
     </div>
     <p class="rfrcode">Referral Code:</p>
     <input id='referralCode' type="text" placeholder="{{$AppliedCode}}" name="referralCode" style="margin-top:5px" class="aplybtn1text"/>
     <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> Apply </button>
-    <button id="orderBtn" class="pandel-button" type="submit">Order</button>
+    <button id="orderBtn" class="pandel-button" type="submit">{{__("Order")}}</button>
     <!-- </form> -->
     @else
       <p> TH Not Available !</p>
@@ -210,7 +210,7 @@
   <!-- Mining History -->
   <div class="title-flex">
     <hr class="dashboard-hr" >
-    <h3 class="dashboard-title min">Mining History</h3>
+    <h3 class="dashboard-title min">{{__("Mining History")}}</h3>
     <hr class="dashboard-hr" >
   </div> 
   <div style="margin-right: 20px;">
@@ -637,7 +637,7 @@
                     // Display the default slider value
 //                console.log(document.getElementById('discount').value)
                     slider.oninput = function() {
-                        console.log(resp)
+//                        console.log(resp)
                         hiddenRange.value = this.value;
                         output.innerHTML = this.value+' Th';
                         if(activateDiscount == 1){

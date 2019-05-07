@@ -198,10 +198,13 @@
       <small  style="color: #707070;">{{__("(May be changed depends on bitcoin price and bitcoin network difficulty)")}}</small>
 
     </div>
-    <p class="rfrcode">Referral Code:</p>
-    <input id='referralCode' type="text" placeholder="{{$AppliedCode}}" name="referralCode" style="margin-top:5px" class="aplybtn1text"/>
-    <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> Apply </button>
-    <button id="orderBtn" class="pandel-button" type="submit">{{__("Order")}}</button>
+   
+      <div id="referralDiv">
+        <label id="referralLabel" for="referralCode">کد ارجاع:</label>
+        <input id='referralCode' type="text" placeholder="{{$AppliedCode}}" name="referralCode" style="margin-top:5px" class="aplybtn1text"/>
+        <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> درخواست </button>
+      </div>
+      <button id="orderBtn" class="pandel-button" type="submit">{{__("Order")}}</button>
     <!-- </form> -->
     @else
       <p> TH Not Available !</p>

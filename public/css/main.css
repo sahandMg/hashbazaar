@@ -405,6 +405,8 @@ color: orange;}
 .setting-information  {
     margin-top: 5%;
     /* display: none !important ; */
+    direction: rtl;
+    text-align: right
 }
 
 .setting-information legend:nth-of-type(1) {
@@ -427,21 +429,23 @@ color: orange;}
 }
 .setting-information label {
     margin-bottom: 3%;
-    display: block
+    display: block;
+    margin-right: 3%
 }
 .setting-information input#text {
     background-color: #FFFDE8;
     width: 300px;
     height: 30px;
     border: 3px solid transparent;
-    margin-left: 21%;
+    margin-right: 21%;
     border-bottom: 1px solid black;
-    margin-bottom: 5%
+    margin-bottom: 5%;
+    text-align: center
 }
 
 .setting-information #textbefore {
     /* margin-top: 8%; */
-    margin-left: 3%;
+    /* margin-left: 3%; */
     font-size: 25px;
     font-family: sans-serif;
     color: #727272;
@@ -452,7 +456,7 @@ color: orange;}
     width: 300px;
     height: 30px;
     border: 3px solid transparent;
-    margin-left: 26%;
+    margin-right: 26%;
     border-bottom: 1px solid black;
 }
 
@@ -479,7 +483,7 @@ color: orange;}
     width: 300px;
     height: 30px;
     border: 3px solid transparent !important;
-    margin-left: 11.7%;
+    margin-right: 16.7%;
     border-bottom: 1px solid black !important;
 }
 
@@ -489,7 +493,7 @@ color: orange;}
     height: 30px;
     margin-top: 3%;
     border: 3px solid transparent;
-    margin-left: 15.3%;
+    margin-right: 17%;
     border-bottom: 1px solid black;
 }
 
@@ -499,7 +503,7 @@ color: orange;}
     height: 30px;
     margin-top: 3%;
     border: 3px solid transparent;
-    margin-left: 11.3%;
+    margin-right: 16.7%;
     border-bottom: 1px solid black;
 }
 
@@ -688,7 +692,7 @@ color: orange;}
      font-size: 20px !important;
      font-weight: bolder;
      color: #2e2d2d;
-     flex: 3;
+     flex: 1;
      width: auto;
  }
  .dashboard-hr2 {
@@ -1266,15 +1270,15 @@ color: orange;}
         width: 230px;
     }
     .setting-information input#text {
-        margin-left: 5% !important
+        margin-right: 5% !important
     }
     .setting-information input#email {
         margin-bottom: 20px;
-        margin-left: 14%
+        margin-right: 22% !important
     }
     .setting-information input#text {
         margin-bottom: 20px;
-        margin-left: 14%
+        margin-right: 14%
     }
     .setting-information #textbefore {
         font-size: 18px;
@@ -1288,18 +1292,18 @@ color: orange;}
     }
 
     .setting-information input#cur-password {
-        margin-left: 25%;
+        margin-right: 22%;
         margin-bottom: 20px;
     }
 
     .setting-information input#newpassword {
         margin-bottom: 20px;
-        margin-left: 25%;
+        margin-right: 22%;
     }
 
     .setting-information input#Confirmpassword {
         margin-bottom: 20px;
-        margin-left: 25%;
+        margin-right: 22%;
     }
 
     .setting-information input#submit
@@ -1659,22 +1663,9 @@ color: orange;}
         display: block 
     }
     .setting-information input#text {
-        margin-left: 13% !important
+        margin-right: 21% !important
     }
-    .setting-information input#cur-password {
-        margin-left: 13%;
-        margin-bottom: 20px;
-    }
-
-    .setting-information input#newpassword {
-        margin-bottom: 20px;
-        margin-left: 13%;
-    }
-
-    .setting-information input#Confirmpassword {
-        margin-bottom: 20px;
-        margin-left: 13%;
-    }
+   
   /* Wallet */
     .wallet1 {
         padding: 10%

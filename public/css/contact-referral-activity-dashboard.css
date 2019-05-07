@@ -1187,13 +1187,16 @@ form.contact-page p:nth-of-type(1) {
     margin-top: 3%;
     cursor: pointer;
 }
-
- .rfrcode {
+ #referralDiv {
+     direction: rtl;
+     text-align: right
+ }
+ #referralLabel {
     color: black;
     font-weight: bolder;
     font-size: 1.2em;
     padding-top: 25px !important;
-    display: inline
+    display: inline;
 }
  .aplybtn1text {
     display: inline-block !important;
@@ -1630,18 +1633,17 @@ form.contact-page p:nth-of-type(1) {
     }
 
     /* ==============================================Buy hash power=================================== */
-   
+    #referralDiv {
+        direction: rtl !important
+    }
     #referralCode {
-        width: 200px !important
+        width: 170px !important;
     }
     .aplybtn {
-        margin-left: 70% !important;
+        margin-right: 77% !important;
         margin-top: -60px !important
     }
-    .rfrcode {
-        display: block;
-        padding-top: 0 !important
-    }
+    
     
     /*============================================== Mining History ===================================*/
 
@@ -1799,7 +1801,7 @@ form.contact-page p:nth-of-type(1) {
     /* ==============================================Buy hash power=================================== */
 
     #referralCode {
-        width: 155px !important
+        width: 135px !important
     }
     .btn-primary {
         padding: 0.1em .5em !important;

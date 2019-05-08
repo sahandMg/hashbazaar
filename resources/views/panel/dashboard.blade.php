@@ -137,6 +137,7 @@
          <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> درخواست </button>
        </div>
        <form class="dashboard-page" method="post" action="{{route('PaystarPaying')}}">
+       {{--<form class="dashboard-page" method="post" action="{{route('TestPayment')}}">--}}
             <input type="hidden" name="_token" value="{{csrf_token()}}">
               @if($apply_discount == 1)
 
@@ -159,7 +160,10 @@
       @endif 
     <!-- </form> -->
     @else
-      <p style="color: black;text-align: center;"> TH Not Available !</p>
+
+      <p style="color: black;text-align: center;"> {{__("TH Not Available !")}}</p>
+
+
     @endif
   </div>
   <!-- Mining History -->

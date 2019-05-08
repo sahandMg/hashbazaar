@@ -32,6 +32,7 @@ class LanguageMiddleware
         }else{
             Config::set('app.locale','en');
         }
+        
         return $next($request);
 
     }

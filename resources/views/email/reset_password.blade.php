@@ -132,10 +132,19 @@
         <div class="logo-header"><img src="{{asset('img/Logo_header.svg')}}" alt="logo_header"></div>
     </header>
     <div class="container">
+        @if(\Illuminate\Support\Facades\Config::get('app.locale') == 'fa')
+
+            <h1>بازیابی کلمه عبور</h1>
+            <p style="text-align: left;">با سلام</p>
+            <p style="text-align: left;">کلمه عبور جدید شما : <b>{{$pass}}</b></p>
+            <p style="text-align: left;">لطفا بعد از ورود به حساب کاربری خود، از قسمت تنظیمات، کلمه عبور خود را تغییر دهید</p>
+            @else
             <h1>Reset Password</h1>
             <p style="text-align: left;">Hello</p>
             <p style="text-align: left;">Your new password is: <b>{{$pass}}</b></p>
-            <p style="text-align: left;">You should change your password immediately after logging in.</p> 
+            <p style="text-align: left;">You should change your password immediately after logging in.</p>
+            @endif
+
     </div>
 
     <footer>

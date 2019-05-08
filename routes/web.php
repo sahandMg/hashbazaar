@@ -175,6 +175,8 @@ Route::post('payment/callback','PaymentController@PaymentCallback')->name('Payme
 
 Route::post('paystar/paying','PaymentController@PaystarPaying')->name('PaystarPaying')->middleware('auth');
 
+Route::post('payment/test','PaymentController@TestPayment')->name('TestPayment')->middleware('auth');
+
 /*
 ===============================================================================
                                 User Panel Routes

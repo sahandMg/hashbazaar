@@ -9,7 +9,7 @@
     <meta name="description"
           content="Bitcoin is the digital gold of the future & HashBazaar is the most cost effective cloud mining company on the market. Mine bitcoin through the cloud, get started today!"/>
     <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
-    <title>Document</title>
+    <title>Payment Confirmation</title>
     <style>
         body , html{
             margin: 0;
@@ -132,11 +132,19 @@
     <div class="logo-header"><img src="{{asset('img/Logo_header.svg')}}" alt="logo_header"></div>
 </header>
 <div class="container">
-    <h1>Dear investor</h1>
-    <p style="text-align: left;">You have invested {{$trans->amount_btc}} BTC for {{$hashPower->hash}} th power.</p>
-    <p style="text-align: left;">You can track your mining output from your panel in real time.</p>
-    <p style="text-align: left;">Your mining output will be withdrawn as soon as increasing to 0.01BTC.</p>
-    <p style="text-align: left;">Also you need to make or define your wallet address from your panel->setting->wallet to withdraw.</p>
+    <h1>{{__("Dear investor")}}</h1>
+    @if(\Illuminate\Support\Facades\Config::get('app.locale') == 'fa')
+    <p style="text-align: left;"> تراهش پرداخت کرده اید.{{$hashPower->hash}} تومان جهت خرید{{$trans->usd_toman}}خریدار گرامی، شما   </p>
+        <p style="text-align: left;">شما می توانید مقدار بیتکوین استخراج شده را از قسمت داشبورد پنل کاربری خود دنبال کنید</p>
+        <p style="text-align: left;">بیتکوین استخراج شده، هنگام رسیدن به مقدار  ۰.۰۱ قابل برداشت خواهد بود</p>
+        <p style="text-align: left;">جهت برداشت بیتکوین شما می بایست در قسمت تنظیمات حساب، آدرس کیف پول بیتکوین خود را وارد کنید</p>
+    @else
+        <p style="text-align: left;">{{__("You have invested")}} {{$trans->amount_btc}} BTC for {{$hashPower->hash}} th power.</p>
+        <p style="text-align: left;">You can track your mining output from your panel in real time.</p>
+        <p style="text-align: left;">Your mining output will be withdrawn as soon as increasing to 0.01BTC.</p>
+        <p style="text-align: left;">Also you need to make or define your wallet address from your panel->setting->wallet to withdraw.</p>
+    @endif
+
 </div>
 
 <footer>

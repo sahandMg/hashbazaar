@@ -10,6 +10,6 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Thank You User. Your Payment Received !</h1>
+<h1>{{__("Thank You User. Your Payment Received !")}}</h1>
 </body>
 </html>

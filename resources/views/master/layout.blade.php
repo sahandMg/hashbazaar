@@ -15,17 +15,7 @@
     @else
         @yield('title')
     @endif
-@if(Config::get('app.locale') == 'fa')
-    <STYLE>
-      @font-face {
-        font-family: BYekanFont;
-        src: url({{asset('fonts/BYekan.ttf')}});
-      }
-      * {
-        font-family: BYekanFont;
-      }
-    </STYLE>
- @endif
+
     <!-- <link rel="icon" href="img/TabLogo.png"> -->
     <!-- <link rel="stylesheet" href="{{asset('css/blog.css')}}"> -->
     
@@ -55,8 +45,21 @@
       })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
 </head>
-
 <body id="page-top" style="background: white">
+@if(Config::get('app.locale') == 'fa')
+    <STYLE>
+      @font-face {
+        font-family: BYekanFont;
+        src: url({{asset('fonts/BYekan.ttf')}});
+      }
+      * {
+        font-family: BYekanFont;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: BYekanFont;
+      }
+    </STYLE>
+ @endif
 <!-- class="masthead pb-3" -->
 <header id="header" >
     {{-- navbar  ../../public/img/Logo_header.svg.svg.svg   --}}

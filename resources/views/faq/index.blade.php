@@ -119,16 +119,18 @@
                      <!-- customerservice-category  category-button one  -->
                     <div class="row">
                         <div class="col-lg-3 col-md-3 faq-section" id="faqSection1" style="background-color: #e8ad2c;">
-                          <h4>Bitcoin</h4>
+                          <h4>{{__("Bitcoin")}}</h4>
                           <img src="img/bitcoin-faq.svg" />
                         </div>
                         <div class="col-lg-3 col-md-3 faq-section" id="faqSection2">
-                           <h4>Mining</h4>
+                           <h4>{{__("Mining")}}</h4>
                            <img src="img/mining-faq.svg" />
                         </div>
                         <div class="col-lg-3 col-md-3 faq-section" id="faqSection3">
-                          <h4>Hash Bazaar</h4>
+
+                          <h4>{{__("Hash Bazaar")}}</h4>
                           <img src="img/BitcoinWallet.svg" />
+
                         </div>
                     </div>
                     <br/><br/>
@@ -147,9 +149,14 @@
                             <li class="faq-question-list">
                                 <h5 class="faq-question">{{__("How can I have bitcoin in my wallet?")}}</h5>
                                 <div class="faq-answer">
-                                 <p>
-                                  {{__("You can buy it from any online or offline bitcoin sellers.You can find a list of sellers from",['link'=>'https://www.bitpremier.com/buy-bitcoins'])}}<a href="https://www.bitpremier.com/buy-bitcoins">here</a>.
-                                 </p>
+
+                                 @if(Config::get('app.locale') == 'fa')
+                                        <p>برای تهیه بیت کوین میتوانید به فروشندگان فیزیکی یا سایتهای مربوطه مراجعه نمایید. لیستی از فروشندگان داخل کشور از <a href="https://www.bitpremier.com/buy-bitcoins">اینجا</a> در دسترس شماست </p>
+                                 @else
+                                        <p>You can buy it from any online or offline bitcoin sellers.You can find a list of sellers from <a href="https://www.bitpremier.com/buy-bitcoins">here</a></p>
+                                @endif
+
+
                                 </div>
                             </li>
                             <li class="faq-question-list">

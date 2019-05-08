@@ -4,7 +4,9 @@ namespace App\Http\Middleware;
 
 use App\Http\Helpers;
 use Closure;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Session;
 use Stevebauman\Location\Facades\Location;
 
 class LanguageMiddleware
@@ -19,23 +21,26 @@ class LanguageMiddleware
     public function handle($request, Closure $next)
     {
 
-        try{
+        try {
 
             $country = strtolower(Location::get(Helpers::userIP())->countryCode);
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
             $country = 'fr';
         }
 
-        if($country == 'ir' || empty($country)){
-
-            Config::set('app.locale','fa');
+        if(Session::has('locale')){
+            App::setLocale(Session::get('locale'));
         }else{
-            Config::set('app.locale','en');
+            if($country == 'ir' || empty($country)){
+
+                Session::put('locale','fa');
+            }else{
+                Session::put('locale','en');
+            }
+
         }
-        
+
         return $next($request);
 
     }
-
-
 }

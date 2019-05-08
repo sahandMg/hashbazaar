@@ -92,6 +92,7 @@ Route::get('job',function(){
 
 Route::get('mail',function (){
 
+    dd(Config::get('app.locale'));
 //    $user = User::first();
 //    Mail::send('email.newUser',['user'=>$user],function($message){
 //        $message->from ('support@hashbazaar.com');
@@ -118,6 +119,7 @@ Route::get('mail',function (){
 
 });
 
+Route::get('change-language','PageController@ChangeLanguage')->name('changeLanguage');
 
 Route::post('charge/create','PaymentController@createCharge')->name('chargeCreate');
 Route::get('charge/show/{id?}','PaymentController@getCharges');
@@ -133,7 +135,31 @@ Route::get('checkout/delete/{productid?}','PaymentController@deleteCheckout');
 Route::get('events/list','PaymentController@eventList');
 Route::get('events/show/{productid?}','PaymentController@eventShow');
 
-Route::get('/','PageController@index')->name('index');
+Route::get('set-locale/{locale}', function ($locale) {
+
+    if ($locale != Config::get('app.locale')) {
+        session(['locale' => $locale]);
+    }
+    return redirect()->back();
+})->name('locale');
+
+Route::group(['prefix'=>  session('locale')],function(){
+
+    Route::get('/','PageController@index')->name('index');
+
+    Route::get('about','PageController@aboutUs')->name('aboutUs');
+
+    Route::get('affiliate','PageController@affiliate')->name('affiliate');
+
+    Route::get('login/{hashpower?}','AuthController@login')->name('login')->middleware('guest');
+
+    Route::post('login','AuthController@post_login')->name('login');
+
+    Route::get('password-reset','AuthController@passwordReset')->name('passwordReset');
+
+    Route::post('password-reset','AuthController@post_passwordReset')->name('passwordReset');
+});
+
 
 Route::post('message','PageController@message')->name('message');
 
@@ -143,17 +169,6 @@ Route::get('subscription','AuthController@subscription')->name('subscription');
 
 Route::post('subscription','AuthController@post_subscription')->name('subscription');
 
-Route::get('about','PageController@aboutUs')->name('aboutUs');
-
-Route::get('affiliate','PageController@affiliate')->name('affiliate');
-
-Route::get('login/{hashpower?}','AuthController@login')->name('login')->middleware('guest');
-
-Route::post('login','AuthController@post_login')->name('login');
-
-Route::get('password-reset','AuthController@passwordReset')->name('passwordReset');
-
-Route::post('password-reset','AuthController@post_passwordReset')->name('passwordReset');
 
 Route::get('google/login','AuthController@redirectToProvider')->name('redirectToProvider');
 
@@ -182,7 +197,7 @@ Route::post('payment/test','PaymentController@TestPayment')->name('TestPayment')
                                 User Panel Routes
 ===============================================================================
 */
-Route::group(['middleware'=>'block','prefix'=>'panel'],function(){
+Route::group(['middleware'=>'block','prefix'=> session('locale').'/panel'],function(){
 
 
     Route::get('dashboard','PanelController@dashboard')->name('dashboard');

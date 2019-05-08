@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html style="font-size: 100%">
+<html style="font-size: 100%" lang="{{app()->getLocale()}}">
 
 <head>
     <meta charset="utf-8">
@@ -18,7 +18,6 @@
 
     <!-- <link rel="icon" href="img/TabLogo.png"> -->
     <!-- <link rel="stylesheet" href="{{asset('css/blog.css')}}"> -->
-    
     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
@@ -27,7 +26,7 @@
     <link rel="icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="{{asset('css/util.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/login.css')}}">
-    
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" ></script>
     <script src="{{asset('js/jquery-3.3.1.js')}}"></script>
     <script src="{{asset('js/jquery.animate-colors.js')}}"></script>
 <!--     <script src="{{asset('js/jquery-3.3.1.js')}}"></script>
@@ -94,10 +93,18 @@
                 <li class="flags" style="">
                     <div>
                         <span class="block">.......</span>
-                        <select name="" class="select">
-                            <option value="1" data-price='ir.svg'>Persian (FA)</option>
-                            <option value="2" data-price='uk.svg'>English (UK)</option>
-                        </select>
+                        <a href="{{route('locale',['locale'=>'fa'])}}">Persian (FA)</a>
+                        <a href="{{route('locale',['locale'=>'en'])}}">English (UK)</a>
+
+                        {{--<select name="" class="select">--}}
+                            {{--@if(Config::get('app.locale') == 'fa')--}}
+                            {{--<option value="1" data-price='ir.svg'></option>--}}
+                            {{--<option value="2" data-price='uk.svg'></option>--}}
+                              {{--@else--}}
+                                {{--<option value="2" data-price='uk.svg'>English (UK)</option>--}}
+                                {{--<option value="1" data-price='ir.svg'>Persian (FA)</option>--}}
+                            {{--@endif--}}
+                        {{--</select>--}}
                     </div>
                 </li>
                 @endif
@@ -198,19 +205,23 @@
                 // });
                 }
                 $('.select').change(function(){
-                        // alert('selected');
+
                         var block = $('.block');
                         var lang = $( ".select option:selected" ).attr('data-price');
                         if(lang) {
+
                             var temp = "./flags/"+lang;
                             block.css('background-image','url('+temp+')');
 
-                            axios.get('{{route('changeLanguage')}}').then(function(response){
-                                if(response.data == 200){
-                                    window.location = 'https://hashbazaar.com';
-                                    
-                                }
-                            })
+                            {{--axios.get('{{route('changeLanguage')}}'+'?lang='+lang).then(function(response){--}}
+                                {{--if(response.data == 200){--}}
+
+
+                                {{--}--}}
+
+                            {{--})--}}
+
+                                window.location = {!! json_encode(request()->route('locale',['locale'=>'en'])) !!};
                         }
                 });
            

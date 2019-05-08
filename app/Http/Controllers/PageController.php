@@ -9,7 +9,9 @@ use App\Message;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
@@ -74,6 +76,20 @@ Gets user message for form
     public function affiliate(){
 
         return view('affiliate');
+    }
+
+    public function ChangeLanguage(Request $request){
+
+        $lang = $request->lang;
+        $lang = explode('.',$lang)[0];
+        if($lang == 'uk'){
+            session(['locale'=>'en']);
+        }elseif ($lang == 'ir'){
+            session(['locale'=>'fa']);
+        }
+
+        return 200;
+
     }
 
 }

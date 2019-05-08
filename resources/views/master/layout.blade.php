@@ -175,12 +175,19 @@
                 // $('.signup').show();
                 // $('.navigation-menu')[0].toggleClass('change');
             });
+            // determine lanuage
+             var languageDetection = 'ir';
+             if(languageDetection === 'ir') {
+
+             } else {
+
+             }
 
             $('.select').change(function(){
                 var block = $('.block');
                 var price = $( ".select option:selected" ).attr('data-price');
                 if(price) {
-                    var temp = "../flags/"+price;
+                    var temp = "./flags/"+price;
                     block.css('background-image','url('+temp+')');
                 }else{
                     block.text('');

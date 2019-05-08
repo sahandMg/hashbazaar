@@ -58,6 +58,8 @@
       h1, h2, h3, h4, h5, h6 {
         font-family: BYekanFont;
       }
+      th, a, p, input, button, legend, label {font-family: BYekanFont;}
+      .btn {font-family: BYekanFont;}
     </STYLE>
  @endif
 <!-- class="masthead pb-3" -->

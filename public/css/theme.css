@@ -204,9 +204,38 @@ a {
 
 /* option */
 
+.select {
+  width: 130px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
+  margin-top:-30px !important
+}
+.flags:hover {
+  border-bottom: 0px solid transparent !important
+}
+.block {
+  /* height: 35px; */
+  font-size: 1.5rem;
+  font-weight: 700;
+  color:white;
+  /* display: inline-block; */
+  width:40px !important;
+  height:35px !important;
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  margin-left:-40px;
+  margin-top:40px;
+  color:transparent
 
+}
 
-
+#header-navbar-menu  ul li:last-child:hover{
+  border-bottom: 2px solid transparent !important;
+ }
 /*  */
 #lg , #sg {
   display: block;
@@ -392,8 +421,8 @@ header img { height: 175px;margin-bottom: 4%; }
       position: fixed;
     }
     #header-navbar-menu {
-      background: black;;
-      text-align: left;
+      background: black;
+      /* text-align: right; */
       height: 100%;
       left: 0px;
       flex: 10;
@@ -404,7 +433,9 @@ header img { height: 175px;margin-bottom: 4%; }
       border-bottom-right-radius: 5%;
       margin-top: 100px;
     }
-
+    .block {
+      margin-left:0
+    }
     #header-navbar-menu ul .signup {
       animation-iteration-count: 0;
       
@@ -431,6 +462,7 @@ header img { height: 175px;margin-bottom: 4%; }
        border-bottom: 2px solid rgb(255, 187, 0);
         padding-left: 10px;
      }
+
      #header-navbar-menu ul li:hover:after {
       width: 0%;
     }
@@ -529,6 +561,7 @@ header img { height: 175px;margin-bottom: 4%; }
     #header-navbar-menu  ul li{
       padding-left: 20px;
     }
+    
     .advantages-detail {
       margin-top: 4%;
     }

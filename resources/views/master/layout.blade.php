@@ -37,7 +37,7 @@
     <link rel="icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="{{asset('css/util.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/login.css')}}">
-
+    
     <script src="{{asset('js/jquery-3.3.1.js')}}"></script>
     <script src="{{asset('js/jquery.animate-colors.js')}}"></script>
 <!--     <script src="{{asset('js/jquery-3.3.1.js')}}"></script>
@@ -86,11 +86,14 @@
                 @else
                 <li class="navbar-list small1 signup"><a href="{{route('signup')}}" id="sg" >{{__('Sign Up')}}</a></li>
                 <li class="navbar-list small1 login"><a href="{{route('login')}}" id="lg" >{{__('Log In')}}</a></li>
-                <li class="flags">
-                    <select name="countries" id="countries" style="width:300px;">
-                        <option value='uk' data-image="../../../public/flags/uk.svg" data-imagecss="flag uk" data-title="United Kingdom">English (UK)</option>
-                        <option value='ae' data-image="../../../public/flags/ir.svg" data-imagecss="flag ir" data-title="IRI">Persian (FA)</option>
-                  </select>  
+                <li class="flags" style="">
+                    <div>
+                        <span class="block">.......</span>
+                        <select name="" class="select">
+                            <option value="1" data-price='uk.svg'>Englsih (UK)</option>
+                            <option value="2" data-price='ir.svg'>Persian (FA)</option>
+                        </select>
+                    </div>
                 </li>
                 @endif
             </ul>
@@ -168,10 +171,29 @@
                 // $('.navigation-menu')[0].toggleClass('change');
             });
 
-            $("#countries").slideDown();
-            })
-            
+            $('.select').change(function(){
+                var block = $('.block');
+                var price = $( ".select option:selected" ).attr('data-price');
+                if(price) {
+                    var temp = "../flags/"+price;
+                    block.css('background-image','url('+temp+')');
+                }else{
+                    block.text('');
+                }
+            });
+
+            $("#subMenu").hide(); 
+
+            $("#menu").hover(
+                function() {
+                    $("#subMenu").show('fast');        
+                },
+                function() {
+                    $("#subMenu").hide('fast'); 
+                }
+            );
        });
+
 
         //            $(document).ready(function(){
         //        $('.navigation-menu').click(function(){
@@ -190,6 +212,27 @@
         //        // $('.signup').show();
         //        })
      </script>
+@if(Config::get('app.locale') == 'fa')
+    <style type="text/css">
+        #header-navbar-menu {
+            text-align: right;
+        }
+        #header-navbar-menu ul li {
+            padding-right: 20px;
+        }
 
+        /* .a1 {
+            margin-left:20px;
+            padding-left: 20px;
+
+        } */
+
+    </style>
+@else
+
+    <style type="text/css">
+    
+    </style>
+@endif
 </body>
 </html>

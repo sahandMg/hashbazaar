@@ -224,12 +224,6 @@
             padding-right: 20px;
         }
 
-        /* .a1 {
-            margin-left:20px;
-            padding-left: 20px;
-
-        } */
-
     </style>
 @else
 

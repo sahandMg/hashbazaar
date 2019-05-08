@@ -223,8 +223,8 @@ a {
   font-weight: 700;
   color:white;
   /* display: inline-block; */
-  width:40px !important;
-  height:35px !important;
+  width:30px !important;
+  height:25px !important;
   background-size:100% 100%;
   background-repeat:no-repeat;
   margin-left:-40px;
@@ -351,6 +351,19 @@ header img { height: 175px;margin-bottom: 4%; }
     padding-left: 1%
   }
 
+  #header-navbar-menu {
+    flex: 6 !important;
+    margin-left: 200px !important;
+  }
+
+  #header-navbar-menu ul li {
+    margin-left: 3%;
+  }
+
+  .flags {
+    margin-left: 5.5% !important
+  }
+
 }
 
 @media only screen and (max-width: 1024px) {
@@ -361,15 +374,15 @@ header img { height: 175px;margin-bottom: 4%; }
       
   #header-navbar-menu {
     flex: 6 !important;
-    margin-left: 70px !important;
+    margin-left: 150px !important;
   }
 
   #header-navbar-menu ul li {
-    margin-left: 3%;
+    margin-left: 1%;
   }
 
   .flags {
-    margin-left: 7% !important
+    margin-left: 3.5% !important
   }
  
   #price {

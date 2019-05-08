@@ -574,9 +574,9 @@
 </style>
 @if(Config::get('app.locale') == 'fa')
 <script type="text/javascript">  
-  console.log("**** price toman *******");
+  // console.log("**** price toman *******");
   var dollarToToman = parseInt({!! $settings->usd_toman !!}); 
-  console.log(dollarToToman);
+  // console.log(dollarToToman);
    // // ------------ scroll for many data in table  --------------------
                 $(document).ready(function(){
                     $('.user-img').click(function(){

@@ -60,6 +60,7 @@
                 @else
                     <li class="navbar-list small1 signup"><a href="{{route('signup')}}" >Sign Up</a></li>
                     <li class="navbar-list small1 login"><a href="{{route('login')}}" >Log In</a></li>
+                   
                 @endif
             </ul>
 

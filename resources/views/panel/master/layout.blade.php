@@ -53,6 +53,36 @@
       * {
         font-family: BYekanFont;
       }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: BYekanFont;
+      }
+      th, a, p, input, button, legend, label {font-family: BYekanFont;}
+      .user-account-list a {font-family: BYekanFont;}
+      .mainList a {font-family: BYekanFont;}
+   /*   #dashboard:before {
+        font-family: BYekanFont;
+     }
+
+    #activity:before {
+       font-family: BYekanFont; 
+    }
+
+    #contact1:before {
+        font-family: BYekanFont;
+    }
+
+    #setting:before {
+      font-family: BYekanFont;
+    }
+
+    #referral:before {
+        font-family: BYekanFont;
+    }
+
+    #logouticon2:before{
+      font-family: BYekanFont;
+    }*/
+
     </STYLE>
    @endif
 </head>

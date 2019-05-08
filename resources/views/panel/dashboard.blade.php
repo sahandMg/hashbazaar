@@ -160,7 +160,10 @@
       @endif 
     <!-- </form> -->
     @else
-      <p> {{__("TH Not Available !")}}</p>
+
+      <p style="color: black;text-align: center;"> {{__("TH Not Available !")}}</p>
+
+
     @endif
   </div>
   <!-- Mining History -->
@@ -290,6 +293,12 @@
         .aplybtn {
             margin-right: 77% !important;
             margin-top: -60px !important
+        }
+        .title-flex .dashboard-title {
+            font-size: 1.3rem !important;
+            margin-top: 10px;
+            flex: 1.5;
+            text-align: center !important
         }
       }
 
@@ -610,6 +619,7 @@
                 var thPrice = {!! $settings->usd_per_hash !!};
                 var thPriceAfterCode ;
                 var slider = document.getElementById("myRange");
+                console.log("*******slider*********");console.log(slider);
                 var hiddenRange = document.getElementById("hiddenRange");
                 hiddenRange.value = slider.value;
                 var output = document.getElementById("demo");

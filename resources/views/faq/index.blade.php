@@ -127,8 +127,10 @@
                            <img src="img/mining-faq.svg" />
                         </div>
                         <div class="col-lg-3 col-md-3 faq-section" id="faqSection3">
+
                           <h4>{{__("Hash Bazaar")}}</h4>
-                          <img src="img/wallet-btc.png" />
+                          <img src="iimg/BitcoinWallet.svg" />
+
                         </div>
                     </div>
                     <br/><br/>

@@ -50,8 +50,8 @@ a {
 }
 
 #header-navbar-menu {
-  flex: 4;
-  margin-left: 200px;
+  flex: 5;
+  margin-left: 100px;
   margin-top: 45px;
   max-width: 100%;
   max-height: 100% !important;
@@ -87,7 +87,7 @@ a {
   -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
   animation-name: singup;
   animation-duration: 2s;
-  animation-iteration-count: 2;
+  animation-iteration-count: 1;
   position: relative;
   
 }
@@ -202,6 +202,12 @@ a {
   background: transparent !important;
 }
 
+/* option */
+
+
+
+
+/*  */
 #lg , #sg {
   display: block;
   height: 110%;
@@ -325,12 +331,16 @@ header img { height: 175px;margin-bottom: 4%; }
   .headerTheme {height: 500px;}
       
   #header-navbar-menu {
-    flex: 5 !important;
-    margin-left: 170px !important;
+    flex: 6 !important;
+    margin-left: 70px !important;
   }
 
   #header-navbar-menu ul li {
-    margin-left: 4%;
+    margin-left: 3%;
+  }
+
+  .flags {
+    margin-left: 7% !important
   }
  
   #price {
@@ -393,6 +403,11 @@ header img { height: 175px;margin-bottom: 4%; }
       border-bottom-left-radius: 5%;
       border-bottom-right-radius: 5%;
       margin-top: 100px;
+    }
+
+    #header-navbar-menu ul .signup {
+      animation-iteration-count: 0;
+      
     }
    
      #header-navbar-menu  ul 
@@ -659,7 +674,7 @@ header img { height: 175px;margin-bottom: 4%; }
 
 
 .fontTheme{
-  font-family: Helvetica,Arial,sans-serif,Lora,Helvetica Neue;
+  /* font-family: Helvetica,Arial,sans-serif,Lora,Helvetica Neue; */
   color: #696967;
   margin-left: 0;
 }
@@ -779,7 +794,7 @@ header img { height: 175px;margin-bottom: 4%; }
   /*box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);*/
 }
 .form input {
-  font-family: "Roboto", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
   outline: 0;
   background: #f2f2f2;
   width: 100%;
@@ -790,7 +805,7 @@ header img { height: 175px;margin-bottom: 4%; }
   font-size: 14px;
 }
 .form button {
-  font-family: "Roboto", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
   text-transform: uppercase;
   outline: 0;
   background: #4CAF50;
@@ -863,3 +878,4 @@ header img { height: 175px;margin-bottom: 4%; }
 .network-flex #insta:hover {
   transform: translateY(-6px)
 } 
+

@@ -15,17 +15,7 @@
     @else
         @yield('title')
     @endif
-@if(Config::get('app.locale') == 'fa')
-    <STYLE>
-      @font-face {
-        font-family: BYekanFont;
-        src: url({{asset('fonts/BYekan.ttf')}});
-      }
-      * {
-        font-family: BYekanFont;
-      }
-    </STYLE>
- @endif
+
     <!-- <link rel="icon" href="img/TabLogo.png"> -->
     <!-- <link rel="stylesheet" href="{{asset('css/blog.css')}}"> -->
     
@@ -55,8 +45,21 @@
       })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
 </head>
-
 <body id="page-top" style="background: white">
+@if(Config::get('app.locale') == 'fa')
+    <STYLE>
+      @font-face {
+        font-family: BYekanFont;
+        src: url({{asset('fonts/BYekan.ttf')}});
+      }
+      * {
+        font-family: BYekanFont;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: BYekanFont;
+      }
+    </STYLE>
+ @endif
 <!-- class="masthead pb-3" -->
 <header id="header" >
     {{-- navbar  ../../public/img/Logo_header.svg.svg.svg   --}}
@@ -70,7 +73,7 @@
             <ul>
                 @if(Config::get('app.locale') == 'fa')
                 <!-- <li class="navbar-list small1 a1"><a href="http://blog.hashbazaar.com">{{__('Blog')}}</a></li> -->
-                <li class="navbar-list small1 a1"><a href="{{route('affiliate')}}">{{__('Affiliate')}}</a></li>
+                <!-- <li class="navbar-list small1 a1"><a href="{{route('affiliate')}}">{{__('Affiliate')}}</a></li> -->
                 <li class="navbar-list small1 a1"><a href="{{route('customerService')}}">{{__('FAQ')}}</a></li>
                 <li class="navbar-list small1 a1"><a href="{{route('aboutUs')}}">{{__('About')}}</a></li>
                 <li class="navbar-list small1 a1"><a href="{{route('index')}}">{{__('Home')}}</a></li>
@@ -86,6 +89,12 @@
                 @else
                 <li class="navbar-list small1 signup"><a href="{{route('signup')}}" id="sg" >{{__('Sign Up')}}</a></li>
                 <li class="navbar-list small1 login"><a href="{{route('login')}}" id="lg" >{{__('Log In')}}</a></li>
+                <li class="flags">
+                    <select name="countries" id="countries" style="width:300px;">
+                        <option value='uk' data-image="../../../public/flags/uk.svg" data-imagecss="flag uk" data-title="United Kingdom">English (UK)</option>
+                        <option value='ae' data-image="../../../public/flags/ir.svg" data-imagecss="flag ir" data-title="IRI">Persian (FA)</option>
+                  </select>  
+                </li>
                 @endif
             </ul>
 
@@ -124,6 +133,7 @@
  </style> --}}
 @endif
     <script type="text/javascript">
+        
           window.$crisp=[];window.CRISP_WEBSITE_ID="792f282f-edde-46b8-8b02-d38ca5cb92c2";
         (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";
             s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
@@ -160,6 +170,10 @@
                 // $('.signup').show();
                 // $('.navigation-menu')[0].toggleClass('change');
             });
+
+            $("#countries").slideDown();
+            })
+            
        });
 
         //            $(document).ready(function(){

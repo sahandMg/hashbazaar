@@ -146,19 +146,16 @@
                                  </p>
                                 </div>
                             </li>
+                            @if(Config::get('app.locale') == 'en')
                             <li class="faq-question-list">
                                 <h5 class="faq-question">{{__("How can I have bitcoin in my wallet?")}}</h5>
                                 <div class="faq-answer">
 
-                                 @if(Config::get('app.locale') == 'fa')
-                                        <p>برای تهیه بیت کوین میتوانید به فروشندگان فیزیکی یا سایتهای مربوطه مراجعه نمایید. لیستی از فروشندگان داخل کشور از <a href="https://www.bitpremier.com/buy-bitcoins">اینجا</a> در دسترس شماست </p>
-                                 @else
                                         <p>You can buy it from any online or offline bitcoin sellers.You can find a list of sellers from <a href="https://www.bitpremier.com/buy-bitcoins">here</a></p>
-                                @endif
-
 
                                 </div>
                             </li>
+                            @endif
                             <li class="faq-question-list">
                                 <h5 class="faq-question">{{__("How can I invest on bitcoin?")}}</h5>
                                 <div class="faq-answer">

@@ -74,7 +74,7 @@
                                 {{__("do you have an account?")}}
 						</span>
 		@if(isset($_GET['hashPower']))
-				<a href="{{route('login').'?hashPower='.$_GET['hashPower']}}" class="txt3">Log in now</a>
+				<a href="{{route('login').'?hashPower='.$_GET['hashPower']}}" class="txt3">{{__("Log in now")}}</a>
 		@else
 			<a href="{{route('login')}}" class="txt3">{{__("Log in now")}}</a>
 		@endif

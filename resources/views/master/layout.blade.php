@@ -86,6 +86,12 @@
                 @else
                 <li class="navbar-list small1 signup"><a href="{{route('signup')}}" id="sg" >{{__('Sign Up')}}</a></li>
                 <li class="navbar-list small1 login"><a href="{{route('login')}}" id="lg" >{{__('Log In')}}</a></li>
+                <li class="flags">
+                    <select name="countries" id="countries" style="width:300px;">
+                        <option value='uk' data-image="../../../public/flags/uk.svg" data-imagecss="flag uk" data-title="United Kingdom">English (UK)</option>
+                        <option value='ae' data-image="../../../public/flags/ir.svg" data-imagecss="flag ir" data-title="IRI">Persian (FA)</option>
+                  </select>  
+                </li>
                 @endif
             </ul>
 
@@ -124,6 +130,7 @@
  </style> --}}
 @endif
     <script type="text/javascript">
+        
           window.$crisp=[];window.CRISP_WEBSITE_ID="792f282f-edde-46b8-8b02-d38ca5cb92c2";
         (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";
             s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
@@ -160,6 +167,10 @@
                 // $('.signup').show();
                 // $('.navigation-menu')[0].toggleClass('change');
             });
+
+            $("#countries").slideDown();
+            })
+            
        });
 
         //            $(document).ready(function(){

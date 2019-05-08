@@ -58,7 +58,7 @@ body {
     font-size: 2rem;
     color: #2e2d2d;
    font-weight: bold;
-   font-family: sans-serif;
+   /* font-family: sans-serif; */
 }
 .contact-container form {
     width: 70%;
@@ -143,7 +143,7 @@ body {
 }
 
 form.contact-page button p {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
+    /* font-family: 'Segoe UI', Tahoma, sans-serif; */
     font-size: 2rem;
     color: white;
 }
@@ -363,7 +363,7 @@ form.contact-page p:nth-of-type(1) {
     font-size: 1.6rem;
     color: #2e2d2d;
     font-weight: bold;
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
     margin-top: 30px;
     margin-left: 40px;
  }
@@ -386,14 +386,14 @@ form.contact-page p:nth-of-type(1) {
 }
  #referral-page .myReferralId  {
      font-size: 1.6rem;
-     font-family: sans-serif;
+     /* font-family: sans-serif; */
      color: #2e2d2d;
      margin-top: -55px;
      margin-left: 240px;
 }
  .shareReferralId {
     font-size: 1.6rem;
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
     color: #2e2d2d;
 }
 .referral-page_secondList
@@ -409,7 +409,7 @@ form.contact-page p:nth-of-type(1) {
     flex-grow: 1;
     font-size: 1.6rem;
     color: #2e2d2d;
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
 }
 .referral-page_secondList_column ul li {
     width: auto;
@@ -444,7 +444,7 @@ form.contact-page p:nth-of-type(1) {
         flex-grow: 1;
         font-size: 1.4rem;
         color: #2e2d2d;
-        font-family: sans-serif;
+        /* font-family: sans-serif; */
     }
 
 }
@@ -522,7 +522,7 @@ form.contact-page p:nth-of-type(1) {
         font-size: 1rem;
         color: #2e2d2d;
         margin-top: 0;
-        font-family: sans-serif;
+        /* font-family: sans-serif; */
         margin-left: 0px;;
         height: 100px;
     }
@@ -558,13 +558,13 @@ form.contact-page p:nth-of-type(1) {
     .ref-flex  blockquote {
         flex: 3 !important;
         font-size:0.8rem !important;
-        font-family: sans-serif;
+        /* font-family: sans-serif; */
         /* top: 330px; */
         margin-left: 30px;
     }
     #referral-page blockquote:nth-of-type(1) {
         font-size: 1rem;
-        font-family: sans-serif;
+        /* font-family: sans-serif; */
         /* top: 330px; */
         margin-left: 30px;
     }
@@ -625,7 +625,7 @@ form.contact-page p:nth-of-type(1) {
     height: 130px;
     border-bottom: 2px solid #727272;
     background: rgb(39, 38, 38);
-    font-family: helvetica
+    /* font-family: helvetica */
 }
 
 #activity:hover{
@@ -640,7 +640,7 @@ form.contact-page p:nth-of-type(1) {
     font-size: 1.8rem;
     color: #2e2d2d;
     font-weight: bold;
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
     text-align: center;
     margin: auto;
 }
@@ -661,7 +661,7 @@ form.contact-page p:nth-of-type(1) {
    border-bottom: 2px solid #3a393986;
    color: #2e2d2d;
    font-weight: bold;
-   font-family: sans-serif;
+   /* font-family: sans-serif; */
    margin: auto;
    display: block;
 }
@@ -991,7 +991,7 @@ form.contact-page p:nth-of-type(1) {
     color: #212529;
     background-color: #42dca3;
     border-color: #42dca3;
-    font-family: Cabin,Helvetica Neue,Helvetica,Arial,sans-serif;
+    /* font-family: Cabin,Helvetica Neue,Helvetica,Arial,sans-serif; */
     font-weight: 400;
     transition: all .3s ease-in-out;
     -webkit-transition: all .3s ease-in-out;
@@ -1010,7 +1010,7 @@ form.contact-page p:nth-of-type(1) {
 #circle-span {
     font-size: 1.8rem;
     text-align: center !important;
-    font-family: sans-serif !important;
+    /* font-family: sans-serif !important; */
     color: #727272;
     margin: auto !important;
     margin-top: 20% !important;
@@ -1024,7 +1024,7 @@ form.contact-page p:nth-of-type(1) {
     color: rgb(41, 37, 37);
     margin-top: 7% !important;
     font-weight: bolder;
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
     padding:0 !important;
 }
 
@@ -1035,7 +1035,7 @@ form.contact-page p:nth-of-type(1) {
     margin-top: -4%;
     font-weight: bolder;
     padding:0 !important;
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
     padding-left: 2.5% !important
 }
 #dashboard-page-circle2 p:nth-of-type(1) {
@@ -1045,7 +1045,7 @@ form.contact-page p:nth-of-type(1) {
     margin-top: 7%;
     font-weight: bolder;
     padding:0 !important;
-    font-family: sans-serif
+    /* font-family: sans-serif */
 }
 
 #dashboard-page-circle2 p:nth-of-type(2) {
@@ -1055,7 +1055,7 @@ form.contact-page p:nth-of-type(1) {
     color: rgb(41, 37, 37);
     margin-top: -4% !important;
     font-weight: bolder;
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
     padding-left: 2.5% !important
 
 }
@@ -1099,7 +1099,7 @@ form.contact-page p:nth-of-type(1) {
     font-size: 1.6rem;
     font-weight: bolder;
     color: #242424;
-    font-family: Helvetica, sans-serif;
+    /* font-family: Helvetica, sans-serif; */
 }
 
 .slidecontainer {
@@ -1172,7 +1172,7 @@ form.contact-page p:nth-of-type(1) {
     color: #212529;
     background-color: #42dca3;
     border-color: #42dca3;
-    font-family: Cabin,Helvetica Neue,Helvetica,Arial,sans-serif;
+    /* font-family: Cabin,Helvetica Neue,Helvetica,Arial,sans-serif; */
     font-weight: 400;
     transition: all .3s ease-in-out;
     -webkit-transition: all .3s ease-in-out;
@@ -1213,7 +1213,7 @@ form.contact-page p:nth-of-type(1) {
     color: #212529;
     background-color: #42dca3;
     border-color: #42dca3;
-    font-family: Cabin,Helvetica Neue,Helvetica,Arial,sans-serif;
+    /* font-family: Cabin,Helvetica Neue,Helvetica,Arial,sans-serif; */
     font-weight: 400;
     transition: all .3s ease-in-out;
     -webkit-transition: all .3s ease-in-out;
@@ -1292,7 +1292,7 @@ form.contact-page p:nth-of-type(1) {
         top:5px;
         left:30px;
         z-index:1;
-        font-family:Arial,sans-serif;
+        /* font-family:Arial,sans-serif; */
         -webkit-transform: rotate(-15deg); /* Safari */
         -moz-transform: rotate(-15deg); /* Firefox */
         -ms-transform: rotate(-15deg); /* IE */
@@ -1501,7 +1501,7 @@ form.contact-page p:nth-of-type(1) {
     #circle-span {
         font-size: 1.8rem;
         text-align: center;
-        font-family: sans-serif;
+        /* font-family: sans-serif; */
         color: #727272;
     }
 
@@ -1510,7 +1510,7 @@ form.contact-page p:nth-of-type(1) {
         text-align: center;
         color: rgb(41, 37, 37);
         font-weight: bolder;
-        font-family: sans-serif
+        /* font-family: sans-serif */
     }
     #dashboard-page-circle p:nth-of-type(2) {
         margin-top: -3% !important
@@ -1520,7 +1520,7 @@ form.contact-page p:nth-of-type(1) {
         text-align: center;
         color: rgb(41, 37, 37);
         font-weight: bolder;
-        font-family: sans-serif
+        /* font-family: sans-serif */
     }
 
         
@@ -1685,7 +1685,7 @@ form.contact-page p:nth-of-type(1) {
     #circle-span {
         font-size: 1.1rem !important;
         text-align: center;
-        font-family: sans-serif;
+        /* font-family: sans-serif; */
         color: #727272;
         font-weight: bolder;
     }
@@ -1695,14 +1695,14 @@ form.contact-page p:nth-of-type(1) {
         text-align: center;
         color: rgb(41, 37, 37);
         font-weight: bolder;
-        font-family: sans-serif
+        /* font-family: sans-serif */
     }
     #dashboard-page-circle2 p {
         font-size: 1.4rem !important;
         text-align: center;
         color: rgb(41, 37, 37);
         font-weight: bolder;
-        font-family: sans-serif
+        /* font-family: sans-serif */
     }
     /* ==================================================HASH History============================== */
     .title-flex .dashboard-title {
@@ -1756,7 +1756,7 @@ form.contact-page p:nth-of-type(1) {
         
     #circle-span {
         text-align: center;
-        font-family: sans-serif;
+        /* font-family: sans-serif; */
         color: #727272;
         font-weight: bolder;
     }
@@ -1765,14 +1765,14 @@ form.contact-page p:nth-of-type(1) {
         text-align: center;
         color: rgb(41, 37, 37);
         font-weight: bolder;
-        font-family: sans-serif;
+        /* font-family: sans-serif; */
         font-size: 0.85rem !important;
     }
     #dashboard-page-circle2 p {
         text-align: center;
         color: rgb(41, 37, 37);
         font-weight: bolder;
-        font-family: sans-serif;
+        /* font-family: sans-serif; */
         font-size: 0.85rem !important;
     }
 

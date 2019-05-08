@@ -286,6 +286,12 @@
             margin-right: 77% !important;
             margin-top: -60px !important
         }
+        .title-flex .dashboard-title {
+            font-size: 1.3rem !important;
+            margin-top: 10px;
+            flex: 1.5;
+            text-align: center !important
+        }
       }
 
       @media screen and (max-width: 321px){

@@ -42,7 +42,7 @@
     left: 0;
     margin-left: 0px;
     position: relative; 
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
     font-weight: bold;
     transition: all .5s ease-in;
     cursor: pointer;
@@ -191,7 +191,7 @@ header {
     height: 100px;
     border-bottom: 2px solid #727272;
     background: rgb(39, 38, 38);
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
 }
 
 
@@ -212,7 +212,7 @@ div ul .navbar #welcome {
     background: rgb(39, 38, 38);
     padding-bottom: 40px !important;
     text-align: center;
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
     display:block;
     margin:auto;
 }
@@ -337,7 +337,7 @@ color: orange;}
     color: #212529;
     background-color: #42dca3;
     border-color: #42dca3;
-    font-family: Cabin,Helvetica Neue,Helvetica,Arial,sans-serif;
+    /* font-family: Cabin,Helvetica Neue,Helvetica,Arial,sans-serif; */
     font-weight: 400;
     transition: all .3s ease-in-out;
     -webkit-transition: all .3s ease-in-out;
@@ -380,7 +380,7 @@ color: orange;}
 }
 
 #setting-page .setting-flex .flex-item  {
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
     font-weight: bolder;
     text-align: center;
 }
@@ -446,7 +446,7 @@ color: orange;}
     /* margin-top: 8%; */
     /* margin-left: 3%; */
     font-size: 1.6rem;
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
     color: #727272;
     /* text-align: center */
 }
@@ -515,7 +515,7 @@ color: orange;}
     border-radius: 8%;
     font-size: 1.4rem;
     color: white;
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
 }
 .setting-information input::placeholder { font-size:1rem !important}
 
@@ -527,11 +527,11 @@ color: orange;}
     font-size: 1.3rem;
     margin-top: 5% ;
     color: dimgrey;
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
 }
 
 .wallet1 q {
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
     font-size: 1.9rem;
     /* margin-left: 46%; */
     font-weight: bold;
@@ -539,7 +539,7 @@ color: orange;}
 }
 
 .wallet1 h2 {
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
     font-size: 1.2rem;
     color: #2e2d2d !important;
 }
@@ -571,7 +571,7 @@ color: orange;}
         color: #212529;
         background-color: #42dca3;
         border-color: #42dca3;
-        font-family: Cabin,Helvetica Neue,Helvetica,Arial,sans-serif;
+        /* font-family: Cabin,Helvetica Neue,Helvetica,Arial,sans-serif; */
         font-weight: 400;
         transition: all .3s ease-in-out;
         -webkit-transition: all .3s ease-in-out;

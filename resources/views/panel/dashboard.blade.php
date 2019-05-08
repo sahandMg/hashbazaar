@@ -120,7 +120,11 @@
       <p style="color:black">{{__("Hash allocation cost :")}} <span id="cost"></span> {{__("dollar")}}
           <span id="doReferalCode" style="animation-iteration-count:infinite;padding:2px"></span>
       </p>
-      <p style="color:black">{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day}} {{__('dollar per Th/day')}}</p>
+    @if(Config::get('app.locale') == 'fa')
+      <p style="color:black">{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day*$settings->usd_toman}} {{__('dollar per Th/day')}}</p>
+    @else 
+     <p style="color:black">{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day}} {{__('dollar per Th/day')}}</p>
+    @endif 
       <small style="color: #707070;">{{__("(include all electricity, cooling, development, and servicing costs )")}}</small>
       <p style="color:black">{{__('Income : At this time We predict')}} {{$settings->bitcoin_income_per_month_per_th}} {{__('BTC/month per Th')}}</p>
       <small  style="color: #707070;">{{__("(May be changed depends on bitcoin price and bitcoin network difficulty)")}}</small>
@@ -132,7 +136,7 @@
          <input id='referralCode' type="text" placeholder="{{$AppliedCode}}" name="referralCode" style="margin-top:5px" class="aplybtn1text"/>
          <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> درخواست </button>
        </div>
-       <form class="dashboard-page" method="post" action="{{route('chargeCreate')}}">
+       <form class="dashboard-page" method="post" action="{{route('PaystarPaying')}}">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
               @if($apply_discount == 1)
 

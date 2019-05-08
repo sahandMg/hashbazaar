@@ -59,7 +59,8 @@
         </div>
     </section>
   @if(Config::get('app.locale') == 'fa')
-  <section class="context-section backgroundGrey text-center pt-4 pb-4 advantages" style="color: #707070"  >
+  <section class="context-section backgroundGrey text-center pt-4 pb-4 advantages" style="color: #707070;padding: 2%;"  >
+    <img id="price" alt="electricity price" src="img/workflow.jpg" style="width: 100%;height: auto;">
   </section>
   @else
     <section class="context-section backgroundGrey text-center pt-4 pb-4 advantages" style="color: #707070"  >

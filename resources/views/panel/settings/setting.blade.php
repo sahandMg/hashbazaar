@@ -249,6 +249,10 @@ function copyToClipboard(elem) {
          #setting-page .setting-flex .flex-item a {
             font-size:2rem;
         }
+        #dashboard-title2 {
+            font-size: 1.5rem !important
+        }
+
         .setting-information  {
             margin-top: 5%;
             direction: rtl;
@@ -278,14 +282,39 @@ function copyToClipboard(elem) {
         .setting-information input#Confirmpassword {
             margin-right: 16.7%;
         }
+        @media screen and (max-width:1025px){
+            .setting-information input#email {
+                margin-right: 35%;
+            }
 
-        @media screen and (max-width:768px){
+            .make-wallet .dashboard-title2 {
+                font-size: 1.9rem !important;
+                flex: 2;
+                text-align: center !important
+            }
+
+        }
+        @media screen and (max-width:769px){
             .setting-information  {
                 margin-left: 0%;
             }
+
+            .make-wallet .dashboard-title2 {
+                font-size: 1.9rem !important;
+                flex: 2
+            }
+
         }
 
         @media screen and (max-width:415px){
+            .make-wallet .dashboard-title2 {
+                font-size: 1.1rem !important;
+                flex: 3
+            }
+            #dashboard-title2 {
+              font-size: 1.5rem !important
+            }
+
             .setting-information input#text {
                 margin-right: 5% !important
             }
@@ -310,11 +339,16 @@ function copyToClipboard(elem) {
                 margin-right: 22%;
             }
 
+            
+
         }
 
         @media screen and (max-width:321px){
             .setting-information input#text {
                 margin-right: 21% !important
+            }
+            .make-wallet #dashboard-title2 {
+                /* font-size: 2.5rem !important */
             }
         }
 

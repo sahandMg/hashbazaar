@@ -261,6 +261,15 @@
         font-size: 1.6rem !important;
       }
 
+      @media screen and (max-width:1025px){
+        .title-flex .dashboard-title {
+            font-size: 1.9rem !important;
+            margin-top: 10px;
+            flex: 2;
+            text-align: center !important
+        }
+      }
+
       @media screen and (max-width: 420px) {
         #referralDiv {
             direction: rtl !important
@@ -306,6 +315,7 @@
         direction: ltr;
         text-align: left
       }
+     
 
       @media screen and (max-width: 420px) {
         

@@ -190,16 +190,20 @@ body, html {
   -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
   -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
 }
-input[type='password'] , input[type='email'] , input[type='text'] {
+.limiter .container-login100 input[type='password'] ,
+.limiter .container-login100 input[type='email'] ,
+.limiter .container-login100 input[type='text'] {
   border: 2px solid green;
 }
 
-input[type='password']:focus , input[type='email']:focus , input[type='text']:focus {
+.limiter .container-login100 input[type='password']:focus ,
+.limiter .container-login100 input[type='email']:focus ,
+.limiter .container-login100 input[type='text']:focus {
   border: 2px solid orange !important;
 }
-input[type='password']:placeholder-shown ,
-input[type='email']:placeholder-shown ,
-input[type='text']:placeholder-shown {
+.container-login100 input[type='password']:placeholder-shown ,
+.container-login100 input[type='email']:placeholder-shown ,
+.container-login100 input[type='text']:placeholder-shown {
   border-color:red;
 }
 
@@ -432,14 +436,6 @@ input[type='text']:placeholder-shown {
   opacity: 1;
 }
 
-
-input[(password)]{
-  border: 2px solid green;
-}
-
-input:placeholder-shown {
-  border-color:red;
-}
 
 @media screen and (max-width: 992px) {
   .alert-validate::before {

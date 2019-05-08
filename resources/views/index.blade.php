@@ -143,6 +143,8 @@
          text-align: right;
       }
       .contact-form {direction: rtl;}
+
+      
     </style>
     @else
     <style type="text/css">

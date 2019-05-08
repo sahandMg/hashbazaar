@@ -249,6 +249,54 @@
 @if(Config::get('app.locale') == 'fa')
     <style type="text/css">
       .buy-hashpower-text {direction: rtl;text-align: right;}
+
+      #referralDiv {
+        direction: rtl;
+        text-align: right
+      }
+      #referralLabel {
+          color: black;
+          font-weight: bolder;
+          font-size: 1.2em;
+          padding-top: 25px !important;
+          display: inline;
+      }
+      .title-flex .dashboard-title {
+        margin-left: 0em !important;
+        font-size: 1.6rem !important;
+      }
+
+      @media screen and (max-width:1025px){
+        .title-flex .dashboard-title {
+            font-size: 1.9rem !important;
+            margin-top: 10px;
+            flex: 2;
+            text-align: center !important
+        }
+      }
+
+      @media screen and (max-width: 420px) {
+        #referralDiv {
+            direction: rtl !important
+        }
+        #referralCode {
+            width: 170px !important;
+        }
+        .aplybtn {
+            margin-right: 77% !important;
+            margin-top: -60px !important
+        }
+      }
+
+      @media screen and (max-width: 321px){
+          #referralCode {
+            width: 135px !important
+        }
+        .btn-primary {
+            padding: 0.1em .5em !important;
+            margin-left: 170px;
+        }
+      }
     </style>
  @else
   <script type="text/javascript">
@@ -267,6 +315,33 @@
   </script>
     <style type="text/css">
       .buy-hashpower-text {direction: ltr;text-align: left;}
+
+      #referralDiv {
+        direction: ltr;
+        text-align: left
+      }
+     
+
+      @media screen and (max-width: 420px) {
+        
+        #referralCode {
+            width: 170px !important;
+        }
+        .aplybtn {
+            margin-right: 70% !important;
+            margin-top: -60px !important
+        }
+      }
+
+      @media screen and (max-width: 321px){
+          #referralCode {
+            width: 135px !important
+        }
+        .btn-primary {
+            padding: 0.1em .5em !important;
+            margin-left: 170px;
+        }
+      }
     </style>
  @endif
 <style type="text/css">

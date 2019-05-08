@@ -54,7 +54,10 @@
            </form>
         </div>
     </section>
-
+  @if(Config::get('app.locale') == 'fa')
+  <section class="context-section backgroundGrey text-center pt-4 pb-4 advantages" style="color: #707070"  >
+  </section>
+  @else
     <section class="context-section backgroundGrey text-center pt-4 pb-4 advantages" style="color: #707070"  >
         <h2>Our Advantages</h2>
         <div class="container">
@@ -88,6 +91,7 @@
             </div>
         </div>
     </section>
+  @endif  
     <section id="contact" class="text-center backgroundGrey" >
         <div class="" style="background: white;padding-bottom:1px">
             <div class="col-lg-8 mx-auto">

@@ -53,7 +53,6 @@
         </form>
 
     </div>
-
     <div class="wallet1 text-center" >
 
             <p class="text-center">{{__("Still Don’t Have a Bitcoin Wallet? Click")}} <a href="https://www.blockchain.com/" target="_blank" id="clickhear"
@@ -115,7 +114,17 @@
 
  </div>
 </div>
-
+@if(Config::get('app.locale') == 'fa')
+    <style type="text/css">
+      .setting-information {direction: rtl;text-align: right;}
+      .setting-information input#text {
+         margin-left: 0;
+      }
+      .setting-information #textbefore {
+        margin-left: 0;
+      }
+    </style>   
+ @endif
 <script>
     // $.noConflict();
 

@@ -19,7 +19,11 @@
         <br/>
         <br/>
     </div>
-  
+  @if(Config::get('app.locale') == 'fa')
+    <style type="text/css">
+      .contact-container {direction: rtl;}
+    </style>
+   @endif
    <style type="text/css">
         .panel-header {
             margin-top: 2%;

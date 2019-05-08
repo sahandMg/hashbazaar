@@ -95,8 +95,8 @@
                     <div>
                         <span class="block">.......</span>
                         <select name="" class="select">
-                            <option value="1" data-price='uk.svg'>Englsih (UK)</option>
-                            <option value="2" data-price='ir.svg'>Persian (FA)</option>
+                            <option value="1" data-price='ir.svg'>Persian (FA)</option>
+                            <option value="2" data-price='uk.svg'>English (UK)</option>
                         </select>
                     </div>
                 </li>
@@ -137,6 +137,9 @@
      }
  </style> --}}
 @endif
+
+
+
     <script type="text/javascript">
         
           window.$crisp=[];window.CRISP_WEBSITE_ID="792f282f-edde-46b8-8b02-d38ca5cb92c2";
@@ -177,23 +180,39 @@
              var languageDetection = 'ir';
              if(languageDetection === 'ir') {
 
-                $('.select').change(function(){
+                // $('.select').change(function(){
                     var block = $('.block');
                     var lang = $( ".select option:selected" ).attr('data-price');
                     if(lang) {
                         var temp = "./flags/"+lang;
                         block.css('background-image','url('+temp+')');
                     }
-                });
+                // });
 
              }  else {
+                //    $('.select').change(function(){
                     var block = $('.block');
-                    if(lang) {
+                    // var lang = $( ".select option:selected" ).attr('data-price');
                         var temp = "./flags/uk.svg";
                         block.css('background-image','url('+temp+')');
-                    }
+                // });
                 }
+                $('.select').change(function(){
+                        // alert('selected');
+                        var block = $('.block');
+                        var lang = $( ".select option:selected" ).attr('data-price');
+                        if(lang) {
+                            var temp = "./flags/"+lang;
+                            block.css('background-image','url('+temp+')');
 
+                            axios.get('{{route('changeLanguage')}}').then(function(response){
+                                if(response.data == 200){
+                                    window.location = 'https://hashbazaar.com';
+                                    
+                                }
+                            })
+                        }
+                });
            
 
        
@@ -217,6 +236,7 @@
         //        // $('.signup').show();
         //        })
      </script>
+
 @if(Config::get('app.locale') == 'fa')
     <style type="text/css">
         #header-navbar-menu {
@@ -226,6 +246,7 @@
             padding-right: 20px;
         }
 
+    
     </style>
 @else
 

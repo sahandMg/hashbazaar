@@ -119,15 +119,15 @@
                      <!-- customerservice-category  category-button one  -->
                     <div class="row">
                         <div class="col-lg-3 col-md-3 faq-section" id="faqSection1" style="background-color: #e8ad2c;">
-                          <h4>Bitcoin</h4>
+                          <h4>{{__("Bitcoin")}}</h4>
                           <img src="img/bitcoin-faq.svg" />
                         </div>
                         <div class="col-lg-3 col-md-3 faq-section" id="faqSection2">
-                           <h4>Mining</h4>
+                           <h4>{{__("Mining")}}</h4>
                            <img src="img/mining-faq.svg" />
                         </div>
                         <div class="col-lg-3 col-md-3 faq-section" id="faqSection3">
-                          <h4>Hash Bazaar</h4>
+                          <h4>{{__("Hash Bazaar")}}</h4>
                           <img src="img/wallet-btc.png" />
                         </div>
                     </div>

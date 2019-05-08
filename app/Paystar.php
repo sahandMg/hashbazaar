@@ -110,7 +110,7 @@ class Paystar
     public function verify(){
 
         $transactionId = $this->request->transid;
-        $trans = DB::table('transactions')->where('code',$transactionId)->first();
+        $trans = Transaction::where('code',$transactionId)->first();
         if(is_null($trans)){
             return 'کد تراکنش نادرست است';
         }

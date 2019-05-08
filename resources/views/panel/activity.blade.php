@@ -146,7 +146,7 @@ foreach ($hashes as $key=> $hash){
 
         $('.user-img').click(function(){
             $('.list1').toggle(500);
-        })
+        });
     
                     var activitySecondListNumItems = $('.container .table tr').length;
                     var activityThirdListNumItems = $('#activity-page_thirdList .table tr').length;

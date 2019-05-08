@@ -546,8 +546,11 @@ class PaymentController extends Controller
     /*
      * Payment Callbacks
      */
-    public function PaymentCanceled($transid){
+    public function PaymentCanceled($transid = null){
+        if(is_null($transid)){
 
+            return redirect()->route('dashboard');
+        }
         // TODO Place this code in callback from gateway
 
         $allocated_hash = BitHash::where('order_id',$transid)->first();

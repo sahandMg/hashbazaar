@@ -151,5 +151,13 @@
   "SignUp":"ثبت نام",
   "Confirm password":"تکرار کلمه عبور",
   "do you have an account?":"حساب کاربری دارید؟",
-  "Log in now":"وارد شوید"
+  "Log in now":"وارد شوید",
+  "PAYMENT SUCCESSFUL":"پرداخت با موفقیت انجام شد",
+  "Your Payment has been Canceled":"متاسفانه مشکلی در پرداخت پیش آمده است",
+  "Your Payment Successed":"پرداخت موفق",
+  "Payment canceled":"پرداخت ناموفق",
+  "About us":"درباره ما",
+  "Bitcoin":"بیتکوین",
+  "Mining":"استخراج بیتکوین",
+  "Hash Bazaar":"هش بازار"
 }

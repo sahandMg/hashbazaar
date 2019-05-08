@@ -128,7 +128,7 @@
                         </div>
                         <div class="col-lg-3 col-md-3 faq-section" id="faqSection3">
                           <h4>Hash Bazaar</h4>
-                          <img src="img/wallet-btc.png" />
+                          <img src="img/BitcoinWallet.svg" />
                         </div>
                     </div>
                     <br/><br/>

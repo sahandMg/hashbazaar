@@ -70,7 +70,7 @@
             <ul>
                 @if(Config::get('app.locale') == 'fa')
                 <!-- <li class="navbar-list small1 a1"><a href="http://blog.hashbazaar.com">{{__('Blog')}}</a></li> -->
-                <li class="navbar-list small1 a1"><a href="{{route('affiliate')}}">{{__('Affiliate')}}</a></li>
+                <!-- <li class="navbar-list small1 a1"><a href="{{route('affiliate')}}">{{__('Affiliate')}}</a></li> -->
                 <li class="navbar-list small1 a1"><a href="{{route('customerService')}}">{{__('FAQ')}}</a></li>
                 <li class="navbar-list small1 a1"><a href="{{route('aboutUs')}}">{{__('About')}}</a></li>
                 <li class="navbar-list small1 a1"><a href="{{route('index')}}">{{__('Home')}}</a></li>

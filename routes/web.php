@@ -98,21 +98,23 @@ Route::get('mail',function (){
 //        $message->to ('s23.moghadam@gmail.com');
 //        $message->subject ('New User');
 //    });
+        $doalr = new \App\Crawling\Dolar();
+    dd($doalr->getDolarInToman());
 
-    $hashes = BitHash::where('user_id', 1)->where('confirmed',1)->get();
-    if (!$hashes->isEmpty()) {
-        foreach ($hashes as $item => $hash) {
-            $remainedDay = Carbon::now()->diffInDays(Carbon::parse($hash->created_at)->addYears($hash->life));
-            $hash->update(['remained_day' => $remainedDay]);
-            $hash->save();
-            $hashPower[$item] = $hash->hash;
-            $maintenance_inBTC = 0.1 / 5200 * $hashPower[$item];
-            $userEarn[$item] = 0.01 * ($hashPower[$item] / 14) - $maintenance_inBTC;
-
-        }
-
-        dd( array_sum($userEarn));
-    }
+//    $hashes = BitHash::where('user_id', 1)->where('confirmed',1)->get();
+//    if (!$hashes->isEmpty()) {
+//        foreach ($hashes as $item => $hash) {
+//            $remainedDay = Carbon::now()->diffInDays(Carbon::parse($hash->created_at)->addYears($hash->life));
+//            $hash->update(['remained_day' => $remainedDay]);
+//            $hash->save();
+//            $hashPower[$item] = $hash->hash;
+//            $maintenance_inBTC = 0.1 / 5200 * $hashPower[$item];
+//            $userEarn[$item] = 0.01 * ($hashPower[$item] / 14) - $maintenance_inBTC;
+//
+//        }
+//
+//        dd( array_sum($userEarn));
+//    }
 
 });
 
@@ -165,9 +167,13 @@ Route::get('pricing','PageController@Pricing');
 
 Route::get('received/{orderID?}','PaymentController@checkPaymentReceived')->name('checkPaymentReceived');
 
-Route::get('payment/canceled','PaymentController@PaymentCanceled')->name('PaymentCanceled')->middleware('auth');
+Route::get('payment/canceled/{transid?}','PaymentController@PaymentCanceled')->name('PaymentCanceled')->middleware('auth');
 
 Route::get('payment/success','PaymentController@PaymentSuccess')->name('PaymentSuccess')->middleware('auth');
+
+Route::post('payment/callback','PaymentController@PaymentCallback')->name('PaymentCallback');
+
+Route::post('paystar/paying','PaymentController@PaystarPaying')->name('PaystarPaying')->middleware('auth');
 
 /*
 ===============================================================================

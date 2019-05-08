@@ -175,10 +175,15 @@
       <span class="close">&times;</span>
       <div>
           <br/>
-          <p class="text-center">You have to pay your invoice with bitcoin. If you do not have , you can purchase it from this <a href="https://www.bitpremier.com/buy-bitcoins"> list</a></p>
-          <p class="text-center"><b>Or</b><p/>
-          <br/>
-          <form class="dashboard-page" method="post" action="{{route('chargeCreate')}}">
+
+          @if(Config::get('app.locale') == 'fa')
+            <form class="dashboard-page" method="post" action="{{route('PaystarPaying')}}">
+          @else
+            <p class="text-center">You have to pay your invoice with bitcoin. If you do not have , you can purchase it from this <a href="https://www.bitpremier.com/buy-bitcoins"> list</a></p>
+            <p class="text-center"><b>Or</b><p/>
+            <br/>
+            <form class="dashboard-page" method="post" action="{{route('chargeCreate')}}">
+         @endif
             <input type="hidden" name="_token" value="{{csrf_token()}}">
               @if($apply_discount == 1)
 
@@ -628,7 +633,7 @@
                             alertify.success(resp['body']);
                             document.getElementById('hiddenCodeValue').value = code;
                             document.getElementById('discount').value = resp['discount'];
-                            thPriceAfterCode = {!! $settings->usd_per_hash !!} * (1 - resp['discount'] );
+                            thPriceAfterCode = {!! $settings->usd_per_hash !!} *  (1 - resp['discount'] );
                             costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode ) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
                             console.log(thPrice);
                             activateDiscount = 1;
@@ -654,7 +659,7 @@
                         $('#doReferalCode').show()
                         // check if custom code applied or not
                         if({!! json_encode($discount == 0) !!}){
-
+ {{--dollar in toman {{!! $settings->usd_toman !!}}--}}
                             thPriceAfterCode = {!! $settings->usd_per_hash !!} * (1 - resp['discount'] );;
                             costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
 
@@ -677,7 +682,7 @@
 
                             if({!! json_encode($discount == 0) !!}){
 
-                                thPriceAfterCode = {!! $settings->usd_per_hash !!} * (1 - resp['discount'] );;
+                                thPriceAfterCode = {!! $settings->usd_per_hash !!} *  (1 - resp['discount'] );;
                                 costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
 
                             }else{

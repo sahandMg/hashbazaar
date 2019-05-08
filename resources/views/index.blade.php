@@ -43,7 +43,11 @@
             </div>
             <div class="invest-plan" style="font-weight: 700;">
                 <p>{{__("Hash allocation cost :")}} <span id="cost"></span> {{__("dollar")}} </p>
-                <p>{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day}} {{__('dollar per Th/day')}}</p>
+             @if(Config::get('app.locale') == 'fa')
+                <p>{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day*$settings->usd_toman}} {{__('dollar per Th/day')}}</p>
+             @else 
+               <p>{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day*$settings->usd_toman}} {{__('dollar per Th/day')}}</p> 
+             @endif   
                 <small>{{__("(include all electricity, cooling, development, and servicing costs )")}}</small>
                 <p>{{__('Income : At this time We predict')}} {{$settings->bitcoin_income_per_month_per_th}} {{__('BTC/month per Th')}}</p>
                 <small>{{__("(May be changed depends on bitcoin price and bitcoin network difficulty)")}}</small>
@@ -144,12 +148,47 @@
       }
       .contact-form {direction: rtl;}
     </style>
+    <script type="text/javascript">
+      // console.log("js run");
+        var dollarToToman = parseInt({!! $settings->usd_toman !!}); 
+        var sliderValue = {!! \App\Setting::first()->usd_per_hash !!} * dollarToToman;
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value+' Th'; // Display the default slider value
+        var cost = document.getElementById("cost"); cost.innerHTML = slider.value * sliderValue ;
+        var hashInput = document.getElementById("hash");
+        console.log("slider");console.log(slider.value);
+        // hashInput.value = slider.value;
+        // Update the current slider value (each time you drag the slider handle)
+        slider.oninput = function() {
+            console.log("input change");
+            output.innerHTML = this.value+' Th';
+            cost.innerHTML = slider.value * sliderValue ;
+        }
+    </script>
     @else
     <style type="text/css">
       .invest-plan {
          text-align: left;
       }
     </style>
+    <script type="text/javascript">
+      // console.log("js run");
+        var sliderValue = {!! \App\Setting::first()->usd_per_hash !!}
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value+' Th'; // Display the default slider value
+        var cost = document.getElementById("cost"); cost.innerHTML = slider.value * sliderValue ;
+        var hashInput = document.getElementById("hash");
+        console.log("slider");console.log(slider.value);
+        // hashInput.value = slider.value;
+        // Update the current slider value (each time you drag the slider handle)
+        slider.oninput = function() {
+            console.log("input change");
+            output.innerHTML = this.value+' Th';
+            cost.innerHTML = slider.value * sliderValue ;
+        }
+    </script>
     @endif
     <style type="text/css">
         .advantages h2 {margin-bottom: 3%;}
@@ -251,26 +290,6 @@
 
         function btnDisable(){
             console.log("btnDisable");
-        }
-
-
-
-        console.log("js run");
-        var sliderValue = {!! \App\Setting::first()->usd_per_hash !!}
-        var slider = document.getElementById("myRange");
-        var output = document.getElementById("demo");
-        output.innerHTML = slider.value+' Th'; // Display the default slider value
-        var cost = document.getElementById("cost"); cost.innerHTML = slider.value * sliderValue ;
-        var hashInput = document.getElementById("hash");
-        console.log("slider");console.log(slider.value);
-        // hashInput.value = slider.value;
-        // Update the current slider value (each time you drag the slider handle)
-        slider.oninput = function() {
-            console.log("input change");
-            output.innerHTML = this.value+' Th';
-            cost.innerHTML = slider.value * sliderValue ;
-
-
         }
 
         // Get the modal

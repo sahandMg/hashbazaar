@@ -255,7 +255,7 @@
 
 
 
-        console.log("js run");
+        // console.log("js run");
         var sliderValue = {!! \App\Setting::first()->usd_per_hash !!}
         var slider = document.getElementById("myRange");
         var output = document.getElementById("demo");
@@ -269,8 +269,6 @@
             console.log("input change");
             output.innerHTML = this.value+' Th';
             cost.innerHTML = slider.value * sliderValue ;
-
-
         }
 
         // Get the modal

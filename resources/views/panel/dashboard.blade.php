@@ -497,36 +497,30 @@
   }
   .ct-label { color: black; }
 </style>
-
-<script>
-      
-                // // ------------ scroll for many data in table  --------------------
+@if(Config::get('app.locale') == 'fa')
+<script type="text/javascript">  
+  console.log("**** price toman *******");
+  var dollarToToman = parseInt({!! $settings->usd_toman !!}); 
+  console.log(dollarToToman);
+   // // ------------ scroll for many data in table  --------------------
                 $(document).ready(function(){
-
                     $('.user-img').click(function(){
                         $('.list1').toggle(500);
                     });
-                    
                     var numItems = $('.Hash-History .table tr').length;
-                    
                     if( numItems > 3)
                     {
                         $('.Hash-History').css('overflow-y' , "scroll");
 //                    console.log("numItems > 3");
                     } else {
                         $('.Hash-History').css('overflow-y' , "hidden");
-                    console.log("numItems < 3");
-                        
+                        console.log("numItems < 3");
                     }
-                    
                 });
                 // for get profit
                 var user = {!! json_encode(\Illuminate\Support\Facades\Auth::guard('user')->user()->code) !!}
-
                 function redeem(id) {
-
                     axios.get('{{route('redeem')}}'+'?user='+user).then(function (response) {
-
                         console.log(response.data)
                     })
                 };
@@ -544,13 +538,162 @@
                 var resp = [];
                 // for checking referal code
                 function sendCode() {
-
                     var code = document.getElementById('referralCode').value;
-
                     axios.post('{{route('SendCode')}}',{referralCode:code}).then(function (response) {
-
                          resp = response.data;
+                        if(resp['type'] == 'error'){
+                            alertify.error(resp['body']);
+                            $('#doReferalCode').hide()
+                        }else{
+                            alertify.success(resp['body']);
+                            document.getElementById('hiddenCodeValue').value = code;
+                            document.getElementById('discount').value = resp['discount'];
+                            thPriceAfterCode = dollarToToman * {!! $settings->usd_per_hash !!} *  (1 - resp['discount'] );
+                            costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode ) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
+                            console.log(thPrice);
+                            activateDiscount = 1;
+                            $('#doReferalCode').show()
+                        }
+                    });
+                };
+                 output.innerHTML = slider.value+' Th';
+                cost.innerHTML = dollarToToman * slider.value * thPrice ;
+                    if(activateDiscount == 1){
+                        $('#doReferalCode').show()
+                        // check if custom code applied or not
+                        if({!! json_encode($discount == 0) !!}){
+                            thPriceAfterCode = dollarToToman * {!! $settings->usd_per_hash !!} * (1 - resp['discount'] );
+                            costAfterCode.innerHTML =   " - "+ (dollarToToman * slider.value * (thPrice-thPriceAfterCode) ) + " dollar" + " = " +(dollarToToman * slider.value * thPriceAfterCode) + "dollar" ;
 
+                        }else{
+                            thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $discount) !!};
+                            costAfterCode.innerHTML =   " - "+ (dollarToToman * slider.value * (thPrice-thPriceAfterCode) ) + " dollar" + " = " +(dollarToToman * slider.value * thPriceAfterCode) + "dollar" ;
+                        }
+                    }
+                    else
+                    $('#doReferalCode').hide()
+                    
+                    // Display the default slider value
+//                console.log(document.getElementById('discount').value)
+                    slider.oninput = function() {
+//                        console.log(resp)
+                        hiddenRange.value = this.value;
+                        output.innerHTML = this.value+' Th';
+                        if(activateDiscount == 1){
+
+                            if({!! json_encode($discount == 0) !!}){
+
+                                thPriceAfterCode = dollarToToman *  {!! $settings->usd_per_hash !!} *  (1 - resp['discount'] );;
+                                costAfterCode.innerHTML =   " - "+ (dollarToToman * slider.value * (thPrice-thPriceAfterCode) ) + " dollar" + " = " +( dollarToToman * slider.value * thPriceAfterCode) + "dollar" ;
+
+                            }else{
+
+                                thPriceAfterCode = dollarToToman * {!! $settings->usd_per_hash * (1 - $discount) !!};
+                                costAfterCode.innerHTML =   " - "+ (dollarToToman * slider.value * (thPrice-thPriceAfterCode) ) + " dollar" + " = " +(dollarToToman * slider.value * thPriceAfterCode) + "dollar" ;
+                            }
+
+                        }
+                        cost.innerHTML = dollarToToman * slider.value  * thPrice;
+                        };
+
+                  // for geting total earn
+
+                axios.post({!! json_encode(route('totalEarn')) !!},{'user':user}).then(function (response) {
+
+                    if(response.data[0] == 0){
+
+                        document.getElementById('miningBTC').innerHTML = 0;
+                        document.getElementById('miningDollar').innerHTML = 0;
+                        document.getElementById('miningBTC2').innerHTML = 0;
+                        document.getElementById('miningDollar2').innerHTML = 0;
+                    }else{
+                    var miningBTC = response.data[0].toFixed(8);
+                    var miningDollar = response.data[1].toFixed(8);
+                    var userPendingBtc = {!! Auth::guard('user')->user()->pending !!};
+                    var userPendingUsd = userPendingBtc * miningDollar/miningBTC;
+                        document.getElementById('miningBTC').innerHTML = miningBTC;
+                        document.getElementById('miningDollar').innerHTML = miningDollar;
+                        document.getElementById('miningBTC2').innerHTML = userPendingBtc.toFixed(8);
+                        document.getElementById('miningDollar2').innerHTML = userPendingUsd.toFixed(8);
+                        var minimum_redeem = {!! json_encode($settings->minimum_redeem) !!}
+                        if(response.data[0] >= minimum_redeem){
+                            document.getElementById('redeem').disabled = false;
+                        }
+                        // console.log(response.data);
+                    }
+
+                });
+
+                    //    ==================================chart==============
+                var dateFormat = 'YYYY DD MMMM';
+                var date = moment('April 01 2017', dateFormat);
+                var dateTime = [];
+                var data = [];
+                var labels = [];
+            axios.get('{{route('chartData').'?user='. Auth::guard('user')->user()->code}}').then(function (response) {
+                
+
+                dateTime = response.data;
+//                console.log(dateTime);
+                var timeLabels= [];
+                var data= [];
+                if(dateTime !== 404){
+                    for(i=0 ; i < dateTime.length ; i++){
+                        timeLabels.push(dateTime[i].time);
+                        data.push(dateTime[i].mined);
+                    }
+                }
+                var data2D = [];data2D.push(data);
+                new Chartist.Line('.ct-chart', {
+                  labels: timeLabels,
+                   series: data2D
+                }, {
+                    low: 0,
+                    showArea: true
+                });
+            });
+</script>
+@else
+<script>
+                // // ------------ scroll for many data in table  --------------------
+                $(document).ready(function(){
+                    $('.user-img').click(function(){
+                        $('.list1').toggle(500);
+                    });
+                    var numItems = $('.Hash-History .table tr').length;
+                    if( numItems > 3)
+                    {
+                        $('.Hash-History').css('overflow-y' , "scroll");
+//                    console.log("numItems > 3");
+                    } else {
+                        $('.Hash-History').css('overflow-y' , "hidden");
+                        console.log("numItems < 3");
+                    }
+                });
+                // for get profit
+                var user = {!! json_encode(\Illuminate\Support\Facades\Auth::guard('user')->user()->code) !!}
+                function redeem(id) {
+                    axios.get('{{route('redeem')}}'+'?user='+user).then(function (response) {
+                        console.log(response.data)
+                    })
+                };
+                 // referal code
+                var activateDiscount = {!! $apply_discount !!};// $apply_discount == 0 Or 1
+                var discount = {!! $discount !!}
+                var thPrice = {!! $settings->usd_per_hash !!};
+                var thPriceAfterCode ;
+                var slider = document.getElementById("myRange");
+                var hiddenRange = document.getElementById("hiddenRange");
+                hiddenRange.value = slider.value;
+                var output = document.getElementById("demo");
+                var costAfterCode = document.getElementById("doReferalCode");
+                var cost = document.getElementById('cost');
+                var resp = [];
+                // for checking referal code
+                function sendCode() {
+                    var code = document.getElementById('referralCode').value;
+                    axios.post('{{route('SendCode')}}',{referralCode:code}).then(function (response) {
+                         resp = response.data;
                         if(resp['type'] == 'error'){
                             alertify.error(resp['body']);
                             $('#doReferalCode').hide()
@@ -564,18 +707,6 @@
                             activateDiscount = 1;
                             $('#doReferalCode').show()
                         }
-                        // custom discount code
-                        {{--else{--}}
-
-                            {{--alertify.success(resp['body']);--}}
-                            {{--document.getElementById('hiddenCodeValue').value = resp['code'];--}}
-                            {{--thPriceAfterCode = {!! $settings->usd_per_hash!!} * (1 -(resp['discount']));--}}
-                            {{--costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode ) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;--}}
-{{--//                            console.log(thPrice);--}}
-                            {{--activateDiscount = 1;--}}
-                            {{--$('#doReferalCode').show()--}}
-                        {{--}--}}
-
                     });
                 };
                  output.innerHTML = slider.value+' Th';
@@ -584,12 +715,10 @@
                         $('#doReferalCode').show()
                         // check if custom code applied or not
                         if({!! json_encode($discount == 0) !!}){
- {{--dollar in toman {{!! $settings->usd_toman !!}}--}}
                             thPriceAfterCode = {!! $settings->usd_per_hash !!} * (1 - resp['discount'] );;
                             costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
 
                         }else{
-
                             thPriceAfterCode = {!! $settings->usd_per_hash * (1 - $discount) !!};
                             costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
                         }
@@ -678,5 +807,5 @@
             });
 
 </script>
-
+@endif
 @endsection

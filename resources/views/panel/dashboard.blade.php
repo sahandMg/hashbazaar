@@ -159,7 +159,7 @@
       @endif 
     <!-- </form> -->
     @else
-      <p> TH Not Available !</p>
+      <p style="color: black;text-align: center;"> TH Not Available !</p>
     @endif
   </div>
   <!-- Mining History -->
@@ -609,6 +609,7 @@
                 var thPrice = {!! $settings->usd_per_hash !!};
                 var thPriceAfterCode ;
                 var slider = document.getElementById("myRange");
+                console.log("*******slider*********");console.log(slider);
                 var hiddenRange = document.getElementById("hiddenRange");
                 hiddenRange.value = slider.value;
                 var output = document.getElementById("demo");

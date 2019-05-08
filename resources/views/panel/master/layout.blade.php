@@ -44,6 +44,17 @@
 
         }
     </style>
+    @if(Config::get('app.locale') == 'fa')
+    <STYLE>
+      @font-face {
+        font-family: BYekanFont;
+        src: url({{asset('fonts/BYekan.ttf')}});
+      }
+      * {
+        font-family: BYekanFont;
+      }
+    </STYLE>
+   @endif
 </head>
 
 <body>

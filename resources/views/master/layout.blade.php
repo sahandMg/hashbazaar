@@ -15,7 +15,17 @@
     @else
         @yield('title')
     @endif
-
+@if(Config::get('app.locale') == 'fa')
+    <STYLE>
+      @font-face {
+        font-family: BYekanFont;
+        src: url({{asset('fonts/BYekan.ttf')}});
+      }
+      * {
+        font-family: BYekanFont;
+      }
+    </STYLE>
+ @endif
     <!-- <link rel="icon" href="img/TabLogo.png"> -->
     <!-- <link rel="stylesheet" href="{{asset('css/blog.css')}}"> -->
     

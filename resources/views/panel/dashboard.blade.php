@@ -86,78 +86,6 @@
         </tr>
         @endforeach
       </tbody>
-                       
-
-                        {{--@else--}}
-                            {{--<p id="no-hash"> NO Hash History</p>--}}
-                        {{--@endif--}}
-
-                {{--</table>--}}
-
-            {{--</div> --}}
-
-
-            {{--<!--   Buy hash power -->--}}
-            {{--<div class="title-flex">--}}
-                {{--<hr  class="dashboard-hr"/>--}}
-
-                {{--<h3 class="dashboard-title">Buy Hash Power</h3>--}}
-
-                {{--<hr  class="dashboard-hr"/>--}}
-            {{--</div>--}}
-            {{--<h5 id="demo"></h5>--}}
-            {{--<div class="slidecontainer">--}}
-                {{--@if(count($errors->all()) > 0)--}}
-                    {{--<ul>--}}
-                        {{--@foreach($errors as $error)--}}
-                            {{--<li>{{$error}}</li>--}}
-                        {{--@endforeach--}}
-                    {{--</ul>--}}
-                {{--@endif--}}
-                {{--@include('sessionError')--}}
-                {{--@if($settings->available_th > 0)--}}
-
-                {{--<!-- <form class="dashboard-page" method="post" action="{{route('payment')}}"> -->--}}
-                    {{--<!-- <input type="hidden" name="_token" value="{{csrf_token()}}"> -->--}}
-                    {{--<input type="hidden" id="thpricew" value="50">--}}
-                    {{--<input type="range" min="1" max="{{$settings->available_th}}" value="{{isset($hashPower)?$hashPower:$settings->available_th/2}}" name="hash" class="slider" id="myRange">--}}
-                    {{--<div class="buy-hashpower-text" style="text-align: left;font-weight: 700;padding-bottom:10px">--}}
-
-                      {{--<p style="color:black">Hash allocation cost : <span id="cost"></span> dollar--}}
-                         {{--<span id="doReferalCode" style="animation-iteration-count:infinite;padding:2px"></span>--}}
-                      {{--</p>--}}
-                      {{--<p style="color:black">Maitanace fee: {{$settings->maintenance_fee_per_th_per_day}} dollar per Th/day</p>--}}
-                      {{--<small style="color: #707070;">(include all electricity, cooling, development, and servicing costs )</small>--}}
-                      {{--<p style="color:black">Income : At this time We predict {{$settings->bitcoin_income_per_month_per_th}} BTC/month for every Th.</p>--}}
-                      {{--<small  style="color: #707070;">(Changes may happen depends on bitcoin price and bitcoin network difficulty changes.)</small>--}}
-                    {{--</div>--}}
-                    {{--<p class="rfrcode">Referral Code:</p>--}}
-                    {{--<input id='referralCode' type="text" name="referralCode" style="margin-top:5px" class="aplybtn1text"/>--}}
-                    {{--<button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> Apply </button>--}}
-
-
-                    {{--<button id="orderBtn" class="pandel-button" type="submit">Order</button>--}}
-                 {{--<!-- </form> -->--}}
-                {{--@else--}}
-                  {{--<p> TH Not Available !</p>--}}
-                {{--@endif--}}
-            {{--</div>--}}
-
-
-            {{--<!-- Mining History -->--}}
-            {{--<div class="title-flex">--}}
-
-                {{--<hr class="dashboard-hr" >--}}
-                {{--<h3 class="dashboard-title min">Mining History</h3>--}}
-                {{--<hr class="dashboard-hr" >--}}
-
-            {{--</div> --}}
-          {{--<div style="margin-right: 20px;">--}}
-            {{--<div class="ct-chart">--}}
-                    {{--<!-- <canvas id="chart1"></canvas> chart-container -->--}}
-            {{--</div> --}}
-          {{--</div>--}}
-
 
       @else
         <h6 id="no-hash" > NO Hash History</h6>
@@ -198,13 +126,33 @@
       <small  style="color: #707070;">{{__("(May be changed depends on bitcoin price and bitcoin network difficulty)")}}</small>
 
     </div>
-   
-      <div id="referralDiv">
-        <label id="referralLabel" for="referralCode">کد ارجاع:</label>
-        <input id='referralCode' type="text" placeholder="{{$AppliedCode}}" name="referralCode" style="margin-top:5px" class="aplybtn1text"/>
-        <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> درخواست </button>
-      </div>
-      <button id="orderBtn" class="pandel-button" type="submit">{{__("Order")}}</button>
+     @if(Config::get('app.locale') == 'fa')
+       <div id="referralDiv">
+         <label id="referralLabel" for="referralCode">کد ارجاع:</label>
+         <input id='referralCode' type="text" placeholder="{{$AppliedCode}}" name="referralCode" style="margin-top:5px" class="aplybtn1text"/>
+         <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> درخواست </button>
+       </div>
+       <form class="dashboard-page" method="post" action="{{route('chargeCreate')}}">
+            <input type="hidden" name="_token" value="{{csrf_token()}}">
+              @if($apply_discount == 1)
+
+                  <input id="discount" type="hidden" name="discount" value="{{$discount}}">
+
+              @else
+                  <input id="discount" type="hidden" name="discount" value="0">
+              @endif 
+            <input id='hiddenCodeValue' type="hidden" name="code" style="margin-top:5px" value="{{$AppliedCode}}" >
+            <input type="range" hidden min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="hiddenRange">
+           <button id="orderBtn" class="pandel-button" type="submit">{{__("Order")}}</button>
+       </form>
+      @else
+        <div id="referralDiv">
+         <label id="referralLabel" for="referralCode">کد ارجاع:</label>
+         <input id='referralCode' type="text" placeholder="{{$AppliedCode}}" name="referralCode" style="margin-top:5px" class="aplybtn1text"/>
+         <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> درخواست </button>
+       </div>
+       <button id="orderBtn" class="pandel-button" type="submit">{{__("Order")}}</button>
+      @endif 
     <!-- </form> -->
     @else
       <p> TH Not Available !</p>
@@ -265,36 +213,21 @@
 
 <script type="text/javascript">
         // Get the modal
-        var modal = document.getElementById('myModal');
+        
         var modalFirstTime = document.getElementById('modalFirstTime');
         // just first time
         if({!! json_encode(session()->has('pop')) !!}){
 
             modalFirstTime.style.display = "block";
             {!! json_encode(session()->forget('pop'))!!}
-        }else{
-
-        modal.style.display = "none";
         }
 
 
 
-        var orderBtn = document.getElementById('orderBtn');
-        orderBtn.onclick = function() {
-            modal.style.display = "block";
-        }
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
         var span2 = document.getElementsByClassName("close")[1];
 
         span2.onclick = function() {
             modalFirstTime.style.display = "none";
-        }
-
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
         }
 
 
@@ -313,6 +246,20 @@
       .buy-hashpower-text {direction: rtl;text-align: right;}
     </style>
  @else
+  <script type="text/javascript">
+   var modal = document.getElementById('myModal');
+   modal.style.display = "none";
+        var orderBtn = document.getElementById('orderBtn');
+        orderBtn.onclick = function() {
+            modal.style.display = "block";
+        }
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+  </script>
     <style type="text/css">
       .buy-hashpower-text {direction: ltr;text-align: left;}
     </style>

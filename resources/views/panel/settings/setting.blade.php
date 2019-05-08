@@ -28,11 +28,11 @@
 
 
             <label id="textbefore">{{__("Username")}}
-            <input type="text" name="text" id="text" value="{{Auth::guard('user')->user()->name}}" disabled="disabled"> 
+            <input type="text" name="text" id="text" style="font-size:1rem" value="{{Auth::guard('user')->user()->name}}" disabled="disabled"> 
             </label>
             
             <label id="textbefore">{{__("Email")}}
-            <input type="email" name="email" id="email" value="{{Auth::guard('user')->user()->email}}" disabled="disabled"/> 
+            <input type="email" name="email" id="email" style="font-size:1rem" value="{{Auth::guard('user')->user()->email}}" disabled="disabled"/> 
             </label>
 
 
@@ -233,4 +233,161 @@ function copyToClipboard(elem) {
     })
 
 </script>
+
+@if(Config::get('app.locale') == 'fa')
+
+    <style type="text/css">
+         #setting-page .setting-flex .flex-item a {
+            font-size:2rem;
+        }
+        .setting-information  {
+            margin-top: 5%;
+            direction: rtl;
+            text-align: right
+        }
+        .setting-information label {
+            margin-right: 3%
+        }
+
+        .setting-information input#text {
+            margin-right: 21%;
+        }
+
+        .setting-information input#email {
+            margin-right: 26%;
+        }
+
+                
+        .setting-information input#cur-password {
+            margin-right: 16.7%;
+        }
+
+        .setting-information input#newpassword {
+            margin-right: 17%;
+        }
+
+        .setting-information input#Confirmpassword {
+            margin-right: 16.7%;
+        }
+
+        @media screen and (max-width:768px){
+            .setting-information  {
+                margin-left: 0%;
+            }
+        }
+
+        @media screen and (max-width:415px){
+            .setting-information input#text {
+                margin-right: 5% !important
+            }
+            .setting-information input#email {
+                margin-bottom: 20px;
+                margin-right: 22% !important
+            }
+            .setting-information input#text {
+                margin-bottom: 20px;
+                margin-right: 14%
+            }
+
+            .setting-information input#cur-password {
+                margin-right: 22%;
+            }
+
+            .setting-information input#newpassword {
+                margin-right: 22%;
+            }
+
+            .setting-information input#Confirmpassword {
+                margin-right: 22%;
+            }
+
+        }
+
+        @media screen and (max-width:321px){
+            .setting-information input#text {
+                margin-right: 21% !important
+            }
+        }
+
+    </style>
+
+@else
+
+    <style type="text/css">
+        #setting-page .setting-flex .flex-item a {
+            font-size:1.3rem;
+        }
+        .setting-information  {
+            margin-top: 5%;
+            direction: rtl;
+            text-align: right;
+            font-size:1.2rem
+        }
+        .setting-information label {
+            margin-left: 3%
+        }
+
+        .setting-information input#text {
+            margin-left: 21%;
+        }
+
+        .setting-information input#email {
+            margin-left: 26%;
+        }
+
+                
+        .setting-information input#cur-password {
+            margin-left: 16.7%;
+        }
+
+        .setting-information input#newpassword {
+            margin-left: 17%;
+        }
+
+        .setting-information input#Confirmpassword {
+            margin-left: 16.7%;
+        }
+
+        @media screen and (max-width:768px){
+            .setting-information  {
+                margin-left: 0%;
+            }
+        }
+
+        @media screen and (max-width:415px){
+            .setting-information input#text {
+                margin-left: 5% !important
+            }
+            .setting-information input#email {
+                margin-bottom: 20px;
+                margin-left: 22% !important
+            }
+            .setting-information input#text {
+                margin-bottom: 20px;
+                margin-left: 14%
+            }
+
+            .setting-information input#cur-password {
+                margin-left: 22%;
+            }
+
+            .setting-information input#newpassword {
+                margin-left: 22%;
+            }
+
+            .setting-information input#Confirmpassword {
+                margin-left: 22%;
+            }
+
+        }
+
+        @media screen and (max-width:321px){
+            .setting-information input#text {
+                margin-left: 21% !important
+            }
+        }
+
+    </style>
+
+@endif
 @endsection

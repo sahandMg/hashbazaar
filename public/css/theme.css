@@ -863,3 +863,18 @@ header img { height: 175px;margin-bottom: 4%; }
 .network-flex #insta:hover {
   transform: translateY(-6px)
 } 
+
+.flags option:first::before {
+  content: '';
+  width:40px;
+  height:40px;
+  position: absolute;
+  background-image: url('../flags/us.svg');
+}
+.flags option:nth-of-type(2) {
+  content: '';
+  width:40px;
+  height:40px;
+  position: absolute;
+  background-image: url('../flags/ir.svg');
+}

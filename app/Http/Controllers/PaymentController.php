@@ -6,6 +6,7 @@ use App\BitHash;
 use App\CoinBaseCharge;
 use App\CoinBaseCheckout;
 use App\Crawling\CoinMarketCap;
+use App\Crawling\Dolar;
 use function App\CryptpBox\lib\cryptobox_selcoin;
 use function App\CryptpBox\lib\run_sql;
 use App\CustomCode;
@@ -13,6 +14,7 @@ use App\Events\CoinBaseNewProduct;
 use App\ExpiredCode;
 use App\Log;
 use App\Mining;
+use App\Paystar;
 use App\Redeem;
 use App\Referral;
 use App\Setting;
@@ -154,6 +156,210 @@ class PaymentController extends Controller
 
         return redirect('https://commerce.coinbase.com/charges/'.$result['code']);
 //        return redirect('https://commerce.coinbase.com/checkout/dd47f6ee-9166-4f7a-8cbf-856811ac0df4');
+    }
+
+    public function PaystarPaying(Request $request){
+
+
+        $settings = Setting::first();
+        $dollar = new Dolar();
+        $dollarPriceInToman = $dollar->getDolarInToman();
+        $request = $request->all();
+        $discount = $request['discount'];
+        $hash = $request['hash'];
+        $amount = $this->th_usd * $hash * (1- $discount) * $dollarPriceInToman;
+        $referralCode = $request['code'];
+
+    /*
+     * Paystar Api
+     */
+
+        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+            $ip = $_SERVER['HTTP_CLIENT_IP'];
+        } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        } else {
+            $ip = $_SERVER['REMOTE_ADDR'];
+        }
+        $fields = array(
+            'amount' => $amount,
+            'pin' => $settings->paystar_pin,
+            'description' => 'هاستینگ ارز دیجیتال HashBazaar',
+            'callback' => 'https://hashbazaar.com/payment/callback',
+            'ip'=> $ip
+        );
+        $url = 'https://paystar.ir/api/create/';
+        $ch = curl_init();
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch,CURLOPT_POST, count($fields));
+        curl_setopt($ch,CURLOPT_POSTFIELDS, $fields);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        if(is_numeric($result)){
+
+            return 'ارور'.$result;
+
+        }
+
+        // create database record
+        $custom_code = CustomCode::where('code',$referralCode)->first();
+        $hashRecord = new BitHash();
+        $hashRecord->hash = $hash;
+        $hashRecord->user_id = Auth::guard('user')->id();
+        $hashRecord->order_id = $result;
+        $hashRecord->confirmed = 0;
+        // a custom code is not involved in affiliate
+        if(isset($custom_code)){
+            $hashRecord->referral_code = null;
+        }else{
+            $hashRecord->referral_code = $referralCode;
+        }
+        $hashRecord->life = $this->hash_life;
+        $hashRecord->remained_day = Carbon::now()->diffInDays(Carbon::now()->addYears($hashRecord->life));
+        $hashRecord->save();
+
+        $settings->update(['available_th'=>$settings->available_th - $hash]);
+        $settings->save();
+
+        $mining = new Mining();
+        $mining->mined_btc = 0;
+        $mining->mined_usd = 0;
+        $mining->user_id = Auth::guard('user')->id();
+        $mining->order_id = $result;
+        $mining->block = 1;
+        $mining->save();
+
+        $trans = new Transaction();
+        $trans->code = $result;
+        $trans->status = 'unpaid';
+        $trans->amount_toman = $amount;
+        $trans->user_id = Auth::guard('user')->id();
+        $trans->checkout = 'out';
+        $trans->country = Auth::guard('user')->user()->country;
+        $trans->save();
+
+        return redirect('https://paystar.ir/paying/'.$result);
+
+    }
+
+    // verify payment status
+    // paystar sends transactionID
+    public function PaymentCallback(Request $request){
+
+        $transactionId = $request->transid;
+        $trans = DB::table('transactions')->where('code',$transactionId)->first();
+        if(is_null($trans)){
+            return 'کد تراکنش نادرست است';
+        }
+        $settings = Setting::first();
+
+        $url = 'https://paystar.ir/api/verify/'; // don't change
+        $fields = array(
+            'amount' => $trans->amount_toman,
+            'pin' => $settings->paystar_pin,
+            'transid' => $transactionId,
+        );
+
+        $ch = curl_init();
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch,CURLOPT_POST, count($fields));
+        curl_setopt($ch,CURLOPT_POSTFIELDS, $fields);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        if($result == 1){
+
+             $this->PaystarPaymentConfirm($trans);
+
+            return redirect()->route('PaymentSuccess');
+
+        }else{
+
+            return redirect()->route('PaymentCanceled',['transid'=>$transactionId]);
+        }
+
+    }
+
+    private function PaystarPaymentConfirm($trans){
+        $transactionId = $trans->code;
+        $user = $trans->user;
+        $orderID = $transactionId;
+        $hashPower = BitHash::where('order_id', $orderID)->first();
+        $mining = Mining::where('order_id', $orderID)->first();
+        $settings = Setting::first();
+        $hashPower->update(['confirmed' => 1]);
+        $hashPower->save();
+        $mining->update(['block' => 0]);
+        $mining->save();
+        // update created transaction record
+        DB::table('transactions')->where('code', $orderID)->update([
+            'country' => $user->country,
+            'status' => 'paid'
+        ]);
+
+        Mail::send('email.paymentConfirmed', ['hashPower' => $hashPower, 'trans' => $trans], function ($message) use ($user) {
+            $message->from('Admin@HashBazaar');
+            $message->to($user->email);
+            $message->subject('Payment Confirmed');
+        });
+
+//                $referralUser = DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->first();
+        $referralCode = $hashPower->referral_code;
+        $referralQuery = Referral::where('code', $referralCode)->first();
+        // if any referral code used for hash owner purchasing
+        if (!is_null($referralCode)) {
+
+            $codeCaller = User::where('code', $referralCode)->first();// code caller user
+            /*
+             * reward new th to the code caller
+             * ============================
+             * increasing share level
+             */
+
+            $sharings = Sharing::all()->toArray();
+            $total_sharing_num = $referralQuery->total_sharing_num;
+
+            for ($i = 0; $i < count($sharings); $i++) {
+
+                if ($sharings[$i]['sharing_number'] < $total_sharing_num) {
+
+                    if ($i == count($sharings) - 1) {
+
+                        $referralQuery->update([
+                            'share_level' => $sharings[$i]['level']
+                        ]);
+                        $referralQuery->save();
+                    } else {
+                        $referralQuery->update([
+                            'share_level' => $sharings[$i + 1]['level']
+                        ]);
+                        $referralQuery->save();
+                    }
+
+                }
+            }
+
+            $share_level = $referralQuery->share_level;
+            $share_value = DB::table('sharings')->where('level', $share_level)->first()->value;
+            $hash = new BitHash();
+            $hash->hash = $hashPower->hash * $share_value;
+            $hash->user_id = $codeCaller->id;
+            $hash->order_id = 'referral';
+            $hash->confirmed = 1;
+            $hash->life = $settings->hash_life;
+            $hash->remained_day = Carbon::now()->diffInDays(Carbon::now()->addYears($hash->life));
+            $hash->save();
+            $mining = new Mining();
+            $mining->mined_btc = 0;
+            $mining->mined_usd = 0;
+            $mining->user_id = $codeCaller->id;
+            $mining->order_id = 'referral';
+            $mining->block = 0;
+            $mining->save();
+        }
     }
 
     // get specific charge record
@@ -366,6 +572,7 @@ class PaymentController extends Controller
 
     }
 
+    // used for just coinbase
     private function confirmMining($transaction_id,$address)
     {
 
@@ -450,6 +657,7 @@ class PaymentController extends Controller
             $mining->save();
         }
     }
+
 // Executes when a new charge is create
     public function PaymentCreated(Request $request){
 
@@ -500,9 +708,17 @@ class PaymentController extends Controller
     /*
      * Payment Callbacks
      */
-    public function PaymentCanceled(){
+    public function PaymentCanceled($transid){
 
         // TODO Place this code in callback from gateway
+
+        $allocated_hash = BitHash::where('order_id',$transid)->first();
+        $allocated_mining = Mining::where('order_id',$transid)->first();
+        $settings = Setting::first();
+        $settings->update(['available_th'=> $settings->available_th + $allocated_hash->hash]);
+        $allocated_hash->delete();
+        $allocated_mining->delete();
+
         if(session()->has('custom_code')){
             session()->forget('custom_code');
         }
@@ -723,7 +939,7 @@ class PaymentController extends Controller
     }
 
 
-    public function paymentCallback(){
+    public function paymentCallback2(){
 
 
 

@@ -348,19 +348,17 @@ body, html {
   border: thin solid ;
   margin-left: 45% !important;
   margin-top: 10px
-
 }
 
 .socialnet-flex1 img {
   flex: 1;
   width: auto !important;
-  height: 50px !important;
+  height: 10px !important;
   border-radius: 50%;
   text-align: center;
   border: thin solid ;
   /* margin-left: 60px; */
 }
-
 
 .container-socialnet1 #fb:hover {
   transform: translateY(-6px)

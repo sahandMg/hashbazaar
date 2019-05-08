@@ -132,9 +132,15 @@
     <div class="logo-header"><img src="{{asset('img/Logo_header.svg')}}" alt="logo_header"></div>
 </header>
 <div class="container">
-    <h1>Thanks for your contact</h1>
-    <br/>
-    <p style="text-align: left;">Our team will answer your email soon</p>
+    @if(\Illuminate\Support\Facades\Config::get('app.locale') == 'fa')
+    <h1>با تشکر از تماس شما</h1>
+        <br/>
+        <p style="text-align: left;">تیم هش بازار به زودی پاسخی برای شما ارسال خواهند کرد</p>
+    @else
+        <h1>Thanks for your contact</h1>
+        <br/>
+        <p style="text-align: left;">Our team will answer your email soon</p>
+        @endif
 </div>
 
 <footer>

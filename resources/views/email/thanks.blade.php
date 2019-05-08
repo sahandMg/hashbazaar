@@ -121,9 +121,15 @@
     <div class="logo-header"><img src="{{asset('img/Logo_header.svg')}}" alt="logo_header"></div>
 </header>
 <div class="container">
-    <h1> Welcome to Hash Bazaar </h1>
-    <p style="text-align: center;">Thanks for your registration. From now on you join our community.</p>
-    <p>It means you have the permission to invest in Hash Bazaar by yourself and use your Investment ID as your referral code to invite your friends. More friends, more bonuses. You can find our reward program from your panel.</p>
+    @if(\Illuminate\Support\Facades\Config::get('app.locale') == 'fa')
+        <h1> به هش بازار خوش آمدید </h1>
+        <p style="text-align: center;">با تشکر از عضویت شما در هش بازار. همینک می توانید از بخش داشبورد پنل کاربری، اقدام به خرید تراهش کنید</p>
+        @else
+            <h1> Welcome to Hash Bazaar </h1>
+            <p style="text-align: center;">Thanks for your registration. From now on you join our community.</p>
+            <p>It means you have the permission to invest in Hash Bazaar by yourself and use your Investment ID as your referral code to invite your friends. More friends, more bonuses. You can find our reward program from your panel.</p>
+        @endif
+
 </div>
 
 <footer>

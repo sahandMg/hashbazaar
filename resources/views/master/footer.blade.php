@@ -1,21 +1,21 @@
 <footer class="backgroundMoreGrey">
         @if(Config::get('app.locale') == 'fa')
-        <div class="container">
-                <div class="row" style="text-align:right">
-                        <div class="col-md-6 col-sm-12">
-                            <div class="">
-                                
-                                <a href="tel:+989371869568">
-                                    <i class="fa fa-phone" aria-hidden="true"></i> &nbsp; 0937 186 9568
+        <div class="container ctr">
+                <div class="row footerrow">
+                        <div class="col-md-5 col-sm-12">
+                            <div class="tell">
+                                <a href="tel:+989371869568" style="color:white; cursor:pointer">
+                                         0937 186 9568 &nbsp;<i class="fa fa-phone" aria-hidden="true"></i> 
                                 </a>
                             </div>
                         </div>
         
-                        <div class="col-md-6 col-sm-12" style="text-align:right">
+                        <div class="col-md-7 col-sm-12" style="text-align:right">
                                 
-                            <div class="">
+                            <div class="" style="direction:rtl">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+
                                 تهران، میدان ونک، خیابان ملاصدرا، خیابان پردیس، پلاک ۷
-                                <i class="fa fa-map-marker" aria-hidden="true"></i>
                             </div>
                         </div>
                 </div>
@@ -39,3 +39,28 @@
 </footer>
 
 
+@if(Config::get('app.locale') == 'fa')
+    <style>
+        .footerrow {
+            font-size: 1.6rem
+        }
+
+
+        @media screen and (max-width:420px){
+            .footerrow {
+                font-size: 1.2rem
+            }
+
+            .ctr {
+                margin-bottom: 5%
+            }
+
+             .tell {
+                 text-align: center;
+                 
+             }   
+        }
+    </style>
+
+
+@endif

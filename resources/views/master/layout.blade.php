@@ -171,32 +171,32 @@
                   isOpen =false;
 
                 }
-                // $('.login').show();
-                // $('.signup').show();
-                // $('.navigation-menu')[0].toggleClass('change');
+                
             });
+            // determine lanuage
+             var languageDetection = 'ir';
+             if(languageDetection === 'ir') {
 
-            $('.select').change(function(){
-                var block = $('.block');
-                var price = $( ".select option:selected" ).attr('data-price');
-                if(price) {
-                    var temp = "../flags/"+price;
-                    block.css('background-image','url('+temp+')');
-                }else{
-                    block.text('');
+                $('.select').change(function(){
+                    var block = $('.block');
+                    var lang = $( ".select option:selected" ).attr('data-price');
+                    if(lang) {
+                        var temp = "./flags/"+lang;
+                        block.css('background-image','url('+temp+')');
+                    }
+                });
+
+             }  else {
+                    var block = $('.block');
+                    if(lang) {
+                        var temp = "./flags/uk.svg";
+                        block.css('background-image','url('+temp+')');
+                    }
                 }
-            });
 
-            $("#subMenu").hide(); 
+           
 
-            $("#menu").hover(
-                function() {
-                    $("#subMenu").show('fast');        
-                },
-                function() {
-                    $("#subMenu").hide('fast'); 
-                }
-            );
+       
        });
 
 

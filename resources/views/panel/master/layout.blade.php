@@ -74,7 +74,10 @@
             <ul>
                 <li class="user-account-list sub2"> <a href="{{route('dashboard')}}" id="dashboard2">{{__("Dashboard")}}</a></li>
                 <li class="user-account-list sub2"> <a href="{{route('activity')}}" id="activity2">{{__("Activity")}}</a></li>
+            @if(Config::get('app.locale') == 'fa')
+            @else
                 <li class="user-account-list sub2"> <a href="{{route('referral')}}" id="referral2">{{__("Referral")}}</a> </li>
+            @endif    
                 <li class="user-account-list sub2"> <a href="{{route('setting')}}" id="setting2">{{__("Setting")}}</a></li>
                 <li class="user-account-list sub2"> <a href="{{route('contact')}}" id="contact2">{{__("Contact")}}</a></li>
                 <li class="user-account-list sub2" id="logouticon"><a href="{{route('logout')}}" >{{__("Log Out")}}</a></li>
@@ -198,7 +201,10 @@
                 <a href="" id="welcome">{{Auth::guard('user')->user()->name}}</a> </li>
             <li class="{{request()->route()->getName() =='dashboard'?'sub dashboard activeLink':'sub dashboard'}}"> <a href="{{route('dashboard')}}" id="dashboard">{{__("Dashboard")}}</a></li>
             <li class="{{request()->route()->getName() =='activity'?'sub dashboard activeLink':'sub dashboard'}}"> <a href="{{route('activity')}}" id="activity">{{__("Activity")}}</a></li>
+        @if(Config::get('app.locale') == 'fa')
+        @else    
             <li class="{{request()->route()->getName() =='referral'?'sub activeLink':'sub'}}"> <a href="{{route('referral')}}" id="referral">{{__("Referral")}}</a> </li>
+        @endif     
             <li class="{{request()->route()->getName() =='setting'?'sub activeLink':'sub'}}"> <a href="{{route('setting')}}" id="setting">{{__("Setting")}}</a></li>
             <li class="{{request()->route()->getName() =='contact'?'sub activeLink':'sub'}}"> <a href="{{route('contact')}}" id="contact1">{{__("Contact")}}</a></li>
             <li class="sub"> <a href="{{route('logout')}}" id="logouticon2">{{__("Log Out")}}</a></li>

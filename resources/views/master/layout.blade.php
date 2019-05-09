@@ -268,7 +268,6 @@
     <style type="text/css">
             .flags a {
                 float:left;
-                
             }
 
             .flags {

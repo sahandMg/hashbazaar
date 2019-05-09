@@ -46,7 +46,7 @@
     font-weight: bold;
     transition: all .5s ease-in;
     cursor: pointer;
-    border-bottom: 2px solid orange
+    /* border-bottom: 2px solid orange */
 }
 .useraccount .list1 ul li a {
     width:400px !important;

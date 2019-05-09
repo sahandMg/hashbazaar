@@ -90,26 +90,25 @@
                 @else
                 <li class="navbar-list small1 signup"><a href="{{route('signup')}}" id="sg" >{{__('Sign Up')}}</a></li>
                 <li class="navbar-list small1 login"><a href="{{route('login')}}" id="lg" >{{__('Log In')}}</a></li>
-                <li class="flags" style="">
-                    <div>
-                        <span class="block">.......</span>
-                        <a href="{{route('locale',['locale'=>'fa'])}}">Persian (FA)</a>
-                        <a href="{{route('locale',['locale'=>'en'])}}">English (UK)</a>
-
-                        {{--<select name="" class="select">--}}
-                            {{--@if(Config::get('app.locale') == 'fa')--}}
-                            {{--<option value="1" data-price='ir.svg'></option>--}}
-                            {{--<option value="2" data-price='uk.svg'></option>--}}
-                              {{--@else--}}
-                                {{--<option value="2" data-price='uk.svg'>English (UK)</option>--}}
-                                {{--<option value="1" data-price='ir.svg'>Persian (FA)</option>--}}
-                            {{--@endif--}}
-                        {{--</select>--}}
-                    </div>
-                </li>
+                
                 @endif
             </ul>
+            <div class="flags">
+                <div>
+                    <a href="{{route('locale',['locale'=>'fa'])}}" id="persianFA"><img src="./flags/ir.svg" alt=""></a>
+                    <a href="{{route('locale',['locale'=>'en'])}}" id="engUK"><img src="./flags/uk.svg" alt=""></a>
 
+                    {{--<select name="" class="select">--}}
+                        {{--@if(Config::get('app.locale') == 'fa')--}}
+                        {{--<option value="1" data-price='ir.svg'></option>--}}
+                        {{--<option value="2" data-price='uk.svg'></option>--}}
+                          {{--@else--}}
+                            {{--<option value="2" data-price='uk.svg'>English (UK)</option>--}}
+                            {{--<option value="1" data-price='ir.svg'>Persian (FA)</option>--}}
+                        {{--@endif--}}
+                    {{--</select>--}}
+                </div>
+            </div>
         </div>
         <div class="navigation-menu">
             <div class="bar1"></div>
@@ -125,24 +124,7 @@
 @yield('content')
 
 @if(Auth::guard('user')->check())
- {{-- <style>
-
-
-     @media screen and (max-width:420px){
-        #header-navbar-menu {
-         border-bottom-left-radius: 5%;
-         border-bottom-right-radius: 5%
-
-        }
-     }
-     @media screen and (max-width:375px){
-        #header-navbar-menu {
-         border-bottom-left-radius: 5%;
-         border-bottom-right-radius: 5%
-
-        }
-     }
- </style> --}}
+ 
 @endif
 
 
@@ -167,7 +149,6 @@
 
              $('.navigation-menu').click(function(){
                 console.log("navigation test");
-                // $('#header-navbar-menu').toggle();
                 if(flag == 0) {
                   flag = 1 ;
                   $('#header-navbar-menu').show();
@@ -187,22 +168,17 @@
              var languageDetection = 'ir';
              if(languageDetection === 'ir') {
 
-                // $('.select').change(function(){
                     var block = $('.block');
                     var lang = $( ".select option:selected" ).attr('data-price');
                     if(lang) {
                         var temp = "./flags/"+lang;
                         block.css('background-image','url('+temp+')');
                     }
-                // });
 
              }  else {
-                //    $('.select').change(function(){
                     var block = $('.block');
-                    // var lang = $( ".select option:selected" ).attr('data-price');
                         var temp = "./flags/uk.svg";
                         block.css('background-image','url('+temp+')');
-                // });
                 }
                 $('.select').change(function(){
 
@@ -230,24 +206,31 @@
        });
 
 
-        //            $(document).ready(function(){
-        //        $('.navigation-menu').click(function(){
-        //        $('.navigation-menu').toggleClass('change');
-        //        $('#header-navbar-menu').toggle(9990000000000000000)
-        //        // $('.login').show();
-        //        // $('.signup').show();
-        //        })
-
-
-        //    $(document).ready(function(){
-        //        $('.navigation-menu').click(function(){
-        //        $('.navigation-menu').toggleClass('change');
-        //        $('#header-navbar-menu').toggle(9990000000000000000)
-        //        // $('.login').show();
-        //        // $('.signup').show();
-        //        })
      </script>
+    <style>
+        @media screen and (max-width:769px){
+            .flags{
+                margin-top: -13% !important;
+            }
+        }
 
+        @media screen and (max-width:421px){
+            .flags{
+                margin-top: -19% !important;
+            }
+        }
+        @media screen and (max-width:376px){
+            .flags{
+                margin-top: -21% !important;
+            }
+        }
+
+        @media screen and (max-width:321px){
+            .flags{
+                margin-top: -24% !important;
+            }
+        }
+    </style>
 @if(Config::get('app.locale') == 'fa')
     <style type="text/css">
         #header-navbar-menu {
@@ -256,13 +239,57 @@
         #header-navbar-menu ul li {
             padding-right: 20px;
         }
+        .flags {
+            margin-top: -10px;
+        }
+        .flags a {
+            float:left;
+        }
+        .flags a img {
+            width: 20px;
+            height: 20px;
+            float: left;
+            margin-left: 10px
+        }
+        @media screen and (max-width:768px){
+            .flags {
+                margin-left: 4%
+            }
+        }
+        .flags a#persianFA {
+            border-right: 1px solid white;
+            padding-right: 10px
+        }
 
-    
+       
     </style>
 @else
 
     <style type="text/css">
-    
+            .flags a {
+                float:left;
+            }
+
+            .flags {
+            margin-top: -10px;
+        }
+            .flags a img {
+                width: 20px;
+                height: 20px;
+                float: left;
+                margin-left: 10px
+            }
+
+            .flags a#persianFA {
+                border-right: 1px solid white;
+                padding-right: 10px
+            }
+
+            @media screen and (max-width:421px){
+                .flags {
+                    margin-left: 75% !important
+                }
+            }
     </style>
 @endif
 </body>

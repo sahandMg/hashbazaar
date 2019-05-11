@@ -357,6 +357,16 @@ function copyToClipboard(elem) {
 @else
 
     <style type="text/css">
+
+            
+        .title-flex2 .dashboard-title2 {
+            flex: 2;
+        }
+        .dashboard-hr2 {
+            flex: 1 !important
+        }
+
+
         #setting-page .setting-flex .flex-item a {
             font-size:1.3rem;
         }
@@ -398,6 +408,15 @@ function copyToClipboard(elem) {
         }
 
         @media screen and (max-width:415px){
+                 
+            .title-flex2 .dashboard-title2 {
+                flex: 6;
+                font-size: 1rem !important
+            }
+            .dashboard-hr2 {
+                flex:0.8 !important
+            }
+
             .setting-information input#text {
                 margin-left: 5% !important
             }
@@ -424,9 +443,26 @@ function copyToClipboard(elem) {
 
         }
 
+        @media screen and (max-width:376px) {
+            .title-flex2 .dashboard-title2 {
+                flex: 7;
+                font-size: 1rem !important
+            }
+            .dashboard-hr2 {
+                flex:0.5 !important
+            }
+        }
         @media screen and (max-width:321px){
             .setting-information input#text {
                 margin-left: 21% !important
+            }
+
+            .title-flex2 .dashboard-title2 {
+                flex: 7;
+                font-size: 12px !important
+            }
+            .dashboard-hr2 {
+                flex:0.5 !important
             }
         }
 

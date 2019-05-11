@@ -688,18 +688,19 @@ color: orange;}
 
 .title-flex2 .dashboard-title2 {
      margin-left: 1.5rem !important;
-     font-size: 1.5rem !important;
+     font-size: 1.5rem ;
      font-weight: bolder;
      color: #2e2d2d;
-     flex: 1;
+     flex: 2;
      width: auto;
+     text-align:center
  }
  .dashboard-hr2 {
-     flex: 2 !important
+     flex: 1 !important
  }
 
  .dashboard-hr2 {
-     flex: 2 !important
+     flex: 1 !important
  }
 
 /*  - Media - 1024 */

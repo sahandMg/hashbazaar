@@ -420,6 +420,13 @@ form.contact-page p:nth-of-type(1) {
     margin-top: 3%
 }
 
+#referral-page .icon {
+    width: 35px;
+    height: 35px;
+    margin-top: -10px;
+    padding: 5px;
+ }
+
 /* Referral - Media - 1024 */
 @media screen and (max-width:1025px){
 /* =======----media----==========================Referral==================================== */

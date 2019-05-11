@@ -51,7 +51,53 @@ class PaymentController extends Controller
         $this->th_usd = $settings->usd_per_hash;
         $this->hash_life = $settings->hash_life;
     }
-// runs when a user click on shopping and redirects to coinbase payment page
+
+    public function PaystarPaying(Request $request){
+
+        $payStar = new Paystar($request);
+        $result = $payStar->create();
+        if($payStar->create() != 404){
+
+            return redirect('https://paystar.ir/paying/'.$result);
+        }else{
+            return 'مشکلی در پرداخت پیش آمده';
+        }
+
+
+    }
+
+    // verify payment status
+    // paystar sends transactionID
+    public function PaymentCallback(Request $request){
+
+        $payStar = new Paystar($request);
+        return $payStar->verify();
+
+    }
+    /*
+     * Test Payment
+     */
+    public function TestPayment(Request $request){
+
+        $payment = new PaymentTest($request);
+
+         $code = $payment->create();
+
+        return $this->PaymentCallbackTest($request,$code);
+    }
+
+    public function PaymentCallbackTest($request,$code){
+
+        $payment = new PaymentTest($request);
+
+        return $payment->verify($code);
+    }
+
+    /*
+     *
+     *  Coinbase Apis
+     */
+    // runs when a user click on shopping and redirects to coinbase payment page
     public function createCharge(Request $request){
 //        dd($request->all());
         $settings = Setting::first();
@@ -64,19 +110,19 @@ class PaymentController extends Controller
         $referralCode = $request['code'];
         $url =  "https://api.commerce.coinbase.com/charges";
         $payload = [
-        "name"=> $name,
-        "description"=> $description,
-        "local_price"=> [
-         "amount"=> $amount,
-         "currency"=> "USD"
-       ],
-       "pricing_type"=> "fixed_price",
-       "metadata"=> [
-         "customer_id"=> Auth::id(),
-         "customer_name"=> Auth::user()->name
-       ],
-       "redirect_url"=> "https://hashbazaar.com/payment/success",
-       "cancel_url"=> "https://hashbazaar.com/payment/canceled",
+            "name"=> $name,
+            "description"=> $description,
+            "local_price"=> [
+                "amount"=> $amount,
+                "currency"=> "USD"
+            ],
+            "pricing_type"=> "fixed_price",
+            "metadata"=> [
+                "customer_id"=> Auth::id(),
+                "customer_name"=> Auth::user()->name
+            ],
+            "redirect_url"=> "https://hashbazaar.com/payment/success",
+            "cancel_url"=> "https://hashbazaar.com/payment/canceled",
 
         ];
         $ch = curl_init();
@@ -159,46 +205,6 @@ class PaymentController extends Controller
 //        return redirect('https://commerce.coinbase.com/checkout/dd47f6ee-9166-4f7a-8cbf-856811ac0df4');
     }
 
-    public function PaystarPaying(Request $request){
-
-        $payStar = new Paystar($request);
-        $result = $payStar->create();
-        if($payStar->create() != 404){
-
-            return redirect('https://paystar.ir/paying/'.$result);
-        }else{
-            return 'مشکلی در پرداخت پیش آمده';
-        }
-
-
-    }
-
-    // verify payment status
-    // paystar sends transactionID
-    public function PaymentCallback(Request $request){
-
-        $payStar = new Paystar($request);
-        return $payStar->verify();
-
-    }
-    /*
-     * Test Payment
-     */
-    public function TestPayment(Request $request){
-
-        $payment = new PaymentTest($request);
-
-         $code = $payment->create();
-
-        return $this->PaymentCallbackTest($request,$code);
-    }
-
-    public function PaymentCallbackTest($request,$code){
-
-        $payment = new PaymentTest($request);
-
-        return $payment->verify($code);
-    }
 
     // get specific charge record
     public function getCharges($id){

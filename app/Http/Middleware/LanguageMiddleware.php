@@ -34,12 +34,13 @@ class LanguageMiddleware
             if($country == 'ir' || empty($country)){
 
                 Session::put('locale','fa');
+                App::setLocale('fa');
             }else{
                 Session::put('locale','en');
+                App::setLocale('en');
             }
 
         }
-
         return $next($request);
 
     }

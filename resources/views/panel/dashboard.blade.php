@@ -51,6 +51,7 @@
           </thead>
           <tbody >
             @foreach($hashes as $key=> $hash)
+                @if(Config::get('app.locale') == 'fa')
             <tr>
               <td>
                 <span>{{$hash->hash}}TH/S</span>
@@ -61,13 +62,13 @@
 
           <td>
 
-               <span>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}}    </span>
+              <span>  {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($hash->created_at))->format('Y m d')}}  </span>
 
             </td>
 
             <td>
 
-                <span>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}   </span>
+                <span>  {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($hash->created_at)->addYears(2))->format('Y m d')}}  </span>
 
             </td>
 
@@ -84,11 +85,46 @@
 
           </td>
         </tr>
+            @else
+                    <tr>
+                        <td>
+                            <span>{{$hash->hash}}TH/S</span>
+                            @if($hash->order_id == 'referral')
+                                <div class="box reward"></div>
+                            @endif
+                        </td>
+
+                        <td>
+
+                            <span>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}}    </span>
+
+                        </td>
+
+                        <td>
+
+                            <span>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}   </span>
+
+                        </td>
+
+                        <td>
+
+                            <div class="remain">
+                                <div class="progress1">
+                                    <div class="progress-bar1" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%;width: {{$remainedLife[$key]}}%;">
+                                        <span class="title">{{$remainedLife[$key]}}%</span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </td>
+                    </tr>
+            @endif
         @endforeach
       </tbody>
 
       @else
-        <h6 id="no-hash" > __{{("NO Hash History")}}</h6>
+        <h6 id="no-hash" > {{__("NO Hash History")}}</h6>
       @endif
 
     </table>

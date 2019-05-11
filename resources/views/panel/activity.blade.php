@@ -33,6 +33,7 @@ foreach ($hashes as $key=> $hash){
                </thead>
                <tbody>
                @foreach($hashes as $key=>$hash)
+                   @if(Config::get('app.loclale') == 'fa')
                 <tr>
                     <td>
 
@@ -41,12 +42,12 @@ foreach ($hashes as $key=> $hash){
                     </td>
                     <td>
 
-                           <span>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}}    </span>
+                        <span>  {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($hash->created_at))->format('Y m d')}}   </span>
 
                     </td>
                     <td>
 
-                            <span>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}   </span>
+                        <span>  {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($hash->created_at)->addYears(2))->format('Y m d')}}  </span>
 
                     </td>
 
@@ -63,6 +64,39 @@ foreach ($hashes as $key=> $hash){
 
                     </td>
                 </tr>
+                @else
+                       <tr>
+                           <td>
+
+                               <span>{{$hash->hash}}TH/S</span>
+
+                           </td>
+                           <td>
+
+                               <span>  {{  \Carbon\Carbon::parse($hash->created_at)->format('Y m d')}}   </span>
+
+                           </td>
+                           <td>
+
+                               <span>  {{  \Carbon\Carbon::parse($hash->created_at)->format('Y m d')}}  </span>
+
+                           </td>
+
+                           <td>
+
+                               <div class="remain">
+                                   <div class="progress1">
+                                       <div class="progress-bar1" role="progressbar" aria-valuenow="{{$remainedLife[$key]}}" aria-valuemin="0" aria-valuemax="100" style="max-width: {{$remainedLife[$key]}}%;width: {{$remainedLife[$key]}}%;">
+                                           <span class="title">{{$remainedLife[$key]}}%</span>
+
+                                       </div>
+                                   </div>
+                               </div>
+
+                           </td>
+                       </tr>
+
+                @endif
                @endforeach
                </tbody> 
                 
@@ -84,6 +118,16 @@ foreach ($hashes as $key=> $hash){
 
                 <table  class="table custom-table" style="color: black;">
                     <thead  style="font-weight:bold">
+                    @if(Config::get('app.locale')== 'fa')
+                        <tr  style="height:90px !important">
+                            <th class="Transactions_column"> {{__("Date")}} </th>
+                            <th class="Transactions_column"> (مبلغ (تومان </th>
+                            <th class="Transactions_column">{{__("Status")}}</th>
+                            <th class="Transactions_column">{{__("in/out")}}</th>
+
+                        </tr>
+                    @else
+
                         <tr  style="height:90px !important">
                             <th class="Transactions_column"> {{__("Date")}} </th>
                             <th class="Transactions_column"> BTC </th>
@@ -92,13 +136,37 @@ foreach ($hashes as $key=> $hash){
                             <th class="Transactions_column">{{__("in/out")}}</th>
 
                         </tr>
+                    @endif
                     </thead>
                     <tbody>
+                    @if(Config::get('app.locale')== 'fa')
                         @foreach($trans as $item)
                             <tr>
 
                                 <td>
-                                   {{\Carbon\Carbon::parse($item->created_at)->format('M d Y')}}
+                                    {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($item->created_at))->format('Y m d')}}
+                                </td>
+
+                                <td>
+                                    {{$item->amount_toman}}
+                                </td>
+
+                                <td>
+                                    {{$item->status}}
+                                </td>
+
+                                <td>
+                                    {{$item->checkout}}
+                                </td>
+
+                            </tr>
+                        @endforeach
+                    @else
+                        @foreach($trans as $item)
+                            <tr>
+
+                                <td>
+                                    {{\Carbon\Carbon::parse($item->created_at)->format('M d Y')}}
                                 </td>
 
                                 <td>
@@ -122,6 +190,8 @@ foreach ($hashes as $key=> $hash){
 
                             </tr>
                         @endforeach
+                    @endif
+
                     </tbody>
 
 

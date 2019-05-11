@@ -331,14 +331,6 @@
         
 </script>
 
-<style type="text/css">
-       .icon {
-            width: 35px;
-            height: 35px;
-            margin-top: -10px;
-            padding: 5px;
-         }
-</style>
  <style type="text/css">
        
        .circle-output-container {

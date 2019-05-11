@@ -46,7 +46,6 @@
         }
 
         .container  p{
-            font-family: sans-serif;
             display: block;
             margin: 0;
             margin-bottom: 20px;
@@ -126,19 +125,38 @@
             }
         }
     </style>
+    @if(Config::get('app.locale') == 'fa')
+    <STYLE>
+      @font-face {
+        font-family: BYekanFont;
+        src: url({{asset('fonts/BYekan.ttf')}});
+      }
+      * {
+        font-family: BYekanFont;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: BYekanFont;
+      }
+      th, a, p, input, button, legend, label {font-family: BYekanFont;}
+      .btn {font-family: BYekanFont;}
+    </STYLE>
+ @endif
 </head>
 <body>
 <header>
     <div class="logo-header"><img src="{{asset('img/Logo_header.svg')}}" alt="logo_header"></div>
 </header>
 <div class="container">
-    <h1>{{__("Dear investor")}}</h1>
+       
     @if(\Illuminate\Support\Facades\Config::get('app.locale') == 'fa')
-    <p style="text-align: left;"> تراهش پرداخت کرده اید.{{$hashPower->hash}} تومان جهت خرید{{$trans->amount_toman}}خریدار گرامی، شما   </p>
-        <p style="text-align: left;">شما می توانید مقدار بیتکوین استخراج شده را از قسمت داشبورد پنل کاربری خود دنبال کنید</p>
-        <p style="text-align: left;">بیتکوین استخراج شده، هنگام رسیدن به مقدار  ۰.۰۱ قابل برداشت خواهد بود</p>
-        <p style="text-align: left;">جهت برداشت بیتکوین شما می بایست در قسمت تنظیمات حساب، آدرس کیف پول بیتکوین خود را وارد کنید</p>
+       <h1 style="text-align: right;">{{__("Dear investor")}}</h1>
+       <p style="text-align: right;">کد تراکنش شما 1234 است</p>
+       <p style="text-align: right;">خریدار گرامی، شما {{$trans->amount_toman}} تومان جهت خرید {{$hashPower->hash}} تراهش پرداخت کرده اید       </p>
+        <p style="text-align: right;">شما می توانید مقدار بیتکوین استخراج شده را از قسمت داشبورد پنل کاربری خود دنبال کنید</p>
+        <p style="text-align: right;">بیتکوین استخراج شده، هنگام رسیدن به مقدار  ۰.۰۱ قابل برداشت خواهد بود</p>
+        <p style="text-align: right;">جهت برداشت بیتکوین شما می بایست در قسمت تنظیمات حساب، آدرس کیف پول بیتکوین خود را وارد کنید</p>
     @else
+         <h1>{{__("Dear investor")}}</h1>
         <p style="text-align: left;">{{__("You have invested")}} {{$trans->amount_btc}} BTC for {{$hashPower->hash}} th power.</p>
         <p style="text-align: left;">You can track your mining output from your panel in real time.</p>
         <p style="text-align: left;">Your mining output will be withdrawn as soon as increasing to 0.01BTC.</p>
@@ -148,13 +166,19 @@
 </div>
 
 <footer>
-
+  @if(\Illuminate\Support\Facades\Config::get('app.locale') == 'fa')
+    <a href="http://hashbazaar.com" target="_blank">وب سایت</a>
+    <a href="http://hashbazaar.com/panel/dashboard" target="_blank">میزکار</a>
+    <a href="http://hashbazaar.com/faq" target="_blank">سوالات متداول</a>
+<!--     <a href="http://blog.hashbazaar.com/" target="_blank">Blog</a>
+ -->    <a href="https://www.instagram.com/hashbazaar/" target="_blank">اینستاگرام</a>
+ @else
     <a href="http://hashbazaar.com" target="_blank"> Website</a>
     <a href="http://hashbazaar.com/panel/dashboard" target="_blank">Dashboard</a>
     <a href="http://hashbazaar.com/faq" target="_blank">FAQ</a>
     <a href="http://blog.hashbazaar.com/" target="_blank">Blog</a>
     <a href="https://www.instagram.com/hashbazaar/" target="_blank">Instagram</a>
-
+ @endif
 </footer>
 </body>
 </html>

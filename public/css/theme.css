@@ -201,7 +201,12 @@ a {
 #header-navbar-menu ul .login:after , .signup:after {
   background: transparent !important;
 }
-
+.flags a img {
+  width: 20px !important;
+  height: 20px !important;
+  float: left;
+  margin-left: 10px
+}
 
 #header-navbar-menu  ul li.flags:hover{
   border-bottom: 2px solid transparent !important;

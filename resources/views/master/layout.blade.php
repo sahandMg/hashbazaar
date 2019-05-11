@@ -245,12 +245,7 @@
         .flags a {
             float:left;
         }
-        .flags a img {
-            width: 20px;
-            height: 20px;
-            float: left;
-            margin-left: 10px
-        }
+       
         @media screen and (max-width:768px){
             .flags {
                 margin-left: 4%
@@ -273,12 +268,12 @@
             .flags {
             margin-top: -10px;
         }
-            .flags a img {
+            /* .flags a img {
                 width: 20px;
                 height: 20px;
                 float: left;
                 margin-left: 10px
-            }
+            } */
 
             .flags a#persianFA {
                 border-right: 1px solid white;

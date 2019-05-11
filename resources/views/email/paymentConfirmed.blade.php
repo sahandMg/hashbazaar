@@ -134,7 +134,7 @@
 <div class="container">
     <h1>{{__("Dear investor")}}</h1>
     @if(\Illuminate\Support\Facades\Config::get('app.locale') == 'fa')
-    <p style="text-align: left;"> تراهش پرداخت کرده اید.{{$hashPower->hash}} تومان جهت خرید{{$trans->usd_toman}}خریدار گرامی، شما   </p>
+    <p style="text-align: left;"> تراهش پرداخت کرده اید.{{$hashPower->hash}} تومان جهت خرید{{$trans->amount_toman}}خریدار گرامی، شما   </p>
         <p style="text-align: left;">شما می توانید مقدار بیتکوین استخراج شده را از قسمت داشبورد پنل کاربری خود دنبال کنید</p>
         <p style="text-align: left;">بیتکوین استخراج شده، هنگام رسیدن به مقدار  ۰.۰۱ قابل برداشت خواهد بود</p>
         <p style="text-align: left;">جهت برداشت بیتکوین شما می بایست در قسمت تنظیمات حساب، آدرس کیف پول بیتکوین خود را وارد کنید</p>

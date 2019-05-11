@@ -32,7 +32,7 @@ class Paystar
 
         $settings = Setting::first();
         $dollar = new Dolar();
-        $dollarPriceInToman = $dollar->getDolarInToman();
+        $dollarPriceInToman = $settings->usd_toman;
         $discount = $this->request['discount'];
         $hash = $this->request['hash'];
         $amount = $settings->usd_per_hash * $hash * (1- $discount) * $dollarPriceInToman;
@@ -49,7 +49,7 @@ class Paystar
             'amount' => $amount,
             'pin' => $settings->paystar_pin,
             'description' => 'هاستینگ ارز دیجیتال HashBazaar',
-            'callback' => 'https://hashbazaar.com/payment/callback',
+            'callback' => 'https://hashbazaar.com/api/payment/callback',
             'ip'=> $ip
         );
         $url = 'https://paystar.ir/api/create/';
@@ -164,6 +164,12 @@ class Paystar
             $message->from('Admin@HashBazaar');
             $message->to($user->email);
             $message->subject('Payment Confirmed');
+        });
+
+        Mail::send('email.newTrans', [], function ($message) use ($user) {
+            $message->from('Admin@HashBazaar');
+            $message->to('Admin@HashBazaar');
+            $message->subject('New Payment');
         });
 
 //                $referralUser = DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->first();

@@ -150,9 +150,9 @@
        
     @if(\Illuminate\Support\Facades\Config::get('app.locale') == 'fa')
        <h1 style="text-align: right;">{{__("Dear investor")}}</h1>
-       <p style="text-align: right;">کد تراکنش شما 1234 است</p>
-       <p style="text-align: right;">خریدار گرامی، شما {{$trans->amount_toman}} تومان جهت خرید {{$hashPower->hash}} تراهش پرداخت کرده اید       </p>
-        <p style="text-align: right;">شما می توانید مقدار بیتکوین استخراج شده را از قسمت داشبورد پنل کاربری خود دنبال کنید</p>
+       <p style="text-align: right;">  <span>{{$trans->code}} </span> کد تراکنش شما </p>
+       <p style="text-align: right;">، شما {{$trans->amount_toman}} تومان جهت خرید {{$hashPower->hash}} تراهش پرداخت کرده اید       </p>
+        <p style="text-align: right;">هم اکنون می توانید مقدار بیتکوین استخراج شده را از قسمت داشبورد پنل کاربری خود دنبال کنید</p>
         <p style="text-align: right;">بیتکوین استخراج شده، هنگام رسیدن به مقدار  ۰.۰۱ قابل برداشت خواهد بود</p>
         <p style="text-align: right;">جهت برداشت بیتکوین شما می بایست در قسمت تنظیمات حساب، آدرس کیف پول بیتکوین خود را وارد کنید</p>
     @else

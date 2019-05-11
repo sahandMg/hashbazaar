@@ -19,7 +19,7 @@
   "(May be changed depends on bitcoin price and bitcoin network difficulty)" :"(براساس تغییرات قیمت بیت کوین و سختی شبکه، تغییر می کند)",
   "BUY" :"خرید",
   "OUR ADVANTAGES" :"مزایای ما",
-  "dollar per Th/day":"تومان در روز به ازای هر تراهش",
+  "dollar per Th/day":"در روز به ازای هر تراهش",
   "OTHER ADVANTAGES: " :"مزایای ما",
   "dollar":"تومان",
   "INSTANT MINING":"شروع بلادرنگ استخراج",
@@ -161,5 +161,6 @@
   "Mining":"استخراج بیتکوین",
   "Hash Bazaar":"هش بازار",
   "Thank You User. Your Payment Received !":"باتشکر. پرداخت شما با موفقیت انجام شد",
-  "Dear investor":"خریدار گرامی"
+  "Dear investor":"خریدار گرامی",
+  "NO Hash History":"تاریخچه خریدی وجود ندارد"
 }

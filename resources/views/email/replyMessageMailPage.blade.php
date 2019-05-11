@@ -46,7 +46,6 @@
         }
 
         .container  p{
-            font-family: sans-serif;
             display: block;
             margin: 0;
             margin-bottom: 20px;
@@ -126,6 +125,22 @@
             }
         }
     </style>
+    @if(Config::get('app.locale') == 'fa')
+    <STYLE>
+      @font-face {
+        font-family: BYekanFont;
+        src: url({{asset('fonts/BYekan.ttf')}});
+      }
+      * {
+        font-family: BYekanFont;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: BYekanFont;
+      }
+      th, a, p, input, button, legend, label {font-family: BYekanFont;}
+      .btn {font-family: BYekanFont;}
+    </STYLE>
+ @endif
 </head>
 <body>
 <header>
@@ -133,9 +148,9 @@
 </header>
 <div class="container">
     @if(\Illuminate\Support\Facades\Config::get('app.locale') == 'fa')
-    <h1>با تشکر از تماس شما</h1>
+    <h1 style="text-align: right;">با تشکر از تماس شما</h1>
         <br/>
-        <p style="text-align: left;">تیم هش بازار به زودی پاسخی برای شما ارسال خواهند کرد</p>
+        <p style="text-align: right;">تیم هش بازار به زودی پاسخی برای شما ارسال خواهند کرد</p>
     @else
         <h1>Thanks for your contact</h1>
         <br/>
@@ -144,13 +159,19 @@
 </div>
 
 <footer>
-
+  @if(\Illuminate\Support\Facades\Config::get('app.locale') == 'fa')
+    <a href="http://hashbazaar.com" target="_blank">وب سایت</a>
+    <a href="http://hashbazaar.com/panel/dashboard" target="_blank">میزکار</a>
+    <a href="http://hashbazaar.com/faq" target="_blank">سوالات متداول</a>
+<!--     <a href="http://blog.hashbazaar.com/" target="_blank">Blog</a>
+ -->    <a href="https://www.instagram.com/hashbazaar/" target="_blank">اینستاگرام</a>
+ @else
     <a href="http://hashbazaar.com" target="_blank"> Website</a>
     <a href="http://hashbazaar.com/panel/dashboard" target="_blank">Dashboard</a>
     <a href="http://hashbazaar.com/faq" target="_blank">FAQ</a>
     <a href="http://blog.hashbazaar.com/" target="_blank">Blog</a>
     <a href="https://www.instagram.com/hashbazaar/" target="_blank">Instagram</a>
-
+ @endif
 </footer>
 </body>
 </html>

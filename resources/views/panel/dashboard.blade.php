@@ -41,24 +41,24 @@
 
     <table class="table custom-table" style="color: black;">
       @if(!$hashes->isEmpty())
-      <thead>
-        <tr style="font-weight:bold">
-          <th>{{__("Hash Power")}}</th>
-          <th>{{__("Started at")}}</th>
-          <th>{{__("Ends at")}}</th>
-          <th>{{__("Remain")}}</th>
-        </tr>
-      </thead>
-      <tbody >
-        @foreach($hashes as $key=> $hash)
-        <tr>
-          <td>
-            <span>{{$hash->hash}}TH/S</span>
-            @if($hash->order_id == 'referral')
-            <div class="box reward"></div>
-            @endif
-          </td>
-                                
+          <thead>
+            <tr style="font-weight:bold">
+              <th>{{__("Hash Power")}}</th>
+              <th>{{__("Started at")}}</th>
+              <th>{{__("Ends at")}}</th>
+              <th>{{__("Remain")}}</th>
+            </tr>
+          </thead>
+          <tbody >
+            @foreach($hashes as $key=> $hash)
+            <tr>
+              <td>
+                <span>{{$hash->hash}}TH/S</span>
+                @if($hash->order_id == 'referral')
+                <div class="box reward"></div>
+                @endif
+              </td>
+
           <td>
 
                <span>{{\Carbon\Carbon::parse($hash->created_at)->format('M d Y')}}    </span>
@@ -88,7 +88,7 @@
       </tbody>
 
       @else
-        <h6 id="no-hash" > NO Hash History</h6>
+        <h6 id="no-hash" > __{{("NO Hash History")}}</h6>
       @endif
 
     </table>
@@ -121,7 +121,7 @@
           <span id="doReferalCode" style="animation-iteration-count:infinite;padding:2px"></span>
       </p>
     @if(Config::get('app.locale') == 'fa')
-      <p style="color:black">{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day*$settings->usd_toman}} {{__('dollar per Th/day')}}</p>
+      <p style="color:black">{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day}} دلار ({{ $settings->maintenance_fee_per_th_per_day*$settings->usd_toman}} تومان) {{__('dollar per Th/day')}}</p>
     @else 
      <p style="color:black">{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day}} {{__('dollar per Th/day')}}</p>
     @endif 
@@ -131,13 +131,13 @@
 
     </div>
      @if(Config::get('app.locale') == 'fa')
-       <div id="referralDiv">
-         <label id="referralLabel" for="referralCode">کد ارجاع:</label>
-         <input id='referralCode' type="text" placeholder="{{$AppliedCode}}" name="referralCode" style="margin-top:5px" class="aplybtn1text"/>
-         <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> درخواست </button>
-       </div>
-       <form class="dashboard-page" method="post" action="{{route('PaystarPaying')}}">
-       {{--<form class="dashboard-page" method="post" action="{{route('TestPayment')}}">--}}
+           <div id="referralDiv">
+             <label id="referralLabel" for="referralCode">کد ارجاع:</label>
+             <input id='referralCode' type="text" placeholder="{{$AppliedCode}}" name="referralCode" style="margin-top:5px" class="aplybtn1text"/>
+             <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> درخواست </button>
+           </div>
+           <form class="dashboard-page" method="post" action="{{route('PaystarPaying')}}">
+           {{--<form class="dashboard-page" method="post" action="{{route('TestPayment')}}">--}}
             <input type="hidden" name="_token" value="{{csrf_token()}}">
               @if($apply_discount == 1)
 
@@ -150,14 +150,14 @@
             <input type="range" hidden min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="hiddenRange">
            <button id="orderBtn" class="pandel-button" type="submit">{{__("Order")}}</button>
        </form>
-      @else
+     @else
         <div id="referralDiv">
          <label id="referralLabel" style="color:black;font-weight:bolder" for="referralCode">Referral Code</label>
          <input id='referralCode' type="text" placeholder="{{$AppliedCode}}" name="referralCode" style="margin-top:5px" class="aplybtn1text"/>
          <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> Apply </button>
        </div>
        <button id="orderBtn" class="pandel-button" type="submit">{{__("Order")}}</button>
-      @endif 
+     @endif
     <!-- </form> -->
     @else
 

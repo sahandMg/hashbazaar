@@ -86,17 +86,27 @@ class UpdateMinings extends Command
         $users = User::all();
         $mainTHash = $settings->total_th;
 
-
         foreach ($users as $index => $user) {
             $hashes = BitHash::where('user_id', $user->id)->where('confirmed',1)->get();
             if (!$hashes->isEmpty()) {
                 foreach ($hashes as $item => $hash) {
-                    $remainedDay = Carbon::now()->diffInDays(Carbon::parse($hash->created_at)->addYears($hash->life));
-                    $hash->update(['remained_day'=>$remainedDay]);
-                    $hash->save();
-                    $hashPower[$item] = $hash->hash;
-                    $maintenance_inBTC = $settings->maintenance_fee_per_th_per_day/$bitCoinPrice->price *  $hashPower[$item];
-                    $userEarn[$item] = $mining24 * ($hashPower[$item] / $mainTHash) - $maintenance_inBTC;
+                   // checks if contract is over or not
+                    if($hash->remained_day == 0){
+                        $hash->update(['confirmed'=> 0]);
+                        DB::table('minings')->where('order_id',$hash->order_id)->update(['block'=>1]);
+                    }else{
+
+                        $remainedDay = Carbon::now()->diffInDays(Carbon::parse($hash->created_at)->addYears($hash->life));
+                        $hash->update(['remained_day'=>$remainedDay]);
+                        $hash->save();
+                        $hashPower[$item] = $hash->hash;
+                        $maintenance_inBTC = $settings->maintenance_fee_per_th_per_day/$bitCoinPrice->price *  $hashPower[$item];
+                        if($mining24 != 0){
+
+                            $userEarn[$item] = $mining24 * ($hashPower[$item] / $mainTHash) - $maintenance_inBTC;
+                        }
+                    }
+
                 }
                 $minings = Mining::where('user_id',$user->id)->where('block',0)->orderBy('id','desc')->get();
                 if(! $minings ->isEmpty()){
@@ -120,7 +130,6 @@ class UpdateMinings extends Command
                         }
                     }
                 }
-
                 $total_paid_btc = Transaction::where('user_id',$user->id)->where('status','paid')->where('checkout','in')->sum('amount_btc');
                 $user->update(['total_mining'=>$minings->sum('mined_btc'),'pending'=> $minings->sum('mined_btc') - $total_paid_btc]);
                 $user->save();

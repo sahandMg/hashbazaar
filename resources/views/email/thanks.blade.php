@@ -43,7 +43,6 @@
 
         .container  p{
             /*font-size: 2em;*/
-            font-family: sans-serif;
             display: block
         }
         .container  h1{
@@ -115,6 +114,22 @@
             }
         }
     </style>
+     @if(Config::get('app.locale') == 'fa')
+    <STYLE>
+      @font-face {
+        font-family: BYekanFont;
+        src: url({{asset('fonts/BYekan.ttf')}});
+      }
+      * {
+        font-family: BYekanFont;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: BYekanFont;
+      }
+      th, a, p, input, button, legend, label {font-family: BYekanFont;}
+      .btn {font-family: BYekanFont;}
+    </STYLE>
+ @endif
 </head>
 <body>
 <header>
@@ -133,11 +148,18 @@
 </div>
 
 <footer>
+  @if(\Illuminate\Support\Facades\Config::get('app.locale') == 'fa')
+    <a href="http://hashbazaar.com" target="_blank">وب سایت</a>
+    <a href="http://hashbazaar.com/panel/dashboard" target="_blank">میزکار</a>
+    <a href="http://hashbazaar.com/faq" target="_blank">سوالات متداول</a>
+<!--     <a href="http://blog.hashbazaar.com/" target="_blank">Blog</a>
+ -->    <a href="https://www.instagram.com/hashbazaar/" target="_blank">اینستاگرام</a>
+ @else
     <a href="http://hashbazaar.com" target="_blank"> Website</a>
-    <a href="{{route('dashboard')}}" target="_blank">Dashboard</a>
-    <a href="{{route('customerService')}}" target="_blank">FAQ</a>
-    <a href="http://blog.hashbazaar.com" target="_blank">Blog</a>
+    <a href="http://hashbazaar.com/panel/dashboard" target="_blank">Dashboard</a>
+    <a href="http://hashbazaar.com/faq" target="_blank">FAQ</a>
+    <a href="http://blog.hashbazaar.com/" target="_blank">Blog</a>
     <a href="https://www.instagram.com/hashbazaar/" target="_blank">Instagram</a>
-</footer>
+ @endif
 </body>
 </html>

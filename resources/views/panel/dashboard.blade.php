@@ -121,7 +121,7 @@
           <span id="doReferalCode" style="animation-iteration-count:infinite;padding:2px"></span>
       </p>
     @if(Config::get('app.locale') == 'fa')
-      <p style="color:black">{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day*$settings->usd_toman}} {{__('dollar per Th/day')}}</p>
+      <p style="color:black">{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day}} دلار ({{ $settings->maintenance_fee_per_th_per_day*$settings->usd_toman}} تومان) {{__('dollar per Th/day')}}</p>
     @else 
      <p style="color:black">{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day}} {{__('dollar per Th/day')}}</p>
     @endif 

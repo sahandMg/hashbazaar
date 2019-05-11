@@ -152,9 +152,9 @@
        </form>
       @else
         <div id="referralDiv">
-         <label id="referralLabel" for="referralCode">کد ارجاع:</label>
+         <label id="referralLabel" style="color:black;font-weight:bolder" for="referralCode">Referral Code</label>
          <input id='referralCode' type="text" placeholder="{{$AppliedCode}}" name="referralCode" style="margin-top:5px" class="aplybtn1text"/>
-         <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> درخواست </button>
+         <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> Apply </button>
        </div>
        <button id="orderBtn" class="pandel-button" type="submit">{{__("Order")}}</button>
       @endif 
@@ -271,7 +271,12 @@
       }
       .title-flex .dashboard-title {
         margin-left: 0em !important;
+        flex: 2;
         font-size: 1.6rem !important;
+      }
+
+      .dashboard-hr {
+        flex: 2
       }
 
       @media screen and (max-width:1025px){
@@ -280,6 +285,10 @@
             margin-top: 10px;
             flex: 2;
             text-align: center !important
+        }
+
+        .dashboard-hr {
+          flex: 1
         }
       }
 
@@ -301,10 +310,25 @@
             text-align: center !important
         }
       }
+      @media screen and (max-width: 376px){
+        .title-flex .dashboard-title {
+            flex: 2;
+        }
 
+        .dashboard-hr {
+          flex: 0.8
+        }
+        #referralCode {
+            width: 150px !important
+        }
+
+        .btn-primary {
+            margin-top: -90px !important;
+        }
+      }
       @media screen and (max-width: 321px){
           #referralCode {
-            width: 135px !important
+            width: 130px !important
         }
         .btn-primary {
             padding: 0.1em .5em !important;
@@ -334,6 +358,14 @@
         direction: ltr;
         text-align: left
       }
+
+      .title-flex .dashboard-title {
+        flex: 3;
+      }
+
+      .dashboard-hr {
+        flex: 2
+      }
      
 
       @media screen and (max-width: 420px) {
@@ -342,18 +374,32 @@
             width: 170px !important;
         }
         .aplybtn {
-            margin-right: 70% !important;
-            margin-top: -60px !important
+            margin-left: 86% !important;
+            margin-top: -100px !important
         }
       }
-
+      @media screen and (max-width:376px){
+        #referralCode {
+            width: 120px !important;
+        }
+        .aplybtn {
+            margin-left: 80% !important;
+            margin-top: -100px !important
+        }
+      }
       @media screen and (max-width: 321px){
           #referralCode {
-            width: 135px !important
+            width: 125px !important;
         }
+
+        #referralDiv label {
+          font-size: 1rem !important
+        }
+
         .btn-primary {
             padding: 0.1em .5em !important;
-            margin-left: 170px;
+            margin-top: 00px !important;
+            margin-left: 40% !important;
         }
       }
     </style>

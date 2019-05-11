@@ -1257,14 +1257,12 @@ form.contact-page p:nth-of-type(1) {
         color: #2e2d2d;
         flex: 1;
         width: auto;
+        text-align:center
     }
     .dashboard-hr {
         flex: 2
     }
 
-    .dashboard-hr {
-        flex: 2
-    }
 
     .hash {
         padding-left: 3% !important

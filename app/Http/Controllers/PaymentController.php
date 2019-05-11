@@ -57,7 +57,7 @@ class PaymentController extends Controller
         $payStar = new Paystar($request);
         $result = $payStar->create();
         if($payStar->create() != 404){
-
+        $request->session()->save();
             return redirect('https://paystar.ir/paying/'.$result);
         }else{
             return 'مشکلی در پرداخت پیش آمده';

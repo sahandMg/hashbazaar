@@ -725,7 +725,7 @@
                                 thPriceAfterCode = dollarToToman *  {!! $settings->usd_per_hash !!} *  (1 - resp['discount'] );;
                                 costAfterCode.innerHTML =   " - "+ (dollarToToman * slider.value * (thPrice-thPriceAfterCode) ) + " dollar" + " = " +( dollarToToman * slider.value * thPriceAfterCode) + "dollar" ;
 
-                            }else{
+                            } else {
 
                                 thPriceAfterCode = dollarToToman * {!! $settings->usd_per_hash * (1 - $discount) !!};
                                 costAfterCode.innerHTML =   " - "+ (dollarToToman * slider.value * (thPrice-thPriceAfterCode) ) + " dollar" + " = " +(dollarToToman * slider.value * thPriceAfterCode) + "dollar" ;
@@ -758,7 +758,6 @@
                         if(response.data[0] >= minimum_redeem){
                             document.getElementById('redeem').disabled = false;
                         }
-                        // console.log(response.data);
                     }
 
                 });
@@ -773,14 +772,25 @@
                 
 
                 dateTime = response.data;
-//                console.log(dateTime);
                 var timeLabels= [];
                 var data= [];
                 if(dateTime !== 404){
+                  if(window.innerWidth > 500){
                     for(i=0 ; i < dateTime.length ; i++){
                         timeLabels.push(dateTime[i].time);
                         data.push(dateTime[i].mined);
                     }
+                  } else {
+                    console.log("window.innerWidth : "+window.innerWidth)
+                    for(i=0 ; i < dateTime.length ; i++){
+                        if( i%5 ===0) {
+                          timeLabels.push(dateTime[i].time);
+                        } else {
+                          timeLabels.push("");
+                        }
+                        data.push(dateTime[i].mined);
+                    }
+                  }
                 }
                 var data2D = [];data2D.push(data);
                 new Chartist.Line('.ct-chart', {

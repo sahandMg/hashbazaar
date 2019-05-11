@@ -292,6 +292,9 @@
 </script>
 @if(Config::get('app.locale') == 'fa')
     <style type="text/css">
+      .buy-hashpower-text small{
+        font-size: 1.1rem !important;
+      }
       .buy-hashpower-text {direction: rtl;text-align: right;}
 
       #referralDiv {

@@ -21,7 +21,7 @@
                 </div>
         </div>
         @endif
-    <div class="container text-center">
+    <div class="container text-center" style="margin-top: 2%;">
         <p>© 2018 HashBazaar. All rights reserved</p>
     </div>
     <div class="network-flex">

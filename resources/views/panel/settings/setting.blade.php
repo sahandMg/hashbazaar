@@ -372,8 +372,8 @@ function copyToClipboard(elem) {
         }
         .setting-information  {
             margin-top: 5%;
-            direction: rtl;
-            text-align: right;
+            direction: ltr;
+            text-align: left;
             font-size:1.2rem
         }
         .setting-information label {
@@ -381,7 +381,7 @@ function copyToClipboard(elem) {
         }
 
         .setting-information input#text {
-            margin-left: 21%;
+            margin-left: 20%;
         }
 
         .setting-information input#email {
@@ -390,15 +390,38 @@ function copyToClipboard(elem) {
 
                 
         .setting-information input#cur-password {
-            margin-left: 16.7%;
+            margin-left: 10.4%;
         }
 
         .setting-information input#newpassword {
-            margin-left: 17%;
+            margin-left: 14.7%;
         }
 
         .setting-information input#Confirmpassword {
-            margin-left: 16.7%;
+            margin-left: 10%;
+        }
+
+        @media screen and (max-width:1025px){
+            .setting-information input#text {
+                margin-left: 41%;
+            }
+
+            .setting-information input#email {
+                margin-left: 31%;
+            }
+
+                    
+            .setting-information input#cur-password {
+                margin-left: 10.4%;
+            }
+
+            .setting-information input#newpassword {
+                margin-left: 16%;
+            }
+
+            .setting-information input#Confirmpassword {
+                margin-left: 9.7%;
+            }
         }
 
         @media screen and (max-width:768px){
@@ -418,17 +441,14 @@ function copyToClipboard(elem) {
             }
 
             .setting-information input#text {
-                margin-left: 5% !important
-            }
-            .setting-information input#email {
                 margin-bottom: 20px;
                 margin-left: 22% !important
             }
-            .setting-information input#text {
+            .setting-information input#email {
                 margin-bottom: 20px;
-                margin-left: 14%
+                margin-left: 8.5% !important
             }
-
+         
             .setting-information input#cur-password {
                 margin-left: 22%;
             }
@@ -451,11 +471,18 @@ function copyToClipboard(elem) {
             .dashboard-hr2 {
                 flex:0.5 !important
             }
+
+            .setting-information input#text {
+                margin-bottom: 20px;
+                margin-left:15% !important
+            }
+            .setting-information input#email {
+                margin-bottom: 20px;
+                margin-left: 0.5% !important
+            }
         }
         @media screen and (max-width:321px){
-            .setting-information input#text {
-                margin-left: 21% !important
-            }
+           
 
             .title-flex2 .dashboard-title2 {
                 flex: 7;
@@ -463,6 +490,32 @@ function copyToClipboard(elem) {
             }
             .dashboard-hr2 {
                 flex:0.5 !important
+            }
+
+            .setting-information input#text {
+                margin-bottom: 20px;
+                margin-left: 14.5% !important;
+                width: 200px;
+            }
+            .setting-information input#email {
+                margin-bottom: 20px;
+                width: 200px;
+                margin-left: 1.5% !important;
+            }
+         
+            .setting-information input#cur-password {
+                width: 200px;
+                margin-left: 16%;
+            }
+
+            .setting-information input#newpassword {
+                width: 200px;
+                margin-left: 16%;
+            }
+
+            .setting-information input#Confirmpassword {
+                width: 200px;
+                margin-left: 16%;
             }
         }
 

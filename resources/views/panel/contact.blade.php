@@ -25,7 +25,7 @@
     </style>
    @endif
    <style type="text/css">
-        .panel-header {
+        /* .panel-header {
             margin-top: 2%;
             font-size: 2rem;
             color: #2e2d2d;
@@ -62,7 +62,7 @@
              font-size: 1.1rem;
              letter-spacing: 0.5px
            }
-        }
+        } */
    </style>
 
 

@@ -64,7 +64,7 @@
 						 --}}
 
 						<a href="{{route('redirectToProvider')}}" class="socialnet-flex1" id="gp">
-							<img src="img/icons/googleicon.png" alt=""></a>
+							<img src="img/icons/googleicon.png" alt="Google Login"></a>
 						{{-- alt="Join With Google Account" --}}
 
 					</div>

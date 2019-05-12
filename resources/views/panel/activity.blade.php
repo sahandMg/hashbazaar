@@ -171,27 +171,5 @@ foreach ($hashes as $key=> $hash){
                       
 
     })
-    // =---------------------------------------</script>
-    <style type="text/css">
-        .progress-bar1 .title {
-          opacity: 1;
-        }
-        .activity-container h2 {
-            margin-top: 4%;
-        }
-        .custom-table thead  {
-            border-bottom: 30px !important;
-            font-weight: bolder;
-        }
-        .custom-table th{
-            border-top: 0px;
-        }
-
-        /* @media screen and (max-width:414px){
-            .container .custom-table th:nth-of-type(2) ,
-            .container .custom-table td:nth-of-type(2) {
-                display: none
-            }
-        } */
-      </style>
+</script>
 @endsection

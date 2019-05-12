@@ -182,74 +182,7 @@
                <td>300x250 </td>
                 <td><a href="{{route('banner',['name'=>'300_250_hashbazaar'])}}">Download here</a></td>
             </tr>
-            {{--<tr>--}}
-               {{--<<td>240x400 </td>--}}
-               {{--<td><a href="">Download here</a></td>--}}
-            {{--</tr>--}}
-            {{--<tr>--}}
-               {{--<td>250x250 </td>--}}
-               {{--<td><a href="">Download here</a></td>--}}
-            {{--</tr>--}}
-            {{--<tr>--}}
-               {{--<td>250x360 </td>--}}
-               {{--<td><a href="">Download here</a></td>--}}
-            {{--</tr>--}}
-            {{--<tr>--}}
-               {{--<td>300x50 </td>--}}
-               {{--<td><a href="">Download here</a></td>--}}
-            {{--</tr>--}}
-            {{--<tr>--}}
-               {{--<td>300x250 </td>--}}
-               {{--<td><a href="">Download here</a></td>--}}
-            {{--</tr>--}}
-            {{--<tr>--}}
-               {{--<td>300x600 </td>--}}
-               {{--<td><a href="">Download here</a></td>--}}
-            {{--</tr>--}}
-            {{--<tr>--}}
-               {{--<td>300x1050 </td>--}}
-               {{--<td><a href="">Download here</a></td>--}}
-            {{--</tr>--}}
-            {{--<tr>--}}
-               {{--<td>320x50 </td>--}}
-               {{--<td><a href="">Download here</a></td>--}}
-            {{--</tr>--}}
-            {{--<tr>--}}
-               {{--<td>320x100 </td>--}}
-               {{--<td><a href="">Download here</a></td>--}}
-            {{--</tr>--}}
-            {{--<tr>--}}
-               {{--<td>336x280 </td>--}}
-               {{--<td><a href="">Download here</a></td>--}}
-            {{--</tr>--}}
-            {{--<tr>--}}
-               {{--<td>468x60 </td>--}}
-               {{--<td><a href="">Download here</a></td>--}}
-            {{--</tr>--}}
-            {{--<tr>--}}
-               {{--<td>580x400 </td>--}}
-               {{--<td><a href="">Download here</a></td>--}}
-            {{--</tr>--}}
-            {{--<tr>--}}
-               {{--<td>728x90 </td>--}}
-               {{--<td><a href="">Download here</a></td>--}}
-            {{--</tr>--}}
-            {{--<tr>--}}
-               {{--<td>930x180 </td>--}}
-               {{--<td><a href="">Download here</a></td>--}}
-            {{--</tr>--}}
-            {{--<tr>--}}
-               {{--<td>970x90 </td>--}}
-               {{--<td><a href="">Download here</a></td>--}}
-            {{--</tr>--}}
-            {{--<tr>--}}
-               {{--<td>970x250 </td>--}}
-               {{--<td><a href="">Download here</a></td>--}}
-            {{--</tr>--}}
-            {{--<tr>--}}
-               {{--<td>980x120 </td>--}}
-               {{--<td><a href="">Download here</a></td>--}}
-            {{--</tr>--}}
+     
          </tbody>
       </table>
    </div>
@@ -257,7 +190,151 @@
    </div>
 </div>
    
-
+<style>
+   .circle-output-container {
+    display: flex;
+    flex-direction: column; 
+   }
+   .circle-output-container p {margin: 0px;padding: 0;font-size: 20px;line-height: 1;}
+   .vertical-line  {
+      height: 2px;
+      background-color: black;
+      -ms-transform: rotate(90deg); /* IE 9 */
+      -webkit-transform: rotate(90deg); /* Safari */
+      transform: rotate(90deg); /* Standard syntax */
+      margin-left: -50px;
+   }
+   .line-top-1 {
+      margin-top: 99px;
+      width: 100px;
+      /*background-color: red;*/
+   }
+   .line-top-2 {
+      margin-top: 73px;
+      width: 50px;
+      margin-left: -25px;
+      /*background-color: blue;*/
+   }
+   .line-top-3 {
+      margin-top: 48px;
+      width: 50px;
+      margin-left: -25px;
+      /*background-color: black;*/
+   }
+   .line-top-4 {
+      margin-top: 72.5px;
+      width: 100px;
+      /*background-color: green;*/
+   }
+   .line-top-5 {
+      height: 2px;
+      background-color: black;
+      width: 30px;
+      margin-top: -100px;
+   }
+  .horizontal-lines-container {
+    width: 60px;
+    display: flex;
+    flex-direction: column; 
+    text-align: center;
+  }
+  .referal-percent {
+    margin-top: 17px;
+    /*margin-left: 5px;*/
+  }
+  .line{
+    width: 100%;
+    background-color: #707070;
+    /*margin-top: 49px;*/
+    margin-bottom: 61px;
+    height: 2px;
+  }
+  .circle-output-container .circle {
+    width: 85px;
+    height: 85px;
+    border-radius: 42.5px;
+    border: #707070 1px solid;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: -1px;
+    color: #707070;
+  }
+  .circle-output-container .circle-1 {margin-top: 0px;}
+  .circle-output-container .circle-6 {color: black;border: black 1px solid;}
+  .circle-output-container .circle h3 {
+    margin-top: 30px;
+    font-size: 1.1rem;
+    letter-spacing: 0px;
+  } 
+  .referal-left-text {
+      display: flex;
+    flex-direction: column;
+    padding-right: 4px;
+    text-align: right;
+   }
+   .referal-left-text h3 {
+     margin: 0px; padding: 0px;font-size: 1rem;
+     margin-bottom: 80px;
+   }
+  .referal-level {
+    height: 100px;
+    width: 100%;
+    text-align: center;
+  }
+ .referal-level h3 {
+  font-size: 1.1rem;
+ }
+ .referal {
+  display: flex;
+  flex-direction: column;
+  border-bottom: black 1px solid;
+  border-left: black 1px solid;
+  border-right: black 1px solid;
+  width: 205px;
+  padding: 1.5px;
+  height: 504.5px;
+ }
+ .referal-level-4 {
+  /*background-color: green;*/
+ }
+ .referal-level-3 {
+  /*background-color: blue;*/
+ }
+ .referal-level-2 {
+  /*background-color: brown;*/
+ }
+ .referal-level-1 {
+  /*background-color: yellow;*/
+ }
+ .peymane-container {
+      max-width: 500px;margin: auto;
+ }
+ .referal-code-text {
+   max-width: 90px;
+   text-align: center; 
+ }
+ @media screen and (max-width: 415px) {
+  .referal-code-text {
+     -ms-transform: rotate(-90deg);
+     -webkit-transform: rotate(-90deg);
+     transform: rotate(-90deg);
+     margin-top: 0px !important;
+     margin-right: -40px !important;
+     margin-bottom: 77px !important;;
+     max-width: 120px;
+  }
+  .peymane-container {
+      max-width: 320px;
+        margin-top: 30px;
+  }
+  .referal-left-text {
+    margin-left: -30px;
+  }
+  .referal {
+    width: 105px;
+  }
+ }
+</style>
 <script>
         $(document).ready(function(){
     
@@ -331,152 +408,6 @@
         
 </script>
 
- <style type="text/css">
-       
-       .circle-output-container {
-        display: flex;
-        flex-direction: column; 
-       }
-       .circle-output-container p {margin: 0px;padding: 0;font-size: 20px;line-height: 1;}
-       .vertical-line  {
-          height: 2px;
-          background-color: black;
-          -ms-transform: rotate(90deg); /* IE 9 */
-          -webkit-transform: rotate(90deg); /* Safari */
-          transform: rotate(90deg); /* Standard syntax */
-          margin-left: -50px;
-       }
-       .line-top-1 {
-          margin-top: 99px;
-          width: 100px;
-          /*background-color: red;*/
-       }
-       .line-top-2 {
-          margin-top: 73px;
-          width: 50px;
-          margin-left: -25px;
-          /*background-color: blue;*/
-       }
-       .line-top-3 {
-          margin-top: 48px;
-          width: 50px;
-          margin-left: -25px;
-          /*background-color: black;*/
-       }
-       .line-top-4 {
-          margin-top: 72.5px;
-          width: 100px;
-          /*background-color: green;*/
-       }
-       .line-top-5 {
-          height: 2px;
-          background-color: black;
-          width: 30px;
-          margin-top: -100px;
-       }
-      .horizontal-lines-container {
-        width: 60px;
-        display: flex;
-        flex-direction: column; 
-        text-align: center;
-      }
-      .referal-percent {
-        margin-top: 17px;
-        /*margin-left: 5px;*/
-      }
-      .line{
-        width: 100%;
-        background-color: #707070;
-        /*margin-top: 49px;*/
-        margin-bottom: 61px;
-        height: 2px;
-      }
-      .circle {
-        width: 85px;
-        height: 85px;
-        border-radius: 42.5px;
-        border: #707070 1px solid;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        margin-left: -1px;
-        color: #707070;
-      }
-      .circle-1 {margin-top: 0px;}
-      .circle-6 {color: black;border: black 1px solid;}
-      .circle h3 {
-        margin-top: 30px;
-        font-size: 1.1rem;
-        letter-spacing: 0px;
-      } 
-      .referal-left-text {
-          display: flex;
-        flex-direction: column;
-        padding-right: 4px;
-        text-align: right;
-       }
-       .referal-left-text h3 {
-         margin: 0px; padding: 0px;font-size: 1rem;
-         margin-bottom: 80px;
-       }
-      .referal-level {
-        height: 100px;
-        width: 100%;
-        text-align: center;
-      }
-     .referal-level h3 {
-      font-size: 1.1rem;
-     }
-     .referal {
-      display: flex;
-      flex-direction: column;
-      border-bottom: black 1px solid;
-      border-left: black 1px solid;
-      border-right: black 1px solid;
-      width: 205px;
-      padding: 1.5px;
-      height: 504.5px;
-     }
-     .referal-level-4 {
-      /*background-color: green;*/
-     }
-     .referal-level-3 {
-      /*background-color: blue;*/
-     }
-     .referal-level-2 {
-      /*background-color: brown;*/
-     }
-     .referal-level-1 {
-      /*background-color: yellow;*/
-     }
-     .peymane-container {
-          max-width: 500px;margin: auto;
-     }
-     .referal-code-text {
-       max-width: 90px;
-       text-align: center; 
-     }
-     @media screen and (max-width: 415px) {
-      .referal-code-text {
-         -ms-transform: rotate(-90deg);
-         -webkit-transform: rotate(-90deg);
-         transform: rotate(-90deg);
-         margin-top: 0px !important;
-         margin-right: -40px !important;
-         margin-bottom: 77px !important;;
-         max-width: 120px;
-      }
-      .peymane-container {
-          max-width: 320px;
-            margin-top: 30px;
-      }
-      .referal-left-text {
-        margin-left: -30px;
-      }
-      .referal {
-        width: 105px;
-      }
-     }
-   </style>
    <script type="text/javascript">
        // total number of sharing
      var referalPeople = {!! $user->referral->total_sharing_num !!} ;

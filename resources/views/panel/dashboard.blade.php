@@ -453,6 +453,7 @@
       }
     </style>
  @endif
+<<<<<<< HEAD
 <style type="text/css">
 
   .modal-content p {
@@ -681,6 +682,9 @@
   }
   .ct-label { color: black; }
 </style>
+=======
+
+>>>>>>> 65d4f7f6105464ae4761343005597a44d8504be6
 @if(Config::get('app.locale') == 'fa')
 <script type="text/javascript">
   // console.log("**** price toman *******");

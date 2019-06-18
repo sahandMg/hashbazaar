@@ -1,3 +1,28 @@
+
+
+@if(Config::get('app.locale') == 'fa')
+<style>
+    .footerrow {
+        font-size: 1.6rem
+    }
+
+    @media screen and (max-width:420px){
+        .footerrow {
+            font-size: 1.2rem
+        }
+
+        .ctr {
+            margin-bottom: 5%
+        }
+
+         .tell {
+             text-align: center;
+             
+         }   
+    }
+</style>
+@endif
+
 <footer class="backgroundMoreGrey">
         @if(Config::get('app.locale') == 'fa')
         <div class="container ctr">
@@ -33,34 +58,8 @@
                                 <img src="img/icons/insta.svg" alt="hashbazaar instagram"></a> </li>
       
 						    <li><a href="https://twitter.com/Hashbazaar_CMC" class="socialnet-flex" >
-                                <img src="img/icons/tweet.svg" alt=""></a></li>
+                                <img src="img/icons/tweet.svg" alt="Twitter"></a></li>
         </ul>
     </div>   
 </footer>
 
-
-@if(Config::get('app.locale') == 'fa')
-    <style>
-        .footerrow {
-            font-size: 1.6rem
-        }
-
-
-        @media screen and (max-width:420px){
-            .footerrow {
-                font-size: 1.2rem
-            }
-
-            .ctr {
-                margin-bottom: 5%
-            }
-
-             .tell {
-                 text-align: center;
-                 
-             }   
-        }
-    </style>
-
-
-@endif

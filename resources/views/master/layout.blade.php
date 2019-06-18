@@ -44,6 +44,7 @@
       })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
 </head>
+  
 <body id="page-top" style="background: white">
 @if(Config::get('app.locale') == 'fa')
     <STYLE>
@@ -61,6 +62,8 @@
       .btn {font-family: BYekanFont;}
     </STYLE>
  @endif
+
+
 <!-- class="masthead pb-3" -->
 <header id="header" >
     {{-- navbar  ../../public/img/Logo_header.svg.svg.svg   --}}
@@ -75,9 +78,9 @@
                 @if(Config::get('app.locale') == 'fa')
                 <!-- <li class="navbar-list small1 a1"><a href="http://blog.hashbazaar.com">{{__('Blog')}}</a></li> -->
                 <!-- <li class="navbar-list small1 a1"><a href="{{route('affiliate')}}">{{__('Affiliate')}}</a></li> -->
-                <li class="navbar-list small1 a1"><a href="{{route('customerService')}}">{{__('FAQ')}}</a></li>
-                <li class="navbar-list small1 a1"><a href="{{route('aboutUs')}}">{{__('About')}}</a></li>
                 <li class="navbar-list small1 a1"><a href="{{route('index')}}">{{__('Home')}}</a></li>
+                <li class="navbar-list small1 a1"><a href="{{route('aboutUs')}}">{{__('About')}}</a></li>
+                <li class="navbar-list small1 a1"><a href="{{route('customerService')}}">{{__('FAQ')}}</a></li>
                 @else
                 <li class="navbar-list small1 a1"><a href="{{route('index')}}">{{__('Home')}}</a></li>
                 <li class="navbar-list small1 a1"><a href="{{route('aboutUs')}}">{{__('About')}}</a></li>
@@ -92,23 +95,15 @@
                 <li class="navbar-list small1 login"><a href="{{route('login')}}" id="lg" >{{__('Log In')}}</a></li>
                 
                 @endif
-            </ul>
-            <div class="flags">
-                <div>
-                    <a href="{{route('locale',['locale'=>'fa'])}}" id="persianFA"><img src="./flags/ir.svg" alt=""></a>
-                    <a href="{{route('locale',['locale'=>'en'])}}" id="engUK"><img src="./flags/uk.svg" alt=""></a>
 
-                    {{--<select name="" class="select">--}}
-                        {{--@if(Config::get('app.locale') == 'fa')--}}
-                        {{--<option value="1" data-price='ir.svg'></option>--}}
-                        {{--<option value="2" data-price='uk.svg'></option>--}}
-                          {{--@else--}}
-                            {{--<option value="2" data-price='uk.svg'>English (UK)</option>--}}
-                            {{--<option value="1" data-price='ir.svg'>Persian (FA)</option>--}}
-                        {{--@endif--}}
-                    {{--</select>--}}
-                </div>
-            </div>
+                <li class="flags">
+                    <div>
+                        <a href="{{route('locale',['locale'=>'fa'])}}" id="persianFA"><img src="./flags/ir.svg" alt="Persian (FA)"></a>
+                        <a href="{{route('locale',['locale'=>'en'])}}" id="engUK"><img src="./flags/uk.svg" alt="English (UK)"></a>
+                    </div>
+                </li>
+            </ul>
+            
         </div>
         <div class="navigation-menu">
             <div class="bar1"></div>
@@ -116,9 +111,6 @@
             <div class="bar3"></div>
         </div>
     </div>
-
-
-    {{--  --}}
 
 </header>
 @yield('content')
@@ -207,85 +199,50 @@
 
 
      </script>
-    <style>
-        @media screen and (max-width:769px){
-            .flags{
-                margin-top: -13% !important;
-            }
-        }
 
-        @media screen and (max-width:421px){
-            .flags{
-                margin-top: -19% !important;
-            }
-        }
-        @media screen and (max-width:376px){
-            .flags{
-                margin-top: -21% !important;
-            }
-        }
-
-        @media screen and (max-width:321px){
-            .flags{
-                margin-top: -24% !important;
-            }
-        }
-    </style>
 @if(Config::get('app.locale') == 'fa')
-    <style type="text/css">
-        #header-navbar-menu {
-            text-align: right;
-        }
-        #header-navbar-menu ul li {
-            padding-right: 20px;
-        }
+<style type="text/css">
+    #header-navbar-menu {
+        text-align: right;
+    }
+    #header-navbar-menu ul li {
+        padding-right: 20px;
+    }
+    
+    .flags a {
+        float:right
+    }
+    
+    .flags a#persianFA {
+        border-left: 1px solid white;
+        margin-left: 10px
+    }
+
+    @media screen and (max-width:769px){
         .flags {
-            margin-top: -10px;
+            margin-left: 95% !important
         }
+    }
+</style>
+@else
+
+<style type="text/css">
         .flags a {
             float:left;
         }
-       
-        @media screen and (max-width:768px){
-            .flags {
-                margin-left: 4%
-            }
-        }
+
         .flags a#persianFA {
             border-right: 1px solid white;
             padding-right: 10px
         }
 
-       
-    </style>
-@else
-
-    <style type="text/css">
-            .flags a {
-                float:left;
-            }
-
+        @media screen and (max-width:421px){
             .flags {
-            margin-top: -10px;
+                margin-left: 75% !important
+            }
         }
-            /* .flags a img {
-                width: 20px;
-                height: 20px;
-                float: left;
-                margin-left: 10px
-            } */
-
-            .flags a#persianFA {
-                border-right: 1px solid white;
-                padding-right: 10px
-            }
-
-            @media screen and (max-width:421px){
-                .flags {
-                    margin-left: 75% !important
-                }
-            }
-    </style>
+</style>
 @endif
 </body>
 </html>
+

@@ -89,8 +89,8 @@
             <div class="address-box">
                 <input type="text" id="copyTarget" value="{{Auth::guard('user')->user()->wallet->addr}}" readonly>
                 <div class="div-icons-flex">
-                    <a href="https://blockstream.info/address/{{!is_null(Auth::guard('user')->user()->wallet)?Auth::guard('user')->user()->wallet->addr:null}}"><img class="icon" src="../img/Link.svg" alt=""></a>
-                    <a class="coppyIcon" style="cursor: pointer;"><img class="icon" src="../img/Copy.svg" alt=""></a>
+                    <a href="https://blockstream.info/address/{{!is_null(Auth::guard('user')->user()->wallet)?Auth::guard('user')->user()->wallet->addr:null}}"><img class="icon" src="../img/Link.svg" alt="Link"></a>
+                    <a class="coppyIcon" style="cursor: pointer;"><img class="icon" src="../img/Copy.svg" alt="Copy Link"></a>
                 </div>
             </div>
             @endif

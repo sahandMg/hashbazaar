@@ -17,7 +17,9 @@ class CreateBitHashesTable extends Migration
             $table->increments('id');
             $table->string('hash')->nullable();
             $table->unsignedInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedInteger('life')->nullable();
+            $table->string('referral_code')->nullable();
             $table->unsignedInteger('order_id')->nullable();
             $table->boolean('confirmed')->default(false);
             $table->unsignedInteger('remained_day')->nullable();

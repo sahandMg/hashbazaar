@@ -286,6 +286,7 @@ class AuthController extends Controller
 
     public function logout(){
 
+        Session::flush();
         Auth::guard('user')->logout();
         return redirect()->route('index');
     }

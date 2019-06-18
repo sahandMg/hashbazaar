@@ -23,7 +23,7 @@ class CreateCoinBaseChargesTable extends Migration
             $table->string('product_price');
             $table->string('product_btc');
             $table->string('expires_at');
-            $table->string('status');
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

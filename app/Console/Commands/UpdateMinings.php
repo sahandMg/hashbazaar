@@ -74,18 +74,23 @@ class UpdateMinings extends Command
 //        $mining24 = json_decode($result)->data->earn24Hours;
 
 //  Getting minings from f2pool
-        $url = 'http://api.f2pool.com/bitcoin/mvs1995';
-        $client = new GuzzleClient();
-        $promise1 = $client->requestAsync('GET',$url)->then(function (ResponseInterface $response) {
-            return $response->getBody()->getContents();
-        });
-        $resp = $promise1->wait();
-        $miningValue = number_format(json_decode($resp,true)['value_last_day'],8);;
-
+        $url = 'https://api.f2pool.com/bitcoin/mvs1995';
+//        $client = new GuzzleClient();
+//        $promise1 = $client->requestAsync('GET',$url)->then(function (ResponseInterface $response) {
+//            return $response->getBody()->getContents();
+//        });
+//        $resp = $promise1->wait();
+        $ch = curl_init();
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $resp = curl_exec($ch);
+        curl_close($ch);
+        $f2poolResp = json_decode($resp,true);
+        $miningValue = number_format($f2poolResp['value_last_day'],8);
         $mining24 = $miningValue;
         $users = User::all();
-        $mainTHash = $settings->total_th;
-
+//        $mainTHash = $settings->total_th;
+        $mainTHash = number_format($f2poolResp['hashes_last_day']/86400/pow(10,12),3);
         foreach ($users as $index => $user) {
             $hashes = BitHash::where('user_id', $user->id)->where('confirmed',1)->get();
             if (!$hashes->isEmpty()) {
@@ -93,17 +98,29 @@ class UpdateMinings extends Command
                    // checks if contract is over or not
                     if($hash->remained_day == 0){
                         $hash->update(['confirmed'=> 0]);
+                        $hash->save();
                         DB::table('minings')->where('order_id',$hash->order_id)->update(['block'=>1]);
                     }else{
+                        // 30 70 contracts have no ending
+                        if($user->plan_id == 1){
+                            $remainedDay = 0;
+                        }else{
 
-                        $remainedDay = Carbon::now()->diffInDays(Carbon::parse($hash->created_at)->addYears($hash->life));
+                            $remainedDay = Carbon::now()->diffInDays(Carbon::parse($hash->created_at)->addYears($hash->life));
+                        }
+
                         $hash->update(['remained_day'=>$remainedDay]);
                         $hash->save();
                         $hashPower[$item] = $hash->hash;
                         $maintenance_inBTC = $settings->maintenance_fee_per_th_per_day/$bitCoinPrice->price *  $hashPower[$item];
                         if($mining24 != 0){
+                            // apply 30 70 contracts conditions
+                            if($user->plan_id == 1){
+                                $userEarn[$item] = $mining24 * ($hashPower[$item] / $mainTHash) * 0.7;
+                            }else{
 
-                            $userEarn[$item] = $mining24 * ($hashPower[$item] / $mainTHash) - $maintenance_inBTC;
+                                $userEarn[$item] = $mining24 * ($hashPower[$item] / $mainTHash) - $maintenance_inBTC;
+                            }
                         }
                     }
 
@@ -135,5 +152,27 @@ class UpdateMinings extends Command
                 $user->save();
             }
         }
+
+
+        /*
+         * Stores last day hash rate & mined btc + blockchain difficulty & block reward
+         */
+
+        $url = "https://api-r.bitcoinchain.com/v1/status?_ga=2.23156472.371952348.1559114831-275280855.1559114831";
+        $client = new GuzzleClient();
+        $promise1 = $client->requestAsync('GET',$url)->then(function (ResponseInterface $response) {
+            return $response->getBody()->getContents();
+        });
+        $resp = $promise1->wait();
+        $newResp = json_decode($resp,true);
+        $hashRate = new \App\hashRate();
+        $hashRate->mined_btc = $miningValue;
+        $hashRate->difficulty = intval($newResp['difficulty']/(pow(10,9)));
+        $hashRate->block_reward = $newResp['reward'];
+        $hashRate->hash_rate = number_format($f2poolResp['hashes_last_day']/86400/pow(10,12),3);
+        $hashRate->created_at = Carbon::createFromTimestamp($newResp['time'])->addDay(-1)->toDateTimeString();
+        $hashRate->save();
+
+// -------------------------
     }
 }

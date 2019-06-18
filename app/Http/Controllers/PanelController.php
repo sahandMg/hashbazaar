@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Artisan;
 use App\Jobs\CryptoJob;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Response;
 use League\Flysystem\Exception;
 
@@ -67,6 +68,7 @@ class PanelController extends Controller
 
     public function totalEarn(Request $request){
 // getting bitcoin price in usd
+
         $bitCoinPriceInst = new BitCoinPrice();
         $bitCoinPrice = $bitCoinPriceInst->getPrice()->price;
         $user = DB::table('users')->where('code',$request->user)->first();
@@ -78,7 +80,7 @@ class PanelController extends Controller
             return [0,0];
         }
         else{
-            return $userEarn = [$mining->sum('mined_btc'),$bitCoinPrice * $mining->sum('mined_btc')];
+            return $userEarn = [floatval($user->total_mining),$bitCoinPrice * $mining->sum('mined_btc')];
         }
     }
     /*
@@ -303,6 +305,7 @@ class PanelController extends Controller
         return view('panel.settings.changePassword');
     }
 
+
     public function post_wallet(Request $request){
 
         $this->validate($request,['wallet'=>'required']);
@@ -334,6 +337,25 @@ class PanelController extends Controller
 
     public function editWallet(Request $request){
 
+        $user = Auth::guard('user')->user();
+        $data = ['wallet'=> $request->address,'user'=>$user];
+            Mail::send('email.walletConfirm',$data,function($message)use($user){
+                $message->to($user->email);
+                $message->from('Admin@Hashbazaar.com');
+                $message->subject('Confirm new wallet address');
+            });
+        return redirect()->back()->with(['message'=>'Check Confirmation Email']);
+    }
+
+    public function confirmWallet(Request $request){
+
+        if(!isset($request->address)){
+
+            return 'Wrong Link!';
+        }
+        if($request->old != Auth::guard('user')->user()->wallet->addr){
+            return 'Fake Link';
+        }
         $wallet = Auth::guard('user')->user()->wallet;
         $wallet->update(['addr'=> $request->address]);
         return redirect()->back()->with(['message'=>'New wallet address saved']);
@@ -387,5 +409,26 @@ class PanelController extends Controller
 
          abort(404);
 
+    }
+
+    public function collaboration(){
+
+        $hashes = BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->orderBy('created_at','acs')->get();
+        $unusedCodes = DB::table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('used',0)->first();
+        if(!is_null($unusedCodes)){
+
+            if($unusedCodes->is_custom == 1){
+                $discount = CustomCode::where('code',$unusedCodes->code)->first()->discount;
+            }else{
+                $discount = $this->settings->sharing_discount;
+            }
+            $apply_discount = 1;
+        }else{
+            $apply_discount = 0;
+            $discount = 0;
+        }
+
+
+        return view('panel.collaboration',compact('hashes','apply_discount','discount'));
     }
 }

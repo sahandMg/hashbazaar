@@ -49,7 +49,7 @@ class Paystar
             'amount' => $amount,
             'pin' => $settings->paystar_pin,
             'description' => 'هاستینگ ارز دیجیتال HashBazaar',
-            'callback' => 'https://hashbazaar.com/api/payment/callback',
+            'callback' => 'https://hashbazaar.com/api/paystar/callback',
             'ip'=> $ip
         );
         $url = 'https://paystar.ir/api/create/';
@@ -84,8 +84,6 @@ class Paystar
         $hashRecord->remained_day = Carbon::now()->diffInDays(Carbon::now()->addYears($hashRecord->life));
         $hashRecord->save();
 
-        $settings->update(['available_th'=>$settings->available_th - $hash]);
-        $settings->save();
 
         $mining = new Mining();
         $mining->mined_btc = 0;
@@ -159,6 +157,8 @@ class Paystar
             'country' => $user->country,
             'status' => 'paid'
         ]);
+        $settings->update(['available_th'=>$settings->available_th - $hashPower->hash]);
+        $settings->save();
 
         Mail::send('email.paymentConfirmed', ['hashPower' => $hashPower, 'trans' => $trans], function ($message) use ($user) {
             $message->from('Admin@HashBazaar');

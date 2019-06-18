@@ -21,16 +21,19 @@ class CreateUsersTable extends Migration
             $table->string('reset_password')->nullable();
             $table->string('code');
             $table->index('code');
+            $table->string('ip')->nullable();
+            $table->string('country')->nullable();
             $table->string('avatar')->nullable();
             $table->integer('hash')->default(0);
-            $table->integer('hashUsd')->default(50);
-            $table->float('interest')->nullable();
-//            $table->unsignedInteger('plan_id')->default(1);
+//            $table->integer('hashUsd')->default(50);
+//            $table->float('interest')->nullable();
 //            $table->foreign('plan_id')->references('id')->on('plans');
 //            $table->unsignedInteger('period_id')->default(1);
             $table->boolean('block')->default(0);
             $table->string('total_mining')->default(0);
             $table->string('pending')->default(0);
+
+            $table->unsignedTinyInteger('plan_id')->nullable();
 //            $table->foreign('period_id')->references('id')->on('periods');
             $table->rememberToken();
             $table->timestamp('email_verified_at')->nullable();

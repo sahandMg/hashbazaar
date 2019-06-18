@@ -19,7 +19,7 @@ class RedirectIfAuthenticated
     {
 
         if (Auth::guard($guard)->check()) {
-            return redirect()->route('dashboard');
+            return redirect()->route('login');
         }
 
         return $next($request);

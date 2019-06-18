@@ -108,8 +108,8 @@
   "Setting":"تنظیمات حساب",
   "Contact":"تماس",
   "Log Out":"خروج از حساب",
-  "Total Earn":"درامد کل",
-  "Pending Payment":"درانتظار پرداخت",
+  "Total Earn":"درآمد کل",
+  "Pending Payment":"قابل برداشت",
   "Hash History":"تاریخچه خرید",
   "Hash Power":"قدرت هش",
   "Started at":"شروع از",
@@ -126,8 +126,8 @@
   "Purchases":"خریدهای انجام شده",
   "Date":"تاریخ",
   "Address":"آدرس کیف پول",
-  "Status":"وضعیت",
-  "in/out":"دریافتی/پرداختی",
+  "Status":"وضعیت تراکنش",
+  "in/out":"نوع تراکنش",
   "User Information":"اطلاعات کاربر",
   "Wallet":"کیف پول",
   "Username":"نام کاربری",
@@ -162,5 +162,7 @@
   "Hash Bazaar":"هش بازار",
   "Thank You User. Your Payment Received !":"باتشکر. پرداخت شما با موفقیت انجام شد",
   "Dear investor":"خریدار گرامی",
-  "NO Hash History":"تاریخچه خریدی وجود ندارد"
+  "NO Hash History":"تاریخچه خریدی وجود ندارد",
+  "collaboration":"مشارکت در فارم",
+  "TransId":"کد تراکنش"
 }

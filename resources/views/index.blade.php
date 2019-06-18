@@ -43,11 +43,13 @@
             </div>
             <div class="invest-plan" style="font-weight: 700;">
                 <p>{{__("Hash allocation cost :")}} <span id="cost"></span> {{__("dollar")}} </p>
-             @if(Config::get('app.locale') == 'fa')
-                <p>{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day*$settings->usd_toman}} {{__('dollar per Th/day')}}</p>
-             @else 
-               <p>{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day}} {{__('dollar per Th/day')}}</p>
-             @endif   
+
+                @if(Config::get('app.locale') == 'fa')
+                    <p >{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day}} دلار ({{ $settings->maintenance_fee_per_th_per_day*$settings->usd_toman}} تومان) {{__('dollar per Th/day')}}</p>
+                @else
+                    <p >{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day}} {{__('dollar per Th/day')}}</p>
+                @endif
+
                 <small>{{__("(include all electricity, cooling, development, and servicing costs )")}}</small>
                 <p>{{__('Income : At this time We predict')}} {{$settings->bitcoin_income_per_month_per_th}} {{__('BTC/month per Th')}}</p>
                 <small>{{__("(May be changed depends on bitcoin price and bitcoin network difficulty)")}}</small>

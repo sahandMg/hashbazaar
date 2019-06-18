@@ -19,7 +19,7 @@ class CreateCustomCodesTable extends Migration
             $table->string('sharing_number');
             $table->string('discount');
             $table->string('expired')->default(0);
-            $table->string('user_id')->default(serialize([]));
+            $table->string('user_id')->default(serialize([]))->nullable();
             $table->timestamps();
         });
     }

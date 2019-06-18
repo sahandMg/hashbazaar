@@ -6,8 +6,13 @@
     <?php
     $settings = DB::table('settings')->first();
             foreach ($hashes as $key=> $hash){
+                if(Auth::guard('user')->user()->plan_id == 1)
+                    $remainedLife[$key] = 100;
+                else{
+                    $remainedLife[$key] = floor((\Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($hash->created_at)->addYears($hash->life)))/($hash->life * 365) * 100) ;
+                }
 
-                $remainedLife[$key] = floor((\Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($hash->created_at)->addYears($hash->life)))/($hash->life * 365) * 100) ;
+
             }
     $codes = DB::table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('used',0)->first();
             $AppliedCode = isset($codes->code)?$codes->code:null;
@@ -29,14 +34,14 @@
       <hr style="width: 84%; text-align:center;">
       <p><span id="miningDollar2"><img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40"></span> <span style="color: aqua;">USD</span></p>
       <!-- {{-- <button id="redeem" disabled onclick="redeem()"> Redeem ! </button> --}} -->
-    </div> 
+    </div>
   </div>
   <!-- Hash History -->
   <div class="title-flex" >
     <hr class="dashboard-hr"/>
     <h3 class="dashboard-title hash">{{__("Hash History")}}</h3>
     <hr class="dashboard-hr"/>
-  </div> 
+  </div>
   <div class="Hash-History">
 
     <table class="table custom-table" style="color: black;">
@@ -158,9 +163,9 @@
       </p>
     @if(Config::get('app.locale') == 'fa')
       <p style="color:black">{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day}} دلار ({{ $settings->maintenance_fee_per_th_per_day*$settings->usd_toman}} تومان) {{__('dollar per Th/day')}}</p>
-    @else 
+    @else
      <p style="color:black">{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day}} {{__('dollar per Th/day')}}</p>
-    @endif 
+    @endif
       <small style="color: #707070;">{{__("(include all electricity, cooling, development, and servicing costs )")}}</small>
       <p style="color:black">{{__('Income : At this time We predict')}} {{$settings->bitcoin_income_per_month_per_th}} {{__('BTC/month per Th')}}</p>
       <small  style="color: #707070;">{{__("(May be changed depends on bitcoin price and bitcoin network difficulty)")}}</small>
@@ -172,8 +177,13 @@
              <input id='referralCode' type="text" placeholder="{{$AppliedCode}}" name="referralCode" style="margin-top:5px" class="aplybtn1text"/>
              <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> درخواست </button>
            </div>
-           <form class="dashboard-page" method="post" action="{{route('PaystarPaying')}}">
-           {{--<form class="dashboard-page" method="post" action="{{route('TestPayment')}}">--}}
+            @if($settings->paystar_active == 1)
+                <form class="dashboard-page" method="post" action="{{route('PaystarPaying')}}">
+            @elseif($settings->zarrin_active == 1)
+                <form class="dashboard-page" method="post" action="{{route('ZarrinPalPaying')}}">
+            @endif
+
+           {{--  <form class="dashboard-page" method="post" action="{{route('TestPayment')}}">  --}}
             <input type="hidden" name="_token" value="{{csrf_token()}}">
               @if($apply_discount == 1)
 
@@ -181,7 +191,7 @@
 
               @else
                   <input id="discount" type="hidden" name="discount" value="0">
-              @endif 
+              @endif
             <input id='hiddenCodeValue' type="hidden" name="code" style="margin-top:5px" value="{{$AppliedCode}}" >
             <input type="range" hidden min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="hiddenRange">
            <button id="orderBtn" class="pandel-button" type="submit">{{__("Order")}}</button>
@@ -207,11 +217,11 @@
     <hr class="dashboard-hr" >
     <h3 class="dashboard-title min">{{__("Mining History")}}</h3>
     <hr class="dashboard-hr" >
-  </div> 
+  </div>
   <div style="margin-right: 20px;">
     <div class="ct-chart">
       <!-- <canvas id="chart1"></canvas> chart-container -->
-    </div> 
+    </div>
   </div>
   <!-- The Modal -->
   <div id="myModal" class="modal" style="color: black;">
@@ -235,7 +245,7 @@
 
               @else
                   <input id="discount" type="hidden" name="discount" value="0">
-              @endif 
+              @endif
             <input id='hiddenCodeValue' type="hidden" name="code" style="margin-top:5px" value="{{$AppliedCode}}" >
             <input type="range" hidden min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="hiddenRange">
             <button class="pandel-button" type="submit">Continue</button>
@@ -262,7 +272,7 @@
 
 <script type="text/javascript">
         // Get the modal
-        
+
         var modalFirstTime = document.getElementById('modalFirstTime');
         // just first time
         if({!! json_encode(session()->has('pop')) !!}){
@@ -405,10 +415,10 @@
       .dashboard-hr {
         flex: 2
       }
-     
+
 
       @media screen and (max-width: 420px) {
-        
+
         #referralCode {
             width: 170px !important;
         }
@@ -464,7 +474,7 @@
     margin: auto;
     margin-top: 20%;
     padding: 2%;
-  } 
+  }
   .custom-table th {
     border-top: 0
   }
@@ -490,7 +500,7 @@
            .modal-content {
              width: 95%;
              padding: 2%;
-            } 
+            }
          }
          canvas#chart1 {
             margin: auto;
@@ -502,17 +512,17 @@
             }
             canvas#chart1 {
                 width: 310px !important;
-            
+
             }
   }
   @media screen and (min-width:370px) {
            .chart-container {
                height: 250px !important;
-              
+
             }
             canvas#chart1 {
                 width: 350px !important;
-               
+
             }
   }
   @media screen and (min-width:414px) {
@@ -571,7 +581,7 @@
             canvas#chart1 {
                 width: 850px !important;
             }
-        
+
   }
 
   .progress1 {    border: 1px solid;}
@@ -672,9 +682,9 @@
   .ct-label { color: black; }
 </style>
 @if(Config::get('app.locale') == 'fa')
-<script type="text/javascript">  
+<script type="text/javascript">
   // console.log("**** price toman *******");
-  var dollarToToman = parseInt({!! $settings->usd_toman !!}); 
+  var dollarToToman = parseInt({!! $settings->usd_toman !!});
   // console.log(dollarToToman);
    // // ------------ scroll for many data in table  --------------------
                 $(document).ready(function(){
@@ -747,7 +757,7 @@
                     }
                     else
                     $('#doReferalCode').hide()
-                    
+
                     // Display the default slider value
 //                console.log(document.getElementById('discount').value)
                     slider.oninput = function() {
@@ -805,7 +815,7 @@
                 var data = [];
                 var labels = [];
             axios.get('{{route('chartData').'?user='. Auth::guard('user')->user()->code}}').then(function (response) {
-                
+
 
                 dateTime = response.data;
                 var timeLabels= [];
@@ -910,7 +920,7 @@
                     }
                     else
                     $('#doReferalCode').hide()
-                    
+
                     // Display the default slider value
 //                console.log(document.getElementById('discount').value)
                     slider.oninput = function() {
@@ -969,7 +979,7 @@
                 var data = [];
                 var labels = [];
             axios.get('{{route('chartData').'?user='. Auth::guard('user')->user()->code}}').then(function (response) {
-                
+
 
                 dateTime = response.data;
 //                console.log(dateTime);

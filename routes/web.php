@@ -12,29 +12,16 @@
 */
 
 use App\BitHash;
-use App\CoinBaseCharge;
-use App\CustomCode;
-use App\Jobs\subscriptionMailJob;
-use App\Mining;
-use App\MiningReport;
-use App\Setting;
 use App\Transaction;
-use App\User;
 use Carbon\Carbon;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Mail;
 use GuzzleHttp\Client as GuzzleClient;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Storage;
-
-use Psr\Log\LoggerInterface;
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
-use Stevebauman\Location\Facades\Location;
+use Illuminate\Support\Facades\Mail;
+use Morilog\Jalali\Jalalian;
 use Symfony\Component\DomCrawler\Crawler;
 use Psr\Http\Message\ResponseInterface;
-use TCG\Voyager\Facades\Voyager;
+
 
 Route::get('job',function(){
 
@@ -90,19 +77,35 @@ Route::get('job',function(){
     return view('cryptoMailPage',compact('CryptoCrawl'));
 });
 
-Route::get('mail',function (){
+Route::get('f2pool',function (){
 
-    $hashPower = BitHash::first();
-    $trans = Transaction::first();
-return view('email.paymentConfirmed',compact('hashPower','trans'));
+    $url = 'http://api.f2pool.com/bitcoin/mvs1995';
+    $client = new GuzzleClient();
+    $promise1 = $client->requestAsync('GET',$url)->then(function (ResponseInterface $response) {
+        return $response->getBody()->getContents();
+    });
+    $resp = $promise1->wait();
+
+
 
 });
 
-Route::get('mail2',function (){
+Route::get('test',function (){
 
-    $hashPower = BitHash::first();
-    $trans = Transaction::first();
-    return view('email.replyMessageMailPage',compact('hashPower','trans'));
+
+
+
+});
+
+Route::get('sms',function (\Illuminate\Http\Request $request) {
+
+
+//    $sender = "1000596446";
+//    $receptor = "09387728916";
+//    $message =  "ماینرها خاموش شدند ".Jalalian::forge(Carbon::now())->toString();
+//    $api = new \Kavenegar\KavenegarApi("796C4E505946715933687269672B6F6B5648564562585250533251356B6B6361");
+//    $api -> Send ( $sender,$receptor,$message);
+
 
 });
 
@@ -182,8 +185,11 @@ Route::get('payment/canceled/{transid?}','PaymentController@PaymentCanceled')->n
 Route::get('payment/success','PaymentController@PaymentSuccess')->name('PaymentSuccess')->middleware('auth');
 
 
-
 Route::post('paystar/paying','PaymentController@PaystarPaying')->name('PaystarPaying')->middleware('auth');
+
+Route::post('zarrin/paying','PaymentController@ZarrinPalPaying')->name('ZarrinPalPaying')->middleware('auth');
+
+Route::get('zarrin/callback','PaymentController@ZarrinCallback')->name('ZarrinCallback');
 
 Route::post('payment/test','PaymentController@TestPayment')->name('TestPayment')->middleware('auth');
 
@@ -221,6 +227,8 @@ Route::group(['middleware'=>'block','prefix'=> session('locale').'/panel'],funct
 
     Route::post('setting/wallet-edit','PanelController@editWallet')->name('editWallet');
 
+    Route::get('setting/wallet-confirm','PanelController@confirmWallet')->name('confirmWallet');
+
     Route::get('referral','PanelController@referral')->name('referral');
 
     Route::get('contact','PanelController@contact')->name('contact');
@@ -241,6 +249,8 @@ Route::group(['middleware'=>'block','prefix'=> session('locale').'/panel'],funct
 
     Route::get('banner/{name?}',['as'=>'banner','uses'=>'PanelController@downloadBanner']);
 
+    Route::get('collaboration',['as'=>'collaboration','uses'=>'PanelController@collaboration']);
+
 });
 
 
@@ -249,7 +259,10 @@ Route::get('blog',['as'=>'blog','uses'=>'BlogController@index']);
 Route::get('faq',['as'=>'customerService','uses'=>'PageController@customerService']);
 
 
-Route::group(['prefix' => '@admin'], function () {
+Route::get('@admin/login',['as'=>'AdminLogin','uses'=>'AdminController@login']);
+Route::post('@admin/login',['as'=>'AdminLogin','uses'=>'AdminController@post_login']);
+
+Route::group(['prefix' => '@admin','middleware'=>'admin'], function () {
 
     Route::get('home',['as'=>'adminHome','uses'=>'AdminController@index']);
     Route::get('transactions',['as'=>'adminTransactions','uses'=>'AdminController@transactions']);
@@ -265,14 +278,11 @@ Route::group(['prefix' => '@admin'], function () {
 
     Route::post('login-as-user',['as'=>'LoginAsUser','uses'=>'AdminController@LoginAsUser']);
 
+    Route::get('collaboration/{id?}',['as'=>'collaboration','uses'=>'AdminController@collaboration']);
+
+    Route::post('collaboration',['as'=>'collaboration','uses'=>'AdminController@post_collaboration']);
+
 //   Voyager::routes();
 });
 
 Route::post('send-code','PanelController@postDashboard')->name('SendCode');
-
-Route::group(['prefix' => 'admin'], function () {
-
-
-
-
-});

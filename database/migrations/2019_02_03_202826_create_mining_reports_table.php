@@ -18,6 +18,7 @@ class CreateMiningReportsTable extends Migration
             $table->float('mined_btc')->nullable();
             $table->float('mined_usd')->nullable();
             $table->unsignedInteger('user_id')->nullable();
+//            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('order_id')->nullable();
             $table->timestamps();
         });

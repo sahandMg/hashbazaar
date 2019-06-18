@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\BitHash;
 use App\CryptpBox\lib\Cryptobox;
 use App\Mining;
+use App\MiningReport;
 use App\Transaction;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -25,6 +28,25 @@ class AdminController extends Controller
         $this->privatekey = $settings->privatekey;
     }
 
+    public function login(){
+
+        return view('admin.login');
+    }
+    public function post_login(Request $request){
+
+        $this->validate($request,[
+            'email'=>'required',
+            'password'=>'required|min:6'
+        ]);
+
+        if(Auth::guard('admin')->attempt(['email'=>$request->email,'password'=>$request->password])){
+
+            return redirect()->route('adminHome');
+        }else{
+
+            return redirect()->back()->with(['error'=>'wrong email or password']);
+        }
+    }
     public function index(){
 
         return view('admin.index');
@@ -144,10 +166,64 @@ class AdminController extends Controller
             return redirect()->back()->with(['error'=>'send an email address']);
         }
         $user = User::where('email',$params['email'])->first();
-
+        Auth::guard('admin')->logout();
         Auth::guard('user')->login($user);
-
         return redirect()->route('dashboard');
+
+    }
+
+    public function collaboration(Request $request){
+        $id = $request->id;
+        return view('admin.users.collaboration',compact('id'));
+    }
+
+    // get data from form in admin panel collaboration and create mining record for 30_70 users
+    public function post_collaboration(Request $request){
+        $user =  User::where('name',$request->name)->first();
+        $hashRecord = new BitHash();
+        $hashRecord->hash = $request->th;
+        $hashRecord->user_id = $user->id;
+        $hashRecord->order_id = '30_70_'.strtoupper(uniqid());
+        $hashRecord->confirmed = 1;
+        $hashRecord->life = 2;
+        $hashRecord->remained_day = 365 - intval($request->remainedDay);
+        $hashRecord->created_at = Carbon::now()->subDays(intval($request->remainedDay));
+        $hashRecord->save();
+
+        $mining = new Mining();
+        $mining->mined_btc = $request->mined_btc;
+        $mining->mined_usd = 0;
+        $mining->user_id = $user->id;
+        $mining->order_id = $hashRecord->order_id;
+        $mining->block = 0;
+        $mining->save();
+
+        $trans = new Transaction();
+        $trans->code = $hashRecord->order_id;
+        $trans->status = 'paid';
+        $trans->checkout = 'out';
+        $trans->amount_toman = $request->price;
+        $trans->user_id = $user->id;
+        $trans->created_at = Carbon::now()->subDays(intval($request->remainedDay));
+        $trans->save();
+
+
+        $user->update(['plan_id'=>1]);
+
+        // getting bitcoin price in dollar
+//        $options = array('http' => array('method' => 'GET'));
+//        $context = stream_context_create($options);
+//        $contents = file_get_contents('https://www.blockonomics.co/api/price?currency=USD', false, $context);
+//        $bitCoinPrice = json_decode($contents);
+        // create mining report records to show in dashboard
+//        $miningReport = new MiningReport();
+//        $miningReport->mined_btc = $request->mined_btc;
+//        $miningReport->mined_usd = $request->mined_btc * $bitCoinPrice->price;
+//        $miningReport->user_id = $user->id;
+//        $miningReport->order_id = $hashRecord->order_id;
+//        $miningReport->save();
+
+        return redirect()->back()->with(['message'=>'رکورد اضافه شد']);
 
     }
 }

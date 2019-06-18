@@ -25,4 +25,4 @@ Route::any('payment/failed',['as'=>'PaymentFailed','uses'=>'PaymentController@Pa
 Route::any('payment/pending',['as'=>'PaymentPending','uses'=>'PaymentController@PaymentPending']);
 Route::any('payment/delayed',['as'=>'PaymentDelayed','uses'=>'PaymentController@PaymentDelayed']);
 Route::any('payment/resolved',['as'=>'PaymentResolved','uses'=>'PaymentController@PaymentResolved']);
-Route::post('payment/callback','PaymentController@PaymentCallback')->name('PaymentCallback');
+Route::post('paystar/callback','PaymentController@PaystarCallback')->name('PaymentCallback');

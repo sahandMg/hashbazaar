@@ -18,16 +18,12 @@ class CreatePlansTable extends Migration
         Schema::create('plans', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('type')->default('BTC');
-            $table->string('value')->nullable();
             $table->timestamps();
         });
         DB::table('plans')->insert(
             [
-          ['name'=>'lt0.5','created_at'=>Carbon::now()],
-          ['name'=>'0.5-1','created_at'=>Carbon::now()],
-          ['name'=>'1-2','created_at'=>Carbon::now()],
-          ['name'=>'gt2','created_at'=>Carbon::now()]
+          ['name'=>'30_70','created_at'=>Carbon::now()],
+          ['name'=>'buy_th','created_at'=>Carbon::now()]
         ]
       );
     }

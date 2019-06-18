@@ -76,9 +76,6 @@
                         <a href="{{route('adminGetUsersList')}}">List</a>
                     </li>
                     <li>
-                        <a href="#">Page 2</a>
-                    </li>
-                    <li>
                         <a href="#">Page 3</a>
                     </li>
                 </ul>

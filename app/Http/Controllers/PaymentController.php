@@ -22,6 +22,7 @@ use App\Setting;
 use App\Sharing;
 use App\Transaction;
 use App\User;
+use App\ZarrinPal;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\CryptpBox\lib\Cryptobox;
@@ -52,13 +53,37 @@ class PaymentController extends Controller
         $this->hash_life = $settings->hash_life;
     }
 
+
+    public function ZarrinPalPaying(Request $request){
+
+        $zarrin = new ZarrinPal($request);
+        $result = $zarrin->create();
+        if($result != 404){
+            $request->session()->save();
+            return redirect()->to('https://www.zarinpal.com/pg/StartPay/' . $result["Authority"]);
+        }else{
+            return 'مشکلی در پرداخت پیش آمده';
+        }
+    }
+
+    // verify payment status
+    // paystar sends transactionID
+
+    public function ZarrinCallback(Request $request){
+
+        $zarrin = new ZarrinPal($request);
+
+        return $zarrin->verify();
+    }
+
     public function PaystarPaying(Request $request){
 
         $payStar = new Paystar($request);
         $result = $payStar->create();
         if($payStar->create() != 404){
         $request->session()->save();
-            return redirect('https://paystar.ir/paying/'.$result);
+
+            return redirect()->to('https://paystar.ir/paying/'.$result);
         }else{
             return 'مشکلی در پرداخت پیش آمده';
         }
@@ -66,14 +91,48 @@ class PaymentController extends Controller
 
     }
 
-    // verify payment status
-    // paystar sends transactionID
-    public function PaymentCallback(Request $request){
+
+    public function PaystarCallback(Request $request){
 
         $payStar = new Paystar($request);
+
         return $payStar->verify();
 
     }
+
+ /*
+  * Payment Callbacks
+  */
+    public function PaymentCanceled($transid = null){
+        if(is_null($transid)){
+
+            return redirect()->route('dashboard');
+        }
+        $hash = BitHash::where('order_id',$transid)->first();
+        if(is_null($hash)){
+            return view('payment.PaymentCanceled');
+        }
+
+            BitHash::where('order_id',$transid)->delete();
+            Mining::where('order_id',$transid)->delete();
+
+//        if(session()->has('custom_code')){
+//            session()->forget('custom_code');
+//        }
+
+        return view('payment.PaymentCanceled');
+    }
+
+    public function PaymentSuccess(){
+
+        // TODO Place this code in callback from gateway
+        if(session()->has('custom_code')){
+            session()->forget('custom_code');
+        }
+
+        return view('payment.PaymentSuccess');
+    }
+
     /*
      * Test Payment
      */
@@ -179,8 +238,6 @@ class PaymentController extends Controller
         $hashRecord->remained_day = Carbon::now()->diffInDays(Carbon::now()->addYears($hashRecord->life));
         $hashRecord->save();
 
-        $settings->update(['available_th'=>$settings->available_th - $hash]);
-        $settings->save();
 
         $mining = new Mining();
         $mining->mined_btc = 0;
@@ -425,6 +482,8 @@ class PaymentController extends Controller
         $mining = Mining::where('order_id', $orderID)->first();
         $settings = Setting::first();
         $coinbaseChargeRecord = CoinBaseCharge::where('transaction_id', $transaction_id)->first();
+        $settings->update(['available_th'=>$settings->available_th - $hashPower->hash]);
+        $settings->save();
         $coinbaseChargeRecord->update(['status'=>'confirmed']);
         $user = $coinbaseChargeRecord->user;
         $hashPower->update(['confirmed' => 1]);
@@ -549,40 +608,6 @@ class PaymentController extends Controller
         $transaction_id = $event['event']['data']['code'];
         CoinBaseCharge::where('transaction_id', $transaction_id)->first()->update(['status'=>'resolved']);
     }
-    /*
-     * Payment Callbacks
-     */
-    public function PaymentCanceled($transid = null){
-        if(is_null($transid)){
-
-            return redirect()->route('dashboard');
-        }
-        // TODO Place this code in callback from gateway
-
-        $allocated_hash = BitHash::where('order_id',$transid)->first();
-        $allocated_mining = Mining::where('order_id',$transid)->first();
-        $settings = Setting::first();
-        $settings->update(['available_th'=> $settings->available_th + $allocated_hash->hash]);
-        $allocated_hash->delete();
-        $allocated_mining->delete();
-
-        if(session()->has('custom_code')){
-            session()->forget('custom_code');
-        }
-
-        return view('payment.PaymentCanceled');
-    }
-
-     public function PaymentSuccess(){
-
-         // TODO Place this code in callback from gateway
-         if(session()->has('custom_code')){
-             session()->forget('custom_code');
-         }
-
-        return view('payment.PaymentSuccess');
-    }
-
 
     public function postPayment(Request $request){
 

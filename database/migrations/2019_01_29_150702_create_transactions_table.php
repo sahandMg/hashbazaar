@@ -20,6 +20,7 @@ class CreateTransactionsTable extends Migration
             $table->string('amount_btc')->nullable();
             $table->string('amount_toman')->nullable();
             $table->string('status')->nullable();
+            $table->text('authority')->nullable();
             $table->string('code')->nullable();
             $table->string('checkout')->nullable();
             $table->unsignedInteger('user_id')->nullable();

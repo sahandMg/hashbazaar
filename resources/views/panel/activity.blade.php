@@ -9,7 +9,12 @@ $hashes = App\BitHash::where('user_id',Auth::guard('user')->id())->where('confir
 $trans = DB::table('transactions')->where('user_id',Auth::guard('user')->id())->orderBy('created_at','acs')->get();
 foreach ($hashes as $key=> $hash){
 
-    $remainedLife[$key] = floor((\Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($hash->created_at)->addYears($hash->life)))/($hash->life * 365) * 100) ;
+    if(Auth::guard('user')->user()->plan_id == 1)
+        $remainedLife[$key] = 100;
+    else{
+        $remainedLife[$key] = floor((\Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($hash->created_at)->addYears($hash->life)))/($hash->life * 365) * 100) ;
+    }
+
 }
 
 ?>
@@ -120,8 +125,9 @@ foreach ($hashes as $key=> $hash){
                     <thead  style="font-weight:bold">
                     @if(Config::get('app.locale')== 'fa')
                         <tr  style="height:90px !important">
+                            <th class="Transactions_column"> {{__("TransId")}} </th>
                             <th class="Transactions_column"> {{__("Date")}} </th>
-                            <th class="Transactions_column"> (مبلغ (تومان </th>
+                            <th class="Transactions_column"> مبلغ </th>
                             <th class="Transactions_column">{{__("Status")}}</th>
                             <th class="Transactions_column">{{__("in/out")}}</th>
 
@@ -129,6 +135,7 @@ foreach ($hashes as $key=> $hash){
                     @else
 
                         <tr  style="height:90px !important">
+                            <th class="Transactions_column"> {{__("TransId")}} </th>
                             <th class="Transactions_column"> {{__("Date")}} </th>
                             <th class="Transactions_column"> BTC </th>
                             <th class="Transactions_column">{{__("Address")}}</th>
@@ -142,46 +149,76 @@ foreach ($hashes as $key=> $hash){
                     @if(Config::get('app.locale')== 'fa')
                         @foreach($trans as $item)
                             <tr>
-
+                                <td>
+                                    {{$item->code}}
+                                </td>
                                 <td>
                                     {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($item->created_at))->format('Y m d')}}
                                 </td>
 
                                 <td>
-                                    {{$item->amount_toman}}
+                                @if($item->checkout == 'in')
+
+                                        {{$item->amount_btc}} BTC
+                                @else
+                                         {{$item->amount_toman}} تومان
+                                @endif
                                 </td>
 
                                 <td>
-                                    {{$item->status}}
+                                    @if($item->status == 'paid')
+                                        <span style="color: green">پرداخت شده</span>
+                                    @else
+                                        <span style="color: red">پرداخت نشده</span>
+                                    @endif
                                 </td>
 
                                 <td>
-                                    {{$item->checkout}}
+                                    @if($item->checkout == 'in')
+                                        <span style="color: green">دریافتی</span>
+                                    @else
+                                        <span style="color: red">پرداختی</span>
+                                    @endif
                                 </td>
+
 
                             </tr>
                         @endforeach
                     @else
                         @foreach($trans as $item)
                             <tr>
+                                <td>
+                                    {{$item->code}}
+                                </td>
 
                                 <td>
                                     {{\Carbon\Carbon::parse($item->created_at)->format('M d Y')}}
                                 </td>
 
                                 <td>
-                                    {{$item->amount_btc}}
+
+                                    @if(is_null($item->amount_btc))
+                                        --
+                                    @else
+                                        {{$item->amount_btc}}
+                                    @endif
                                 </td>
 
                                 <td class="tooltip1">
-                                    778dsad...
 
-                                    <span class="tooltiptext">{{$item->addr}}</span>
-
+                                    @if(is_null($item->addr))
+                                        --
+                                    @else
+                                        <span class="tooltiptext">{{$item->addr}}</span>
+                                    @endif
                                 </td>
 
                                 <td>
-                                    {{$item->status}}
+                                    @if($item->status == 'paid')
+                                        <span style="color: green">{{$item->status}}</span>
+                                    @else
+                                        <span style="color: red">{{$item->status}}</span>
+                                    @endif
                                 </td>
 
                                 <td>

@@ -18,6 +18,7 @@ class CreateWalletsTable extends Migration
             $table->string('addr')->nullable();
             $table->unsignedInteger('user_id')->nullable();
             $table->boolean('active')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

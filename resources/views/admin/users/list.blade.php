@@ -17,6 +17,7 @@
                     <td>login at</td>
                     <td>status</td>
                     <td>Login</td>
+                    <td>Collaborate</td>
                 </tr>
                 </thead>
 
@@ -79,8 +80,9 @@
                                 <button class="btn btn-info" type="submit">Login</button>
                             </form>
                         </td>
-
+                        <td><a class="btn btn-primary" href="{{route('collaboration',['id'=>$user->id])}}">Colab</a></td>
                     </tr>
+
                     @endforeach
                 </tbody>
 

@@ -18,7 +18,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
      * @var array
      */
      protected $guarded = [];
-    protected $fillable = ['email','password','ip','country','block','avatar','total_mining','pending'];
+    protected $fillable = ['plan_id','email','password','ip','country','block','avatar','total_mining','pending'];
 
     public function minings(){
 

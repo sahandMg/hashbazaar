@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Auth;
 
- class User extends Authenticatable
+class User extends Authenticatable
 //class User extends \TCG\Voyager\Models\User
 {
     use Notifiable;
@@ -25,6 +26,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
         return $this->hasMany(Mining::class);
     }
 
+    public function transactions(){
+
+        return $this->hasMany(Transaction::class);
+    }
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -41,5 +46,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
     public function wallet(){
 
         return $this->hasOne(Wallet::class);
+    }
+
+    public static function userPending($userModel){
+
+        $AuthUser = $userModel;
+        $pendingBtc = $AuthUser->minings->sum('mined_btc') - $AuthUser->transactions->where('user_id',$AuthUser->id)->where('status','paid')->where('checkout','in')->sum('amount_btc');
+        return number_format($pendingBtc,8);
     }
 }

@@ -21,26 +21,26 @@ class LanguageMiddleware
     public function handle($request, Closure $next)
     {
 
-        try {
-
-            $country = strtolower(Location::get(Helpers::userIP())->countryCode);
-        } catch (\Exception $exception) {
-            $country = 'fr';
-        }
-
-        if(Session::has('locale')){
-            App::setLocale(Session::get('locale'));
-        }else{
-            if($country == 'ir' || empty($country)){
-
-                Session::put('locale','fa');
-                App::setLocale('fa');
-            }else{
-                Session::put('locale','en');
-                App::setLocale('en');
-            }
-
-        }
+//        try {
+//
+//            $country = strtolower(Location::get(Helpers::userIP())->countryCode);
+//        } catch (\Exception $exception) {
+//            $country = 'fr';
+//        }
+//
+//        if(Session::has('locale')){
+//            App::setLocale(Session::get('locale'));
+//        }else{
+//            if($country == 'ir' || empty($country)){
+//
+//                Session::put('locale','fa');
+//                App::setLocale('fa');
+//            }else{
+//                Session::put('locale','en');
+//                App::setLocale('en');
+//            }
+//
+//        }
         return $next($request);
 
     }

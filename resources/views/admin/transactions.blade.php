@@ -9,9 +9,10 @@
             <th>User</th>
             <th>Country</th>
             <th>Amount(BTC)</th>
-            <th>Confirmed</th>
-            <th>UnRecognised</th>
-            <th>Processed</th>
+            <th>Amount(Toman)</th>
+            <th>Status</th>
+            <th>Authority</th>
+            <th>Type</th>
             <th>Record Created</th>
 
         </tr>
@@ -20,10 +21,10 @@
 
         @foreach($transactions as $transaction)
             <tr>
-                <td>{{$transaction->paymentID}}</td>
-                <td>{{$transaction->orderID}}</td>
+                <td>{{$transaction->id}}</td>
+                <td>{{$transaction->code}}</td>
                 <?php
-                $query = DB::table('bit_hashes')->where('order_id',$transaction->orderID)->first();
+                $query = DB::table('bit_hashes')->where('order_id',$transaction->code)->first();
                 if(!is_null($query)){
                     $query = $query->hash;
                 }else{
@@ -31,13 +32,14 @@
                 }
                 ?>
                 <td> {{$query}} </td>
-                <td>{{$transaction->userID}}</td>
-                <td><img width="25" height="20" src="../flags/{{strtolower(substr($transaction->countryID,0,2))}}.svg" alt="{{$transaction->countryID}}"></td>
-                <td>{{$transaction->amount}}</td>
-                <td>{{$transaction->txConfirmed}}</td>
-                <td>{{$transaction->unrecognised}}</td>
-                <td>{{$transaction->processed}}</td>
-                <td>{{$transaction->recordCreated}}</td>
+                <td>{{$transaction->user_id}}</td>
+                <td><img width="25" height="20" src="../flags/{{strtolower(substr($transaction->country,0,2))}}.svg" alt="{{$transaction->country}}"></td>
+                @if(is_null($transaction->amount_btc)) <td>--</td> @else <td>{{$transaction->amount_btc}}</td> @endif
+                @if(is_null($transaction->amount_toman)) <td>--</td> @else <td>{{$transaction->amount_toman}}</td> @endif
+                <td>{{$transaction->status}}</td>
+                <td>{{$transaction->authority}}</td>
+                <td>{{$transaction->checkout}}</td>
+                <td>{{\Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($transaction->created_at))}}</td>
             </tr>
         @endforeach
         {{--<tr v-for="(transaction, index) in transactions">--}}

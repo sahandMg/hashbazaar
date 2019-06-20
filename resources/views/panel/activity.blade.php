@@ -5,8 +5,8 @@
 @section('content')
 <?php
 $settings = DB::table('settings')->first();
-$hashes = App\BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->orderBy('created_at','acs')->get();
-$trans = DB::table('transactions')->where('user_id',Auth::guard('user')->id())->orderBy('created_at','acs')->get();
+$hashes = App\BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->orderBy('created_at','asc')->get();
+$trans = DB::table('transactions')->where('user_id',Auth::guard('user')->id())->orderBy('created_at','asc')->get();
 foreach ($hashes as $key=> $hash){
 
     if(Auth::guard('user')->user()->plan_id == 1)

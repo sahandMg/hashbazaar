@@ -11,9 +11,9 @@ use App\Message;
 use App\Mining;
 use App\MiningReport;
 use App\Referral;
-use App\ReferralCode;
 use App\Setting;
 use App\Sharing;
+use App\Transaction;
 use App\Wallet;
 use Carbon\Carbon;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
@@ -34,13 +34,13 @@ class PanelController extends Controller
     public $settings;
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth:user');
         $this->settings = Setting::first();
     }
 
     public function dashboard(){
 
-        $hashes = BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->orderBy('created_at','acs')->get();
+        $hashes = BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->orderBy('created_at','asc')->get();
         $unusedCodes = DB::table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('used',0)->first();
         if(!is_null($unusedCodes)){
 
@@ -70,7 +70,7 @@ class PanelController extends Controller
 // getting bitcoin price in usd
 
         $bitCoinPriceInst = new BitCoinPrice();
-        $bitCoinPrice = $bitCoinPriceInst->getPrice()->price;
+        $bitCoinPrice = $bitCoinPriceInst->getPrice();
         $user = DB::table('users')->where('code',$request->user)->first();
         if(is_null($user)){
             return 404;
@@ -80,7 +80,9 @@ class PanelController extends Controller
             return [0,0];
         }
         else{
-            return $userEarn = [floatval($user->total_mining),$bitCoinPrice * $mining->sum('mined_btc')];
+            $total_paid_btc = Transaction::where('user_id',$user->id)->where('status','paid')->where('checkout','in')->sum('amount_btc');
+            $pending =  $mining->sum('mined_btc') - $total_paid_btc;
+            return $userEarn = [$mining->sum('mined_btc') ,$bitCoinPrice * $mining->sum('mined_btc'),floatval($pending)];
         }
     }
     /*
@@ -91,7 +93,7 @@ class PanelController extends Controller
         $user = DB::table('users')->where('code',$request->user)->first();
         $reports = MiningReport::where('user_id',$user->id)->get();
         $btcPriceInst = new BitCoinPrice();
-        $btcPrice = $btcPriceInst->getPrice()->price;
+        $btcPrice = $btcPriceInst->getPrice();
         if(count($reports) == 0){
             return 404;
         }
@@ -413,7 +415,7 @@ class PanelController extends Controller
 
     public function collaboration(){
 
-        $hashes = BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->orderBy('created_at','acs')->get();
+        $hashes = BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->orderBy('created_at','asc')->get();
         $unusedCodes = DB::table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('used',0)->first();
         if(!is_null($unusedCodes)){
 

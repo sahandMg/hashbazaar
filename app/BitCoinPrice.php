@@ -18,12 +18,9 @@ class BitCoinPrice
 
             $options = array('http' => array('method' => 'GET'));
             $context = stream_context_create($options);
-            $contents = file_get_contents('https://www.blockonomics.co/api/price?currency=USD', false, $context);
-            $bitCoinPrice = json_decode($contents);
-            if ($bitCoinPrice->price == 0) {
-
-                return 'bitcoin api failed';
-            }
+            $contents = file_get_contents('https://api.coindesk.com/v1/bpi/currentprice.json', false, $context);
+            $bitCoinObject = json_decode($contents,true);
+            $bitCoinPrice = $bitCoinObject['bpi']['USD']['rate_float'];
             return $bitCoinPrice;
         }catch (\Exception $exception){
 

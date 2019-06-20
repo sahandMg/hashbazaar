@@ -45,44 +45,19 @@ class DeleteTh extends Command
     {
         $unpaids = BitHash::where('confirmed',0)->get();
         $unpaidMinings = Mining::where('block',1)->get();
-        $settings = Setting::first();
-        foreach ($unpaids as $key => $unpaid){
+        foreach ($unpaids as $key => $unpaid) {
 
-            if(Carbon::parse($unpaid->created_at)->diffInHours(Carbon::now()) > 10){
-
-
-                $settings->update(['available_th'=> $settings->available_th + $unpaid->hash]);
-//                $unpaidMining[$key]->delete();
-//                $unpaid->delete();
-
-                $user = DB::table('users')->where('id',$unpaid->user_id)->first();
-                $trans = DB::table('crypto_payments')->where('orderID',$unpaid->order_id)->first();
-                if(! is_null($user) && !is_null($trans)){
-
-                    $data = [
-                        'orderID' => $trans->orderID,
-                        'email'=> $user->email,
-                        'amount' => $trans->amount,
-                        'created_at' => $trans->txDate
-                    ];
-                    Mail::send('email.unconfirmedPayment',$data,function ($message) use($data){
-
-                        $message->to($data['email']);
-                        $message->from('admin@hashbazaar.com');
-                        $message->subject('Unsuccessful Payment');
-                    });
-
-                }
+            if (Carbon::parse($unpaid->created_at)->diffInHours(Carbon::now()) > 10) {
 
                 $unpaid->delete();
-
             }
         }
 
+        foreach ($unpaidMinings as $unpaidMining) {
 
-        foreach ($unpaidMinings as $unpaidMining){
-
-            $unpaidMining->delete();
+            if (Carbon::parse($unpaidMining->created_at)->diffInHours(Carbon::now()) > 10) {
+                $unpaidMining->delete();
+            }
         }
     }
 }

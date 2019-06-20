@@ -103,7 +103,7 @@ class UpdateMinings extends Command
                     }else{
                         // 30 70 contracts have no ending
                         if($user->plan_id == 1){
-                            $remainedDay = 0;
+                            $remainedDay = 365;
                         }else{
 
                             $remainedDay = Carbon::now()->diffInDays(Carbon::parse($hash->created_at)->addYears($hash->life));

@@ -18,6 +18,7 @@
                     <td>status</td>
                     <td>Login</td>
                     <td>Collaborate</td>
+                    <td>Setting</td>
                 </tr>
                 </thead>
 
@@ -80,7 +81,9 @@
                                 <button class="btn btn-info" type="submit">Login</button>
                             </form>
                         </td>
-                        <td><a class="btn btn-primary" href="{{route('collaboration',['id'=>$user->id])}}">Colab</a></td>
+                        <td><a class="btn btn-primary" href="{{route('collaboration',['id'=>$user->id])}}">Collab</a></td>
+
+                        <td><a class="btn btn-info" href="{{route('userSetting',['id'=>$user->id])}}">Setting</a></td>
                     </tr>
 
                     @endforeach

@@ -798,11 +798,11 @@
                     }else{
                     var miningBTC = response.data[0].toFixed(8);
                     var miningDollar = response.data[1].toFixed(8);
-                    var userPendingBtc = {!! Auth::guard('user')->user()->pending !!};
+                    var userPendingBtc = response.data[2].toFixed(8);
                     var userPendingUsd = userPendingBtc * miningDollar/miningBTC;
                         document.getElementById('miningBTC').innerHTML = miningBTC;
                         document.getElementById('miningDollar').innerHTML = miningDollar;
-                        document.getElementById('miningBTC2').innerHTML = userPendingBtc.toFixed(8);
+                        document.getElementById('miningBTC2').innerHTML = userPendingBtc;
                         document.getElementById('miningDollar2').innerHTML = userPendingUsd.toFixed(8);
                         var minimum_redeem = {!! json_encode($settings->minimum_redeem) !!}
                         if(response.data[0] >= minimum_redeem){
@@ -961,11 +961,11 @@
                     }else{
                     var miningBTC = response.data[0].toFixed(8);
                     var miningDollar = response.data[1].toFixed(8);
-                    var userPendingBtc = {!! Auth::guard('user')->user()->pending !!};
+                    var userPendingBtc = response.data[2].toFixed(8);
                     var userPendingUsd = userPendingBtc * miningDollar/miningBTC;
                         document.getElementById('miningBTC').innerHTML = miningBTC;
                         document.getElementById('miningDollar').innerHTML = miningDollar;
-                        document.getElementById('miningBTC2').innerHTML = userPendingBtc.toFixed(8);
+                        document.getElementById('miningBTC2').innerHTML = userPendingBtc;
                         document.getElementById('miningDollar2').innerHTML = userPendingUsd.toFixed(8);
                         var minimum_redeem = {!! json_encode($settings->minimum_redeem) !!}
                         if(response.data[0] >= minimum_redeem){

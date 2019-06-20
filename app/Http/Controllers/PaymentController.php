@@ -1103,12 +1103,12 @@ class PaymentController extends Controller
     public function redeem(Request $request){
 
 
-        $user = DB::table('users')->where('code',$request->code)->first();
+        $user = User::where('code',$request->code)->first();
         if(is_null($user)){
             return ['type'=>'error','body'=>'user not found'];
         }
 //        $btcSum = Mining::where('user_id',$user->id)->where('block',0)->sum('mined_btc');
-        $btcSum = $user->pending;
+        $btcSum = User::userPending($user);
         $wallet = DB::table('wallets')->where('user_id',$user->id)->where('active',1)->first();
         if(is_null($wallet)){
             return ['type'=>'error','body'=>'wallet not found or is not active'];
@@ -1136,8 +1136,6 @@ class PaymentController extends Controller
         $redeem->addr = $wallet->addr;
         $redeem->save();
 
-        DB::table('users')->where('id',$user->id)->update(['pending'=> 0]);
-
 
         $data = [
             'amount'=>$btcSum,
@@ -1147,11 +1145,17 @@ class PaymentController extends Controller
             'country' =>  $trans->country,
             'transId' => $trans->code
         ];
-        Mail::send('email.newTrans',$data,function ($message) use($user){
-            $message->to('sahand.moghadam.mg@gmail.com');
-            $message->from($user->email);
-            $message->subject('New Redeem Request');
-        });
+        try{
+
+            Mail::send('email.newTrans',$data,function ($message) use($user){
+                $message->to($user->email);
+                $message->from('admin@hashbazaar.com');
+                $message->subject('New Redeem Request');
+            });
+        }catch (\Exception $exception){
+
+        }
+
 
         return ['type'=>'success','body'=>'Transaction Paid'];
 

@@ -155,7 +155,7 @@ class AuthController extends Controller
             'password'=>'required|min:6'
         ]);
 
-        if(Auth::guard('user')->attempt(['email'=>$request->email,'password'=>$request->password])){
+        if(Auth::guard('user')->attempt(['email'=>$request->email,'password'=>$request->password],true)){
             try{
 
                 $country = strtolower(Location::get(Helpers::userIP())->countryCode);

@@ -15,10 +15,10 @@ class CreateMiningReportsTable extends Migration
     {
         Schema::create('mining_reports', function (Blueprint $table) {
             $table->increments('id');
-            $table->float('mined_btc')->nullable();
-            $table->float('mined_usd')->nullable();
+            $table->double('mined_btc',10,8)->nullable();
+            $table->double('mined_usd',10,8)->nullable();
             $table->unsignedInteger('user_id')->nullable();
-//            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('order_id')->nullable();
             $table->timestamps();
         });

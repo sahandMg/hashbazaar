@@ -6,12 +6,17 @@ use App\BitHash;
 use App\CryptpBox\lib\Cryptobox;
 use App\Mining;
 use App\MiningReport;
+use App\Redeem;
+use App\Setting;
 use App\Transaction;
 use App\User;
+use App\Wallet;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
 require_once(app_path()."/CryptoBox/lib/cryptobox.class.php" );
 
 class AdminController extends Controller
@@ -54,7 +59,7 @@ class AdminController extends Controller
 
     public function transactions(){
 
-        $transactions = DB::table('crypto_payments')->orderBy('PaymentID','desc')->paginate(20);
+        $transactions = DB::table('transactions')->orderBy('created_at','desc')->paginate(20);
 
         return view('admin.transactions',compact('transactions'));
     }
@@ -83,7 +88,7 @@ class AdminController extends Controller
     }
     public function adminGetRedeems(){
 
-        return   $trans = Transaction::get();
+        return   $trans = Redeem::get();
     }
 /*
  * gets latest user buying
@@ -155,6 +160,7 @@ class AdminController extends Controller
 
         $users = User::all();
 
+
         return view('admin.users.checkout',compact('users'));
     }
 
@@ -204,6 +210,7 @@ class AdminController extends Controller
         $trans->checkout = 'out';
         $trans->amount_toman = $request->price;
         $trans->user_id = $user->id;
+        $trans->country = 'ir';
         $trans->created_at = Carbon::now()->subDays(intval($request->remainedDay));
         $trans->save();
 
@@ -225,5 +232,73 @@ class AdminController extends Controller
 
         return redirect()->back()->with(['message'=>'رکورد اضافه شد']);
 
+    }
+
+    public function adminLogout(){
+
+        Auth::guard('admin')->logout();
+        return redirect()->route('index');
+    }
+
+    public function userSetting($id){
+
+        $user = User::find($id);
+        return view('admin.users.setting',compact('user'));
+    }
+
+    public function post_userSetting(Request $request){
+
+        $user = User::find($request->id);
+
+        if(!is_null($request->password)){
+
+            $user->update(['password'=>Hash::make($request->password)]);
+        }
+        if(!is_null($request->address)){
+
+            if(is_null($user->wallet)){
+
+                $wallet = new Wallet();
+                $wallet->addr = $request->address;
+                $wallet->user_id = $user->id;
+                $wallet->active = 1;
+                $wallet->save();
+            }else{
+
+                $user->wallet->update(['addr'=>$request->address]);
+            }
+        }
+        if(!is_null($request->planid)){
+
+            $user->update(['plan_id'=>$request->planid]);
+        }
+
+        return redirect()->back()->with(['message'=>'Form Edited']);
+
+    }
+
+    public function siteSetting(){
+
+        $setting = Setting::first();
+
+        return view('admin.setting',compact('setting'));
+    }
+
+    public function post_siteSetting(Request $request){
+
+        $setting = Setting::first();
+        !is_null($request->total_th)?$setting->update(['total_th'=>$request->total_th]):null;
+        !is_null($request->usd_per_hash)?$setting->update(['usd_per_hash'=>$request->usd_per_hash]):null;
+        !is_null($request->usd_toman)?$setting->update(['usd_toman'=>$request->usd_toman]):null;
+        !is_null($request->maintenance_fee_per_th_per_day)?$setting->update(['maintenance_fee_per_th_per_day'=>$request->maintenance_fee_per_th_per_day]):null;
+        !is_null($request->bitcoin_income_per_month_per_th)?$setting->update(['bitcoin_income_per_month_per_th'=>$request->bitcoin_income_per_month_per_th]):null;
+        !is_null($request->available_th)?$setting->update(['available_th'=>$request->available_th]):null;
+        !is_null($request->sharing_discount)?$setting->update(['sharing_discount'=>$request->sharing_discount]):null;
+        !is_null($request->hash_life)?$setting->update(['hash_life'=>$request->hash_life]):null;
+        !is_null($request->minimum_redeem)?$setting->update(['minimum_redeem'=>$request->minimum_redeem]):null;
+        !is_null($request->zarrin_active)?$setting->update(['zarrin_active'=>$request->zarrin_active]):null;
+        !is_null($request->paystar_active)?$setting->update(['paystar_active'=>$request->paystar_active]):null;
+
+        return redirect()->back()->with(['message'=>'Form Updated']);
     }
 }

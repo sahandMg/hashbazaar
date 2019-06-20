@@ -6,10 +6,8 @@
                 <th>ID</th>
                 <th>Transaction ID</th>
                 <th>User</th>
-                <th>Country</th>
                 <th>Amount</th>
                 <th>addr</th>
-                <th>Status</th>
                 <th>Time</th>
 
             </tr>
@@ -20,10 +18,10 @@
                 <td>@{{transaction.id}}</td>
                 <td>@{{transaction.code}}</td>
                 <td>@{{transaction.user_id}}</td>
-                <td>@{{transaction.countryID}}</td>
+
                 <td>@{{parseFloat(transaction.amount_btc).toFixed(6)}}</td>
                 <td>@{{transaction.addr}}</td>
-                <td>@{{transaction.status}}</td>
+
                 <td>@{{transaction.created_at}}</td>
             </tr>
 

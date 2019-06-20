@@ -117,6 +117,28 @@
                         <span style="padding-left: 20px">Checkout</span>
                     </a>
                 </li>
+
+            @if(Request::route()->getName() == 'siteSetting')
+                <li  class="active">
+            @else
+                <li>
+                    @endif
+                    <a href="{{route('siteSetting')}}">
+                        <i class="fas fa-question"></i>
+                        <span style="padding-left: 20px">Site Setting</span>
+                    </a>
+                </li>
+
+                @if(Request::route()->getName() == 'adminLogout')
+                    <li  class="active">
+                @else
+                    <li>
+                        @endif
+                        <a href="{{route('adminLogout')}}">
+                            <i class="fas fa-question"></i>
+                            <span style="padding-left: 20px">Logout</span>
+                        </a>
+                    </li>
         </ul>
 
     </nav>

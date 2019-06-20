@@ -19,11 +19,11 @@ class CreateSettingsTable extends Migration
             $table->float('total_th')->nullable();
             $table->float('usd_per_hash')->nullable();
             $table->float('usd_toman')->nullable();
-            $table->float('maintenance_fee_per_th_per_day')->nullable();
-            $table->float('bitcoin_income_per_month_per_th')->nullable();
+            $table->double('maintenance_fee_per_th_per_day',8,3)->nullable();
+            $table->double('bitcoin_income_per_month_per_th',8,8)->nullable();
             $table->float('available_th')->nullable();
             $table->float('sharing_discount')->nullable();
-            $table->integer('hash_life')->nullable();
+            $table->float('hash_life')->nullable();
             $table->float('minimum_redeem')->nullable();
             $table->string('apikey')->nullable();
             $table->string('privatekey')->nullable();

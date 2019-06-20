@@ -90,10 +90,17 @@ Route::get('f2pool',function (){
 
 });
 
-Route::get('test',function (){
+Route::get('test/{time}',function ($time){
 
 
+    echo date('m/d/Y H:i:s', $time);
 
+});
+
+Route::get('redirect',function (){
+
+
+    return redirect('http://electropak.ir/hashbazaar');
 
 });
 
@@ -153,6 +160,20 @@ Route::group(['prefix'=>  session('locale')],function(){
 
     Route::post('login','AuthController@post_login')->name('login');
 
+    Route::post('subscribe','AuthController@subscribe')->name('subscribe');
+
+    Route::get('subscription','AuthController@subscription')->name('subscription');
+
+    Route::post('subscription','AuthController@post_subscription')->name('subscription');
+
+    Route::get('google/login','AuthController@redirectToProvider')->name('redirectToProvider');
+
+    Route::get('google/login/callback','AuthController@handleProviderCallback')->name('handleProviderCallback');
+
+    Route::get('signup/{hashpower?}','AuthController@signup')->name('signup')->middleware('guest');
+
+    Route::post('signup','AuthController@post_signup')->name('signup');
+
     Route::get('password-reset','AuthController@passwordReset')->name('passwordReset');
 
     Route::post('password-reset','AuthController@post_passwordReset')->name('passwordReset');
@@ -161,20 +182,7 @@ Route::group(['prefix'=>  session('locale')],function(){
 
 Route::post('message','PageController@message')->name('message');
 
-Route::post('subscribe','AuthController@subscribe')->name('subscribe');
 
-Route::get('subscription','AuthController@subscription')->name('subscription');
-
-Route::post('subscription','AuthController@post_subscription')->name('subscription');
-
-
-Route::get('google/login','AuthController@redirectToProvider')->name('redirectToProvider');
-
-Route::get('google/login/callback','AuthController@handleProviderCallback')->name('handleProviderCallback');
-
-Route::get('signup/{hashpower?}','AuthController@signup')->name('signup')->middleware('guest');
-
-Route::post('signup','AuthController@post_signup')->name('signup');
 
 Route::get('pricing','PageController@Pricing');
 
@@ -258,22 +266,26 @@ Route::get('blog',['as'=>'blog','uses'=>'BlogController@index']);
 
 Route::get('faq',['as'=>'customerService','uses'=>'PageController@customerService']);
 
-
 Route::get('@admin/login',['as'=>'AdminLogin','uses'=>'AdminController@login']);
+
 Route::post('@admin/login',['as'=>'AdminLogin','uses'=>'AdminController@post_login']);
 
 Route::group(['prefix' => '@admin','middleware'=>'admin'], function () {
 
     Route::get('home',['as'=>'adminHome','uses'=>'AdminController@index']);
+
     Route::get('transactions',['as'=>'adminTransactions','uses'=>'AdminController@transactions']);
-    Route::get('get-transactions',['as'=>'adminGetTransactions','uses'=>'AdminController@getTransactions']);Route::get('redeems',['as'=>'adminRedeems','uses'=>'AdminController@adminRedeems']);
+
+    Route::get('get-transactions',['as'=>'adminGetTransactions','uses'=>'AdminController@getTransactions']);
 
     Route::get('checkout',['as'=>'adminCheckout','uses'=>'AdminController@adminCheckout']);
 
     Route::get('redeems',['as'=>'adminRedeems','uses'=>'AdminController@adminRedeems']);
+
     Route::get('get-redeems',['as'=>'adminGetRedeems','uses'=>'AdminController@adminGetRedeems']);
 
     Route::get('users/list',['as'=>'adminGetUsersList','uses'=>'AdminController@adminGetUsersList']);
+
     Route::get('block-user',['as'=>'blockUser','uses'=>'AdminController@blockUser']);
 
     Route::post('login-as-user',['as'=>'LoginAsUser','uses'=>'AdminController@LoginAsUser']);
@@ -281,6 +293,18 @@ Route::group(['prefix' => '@admin','middleware'=>'admin'], function () {
     Route::get('collaboration/{id?}',['as'=>'collaboration','uses'=>'AdminController@collaboration']);
 
     Route::post('collaboration',['as'=>'collaboration','uses'=>'AdminController@post_collaboration']);
+
+    Route::get('user-setting/{id?}',['as'=>'userSetting','uses'=>'AdminController@userSetting']);
+
+    Route::post('user-setting/{id?}',['as'=>'userSetting','uses'=>'AdminController@post_userSetting']);
+
+    Route::get('site-setting',['as'=>'siteSetting','uses'=>'AdminController@siteSetting']);
+
+    Route::post('site-setting',['as'=>'siteSetting','uses'=>'AdminController@post_siteSetting']);
+
+    Route::get('logout',['as'=>'adminLogout','uses'=>'AdminController@adminLogout']);
+
+
 
 //   Voyager::routes();
 });

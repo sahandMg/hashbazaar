@@ -20,7 +20,7 @@ class CreateBitHashesTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedInteger('life')->nullable();
             $table->string('referral_code')->nullable();
-            $table->unsignedInteger('order_id')->nullable();
+            $table->string('order_id')->nullable();
             $table->boolean('confirmed')->default(false);
             $table->unsignedInteger('remained_day')->nullable();
             $table->timestamps();

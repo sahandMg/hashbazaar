@@ -1,6 +1,11 @@
 @extends('admin.master.header')
 @section('content')
 
+    <?php
+
+    $setting = \App\Setting::first();
+
+    ?>
     <div id="checkout">
 
 
@@ -10,53 +15,50 @@
 
                         <thead>
                         <tr>
-                            <td>id</td>
-                            <td> name </td>
-                            <td> email </td>
-                            <td>amount(BTC)</td>
-                            <td>status</td>
-                            <td>checkout</td>
+                            <td>Id</td>
+                            <td> Name </td>
+                            <td> Email </td>
+                            <td>Pending Amount(BTC)</td>
+                            <td>Status</td>
+                            <td>Checkout</td>
                         </tr>
                         </thead>
 
                         <tbody>
-                        {{--@foreach($users as $key => $user)--}}
-                            {{--<tr>--}}
-                                {{--<td>{{$user->code}}</td>--}}
-                                {{--<td>{{$user->name}}</td>--}}
-                                {{--<td>{{$user->email}}</td>--}}
-                                {{--@if(is_null($user->country))--}}
-                                    {{--<td><img width="25" height="20" src="{{URL::asset('flags/error.svg')}}" alt=""></td>--}}
-                                {{--@else--}}
-                                    {{--<td><img width="25" height="20" src="{{URL::asset('flags/'.$user->country.'.svg')}}" alt=""></td>--}}
-                                {{--@endif--}}
+                        @foreach($users as $key => $user)
+                            <tr>
+                                <td>{{$user->code}}</td>
+                                <td>{{$user->name}}</td>
+                                <td>{{$user->email}}</td>
+                                <td id="pendingBtc">{{App\User::userPending($user)}}</td>
+                                @if($user->block == 1)
+                                    <td> <button id={{$user->code}} @click="block" class="btn btn-danger"> Blocked </button> </td>
+                                @else
+                                    <td> <button id={{$user->code}} @click="block" class="btn btn-success"> Active </button> </td>
+                                @endif
 
-                                {{--<td>{{$user->minings->sum('mined_btc')}}</td>--}}
+                                @if($user->minings->sum('mined_btc') >= $setting->minimum_redeem)
+                                    <td>
+                                        <button id={{$user->code}} onclick="pay()" class="btn btn-success"> Pay </button>
+                                        <button id={{$user->code.'-loading'}} hidden class="buttonload btn btn-warning"><i class="fa fa-refresh fa-spin"></i> Loading</button>
+                                    </td>
+                                @else
+                                    <td> <button disabled id={{$user->code}} onclick="pay()" class="btn btn-success"> Pay </button> </td>
+                                @endif
 
-                                {{--@if($user->block == 1)--}}
-                                    {{--<td> <button id={{$user->code}} @click="block" class="btn btn-danger"> Blocked </button> </td>--}}
-                                {{--@else--}}
-                                    {{--<td> <button id={{$user->code}} @click="block" class="btn btn-success"> Active </button> </td>--}}
-                                {{--@endif--}}
-
-                                {{--@if($user->minings->sum('mined_btc') >= 0.01)--}}
-                                    {{--<td> <button id={{$user->code}} @click="pay" class="btn btn-success"> Pay </button> </td>--}}
-                                {{--@else--}}
-                                    {{--<td> <button disabled id={{$user->code}} @click="pay" class="btn btn-success"> Pay </button> </td>--}}
-                                {{--@endif--}}
-
-                            {{--</tr>--}}
-                            <tr v-for="(user,key) in users">
-                                <td>@{{user.code}}</td>
-                                <td>@{{user.name}}</td>
-                                <td>@{{user.email}}</td>
-                                <td :id='key'>@{{user.pending}}</td>
-                                <td v-if="user.block == 1"> <button :id='user.code' @click="block" class="btn btn-danger"> Blocked </button> </td>
-                                <td v-else=""> <button :id='user.code' @click="block" class="btn btn-success"> Active </button> </td>
-                                <td v-if="user.pending >= 0.01"> <button :id='user.code' @click="pay(user.code,key)" class="btn btn-success"> Pay </button> </td>
-                                <td v-else=""> <button disabled :id='user.code' @click="pay" class="btn btn-success"> Pay </button> </td>
                             </tr>
-                        {{--@endforeach--}}
+
+                            {{--<tr v-for="(user,key) in users">--}}
+                                {{--<td>@{{user.code}}</td>--}}
+                                {{--<td>@{{user.name}}</td>--}}
+                                {{--<td>@{{user.email}}</td>--}}
+                                {{--<td :id='key'>{{user.pending}}</td>--}}
+                                {{--<td v-if="user.block == 1"> <button :id='user.code' @click="block" class="btn btn-danger"> Blocked </button> </td>--}}
+                                {{--<td v-else=""> <button :id='user.code' @click="block" class="btn btn-success"> Active </button> </td>--}}
+                                {{--<td v-if="user.pending >= 0.01"> <button :id='user.code' @click="pay(user.code,key)" class="btn btn-success"> Pay </button> </td>--}}
+                                {{--<td v-else=""> <button disabled :id='user.code' @click="pay" class="btn btn-success"> Pay </button> </td>--}}
+                            {{--</tr>--}}
+                        @endforeach
                         </tbody>
 
                     </table>
@@ -67,6 +69,31 @@
         @endif
     </div>
     <script>
+
+        function pay(e) {
+            var event = e || window.event;
+                var code = event.target.id;
+            console.log(event.target);
+            event.target.hidden = true;
+            document.getElementById(code+'-loading').hidden = false;
+            axios.post('{{route('redeem')}}',{'code':code}).then(function (response) {
+
+                var resp = response.data;
+                if(resp['type'] != 'error'){
+
+                    event.target.hidden = false;
+                    document.getElementById(code+'-loading').hidden = true;
+                    event.target.disabled = true;
+                    document.getElementById('pendingBtc').innerHTML = 0;
+                    alert(resp['body'])
+
+                }else{
+                    alert(resp['body'])
+                }
+
+            })
+        }
+
         new Vue({
             el:'#checkout',
             data:{

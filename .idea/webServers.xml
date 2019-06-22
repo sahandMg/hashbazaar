@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="210ba418-0ff9-4f7d-9b9c-29710714eaf4" name="Test" url="http://193.176.241.212">
+        <fileTransfer host="193.176.241.212" port="22" rootFolder="/var/www/html/hashbazaar" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,196 @@
+<?php
+
+namespace App\Console\Commands;
+
+use App\BitHash;
+use App\Mining;
+use App\MiningReport;
+use App\Transaction;
+use App\User;
+use GuzzleHttp\Client as GuzzleClient;
+use Morilog\Jalali\Jalalian;
+use Psr\Http\Message\ResponseInterface;
+use Carbon\Carbon;
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
+class UpdateMinings extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'mining:update';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Update User Mining';
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return mixed
+     *
+     * This Command update mining histories & hashPower life
+     */
+    public function handle()
+    {
+        // getting realtime bitcoin price
+        $settings = DB::table('settings')->first();
+        $options = array('http' => array('method' => 'GET'));
+        $context = stream_context_create($options);
+        $contents = file_get_contents('https://www.blockonomics.co/api/price?currency=USD', false, $context);
+        $bitCoinPrice = json_decode($contents);
+        if ($bitCoinPrice->price == 0) {
+
+            return 'bitcoin api failed';
+        }
+// getting total minings from antpool
+//        $userId = '13741374';
+//        $apiKey = '7b07bc4b507b4d7584770f8ddddd02f1';
+//        $nonce = rand(0, 1000);
+//        $secret = '0585329bf8eb48509b1ad13b709d9390';
+//        $url = 'https://antpool.com/api/account.htm';
+//        $signature = strtoupper(hash_hmac('sha256', $userId . $apiKey . $nonce, $secret, false));
+//        $ch = curl_init();
+//        curl_setopt($ch, CURLOPT_URL, "$url?key=$apiKey&nonce=$nonce&signature=$signature&coin=BTC");
+//        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//        $result = curl_exec($ch);
+//        curl_close($ch);
+//        $mining24 = json_decode($result)->data->earn24Hours;
+
+//  Getting minings from f2pool
+        $url = 'https://api.f2pool.com/bitcoin/mvs1995';
+//        $client = new GuzzleClient();
+//        $promise1 = $client->requestAsync('GET',$url)->then(function (ResponseInterface $response) {
+//            return $response->getBody()->getContents();
+//        });
+//        $resp = $promise1->wait();
+        $ch = curl_init();
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $resp = curl_exec($ch);
+        curl_close($ch);
+        $f2poolResp = json_decode($resp,true);
+        $miningValue = number_format($f2poolResp['value_last_day'],8);
+        $mining24 = $miningValue;
+        $users = User::all();
+//        $mainTHash = $settings->total_th;
+        $mainTHash = number_format($f2poolResp['hashes_last_day']/86400/pow(10,12),3);
+        foreach ($users as $index => $user) {
+            $hashes = BitHash::where('user_id', $user->id)->where('confirmed',1)->get();
+            if (!$hashes->isEmpty()) {
+                foreach ($hashes as $item => $hash) {
+                   // checks if contract is over or not
+                    if($hash->remained_day == 0){
+                        $hash->update(['confirmed'=> 0]);
+                        $hash->save();
+                        DB::table('minings')->where('order_id',$hash->order_id)->update(['block'=>1]);
+                    }else{
+                        // 30 70 contracts have no ending
+                        if($user->plan_id == 1){
+                            $remainedDay = 365;
+                        }else{
+
+                            $remainedDay = Carbon::now()->diffInDays(Carbon::parse($hash->created_at)->addYears($hash->life));
+                        }
+
+                        $hash->update(['remained_day'=>$remainedDay]);
+                        $hash->save();
+                        $hashPower[$item] = $hash->hash;
+                        $maintenance_inBTC = $settings->maintenance_fee_per_th_per_day/$bitCoinPrice->price *  $hashPower[$item];
+                        if($mining24 != 0){
+                            // apply 30 70 contracts conditions
+                            if($user->plan_id == 1){
+                                $userEarn[$item] = $mining24 * ($hashPower[$item] / $mainTHash) * 0.7;
+                            }else{
+
+                                $userEarn[$item] = $mining24 * ($hashPower[$item] / $mainTHash) - $maintenance_inBTC;
+                            }
+                        }
+                    }
+
+                }
+                $minings = Mining::where('user_id',$user->id)->where('block',0)->orderBy('id','desc')->get();
+                if(! $minings ->isEmpty()){
+                    foreach ($minings as $key => $mining){
+                        if($mining->block == 0){
+                            $userEarn[$key] = number_format($userEarn[$key],8);
+                            $miningReport = new MiningReport();
+                            $miningReport->order_id = $mining->order_id;
+                            $miningReport->mined_btc = $userEarn[$key];
+                            $miningReport->mined_usd =  $userEarn[$key] * $bitCoinPrice->price;
+                            $miningReport->user_id = $user->id;
+                            $miningReport->created_at = Carbon::now()->subDay(1);
+                            $miningReport->updated_at = Carbon::now()->subDay(1);
+                            $miningReport->save();
+
+
+                            $mining->update(['mined_btc'=>$userEarn[$key] + $mining->mined_btc ,'mined_usd'=> $mining->mined_usd + $userEarn[$key] * $bitCoinPrice->price ]);
+                            $mining->save();
+                            // creating new record in database for tomorrow mining record
+
+                        }
+                    }
+                }
+                $total_paid_btc = Transaction::where('user_id',$user->id)->where('status','paid')->where('checkout','in')->sum('amount_btc');
+                $user->update(['total_mining'=>$minings->sum('mined_btc'),'pending'=> $minings->sum('mined_btc') - $total_paid_btc]);
+                $user->save();
+            }
+        }
+
+
+        /*
+         * Stores last day hash rate & mined btc + blockchain difficulty & block reward
+         */
+
+        $url = "https://api-r.bitcoinchain.com/v1/status?_ga=2.23156472.371952348.1559114831-275280855.1559114831";
+        $client = new GuzzleClient();
+        $promise1 = $client->requestAsync('GET',$url)->then(function (ResponseInterface $response) {
+            return $response->getBody()->getContents();
+        });
+        $resp = $promise1->wait();
+        $newResp = json_decode($resp,true);
+        $hashRate = new \App\hashRate();
+        $hashRate->mined_btc = $miningValue;
+        $hashRate->difficulty = intval($newResp['difficulty']/(pow(10,9)));
+        $hashRate->block_reward = $newResp['reward'];
+        $hashRate->hash_rate = number_format($f2poolResp['hashes_last_day']/86400/pow(10,12),3);
+        $hashRate->created_at = Carbon::createFromTimestamp($newResp['time'])->addDay(-1)->toDateTimeString();
+        $hashRate->save();
+
+// -------------------------
+    try{
+
+        $sender = "1000596446";
+        $receptor = "09387728916";
+        $message =  "گزارش استخراج ".'--'. Jalalian::forge(Carbon::now())->toString().'--'. 'BTC :'.$hashRate->mined_btc.'--'.' difficulty :'.$hashRate->difficulty;
+        $api = new \Kavenegar\KavenegarApi("796C4E505946715933687269672B6F6B5648564562585250533251356B6B6361");
+        $api -> Send ( $sender,$receptor,$message);
+
+    }catch(\Kavenegar\Exceptions\ApiException $e){
+        // در صورتی که خروجی وب سرویس 200 نباشد این خطا رخ می دهد
+        echo $e->errorMessage();
+    }
+    catch(\Kavenegar\Exceptions\HttpException $e){
+        // در زمانی که مشکلی در برقرای ارتباط با وب سرویس وجود داشته باشد این خطا رخ می دهد
+        echo $e->errorMessage();
+    }
+
+    }
+}

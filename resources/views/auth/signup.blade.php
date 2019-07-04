@@ -43,13 +43,17 @@
                             <span class="focus-input100"></span>
                     </div>
 
+					<div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
+						<input required class="input100" type="text" name="captcha" placeholder="{{__("Security Code")}}">
+						<span class="focus-input100"></span>
+					</div>
 
-
-
-
+					<div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
+						<a onclick="refreshCaptcha(event)" style="cursor: pointer;">{{Captcha::img()}}</a>
+					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button id="submitBtn" class="login100-form-btn">
                             {{__("SignUp")}}
                         </button>
 					</div>
@@ -103,5 +107,17 @@
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script>
+		function submitForm(){
+			document.getElementById('submitBtn').disabled = true
+		}
+		function refreshCaptcha(e){
+			var element = e;
+			axios.get('captcha-refresh').then(function(response){
+				element.target.src = response.data
+
+			});
+		}
+	</script>
 
 @endsection

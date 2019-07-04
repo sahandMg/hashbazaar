@@ -26,7 +26,10 @@ class EventServiceProvider extends ServiceProvider
         ],
         'App\Events\CoinBaseNewProduct' => [
             'App\Listeners\makeProduct'
-        ]
+        ],
+        'App\Events\Sms' => [
+            'App\Listeners\SendSms'
+        ],
     ];
 
     /**

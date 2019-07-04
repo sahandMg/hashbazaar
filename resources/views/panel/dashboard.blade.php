@@ -174,13 +174,13 @@
      @if(Config::get('app.locale') == 'fa')
            <div id="referralDiv">
              <label id="referralLabel" for="referralCode">کد ارجاع:</label>
-             <input id='referralCode' type="text" placeholder="{{$AppliedCode}}" name="referralCode" style="margin-top:5px" class="aplybtn1text"/>
-             <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> درخواست </button>
+             <input required id='referralCode' type="text" placeholder="{{$AppliedCode}}" name="referralCode" style="margin-top:5px" class="aplybtn1text"/>
+             <button id="code" type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> درخواست </button>
            </div>
             @if($settings->paystar_active == 1)
-                <form class="dashboard-page" method="post" action="{{route('PaystarPaying')}}">
+                <form onsubmit="order()" class="dashboard-page" method="post" action="{{route('PaystarPaying')}}">
             @elseif($settings->zarrin_active == 1)
-                <form class="dashboard-page" method="post" action="{{route('ZarrinPalPaying')}}">
+                <form onsubmit="order()" class="dashboard-page" method="post" action="{{route('ZarrinPalPaying')}}">
             @endif
 
            {{--  <form class="dashboard-page" method="post" action="{{route('TestPayment')}}">  --}}
@@ -200,7 +200,7 @@
         <div id="referralDiv">
          <label id="referralLabel" style="color:black;font-weight:bolder" for="referralCode">Referral Code</label>
          <input id='referralCode' type="text" placeholder="{{$AppliedCode}}" name="referralCode" style="margin-top:5px" class="aplybtn1text"/>
-         <button type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> Apply </button>
+         <button id="code" type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> Apply </button>
        </div>
        <button id="orderBtn" class="pandel-button" type="submit">{{__("Order")}}</button>
      @endif
@@ -682,11 +682,13 @@
   }
   .ct-label { color: black; }
 </style>
-=======
 
->>>>>>> 65d4f7f6105464ae4761343005597a44d8504be6
 @if(Config::get('app.locale') == 'fa')
 <script type="text/javascript">
+
+    function order(){
+        document.getElementById('orderBtn').disabled = true
+    }
   // console.log("**** price toman *******");
   var dollarToToman = parseInt({!! $settings->usd_toman !!});
   // console.log(dollarToToman);
@@ -702,14 +704,14 @@
 //                    console.log("numItems > 3");
                     } else {
                         $('.Hash-History').css('overflow-y' , "hidden");
-                        console.log("numItems < 3");
+//                        console.log("numItems < 3");
                     }
                 });
                 // for get profit
                 var user = {!! json_encode(\Illuminate\Support\Facades\Auth::guard('user')->user()->code) !!}
                 function redeem(id) {
                     axios.get('{{route('redeem')}}'+'?user='+user).then(function (response) {
-                        console.log(response.data)
+//                        console.log(response.data)
                     })
                 };
                  // referal code
@@ -728,6 +730,7 @@
                 // for checking referal code
                 function sendCode() {
                     var code = document.getElementById('referralCode').value;
+                    document.getElementById('code').disabled = true;
                     axios.post('{{route('SendCode')}}',{referralCode:code}).then(function (response) {
                          resp = response.data;
                         if(resp['type'] == 'error'){
@@ -739,7 +742,7 @@
                             document.getElementById('discount').value = resp['discount'];
                             thPriceAfterCode = dollarToToman * {!! $settings->usd_per_hash !!} *  (1 - resp['discount'] );
                             costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode ) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
-                            console.log(thPrice);
+//                            console.log(thPrice);
                             activateDiscount = 1;
                             $('#doReferalCode').show()
                         }
@@ -831,7 +834,7 @@
                         data.push(dateTime[i].mined);
                     }
                   } else {
-                    console.log("window.innerWidth : "+window.innerWidth)
+//                    console.log("window.innerWidth : "+window.innerWidth)
                     for(i=0 ; i < dateTime.length ; i++){
                         if( i%5 ===0) {
                           timeLabels.push(dateTime[i].time);
@@ -866,14 +869,14 @@
 //                    console.log("numItems > 3");
                     } else {
                         $('.Hash-History').css('overflow-y' , "hidden");
-                        console.log("numItems < 3");
+//                        console.log("numItems < 3");
                     }
                 });
                 // for get profit
                 var user = {!! json_encode(\Illuminate\Support\Facades\Auth::guard('user')->user()->code) !!}
                 function redeem(id) {
                     axios.get('{{route('redeem')}}'+'?user='+user).then(function (response) {
-                        console.log(response.data)
+//                        console.log(response.data)
                     })
                 };
                  // referal code
@@ -902,7 +905,7 @@
                             document.getElementById('discount').value = resp['discount'];
                             thPriceAfterCode = {!! $settings->usd_per_hash !!} *  (1 - resp['discount'] );
                             costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode ) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
-                            console.log(thPrice);
+//                            console.log(thPrice);
                             activateDiscount = 1;
                             $('#doReferalCode').show()
                         }

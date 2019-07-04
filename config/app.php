@@ -161,7 +161,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Stevebauman\Location\LocationServiceProvider::class,
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
-
+        Mews\Captcha\CaptchaServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -225,7 +225,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Location' => Stevebauman\Location\Facades\Location::class,
-        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+        'Captcha' => Mews\Captcha\Facades\Captcha::class,
 
 
     ],

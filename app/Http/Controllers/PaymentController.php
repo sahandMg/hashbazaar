@@ -1136,21 +1136,24 @@ class PaymentController extends Controller
         $redeem->addr = $wallet->addr;
         $redeem->save();
 
-
-        $data = [
-            'amount'=>$btcSum,
-            'user'=> $user->name,
-            'email'=> $user->email,
-            'user_wallet' => $wallet->addr,
-            'country' =>  $trans->country,
-            'transId' => $trans->code
-        ];
+//
+//        $data = [
+//            'amount'=>$btcSum,
+//            'user'=> $user->name,
+//            'email'=> $user->email,
+//            'user_wallet' => $wallet->addr,
+//            'country' =>  $trans->country,
+//            'transId' => $trans->code
+//        ];
         try{
 
-            Mail::send('email.newTrans',$data,function ($message) use($user){
-                $message->to($user->email);
-                $message->from('admin@hashbazaar.com');
-                $message->subject('New Redeem Request');
+
+            $data = ['trans'=>$trans,'user'=> $user,'email'=>$user->email];
+            Mail::send('email.checkout',$data , function ($message) use ($data) {
+                $message->from('admin@hashBazaar.com');
+                $message->to($data['email']);
+                $message->subject('پرداخت بیتکوین');
+
             });
         }catch (\Exception $exception){
 

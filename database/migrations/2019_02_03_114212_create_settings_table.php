@@ -28,6 +28,7 @@ class CreateSettingsTable extends Migration
             $table->string('apikey')->nullable();
             $table->string('privatekey')->nullable();
             $table->string('publickey')->nullable();
+            $table->boolean('alarms')->default(1);
             $table->string('paystar_pin')->nullable();
             $table->string('zarrin_pin')->nullable();
             $table->boolean('zarrin_active')->default(0);

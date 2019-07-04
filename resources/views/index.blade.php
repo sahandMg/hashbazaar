@@ -55,7 +55,8 @@
                 <small>{{__("(May be changed depends on bitcoin price and bitcoin network difficulty)")}}</small>
             </div>
             <div class="form-group fontTheme" style="margin-top: 2%;">
-                <button class="btn btn-primary round-button-com" onclick="btnDisable()" type="submit" style="width: 120px">{{__('BUY')}}</button>
+                <button class="btn btn-primary round-button-com" onclick="btnHidden(event)"  type="submit" style="width: 120px">{{__('BUY')}}</button>
+                <button id="sending" class="btn btn-primary round-button-com"  hidden  type="button" style="width: 120px">{{__('Sending ...')}}</button>
             </div>
            </form>
         </div>
@@ -108,17 +109,19 @@
         <div class="container p-5">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <form class="contact-form" method="POST" action="{{route('message')}}">
+                    <form id="contactForm" class="contact-form" onsubmit="checkForm()" method="POST" action="{{route('message')}}">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
-                        <div class="form-group fontTheme"><input class="form-control" type="text" name="name"
+
+                        <div class="form-group fontTheme"><input required class="form-control" type="text" name="name"
                                                                  placeholder="{{__('name')}}" id="nameTextBox"></div>
-                        <div class="form-group fontTheme"><input class="form-control" type="email" name="email"
+                        <div class="form-group fontTheme"><input  required class="form-control" type="email" name="email"
                                                                  placeholder="{{__('email')}}" id="emailTextBox"></div>
-                        <div class="form-group fontTheme"><textarea class="form-control mx-auto" name="message"
+                        <div class="form-group fontTheme"><textarea required class="form-control mx-auto" name="message"
                                                                     placeholder="{{__('Message')}}" id="messageTextBox"
                                                                     rows="5"></textarea></div>
                         <div class="form-group fontTheme">
-                            <button class="btn btn-primary round-button-com" type="submit">{{__('SUBMIT')}}</button>
+                            <button id="submit" class="btn btn-primary round-button-com" type="submit">{{__('SUBMIT')}}</button>
+                            <button hidden class="btn btn-primary round-button-com" type="button">{{__('Sending ...')}}</button>
                         </div>
                     </form>
                 </div>
@@ -160,11 +163,11 @@
         output.innerHTML = slider.value+' Th'; // Display the default slider value
         var cost = document.getElementById("cost"); cost.innerHTML = slider.value * sliderValue ;
         var hashInput = document.getElementById("hash");
-        console.log("slider");console.log(slider.value);
+//        console.log("slider");console.log(slider.value);
         // hashInput.value = slider.value;
         // Update the current slider value (each time you drag the slider handle)
         slider.oninput = function() {
-            console.log("input change");
+//            console.log("input change");
             output.innerHTML = this.value+' Th';
             cost.innerHTML = slider.value * sliderValue ;
         }
@@ -183,11 +186,11 @@
         output.innerHTML = slider.value+' Th'; // Display the default slider value
         var cost = document.getElementById("cost"); cost.innerHTML = slider.value * sliderValue ;
         var hashInput = document.getElementById("hash");
-        console.log("slider");console.log(slider.value);
+//        console.log("slider");console.log(slider.value);
         // hashInput.value = slider.value;
         // Update the current slider value (each time you drag the slider handle)
         slider.oninput = function() {
-            console.log("input change");
+//            console.log("input change");
             output.innerHTML = this.value+' Th';
             cost.innerHTML = slider.value * sliderValue ;
         }
@@ -291,8 +294,13 @@
     <script type="text/javascript">
 
 
-        function btnDisable(){
-            console.log("btnDisable");
+        function btnHidden(e){
+            e.target.hidden = true
+            e.target.nextElementSibling.hidden = false
+        }
+        function checkForm() {
+            document.getElementById('submit').hidden = true;
+            document.getElementById('submit').nextElementSibling.hidden = false;
         }
 
         // Get the modal

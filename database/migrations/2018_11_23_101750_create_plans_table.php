@@ -23,7 +23,8 @@ class CreatePlansTable extends Migration
         DB::table('plans')->insert(
             [
           ['name'=>'30_70','created_at'=>Carbon::now()],
-          ['name'=>'buy_th','created_at'=>Carbon::now()]
+          ['name'=>'buy_th','created_at'=>Carbon::now()],
+          ['name'=>'owner','created_at'=>Carbon::now()],
         ]
       );
     }

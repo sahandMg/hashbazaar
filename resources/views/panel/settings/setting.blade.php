@@ -5,7 +5,7 @@
 @section('content')
 
 
-<div id="setting-page" class="panel-container " onclick="hideMe()">
+<div id="setting-page" class="panel-container " >
     <div class="setting-flex">
         <div class="flex-item one"><a href="#">{{__("User Information")}}</a></div>
         <div class="flex-item two"><a href="#">{{__("Wallet")}}</a></div>
@@ -19,8 +19,8 @@
     @include('formMessage')
     @include('sessionError')
 
-    <div class="setting-information" onclick="hideMe()">
-        <form name="profile" action="{{route('setting')}}" method="post">
+    <div class="setting-information" >
+        <form onsubmit="submitForm(event)"  name="profile" action="{{route('setting')}}" method="post">
 
             <input type="hidden" name="_token" value="{{csrf_token()}}">
 
@@ -28,28 +28,28 @@
 
 
             <label id="textbefore">{{__("Username")}}
-            <input type="text" name="text" id="text" style="font-size:1rem" value="{{Auth::guard('user')->user()->name}}" disabled="disabled"> 
+            <input type="text" name="text" id="text" style="font-size:1rem" value="{{Auth::guard('user')->user()->name}}" disabled="disabled">
             </label>
-            
+
             <label id="textbefore">{{__("Email")}}
-            <input type="email" name="email" id="email" style="font-size:1rem" value="{{Auth::guard('user')->user()->email}}" disabled="disabled"/> 
+            <input type="email" name="email" id="email" style="font-size:1rem" value="{{Auth::guard('user')->user()->email}}" disabled="disabled"/>
             </label>
 
 
              <legend>{{__("Change Password")}}</legend>
             <label id="textbefore">{{__("Current Password")}}
-            <input type="password" name="password" id="cur-password" placeholder="{{__("Current Password")}}">  <br>
+            <input required type="password" name="password" id="cur-password" placeholder="{{__("Current Password")}}">  <br>
             </label>
 
             <label id="textbefore">{{__("New Password")}}
-            <input type="password" name="newpass" id="newpassword" placeholder="{{__("New Password")}}">
+            <input required type="password" name="newpass" id="newpassword" placeholder="{{__("New Password")}}">
             </label>
 
             <label id="textbefore">{{__("Confirm Password")}}
-            <input type="password" name="confirm" id="Confirmpassword" placeholder="{{__("Confirm Password")}}">
+            <input required type="password" name="confirm" id="Confirmpassword" placeholder="{{__("Confirm Password")}}">
             </label>
 
-            <input type="submit" value="{{__("Submit")}}" class="pandel-button">
+            <button id="userForm" type="submit" class="pandel-button">{{__("Submit")}}</button>
         </form>
 
     </div>
@@ -60,11 +60,11 @@
                 </p>
                 <h2 style="color:black" class="text-center">{{__("OR")}}</h2>
                 <h2 class="text-center" style="color:black">{{__("Submit Your Wallet Address")}}</h2>
-                
-                 <form id="setting-wallet" class="text-center" method="post" action="{{route('wallet')}}">
+
+                 <form onsubmit="submitForm(event)"  id="setting-wallet" class="text-center" method="post" action="{{route('wallet')}}">
                      <input class="text-center" type="hidden" name="_token" value="{{csrf_token()}}">
-                    <input class="text-center" type="text" id="textwallet" name="wallet">
-                    <input  type="submit" class="buttonwallet text-center" value="{{__("Submit")}}">
+                    <input required class="text-center" type="text" id="textwallet" name="wallet">
+                    <button id="wallet" type="submit" class="buttonwallet text-center">{{__("Submit")}}</button>
                  </form>
 
 
@@ -72,16 +72,16 @@
         </div><!-- Wallet 1 -->
 
 
-    
+
  <div class="make-wallet">
 
         <div class="title-flex2">
                 <hr class="dashboard-hr2"/>
                 <h2 class="dashboard-title2">{{__("Current Bitcoin Wallet Address")}}</h2>
                 <hr class="dashboard-hr2"/>
-        </div> 
+        </div>
 
-        
+
         <div class="address">
             @if(!is_null(Auth::guard('user')->user()->wallet))
                 <div class="address-img">{!! QrCode::size(150)->generate(Auth::guard('user')->user()->wallet->addr) !!}</div>
@@ -96,16 +96,16 @@
             @endif
             <div class="change-address">
 
-                <form action="{{route('editWallet')}}" method="POST">
+                <form onsubmit="submitForm(event)" action="{{route('editWallet')}}" method="POST">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
-                    <input type="text" class="a2"  name="address"   placeholder="{{!is_null(Auth::guard('user')->user()->wallet)?Auth::guard('user')->user()->wallet->addr:'Your bitcoin wallet address'}}"><br>
-                    <input type="submit" class="pandel-button a4" value="{{__("Submit")}}" >
+                    <input required type="text" class="a2"  name="address"   placeholder="{{!is_null(Auth::guard('user')->user()->wallet)?Auth::guard('user')->user()->wallet->addr:'Your bitcoin wallet address'}}"><br>
+                    <button id="editWallet" type="submit" class="pandel-button a4"  >{{__("Submit")}}</button>
                 </form>
 
             </div>
 
         </div><!-- address -->
-         
+
         <div class="title-flex2 a3">
                 <hr class="dashboard-hr2"/>
                 <h2 class="dashboard-title2">{{__("Need To Change Your Address ?")}}</h2>
@@ -123,11 +123,15 @@
       .setting-information #textbefore {
         margin-left: 0;
       }
-    </style>   
+    </style>
  @endif
 <script>
     // $.noConflict();
-
+    function submitForm(){
+        document.getElementById('userForm').disabled = true;
+        document.getElementById('editWallet').disabled = true;
+        document.getElementById('wallet').disabled = true;
+    }
 
     console.log("setting wallet *******")
     var wallet = {!! json_encode(Auth::guard('user')->user()->wallet) !!}
@@ -138,7 +142,7 @@
     });
 
     // document.getElementById("copyButton").addEventListener("click", function() {
-    
+
     // });
 
 function copyToClipboard(elem) {
@@ -168,7 +172,7 @@ function copyToClipboard(elem) {
     var currentFocus = document.activeElement;
     target.focus();
     target.setSelectionRange(0, target.value.length);
-    
+
     // copy the selection
     var succeed;
     try {
@@ -180,7 +184,7 @@ function copyToClipboard(elem) {
     if (currentFocus && typeof currentFocus.focus === "function") {
         currentFocus.focus();
     }
-    
+
     if (isInput) {
         // restore prior selection
         elem.setSelectionRange(origSelectionStart, origSelectionEnd);
@@ -270,7 +274,7 @@ function copyToClipboard(elem) {
             margin-right: 26%;
         }
 
-                
+
         .setting-information input#cur-password {
             margin-right: 16.7%;
         }
@@ -339,7 +343,7 @@ function copyToClipboard(elem) {
                 margin-right: 22%;
             }
 
-            
+
 
         }
 
@@ -358,7 +362,7 @@ function copyToClipboard(elem) {
 
     <style type="text/css">
 
-            
+
         .title-flex2 .dashboard-title2 {
             flex: 2;
         }
@@ -388,7 +392,7 @@ function copyToClipboard(elem) {
             margin-left: 26%;
         }
 
-                
+
         .setting-information input#cur-password {
             margin-left: 10.4%;
         }
@@ -410,7 +414,7 @@ function copyToClipboard(elem) {
                 margin-left: 31%;
             }
 
-                    
+
             .setting-information input#cur-password {
                 margin-left: 10.4%;
             }
@@ -431,7 +435,7 @@ function copyToClipboard(elem) {
         }
 
         @media screen and (max-width:415px){
-                 
+
             .title-flex2 .dashboard-title2 {
                 flex: 6;
                 font-size: 1rem !important
@@ -448,7 +452,7 @@ function copyToClipboard(elem) {
                 margin-bottom: 20px;
                 margin-left: 8.5% !important
             }
-         
+
             .setting-information input#cur-password {
                 margin-left: 22%;
             }
@@ -482,7 +486,7 @@ function copyToClipboard(elem) {
             }
         }
         @media screen and (max-width:321px){
-           
+
 
             .title-flex2 .dashboard-title2 {
                 flex: 7;
@@ -502,7 +506,7 @@ function copyToClipboard(elem) {
                 width: 200px;
                 margin-left: 1.5% !important;
             }
-         
+
             .setting-information input#cur-password {
                 width: 200px;
                 margin-left: 16%;

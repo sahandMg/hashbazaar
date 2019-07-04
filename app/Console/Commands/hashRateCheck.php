@@ -2,9 +2,12 @@
 
 namespace App\Console\Commands;
 
+use App\Events\Sms;
+use App\Setting;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use GuzzleHttp\Client as GuzzleClient;
+use Illuminate\Support\Facades\Cache;
 use Morilog\Jalali\Jalalian;
 use Psr\Http\Message\ResponseInterface;
 use Illuminate\Support\Facades\Mail;
@@ -41,7 +44,7 @@ class hashRateCheck extends Command
      */
     public function handle()
     {
-
+        $setting = Setting::first();
         $url = 'http://api.f2pool.com/bitcoin/mvs1995';
         $client = new GuzzleClient();
         $promise1 = $client->requestAsync('GET',$url)->then(function (ResponseInterface $response) {
@@ -49,27 +52,43 @@ class hashRateCheck extends Command
         });
         $resp = $promise1->wait();
         $hashRate = json_decode($resp,true)['hashrate'];
+        if(!Cache::has('alarmNumber')){
+            Cache::forever('alarmNumber',0);
+        }
+        if(Cache::get('alarmNumber') > 5){
+            $setting->update(['alarms' => 0]);
+            // reset the counter
+            Cache::forever('alarmNumber',0);
+
+            // calling sms event with custom message
+            $message =  "آلارم خاموش شد".Jalalian::forge(Carbon::now())->toString();
+            Sms::dispatch($message);
+
+        }
+
+    if($setting->alarms == 1){
 
         if($hashRate == 0){
 
-            $sender = "1000596446";
-            $receptor = "09387728916";
+            // calling sms event with custom message
             $message =  "ماینرها خاموش شدند ".Jalalian::forge(Carbon::now())->toString();
-            $api = new \Kavenegar\KavenegarApi("796C4E505946715933687269672B6F6B5648564562585250533251356B6B6361");
-            $api -> Send ( $sender,$receptor,$message);
-
-//            $sender = "1000596446";
-//            $receptor = "09371869568";
-//            $message = "ماینرها خاموش شدند مدیر!";
-//            $api = new \Kavenegar\KavenegarApi("796C4E505946715933687269672B6F6B5648564562585250533251356B6B6361");
-//            $api -> Send ( $sender,$receptor,$message);
+            Sms::dispatch($message);
 
             Mail::send('email.hashRateCheck',[],function($message){
                 $message->to('admin@hashbazaar.com');
                 $message->from('admin@hashbazaar.com');
                 $message->subject('Hash Rate Alllleeerrrrtttttt!!!!');
             });
+
+            Cache::forever('alarmNumber',Cache::get('alarmNumber')+1);
+
+        }elseif (round($hashRate / pow(10,12)) < 0.85 * $setting->total_th){
+
+            $message =  "تعدادی از ماینرها کم کارند یا خاموش اند ".Jalalian::forge(Carbon::now())->toString() . 'مجموع تراهش'.round($hashRate / pow(10,12));
+            Sms::dispatch($message);
         }
+    }
+
 
     }
 }

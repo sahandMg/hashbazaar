@@ -154,7 +154,7 @@
        <p style="text-align: right;">، شما {{$trans->amount_toman}} تومان جهت خرید {{$hashPower->hash}} تراهش پرداخت کرده اید       </p>
         <p style="text-align: right;">هم اکنون می توانید مقدار بیتکوین استخراج شده را از قسمت داشبورد پنل کاربری خود دنبال کنید</p>
         <p style="text-align: right;">بیتکوین استخراج شده، هنگام رسیدن به مقدار  ۰.۰۱ قابل برداشت خواهد بود</p>
-        <p style="text-align: right;">جهت برداشت بیتکوین شما می بایست در قسمت تنظیمات حساب، آدرس کیف پول بیتکوین خود را وارد کنید</p>
+        <p style="text-align: right;">جهت برداشت بیتکوین می بایست در قسمت تنظیمات حساب، آدرس کیف پول بیتکوین خود را وارد کنید</p>
     @else
          <h1>{{__("Dear investor")}}</h1>
         <p style="text-align: left;">{{__("You have invested")}} {{$trans->amount_btc}} BTC for {{$hashPower->hash}} th power.</p>

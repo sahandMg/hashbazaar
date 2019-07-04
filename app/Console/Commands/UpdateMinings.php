@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\BitHash;
+use App\Events\Sms;
 use App\Mining;
 use App\MiningReport;
 use App\Transaction;
@@ -82,74 +83,81 @@ class UpdateMinings extends Command
 //        });
 //        $resp = $promise1->wait();
         $ch = curl_init();
-        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $resp = curl_exec($ch);
         curl_close($ch);
-        $f2poolResp = json_decode($resp,true);
-        $miningValue = number_format($f2poolResp['value_last_day'],8);
+        $f2poolResp = json_decode($resp, true);
+        $miningValue = number_format($f2poolResp['value_last_day'], 8);
         $mining24 = $miningValue;
         $users = User::all();
-//        $mainTHash = $settings->total_th;
-        $mainTHash = number_format($f2poolResp['hashes_last_day']/86400/pow(10,12),3);
+        $mainTHash = $settings->total_th;
+        $todayTHash = number_format($f2poolResp['hashes_last_day'] / 86400 / pow(10, 12), 3);
         foreach ($users as $index => $user) {
-            $hashes = BitHash::where('user_id', $user->id)->where('confirmed',1)->get();
+            $hashes = BitHash::where('user_id', $user->id)->where('confirmed', 1)->get();
             if (!$hashes->isEmpty()) {
                 foreach ($hashes as $item => $hash) {
-                   // checks if contract is over or not
-                    if($hash->remained_day == 0){
-                        $hash->update(['confirmed'=> 0]);
+                    // checks if contract is over or not
+                    if ($hash->remained_day == 0) {
+                        $hash->update(['confirmed' => 0]);
                         $hash->save();
-                        DB::table('minings')->where('order_id',$hash->order_id)->update(['block'=>1]);
-                    }else{
+                        DB::table('minings')->where('order_id', $hash->order_id)->update(['block' => 1]);
+                    } else {
                         // 30 70 contracts have no ending
-                        if($user->plan_id == 1){
-                            $remainedDay = 365;
-                        }else{
+                        if ($user->plan_id == 1) {
+                            $remainedDay = 720;
+                        } else {
 
                             $remainedDay = Carbon::now()->diffInDays(Carbon::parse($hash->created_at)->addYears($hash->life));
                         }
 
-                        $hash->update(['remained_day'=>$remainedDay]);
+                        $hash->update(['remained_day' => $remainedDay]);
                         $hash->save();
                         $hashPower[$item] = $hash->hash;
-                        $maintenance_inBTC = $settings->maintenance_fee_per_th_per_day/$bitCoinPrice->price *  $hashPower[$item];
-                        if($mining24 != 0){
+                        $maintenance_inBTC = $settings->maintenance_fee_per_th_per_day / $bitCoinPrice->price * $hashPower[$item];
+                        if ($mining24 != 0) {
+                            // keeps extra bitcoins for hashbazaar
+                            if ($todayTHash >= $mainTHash) {
+                                $mining24 = $mining24 * $mainTHash / $todayTHash;
+                            }
                             // apply 30 70 contracts conditions
-                            if($user->plan_id == 1){
+                            if ($user->plan_id == 1) {
                                 $userEarn[$item] = $mining24 * ($hashPower[$item] / $mainTHash) * 0.7;
-                            }else{
+                            } elseif ($user->plan_id == 2) {
 
                                 $userEarn[$item] = $mining24 * ($hashPower[$item] / $mainTHash) - $maintenance_inBTC;
+                            } elseif ($user->plan_id == 3) {
+
+                                $userEarn[$item] = $mining24 * ($hashPower[$item] / $mainTHash);
                             }
                         }
                     }
 
                 }
-                $minings = Mining::where('user_id',$user->id)->where('block',0)->orderBy('id','desc')->get();
-                if(! $minings ->isEmpty()){
-                    foreach ($minings as $key => $mining){
-                        if($mining->block == 0){
-                            $userEarn[$key] = number_format($userEarn[$key],8);
+                $minings = Mining::where('user_id', $user->id)->where('block', 0)->orderBy('id', 'desc')->get();
+                if (!$minings->isEmpty()) {
+                    foreach ($minings as $key => $mining) {
+                        if ($mining->block == 0) {
+                            $userEarn[$key] = number_format($userEarn[$key], 8);
                             $miningReport = new MiningReport();
                             $miningReport->order_id = $mining->order_id;
                             $miningReport->mined_btc = $userEarn[$key];
-                            $miningReport->mined_usd =  $userEarn[$key] * $bitCoinPrice->price;
+                            $miningReport->mined_usd = $userEarn[$key] * $bitCoinPrice->price;
                             $miningReport->user_id = $user->id;
                             $miningReport->created_at = Carbon::now()->subDay(1);
                             $miningReport->updated_at = Carbon::now()->subDay(1);
                             $miningReport->save();
 
 
-                            $mining->update(['mined_btc'=>$userEarn[$key] + $mining->mined_btc ,'mined_usd'=> $mining->mined_usd + $userEarn[$key] * $bitCoinPrice->price ]);
+                            $mining->update(['mined_btc' => $userEarn[$key] + $mining->mined_btc, 'mined_usd' => $mining->mined_usd + $userEarn[$key] * $bitCoinPrice->price]);
                             $mining->save();
                             // creating new record in database for tomorrow mining record
 
                         }
                     }
                 }
-                $total_paid_btc = Transaction::where('user_id',$user->id)->where('status','paid')->where('checkout','in')->sum('amount_btc');
-                $user->update(['total_mining'=>$minings->sum('mined_btc'),'pending'=> $minings->sum('mined_btc') - $total_paid_btc]);
+                $total_paid_btc = Transaction::where('user_id', $user->id)->where('status', 'paid')->where('checkout', 'in')->sum('amount_btc');
+                $user->update(['total_mining' => $minings->sum('mined_btc'), 'pending' => $minings->sum('mined_btc') - $total_paid_btc]);
                 $user->save();
             }
         }
@@ -161,36 +169,22 @@ class UpdateMinings extends Command
 
         $url = "https://api-r.bitcoinchain.com/v1/status?_ga=2.23156472.371952348.1559114831-275280855.1559114831";
         $client = new GuzzleClient();
-        $promise1 = $client->requestAsync('GET',$url)->then(function (ResponseInterface $response) {
+        $promise1 = $client->requestAsync('GET', $url)->then(function (ResponseInterface $response) {
             return $response->getBody()->getContents();
         });
         $resp = $promise1->wait();
-        $newResp = json_decode($resp,true);
+        $newResp = json_decode($resp, true);
         $hashRate = new \App\hashRate();
         $hashRate->mined_btc = $miningValue;
-        $hashRate->difficulty = intval($newResp['difficulty']/(pow(10,9)));
+        $hashRate->difficulty = intval($newResp['difficulty'] / (pow(10, 9)));
         $hashRate->block_reward = $newResp['reward'];
-        $hashRate->hash_rate = number_format($f2poolResp['hashes_last_day']/86400/pow(10,12),3);
+        $hashRate->hash_rate = $todayTHash;
         $hashRate->created_at = Carbon::createFromTimestamp($newResp['time'])->addDay(-1)->toDateTimeString();
         $hashRate->save();
 
 // -------------------------
-    try{
 
-        $sender = "1000596446";
-        $receptor = "09387728916";
-        $message =  "گزارش استخراج ".'--'. Jalalian::forge(Carbon::now())->toString().'--'. 'BTC :'.$hashRate->mined_btc.'--'.' difficulty :'.$hashRate->difficulty;
-        $api = new \Kavenegar\KavenegarApi("796C4E505946715933687269672B6F6B5648564562585250533251356B6B6361");
-        $api -> Send ( $sender,$receptor,$message);
-
-    }catch(\Kavenegar\Exceptions\ApiException $e){
-        // در صورتی که خروجی وب سرویس 200 نباشد این خطا رخ می دهد
-        echo $e->errorMessage();
-    }
-    catch(\Kavenegar\Exceptions\HttpException $e){
-        // در زمانی که مشکلی در برقرای ارتباط با وب سرویس وجود داشته باشد این خطا رخ می دهد
-        echo $e->errorMessage();
-    }
-
+        $message = $message = "گزارش استخراج " . Jalalian::forge(Carbon::now())->toString()  . 'BTC :' . $hashRate->mined_btc . ' difficulty :' . $hashRate->difficulty;
+        Sms::dispatch($message);
     }
 }

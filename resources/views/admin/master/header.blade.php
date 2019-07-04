@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Collapsible sidebar using Bootstrap 4</title>
+    <title>Admin Panel</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
     <script  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" ></script>
     <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.js"></script>
@@ -128,6 +128,17 @@
                         <span style="padding-left: 20px">Site Setting</span>
                     </a>
                 </li>
+
+                @if(Request::route()->getName() == 'AdminMessage')
+                    <li  class="active">
+                @else
+                    <li>
+                        @endif
+                        <a href="{{route('AdminMessage')}}">
+                            <i class="fas fa-question"></i>
+                            <span style="padding-left: 20px">Messages</span>
+                        </a>
+                    </li>
 
                 @if(Request::route()->getName() == 'adminLogout')
                     <li  class="active">

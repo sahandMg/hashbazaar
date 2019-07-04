@@ -8,8 +8,8 @@
           content="Bitcoin mining, scrypt mining, cloud mining, hosted mining"/>
     <meta name="description"
           content="Bitcoin is the digital gold of the future & HashBazaar is the most cost effective cloud mining company on the market. Mine bitcoin through the cloud, get started today!"/>
-   <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
-    <title>Wallet Address Change</title>
+    <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
+    <title>Checkout</title>
     <style>
         body , html{
             margin: 0;
@@ -28,14 +28,14 @@
         }
 
         header img {
-             height: 40px;
+            height: 40px;
             width: auto;
             padding: 15px
         }
 
         .container  {
             width: 70%;
-            margin: 0 auto;          
+            margin: 0 auto;
         }
 
         .container .text {
@@ -46,14 +46,13 @@
         }
 
         .container  p{
-            font-family: sans-serif;
             display: block;
             margin: 0;
             margin-bottom: 20px;
             font-size: 1.2rem;
         }
         .container  h1{
-            text-align: left; 
+            text-align: left;
             font-size: 2rem;
             margin:0; mso-line-height-rule:exactly;
             margin-top: 10px;
@@ -68,7 +67,7 @@
             width: 100%;
             border-top: 3px solid orange;
             margin-top: 120px;
-            
+
         }
 
         footer a {
@@ -86,7 +85,7 @@
 
         @media screen and (max-width: 768px) {
             .container  h1{
-              font-size: 1.5rem;
+                font-size: 1.5rem;
             }
         }
         @media screen and (max-width: 576px) {
@@ -118,7 +117,7 @@
                 margin: 0 auto;
             }
             .container  h1{
-              font-size: 1.2rem;
+                font-size: 1.2rem;
             }
             .container p {
                 font-size: 0.9em;
@@ -126,25 +125,38 @@
             }
         }
     </style>
+
 </head>
 <body>
-    <header>
-        <div class="logo-header"><img src="{{asset('img/Logo_header.svg')}}" alt="logo_header"></div>
-    </header>
-    <div class="container">
-            <h1>Confirm your wallet address</h1>
-            <p style="text-align: left;">Hello, confirm your wallet address by clicking below link</p>
-            <p style="text-align: left;">New Wallet Address: <b>{{$wallet}}</b></p>
-            <p style="text-align: left;"><a href="https://hashbazaar.com/panel/setting/wallet-confirm?old={{$user->wallet->addr}}&address={{$wallet}}"> {{$wallet}}</a></p>
-    </div>
-    <footer>
+<header>
+    <div class="logo-header"><img src="{{asset('img/Logo_header.svg')}}" alt="logo_header"></div>
+</header>
+<div class="container">
 
+        <h1 style="text-align: right;">{{$user->name}} گرامی</h1>
+        <p style="text-align: right;">  <span>{{$trans->code}} </span> کد تراکنش شما </p>
+        <p style="text-align: right;">  <span>{{\Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($trans->created_at))}} </span> : تاریخ  </p>
+        <p style="text-align: right;">  مبلغ <span> {{$trans->amount_btc}}</span>  بیتکوین به کیف پول شما تحت آدرس </p>
+        <p style="text-align: right;">  {{$user->wallet->addr}}    </p>
+        <p style="text-align: right;">  .واریز شد    </p>
+
+
+</div>
+
+<footer>
+    @if(\Illuminate\Support\Facades\Config::get('app.locale') == 'fa')
+        <a href="http://hashbazaar.com" target="_blank">وب سایت</a>
+        <a href="http://hashbazaar.com/panel/dashboard" target="_blank">میزکار</a>
+        <a href="http://hashbazaar.com/faq" target="_blank">سوالات متداول</a>
+        <!--     <a href="http://blog.hashbazaar.com/" target="_blank">Blog</a>
+         -->    <a href="https://www.instagram.com/hashbazaar/" target="_blank">اینستاگرام</a>
+    @else
         <a href="http://hashbazaar.com" target="_blank"> Website</a>
         <a href="http://hashbazaar.com/panel/dashboard" target="_blank">Dashboard</a>
         <a href="http://hashbazaar.com/faq" target="_blank">FAQ</a>
         <a href="http://blog.hashbazaar.com/" target="_blank">Blog</a>
         <a href="https://www.instagram.com/hashbazaar/" target="_blank">Instagram</a>
-
-    </footer>
+    @endif
+</footer>
 </body>
 </html>

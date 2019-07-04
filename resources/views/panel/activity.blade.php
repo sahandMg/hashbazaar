@@ -19,7 +19,6 @@ foreach ($hashes as $key=> $hash){
 
 ?>
 
-
 <div  class="panel-container activity-container"  onclick="hideMe()">
     <h2 class="text-center">{{__("Recent Activities")}}</h2>
     <div class="purchases">
@@ -38,7 +37,7 @@ foreach ($hashes as $key=> $hash){
                </thead>
                <tbody>
                @foreach($hashes as $key=>$hash)
-                   @if(Config::get('app.loclale') == 'fa')
+                   @if(Config::get('app.locale') == 'fa')
                 <tr>
                     <td>
 

@@ -75,6 +75,12 @@
             <input class="form-control" id="paystar_active" name="paystar_active" type="text"  placeholder="{{$setting->paystar_active}}">
         </div>
 
+        <div class="form-group">
+            <label for="alarms">alarms</label>
+            <input class="form-control" id="alarms" name="alarms" type="text"  placeholder="{{$setting->alarms}}">
+        </div>
+
+
         <button type="submit" class="btn btn-primary">ویرایش </button>
     </form>
 

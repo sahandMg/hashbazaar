@@ -2,12 +2,20 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="210ba418-0ff9-4f7d-9b9c-29710714eaf4" name="Test" url="http://193.176.241.212">
+      <webServer id="210ba418-0ff9-4f7d-9b9c-29710714eaf4" name="Hashbazaar_arvan" url="http://193.176.241.212">
         <fileTransfer host="193.176.241.212" port="22" rootFolder="/var/www/html/hashbazaar" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
           <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="0682938e-7e12-4a6d-b80d-b51fc93161b1" name="hashbazaarFtp" url="http://148.251.233.215">
+        <fileTransfer host="148.251.233.215" port="21" rootFolder="/main">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
         </fileTransfer>
       </webServer>
     </option>

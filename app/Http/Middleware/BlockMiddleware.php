@@ -18,7 +18,7 @@ class BlockMiddleware
     {
         if(Auth::guard('user')->check() ){
             if(Auth::guard('user')->user()->block == 1 ){
-
+                Auth::guard('user')->logout();
                 return response()->view('errors.block');
             }
         }

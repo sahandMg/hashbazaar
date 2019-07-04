@@ -53,7 +53,7 @@ class AuthController extends Controller
         ];
         event(new \App\Events\ReferralQuery(Auth::user()));
         Mail::send('email.thanks',$data,function($message) use($data){
-            $message->from ('Admin@HashBazaar');
+            $message->from ('Admin@HashBazaar.com');
             $message->to ($data['email']);
             $message->subject ('Subscription Email');
         });
@@ -97,7 +97,8 @@ class AuthController extends Controller
             'name' => 'required',
             'email'=>'required|email|unique:users',
             'password'=> 'required',
-            'confirm_password' => 'required|same:password'
+            'confirm_password' => 'required|same:password',
+            'captcha'=>'required|captcha'
 
         ]);
         $user = new User();
@@ -129,12 +130,12 @@ class AuthController extends Controller
         ];
 
         Mail::send('email.newUser',['user'=>$user],function($message) use($data){
-            $message->from ('Admin@HashBazaar');
+            $message->from ('Admin@HashBazaar.com');
             $message->to ('info@hashbazaar.com');
             $message->subject ('New User');
         });
         Mail::send('email.thanks',$data,function($message) use($data){
-            $message->from ('Admin@HashBazaar');
+            $message->from ('Admin@HashBazaar.com');
             $message->to ($data['email']);
             $message->subject ('Subscription Email');
         });
@@ -152,7 +153,8 @@ class AuthController extends Controller
 
         $this->validate($request,[
             'email'=> 'required|email',
-            'password'=>'required|min:6'
+            'password'=>'required|min:6',
+            'captcha'=>'required|captcha'
         ]);
 
         if(Auth::guard('user')->attempt(['email'=>$request->email,'password'=>$request->password],true)){
@@ -242,12 +244,12 @@ class AuthController extends Controller
         event(new \App\Events\ReferralQuery($user));
         Auth::guard('user')->login($user);
         Mail::send('email.newUser',['user'=>$user],function($message) use($data){
-            $message->from ('Admin@HashBazaar');
+            $message->from ('Admin@HashBazaar.com');
             $message->to ('info@hashbazaar.com');
             $message->subject ('New User');
         });
         Mail::send('email.thanks',$data,function($message) use($data){
-            $message->from ('Admin@HashBazaar');
+            $message->from ('Admin@HashBazaar.com');
             $message->to ($data['email']);
             $message->subject ('Subscription Email');
         });
@@ -275,7 +277,7 @@ class AuthController extends Controller
         $user->password = bcrypt($pass);
         $user->save();
         Mail::send('email.reset_password',['pass'=>$pass,'user'=>$user],function($message) use($user){
-            $message->from ('Admin@HashBazaar');
+            $message->from ('Admin@HashBazaar.com');
             $message->to ($user->email);
             $message->subject ('Password Reset');
         });

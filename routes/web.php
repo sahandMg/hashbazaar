@@ -86,17 +86,23 @@ Route::get('f2pool',function (){
     });
     $resp = $promise1->wait();
 
-
+    return json_decode($resp,true);
 
 });
 
 Route::get('test',function (){
 
-    $mining = DB::table('minings')->where('user_id',1)->where('block',0)->get();
-    $total_paid_btc = Transaction::where('user_id',1)->where('status','paid')->where('checkout','in')->sum('amount_btc');
-    $pending =  $mining->sum('mined_btc') - $total_paid_btc;
-    dd($total_paid_btc,$mining->sum('mined_btc'),$pending);
+    dd(\Illuminate\Support\Facades\Cache::get('alarmNumber'));
+    $user = \App\User::find(1);
+    $data = ['trans'=>Transaction::find(1),'user'=> \App\User::find(1),'email'=>$user->email];
+    Mail::send('email.checkout',$data , function ($message) use ($data) {
+        $message->from('Admin@HashBazaar.com');
+        $message->to($data['email']);
+        $message->subject('خرید تراهش');
 
+    });
+
+    return 'sent';
 });
 
 Route::get('redirect',function (){
@@ -115,20 +121,55 @@ Route::get('elec',function (){
 
 Route::get('sms',function (\Illuminate\Http\Request $request) {
 
-    $hashRate = \Illuminate\Support\Facades\DB::table('hash_rates')->first();
-    $sender = "1000596446";
-    $receptor = "09387728916";
-    $message =  "گزارش استخراج ".'<br>'. Jalalian::forge(Carbon::now())->toString().'<br>'. 'BTC :'.$hashRate->mined_btc.'<br>'.' difficulty :'.$hashRate->difficulty;
-    $api = new \Kavenegar\KavenegarApi("796C4E505946715933687269672B6F6B5648564562585250533251356B6B6361");
-    $api -> Send ( $sender,$receptor,$message);
+
+
+    try{
+        $api = new \Kavenegar\KavenegarApi( "796C4E505946715933687269672B6F6B5648564562585250533251356B6B6361" );
+        $sender = "10008000800600";
+        $message = "خدمات پیام کوتاه کاوه نگار";
+        $receptor = array("09387728916","09351635933");
+        $api->Send($sender,$receptor,$message);
+
+    }
+    catch(\Kavenegar\Exceptions\ApiException $e){
+        // در صورتی که خروجی وب سرویس 200 نباشد این خطا رخ می دهد
+        echo $e->errorMessage();
+    }
+    catch(\Kavenegar\Exceptions\HttpException $e){
+        // در زمانی که مشکلی در برقرای ارتباط با وب سرویس وجود داشته باشد این خطا رخ می دهد
+        echo $e->errorMessage();
+    }
+
+
+//    $url = 'https://hashbazaar.com/ReceiveCallbackUrl';
+//    $fields = [
+//        'sender'=>'10008000800600',
+//        'to'=>'09387728916',
+//        'message'=> $message =  "سلام",
+//        'messageid'=>2
+//    ];
+//    $ch = curl_init();
+//    curl_setopt($ch,CURLOPT_URL, $url);
+//    curl_setopt($ch,CURLOPT_POST, count($fields));
+//    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+//    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+//    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+//    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//    $result = curl_exec($ch);
+//    curl_close($ch);
+
 
 });
 
-Route::get('mail3',function (){
+Route::get('ReceiveCallbackUrl',function (\Illuminate\Http\Request $request) {
 
-    $hashPower = BitHash::first();
-    $trans = Transaction::first();
-    return view('email.thanks',compact('hashPower','trans'));
+
+});
+
+Route::get('captcha-refresh',function (){
+
+    $captcha = \Mews\Captcha\Facades\Captcha::create();
+    return Captcha::src();
 
 });
 
@@ -312,7 +353,11 @@ Route::group(['prefix' => '@admin','middleware'=>'admin'], function () {
 
     Route::get('logout',['as'=>'adminLogout','uses'=>'AdminController@adminLogout']);
 
+    Route::get('message',['as'=>'AdminMessage','uses'=>'AdminController@message']);
 
+    Route::post('message',['as'=>'AdminMessage','uses'=>'AdminController@post_message']);
+
+    Route::post('delete-message',['as'=>'deleteMessage','uses'=>'AdminController@post_deleteMessage']);
 
 //   Voyager::routes();
 });

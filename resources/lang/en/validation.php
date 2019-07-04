@@ -139,6 +139,10 @@ return [
         'confirm' => [
             'required' => 'please confirm your password',
             'same'  => 'password not matches'
+        ],
+        'captcha' => [
+            'required' => 'Please fill captcha',
+            'captcha' => 'wrong security code'
         ]
     ],
 

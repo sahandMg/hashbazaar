@@ -2,13 +2,16 @@
 
 namespace App\Console\Commands;
 
+use App\BitCoinPrice;
 use App\BitHash;
 use App\Events\Sms;
 use App\Mining;
 use App\MiningReport;
+use App\Setting;
 use App\Transaction;
 use App\User;
 use GuzzleHttp\Client as GuzzleClient;
+use Illuminate\Support\Facades\Cache;
 use Morilog\Jalali\Jalalian;
 use Psr\Http\Message\ResponseInterface;
 use Carbon\Carbon;
@@ -52,15 +55,16 @@ class UpdateMinings extends Command
     public function handle()
     {
         // getting realtime bitcoin price
-        $settings = DB::table('settings')->first();
-        $options = array('http' => array('method' => 'GET'));
-        $context = stream_context_create($options);
-        $contents = file_get_contents('https://www.blockonomics.co/api/price?currency=USD', false, $context);
-        $bitCoinPrice = json_decode($contents);
-        if ($bitCoinPrice->price == 0) {
-
-            return 'bitcoin api failed';
-        }
+        $settings = Setting::first();
+//        $options = array('http' => array('method' => 'GET'));
+//        $context = stream_context_create($options);
+//        $contents = file_get_contents('https://www.blockonomics.co/api/price?currency=USD', false, $context);
+        $instant = new BitCoinPrice();
+        $bitCoinPrice = $instant->getPrice();
+//        if ($bitCoinPrice->price == 0) {
+//
+//            return 'bitcoin api failed';
+//        }
 // getting total minings from antpool
 //        $userId = '13741374';
 //        $apiKey = '7b07bc4b507b4d7584770f8ddddd02f1';
@@ -93,6 +97,8 @@ class UpdateMinings extends Command
         $users = User::all();
         $mainTHash = $settings->total_th;
         $todayTHash = number_format($f2poolResp['hashes_last_day'] / 86400 / pow(10, 12), 3);
+        $updateFlag = 0;
+        $todayProfit = 0;
         foreach ($users as $index => $user) {
             $hashes = BitHash::where('user_id', $user->id)->where('confirmed', 1)->get();
             if (!$hashes->isEmpty()) {
@@ -114,11 +120,32 @@ class UpdateMinings extends Command
                         $hash->update(['remained_day' => $remainedDay]);
                         $hash->save();
                         $hashPower[$item] = $hash->hash;
-                        $maintenance_inBTC = $settings->maintenance_fee_per_th_per_day / $bitCoinPrice->price * $hashPower[$item];
+                        $maintenance_inBTC = $settings->maintenance_fee_per_th_per_day / $bitCoinPrice * $hashPower[$item];
                         if ($mining24 != 0) {
                             // keeps extra bitcoins for hashbazaar
                             if ($todayTHash >= $mainTHash) {
+                               // update hashbazaar benefit
+                                if($updateFlag == 0){
+
+                                    $settings->update(['total_benefit'=> $settings->total_benefit +
+                                        $mining24 * (1 - $mainTHash / $todayTHash ) +
+                                        0.3 * $mining24 * ($mainTHash / $todayTHash) ]);
+                                    $todayProfit = number_format($mining24 * (1 - $mainTHash / $todayTHash ) + 0.3 * $mining24 * ($mainTHash / $todayTHash),8);
+                                    $updateFlag = 1;
+                                }
+
                                 $mining24 = $mining24 * $mainTHash / $todayTHash;
+                            }
+                            // if today th is less than main th
+                            elseif ($updateFlag == 0){
+                                // reducing our benefit and keeping the change for the users
+                                $compensationValue = $mining24 * ($mainTHash / $todayTHash - 1);
+                                $settings->update(['total_benefit'=> number_format($settings->total_benefit +
+                                    0.3 * $mining24 - $compensationValue,8)  ]);
+                                $todayProfit = number_format( 0.3 * $mining24 - $compensationValue,8);
+                                $updateFlag = 1;
+                                // boost real mining value up when main th is more than today th
+                                $mining24 = $mining24 + $compensationValue;
                             }
                             // apply 30 70 contracts conditions
                             if ($user->plan_id == 1) {
@@ -142,14 +169,14 @@ class UpdateMinings extends Command
                             $miningReport = new MiningReport();
                             $miningReport->order_id = $mining->order_id;
                             $miningReport->mined_btc = $userEarn[$key];
-                            $miningReport->mined_usd = $userEarn[$key] * $bitCoinPrice->price;
+                            $miningReport->mined_usd = $userEarn[$key] * $bitCoinPrice;
                             $miningReport->user_id = $user->id;
                             $miningReport->created_at = Carbon::now()->subDay(1);
                             $miningReport->updated_at = Carbon::now()->subDay(1);
                             $miningReport->save();
 
 
-                            $mining->update(['mined_btc' => $userEarn[$key] + $mining->mined_btc, 'mined_usd' => $mining->mined_usd + $userEarn[$key] * $bitCoinPrice->price]);
+                            $mining->update(['mined_btc' => $userEarn[$key] + $mining->mined_btc, 'mined_usd' => $mining->mined_usd + $userEarn[$key] * $bitCoinPrice]);
                             $mining->save();
                             // creating new record in database for tomorrow mining record
 
@@ -179,12 +206,22 @@ class UpdateMinings extends Command
         $hashRate->difficulty = intval($newResp['difficulty'] / (pow(10, 9)));
         $hashRate->block_reward = $newResp['reward'];
         $hashRate->hash_rate = $todayTHash;
+        $hashRate->today_benefit = $todayProfit;
         $hashRate->created_at = Carbon::createFromTimestamp($newResp['time'])->addDay(-1)->toDateTimeString();
         $hashRate->save();
 
-// -------------------------
+        $settings->update(['total_mining'=> $settings->total_mining + $miningValue]);
 
-        $message = $message = "گزارش استخراج " . Jalalian::forge(Carbon::now())->toString()  . 'BTC :' . $hashRate->mined_btc . ' difficulty :' . $hashRate->difficulty;
+// -------------------------
+        // resetting alarm counter every day
+        Cache::forever('alarmNumber',0);
+
+        $message = $message = "گزارش استخراج " . Jalalian::forge(Carbon::now())->toString()
+            . ' ماینینگ' . $hashRate->mined_btc
+            . ' سختی ' . $hashRate->difficulty
+            .' میانگین تراهش '. $todayTHash
+            . ' سود امروز '.$todayProfit
+            . ' سود کل '.number_format($settings->total_benefit,8) ;
         Sms::dispatch($message);
     }
 }

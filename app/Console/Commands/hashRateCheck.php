@@ -55,14 +55,18 @@ class hashRateCheck extends Command
         if(!Cache::has('alarmNumber')){
             Cache::forever('alarmNumber',0);
         }
-        if(Cache::get('alarmNumber') > 5){
+        if(Cache::get('alarmNumber') >= 5){
             $setting->update(['alarms' => 0]);
             // reset the counter
             Cache::forever('alarmNumber',0);
 
             // calling sms event with custom message
-            $message =  "آلارم خاموش شد".Jalalian::forge(Carbon::now())->toString();
-            Sms::dispatch($message);
+            $message =  "ماینر ها خاموش اند. آلارم خاموش شد".Jalalian::forge(Carbon::now())->toString();
+            $api = new \Kavenegar\KavenegarApi( "796C4E505946715933687269672B6F6B5648564562585250533251356B6B6361" );
+//            $sender = "10004346";
+            $sender = "10008000800600";
+            $receptor = "09387728916";
+            $api->Send($sender,$receptor,$message);
 
         }
 
@@ -72,7 +76,11 @@ class hashRateCheck extends Command
 
             // calling sms event with custom message
             $message =  "ماینرها خاموش شدند ".Jalalian::forge(Carbon::now())->toString();
-            Sms::dispatch($message);
+            $api = new \Kavenegar\KavenegarApi( "796C4E505946715933687269672B6F6B5648564562585250533251356B6B6361" );
+//            $sender = "10004346";
+            $sender = "10008000800600";
+            $receptor = "09387728916";
+            $api->Send($sender,$receptor,$message);
 
             Mail::send('email.hashRateCheck',[],function($message){
                 $message->to('admin@hashbazaar.com');
@@ -85,7 +93,7 @@ class hashRateCheck extends Command
         }elseif (round($hashRate / pow(10,12)) < 0.85 * $setting->total_th){
 
             $message =  "تعدادی از ماینرها کم کارند یا خاموش اند ".Jalalian::forge(Carbon::now())->toString() . 'مجموع تراهش'.round($hashRate / pow(10,12));
-            Sms::dispatch($message);
+//            Sms::dispatch($message);
         }
     }
 

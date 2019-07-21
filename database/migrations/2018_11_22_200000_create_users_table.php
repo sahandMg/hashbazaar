@@ -33,7 +33,7 @@ class CreateUsersTable extends Migration
             $table->string('total_mining')->default(0);
             $table->string('pending')->default(0);
             $table->unsignedTinyInteger('plan_id')->default(2);
-//            $table->foreign('period_id')->references('id')->on('periods');
+            $table->boolean('verified')->default(false);
             $table->rememberToken();
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();

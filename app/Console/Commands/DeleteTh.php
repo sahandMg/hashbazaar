@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\BitHash;
 use App\Mining;
 use App\Setting;
+use App\Transaction;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
@@ -50,7 +51,10 @@ class DeleteTh extends Command
             if (Carbon::parse($unpaid->created_at)->diffInHours(Carbon::now()) > 10) {
 
                 $unpaid->delete();
+
+                Transaction::where('code',$unpaid->order_id)->where('checkout','out')->delete();
             }
+
         }
 
         foreach ($unpaidMinings as $unpaidMining) {

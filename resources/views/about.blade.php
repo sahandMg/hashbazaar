@@ -1,6 +1,9 @@
 @extends('master.layout')
+@section('title')
+    <title>{{__("About HashBazaar")}}</title>
+@endsection
 @section('content')
-  
+
   <div class="container about-us-container" >
   	 <h1 class="text-center">{{__("About us")}}</h1>
   	 <p>{{__("Hash Bazaar is a profitable bazaar for purchasing your favorite amount of hash power.")}}</p>

@@ -109,19 +109,25 @@
         <div class="container p-5">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
+                    @include('formError')
                     <form id="contactForm" class="contact-form" onsubmit="checkForm()" method="POST" action="{{route('message')}}">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
 
-                        <div class="form-group fontTheme"><input required class="form-control" type="text" name="name"
+                        <div class="form-group fontTheme"><input pattern='[a-zA-Z0-9 آ ا ب پ ت ث ج چ ح خ د ذ ر ز ژ س ش ص ض ط ظ ع غ ف ق ک گ ل م ن و ه ی]+'  required class="form-control" type="text" name="name"
                                                                  placeholder="{{__('name')}}" id="nameTextBox"></div>
                         <div class="form-group fontTheme"><input  required class="form-control" type="email" name="email"
                                                                  placeholder="{{__('email')}}" id="emailTextBox"></div>
                         <div class="form-group fontTheme"><textarea required class="form-control mx-auto" name="message"
                                                                     placeholder="{{__('Message')}}" id="messageTextBox"
                                                                     rows="5"></textarea></div>
+
+                        <div class="form-group fontTheme">  <a onclick="refreshCaptcha(event)" style="cursor: pointer;">{{Captcha::img()}}</a></div>
+
+                        <div class="form-group fontTheme"><input  required class="form-control" type="text" name="captcha"
+                                                                  placeholder="{{__('Security Code')}}" id="emailTextBox"></div>
+
                         <div class="form-group fontTheme">
                             <button id="submit" class="btn btn-primary round-button-com" type="submit">{{__('SUBMIT')}}</button>
-                            <button hidden class="btn btn-primary round-button-com" type="button">{{__('Sending ...')}}</button>
                         </div>
                     </form>
                 </div>
@@ -292,15 +298,20 @@
     </style>
     <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="792f282f-edde-46b8-8b02-d38ca5cb92c2";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
     <script type="text/javascript">
+        function refreshCaptcha(e){
+            var element = e;
+            axios.get('captcha-refresh').then(function(response){
+                element.target.src = response.data
 
+            });
+        }
 
         function btnHidden(e){
             e.target.hidden = true
             e.target.nextElementSibling.hidden = false
         }
         function checkForm() {
-            document.getElementById('submit').hidden = true;
-            document.getElementById('submit').nextElementSibling.hidden = false;
+            document.getElementById('submit').disabled = true;
         }
 
         // Get the modal

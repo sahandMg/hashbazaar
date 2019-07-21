@@ -17,6 +17,7 @@ class CreateHashRatesTable extends Migration
             $table->increments('id');
             $table->float('hash_rate');
             $table->float('mined_btc');
+            $table->double('today_benefit',12,8)->nullable();
             $table->float('block_reward');
             $table->float('difficulty');
             $table->timestamps();

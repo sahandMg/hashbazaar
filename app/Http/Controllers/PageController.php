@@ -29,11 +29,15 @@ class PageController extends Controller
         }
     }
 /*
-Gets user message for form
+    Index Page Contact Form
 */
     public function message(Request $request,Message $message){
 
-        $this->validate($request,['name'=>'required','email'=>'required|email','message'=>'required']);
+        $this->validate($request,['name'=>'required'
+            ,'email'=>'required|email'
+            ,'message'=>'required',
+            'captcha'=>'required|captcha'
+        ]);
 
         if($request->has('name')){
 

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Http\Helpers;
 use App\Jobs\subscriptionMailJob;
 use App\User;
+use App\VerifyUser;
 use Laravel\Socialite\Facades\Socialite;
 use Stevebauman\Location\Facades\Location;
 use Illuminate\Http\Request;
@@ -117,31 +119,95 @@ class AuthController extends Controller
         $user->code = uniqid('hashBazaar_');
         $user->password = Hash::make($request->password);
         $user->reset_password = str_random(10);
-        // $user->plan_id = DB::table('plans')->where('name',$request->plan)->first()->id;
-        // $user->period_id = DB::table('periods')->where('name',$request->period)->first()->id;
         $user->save();
 //        subscriptionMailJob::dispatch($user->email,$user->code);
-        Auth::guard('user')->login($user);
-
-        event(new \App\Events\ReferralQuery(Auth::guard('user')->user()));
+        event(new \App\Events\ReferralQuery($user));
         $data = [
             'code'=> $user->code,
             'email'=>$user->email
         ];
+        $token = str_random(40);
+        VerifyUser::create([
+            'user_id' => $user->id,
+            'token' => $token
+        ]);
+
+        Mail::send('email.VerifyEmail',['user'=>$user],function($message) use($data){
+            $message->from ('Admin@HashBazaar.com');
+            $message->to ($data['email']);
+            $message->subject ('فعال سازی حساب');
+        });
 
         Mail::send('email.newUser',['user'=>$user],function($message) use($data){
             $message->from ('Admin@HashBazaar.com');
             $message->to ('info@hashbazaar.com');
             $message->subject ('New User');
         });
+
+        session(['pop'=>1]);
+        Session::flash('message', 'ایمیل فعال سازی حساب ارسال شد. درصورت دریافت نکردن ایمیل رو ارسال مجدد کلیک کنید');
+        Session::put('userToken', $token);
+        return redirect()->route('VerifyUserPage');
+    }
+  // redirect users to verification page for sending verification link again
+    public function VerifyUserPage(){
+
+        $token = Session::get('userToken');
+        if(!$token){
+            return redirect()->route('login');
+        }
+        $user = VerifyUser::where('token',$token)->first()->user;
+        if(is_null($user)){
+            return 'Error User';
+        }
+        return view('auth.emailVerification',compact('token'));
+    }
+// verifying user email
+    public function VerifyUser(Request $request){
+
+        $user = VerifyUser::where('token',$request->token)->first()->user;
+
+        if(is_null($user)){
+            return 'Corrupt Link';
+        }
+        $user->update(['verified'=>1]);
+        $data = [
+            'code'=> $user->code,
+            'email'=>$user->email
+        ];
+
         Mail::send('email.thanks',$data,function($message) use($data){
             $message->from ('Admin@HashBazaar.com');
             $message->to ($data['email']);
             $message->subject ('Subscription Email');
         });
-
-        session(['pop'=>1]);
+        Auth::guard('user')->login($user);
         return redirect()->route('dashboard');
+    }
+
+    // resend verification link
+    public function ResendVerification(Request $request){
+
+        $this->validate($request,[
+            'captcha'=>'required|captcha'
+        ]);
+        $token = $request->userToken;
+        $VerifyUser = VerifyUser::where('token',$token)->first();
+        $user = $VerifyUser->user;
+        $VerifyUser->update(['token'=>str_random(40)]);
+        $data = [
+            'email'=>$user->email,
+            'token'=>$user->verifyUser->token,
+        ];
+        Mail::send('email.VerifyEmail',['user'=>$user],function($message) use($data){
+            $message->from ('Admin@HashBazaar.com');
+            $message->to ($data['email']);
+            $message->subject ('فعال سازی حساب');
+        });
+        Session::flash('message','لینک فعال سازی ارسال شد');
+
+        return redirect()->route('login');
+
     }
 
     public function login(Request $request){
@@ -158,6 +224,16 @@ class AuthController extends Controller
         ]);
 
         if(Auth::guard('user')->attempt(['email'=>$request->email,'password'=>$request->password],true)){
+
+            if(Auth::guard('user')->user()->verified == 0){
+
+                $token = Auth::guard('user')->user()->verifyUser->token;
+                Auth::guard('user')->logout();
+                Session::flash('error','حساب کاربری شما فعال نیست. با مراجعه به لینک ارسال شده به ایمیلتان، اقدام به فعال سازی حساب خود کنید');
+                Session::flash('userToken',$token);
+                return redirect()->route('VerifyUserPage');
+            }
+
             try{
 
                 $country = strtolower(Location::get(Helpers::userIP())->countryCode);
@@ -243,6 +319,9 @@ class AuthController extends Controller
         ];
         event(new \App\Events\ReferralQuery($user));
         Auth::guard('user')->login($user);
+
+        $user->update(['verified'=>1]);
+
         Mail::send('email.newUser',['user'=>$user],function($message) use($data){
             $message->from ('Admin@HashBazaar.com');
             $message->to ('info@hashbazaar.com');

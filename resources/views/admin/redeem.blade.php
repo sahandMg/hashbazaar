@@ -5,9 +5,9 @@
             <tr>
                 <th>ID</th>
                 <th>Transaction ID</th>
-                <th>User</th>
+                <th>Name</th>
                 <th>Amount</th>
-                <th>addr</th>
+                <th>wallet</th>
                 <th>Time</th>
 
             </tr>
@@ -17,11 +17,9 @@
             <tr v-for="(transaction, index) in transactions">
                 <td>@{{transaction.id}}</td>
                 <td>@{{transaction.code}}</td>
-                <td>@{{transaction.user_id}}</td>
-
+                <td>@{{transaction.name}}</td>
                 <td>@{{parseFloat(transaction.amount_btc).toFixed(8)}}</td>
                 <td>@{{transaction.addr}}</td>
-
                 <td>@{{transaction.created_at}}</td>
             </tr>
 

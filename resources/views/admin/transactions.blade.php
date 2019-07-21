@@ -1,12 +1,15 @@
 @extends('admin.master.header')
 @section('content')
+    <?php
+            $users = \App\User::all();
+    ?>
     <table class="table table-striped">
         <thead>
         <tr>
             <th>ID</th>
             <th>OrderID</th>
             <th>TH/S</th>
-            <th>User</th>
+            <th>User/ID</th>
             <th>Country</th>
             <th>Amount(BTC)</th>
             <th>Amount(Toman)</th>
@@ -24,15 +27,16 @@
                 <td>{{$transaction->id}}</td>
                 <td>{{$transaction->code}}</td>
                 <?php
-                $query = DB::table('bit_hashes')->where('order_id',$transaction->code)->first();
-                if(!is_null($query)){
-                    $query = $query->hash;
-                }else{
-                    $query ='Deleted';
-                }
+                    $query = DB::table('bit_hashes')->where('order_id',$transaction->code)->first();
+                    if(!is_null($query)){
+                        $query = $query->hash;
+                    }else{
+                        $query ='--';
+                    }
                 ?>
                 <td> {{$query}} </td>
-                <td>{{$transaction->user_id}}</td>
+
+                <td> {{$users->find($transaction->user_id)->name}} / {{$transaction->user_id}} </td>
                 <td><img width="25" height="20" src="../flags/{{strtolower(substr($transaction->country,0,2))}}.svg" alt="{{$transaction->country}}"></td>
                 @if(is_null($transaction->amount_btc)) <td>--</td> @else <td>{{$transaction->amount_btc}}</td> @endif
                 @if(is_null($transaction->amount_toman)) <td>--</td> @else <td>{{$transaction->amount_toman}}</td> @endif
@@ -72,34 +76,10 @@
 
             created:function () {
 
-                this.getTrans()
 
             },
             methods:{
 
-                getTrans:function () {
-
-                    vm = this;
-
-
-                    axios.get({!! json_encode(route('adminGetTransactions')) !!}).then(function (response) {
-
-                        vm.transactions = response.data;
-
-                    });
-
-                    setTimeout(function () {
-
-                        vm.getTrans()
-                    },10000);
-//
-//                for(i=0 ; i< vm.transactions.length; i++){
-//
-//                    document.getElementById('confirmed'+i).innerHTML = vm.transactions[i]['txConfirmed'];
-//                    document.getElementById('unrecognised'+i).innerHTML = vm.transactions[i]['unrecognised'];
-//                    document.getElementById('processed'+i).innerHTML = vm.transactions[i]['processed'];
-//                }
-                },
                 readFlag: function (country) {
 
                     this.flag = '../flags/'+country.substr(0,2).toLowerCase()+'.svg'

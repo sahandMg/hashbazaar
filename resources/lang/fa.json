@@ -166,5 +166,9 @@
   "collaboration":"مشارکت در فارم",
   "TransId":"کد تراکنش",
   "Sending ...":"... درحال ارسال",
-  "Security Code":"کد امنیتی"
+  "Security Code":"کد امنیتی",
+  "Account Verification":"تایید حساب",
+  "Send Verification link":"ارسال مجدد لینک فعال سازی",
+  "HashBazaar - Cloud Mining Company":"هش بازار - استخراج ابری بیتکوین",
+  "About HashBazaar":"درباره هش بازار"
 }

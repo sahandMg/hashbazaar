@@ -30,9 +30,10 @@ class SendSms
         try{
             $api = new \Kavenegar\KavenegarApi( "796C4E505946715933687269672B6F6B5648564562585250533251356B6B6361" );
 //            $sender = "10004346";
+//            09371869568
             $sender = "10008000800600";
             $message =  $event->message;
-            $receptor = array("09387728916","09371869568");
+            $receptor = array("09387728916","09371869568","09126060995");
             $api->Send($sender,$receptor,$message);
 
         }

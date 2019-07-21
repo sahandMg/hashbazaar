@@ -1,25 +1,34 @@
 <?php
-
 namespace App;
-
+use Delatbabel\Elocrypt\Elocrypt;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Auth;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 //class User extends \TCG\Voyager\Models\User
 {
     use Notifiable;
-
+//    use Elocrypt;
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-     protected $guarded = [];
-    protected $fillable = ['plan_id','email','password','ip','country','block','avatar','total_mining','pending'];
+//    protected $encrypts = [
+//        'name','code','email'
+//    ];
+    protected $guarded = [];
+    protected $fillable = ['plan_id','email','password','ip','country','block','avatar','total_mining','pending','verified'];
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
+    public function verifyUser(){
+        return $this->hasOne(VerifyUser::class);
+    }
 
     public function minings(){
 
@@ -30,15 +39,13 @@ class User extends Authenticatable
 
         return $this->hasMany(Transaction::class);
     }
+
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
-
     public function referral(){
 
         return $this->hasOne(Referral::class);

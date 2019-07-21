@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\BitHash;
 use App\CryptpBox\lib\Cryptobox;
+use App\hashRate;
 use App\Mining;
 use App\MiningReport;
 use App\Redeem;
@@ -46,7 +47,8 @@ class AdminController extends Controller
 
         $this->validate($request, [
             'email' => 'required',
-            'password' => 'required|min:6'
+            'password' => 'required|min:6',
+            'captcha' => 'required|captcha'
         ]);
 
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
@@ -103,7 +105,12 @@ class AdminController extends Controller
     public function adminGetRedeems()
     {
 
-        return $trans = Redeem::get();
+        $transactions = Redeem::orderBy('created_at','desc')->get();
+        foreach ($transactions as $key => $transaction){
+             $name = User::find($transaction->user_id)->name;
+            $transaction->name = $name;
+        }
+        return $transactions;
     }
 
     /*
@@ -113,10 +120,7 @@ class AdminController extends Controller
     {
 
 
-        $this->getConfirmedPayment();
 
-        $transactions = DB::table('crypto_payments')->orderBy('PaymentID', 'desc')->get()->toArray();
-        return $transactions;
     }
 
     private function getConfirmedPayment()
@@ -364,4 +368,48 @@ class AdminController extends Controller
         $message = DB::table('messages')->where('id',$request->id)->delete();
         return 200;
     }
+
+    public function chartData(){
+
+        $data = [];
+        $daysNumber = date('t');
+        $queries = hashRate::orderBy('created_at','desc')->get()->take($daysNumber);
+        $offset = 2;
+        for($i = $offset ; $i <= $daysNumber ; $i++){
+            $time = Carbon::now()->subDay($i);
+
+                if(count($queries) > 0){
+                    try{
+
+                        $data[$i-$offset] = ['time'=>$time->format('d M') , 'mined'=> $queries[$i-$offset]->mined_btc];
+                    }catch (\Exception $exception){
+                        $data[$i-$offset] = ['time'=>$time->format('d M') , 'mined'=> 0];
+                    }
+                }
+        }
+        $data = array_reverse( array_values($data)) ;
+        return $data;
+    }
+
+    public function chartDataProfit(){
+
+        $data = [];
+        $daysNumber = date('t');
+        $queries = hashRate::orderBy('created_at','desc')->get()->take($daysNumber);
+        $offset = 2;
+        for($i = $offset ; $i <= $daysNumber ; $i++){
+            $time = Carbon::now()->subDay($i);
+            if(count($queries) > 0){
+                try{
+
+                    $data[$i-$offset] = ['time'=>$time->format('d M') , 'benefit'=> $queries[$i-$offset]->today_benefit];
+                }catch (\Exception $exception){
+                    $data[$i-$offset] = ['time'=>$time->format('d M') , 'benefit'=> 0];
+                }
+            }
+        }
+        $data = array_reverse( array_values($data)) ;
+        return $data;
+    }
+
 }

@@ -131,18 +131,18 @@ return [
         ],
 
         'password' => [
-            'required' => 'please enter your password'
+            'required' => 'Please enter your password'
         ],
         'newpass' => [
-            'required' => 'please enter your new password'
+            'required' => 'Please enter your new password'
         ],
         'confirm' => [
-            'required' => 'please confirm your password',
-            'same'  => 'password not matches'
+            'required' => 'Please confirm your password',
+            'same'  => 'Password not matches'
         ],
         'captcha' => [
             'required' => 'Please fill captcha',
-            'captcha' => 'wrong security code'
+            'captcha' => 'Wrong security code'
         ]
     ],
 

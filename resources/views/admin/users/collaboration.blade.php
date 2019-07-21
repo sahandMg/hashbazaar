@@ -36,7 +36,7 @@
 
          <div class="form-group">
              <label for="exampleInputPassword1">مبلغ پرداختی به تومان</label>
-             <input name="price" type="text" class="form-control" id="exampleInputPassword1" placeholder="مثلا ۱۰">
+             <input name="price" type="text" class="form-control" id="exampleInputPassword1" placeholder="مثلا ۱۰۰۰۰ تومان">
          </div>
 
 

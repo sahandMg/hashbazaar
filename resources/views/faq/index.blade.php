@@ -1,6 +1,6 @@
 @extends('master.layout')
 @section('title')
-    <title>FAQ</title>
+    <title>{{__("FAQ")}}</title>
 @endsection
 @section('content')
 @if(Config::get('app.locale') == 'fa')

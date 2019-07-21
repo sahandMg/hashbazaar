@@ -162,6 +162,7 @@ return [
         Stevebauman\Location\LocationServiceProvider::class,
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
+        Delatbabel\Elocrypt\ElocryptServiceProvider::class,
         /*
          * Package Service Providers...
          */

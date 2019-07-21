@@ -30,7 +30,7 @@
                                 <td>{{$user->code}}</td>
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->email}}</td>
-                                <td id="pendingBtc">{{App\User::userPending($user)}}</td>
+                                <td id="pendingBtc_{{$user->code}}">{{App\User::userPending($user)}}</td>
                                 @if($user->block == 1)
                                     <td> <button id={{$user->code}} @click="block" class="btn btn-danger"> Blocked </button> </td>
                                 @else
@@ -38,8 +38,48 @@
                                 @endif
                                 @if(\App\User::userPending($user) >= $setting->minimum_redeem)
                                     <td>
-                                        <button id={{$user->code}} onclick="pay()" class="btn btn-success"> Pay </button>
-                                        <button id={{$user->code.'-loading'}} hidden class="buttonload btn btn-warning"><i class="fa fa-refresh fa-spin"></i> Loading</button>
+
+                                        <button id="modal_{{$user->code}}" class="btn btn-info" data-toggle="modal" data-target="#myModal_{{$user->code}}"> Pay </button>
+                                    {{-- Modal For $user --}}
+                                        <div class="modal fade" id="myModal_{{$user->code}}" role="dialog">
+                                            <div class="modal-dialog">
+
+                                                <!-- Modal content-->
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button style="margin-left:0" type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h4 class="modal-title">تسویه</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p style="text-align: right;direction: rtl">جهت پرداخت QR زیر را اسکن کنید</p>
+                                                        <div>
+                                                            @if(is_null($user->wallet))
+                                                                <p style="text-align: right">کابر کیف پولی ثبت نکرده است</p>
+                                                            @else
+                                                                <div class="row justify-content-center">
+                                                                    <div class="col-4">{!! QrCode::size(150)->generate($user->wallet->addr) !!}
+                                                                    </div>
+                                                                    <p style="text-align: left">{{$user->wallet->addr}}</p>
+                                                                </div>
+
+                                                                <div class="row justify-content-center">
+                                                                    <div class="col-4">
+                                                                        <button id={{$user->code}} onclick="pay()" class="btn btn-danger"> بعد از پرداخت، کلیک کنید </button>
+                                                                        <button id={{$user->code.'-loading'}} hidden class="buttonload btn btn-warning"><i class="fa fa-refresh fa-spin"></i> Loading</button>
+                                                                    </div>
+                                                                </div>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        {{-- End Of Modal--}}
+
                                     </td>
                                 @else
                                     <td> <button disabled id={{$user->code}} onclick="pay()" class="btn btn-success"> Pay </button> </td>
@@ -62,6 +102,8 @@
 
                     </table>
 
+
+
                 @else
 
                 <h1> No User!</h1>
@@ -83,7 +125,9 @@
                     event.target.hidden = false;
                     document.getElementById(code+'-loading').hidden = true;
                     event.target.disabled = true;
-                    document.getElementById('pendingBtc').innerHTML = 0;
+                    document.getElementById('pendingBtc_'+code).innerHTML = 0;
+                    document.getElementById('modal_'+code).disabled = true;
+
                     alert(resp['body'])
 
                 }else{

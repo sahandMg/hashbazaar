@@ -20,7 +20,8 @@
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-
+    <link rel="icon" href="{{URL::asset('img/favicon.ico')}}" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </head>
 
 <body>
@@ -45,19 +46,14 @@
 
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                             <i class="fas fa-home"></i>
-                            <span style="padding-left: 20px"> Home</span>
+                            <span style="padding-left: 20px"> صفحه اصلی</span>
                         </a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
 
                             <li>
-                                <a href="{{route('adminHome')}}">Admin Home</a>
+                                <a href="{{route('adminHome')}}">داشبورد</a>
                             </li>
-                            <li>
-                                <a href="{{route('dashboard')}}">Dashboard</a>
-                            </li>
-                            <li>
-                                <a href="#">Home 3</a>
-                            </li>
+
                         </ul>
                     </li>
 
@@ -68,12 +64,12 @@
                 <li>
             @endif
                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                    <i class="fas fa-copy"></i>
-                    <span style="padding-left: 20px">Users</span>
+                    <i class="fas fa-users" style='font-size:20px'></i>
+                    <span style="padding-left: 20px">کاربران</span>
                 </a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li>
-                        <a href="{{route('adminGetUsersList')}}">List</a>
+                        <a href="{{route('adminGetUsersList')}}">لیست کاربران</a>
                     </li>
                     <li>
                         <a href="#">Page 3</a>
@@ -89,8 +85,8 @@
                 <li>
             @endif
                 <a href="{{route('adminTransactions')}}">
-                    <i  class="fas fa-image"></i>
-                    <span style="padding-left: 20px">Sold TH</span>
+                    <i  class="fab fa-bitcoin" style='font-size:20px'></i>
+                    <span style="padding-left: 20px">تراکنش ها</span>
                 </a>
             </li>
 
@@ -101,8 +97,8 @@
                 <li>
             @endif
                 <a href="{{route('adminRedeems')}}">
-                    <i class="fas fa-question"></i>
-                    <span style="padding-left: 20px">Redeems</span>
+                    <i class="fas fa-money-check-alt"></i>
+                    <span style="padding-left: 20px">پرداخت شده به کاربر</span>
                 </a>
             </li>
 
@@ -113,8 +109,8 @@
                 <li>
                     @endif
                     <a href="{{route('adminCheckout')}}">
-                        <i class="fas fa-question"></i>
-                        <span style="padding-left: 20px">Checkout</span>
+                        <i class='fas fa-money-check' style='font-size:20px'></i>
+                        <span style="padding-left: 20px">تسویه با کاربر</span>
                     </a>
                 </li>
 
@@ -124,8 +120,8 @@
                 <li>
                     @endif
                     <a href="{{route('siteSetting')}}">
-                        <i class="fas fa-question"></i>
-                        <span style="padding-left: 20px">Site Setting</span>
+                        <i class="fas fa-pencil-alt" style='font-size:20px'></i>
+                        <span style="padding-left: 20px">تنظیمات</span>
                     </a>
                 </li>
 
@@ -135,8 +131,8 @@
                     <li>
                         @endif
                         <a href="{{route('AdminMessage')}}">
-                            <i class="fas fa-question"></i>
-                            <span style="padding-left: 20px">Messages</span>
+                            <i class="far fa-comment-dots" style='font-size:20px'></i>
+                            <span style="padding-left: 20px">پیام ها</span>
                         </a>
                     </li>
 
@@ -146,8 +142,8 @@
                     <li>
                         @endif
                         <a href="{{route('adminLogout')}}">
-                            <i class="fas fa-question"></i>
-                            <span style="padding-left: 20px">Logout</span>
+                            <i class="far fa-share-square" style='font-size:20px'></i>
+                            <span style="padding-left: 20px">خروج</span>
                         </a>
                     </li>
         </ul>

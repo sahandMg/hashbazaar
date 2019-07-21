@@ -11,27 +11,22 @@
           content="Bitcoin is the digital gold of the future & HashBazaar is the most cost effective cloud mining company on the market. Mine bitcoin through the cloud, get started today!"/>
     <meta name="google-site-verification" content="roNqWp-CmbNsSN2R6ggCv2ubJwFNikEs_WJ7E2P3WDw" />
     @if(request()->path() === '/')
-        <title>Hash Bazaar - Cloud mining Company</title>
+        <title>{{__('HashBazaar - Cloud Mining Company')}}</title>
     @else
         @yield('title')
     @endif
 
-    <!-- <link rel="icon" href="img/TabLogo.png"> -->
-    <!-- <link rel="stylesheet" href="{{asset('css/blog.css')}}"> -->
-    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
-    <link rel="stylesheet" href="{{asset('fonts/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/theme.css')}}">
-    <link rel="icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon"/>
-    <link rel="stylesheet" type="text/css" href="{{asset('css/util.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/login.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('fonts/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('css/theme.css')}}">
+    <link rel="icon" href="{{URL::asset('img/favicon.ico')}}" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('css/util.css')}}">
     <script  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" ></script>
-    <script src="{{asset('js/jquery-3.3.1.js')}}"></script>
-    <script src="{{asset('js/jquery.animate-colors.js')}}"></script>
-<!--     <script src="{{asset('js/jquery-3.3.1.js')}}"></script>
-    <script src="{{asset('js/jquery.animate-colors.js')}}"></script>
-    <script src="{{asset('js/jquery-3.3.1.js')}}"></script> -->
+    <script src="{{URL::asset('js/jquery-3.3.1.js')}}"></script>
+    <script src="{{URL::asset('js/jquery.animate-colors.js')}}"></script>
+
     <!-- Hotjar Tracking Code for http://hashbazaar.com/ -->
    <script>
       (function(h,o,t,j,a,r){
@@ -98,8 +93,8 @@
 
                 <li class="flags">
                     <div>
-                        <a href="{{route('locale',['locale'=>'fa'])}}" id="persianFA"><img src="./flags/ir.svg" alt="Persian (FA)"></a>
-                        <a href="{{route('locale',['locale'=>'en'])}}" id="engUK"><img src="./flags/uk.svg" alt="English (UK)"></a>
+                        <a href="{{route('locale',['locale'=>'fa'])}}" id="persianFA"><img src="{{URL::asset('flags/ir.svg')}}" alt="Persian (FA)"></a>
+                        <a href="{{route('locale',['locale'=>'en'])}}" id="engUK"><img src="{{URL::asset('flags/uk.svg')}}" alt="English (UK)"></a>
                     </div>
                 </li>
             </ul>

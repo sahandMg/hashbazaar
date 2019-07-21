@@ -63,7 +63,7 @@
 
                  <form onsubmit="submitForm(event)"  id="setting-wallet" class="text-center" method="post" action="{{route('wallet')}}">
                      <input class="text-center" type="hidden" name="_token" value="{{csrf_token()}}">
-                    <input required class="text-center" type="text" id="textwallet" name="wallet">
+                    <input required   class="text-center" type="text" id="textwallet" name="wallet">
                     <button id="wallet" type="submit" class="buttonwallet text-center">{{__("Submit")}}</button>
                  </form>
 

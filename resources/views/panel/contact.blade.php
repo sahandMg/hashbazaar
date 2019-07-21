@@ -1,6 +1,6 @@
 @extends('panel.master.layout')
 @section('title')
-    <title>Contact Us</title>
+    <title>ارتباط با ما</title>
 @endsection
 @section('content')
     <!-- Contact Page -->

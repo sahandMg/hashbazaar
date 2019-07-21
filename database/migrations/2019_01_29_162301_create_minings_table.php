@@ -15,8 +15,8 @@ class CreateMiningsTable extends Migration
     {
         Schema::create('minings', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('mined_btc')->nullable();
-            $table->string('mined_usd')->nullable();
+            $table->double('mined_btc',10,8)->nullable();
+            $table->double('mined_usd',15,8)->nullable();
             $table->unsignedInteger('user_id')->nullable();
             $table->string('order_id')->nullable();
             $table->unsignedInteger('block')->nullable();

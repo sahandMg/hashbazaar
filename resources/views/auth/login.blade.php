@@ -13,8 +13,12 @@
 						@endforeach
 					</ul>
 					@if(session()->has('error'))
-						<p style="color: red">{{session('error')}}</p>
+						<p style="color: red;text-align: right">{{session('error')}}</p>
 					@endif
+					@if(session()->has('message'))
+						<p style="color: green;text-align: right">{{session('message')}}</p>
+					@endif
+					<br>
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <input type="hidden" name="hashPower" value="{{isset($_GET['hashPower'])?$_GET['hashPower']:null}}">
 						<span class="login100-form-title">
@@ -38,7 +42,7 @@
 
 						</span>
 						<div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
-							<input class="input100" type="text" required name="captcha" placeholder="{{__("Security Code")}}">
+							<input class="input100" type="text" pattern="[a-zA-Z0-9]+" required name="captcha" placeholder="{{__("Security Code")}}">
 							<span class="focus-input100"></span>
 						</div>
 
@@ -90,19 +94,19 @@
 <!--===============================================================================================-->
 	<!-- <script src="vendor/jquery/jquery-3.2.1.min.js"></script> -->
 <!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="{{URL::asset('vendor/animsition/js/animsition.min.js')}}"></script>
+	<!--===============================================================================================-->
+	<script src="{{URL::asset('vendor/bootstrap/js/popper.js')}}"></script>
 	<!-- <script src="vendor/bootstrap/js/bootstrap.min.js"></script> -->
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
+	<!--===============================================================================================-->
+	<script src="{{URL::asset('vendor/select2/select2.min.js')}}"></script>
+	<!--===============================================================================================-->
+	<script src="{{URL::asset('vendor/daterangepicker/moment.min.js')}}"></script>
+	<script src="{{URL::asset('vendor/daterangepicker/daterangepicker.js')}}"></script>
+	<!--===============================================================================================-->
+	<script src="{{URL::asset('vendor/countdowntime/countdowntime.js')}}"></script>
+	<!--===============================================================================================-->
+	<script src="{{URL::asset('js/main.js')}}"></script>
 	<script>
 		function submitForm(){
 			document.getElementById('submitBtn').disabled = true

@@ -12,7 +12,7 @@
                     <td> name </td>
                     <td> email </td>
                     <td> country </td>
-                    <td>amount(BTC)</td>
+                    <td>total BTC</td>
                     <td>register at </td>
                     <td>login at</td>
                     <td>status</td>

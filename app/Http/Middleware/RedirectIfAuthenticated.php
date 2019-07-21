@@ -23,6 +23,11 @@ class RedirectIfAuthenticated
             return redirect()->route('dashboard');
         }
 
+        if(Auth::guard('admin')->check()){
+
+            return redirect()->route('adminHome');
+        }
+
         return $next($request);
     }
 }

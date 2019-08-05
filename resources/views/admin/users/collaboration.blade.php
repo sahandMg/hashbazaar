@@ -7,7 +7,7 @@
 
  @include('formMessage')
 
-     <form style="padding: 20px;" method="POST" action="{{route('collaboration')}}">
+     <form style="padding: 20px;" method="POST" action="{{route('collaboration',['locale'=>session('locale')])}}">
               <input type="hidden" name="_token" value="{{csrf_token()}}">
            <div class="form-group">
              <label for="name">نام کاربری</label>

@@ -117,7 +117,7 @@
             console.log(event.target);
             event.target.hidden = true;
             document.getElementById(code+'-loading').hidden = false;
-            axios.post('{{route('redeem')}}',{'code':code}).then(function (response) {
+            axios.post('{{route('redeem',['locale'=>session('locale')])}}',{'code':code}).then(function (response) {
 
                 var resp = response.data;
                 if(resp['type'] != 'error'){
@@ -152,7 +152,7 @@
                 pay:function (code,key) {
 
 
-                    axios.post('{{route('redeem')}}',{'code':code}).then(function (response) {
+                    axios.post('{{route('redeem',['locale'=>session('locale')])}}',{'code':code}).then(function (response) {
 
                         var resp = response.data;
                         if(resp['type'] != 'error'){
@@ -170,7 +170,7 @@
                 block:function (e) {
                     var code = String(e.target.id)
                     console.log(this.$refs.code);
-                    axios.get('{{route('blockUser')}}'+'?code='+e.target.id).then(function (response) {
+                    axios.get('{{route('blockUser',['locale'=>session('locale')])}}'+'?code='+e.target.id).then(function (response) {
 
                         if(e.target.className == 'btn btn-danger'){
 

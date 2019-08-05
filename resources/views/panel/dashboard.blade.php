@@ -1,6 +1,6 @@
 @extends('panel.master.layout')
 @section('title')
-    <title>داشبورد</title>
+    <title>{{__("Dashboard")}}</title>
 @endsection
 @section('content')
     <?php
@@ -153,7 +153,7 @@
     @include('sessionError')
     @if($settings->available_th > 0)
 
-    <!-- <form class="dashboard-page" method="post" action="{{route('payment')}}"> -->
+    <!-- <form class="dashboard-page" method="post" action="{{route('payment',['locale'=>session('locale')])}}"> -->
     <!-- <input type="hidden" name="_token" value="{{csrf_token()}}"> -->
     <input type="hidden" id="thpricew" value="50">
     <input type="range" min="1" max="{{$settings->available_th}}" value="{{isset($hashPower)?$hashPower:$settings->available_th/2}}" name="hash" class="slider" id="myRange">
@@ -178,9 +178,9 @@
              <button id="code" type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> درخواست </button>
            </div>
             @if($settings->paystar_active == 1)
-                <form onsubmit="order()" class="dashboard-page" method="post" action="{{route('PaystarPaying')}}">
+                <form onsubmit="order()" class="dashboard-page" method="post" action="{{route('PaystarPaying',['locale'=>session('locale')])}}">
             @elseif($settings->zarrin_active == 1)
-                <form onsubmit="order()" class="dashboard-page" method="post" action="{{route('ZarrinPalPaying')}}">
+                <form onsubmit="order()" class="dashboard-page" method="post" action="{{route('ZarrinPalPaying',['locale'=>session('locale')])}}">
             @endif
 
            {{--  <form class="dashboard-page" method="post" action="{{route('TestPayment')}}">  --}}
@@ -231,12 +231,12 @@
           <br/>
 
           @if(Config::get('app.locale') == 'fa')
-            <form class="dashboard-page" method="post" action="{{route('PaystarPaying')}}">
+            <form class="dashboard-page" method="post" action="{{route('PaystarPaying',['locale'=>session('locale')])}}">
           @else
             <p class="text-center">You have to pay your invoice with bitcoin. If you do not have , you can purchase it from this <a href="https://www.bitpremier.com/buy-bitcoins"> list</a></p>
             <p class="text-center"><b>Or</b><p/>
             <br/>
-            <form class="dashboard-page" method="post" action="{{route('chargeCreate')}}">
+            <form class="dashboard-page" method="post" action="{{route('chargeCreate',['locale'=>session('locale')])}}">
          @endif
             <input type="hidden" name="_token" value="{{csrf_token()}}">
               @if($apply_discount == 1)
@@ -253,20 +253,22 @@
       </div>
     </div>
   </div>
+    @if(App::getLocale() != 'fa')
     <!-- The Modal First message-->
-    <div id="modalFirstTime" class="modal" style="color: black;">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span id="close" class="close">&times;</span>
-            <div class="text-center">
-                <br/>
-                <h2> Welcome to Hash Bazaar </h2>
-                <br/>
-                <p>Thanks for your registration. From now on you join our community.</p>
-                <p>It means you have the permission to invest in Hash Bazaar by yourself and use your Investment ID as your referral code to invite your friends. More friends, more bonuses. You can find our reward program from your panel.</p>
+            <div id="modalFirstTime" class="modal" style="color: black;">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span id="close" class="close">&times;</span>
+                    <div class="text-center">
+                        <br/>
+                        <h2> Welcome to Hash Bazaar </h2>
+                        <br/>
+                        <p>Thanks for your registration. From now on you join our community.</p>
+                        <p>It means you have the permission to invest in Hash Bazaar by yourself and use your Investment ID as your referral code to invite your friends. More friends, more bonuses. You can find our reward program from your panel.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+        @endif
 
 </div>
 
@@ -710,7 +712,7 @@
                 // for get profit
                 var user = {!! json_encode(\Illuminate\Support\Facades\Auth::guard('user')->user()->code) !!}
                 function redeem(id) {
-                    axios.get('{{route('redeem')}}'+'?user='+user).then(function (response) {
+                    axios.get('{{route('redeem',['locale'=>session('locale')])}}'+'?user='+user).then(function (response) {
 //                        console.log(response.data)
                     })
                 };
@@ -731,7 +733,7 @@
                 function sendCode() {
                     var code = document.getElementById('referralCode').value;
                     document.getElementById('code').disabled = true;
-                    axios.post('{{route('SendCode')}}',{referralCode:code}).then(function (response) {
+                    axios.post('{{route('SendCode',['locale'=>session('locale')])}}',{referralCode:code}).then(function (response) {
                          resp = response.data;
                         if(resp['type'] == 'error'){
                             alertify.error(resp['body']);
@@ -790,7 +792,7 @@
 
                   // for geting total earn
 
-                axios.post({!! json_encode(route('totalEarn')) !!},{'user':user}).then(function (response) {
+                axios.post({!! json_encode(route('totalEarn',['locale'=>session('locale')])) !!},{'user':user}).then(function (response) {
 
                     if(response.data[0] == 0){
 
@@ -821,7 +823,7 @@
                 var dateTime = [];
                 var data = [];
                 var labels = [];
-            axios.get('{{route('chartData').'?user='. Auth::guard('user')->user()->code}}').then(function (response) {
+            axios.get('{{route('chartData',['locale'=>session('locale')]).'?user='. Auth::guard('user')->user()->code}}').then(function (response) {
 
 
                 dateTime = response.data;
@@ -875,7 +877,7 @@
                 // for get profit
                 var user = {!! json_encode(\Illuminate\Support\Facades\Auth::guard('user')->user()->code) !!}
                 function redeem(id) {
-                    axios.get('{{route('redeem')}}'+'?user='+user).then(function (response) {
+                    axios.get('{{route('redeem',['locale'=>session('locale')])}}'+'?user='+user).then(function (response) {
 //                        console.log(response.data)
                     })
                 };
@@ -894,7 +896,7 @@
                 // for checking referal code
                 function sendCode() {
                     var code = document.getElementById('referralCode').value;
-                    axios.post('{{route('SendCode')}}',{referralCode:code}).then(function (response) {
+                    axios.post('{{route('SendCode',['locale'=>session('locale')])}}',{referralCode:code}).then(function (response) {
                          resp = response.data;
                         if(resp['type'] == 'error'){
                             alertify.error(resp['body']);
@@ -953,7 +955,7 @@
 
                   // for geting total earn
 
-                axios.post({!! json_encode(route('totalEarn')) !!},{'user':user}).then(function (response) {
+                axios.post({!! json_encode(route('totalEarn',['locale'=>session('locale')])) !!},{'user':user}).then(function (response) {
 
                     if(response.data[0] == 0){
 
@@ -985,7 +987,7 @@
                 var dateTime = [];
                 var data = [];
                 var labels = [];
-            axios.get('{{route('chartData').'?user='. Auth::guard('user')->user()->code}}').then(function (response) {
+            axios.get('{{route('chartData',['locale'=>session('locale')]).'?user='. Auth::guard('user')->user()->code}}').then(function (response) {
 
 
                 dateTime = response.data;

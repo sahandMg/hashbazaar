@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html style="font-size: 100%" lang="{{app()->getLocale()}}">
 
@@ -71,23 +70,23 @@
         <div id="header-navbar-menu" >
             <ul>
                 @if(Config::get('app.locale') == 'fa')
-                <!-- <li class="navbar-list small1 a1"><a href="http://blog.hashbazaar.com">{{__('Blog')}}</a></li> -->
-                <!-- <li class="navbar-list small1 a1"><a href="{{route('affiliate')}}">{{__('Affiliate')}}</a></li> -->
-                <li class="navbar-list small1 a1"><a href="{{route('index')}}">{{__('Home')}}</a></li>
-                <li class="navbar-list small1 a1"><a href="{{route('aboutUs')}}">{{__('About')}}</a></li>
-                <li class="navbar-list small1 a1"><a href="{{route('customerService')}}">{{__('FAQ')}}</a></li>
+                <li class="navbar-list small1 a1"><a href="{{route('customerService',['locale'=>session('locale')])}}">{{__('FAQ')}}</a></li>
+                <li class="navbar-list small1 a1"><a href="{{route('aboutUs',['locale'=>session('locale')])}}">{{__('About')}}</a></li>
+                <li class="navbar-list small1 a1"><a href="http://blog.hashbazaar.com">{{__('Blog')}}</a></li>
+                <li class="navbar-list small1 a1"><a href="{{url('/collaboration')}}">همکاری سازمانی</a></li>
+                <li class="navbar-list small1 a1"><a href="{{route('index',['locale'=>session('locale')])}}">{{__('Home')}}</a></li>
                 @else
-                <li class="navbar-list small1 a1"><a href="{{route('index')}}">{{__('Home')}}</a></li>
-                <li class="navbar-list small1 a1"><a href="{{route('aboutUs')}}">{{__('About')}}</a></li>
-                <li class="navbar-list small1 a1"><a href="{{route('customerService')}}">{{__('FAQ')}}</a></li>
-                <li class="navbar-list small1 a1"><a href="{{route('affiliate')}}">{{__('Affiliate')}}</a></li>
+                <li class="navbar-list small1 a1"><a href="{{route('index',['locale'=>session('locale')])}}">{{__('Home')}}</a></li>
+                <li class="navbar-list small1 a1"><a href="{{route('aboutUs',['locale'=>session('locale')])}}">{{__('About')}}</a></li>
+                <li class="navbar-list small1 a1"><a href="{{route('customerService',['locale'=>session('locale')])}}">{{__('FAQ')}}</a></li>
+                <li class="navbar-list small1 a1"><a href="{{route('affiliate',['locale'=>session('locale')])}}">{{__('Affiliate')}}</a></li>
                 <li class="navbar-list small1 a1"><a href="http://blog.hashbazaar.com">{{__('Blog')}}</a></li>
                 @endif
                 @if(Auth::guard('user')->check())
-                    <li class="navbar-list small1 dashboard"><a href="{{route('dashboard')}}" >{{__('Dashboard')}}</a></li>
+                    <li class="navbar-list small1 dashboard"><a href="{{route('dashboard',['locale'=>session('locale')])}}" >{{__('Dashboard')}}</a></li>
                 @else
-                <li class="navbar-list small1 signup"><a href="{{route('signup')}}" id="sg" >{{__('Sign Up')}}</a></li>
-                <li class="navbar-list small1 login"><a href="{{route('login')}}" id="lg" >{{__('Log In')}}</a></li>
+                <li class="navbar-list small1 signup"><a href="{{route('signup',['locale'=>session('locale')])}}" id="sg" >{{__('Sign Up')}}</a></li>
+                <li class="navbar-list small1 login"><a href="{{route('login',['locale'=>session('locale')])}}" id="lg" >{{__('Log In')}}</a></li>
                 
                 @endif
 

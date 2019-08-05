@@ -35,7 +35,7 @@ class ZarrinPal
         $data = array('MerchantID' => $settings->zarrin_pin,
             'Amount' => $amount,
             'Email' => Auth::guard('user')->user()->email,
-            'CallbackURL' => 'https://hashbazaar.com/zarrin/callback',
+            'CallbackURL' => 'https://hashbazaar.com/fa/zarrin/callback',
             'Description' => 'فروشگاه اینترنتی قطعات الکترونیکی');
         $jsonData = json_encode($data);
         $ch = curl_init('https://www.zarinpal.com/pg/rest/WebGate/PaymentRequest.json');

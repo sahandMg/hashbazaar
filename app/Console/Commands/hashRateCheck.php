@@ -55,7 +55,7 @@ class hashRateCheck extends Command
         if(!Cache::has('alarmNumber')){
             Cache::forever('alarmNumber',0);
         }
-        if(Cache::get('alarmNumber') >= 5){
+        if(Cache::get('alarmNumber') > 2){
             $setting->update(['alarms' => 0]);
             // reset the counter
             Cache::forever('alarmNumber',0);
@@ -83,8 +83,8 @@ class hashRateCheck extends Command
             $api->Send($sender,$receptor,$message);
 
             Mail::send('email.hashRateCheck',[],function($message){
-                $message->to('admin@hashbazaar.com');
-                $message->from('admin@hashbazaar.com');
+                $message->to(env('Admin_Mail'));
+                $message->from(env('Tech_Mail'));
                 $message->subject('Hash Rate Alllleeerrrrtttttt!!!!');
             });
 

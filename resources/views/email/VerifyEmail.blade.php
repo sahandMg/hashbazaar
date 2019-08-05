@@ -139,7 +139,7 @@
     @if(\Illuminate\Support\Facades\Config::get('app.locale') == 'fa')
         <h1> به هش بازار خوش آمدید </h1>
         <p style="text-align: center;">با تشکر از عضویت شما در هش بازار. برای فعال سازی حساب خود رو دکمه فعال سازی کلیک کنید</p>
-        <a href="{{url('user/verify',$user->verifyUser->token)}}"><button style="cursor: pointer;margin: 10px;display:inline-block; font-size: 15px;color:white;background: orange;padding: 10px;border-radius:10px">فعال سازی</button></a>
+        <a href="{{route('userVerify',['locale'=>session('locale'),'token'=>$user->verifyUser->token])}}"><button style="cursor: pointer;margin: 10px;display:inline-block; font-size: 15px;color:white;background: orange;padding: 10px;border-radius:10px">فعال سازی</button></a>
     @else
         <h1> Welcome to Hash Bazaar </h1>
         <p style="text-align: center;">Thanks for your registration. From now on you join our community.</p>
@@ -148,19 +148,6 @@
 
 </div>
 
-<footer>
-    @if(\Illuminate\Support\Facades\Config::get('app.locale') == 'fa')
-        <a href="http://hashbazaar.com" target="_blank">وب سایت</a>
-        <a href="http://hashbazaar.com/panel/dashboard" target="_blank">میزکار</a>
-        <a href="http://hashbazaar.com/faq" target="_blank">سوالات متداول</a>
-        <!--     <a href="http://blog.hashbazaar.com/" target="_blank">Blog</a>
-         -->    <a href="https://www.instagram.com/hashbazaar/" target="_blank">اینستاگرام</a>
-    @else
-        <a href="http://hashbazaar.com" target="_blank"> Website</a>
-        <a href="http://hashbazaar.com/panel/dashboard" target="_blank">Dashboard</a>
-        <a href="http://hashbazaar.com/faq" target="_blank">FAQ</a>
-        <a href="http://blog.hashbazaar.com/" target="_blank">Blog</a>
-        <a href="https://www.instagram.com/hashbazaar/" target="_blank">Instagram</a>
-@endif
+@include('email.master.footer')
 </body>
 </html>

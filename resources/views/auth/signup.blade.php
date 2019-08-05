@@ -10,7 +10,7 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 
-				<form method="post" action="{{route('signup')}}" class="login100-form validate-form p-l-55 p-r-55 p-t-148">
+				<form method="post" action="{{route('signup',['locale'=>session('locale')])}}" class="login100-form validate-form p-l-55 p-r-55 p-t-148">
 
 					<ul>
 						@foreach($errors->all() as $error)
@@ -67,8 +67,8 @@
 							<img src="/public/img/twitter.svg" alt=""></a>
 						 --}}
 
-						<a href="{{route('redirectToProvider')}}" class="socialnet-flex1" id="gp">
-							<img src="img/icons/googleicon.png" alt="Google Login"></a>
+						<a href="{{route('redirectToProvider',['locale'=>session('locale')])}}" class="socialnet-flex1" id="gp">
+							<img src="{{URL::asset('img/icons/googleicon.png')}}" alt="Google Login"></a>
 						{{-- alt="Join With Google Account" --}}
 
 					</div>
@@ -78,9 +78,9 @@
                                 {{__("do you have an account?")}}
 						</span>
 		@if(isset($_GET['hashPower']))
-				<a href="{{route('login').'?hashPower='.$_GET['hashPower']}}" class="txt3">{{__("Log in now")}}</a>
+				<a href="{{route('login',['locale'=>session('locale')]).'?hashPower='.$_GET['hashPower']}}" class="txt3">{{__("Log in now")}}</a>
 		@else
-			<a href="{{route('login')}}" class="txt3">{{__("Log in now")}}</a>
+			<a href="{{route('login',['locale'=>session('locale')])}}" class="txt3">{{__("Log in now")}}</a>
 		@endif
 
 

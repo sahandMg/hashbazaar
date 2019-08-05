@@ -6,6 +6,8 @@ use App\Http\Helpers;
 use Closure;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use Stevebauman\Location\Facades\Location;
 
@@ -20,8 +22,6 @@ class LanguageMiddleware
      */
     public function handle($request, Closure $next)
     {
-//        dd(session()->all());
-        $lang = isset($request->lang)?$request->lang:null;
         try {
 
             $country = strtolower(Location::get(Helpers::userIP())->countryCode);
@@ -29,23 +29,25 @@ class LanguageMiddleware
             $country = 'fr';
         }
 
-        if(Session::has('locale')){
-            App::setLocale(Session::get('locale'));
-        }elseif(is_null($lang)){
-            if($country == 'ir' || empty($country)){
+            if (Session::has('locale')) {
+                App::setLocale(Session::get('locale'));
 
-                Session::put('locale','fa');
-                App::setLocale('fa');
-            }else{
-                Session::put('locale','en');
-                App::setLocale('en');
+            } else {
+                session(['locale' => App::getLocale()]);
+            }
+            $lang = ['fa', 'en'];
+            if (in_array($request->segment(1), $lang)) {
+                App::setLocale($request->segment(1));
+                session(['locale' => App::getLocale()]);
+            } // if there is no lang on url
+            else {
+                session(['locale' => App::getLocale()]);
+                return redirect(session('locale') . $request->getRequestUri());
+
             }
 
-        }else{
-            Session::put('locale',$lang);
-            App::setLocale($lang);
-        }
         return $next($request);
+
 
     }
 }

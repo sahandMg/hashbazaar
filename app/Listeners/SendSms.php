@@ -33,7 +33,7 @@ class SendSms
 //            09371869568
             $sender = "10008000800600";
             $message =  $event->message;
-            $receptor = array("09387728916","09371869568","09126060995");
+            $receptor = array("09387728916","09371869568");
             $api->Send($sender,$receptor,$message);
 
         }

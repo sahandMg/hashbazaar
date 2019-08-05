@@ -106,7 +106,7 @@ class PaymentController extends Controller
     public function PaymentCanceled($transid = null){
         if(is_null($transid)){
 
-            return redirect()->route('dashboard');
+            return redirect()->route('dashboard',['locale'=>session('locale')]);
         }
         $hash = BitHash::where('order_id',$transid)->first();
         if(is_null($hash)){
@@ -180,8 +180,8 @@ class PaymentController extends Controller
                 "customer_id"=> Auth::id(),
                 "customer_name"=> Auth::user()->name
             ],
-            "redirect_url"=> "https://hashbazaar.com/payment/success",
-            "cancel_url"=> "https://hashbazaar.com/payment/canceled",
+            "redirect_url"=> "https://hashbazaar.com/".session('locale')."payment/success",
+            "cancel_url"=> "https://hashbazaar.com/".session('locale')."payment/canceled",
 
         ];
         $ch = curl_init();
@@ -500,7 +500,7 @@ class PaymentController extends Controller
         $trans = DB::table('transactions')->where('code', $orderID)->first();
 
         Mail::send('email.paymentConfirmed', ['hashPower' => $hashPower, 'trans' => $trans], function ($message) use ($user) {
-            $message->from('Admin@HashBazaar');
+            $message->from(env('Admin_Mail'));
             $message->to($user->email);
             $message->subject('Payment Confirmed');
         });
@@ -734,7 +734,7 @@ class PaymentController extends Controller
 
 //        return view('payment.makePayment',compact('orderID','box','coins','def_coin','def_language'));
         session()->put('paymentData',['orderID'=>$orderID,'box'=>$box,'coins'=>$coins,'def_coin'=>$def_coin,'def_language'=>$def_language]);
-        return redirect()->route('payment');
+        return redirect()->route('payment',['locale'=>session('locale')]);
     }
 
     public function payment(){
@@ -965,7 +965,7 @@ class PaymentController extends Controller
                 $trans = DB::table('transactions')->where('code',$orderID)->first();
 
                 Mail::send('email.paymentConfirmed',['hashPower'=>$hashPower,'trans'=>$trans],function($message) use($user){
-                    $message->from ('Admin@HashBazaar');
+                    $message->from (env('Admin_Mail'));
                     $message->to ($user->email);
                     $message->subject ('Payment Confirmed');
                 });
@@ -1033,7 +1033,7 @@ class PaymentController extends Controller
                 //check if any referral code used
 
                 Mail::send('email.paymentReceived',[],function($message)use($user){
-                    $message->from ('Admin@HashBazaar');
+                    $message->from (env('Admin_Mail'));
                     $message->to ($user->email);
                     $message->subject ('Payment Received !');
                 });
@@ -1150,7 +1150,7 @@ class PaymentController extends Controller
 
             $data = ['trans'=>$trans,'user'=> $user,'email'=>$user->email];
             Mail::send('email.checkout',$data , function ($message) use ($data) {
-                $message->from('admin@hashBazaar.com');
+                $message->from(env('Admin_Mail'));
                 $message->to($data['email']);
                 $message->subject('پرداخت بیتکوین');
 

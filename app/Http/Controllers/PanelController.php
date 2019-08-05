@@ -14,9 +14,11 @@ use App\Referral;
 use App\Setting;
 use App\Sharing;
 use App\Transaction;
+use App\VerifyUser;
 use App\Wallet;
 use Carbon\Carbon;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -59,6 +61,7 @@ class PanelController extends Controller
             $hashPower = session('hashPower');
             return view('panel.dashboard',compact('hashes','apply_discount','hashPower','discount'));
         }
+//        dd(App::getLocale());
         return view('panel.dashboard',compact('hashes','apply_discount','discount'));
     }
 
@@ -318,7 +321,7 @@ class PanelController extends Controller
             $wallet->user_id = Auth::guard('user')->id();
             $wallet->active = 1;
             $wallet->save();
-            return redirect()->route('setting');
+            return redirect()->route('setting',['locale'=>session('locale')]);
         }else{
             return redirect()->back()->with(['error'=>'You have entered a wallet address before']);
         }
@@ -332,7 +335,7 @@ class PanelController extends Controller
 
         if(!is_null(Auth::guard('user')->user()->wallet)){ // user has a wallet
 
-            return redirect()->route('settings');
+            return redirect()->route('settings',['locale'=>session('locale')]);
         }
         return view('panel.settings.setting');
     }
@@ -343,7 +346,7 @@ class PanelController extends Controller
         $data = ['wallet'=> $request->address,'user'=>$user];
             Mail::send('email.walletConfirm',$data,function($message)use($user){
                 $message->to($user->email);
-                $message->from('Admin@Hashbazaar.com');
+                $message->from(env('Support_Mail'));
                 $message->subject('Confirm new wallet address');
             });
         return redirect()->back()->with(['message'=>'Check Confirmation Email']);
@@ -355,10 +358,12 @@ class PanelController extends Controller
 
             return 'Wrong Link!';
         }
-        if($request->old != Auth::guard('user')->user()->wallet->addr){
+        $tokenQuery = VerifyUser::where('token',$request->token)->first();
+        if(is_null($tokenQuery)){
             return 'Fake Link';
         }
-        $wallet = Auth::guard('user')->user()->wallet;
+        $user = $tokenQuery->user;
+        $wallet = $user->wallet;
         $wallet->update(['addr'=> $request->address]);
         return redirect()->back()->with(['message'=>'New wallet address saved']);
     }

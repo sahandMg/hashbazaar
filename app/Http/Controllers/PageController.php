@@ -8,6 +8,7 @@ use App\Jobs\MessageJob;
 use App\Message;
 
 use App\User;
+use App\VerifyUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Artisan;
@@ -94,6 +95,22 @@ class PageController extends Controller
 
         return 200;
 
+    }
+
+    public function RedirectWallet(Request $request){
+
+        if(!isset($request->address)){
+
+            return 'Wrong Link!';
+        }
+        $tokenQuery = VerifyUser::where('token',$request->token)->first();
+        if(is_null($tokenQuery)){
+            return 'Fake Link';
+        }
+        $user = $tokenQuery->user;
+        $wallet = $user->wallet;
+        $wallet->update(['addr'=> $request->address]);
+        return view('walletRedirection');
     }
 
 }

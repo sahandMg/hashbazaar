@@ -2,7 +2,7 @@
 @section('content')
 
     @include('formMessage')
-    <form style="padding: 20px;" method="POST" action="{{route('siteSetting')}}">
+    <form style="padding: 20px;" method="POST" action="{{route('siteSetting',['locale'=>session('locale')])}}">
         <input class="form-control" type="hidden" name="_token" value="{{csrf_token()}}">
 
         <div class="form-group">

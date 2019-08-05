@@ -7,6 +7,7 @@ use App\Http\Helpers;
 use App\Jobs\subscriptionMailJob;
 use App\User;
 use App\VerifyUser;
+use Illuminate\Support\Facades\App;
 use Laravel\Socialite\Facades\Socialite;
 use Stevebauman\Location\Facades\Location;
 use Illuminate\Http\Request;
@@ -61,7 +62,7 @@ class AuthController extends Controller
         });
 
         Session::put('code',$user->code);
-        return redirect()->route('subscription');
+        return redirect()->route('subscription',['locale'=>session('locale')]);
     }
 
     /*
@@ -144,17 +145,22 @@ class AuthController extends Controller
             $message->subject ('New User');
         });
 
-        session(['pop'=>1]);
-        Session::flash('message', 'ایمیل فعال سازی حساب ارسال شد. درصورت دریافت نکردن ایمیل رو ارسال مجدد کلیک کنید');
+        if(session('locale') == 'fa'){
+
+            Session::flash('message', 'ایمیل فعال سازی حساب ارسال شد. درصورت دریافت نکردن ایمیل روی ارسال مجدد کلیک کنید');
+        }else{
+
+            Session::flash('message', 'Verification email sent');
+        }
         Session::put('userToken', $token);
-        return redirect()->route('VerifyUserPage');
+        return redirect()->route('VerifyUserPage',['locale'=>session('locale')]);
     }
   // redirect users to verification page for sending verification link again
     public function VerifyUserPage(){
 
         $token = Session::get('userToken');
         if(!$token){
-            return redirect()->route('login');
+            return redirect()->route('login',['locale'=>session('locale')]);
         }
         $user = VerifyUser::where('token',$token)->first()->user;
         if(is_null($user)){
@@ -177,12 +183,13 @@ class AuthController extends Controller
         ];
 
         Mail::send('email.thanks',$data,function($message) use($data){
-            $message->from ('Admin@HashBazaar.com');
+            $message->from (env('Admin_Mail'));
             $message->to ($data['email']);
             $message->subject ('Subscription Email');
         });
         Auth::guard('user')->login($user);
-        return redirect()->route('dashboard');
+        session(['pop'=>1]);
+        return redirect()->route('dashboard',['locale'=>session('locale')]);
     }
 
     // resend verification link
@@ -200,13 +207,13 @@ class AuthController extends Controller
             'token'=>$user->verifyUser->token,
         ];
         Mail::send('email.VerifyEmail',['user'=>$user],function($message) use($data){
-            $message->from ('Admin@HashBazaar.com');
+            $message->from (env('Admin_Mail'));
             $message->to ($data['email']);
             $message->subject ('فعال سازی حساب');
         });
         Session::flash('message','لینک فعال سازی ارسال شد');
 
-        return redirect()->route('login');
+        return redirect()->route('login',['locale'=>session('locale')]);
 
     }
 
@@ -229,9 +236,15 @@ class AuthController extends Controller
 
                 $token = Auth::guard('user')->user()->verifyUser->token;
                 Auth::guard('user')->logout();
-                Session::flash('error','حساب کاربری شما فعال نیست. با مراجعه به لینک ارسال شده به ایمیلتان، اقدام به فعال سازی حساب خود کنید');
+                if(App::getLocale() == 'fa'){
+
+                    Session::flash('error','حساب کاربری شما فعال نیست. با مراجعه به لینک ارسال شده به ایمیلتان، اقدام به فعال سازی حساب خود کنید');
+                }else{
+
+                    Session::flash('message', 'Your email address is not verified');
+                }
                 Session::flash('userToken',$token);
-                return redirect()->route('VerifyUserPage');
+                return redirect()->route('VerifyUserPage',['locale'=> App::getLocale()]);
             }
 
             try{
@@ -244,9 +257,9 @@ class AuthController extends Controller
 
             if(!is_null($request->hashPower)){
                 $hashPower = $request->hashPower;
-                return redirect()->route('dashboard')->with(['hashPower'=>$hashPower]);
+                return redirect()->route('dashboard',['locale'=>session('locale')])->with(['hashPower'=>$hashPower]);
             }else{
-                return redirect()->route('dashboard');
+                return redirect()->route('dashboard',['locale'=>session('locale')]);
                 }
         }else{
 
@@ -293,7 +306,7 @@ class AuthController extends Controller
             $user->save();
 
             Auth::guard('user')->login($user);
-            return redirect()->route('dashboard');
+            return redirect()->route('dashboard',['locale'=>session('locale')]);
         }
 
         $user = new User();
@@ -302,6 +315,7 @@ class AuthController extends Controller
         $user->code = uniqid('hashBazaar_');
         $user->avatar = $client->avatar;
         $user->ip = Helpers::userIP();
+        $user->verified = 1;
         $user->total_mining = 0;
         $user->pending = 0;
         try{
@@ -320,20 +334,18 @@ class AuthController extends Controller
         event(new \App\Events\ReferralQuery($user));
         Auth::guard('user')->login($user);
 
-        $user->update(['verified'=>1]);
-
         Mail::send('email.newUser',['user'=>$user],function($message) use($data){
-            $message->from ('Admin@HashBazaar.com');
-            $message->to ('info@hashbazaar.com');
+            $message->from (env('Admin_Mail'));
+            $message->to (env('Info_Mail'));
             $message->subject ('New User');
         });
         Mail::send('email.thanks',$data,function($message) use($data){
-            $message->from ('Admin@HashBazaar.com');
+            $message->from (env('Admin_Mail'));
             $message->to ($data['email']);
             $message->subject ('Subscription Email');
         });
         session(['pop'=>1]);
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard',['locale'=>session('locale')]);
     }
 
     public function passwordReset(){
@@ -356,12 +368,12 @@ class AuthController extends Controller
         $user->password = bcrypt($pass);
         $user->save();
         Mail::send('email.reset_password',['pass'=>$pass,'user'=>$user],function($message) use($user){
-            $message->from ('Admin@HashBazaar.com');
+            $message->from (env('Admin_Mail'));
             $message->to ($user->email);
             $message->subject ('Password Reset');
         });
 
-        return redirect()->route('login')->with(['message'=>'An Email with a new password has been sent to your email address']);
+        return redirect()->route('login',['locale'=>session('locale')])->with(['message'=>'An Email with a new password has been sent to your email address']);
 
     }
 
@@ -369,6 +381,6 @@ class AuthController extends Controller
 
         Session::flush();
         Auth::guard('user')->logout();
-        return redirect()->route('index');
+        return redirect()->route('index',['locale'=> App::getLocale()]);
     }
 }

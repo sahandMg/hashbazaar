@@ -2,7 +2,7 @@
 @section('content')
 
 @include('formMessage')
- <form style="padding: 20px;" method="POST" action="{{route('userSetting')}}">
+ <form style="padding: 20px;" method="POST" action="{{route('userSetting',['locale'=>session('locale')])}}">
           <input class="form-control" type="hidden" name="_token" value="{{csrf_token()}}">
 
         <input class="form-control" type="hidden" name="id" value="{{$user->id}}">

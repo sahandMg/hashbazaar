@@ -16,6 +16,7 @@ class BlockMiddleware
      */
     public function handle($request, Closure $next)
     {
+
         if(Auth::guard('user')->check() ){
             if(Auth::guard('user')->user()->block == 1 ){
                 Auth::guard('user')->logout();

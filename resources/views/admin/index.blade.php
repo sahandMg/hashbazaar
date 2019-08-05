@@ -79,7 +79,7 @@
 
                   var chart = am4core.create("chartdiv", am4charts.XYChart);
                   chart.data = [];
-                  axios.get('{!! (route('chartDataAdmin')) !!}').then(function (resp) {
+                  axios.get('{!! (route('chartDataAdmin',['locale'=>session('locale')])) !!}').then(function (resp) {
 
                       chart.data = resp.data
 
@@ -122,7 +122,7 @@
 
             var chart2 = am4core.create("chartdiv2", am4charts.XYChart);
             chart2.data = [];
-            axios.get('{!! (route('chartDataProfit')) !!}').then(function (resp) {
+            axios.get('{!! (route('chartDataProfit',['locale'=>session('locale')])) !!}').then(function (resp) {
 
                 chart2.data = resp.data
 

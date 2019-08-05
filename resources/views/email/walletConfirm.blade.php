@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="keywords"
-          content="Bitcoin mining, scrypt mining, cloud mining, hosted mining"/>
+          content="Bitcoin mining, script mining, cloud mining, hosted mining"/>
     <meta name="description"
           content="Bitcoin is the digital gold of the future & HashBazaar is the most cost effective cloud mining company on the market. Mine bitcoin through the cloud, get started today!"/>
    <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
@@ -131,20 +131,21 @@
     <header>
         <div class="logo-header"><img src="{{asset('img/Logo_header.svg')}}" alt="logo_header"></div>
     </header>
-    <div class="container">
-            <h1>Confirm your wallet address</h1>
-            <p style="text-align: left;">Hello, confirm your wallet address by clicking below link</p>
-            <p style="text-align: left;">New Wallet Address: <b>{{$wallet}}</b></p>
-            <p style="text-align: left;"><a href="https://hashbazaar.com/panel/setting/wallet-confirm?old={{$user->wallet->addr}}&address={{$wallet}}"> {{$wallet}}</a></p>
-    </div>
-    <footer>
-
-        <a href="http://hashbazaar.com" target="_blank"> Website</a>
-        <a href="http://hashbazaar.com/panel/dashboard" target="_blank">Dashboard</a>
-        <a href="http://hashbazaar.com/faq" target="_blank">FAQ</a>
-        <a href="http://blog.hashbazaar.com/" target="_blank">Blog</a>
-        <a href="https://www.instagram.com/hashbazaar/" target="_blank">Instagram</a>
-
-    </footer>
+    @if(session('locale') != 'fa')
+        <div class="container">
+                <h1>Confirm your wallet address</h1>
+                <p style="text-align: left;">Hello, confirm your wallet address by clicking below link</p>
+                <p style="text-align: left;">New Wallet Address: <b>{{$wallet}}</b></p>
+                <p style="text-align: left;"><a href="{{route('RedirectWallet',['locale'=>session('locale')])}}?token={{$user->verifyUser->token}}&address={{$wallet}}"> {{$wallet}}</a></p>
+        </div>
+     @else
+        <div class="container">
+            <h1 style="text-align: right">تایید آدرس کیف پول</h1>
+            <p style="text-align: right;">لطفا برای تایید آدرس جدید کیف پول خود، روی لینک زیر کلیک کنید</p>
+            <p style="text-align: right;direction: rtl">آدرس جدید: </p>
+            <b style="text-align: left;"><a href="{{route('RedirectWallet',['locale'=>session('locale')])}}?token={{$user->verifyUser->token}}&address={{$wallet}}"> {{$wallet}}</a></b>
+        </div>
+    @endif
+    @include('email.master.footer')
 </body>
 </html>

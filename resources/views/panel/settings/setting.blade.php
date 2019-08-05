@@ -20,7 +20,7 @@
     @include('sessionError')
 
     <div class="setting-information" >
-        <form onsubmit="submitForm(event)"  name="profile" action="{{route('setting')}}" method="post">
+        <form onsubmit="submitForm(event)"  name="profile" action="{{route('setting',['locale'=>session('locale')])}}" method="post">
 
             <input type="hidden" name="_token" value="{{csrf_token()}}">
 
@@ -61,7 +61,7 @@
                 <h2 style="color:black" class="text-center">{{__("OR")}}</h2>
                 <h2 class="text-center" style="color:black">{{__("Submit Your Wallet Address")}}</h2>
 
-                 <form onsubmit="submitForm(event)"  id="setting-wallet" class="text-center" method="post" action="{{route('wallet')}}">
+                 <form onsubmit="submitForm(event)"  id="setting-wallet" class="text-center" method="post" action="{{route('wallet',['locale'=>session('locale')])}}">
                      <input class="text-center" type="hidden" name="_token" value="{{csrf_token()}}">
                     <input required   class="text-center" type="text" id="textwallet" name="wallet">
                     <button id="wallet" type="submit" class="buttonwallet text-center">{{__("Submit")}}</button>
@@ -89,14 +89,14 @@
             <div class="address-box">
                 <input type="text" id="copyTarget" value="{{Auth::guard('user')->user()->wallet->addr}}" readonly>
                 <div class="div-icons-flex">
-                    <a href="https://blockstream.info/address/{{!is_null(Auth::guard('user')->user()->wallet)?Auth::guard('user')->user()->wallet->addr:null}}"><img class="icon" src="../img/Link.svg" alt="Link"></a>
-                    <a class="coppyIcon" style="cursor: pointer;"><img class="icon" src="../img/Copy.svg" alt="Copy Link"></a>
+                    <a href="https://blockstream.info/address/{{!is_null(Auth::guard('user')->user()->wallet)?Auth::guard('user')->user()->wallet->addr:null}}"><img class="icon" src="{{URL::asset('img/Link.svg')}}" alt="Link"></a>
+                    <a class="coppyIcon" style="cursor: pointer;"><img class="icon" src="{{URL::asset('img/Copy.svg')}}" alt="Copy Link"></a>
                 </div>
             </div>
             @endif
             <div class="change-address">
 
-                <form onsubmit="submitForm(event)" action="{{route('editWallet')}}" method="POST">
+                <form onsubmit="submitForm(event)" action="{{route('editWallet',['locale'=>session('locale')])}}" method="POST">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <input required type="text" class="a2"  name="address"   placeholder="{{!is_null(Auth::guard('user')->user()->wallet)?Auth::guard('user')->user()->wallet->addr:'Your bitcoin wallet address'}}"><br>
                     <button id="editWallet" type="submit" class="pandel-button a4"  >{{__("Submit")}}</button>

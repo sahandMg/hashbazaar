@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{app()->getLocale()}}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,9 +15,9 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
-    <link rel="stylesheet" href="../fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="{{URL::asset('fonts/font-awesome.min.css')}}">
     {{-- <link rel="stylesheet" href="{{URL::asset('css/theme.css')}}">  --}}
-    <link rel="icon" href="{{URL::asset('img/favicon.svg')}}" type="image/x-icon"/>
+    <link rel="icon" href="{{URL::asset('img/favicon.ico')}}" type="image/x-icon"/>
     @yield('title')
     <script src="{{URL::asset('js/jquery-3.3.1.js')}}"></script>
     <script src="{{URL::asset('js/chartist.min.js')}}"></script>
@@ -92,7 +92,7 @@
 <header>
 
     <div id="header-div">
-        <a href="http://hashbazaar.com"> <img class="Logo_header" src="{{URL::asset('img/Logo_header.svg')}}" alt="Logo_header"></a>
+        <a href="{{route('index',['locale' =>session('locale')])}}"> <img class="Logo_header" src="{{URL::asset('img/Logo_header.svg')}}" alt="Logo_header"></a>
     </div>
     <div class="navigation-menu" >
         <div class="bar1 test2"></div>
@@ -102,15 +102,15 @@
     <div class="useraccount">
         <div class="list1"  id="useraccounthide">
             <ul>
-                <li class="user-account-list sub2"> <a href="{{route('dashboard')}}" id="dashboard2">{{__("Dashboard")}}</a></li>
-                <li class="user-account-list sub2"> <a href="{{route('activity')}}" id="activity2">{{__("Activity")}}</a></li>
+                <li class="user-account-list sub2"> <a href="{{route('dashboard',['locale'=>session('locale')])}}" id="dashboard2">{{__("Dashboard")}}</a></li>
+                <li class="user-account-list sub2"> <a href="{{route('activity',['locale'=>session('locale')])}}" id="activity2">{{__("Activity")}}</a></li>
             @if(Config::get('app.locale') == 'fa')
             @else
-                <li class="user-account-list sub2"> <a href="{{route('referral')}}" id="referral2">{{__("Referral")}}</a> </li>
+                <li class="user-account-list sub2"> <a href="{{route('referral',['locale'=>session('locale')])}}" id="referral2">{{__("Referral")}}</a> </li>
             @endif
-                <li class="user-account-list sub2"> <a href="{{route('setting')}}" id="setting2">{{__("Setting")}}</a></li>
-                <li class="user-account-list sub2"> <a href="{{route('contact')}}" id="contact2">{{__("Contact")}}</a></li>
-                <li class="user-account-list sub2" id="logouticon"><a href="{{route('logout')}}" >{{__("Log Out")}}</a></li>
+                <li class="user-account-list sub2"> <a href="{{route('setting',['locale'=>session('locale')])}}" id="setting2">{{__("Setting")}}</a></li>
+                <li class="user-account-list sub2"> <a href="{{route('contact',['locale'=>session('locale')])}}" id="contact2">{{__("Contact")}}</a></li>
+                <li class="user-account-list sub2" id="logouticon"><a href="{{route('logout',['locale'=>session('locale')])}}" >{{__("Log Out")}}</a></li>
 
 
             </ul>
@@ -229,16 +229,16 @@
 
             <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="{{URL::asset('img/Logo_In_NavBar.svg')}}" alt="Logo_In_NavBar"></a>
                 <a href="" id="welcome">{{Auth::guard('user')->user()->name}}</a> </li>
-            <li class="{{request()->route()->getName() =='dashboard'?'sub dashboard activeLink':'sub dashboard'}}"> <a href="{{route('dashboard')}}" id="dashboard">{{__("Dashboard")}}</a></li>
-            <li class="{{request()->route()->getName() =='activity'?'sub dashboard activeLink':'sub dashboard'}}"> <a href="{{route('activity')}}" id="activity">{{__("Activity")}}</a></li>
+            <li class="{{request()->route()->getName() =='dashboard'?'sub dashboard activeLink':'sub dashboard'}}"> <a href="{{route('dashboard',['locale'=>session('locale')])}}" id="dashboard">{{__("Dashboard")}}</a></li>
+            <li class="{{request()->route()->getName() =='activity'?'sub dashboard activeLink':'sub dashboard'}}"> <a href="{{route('activity',['locale'=>session('locale')])}}" id="activity">{{__("Activity")}}</a></li>
         @if(Config::get('app.locale') == 'fa')
         @else    
-            <li class="{{request()->route()->getName() =='referral'?'sub activeLink':'sub'}}"> <a href="{{route('referral')}}" id="referral">{{__("Referral")}}</a> </li>
+            <li class="{{request()->route()->getName() =='referral'?'sub activeLink':'sub'}}"> <a href="{{route('referral',['locale'=>session('locale')])}}" id="referral">{{__("Referral")}}</a> </li>
         @endif
 
-            <li class="{{request()->route()->getName() =='setting'?'sub activeLink':'sub'}}"> <a href="{{route('setting')}}" id="setting">{{__("Setting")}}</a></li>
-            <li class="{{request()->route()->getName() =='contact'?'sub activeLink':'sub'}}"> <a href="{{route('contact')}}" id="contact1">{{__("Contact")}}</a></li>
-            <li class="sub"> <a href="{{route('logout')}}" id="logouticon2">{{__("Log Out")}}</a></li>
+            <li class="{{request()->route()->getName() =='setting'?'sub activeLink':'sub'}}"> <a href="{{route('setting',['locale'=>session('locale')])}}" id="setting">{{__("Setting")}}</a></li>
+            <li class="{{request()->route()->getName() =='contact'?'sub activeLink':'sub'}}"> <a href="{{route('contact',['locale'=>session('locale')])}}" id="contact1">{{__("Contact")}}</a></li>
+            <li class="sub"> <a href="{{route('logout',['locale'=>session('locale')])}}" id="logouticon2">{{__("Log Out")}}</a></li>
 
         </ul>
 
@@ -308,9 +308,7 @@
     <script type="text/javascript">
     
         $(document).ready(function(){
-            console.log("dashboard");
             $('.navigation-menu').click(function(){
-              console.log("navigation-menu");
                 $('#header-navbar-menu').toggle(1);
                 $('.useraccount .list1').toggle(1);
                 $('.navigation-menu').toggleClass('change');

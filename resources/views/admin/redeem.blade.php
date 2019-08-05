@@ -50,7 +50,7 @@
                 vm = this;
 
 
-                axios.get({!! json_encode(route('adminGetRedeems')) !!}).then(function (response) {
+                axios.get({!! json_encode(route('adminGetRedeems',['locale'=>session('locale')])) !!}).then(function (response) {
 
                     vm.transactions = response.data;
 

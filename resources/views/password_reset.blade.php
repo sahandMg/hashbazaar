@@ -4,7 +4,7 @@
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form method="post" action="{{route('passwordReset')}}" class="login100-form validate-form p-l-55 p-r-55 p-t-178">
+				<form method="post" action="{{route('passwordReset',['locale'=>session('locale')])}}" class="login100-form validate-form p-l-55 p-r-55 p-t-178">
 				    <ul>
 						@foreach($errors->all() as $error)
 							<li style="color: red;margin-bottom: 1%;">{{$error}}</li>
@@ -38,7 +38,7 @@
 							{{__("Don’t have an account?")}}
 						</span>
 
-						<a href="{{route('signup')}}" class="txt3">
+						<a href="{{route('signup',['locale'=>session('locale')])}}" class="txt3">
 							{{__("Sign up now")}}
 						</a>
 					</div>

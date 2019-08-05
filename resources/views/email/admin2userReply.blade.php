@@ -155,20 +155,6 @@
 
 </div>
 
-<footer>
-    @if(\Illuminate\Support\Facades\Config::get('app.locale') == 'fa')
-        <a href="http://hashbazaar.com" target="_blank">وب سایت</a>
-        <a href="http://hashbazaar.com/panel/dashboard" target="_blank">میزکار</a>
-        <a href="http://hashbazaar.com/faq" target="_blank">سوالات متداول</a>
-        <!--     <a href="http://blog.hashbazaar.com/" target="_blank">Blog</a>
-         -->    <a href="https://www.instagram.com/hashbazaar/" target="_blank">اینستاگرام</a>
-    @else
-        <a href="http://hashbazaar.com" target="_blank"> Website</a>
-        <a href="http://hashbazaar.com/panel/dashboard" target="_blank">Dashboard</a>
-        <a href="http://hashbazaar.com/faq" target="_blank">FAQ</a>
-        <a href="http://blog.hashbazaar.com/" target="_blank">Blog</a>
-        <a href="https://www.instagram.com/hashbazaar/" target="_blank">Instagram</a>
-    @endif
-</footer>
+@include('email.master.footer')
 </body>
 </html>

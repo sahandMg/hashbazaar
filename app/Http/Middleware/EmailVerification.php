@@ -25,7 +25,7 @@ class EmailVerification
                 return redirect()->route('VerifyUserPage');
             }
         }else{
-            return redirect()->route('login');
+            return redirect()->route('login',['locale'=>session('locale')]);
         }
         return $next($request);
     }

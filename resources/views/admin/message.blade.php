@@ -43,7 +43,7 @@
                             <div class="modal-body">
 
                                 <div id="messagePanel">
-                                    <form style="padding: 20px;" method="POST" action="{{route('AdminMessage')}}">
+                                    <form style="padding: 20px;" method="POST" action="{{route('AdminMessage',['locale'=>session('locale')])}}">
                                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                                         <input type="hidden" name="id" value="{{$message->id}}">
                                         <div class="form-group">
@@ -86,10 +86,10 @@
         }
 
         function deleteMessage(id) {
-            axios.post('{!! (route('deleteMessage')) !!}',{'id':id}).then(function (response) {
+            axios.post('{!! (route('deleteMessage',['locale'=>session('locale')])) !!}',{'id':id}).then(function (response) {
                 if(response.data == 200 ){
 
-                    window.location.reload('{{ route('message')}}');
+                    window.location.reload('{{ route('message',['locale'=>session('locale')])}}');
                 }
             })
 

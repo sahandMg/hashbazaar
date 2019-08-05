@@ -245,7 +245,7 @@ class AdminController extends Controller
 
         $data = ['trans'=>$trans,'hashPower'=>$hashRecord,'email'=>$user->email];
         Mail::send('email.paymentConfirmed',$data , function ($message) use ($data) {
-            $message->from('admin@hashBazaar.com');
+            $message->from(env('Admin_Mail'));
             $message->to($data['email']);
             $message->subject('خرید تراهش');
 
@@ -353,7 +353,7 @@ class AdminController extends Controller
         $message = DB::table('messages')->where('id',$request->id)->first();
         $data = ['body'=>$request->body,'name'=>$message->name,'email'=>$message->email];
         Mail::send('email.admin2userReply',$data , function ($message) use ($data) {
-            $message->from('Admin@HashBazaar.com');
+            $message->from(env('Admin_Mail'));
             $message->to($data['email']);
             $message->subject('User Reply');
 

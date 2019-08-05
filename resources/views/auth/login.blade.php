@@ -6,7 +6,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form onsubmit="submitForm()" method="post" action="{{route('login')}}" class="login100-form validate-form p-l-55 p-r-55 p-t-178">
+				<form onsubmit="submitForm()" method="post" action="{{route('login',['locale'=>session('locale')])}}" class="login100-form validate-form p-l-55 p-r-55 p-t-178">
 				    <ul>
 						@foreach($errors->all() as $error)
 							<li style="color: red;margin-bottom: 1%;">{{$error}}</li>
@@ -50,7 +50,7 @@
 							<a onclick="refreshCaptcha(event)" style="cursor: pointer;">{{Captcha::img()}}</a>
 						</div>
 
-						<a href="{{route('passwordReset')}}" class="txt2">
+						<a href="{{route('passwordReset',['locale'=>session('locale')])}}" class="txt2">
 							{{__("Forgot Password?")}}
 						</a>
 					</div>
@@ -71,8 +71,8 @@
 						{{-- <a href="https://plus.google.com/+googleplus" class="socialnet-flex1" id="gp"><img src="../../../public/img/googleicon.png" alt=""></a> --}}
 						{{-- <a href="{{route('redirectToProvider')}}" class="socialnet-flex" id="gp"><img src="img/icons/googleicon.png" alt=""></a> --}}
 
-						<a href="{{route('redirectToProvider')}}" class="socialnet-flex1" id="gp">
-							<img src="img/icons/googleicon.png" alt="Google login"></a>
+						<a href="{{route('redirectToProvider',['locale'=>session('locale')])}}" class="socialnet-flex1" id="gp">
+							<img src="{{URL::asset('img/icons/googleicon.png')}}" alt="Google login"></a>
 						{{-- alt="Join With Google Account" --}}
 					</div>
 
@@ -81,7 +81,7 @@
 							{{__("Don’t have an account?")}}
 						</span>
 
-						<a href="{{route('signup')}}" class="txt3">
+						<a href="{{route('signup',['locale'=>session('locale')])}}" class="txt3">
 							{{__("Sign up now")}}
 						</a>
 					</div>

@@ -32,12 +32,12 @@ class SendEmail
 
         Mail::send('email.messageMailPage',$data,function($message) use($data){
             $message->from ($data['email']);
-            $message->to ('Admin@HashBazaar.com');
+            $message->to (env('Admin_Mail'));
             $message->subject ('Message From User');
         });
 
         Mail::send('email.replyMessageMailPage',$data,function($message) use($data){
-            $message->from ('Admin@HashBazaar.com');
+            $message->from (env('Admin_Mail'));
             $message->to ($data['email']);
             $message->subject ('Reply From HashBazaar');
         });

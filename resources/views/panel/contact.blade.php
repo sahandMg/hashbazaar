@@ -1,12 +1,12 @@
 @extends('panel.master.layout')
 @section('title')
-    <title>ارتباط با ما</title>
+    <title>{{__("Contact")}}</title>
 @endsection
 @section('content')
     <!-- Contact Page -->
     <div class="panel-container contact-container"  onclick="hideMe()">
         <h2 class="panel-header text-center"> {{__("LET US KNOW YOUR QUESTIONS")}}</h2>
-        <form onsubmit="submitForm()" method="post" action="{{route('contact')}}">
+        <form onsubmit="submitForm()" method="post" action="{{route('contact',['locale'=>session('locale')])}}">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <input type="hidden" name="name" id="Name" value="{{Auth::guard('user')->user()->name}}">
             <input type="hidden" name="email" id="Email" value="{{Auth::guard('user')->user()->email}}">

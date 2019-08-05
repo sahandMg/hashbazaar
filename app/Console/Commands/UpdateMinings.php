@@ -92,13 +92,17 @@ class UpdateMinings extends Command
         $resp = curl_exec($ch);
         curl_close($ch);
         $f2poolResp = json_decode($resp, true);
-        $miningValue = number_format($f2poolResp['value_last_day'], 8);
-        $mining24 = $miningValue;
         $users = User::all();
         $mainTHash = $settings->total_th;
-        $todayTHash = number_format($f2poolResp['hashes_last_day'] / 86400 / pow(10, 12), 3);
+        $RealTHash = number_format($f2poolResp['hashes_last_day'] / 86400 / pow(10, 12), 3);
+        // ============================
+        $todayTHash = $RealTHash ;
+        // ============================
+        $miningValue = number_format($f2poolResp['value_last_day'], 8);
+        $mining24 = $miningValue * $todayTHash / $RealTHash;
         $updateFlag = 0;
         $todayProfit = 0;
+
         foreach ($users as $index => $user) {
             $hashes = BitHash::where('user_id', $user->id)->where('confirmed', 1)->get();
             if (!$hashes->isEmpty()) {

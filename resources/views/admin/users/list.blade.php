@@ -75,15 +75,15 @@
                             <td> <button id={{$user->code}} @click="block" class="btn btn-success"> Active </button> </td>
                         @endif
                         <td>
-                            <form action="{{route('LoginAsUser')}}" method="POST">
+                            <form action="{{route('LoginAsUser',['locale'=>session('locale')])}}" method="POST">
                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                                 <input type="hidden" name="email" value="{{$user->email}}">
                                 <button class="btn btn-info" type="submit">Login</button>
                             </form>
                         </td>
-                        <td><a class="btn btn-primary" href="{{route('collaboration',['id'=>$user->id])}}">Collab</a></td>
+                        <td><a class="btn btn-primary" href="{{route('collaboration',['locale'=>session('locale'),'id'=>$user->id])}}">Collab</a></td>
 
-                        <td><a class="btn btn-info" href="{{route('userSetting',['id'=>$user->id])}}">Setting</a></td>
+                        <td><a class="btn btn-info" href="{{route('userSetting',['locale'=>session('locale'),'id'=>$user->id])}}">Setting</a></td>
                     </tr>
 
                     @endforeach
@@ -107,7 +107,7 @@
             block:function (e) {
 
 
-                axios.get('{{route('blockUser')}}?code='+e.target.id).then(function (response) {
+                axios.get('{{route('blockUser',['locale'=>session('locale')])}}?code='+e.target.id).then(function (response) {
 
                     if(e.target.className == 'btn btn-danger'){
 

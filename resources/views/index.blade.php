@@ -36,7 +36,7 @@
             <h3 class="fontTheme">{{__('CHOOSE YOUR INVESTMENT PLAN')}}</h3>
         </div>
         <div class="container">
-          <form action="{{route('signup')}}" method="get">
+          <form action="{{route('signup',['locale'=>session('locale')])}}" method="get">
             <h5 id="demo"></h5>
             <div class="slidecontainer">
                 <input name="hashPower" type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" class="slider" id="myRange">
@@ -110,7 +110,7 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     @include('formError')
-                    <form id="contactForm" class="contact-form" onsubmit="checkForm()" method="POST" action="{{route('message')}}">
+                    <form id="contactForm" class="contact-form" onsubmit="checkForm()" method="POST" action="{{route('message',['locale'=>session('locale')])}}">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
 
                         <div class="form-group fontTheme"><input pattern='[a-zA-Z0-9 آ ا ب پ ت ث ج چ ح خ د ذ ر ز ژ س ش ص ض ط ظ ع غ ف ق ک گ ل م ن و ه ی]+'  required class="form-control" type="text" name="name"

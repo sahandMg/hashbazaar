@@ -121,7 +121,7 @@
 	<p>Note that all the affiliate rewards will be given by Hashbazaar to our promoters to encourage others to join the future of cryptocurrency transaction system and also gain profit from their investment.</p>
 </div>
 <div class="form-group fontTheme">
-    <a href="{{route('signup')}}" class="btn btn-primary round-button-com" style="margin: auto;display: block;width: 150px;">Get Starting</a>
+    <a href="{{route('signup',['locale'=>session('locale')])}}" class="btn btn-primary round-button-com" style="margin: auto;display: block;width: 150px;">Get Starting</a>
 </div>
     <style type="text/css">
        /*.round-button-com {

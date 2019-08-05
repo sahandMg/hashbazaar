@@ -207,7 +207,7 @@ Route::get('language/{locale}', function ($locale) {
 
 Route::get('/', function (){
 
-    return redirect()->route('index',['locale'=>session('locale')]);
+    return redirect()->route('index',['locale'=> session()->has('locale')?session('locale'):App::getLocale()]);
 });
 
 Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {

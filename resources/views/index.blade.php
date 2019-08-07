@@ -99,7 +99,23 @@
             </div>
         </div>
     </section>
-  @endif  
+  @endif
+    <section class="context-section pb-4" style="color:black;">
+        <div class="row">
+            <div class="col-md-4 col-sm-12">
+                <h5 class="text-center">scalability</h5>
+                <p >we use best tools for mining, because of that we scale easily</p>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <h5 class="text-center">scalability</h5>
+                <p >we use best tools for mining, because of that we scale easily</p>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <h5 class="text-center">scalability</h5>
+                <p >we use best tools for mining, because of that we scale easily</p>
+            </div>
+        </div>
+    </section>
     <section id="contact" class="text-center backgroundGrey" >
         <div class="" style="background: white;padding-bottom:1px">
             <div class="col-lg-8 mx-auto">

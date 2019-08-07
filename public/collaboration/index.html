@@ -16,13 +16,13 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   
   <title>Home</title>
   <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="css/site_global.css?crc=443350757"/>
+  <link rel="stylesheet" type="text/css" href="css/site_global.css?crc=4228014014"/>
   <link rel="stylesheet" type="text/css" href="css/master_a-master.css?crc=255203975"/>
-  <link rel="stylesheet" type="text/css" href="css/index.css?crc=203414985" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="css/index.css?crc=343461299" id="pagesheet"/>
   <!-- IE-only CSS -->
   <!--[if lt IE 9]>
   <link rel="stylesheet" type="text/css" href="css/nomq_preview_master_a-master.css?crc=3824530138"/>
-  <link rel="stylesheet" type="text/css" href="css/nomq_index.css?crc=4140397066" id="nomq_pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="css/nomq_index.css?crc=3881865170" id="nomq_pagesheet"/>
   <![endif]-->
     <!--HTML Widget code-->
   
@@ -43,258 +43,175 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
 }
 </style>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 <style>
-form {
-  -webkit-box-sizing: initial;
-  -moz-box-sizing: initial;
-  box-sizing: initial;
-}
-
-*, *:before, *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
-  box-sizing: inherit;
-}
-
-.container {
-	padding: 80px;
-}
-
-.bt-menu {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 0;
-	border-width: 0px;
-	border-style: solid;
-	border-color: #AECB53;
-	background-color: rgba(0,0,0,0);
-	-webkit-backface-visibility: hidden;
-	-webkit-transition: border-width 0.3s, background-color 0.3s, height 0s 0.3s;
-	transition: border-width 0.3s, background-color 0.3s, height 0s 0.3s;
-}
-
-.bt-menu.bt-menu-open {
-	height: 100%;
-	border-width: 0px 0px 50px 150px;
-	background-color: rgba(14,30,40,0.3);
-  background-image: url("Add File");
-  background-size: 40% auto;
+.buttonopen {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: none;
+  background-image: url(assets/menu.png);
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-	-webkit-transition: border-width 0.3s, background-color 0.3s;
-	transition: border-width 0.3s, background-color 0.3s;
+  cursor: pointer;
+  cursor: url(Add File), auto;
 }
 
-.bt-overlay {
-	position: absolute;
-	width: 100%;
-}
-
-.bt-menu-open .bt-overlay {
-	height: 100%;
-}
-
-.bt-menu-trigger {
+/* Overlay style */
+.overlay {
 	position: fixed;
-	top: 10px;
-	left: 20px;
-	z-index: 100;
-	display: block;
-	width: 50px;
-	height: 50px;
-	cursor: pointer;
-}
-
-.bt-menu-trigger span {
-	position: absolute;
-	top: 50%;
-	left: 0;
-	display: block;
-	width: 100%;
-	height: 8%;
-	background-color: #F7931E;
-	font-size: 0px;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	-webkit-transition: background-color 0.3s;
-	transition: background-color 0.3s;
-}
-
-.bt-menu-trigger span:before,
-.bt-menu-trigger span:after {
-	position: absolute;
-	left: 0;
 	width: 100%;
 	height: 100%;
-	background: #F7931E;
-	content: '';
-	-webkit-transition: -webkit-transform 0.3s;
-	transition: transform 0.3s;
-}
-
-.bt-menu-trigger span:before {
-	-webkit-transform: translateY(-250%);
-	transform: translateY(-250%);
-}
-
-.bt-menu-trigger span:after {
-	-webkit-transform: translateY(250%);
-	transform: translateY(250%);
-}
-
-.bt-menu-open .bt-menu-trigger span:before {
-	-webkit-transform: translateY(-300%);
-	transform: translateY(-300%);
-}
-
-.bt-menu-open .bt-menu-trigger span:after {
-	-webkit-transform: translateY(300%);
-	transform: translateY(300%);
-}
-
-.bt-menu ul {
-	position: fixed;
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-.bt-menu ul:first-of-type {
-	top: 75px;
+	top: 0;
 	left: 0;
+	background: rgba(30,30,30,0.9);
 }
 
-.bt-menu ul:nth-of-type(2) {
-	right: 0;
-	bottom: -10px;
-}
-
-.bt-menu ul li,
-.bt-menu ul li a {
-	display: block;
-}
-
-.bt-menu ul:nth-of-type(2) li {
-	float: left;
-	font-size: 0px;
-}
-
-.bt-menu ul li {
-	visibility: hidden;
-	opacity: 0;
-	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s, visibility 0s 0.3s;
-	transition: transform 0.3s, opacity 0.2s, visibility 0s 0.3s;
-}
-
-.bt-menu.bt-menu-open ul:first-of-type li,
-.bt-menu.bt-menu-open ul:nth-of-type(2) li {
-	visibility: visible;
-	opacity: 1;
-	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s 0.1s;
-	transition: transform 0.3s, opacity 0.3s;
-}
-
-/* First menu */
-.bt-menu ul:first-of-type li {
-	width: 150px;
-	height: 50px;
-  text-align: right;
-	line-height: 50px;
-	-webkit-transform: translate3d(-100%,50%,0);
-	transform: translate3d(-100%,50%,0);
-}
-
-.bt-menu.bt-menu-open ul:first-of-type li {
-	-webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
-}
-
-/* Second menu */
-.bt-menu ul:nth-of-type(2) li {
-	width: 60px;
-	height: 50px;
-	line-height: 50px;
-	-webkit-transform: scale(0);
-	transform: scale(0);
-  -webkit-transform-origin: center;
-  -ms-transform-origin: center;
-  -o-transform-origin: center;
-  transform-origin: center;
-}
-
-.bt-menu.bt-menu-open ul:nth-of-type(2) li:first-child {
-	-webkit-transition-delay: 0.1s;
-	transition-delay: 0.1s;
-}
-
-.bt-menu.bt-menu-open ul:nth-of-type(2) li:nth-child(2) {
-	-webkit-transition-delay: 0.2s;
-	transition-delay: 0.2s;
-}
-
-.bt-menu.bt-menu-open ul:nth-of-type(2) li:nth-child(3) {
-	-webkit-transition-delay: 0.3s;
-	transition-delay: 0.3s;
-}
-
-.bt-menu.bt-menu-open ul:nth-of-type(2) li:nth-child(4) {
-	-webkit-transition-delay: 0.4s;
-	transition-delay: 0.4s;
-}
-
-.bt-menu.bt-menu-open ul:nth-of-type(2) li {
-	-webkit-transform: scale(1);
-	transform: scale(1);
-}
-
-.bt-menu ul li a {
-	display: block;
+/* Overlay closing cross */
+.overlay .overlay-close {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	overflow: hidden;
+	border: none;
+  background: none;
+  background-image: url('assets/close.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 	outline: none;
+  cursor: pointer;
+  cursor: url(Add File), auto;
+	z-index: 100;
+}
+
+.btnctr {
+  right: 50% !important;
+  margin-top: calc(20px/-2);
+  margin-right: calc(20px/-2);
+}
+
+/* Menu style */
+.overlay nav {
+	text-align: center;
+	position: relative;
+	top: 50%;
+	height: 60%;
+	font-size: 54px;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.overlay ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	display: inline-block;
+	font-size: 50px;
+	height: 140%;
+	position: relative;
+}
+
+.overlay ul li {
+	display: block;
+	height: calc(100% / 6);
+	min-height: 50px;
+}
+
+.overlay ul li {
+  letter-spacing: 0px;
+}
+
+.overlay ul li a {
+	font-weight: 400;
+	display: block;
+	color: #DCDCDC;
+	font-family: inherit;
+	text-decoration: none;
+	outline: none;
+  cursor: pointer;
+  cursor: url(Add File), auto;
+	/*-webkit-transition: color 0.2s;
+	transition: color 0.2s;*/
+}
+
+.overlay ul li a:hover,
+.overlay ul li a:focus {
+	color: #F7931E;
 	text-decoration: none;
 }
 
-.bt-menu ul:first-of-type li a {
-	padding: 0 20px;
-	box-shadow: inset 0 1px rgba(14,30,40,0);
-	color: #000000;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-size: 1em;
-	-webkit-transition: color 0.2s;
-	transition: color 0.2s;
+/* Effects */
+.overlay-door {
+	visibility: hidden;
+	width: 0;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	-webkit-transition: width 0.5s 0.3s, visibility 0s 0.8s;
+	transition: width 0.5s 0.3s, visibility 0s 0.8s;
 }
 
-.bt-menu ul:first-of-type li:last-child a {
-	box-shadow: inset 0 1px rgba(14,30,40,0), inset 0 -1px rgba(14,30,40,0);
+.overlay-door.open {
+	visibility: visible;
+	width: 100%;
+	-webkit-transition: width 0.5s;
+	transition: width 0.5s;
 }
 
-.bt-menu ul:nth-of-type(2) li a {
-	color: transparent;
-	text-align: center;
-	font-size: 0px;
+.overlay-door nav {
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translateY(-50%) translateX(-50%);
+	transform: translateY(-50%) translateX(-50%);
 }
 
-.bt-menu ul li a:before {
-	color: #000000;
-	font-size: 24px;
-	-webkit-transition: color 0.2s;
-	transition: color 0.2s;
+.overlay-door nav,
+.overlay-door .overlay-close {
+	opacity: 0;
+	-webkit-transition: opacity 0.3s 0.5s;
+	transition: opacity 0.3s 0.5s;
 }
 
-.bt-menu ul:first-of-type li a:hover,
-.bt-menu ul:first-of-type li a:focus,
-.bt-menu ul li a:hover:before,
-.bt-menu ul li a:focus:before {
-	color: #95D0AB;
+.overlay-door.open nav,
+.overlay-door.open .overlay-close {
+	opacity: 1;
+	-webkit-transition-delay: 0.5s;
+	transition-delay: 0.5s;
+}
+
+.overlay-door.close nav,
+.overlay-door.close .overlay-close {
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
+}
+
+@media screen and (max-height: 30.5em) {
+	.overlay nav {
+		height: 70%;
+		font-size: 34px;
+	}
+	.overlay ul li {
+		min-height: 34px;
+	}
+}
+
+@media (max-width: 480px) {
+  .overlay ul {
+    font-size: 25px;
+  }
 }
 </style>
+<script src="https://cdn.jsdelivr.net/classie/1.0.1/classie.js"></script>
+<script>
+/* Modernizr 2.7.1 (Custom Build) | MIT & BSD
+ * Build: http://modernizr.com/download/#-csstransitions-shiv-cssclasses-prefixed-testprop-testallprops-domprefixes-load
+ */
+;window.Modernizr=function(a,b,c){function x(a){j.cssText=a}function y(a,b){return x(prefixes.join(a+";")+(b||""))}function z(a,b){return typeof a===b}function A(a,b){return!!~(""+a).indexOf(b)}function B(a,b){for(var d in a){var e=a[d];if(!A(e,"-")&&j[e]!==c)return b=="pfx"?e:!0}return!1}function C(a,b,d){for(var e in a){var f=b[a[e]];if(f!==c)return d===!1?a[e]:z(f,"function")?f.bind(d||b):f}return!1}function D(a,b,c){var d=a.charAt(0).toUpperCase()+a.slice(1),e=(a+" "+n.join(d+" ")+d).split(" ");return z(b,"string")||z(b,"undefined")?B(e,b):(e=(a+" "+o.join(d+" ")+d).split(" "),C(e,b,c))}var d="2.7.1",e={},f=!0,g=b.documentElement,h="modernizr",i=b.createElement(h),j=i.style,k,l={}.toString,m="Webkit Moz O ms",n=m.split(" "),o=m.toLowerCase().split(" "),p={},q={},r={},s=[],t=s.slice,u,v={}.hasOwnProperty,w;!z(v,"undefined")&&!z(v.call,"undefined")?w=function(a,b){return v.call(a,b)}:w=function(a,b){return b in a&&z(a.constructor.prototype[b],"undefined")},Function.prototype.bind||(Function.prototype.bind=function(b){var c=this;if(typeof c!="function")throw new TypeError;var d=t.call(arguments,1),e=function(){if(this instanceof e){var a=function(){};a.prototype=c.prototype;var f=new a,g=c.apply(f,d.concat(t.call(arguments)));return Object(g)===g?g:f}return c.apply(b,d.concat(t.call(arguments)))};return e}),p.csstransitions=function(){return D("transition")};for(var E in p)w(p,E)&&(u=E.toLowerCase(),e[u]=p[E](),s.push((e[u]?"":"no-")+u));return e.addTest=function(a,b){if(typeof a=="object")for(var d in a)w(a,d)&&e.addTest(d,a[d]);else{a=a.toLowerCase();if(e[a]!==c)return e;b=typeof b=="function"?b():b,typeof f!="undefined"&&f&&(g.className+=" "+(b?"":"no-")+a),e[a]=b}return e},x(""),i=k=null,function(a,b){function l(a,b){var c=a.createElement("p"),d=a.getElementsByTagName("head")[0]||a.documentElement;return c.innerHTML="x<style>"+b+"</style>",d.insertBefore(c.lastChild,d.firstChild)}function m(){var a=s.elements;return typeof a=="string"?a.split(" "):a}function n(a){var b=j[a[h]];return b||(b={},i++,a[h]=i,j[i]=b),b}function o(a,c,d){c||(c=b);if(k)return c.createElement(a);d||(d=n(c));var g;return d.cache[a]?g=d.cache[a].cloneNode():f.test(a)?g=(d.cache[a]=d.createElem(a)).cloneNode():g=d.createElem(a),g.canHaveChildren&&!e.test(a)&&!g.tagUrn?d.frag.appendChild(g):g}function p(a,c){a||(a=b);if(k)return a.createDocumentFragment();c=c||n(a);var d=c.frag.cloneNode(),e=0,f=m(),g=f.length;for(;e<g;e++)d.createElement(f[e]);return d}function q(a,b){b.cache||(b.cache={},b.createElem=a.createElement,b.createFrag=a.createDocumentFragment,b.frag=b.createFrag()),a.createElement=function(c){return s.shivMethods?o(c,a,b):b.createElem(c)},a.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+m().join().replace(/[\w\-]+/g,function(a){return b.createElem(a),b.frag.createElement(a),'c("'+a+'")'})+");return n}")(s,b.frag)}function r(a){a||(a=b);var c=n(a);return s.shivCSS&&!g&&!c.hasCSS&&(c.hasCSS=!!l(a,"article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}template{display:none}")),k||q(a,c),a}var c="3.7.0",d=a.html5||{},e=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,f=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,g,h="_html5shiv",i=0,j={},k;(function(){try{var a=b.createElement("a");a.innerHTML="<xyz></xyz>",g="hidden"in a,k=a.childNodes.length==1||function(){b.createElement("a");var a=b.createDocumentFragment();return typeof a.cloneNode=="undefined"||typeof a.createDocumentFragment=="undefined"||typeof a.createElement=="undefined"}()}catch(c){g=!0,k=!0}})();var s={elements:d.elements||"abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video",version:c,shivCSS:d.shivCSS!==!1,supportsUnknownElements:k,shivMethods:d.shivMethods!==!1,type:"default",shivDocument:r,createElement:o,createDocumentFragment:p};a.html5=s,r(b)}(this,b),e._version=d,e._domPrefixes=o,e._cssomPrefixes=n,e.testProp=function(a){return B([a])},e.testAllProps=D,e.prefixed=function(a,b,c){return b?D(a,b,c):D(a,"pfx")},g.className=g.className.replace(/(^|\s)no-js(\s|$)/,"$1$2")+(f?" js "+s.join(" "):""),e}(this,this.document),function(a,b,c){function d(a){return"[object Function]"==o.call(a)}function e(a){return"string"==typeof a}function f(){}function g(a){return!a||"loaded"==a||"complete"==a||"uninitialized"==a}function h(){var a=p.shift();q=1,a?a.t?m(function(){("c"==a.t?B.injectCss:B.injectJs)(a.s,0,a.a,a.x,a.e,1)},0):(a(),h()):q=0}function i(a,c,d,e,f,i,j){function k(b){if(!o&&g(l.readyState)&&(u.r=o=1,!q&&h(),l.onload=l.onreadystatechange=null,b)){"img"!=a&&m(function(){t.removeChild(l)},50);for(var d in y[c])y[c].hasOwnProperty(d)&&y[c][d].onload()}}var j=j||B.errorTimeout,l=b.createElement(a),o=0,r=0,u={t:d,s:c,e:f,a:i,x:j};1===y[c]&&(r=1,y[c]=[]),"object"==a?l.data=c:(l.src=c,l.type=a),l.width=l.height="0",l.onerror=l.onload=l.onreadystatechange=function(){k.call(this,r)},p.splice(e,0,u),"img"!=a&&(r||2===y[c]?(t.insertBefore(l,s?null:n),m(k,j)):y[c].push(l))}function j(a,b,c,d,f){return q=0,b=b||"j",e(a)?i("c"==b?v:u,a,b,this.i++,c,d,f):(p.splice(this.i++,0,a),1==p.length&&h()),this}function k(){var a=B;return a.loader={load:j,i:0},a}var l=b.documentElement,m=a.setTimeout,n=b.getElementsByTagName("script")[0],o={}.toString,p=[],q=0,r="MozAppearance"in l.style,s=r&&!!b.createRange().compareNode,t=s?l:n.parentNode,l=a.opera&&"[object Opera]"==o.call(a.opera),l=!!b.attachEvent&&!l,u=r?"object":l?"script":"img",v=l?"script":u,w=Array.isArray||function(a){return"[object Array]"==o.call(a)},x=[],y={},z={timeout:function(a,b){return b.length&&(a.timeout=b[0]),a}},A,B;B=function(a){function b(a){var a=a.split("!"),b=x.length,c=a.pop(),d=a.length,c={url:c,origUrl:c,prefixes:a},e,f,g;for(f=0;f<d;f++)g=a[f].split("="),(e=z[g.shift()])&&(c=e(c,g));for(f=0;f<b;f++)c=x[f](c);return c}function g(a,e,f,g,h){var i=b(a),j=i.autoCallback;i.url.split(".").pop().split("?").shift(),i.bypass||(e&&(e=d(e)?e:e[a]||e[g]||e[a.split("/").pop().split("?")[0]]),i.instead?i.instead(a,e,f,g,h):(y[i.url]?i.noexec=!0:y[i.url]=1,f.load(i.url,i.forceCSS||!i.forceJS&&"css"==i.url.split(".").pop().split("?").shift()?"c":c,i.noexec,i.attrs,i.timeout),(d(e)||d(j))&&f.load(function(){k(),e&&e(i.origUrl,h,g),j&&j(i.origUrl,h,g),y[i.url]=2})))}function h(a,b){function c(a,c){if(a){if(e(a))c||(j=function(){var a=[].slice.call(arguments);k.apply(this,a),l()}),g(a,j,b,0,h);else if(Object(a)===a)for(n in m=function(){var b=0,c;for(c in a)a.hasOwnProperty(c)&&b++;return b}(),a)a.hasOwnProperty(n)&&(!c&&!--m&&(d(j)?j=function(){var a=[].slice.call(arguments);k.apply(this,a),l()}:j[n]=function(a){return function(){var b=[].slice.call(arguments);a&&a.apply(this,b),l()}}(k[n])),g(a[n],j,b,n,h))}else!c&&l()}var h=!!a.test,i=a.load||a.both,j=a.callback||f,k=j,l=a.complete||f,m,n;c(h?a.yep:a.nope,!!i),i&&c(i)}var i,j,l=this.yepnope.loader;if(e(a))g(a,0,l,0);else if(w(a))for(i=0;i<a.length;i++)j=a[i],e(j)?g(j,0,l,0):w(j)?B(j):Object(j)===j&&h(j,l);else Object(a)===a&&h(a,l)},B.addPrefix=function(a,b){z[a]=b},B.addFilter=function(a){x.push(a)},B.errorTimeout=1e4,null==b.readyState&&b.addEventListener&&(b.readyState="loading",b.addEventListener("DOMContentLoaded",A=function(){b.removeEventListener("DOMContentLoaded",A,0),b.readyState="complete"},0)),a.yepnope=k(),a.yepnope.executeStack=h,a.yepnope.injectJs=function(a,c,d,e,i,j){var k=b.createElement("script"),l,o,e=e||B.errorTimeout;k.src=a;for(o in d)k.setAttribute(o,d[o]);c=j?h:c||f,k.onreadystatechange=k.onload=function(){!l&&g(k.readyState)&&(l=1,c(),k.onload=k.onreadystatechange=null)},m(function(){l||(l=1,c(1))},e),i?k.onload():n.parentNode.insertBefore(k,n)},a.yepnope.injectCss=function(a,c,d,e,g,i){var e=b.createElement("link"),j,c=i?h:c||f;e.href=a,e.rel="stylesheet",e.type="text/css";for(j in d)e.setAttribute(j,d[j]);g||(n.parentNode.insertBefore(e,n),m(c,0))}}(this,document),Modernizr.load=function(){yepnope.apply(window,[].slice.call(arguments,0))};
+</script>
 
   <!--/*
 
@@ -303,14 +220,11 @@ form {
  </head>
  <body>
 
-  <div class="breakpoint active" id="bp_infinity" data-min-width="1025"><!-- responsive breakpoint node -->
+  <div class="breakpoint active" id="bp_infinity" data-min-width="1281"><!-- responsive breakpoint node -->
    <div class="clearfix borderbox" id="page"><!-- column -->
-    <div class="clearfix colelem shared_content" id="pu2390" data-content-guid="pu2390_content"><!-- group -->
+    <div class="clearfix colelem" id="pu2390"><!-- group -->
      <div class="museBGSize grpelem shared_content" id="u2390" data-content-guid="u2390_content"><!-- content -->
       <div class="fluid_height_spacer"></div>
-     </div>
-     <div class="browser_width grpelem shared_content" id="u106-bw" data-content-guid="u106-bw_content">
-      <div id="u106"><!-- simple frame --></div>
      </div>
      <div class="size_fixed grpelem shared_content" id="u1968" data-content-guid="u1968_content"><!-- custom html -->
       
@@ -324,31 +238,37 @@ form {
      <div class="clearfix grpelem shared_content" id="u162-4" data-content-guid="u162-4_content"><!-- content -->
       <p id="u162-2">استخراج ابری بیتکوین</p>
      </div>
-     <div class="size_fixed grpelem shared_content" id="u2691" data-content-guid="u2691_content"><!-- custom html -->
-      
-<div class="container">
-  <nav id="bt-menu" class="bt-menu">
-    <a href="#" class="bt-menu-trigger"><span>Menu</span></a>
-    <ul id="menuitems1">
-    </ul>
-    <ul id="menuitems2">
-    </ul>
-  </nav>
-</div><!-- /container -->
-
-     </div>
-    </div>
-    <div class="browser_width colelem shared_content" id="u2312-bw" data-content-guid="u2312-bw_content">
-     <div id="u2312"><!-- column -->
-      <div class="clearfix" id="u2312_align_to_page">
-       <div class="clearfix colelem" id="u2318-4"><!-- content -->
-        <p id="u2318-2">Professionally incentivize open-source supply chains vis-a-vis collaborative synergy.</p>
-       </div>
-       <div class="clearfix colelem" id="u2358-4"><!-- content -->
-        <p id="u2358-2">Professionally incentivize open-source supply chains vis-a-vis collaborative synergy.Professionally incentivize open-source supply chains vis-a-vis collaborative synergy.</p>
+     <div class="browser_width grpelem shared_content" id="u2312-bw" data-content-guid="u2312-bw_content">
+      <div id="u2312"><!-- column -->
+       <div class="clearfix" id="u2312_align_to_page">
+        <div class="clearfix colelem" id="u2318-4"><!-- content -->
+         <p id="u2318-2">Professionally incentivize open-source supply chains vis-a-vis collaborative synergy.</p>
+        </div>
+        <div class="clearfix colelem" id="u2358-4"><!-- content -->
+         <p id="u2358-2">Professionally incentivize open-source supply chains vis-a-vis collaborative synergy.Professionally incentivize open-source supply chains vis-a-vis collaborative synergy.</p>
+        </div>
        </div>
       </div>
      </div>
+     <div class="size_fixed grpelem shared_content" id="u3274" data-content-guid="u3274_content"><!-- custom html -->
+      
+
+     </div>
+     <div class="browser_width grpelem shared_content" id="u106-bw" data-content-guid="u106-bw_content">
+      <div id="u106"><!-- simple frame --></div>
+     </div>
+    </div>
+    <div class="size_fixed pinned-colelem shared_content" id="u3458" data-content-guid="u3458_content"><!-- custom html -->
+     
+<button id="trigger-overlay" class="buttonopen"></button>
+<div class="overlay overlay-door">
+  <button type="button" class="overlay-close"></button>
+	<nav>
+	  <ul id="bgmu">
+	  </ul>
+	</nav>
+</div>
+
     </div>
     <div class="browser_width colelem shared_content" id="u193-bw" data-content-guid="u193-bw_content">
      <div id="u193"><!-- group -->
@@ -359,29 +279,29 @@ form {
       </div>
      </div>
     </div>
-    <div class="clearfix colelem" id="u190"><!-- group -->
+    <div class="clearfix colelem shared_content" id="u190" data-content-guid="u190_content"><!-- group -->
      <div class="clearfix grpelem shared_content" id="u1826" data-content-guid="u1826_content"><!-- column -->
       <div class="clearfix colelem" id="u771-4"><!-- content -->
        <p>TextBox1</p>
       </div>
       <div class="clearfix colelem" id="u471-14"><!-- content -->
-       <p>TexBox 1 Body</p>
-       <p>With our mobile containers we are able to provide mining capacity almost anywhere in the world.</p>
-       <p>This approach allows for a combination of flexibilit</p>
-       <p>&nbsp;cools down the high-performance computers by using water from the nearby fjord.</p>
-       <p>With our mobile containers we are able to provide mining capacity almost anywhere in the world.</p>
-       <p>This approach allows for a combination of flexibility</p>
+       <p id="u471-2">TexBox 1 Body</p>
+       <p id="u471-4">With our mobile containers we are able to provide mining capacity almost anywhere in the world.</p>
+       <p id="u471-6">This approach allows for a combination of flexibilit</p>
+       <p id="u471-8">&nbsp;cools down the high-performance computers by using water from the nearby fjord.</p>
+       <p id="u471-10">With our mobile containers we are able to provide mining capacity almost anywhere in the world.</p>
+       <p id="u471-12">This approach allows for a combination of flexibility</p>
       </div>
      </div>
-     <div class="clearfix grpelem" id="pu1644-4"><!-- column -->
-      <div class="clearfix colelem shared_content" id="u1644-4" data-content-guid="u1644-4_content"><!-- content -->
+     <div class="clearfix grpelem shared_content" id="u4173" data-content-guid="u4173_content"><!-- column -->
+      <div class="clearfix colelem" id="u1644-4"><!-- content -->
        <p>TextBo2</p>
       </div>
-      <div class="clearfix colelem shared_content" id="u832-10" data-content-guid="u832-10_content"><!-- content -->
-       <p>Text Box2 Body</p>
-       <p>Deep inside a Norwegian mountain, our mining hardware is placed in one of the most secure data centers of the world – densely organized in the mobile Northern Bitcoin mining containers. Within the smallest space, a sophisticated system cools down the high-performance computers by using water from the nearby fjord.</p>
-       <p>With our mobile containers we are able to provide mining capacity almost anywhere in the world.</p>
-       <p>This approach allows for a combination of flexibility</p>
+      <div class="clearfix colelem" id="u832-10"><!-- content -->
+       <p id="u832-2">Text Box2 Body</p>
+       <p id="u832-4">Deep inside a Norwegian mountain, our mining hardware is placed in one of the most secure data centers of the world – densely organized in the mobile Northern Bitcoin mining containers. Within the smallest space, a sophisticated system cools down the high-performance computers by using water from the nearby fjord.</p>
+       <p id="u832-6">With our mobile containers we are able to provide mining capacity almost anywhere in the world.</p>
+       <p id="u832-8">This approach allows for a combination of flexibility</p>
       </div>
      </div>
      <div class="clearfix grpelem shared_content" id="u1820" data-content-guid="u1820_content"><!-- column -->
@@ -389,16 +309,16 @@ form {
        <p>Text Box3</p>
       </div>
       <div class="clearfix colelem" id="u753-14"><!-- content -->
-       <p>Text Box3 Body</p>
-       <p>TWith our mobile containers we are able to provide mining capacity almost anywhere in the world.</p>
-       <p>This approach allows for a combination of flexibil</p>
-       <p>&nbsp;cools down the high-performance computers by using water from the nearby fjord.</p>
-       <p>With our mobile containers we are able to provide mining capacity almost anywhere in the world.</p>
-       <p>This approach allows for a combination of flexibilitity</p>
+       <p id="u753-2">Text Box3 Body</p>
+       <p id="u753-4">TWith our mobile containers we are able to provide mining capacity almost anywhere in the world.</p>
+       <p id="u753-6">This approach allows for a combination of flexibil</p>
+       <p id="u753-8">&nbsp;cools down the high-performance computers by using water from the nearby fjord.</p>
+       <p id="u753-10">With our mobile containers we are able to provide mining capacity almost anywhere in the world.</p>
+       <p id="u753-12">This approach allows for a combination of flexibilitity</p>
       </div>
      </div>
     </div>
-    <div class="browser_width colelem" id="u215-bw">
+    <div class="browser_width colelem shared_content" id="u215-bw" data-content-guid="u215-bw_content">
      <div id="u215"><!-- column -->
       <div class="clearfix" id="u215_align_to_page">
        <div class="position_content" id="u215_position_content">
@@ -487,7 +407,7 @@ form {
       </div>
      </div>
     </div>
-    <div class="browser_width colelem" id="u569-bw">
+    <div class="browser_width colelem shared_content" id="u569-bw" data-content-guid="u569-bw_content">
      <div id="u569"><!-- group -->
       <div class="clearfix" id="u569_align_to_page">
        <div class="clearfix grpelem" id="pu578"><!-- column -->
@@ -520,7 +440,7 @@ form {
         <div class="museBGSize colelem shared_content" id="u589" data-content-guid="u589_content"><!-- content -->
          <div class="fluid_height_spacer"></div>
         </div>
-        <div class="clearfix colelem shared_content" id="u1832" data-content-guid="u1832_content"><!-- column -->
+        <div class="clearfix colelem shared_content" id="u4566" data-content-guid="u4566_content"><!-- column -->
          <div class="clearfix colelem shared_content" id="u1459-4" data-content-guid="u1459-4_content"><!-- content -->
           <p>2400</p>
          </div>
@@ -547,10 +467,31 @@ form {
       <p id="u554-2">With bitcoin becoming an asset class of its own with an exploding adoption across the world, Northern Bitcoin is ideally positioned to participate in the dynamic growth of this disruptive evolution.</p>
      </div>
     </div>
-    <div class="verticalspacer" data-offset-top="4057" data-content-above-spacer="4056" data-content-below-spacer="62"></div>
+    <div class="verticalspacer" data-offset-top="4917" data-content-above-spacer="4916" data-content-below-spacer="62"></div>
     <div class="browser_width colelem shared_content" id="u566-bw" data-content-guid="u566-bw_content">
      <div id="u566"><!-- simple frame --></div>
     </div>
+   </div>
+  </div>
+  <div class="breakpoint" id="bp_1280" data-min-width="1025" data-max-width="1280"><!-- responsive breakpoint node -->
+   <div class="clearfix borderbox temp_no_id" data-orig-id="page"><!-- column -->
+    <div class="clearfix colelem temp_no_id" data-orig-id="pu2390"><!-- group -->
+     <span class="museBGSize grpelem placeholder" data-placeholder-for="u2390_content"><!-- placeholder node --></span>
+     <span class="browser_width grpelem placeholder" data-placeholder-for="u106-bw_content"><!-- placeholder node --></span>
+     <span class="size_fixed grpelem placeholder" data-placeholder-for="u1968_content"><!-- placeholder node --></span>
+     <span class="size_fluid_width grpelem placeholder" data-placeholder-for="u1979_content"><!-- placeholder node --></span>
+     <span class="clearfix grpelem placeholder" data-placeholder-for="u162-4_content"><!-- placeholder node --></span>
+     <span class="size_fixed grpelem placeholder" data-placeholder-for="u3274_content"><!-- placeholder node --></span>
+    </div>
+    <span class="size_fixed pinned-colelem placeholder" data-placeholder-for="u3458_content"><!-- placeholder node --></span>
+    <span class="browser_width colelem placeholder" data-placeholder-for="u2312-bw_content"><!-- placeholder node --></span>
+    <span class="browser_width colelem placeholder" data-placeholder-for="u193-bw_content"><!-- placeholder node --></span>
+    <span class="clearfix colelem placeholder" data-placeholder-for="u190_content"><!-- placeholder node --></span>
+    <span class="browser_width colelem placeholder" data-placeholder-for="u215-bw_content"><!-- placeholder node --></span>
+    <span class="browser_width colelem placeholder" data-placeholder-for="u569-bw_content"><!-- placeholder node --></span>
+    <span class="clearfix colelem placeholder" data-placeholder-for="pu420_content"><!-- placeholder node --></span>
+    <div class="verticalspacer" data-offset-top="4069" data-content-above-spacer="4068" data-content-below-spacer="62"></div>
+    <span class="browser_width colelem placeholder" data-placeholder-for="u566-bw_content"><!-- placeholder node --></span>
    </div>
   </div>
   <div class="breakpoint" id="bp_1024" data-min-width="769" data-max-width="1024"><!-- responsive breakpoint node -->
@@ -561,16 +502,16 @@ form {
      <span class="size_fixed grpelem placeholder" data-placeholder-for="u1968_content"><!-- placeholder node --></span>
      <span class="size_fluid_width grpelem placeholder" data-placeholder-for="u1979_content"><!-- placeholder node --></span>
      <span class="clearfix grpelem placeholder" data-placeholder-for="u162-4_content"><!-- placeholder node --></span>
-     <span class="browser_width grpelem placeholder" data-placeholder-for="u2312-bw_content"><!-- placeholder node --></span>
-     <span class="size_fixed grpelem placeholder" data-placeholder-for="u2691_content"><!-- placeholder node --></span>
+     <span class="size_fixed grpelem placeholder" data-placeholder-for="u3274_content"><!-- placeholder node --></span>
     </div>
+    <span class="size_fixed pinned-colelem placeholder" data-placeholder-for="u3458_content"><!-- placeholder node --></span>
+    <span class="browser_width colelem placeholder" data-placeholder-for="u2312-bw_content"><!-- placeholder node --></span>
     <span class="browser_width colelem placeholder" data-placeholder-for="u193-bw_content"><!-- placeholder node --></span>
     <div class="browser_width colelem" id="u190-bw">
      <div class="temp_no_id" data-orig-id="u190"><!-- column -->
       <div class="clearfix" id="u190_align_to_page">
        <span class="clearfix colelem placeholder" data-placeholder-for="u1826_content"><!-- placeholder node --></span>
-       <span class="clearfix colelem placeholder" data-placeholder-for="u1644-4_content"><!-- placeholder node --></span>
-       <span class="clearfix colelem placeholder" data-placeholder-for="u832-10_content"><!-- placeholder node --></span>
+       <span class="clearfix colelem placeholder" data-placeholder-for="u4173_content"><!-- placeholder node --></span>
        <span class="clearfix colelem placeholder" data-placeholder-for="u1820_content"><!-- placeholder node --></span>
       </div>
      </div>
@@ -611,19 +552,27 @@ form {
        </div>
        <div class="clearfix colelem temp_no_id" data-orig-id="pu589"><!-- group -->
         <span class="museBGSize grpelem placeholder" data-placeholder-for="u589_content"><!-- placeholder node --></span>
-        <span class="clearfix grpelem placeholder" data-placeholder-for="u1832_content"><!-- placeholder node --></span>
+        <span class="clearfix grpelem placeholder" data-placeholder-for="u4566_content"><!-- placeholder node --></span>
        </div>
       </div>
      </div>
     </div>
     <span class="clearfix colelem placeholder" data-placeholder-for="pu420_content"><!-- placeholder node --></span>
-    <div class="verticalspacer" data-offset-top="7449" data-content-above-spacer="7449" data-content-below-spacer="62"></div>
+    <div class="verticalspacer" data-offset-top="7339" data-content-above-spacer="7339" data-content-below-spacer="62"></div>
     <span class="browser_width colelem placeholder" data-placeholder-for="u566-bw_content"><!-- placeholder node --></span>
    </div>
   </div>
-  <div class="breakpoint" id="bp_768" data-min-width="361" data-max-width="768"><!-- responsive breakpoint node -->
+  <div class="breakpoint" id="bp_768" data-min-width="581" data-max-width="768"><!-- responsive breakpoint node -->
    <div class="clearfix borderbox temp_no_id" data-orig-id="page"><!-- column -->
-    <span class="clearfix colelem placeholder" data-placeholder-for="pu2390_content"><!-- placeholder node --></span>
+    <div class="clearfix colelem temp_no_id" data-orig-id="pu2390"><!-- group -->
+     <span class="museBGSize grpelem placeholder" data-placeholder-for="u2390_content"><!-- placeholder node --></span>
+     <span class="size_fixed grpelem placeholder" data-placeholder-for="u1968_content"><!-- placeholder node --></span>
+     <span class="size_fluid_width grpelem placeholder" data-placeholder-for="u1979_content"><!-- placeholder node --></span>
+     <span class="clearfix grpelem placeholder" data-placeholder-for="u162-4_content"><!-- placeholder node --></span>
+     <span class="size_fixed grpelem placeholder" data-placeholder-for="u3274_content"><!-- placeholder node --></span>
+     <span class="browser_width grpelem placeholder" data-placeholder-for="u106-bw_content"><!-- placeholder node --></span>
+    </div>
+    <span class="size_fixed pinned-colelem placeholder" data-placeholder-for="u3458_content"><!-- placeholder node --></span>
     <span class="browser_width colelem placeholder" data-placeholder-for="u2312-bw_content"><!-- placeholder node --></span>
     <span class="browser_width colelem placeholder" data-placeholder-for="u193-bw_content"><!-- placeholder node --></span>
     <div class="clearfix colelem" id="pu190"><!-- group -->
@@ -631,8 +580,7 @@ form {
       <div class="temp_no_id" data-orig-id="u190"><!-- column -->
        <div class="clearfix temp_no_id" data-orig-id="u190_align_to_page">
         <span class="clearfix colelem placeholder" data-placeholder-for="u1826_content"><!-- placeholder node --></span>
-        <span class="clearfix colelem placeholder" data-placeholder-for="u1644-4_content"><!-- placeholder node --></span>
-        <span class="clearfix colelem placeholder" data-placeholder-for="u832-10_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u4173_content"><!-- placeholder node --></span>
         <span class="clearfix colelem placeholder" data-placeholder-for="u1820_content"><!-- placeholder node --></span>
        </div>
       </div>
@@ -669,7 +617,7 @@ form {
         <span class="museBGSize grpelem placeholder" data-placeholder-for="u589_content"><!-- placeholder node --></span>
         <span class="clearfix grpelem placeholder" data-placeholder-for="u1844_content"><!-- placeholder node --></span>
         <span class="clearfix grpelem placeholder" data-placeholder-for="u1838_content"><!-- placeholder node --></span>
-        <div class="clearfix grpelem temp_no_id" data-orig-id="u1832"><!-- column -->
+        <div class="clearfix grpelem temp_no_id" data-orig-id="u4566"><!-- column -->
          <span class="clearfix colelem placeholder" data-placeholder-for="u1460-4_content"><!-- placeholder node --></span>
          <span class="clearfix colelem placeholder" data-placeholder-for="u1459-4_content"><!-- placeholder node --></span>
         </div>
@@ -682,10 +630,280 @@ form {
     <span class="browser_width colelem placeholder" data-placeholder-for="u566-bw_content"><!-- placeholder node --></span>
    </div>
   </div>
-  <div class="breakpoint" id="bp_360" data-max-width="360"><!-- responsive breakpoint node -->
+  <div class="breakpoint" id="bp_580" data-min-width="521" data-max-width="580"><!-- responsive breakpoint node -->
    <div class="clearfix borderbox temp_no_id" data-orig-id="page"><!-- column -->
-    <span class="clearfix colelem placeholder" data-placeholder-for="pu2390_content"><!-- placeholder node --></span>
+    <div class="clearfix colelem temp_no_id" data-orig-id="pu2390"><!-- group -->
+     <span class="museBGSize grpelem placeholder" data-placeholder-for="u2390_content"><!-- placeholder node --></span>
+     <span class="size_fixed grpelem placeholder" data-placeholder-for="u1968_content"><!-- placeholder node --></span>
+     <span class="size_fluid_width grpelem placeholder" data-placeholder-for="u1979_content"><!-- placeholder node --></span>
+     <span class="clearfix grpelem placeholder" data-placeholder-for="u162-4_content"><!-- placeholder node --></span>
+     <span class="size_fixed grpelem placeholder" data-placeholder-for="u3274_content"><!-- placeholder node --></span>
+     <span class="browser_width grpelem placeholder" data-placeholder-for="u106-bw_content"><!-- placeholder node --></span>
+    </div>
+    <span class="size_fixed pinned-colelem placeholder" data-placeholder-for="u3458_content"><!-- placeholder node --></span>
     <span class="browser_width colelem placeholder" data-placeholder-for="u2312-bw_content"><!-- placeholder node --></span>
+    <span class="browser_width colelem placeholder" data-placeholder-for="u193-bw_content"><!-- placeholder node --></span>
+    <div class="clearfix colelem temp_no_id" data-orig-id="pu190"><!-- group -->
+     <div class="browser_width grpelem temp_no_id" data-orig-id="u190-bw">
+      <div class="temp_no_id" data-orig-id="u190"><!-- column -->
+       <div class="clearfix temp_no_id" data-orig-id="u190_align_to_page">
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1826_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u4173_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1820_content"><!-- placeholder node --></span>
+       </div>
+      </div>
+     </div>
+     <div class="browser_width grpelem temp_no_id" data-orig-id="u215-bw">
+      <div class="temp_no_id" data-orig-id="u215"><!-- column -->
+       <div class="clearfix temp_no_id" data-orig-id="u215_align_to_page">
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u293_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u326-4_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u330-6_content"><!-- placeholder node --></span>
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u306_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1779_content"><!-- placeholder node --></span>
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u316_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1773_content"><!-- placeholder node --></span>
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u260_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1767_content"><!-- placeholder node --></span>
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u283_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u393-4_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1656-6_content"><!-- placeholder node --></span>
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u405_content"><!-- placeholder node --></span>
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u273_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u379-4_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1668-6_content"><!-- placeholder node --></span>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="browser_width colelem temp_no_id" data-orig-id="u569-bw">
+     <div class="temp_no_id" data-orig-id="u569"><!-- column -->
+      <div class="clearfix temp_no_id" data-orig-id="u569_align_to_page">
+       <span class="museBGSize colelem placeholder" data-placeholder-for="u578_content"><!-- placeholder node --></span>
+       <span class="clearfix colelem placeholder" data-placeholder-for="u1844_content"><!-- placeholder node --></span>
+       <span class="museBGSize colelem placeholder" data-placeholder-for="u572_content"><!-- placeholder node --></span>
+       <span class="clearfix colelem placeholder" data-placeholder-for="u1838_content"><!-- placeholder node --></span>
+       <span class="museBGSize colelem placeholder" data-placeholder-for="u589_content"><!-- placeholder node --></span>
+       <span class="clearfix colelem placeholder" data-placeholder-for="u4566_content"><!-- placeholder node --></span>
+      </div>
+     </div>
+    </div>
+    <span class="clearfix colelem placeholder" data-placeholder-for="pu420_content"><!-- placeholder node --></span>
+    <div class="verticalspacer" data-offset-top="6077" data-content-above-spacer="6077" data-content-below-spacer="62"></div>
+    <span class="browser_width colelem placeholder" data-placeholder-for="u566-bw_content"><!-- placeholder node --></span>
+   </div>
+  </div>
+  <div class="breakpoint" id="bp_520" data-min-width="481" data-max-width="520"><!-- responsive breakpoint node -->
+   <div class="clearfix borderbox temp_no_id" data-orig-id="page"><!-- column -->
+    <div class="clearfix colelem temp_no_id" data-orig-id="pu2390"><!-- group -->
+     <span class="museBGSize grpelem placeholder" data-placeholder-for="u2390_content"><!-- placeholder node --></span>
+     <span class="size_fixed grpelem placeholder" data-placeholder-for="u1968_content"><!-- placeholder node --></span>
+     <span class="size_fluid_width grpelem placeholder" data-placeholder-for="u1979_content"><!-- placeholder node --></span>
+     <span class="clearfix grpelem placeholder" data-placeholder-for="u162-4_content"><!-- placeholder node --></span>
+     <span class="size_fixed grpelem placeholder" data-placeholder-for="u3274_content"><!-- placeholder node --></span>
+     <span class="browser_width grpelem placeholder" data-placeholder-for="u106-bw_content"><!-- placeholder node --></span>
+    </div>
+    <span class="size_fixed pinned-colelem placeholder" data-placeholder-for="u3458_content"><!-- placeholder node --></span>
+    <span class="browser_width colelem placeholder" data-placeholder-for="u2312-bw_content"><!-- placeholder node --></span>
+    <span class="browser_width colelem placeholder" data-placeholder-for="u193-bw_content"><!-- placeholder node --></span>
+    <div class="clearfix colelem temp_no_id" data-orig-id="pu190"><!-- group -->
+     <div class="browser_width grpelem temp_no_id" data-orig-id="u190-bw">
+      <div class="temp_no_id" data-orig-id="u190"><!-- column -->
+       <div class="clearfix temp_no_id" data-orig-id="u190_align_to_page">
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1826_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u4173_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1820_content"><!-- placeholder node --></span>
+       </div>
+      </div>
+     </div>
+     <div class="browser_width grpelem temp_no_id" data-orig-id="u215-bw">
+      <div class="temp_no_id" data-orig-id="u215"><!-- column -->
+       <div class="clearfix temp_no_id" data-orig-id="u215_align_to_page">
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u293_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u326-4_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u330-6_content"><!-- placeholder node --></span>
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u306_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1779_content"><!-- placeholder node --></span>
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u316_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1773_content"><!-- placeholder node --></span>
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u260_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1767_content"><!-- placeholder node --></span>
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u283_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u393-4_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1656-6_content"><!-- placeholder node --></span>
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u405_content"><!-- placeholder node --></span>
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u273_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u379-4_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1668-6_content"><!-- placeholder node --></span>
+       </div>
+      </div>
+     </div>
+     <div class="browser_width grpelem temp_no_id" data-orig-id="u569-bw">
+      <div class="temp_no_id" data-orig-id="u569"><!-- column -->
+       <div class="clearfix temp_no_id" data-orig-id="u569_align_to_page">
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u578_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1844_content"><!-- placeholder node --></span>
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u572_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1838_content"><!-- placeholder node --></span>
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u589_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u4566_content"><!-- placeholder node --></span>
+       </div>
+      </div>
+     </div>
+    </div>
+    <span class="clearfix colelem placeholder" data-placeholder-for="pu420_content"><!-- placeholder node --></span>
+    <div class="verticalspacer" data-offset-top="5873" data-content-above-spacer="5873" data-content-below-spacer="62"></div>
+    <span class="browser_width colelem placeholder" data-placeholder-for="u566-bw_content"><!-- placeholder node --></span>
+   </div>
+  </div>
+  <div class="breakpoint" id="bp_480" data-min-width="421" data-max-width="480"><!-- responsive breakpoint node -->
+   <div class="clearfix borderbox temp_no_id" data-orig-id="page"><!-- column -->
+    <div class="clearfix colelem" id="pu1968"><!-- group -->
+     <span class="size_fixed grpelem placeholder" data-placeholder-for="u1968_content"><!-- placeholder node --></span>
+     <span class="size_fixed grpelem placeholder" data-placeholder-for="u3274_content"><!-- placeholder node --></span>
+     <span class="browser_width grpelem placeholder" data-placeholder-for="u106-bw_content"><!-- placeholder node --></span>
+     <div class="clearfix grpelem" id="ppu2390"><!-- column -->
+      <div class="clearfix colelem temp_no_id" data-orig-id="pu2390"><!-- group -->
+       <span class="museBGSize grpelem placeholder" data-placeholder-for="u2390_content"><!-- placeholder node --></span>
+       <span class="size_fluid_width grpelem placeholder" data-placeholder-for="u1979_content"><!-- placeholder node --></span>
+       <span class="clearfix grpelem placeholder" data-placeholder-for="u162-4_content"><!-- placeholder node --></span>
+      </div>
+      <span class="browser_width colelem placeholder" data-placeholder-for="u2312-bw_content"><!-- placeholder node --></span>
+     </div>
+    </div>
+    <span class="size_fixed pinned-colelem placeholder" data-placeholder-for="u3458_content"><!-- placeholder node --></span>
+    <span class="browser_width colelem placeholder" data-placeholder-for="u193-bw_content"><!-- placeholder node --></span>
+    <div class="clearfix colelem temp_no_id" data-orig-id="pu190"><!-- group -->
+     <div class="browser_width grpelem temp_no_id" data-orig-id="u190-bw">
+      <div class="temp_no_id" data-orig-id="u190"><!-- column -->
+       <div class="clearfix temp_no_id" data-orig-id="u190_align_to_page">
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1826_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u4173_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1820_content"><!-- placeholder node --></span>
+       </div>
+      </div>
+     </div>
+     <div class="browser_width grpelem temp_no_id" data-orig-id="u215-bw">
+      <div class="temp_no_id" data-orig-id="u215"><!-- column -->
+       <div class="clearfix temp_no_id" data-orig-id="u215_align_to_page">
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u293_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u326-4_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u330-6_content"><!-- placeholder node --></span>
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u306_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1779_content"><!-- placeholder node --></span>
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u316_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1773_content"><!-- placeholder node --></span>
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u260_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1767_content"><!-- placeholder node --></span>
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u283_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u393-4_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1656-6_content"><!-- placeholder node --></span>
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u405_content"><!-- placeholder node --></span>
+        <span class="museBGSize colelem placeholder" data-placeholder-for="u273_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u379-4_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1668-6_content"><!-- placeholder node --></span>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="browser_width colelem temp_no_id" data-orig-id="u569-bw">
+     <div class="temp_no_id" data-orig-id="u569"><!-- column -->
+      <div class="clearfix temp_no_id" data-orig-id="u569_align_to_page">
+       <span class="museBGSize colelem placeholder" data-placeholder-for="u578_content"><!-- placeholder node --></span>
+       <span class="clearfix colelem placeholder" data-placeholder-for="u1844_content"><!-- placeholder node --></span>
+       <span class="museBGSize colelem placeholder" data-placeholder-for="u572_content"><!-- placeholder node --></span>
+       <span class="clearfix colelem placeholder" data-placeholder-for="u1838_content"><!-- placeholder node --></span>
+       <span class="museBGSize colelem placeholder" data-placeholder-for="u589_content"><!-- placeholder node --></span>
+       <span class="clearfix colelem placeholder" data-placeholder-for="u4566_content"><!-- placeholder node --></span>
+      </div>
+     </div>
+    </div>
+    <span class="clearfix colelem placeholder" data-placeholder-for="pu420_content"><!-- placeholder node --></span>
+    <div class="verticalspacer" data-offset-top="5662" data-content-above-spacer="5662" data-content-below-spacer="62"></div>
+    <span class="browser_width colelem placeholder" data-placeholder-for="u566-bw_content"><!-- placeholder node --></span>
+   </div>
+  </div>
+  <div class="breakpoint" id="bp_420" data-min-width="381" data-max-width="420"><!-- responsive breakpoint node -->
+   <div class="clearfix borderbox temp_no_id" data-orig-id="page"><!-- column -->
+    <div class="clearfix colelem temp_no_id" data-orig-id="pu1968"><!-- group -->
+     <span class="size_fixed grpelem placeholder" data-placeholder-for="u1968_content"><!-- placeholder node --></span>
+     <span class="size_fixed grpelem placeholder" data-placeholder-for="u3274_content"><!-- placeholder node --></span>
+     <span class="browser_width grpelem placeholder" data-placeholder-for="u106-bw_content"><!-- placeholder node --></span>
+     <div class="clearfix grpelem temp_no_id" data-orig-id="ppu2390"><!-- column -->
+      <div class="clearfix colelem temp_no_id" data-orig-id="pu2390"><!-- group -->
+       <span class="museBGSize grpelem placeholder" data-placeholder-for="u2390_content"><!-- placeholder node --></span>
+       <span class="size_fluid_width grpelem placeholder" data-placeholder-for="u1979_content"><!-- placeholder node --></span>
+       <span class="clearfix grpelem placeholder" data-placeholder-for="u162-4_content"><!-- placeholder node --></span>
+      </div>
+      <span class="browser_width colelem placeholder" data-placeholder-for="u2312-bw_content"><!-- placeholder node --></span>
+     </div>
+    </div>
+    <span class="size_fixed pinned-colelem placeholder" data-placeholder-for="u3458_content"><!-- placeholder node --></span>
+    <span class="browser_width colelem placeholder" data-placeholder-for="u193-bw_content"><!-- placeholder node --></span>
+    <div class="browser_width colelem temp_no_id" data-orig-id="u190-bw">
+     <div class="temp_no_id" data-orig-id="u190"><!-- column -->
+      <div class="clearfix temp_no_id" data-orig-id="u190_align_to_page">
+       <div class="position_content" id="u190_position_content">
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1826_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u4173_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u1820_content"><!-- placeholder node --></span>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="browser_width colelem temp_no_id" data-orig-id="u215-bw">
+     <div class="temp_no_id" data-orig-id="u215"><!-- column -->
+      <div class="clearfix temp_no_id" data-orig-id="u215_align_to_page">
+       <span class="museBGSize colelem placeholder" data-placeholder-for="u293_content"><!-- placeholder node --></span>
+       <span class="clearfix colelem placeholder" data-placeholder-for="u326-4_content"><!-- placeholder node --></span>
+       <span class="clearfix colelem placeholder" data-placeholder-for="u330-6_content"><!-- placeholder node --></span>
+       <span class="museBGSize colelem placeholder" data-placeholder-for="u306_content"><!-- placeholder node --></span>
+       <span class="clearfix colelem placeholder" data-placeholder-for="u1779_content"><!-- placeholder node --></span>
+       <span class="museBGSize colelem placeholder" data-placeholder-for="u316_content"><!-- placeholder node --></span>
+       <span class="clearfix colelem placeholder" data-placeholder-for="u1773_content"><!-- placeholder node --></span>
+       <span class="museBGSize colelem placeholder" data-placeholder-for="u260_content"><!-- placeholder node --></span>
+       <span class="clearfix colelem placeholder" data-placeholder-for="u1767_content"><!-- placeholder node --></span>
+       <span class="museBGSize colelem placeholder" data-placeholder-for="u283_content"><!-- placeholder node --></span>
+       <span class="clearfix colelem placeholder" data-placeholder-for="u393-4_content"><!-- placeholder node --></span>
+       <span class="clearfix colelem placeholder" data-placeholder-for="u1656-6_content"><!-- placeholder node --></span>
+       <span class="museBGSize colelem placeholder" data-placeholder-for="u405_content"><!-- placeholder node --></span>
+       <span class="museBGSize colelem placeholder" data-placeholder-for="u273_content"><!-- placeholder node --></span>
+       <span class="clearfix colelem placeholder" data-placeholder-for="u379-4_content"><!-- placeholder node --></span>
+       <span class="clearfix colelem placeholder" data-placeholder-for="u1668-6_content"><!-- placeholder node --></span>
+      </div>
+     </div>
+    </div>
+    <div class="browser_width colelem temp_no_id" data-orig-id="u569-bw">
+     <div class="temp_no_id" data-orig-id="u569"><!-- column -->
+      <div class="clearfix temp_no_id" data-orig-id="u569_align_to_page">
+       <span class="museBGSize colelem placeholder" data-placeholder-for="u578_content"><!-- placeholder node --></span>
+       <span class="clearfix colelem placeholder" data-placeholder-for="u1844_content"><!-- placeholder node --></span>
+       <span class="museBGSize colelem placeholder" data-placeholder-for="u572_content"><!-- placeholder node --></span>
+       <span class="clearfix colelem placeholder" data-placeholder-for="u1838_content"><!-- placeholder node --></span>
+       <span class="museBGSize colelem placeholder" data-placeholder-for="u589_content"><!-- placeholder node --></span>
+       <span class="clearfix colelem placeholder" data-placeholder-for="u4566_content"><!-- placeholder node --></span>
+      </div>
+     </div>
+    </div>
+    <span class="clearfix colelem placeholder" data-placeholder-for="pu420_content"><!-- placeholder node --></span>
+    <div class="verticalspacer" data-offset-top="5409" data-content-above-spacer="5408" data-content-below-spacer="62"></div>
+    <span class="browser_width colelem placeholder" data-placeholder-for="u566-bw_content"><!-- placeholder node --></span>
+   </div>
+  </div>
+  <div class="breakpoint" id="bp_380" data-max-width="380"><!-- responsive breakpoint node -->
+   <div class="clearfix borderbox temp_no_id" data-orig-id="page"><!-- column -->
+    <div class="clearfix colelem temp_no_id" data-orig-id="pu2390"><!-- group -->
+     <span class="museBGSize grpelem placeholder" data-placeholder-for="u2390_content"><!-- placeholder node --></span>
+     <span class="browser_width grpelem placeholder" data-placeholder-for="u106-bw_content"><!-- placeholder node --></span>
+     <span class="size_fixed grpelem placeholder" data-placeholder-for="u1968_content"><!-- placeholder node --></span>
+     <span class="size_fluid_width grpelem placeholder" data-placeholder-for="u1979_content"><!-- placeholder node --></span>
+     <span class="clearfix grpelem placeholder" data-placeholder-for="u162-4_content"><!-- placeholder node --></span>
+    </div>
+    <span class="size_fixed pinned-colelem placeholder" data-placeholder-for="u3458_content"><!-- placeholder node --></span>
+    <div class="clearfix colelem" id="pu3274"><!-- group -->
+     <span class="size_fixed grpelem placeholder" data-placeholder-for="u3274_content"><!-- placeholder node --></span>
+     <span class="browser_width grpelem placeholder" data-placeholder-for="u2312-bw_content"><!-- placeholder node --></span>
+    </div>
     <div class="clearfix colelem" id="pu193"><!-- group -->
      <span class="browser_width grpelem placeholder" data-placeholder-for="u193-bw_content"><!-- placeholder node --></span>
      <div class="browser_width grpelem temp_no_id" data-orig-id="u190-bw">
@@ -693,8 +911,7 @@ form {
        <div class="clearfix temp_no_id" data-orig-id="u190_align_to_page">
         <span class="clearfix colelem placeholder" data-placeholder-for="u1826_content"><!-- placeholder node --></span>
         <span class="clearfix colelem placeholder" data-placeholder-for="u1820_content"><!-- placeholder node --></span>
-        <span class="clearfix colelem placeholder" data-placeholder-for="u1644-4_content"><!-- placeholder node --></span>
-        <span class="clearfix colelem placeholder" data-placeholder-for="u832-10_content"><!-- placeholder node --></span>
+        <span class="clearfix colelem placeholder" data-placeholder-for="u4173_content"><!-- placeholder node --></span>
        </div>
       </div>
      </div>
@@ -733,7 +950,7 @@ form {
          <span class="clearfix colelem placeholder" data-placeholder-for="u1596-4_content"><!-- placeholder node --></span>
          <span class="clearfix colelem placeholder" data-placeholder-for="u1608-4_content"><!-- placeholder node --></span>
         </div>
-        <div class="clearfix grpelem temp_no_id" data-orig-id="u1832"><!-- column -->
+        <div class="clearfix grpelem temp_no_id" data-orig-id="u4566"><!-- column -->
          <span class="clearfix colelem placeholder" data-placeholder-for="u1460-4_content"><!-- placeholder node --></span>
          <span class="clearfix colelem placeholder" data-placeholder-for="u1459-4_content"><!-- placeholder node --></span>
         </div>
@@ -742,7 +959,7 @@ form {
      </div>
     </div>
     <span class="clearfix colelem placeholder" data-placeholder-for="pu420_content"><!-- placeholder node --></span>
-    <div class="verticalspacer" data-offset-top="5255" data-content-above-spacer="5254" data-content-below-spacer="62"></div>
+    <div class="verticalspacer" data-offset-top="5151" data-content-above-spacer="5151" data-content-below-spacer="62"></div>
     <span class="browser_width colelem placeholder" data-placeholder-for="u566-bw_content"><!-- placeholder node --></span>
    </div>
   </div>
@@ -765,6 +982,119 @@ Muse.Utils.transformMarkupToFixBrowserProblemsPreInit();/* body */
 Muse.Utils.prepHyperlinks(true);/* body */
 Muse.Utils.resizeHeight('.browser_width');/* resize height */
 Muse.Utils.requestAnimationFrame(function() { $('body').addClass('initialized'); });/* mark body as initialized */
+(function(){
+	try{
+
+require(['https://cdn.jsdelivr.net/npm/jqueryrotate-slevomat-fork@1.0.0/jQueryRotate.js','https://cdn.jsdelivr.net/jquery.easing/1.3/jquery.easing.1.3.min.js'], function() {
+pic = new Image();pic.src="assets/success.png";
+
+if(6 == 1){
+document.getElementById('bgmu').innerHTML = "<li><a href='#anchor1' target='_self'>صفحه اصلی</a></li>";
+}
+else if(6 == 2){
+document.getElementById('bgmu').innerHTML = "<li><a href='#anchor1' target='_self'>صفحه اصلی</a></li><li><a href='#anchor2' target='_self'>همکاری سازمانی</a></li>";
+}
+else if(6 == 3){
+document.getElementById('bgmu').innerHTML = "<li><a href='#anchor1' target='_self'>صفحه اصلی</a></li><li><a href='#anchor2' target='_self'>همکاری سازمانی</a></li><li><a href='#anchor3' target='_self'>مجله</a></li>";
+}
+else if(6 == 4){
+document.getElementById('bgmu').innerHTML = "<li><a href='#anchor1' target='_self'>صفحه اصلی</a></li><li><a href='#anchor2' target='_self'>همکاری سازمانی</a></li><li><a href='#anchor3' target='_self'>مجله</a></li><li><a href='#anchor4' target='_self'>سوالات متداول</a></li>";
+}
+else if(6 == 5){
+document.getElementById('bgmu').innerHTML = "<li><a href='#anchor1' target='_self'>صفحه اصلی</a></li><li><a href='#anchor2' target='_self'>همکاری سازمانی</a></li><li><a href='#anchor3' target='_self'>مجله</a></li><li><a href='#anchor4' target='_self'>سوالات متداول</a></li><li><a href='#anchor5' target='_self'>ارتباط با ما</a></li>";
+}
+else if(6 == 6){
+document.getElementById('bgmu').innerHTML = "<li><a href='#anchor1' target='_self'>صفحه اصلی</a></li><li><a href='#anchor2' target='_self'>همکاری سازمانی</a></li><li><a href='#anchor3' target='_self'>مجله</a></li><li><a href='#anchor4' target='_self'>سوالات متداول</a></li><li><a href='#anchor5' target='_self'>ارتباط با ما</a></li><li><a href='#anchor6' target='_self'>درباره هش بازار</a></li>";
+}
+else if(6 == 7){
+document.getElementById('bgmu').innerHTML = "<li><a href='#anchor1' target='_self'>صفحه اصلی</a></li><li><a href='#anchor2' target='_self'>همکاری سازمانی</a></li><li><a href='#anchor3' target='_self'>مجله</a></li><li><a href='#anchor4' target='_self'>سوالات متداول</a></li><li><a href='#anchor5' target='_self'>ارتباط با ما</a></li><li><a href='#anchor6' target='_self'>درباره هش بازار</a></li><li><a href='#anchor7' target='_self'>Menu Item 7</a></li>";
+}
+else if(6 == 8){
+document.getElementById('bgmu').innerHTML = "<li><a href='#anchor1' target='_self'>صفحه اصلی</a></li><li><a href='#anchor2' target='_self'>همکاری سازمانی</a></li><li><a href='#anchor3' target='_self'>مجله</a></li><li><a href='#anchor4' target='_self'>سوالات متداول</a></li><li><a href='#anchor5' target='_self'>ارتباط با ما</a></li><li><a href='#anchor6' target='_self'>درباره هش بازار</a></li><li><a href='#anchor7' target='_self'>Menu Item 7</a></li><li><a href='#anchor8' target='_self'>Menu Item 8</a></li>";
+}
+else if(6 == 9){
+document.getElementById('bgmu').innerHTML = "<li><a href='#anchor1' target='_self'>صفحه اصلی</a></li><li><a href='#anchor2' target='_self'>همکاری سازمانی</a></li><li><a href='#anchor3' target='_self'>مجله</a></li><li><a href='#anchor4' target='_self'>سوالات متداول</a></li><li><a href='#anchor5' target='_self'>ارتباط با ما</a></li><li><a href='#anchor6' target='_self'>درباره هش بازار</a></li><li><a href='#anchor7' target='_self'>Menu Item 7</a></li><li><a href='#anchor8' target='_self'>Menu Item 8</a></li><li><a href='#anchor9' target='_self'>Menu Item 9</a></li>";
+}
+else if(6 == 10){
+document.getElementById('bgmu').innerHTML = "<li><a href='#anchor1' target='_self'>صفحه اصلی</a></li><li><a href='#anchor2' target='_self'>همکاری سازمانی</a></li><li><a href='#anchor3' target='_self'>مجله</a></li><li><a href='#anchor4' target='_self'>سوالات متداول</a></li><li><a href='#anchor5' target='_self'>ارتباط با ما</a></li><li><a href='#anchor6' target='_self'>درباره هش بازار</a></li><li><a href='#anchor7' target='_self'>Menu Item 7</a></li><li><a href='#anchor8' target='_self'>Menu Item 8</a></li><li><a href='#anchor9' target='_self'>Menu Item 9</a></li><li><a href='#anchor10' target='_self'>Menu Item 10</a></li>";
+}
+else if(6 == 11){
+document.getElementById('bgmu').innerHTML = "<li><a href='#anchor1' target='_self'>صفحه اصلی</a></li><li><a href='#anchor2' target='_self'>همکاری سازمانی</a></li><li><a href='#anchor3' target='_self'>مجله</a></li><li><a href='#anchor4' target='_self'>سوالات متداول</a></li><li><a href='#anchor5' target='_self'>ارتباط با ما</a></li><li><a href='#anchor6' target='_self'>درباره هش بازار</a></li><li><a href='#anchor7' target='_self'>Menu Item 7</a></li><li><a href='#anchor8' target='_self'>Menu Item 8</a></li><li><a href='#anchor9' target='_self'>Menu Item 9</a></li><li><a href='#anchor10' target='_self'>Menu Item 10</a></li><li><a href='#anchor11' target='_self'>Menu Item 11</a></li>";
+}
+else{
+document.getElementById('bgmu').innerHTML = "<li><a href='#anchor1' target='_self'>صفحه اصلی</a></li><li><a href='#anchor2' target='_self'>همکاری سازمانی</a></li><li><a href='#anchor3' target='_self'>مجله</a></li><li><a href='#anchor4' target='_self'>سوالات متداول</a></li><li><a href='#anchor5' target='_self'>ارتباط با ما</a></li><li><a href='#anchor6' target='_self'>درباره هش بازار</a></li><li><a href='#anchor7' target='_self'>Menu Item 7</a></li><li><a href='#anchor8' target='_self'>Menu Item 8</a></li><li><a href='#anchor9' target='_self'>Menu Item 9</a></li><li><a href='#anchor10' target='_self'>Menu Item 10</a></li><li><a href='#anchor11' target='_self'>Menu Item 11</a></li><li><a href='#anchor12' target='_self'>Menu Item 12</a></li>";
+}
+
+(function() {
+	var triggerBttn = document.getElementById( 'trigger-overlay' ),
+		overlay = document.querySelector( 'div.overlay' ),
+		closeBttn = overlay.querySelector( 'button.overlay-close' );
+		transEndEventNames = {
+			'WebkitTransition': 'webkitTransitionEnd',
+			'MozTransition': 'transitionend',
+			'OTransition': 'oTransitionEnd',
+			'msTransition': 'MSTransitionEnd',
+			'transition': 'transitionend'
+		},
+		transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
+		support = { transitions : Modernizr.csstransitions };
+
+	function toggleOverlay() {
+		if( classie.has( overlay, 'open' ) ) {
+			classie.remove( overlay, 'open' );
+			classie.add( overlay, 'close' );
+			var onEndTransitionFn = function( ev ) {
+				if( support.transitions ) {
+					if( ev.propertyName !== 'visibility' ) return;
+					this.removeEventListener( transEndEventName, onEndTransitionFn );
+				}
+				classie.remove( overlay, 'close' );
+			};
+			if( support.transitions ) {
+				overlay.addEventListener( transEndEventName, onEndTransitionFn );
+			}
+			else {
+				onEndTransitionFn();
+			}
+		}
+		else if( !classie.has( overlay, 'close' ) ) {
+			classie.add( overlay, 'open' );
+		}
+	}
+
+   $('.overlay ul li a[href*="#"]').click(function(){toggleOverlay();});
+   overlay.addEventListener( 'click', toggleOverlay );
+	triggerBttn.addEventListener( 'click', toggleOverlay );
+	closeBttn.addEventListener( 'click', toggleOverlay );
+})();
+
+$(function() {
+  $('.overlay-door a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top -0
+        }, 1000, 'linear');
+        return false;
+      }
+    }
+  });
+});
+
+//$(".overlay-close").addClass("btnctr");
+//$(".buttonopen").hover(function(){$(this).css("background-image","url(assets/success.png)");},function(){$(this).css("background-image","url(assets/menu.png)");});
+ $(".buttonopen").rotate({bind:{mouseover:function(){$(this).rotate({animateTo:360,duration:1000,easing:$.easing.easeOutQuint})},mouseout:function(){$(this).rotate({animateTo:0})}}});
+ $(".overlay-close").rotate({bind:{mouseover:function(){$(this).rotate({animateTo:360,duration:1000,easing:$.easing.easeOutQuint})},mouseout:function(){$(this).rotate({animateTo:0})}}});
+});
+
+	}
+	catch(e)
+	{
+		Muse.Assert.fail('Error with Widget:BIG Menu - Door (2.4) ParamHTMLOnDocReady Handler ' + e.toString());
+	}
+})();/* Widget:BIG Menu - Door (2.4) */
 Muse.Utils.fullPage('#page');/* 100% height page */
 $( '.breakpoint' ).registerBreakpoint();/* Register breakpoints */
 Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
@@ -818,230 +1148,17 @@ $(".svg1").css({"fill-opacity": "0"});svg1.reset();svg1.play();});
 },50);
 </script>
 
+<!-- Google Analytics -->
 <script>
-if(5 == 1){
-document.getElementById('menuitems1').innerHTML = "<li><a href='https://hashbazaar.com' target='_self'>صفحه اصلی</a></li>";
-}
-else if(5 == 2){
-document.getElementById('menuitems1').innerHTML = "<li><a href='https://hashbazaar.com' target='_self'>صفحه اصلی</a></li><li><a href='https://hashbazaar.com/collaboration' target='_self'>همکاری سازمانی</a></li>";
-}
-else if(5 == 3){
-document.getElementById('menuitems1').innerHTML = "<li><a href='https://hashbazaar.com' target='_self'>صفحه اصلی</a></li><li><a href='https://hashbazaar.com/collaboration' target='_self'>همکاری سازمانی</a></li><li><a href='https://hashbazaar.com/blog' target='_self'>مجله</a></li>";
-}
-else if(5 == 4){
-document.getElementById('menuitems1').innerHTML = "<li><a href='https://hashbazaar.com' target='_self'>صفحه اصلی</a></li><li><a href='https://hashbazaar.com/collaboration' target='_self'>همکاری سازمانی</a></li><li><a href='https://hashbazaar.com/blog' target='_self'>مجله</a></li><li><a href='https://hashbazaar.com/about' target='_self'>درباره هش بازار</a></li>";
-}
-else if(5 == 5){
-document.getElementById('menuitems1').innerHTML = "<li><a href='https://hashbazaar.com' target='_self'>صفحه اصلی</a></li><li><a href='https://hashbazaar.com/collaboration' target='_self'>همکاری سازمانی</a></li><li><a href='https://hashbazaar.com/blog' target='_self'>مجله</a></li><li><a href='https://hashbazaar.com/about' target='_self'>درباره هش بازار</a></li><li><a href='https://hashbazaar.com/faq' target='_self'>سوالات متداول</a></li>";
-}
-else if(5 == 6){
-document.getElementById('menuitems1').innerHTML = "<li><a href='https://hashbazaar.com' target='_self'>صفحه اصلی</a></li><li><a href='https://hashbazaar.com/collaboration' target='_self'>همکاری سازمانی</a></li><li><a href='https://hashbazaar.com/blog' target='_self'>مجله</a></li><li><a href='https://hashbazaar.com/about' target='_self'>درباره هش بازار</a></li><li><a href='https://hashbazaar.com/faq' target='_self'>سوالات متداول</a></li><li><a href='#anchor6' target='_self'>Menu 6</a></li>";
-}
-else if(5 == 7){
-document.getElementById('menuitems1').innerHTML = "<li><a href='https://hashbazaar.com' target='_self'>صفحه اصلی</a></li><li><a href='https://hashbazaar.com/collaboration' target='_self'>همکاری سازمانی</a></li><li><a href='https://hashbazaar.com/blog' target='_self'>مجله</a></li><li><a href='https://hashbazaar.com/about' target='_self'>درباره هش بازار</a></li><li><a href='https://hashbazaar.com/faq' target='_self'>سوالات متداول</a></li><li><a href='#anchor6' target='_self'>Menu 6</a></li><li><a href='#anchor7' target='_self'>Menu 7</a></li>";
-}
-else if(5 == 8){
-document.getElementById('menuitems1').innerHTML = "<li><a href='https://hashbazaar.com' target='_self'>صفحه اصلی</a></li><li><a href='https://hashbazaar.com/collaboration' target='_self'>همکاری سازمانی</a></li><li><a href='https://hashbazaar.com/blog' target='_self'>مجله</a></li><li><a href='https://hashbazaar.com/about' target='_self'>درباره هش بازار</a></li><li><a href='https://hashbazaar.com/faq' target='_self'>سوالات متداول</a></li><li><a href='#anchor6' target='_self'>Menu 6</a></li><li><a href='#anchor7' target='_self'>Menu 7</a></li><li><a href='#anchor8' target='_self'>Menu 8</a></li>";
-}
-else if(5 == 9){
-document.getElementById('menuitems1').innerHTML = "<li><a href='https://hashbazaar.com' target='_self'>صفحه اصلی</a></li><li><a href='https://hashbazaar.com/collaboration' target='_self'>همکاری سازمانی</a></li><li><a href='https://hashbazaar.com/blog' target='_self'>مجله</a></li><li><a href='https://hashbazaar.com/about' target='_self'>درباره هش بازار</a></li><li><a href='https://hashbazaar.com/faq' target='_self'>سوالات متداول</a></li><li><a href='#anchor6' target='_self'>Menu 6</a></li><li><a href='#anchor7' target='_self'>Menu 7</a></li><li><a href='#anchor8' target='_self'>Menu 8</a></li><li><a href='#anchor9' target='_self'>Menu 9</a></li>";
-}
-else{
-document.getElementById('menuitems1').innerHTML = "<li><a href='https://hashbazaar.com' target='_self'>صفحه اصلی</a></li><li><a href='https://hashbazaar.com/collaboration' target='_self'>همکاری سازمانی</a></li><li><a href='https://hashbazaar.com/blog' target='_self'>مجله</a></li><li><a href='https://hashbazaar.com/about' target='_self'>درباره هش بازار</a></li><li><a href='https://hashbazaar.com/faq' target='_self'>سوالات متداول</a></li><li><a href='#anchor6' target='_self'>Menu 6</a></li><li><a href='#anchor7' target='_self'>Menu 7</a></li><li><a href='#anchor8' target='_self'>Menu 8</a></li><li><a href='#anchor9' target='_self'>Menu 9</a></li><li><a href='#anchor10' target='_self'>Menu 10</a></li>";
-}
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-if(4 == 0){
-document.getElementById('menuitems2').innerHTML = "";
-}
-else if(4 == 1){
-document.getElementById('menuitems2').innerHTML = "<li><a href='#' target='_self' class='fa fa-instagram'>Twitter</a></li>";
-}
-else if(4 == 2){
-document.getElementById('menuitems2').innerHTML = "<li><a href='#' target='_self' class='fa fa-instagram'>Twitter</a></li><li><a href='#' target='_self' class='fa fa-paper-plane'>Google+</a></li>";
-}
-else if(4 == 3){
-document.getElementById('menuitems2').innerHTML = "<li><a href='#' target='_self' class='fa fa-instagram'>Twitter</a></li><li><a href='#' target='_self' class='fa fa-paper-plane'>Google+</a></li><li><a href='#' target='_self' class='fa fa-plus-circle'>Facebook</a></li>";
-}
-else{
-document.getElementById('menuitems2').innerHTML = "<li><a href='#' target='_self' class='fa fa-instagram'>Twitter</a></li><li><a href='#' target='_self' class='fa fa-paper-plane'>Google+</a></li><li><a href='#' target='_self' class='fa fa-plus-circle'>Facebook</a></li><li><a href='#' target='_self' class='fa fa-rotate-left'>icon-github</a></li>";
-}
-
-/*!
- * classie - class helper functions
- * from bonzo https://github.com/ded/bonzo
- *
- * classie.has( elem, 'my-class' ) -> true/false
- * classie.add( elem, 'my-new-class' )
- * classie.remove( elem, 'my-unwanted-class' )
- * classie.toggle( elem, 'my-class' )
- */
-
-/*jshint browser: true, strict: true, undef: true */
-/*global define: false */
-
-( function( window ) {
-
-'use strict';
-
-// class helper functions from bonzo https://github.com/ded/bonzo
-
-function classReg( className ) {
-  return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
-}
-
-// classList support for class management
-// altho to be fair, the api sucks because it won't accept multiple classes at once
-var hasClass, addClass, removeClass;
-
-if ( 'classList' in document.documentElement ) {
-  hasClass = function( elem, c ) {
-    return elem.classList.contains( c );
-  };
-  addClass = function( elem, c ) {
-    elem.classList.add( c );
-  };
-  removeClass = function( elem, c ) {
-    elem.classList.remove( c );
-  };
-}
-else {
-  hasClass = function( elem, c ) {
-    return classReg( c ).test( elem.className );
-  };
-  addClass = function( elem, c ) {
-    if ( !hasClass( elem, c ) ) {
-      elem.className = elem.className + ' ' + c;
-    }
-  };
-  removeClass = function( elem, c ) {
-    elem.className = elem.className.replace( classReg( c ), ' ' );
-  };
-}
-
-function toggleClass( elem, c ) {
-  var fn = hasClass( elem, c ) ? removeClass : addClass;
-  fn( elem, c );
-}
-
-var classie = {
-  // full names
-  hasClass: hasClass,
-  addClass: addClass,
-  removeClass: removeClass,
-  toggleClass: toggleClass,
-  // short names
-  has: hasClass,
-  add: addClass,
-  remove: removeClass,
-  toggle: toggleClass
-};
-
-// transport
-if ( typeof define === 'function' && define.amd ) {
-  // AMD
-  define( classie );
-} else {
-  // browser global
-  window.classie = classie;
-}
-
-})( window );
-
-/**
- * borderMenu.js v1.0.0
- * http://www.codrops.com
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- *
- * Copyright 2013, Codrops
- * http://www.codrops.com
- */
-(function() {
-
- 	// http://stackoverflow.com/a/11381730/989439
-	function mobilecheck() {
-		var check = false;
-		(function(a){if(/(android|ipad|playbook|silk|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))check = true})(navigator.userAgent||navigator.vendor||window.opera);
-		return check;
-	}
-
-	function init() {
-
-		var menu = document.getElementById( 'bt-menu' ),
-			trigger = menu.querySelector( 'a.bt-menu-trigger' ),
-			// triggerPlay only for demo 6
-			triggerPlay = document.querySelector( 'a.bt-menu-trigger-out' ),
-			// event type (if mobile use touch events)
-			eventtype = mobilecheck() ? 'touchstart' : 'click',
-			resetMenu = function() {
-				classie.remove( menu, 'bt-menu-open' );
-				classie.add( menu, 'bt-menu-close' );
-			},
-			closeClickFn = function( ev ) {
-				resetMenu();
-				overlay.removeEventListener( eventtype, closeClickFn );
-			};
-
-     $('.bt-menu ul li a').click(function( ev ){resetMenu();overlay.removeEventListener( eventtype, closeClickFn );});
-
-		var overlay = document.createElement('div');
-		overlay.className = 'bt-overlay';
-		menu.appendChild( overlay );
-
-		trigger.addEventListener( eventtype, function( ev ) {
-			ev.stopPropagation();
-			ev.preventDefault();
-
-			if( classie.has( menu, 'bt-menu-open' ) ) {
-				resetMenu();
-			}
-			else {
-				classie.remove( menu, 'bt-menu-close' );
-				classie.add( menu, 'bt-menu-open' );
-				overlay.addEventListener( eventtype, closeClickFn );
-			}
-		});
-
-		if( triggerPlay ) {
-			triggerPlay.addEventListener( eventtype, function( ev ) {
-				ev.stopPropagation();
-				ev.preventDefault();
-
-				classie.remove( menu, 'bt-menu-close' );
-				classie.add( menu, 'bt-menu-open' );
-				overlay.addEventListener( eventtype, closeClickFn );
-			});
-		}
-
-	}
-
-	init();
-
-})();
-
-/*! jQuery UI - v1.12.0 - 2016-09-01
-* http://jqueryui.com
-* Includes: effect.js
-* Copyright jQuery Foundation and other contributors; Licensed MIT */
-
-(function(t){"function"==typeof define&&define.amd?define(["jquery"],t):t(jQuery)})(function(t){t.ui=t.ui||{},t.ui.version="1.12.0";var e="ui-effects-",i="ui-effects-style",s="ui-effects-animated",n=t;t.effects={effect:{}},function(t,e){function i(t,e,i){var s=u[e.type]||{};return null==t?i||!e.def?null:e.def:(t=s.floor?~~t:parseFloat(t),isNaN(t)?e.def:s.mod?(t+s.mod)%s.mod:0>t?0:t>s.max?s.max:t)}function s(i){var s=h(),n=s._rgba=[];return i=i.toLowerCase(),f(l,function(t,o){var a,r=o.re.exec(i),l=r&&o.parse(r),h=o.space||"rgba";return l?(a=s[h](l),s[c[h].cache]=a[c[h].cache],n=s._rgba=a._rgba,!1):e}),n.length?("0,0,0,0"===n.join()&&t.extend(n,o.transparent),s):o[i]}function n(t,e,i){return i=(i+1)%1,1>6*i?t+6*(e-t)*i:1>2*i?e:2>3*i?t+6*(e-t)*(2/3-i):t}var o,a="backgroundColor borderBottomColor borderLeftColor borderRightColor borderTopColor color columnRuleColor outlineColor textDecorationColor textEmphasisColor",r=/^([\-+])=\s*(\d+\.?\d*)/,l=[{re:/rgba?\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*(?:,\s*(\d?(?:\.\d+)?)\s*)?\)/,parse:function(t){return[t[1],t[2],t[3],t[4]]}},{re:/rgba?\(\s*(\d+(?:\.\d+)?)\%\s*,\s*(\d+(?:\.\d+)?)\%\s*,\s*(\d+(?:\.\d+)?)\%\s*(?:,\s*(\d?(?:\.\d+)?)\s*)?\)/,parse:function(t){return[2.55*t[1],2.55*t[2],2.55*t[3],t[4]]}},{re:/#([a-f0-9]{2})([a-f0-9]{2})([a-f0-9]{2})/,parse:function(t){return[parseInt(t[1],16),parseInt(t[2],16),parseInt(t[3],16)]}},{re:/#([a-f0-9])([a-f0-9])([a-f0-9])/,parse:function(t){return[parseInt(t[1]+t[1],16),parseInt(t[2]+t[2],16),parseInt(t[3]+t[3],16)]}},{re:/hsla?\(\s*(\d+(?:\.\d+)?)\s*,\s*(\d+(?:\.\d+)?)\%\s*,\s*(\d+(?:\.\d+)?)\%\s*(?:,\s*(\d?(?:\.\d+)?)\s*)?\)/,space:"hsla",parse:function(t){return[t[1],t[2]/100,t[3]/100,t[4]]}}],h=t.Color=function(e,i,s,n){return new t.Color.fn.parse(e,i,s,n)},c={rgba:{props:{red:{idx:0,type:"byte"},green:{idx:1,type:"byte"},blue:{idx:2,type:"byte"}}},hsla:{props:{hue:{idx:0,type:"degrees"},saturation:{idx:1,type:"percent"},lightness:{idx:2,type:"percent"}}}},u={"byte":{floor:!0,max:255},percent:{max:1},degrees:{mod:360,floor:!0}},d=h.support={},p=t("<p>")[0],f=t.each;p.style.cssText="background-color:rgba(1,1,1,.5)",d.rgba=p.style.backgroundColor.indexOf("rgba")>-1,f(c,function(t,e){e.cache="_"+t,e.props.alpha={idx:3,type:"percent",def:1}}),h.fn=t.extend(h.prototype,{parse:function(n,a,r,l){if(n===e)return this._rgba=[null,null,null,null],this;(n.jquery||n.nodeType)&&(n=t(n).css(a),a=e);var u=this,d=t.type(n),p=this._rgba=[];return a!==e&&(n=[n,a,r,l],d="array"),"string"===d?this.parse(s(n)||o._default):"array"===d?(f(c.rgba.props,function(t,e){p[e.idx]=i(n[e.idx],e)}),this):"object"===d?(n instanceof h?f(c,function(t,e){n[e.cache]&&(u[e.cache]=n[e.cache].slice())}):f(c,function(e,s){var o=s.cache;f(s.props,function(t,e){if(!u[o]&&s.to){if("alpha"===t||null==n[t])return;u[o]=s.to(u._rgba)}u[o][e.idx]=i(n[t],e,!0)}),u[o]&&0>t.inArray(null,u[o].slice(0,3))&&(u[o][3]=1,s.from&&(u._rgba=s.from(u[o])))}),this):e},is:function(t){var i=h(t),s=!0,n=this;return f(c,function(t,o){var a,r=i[o.cache];return r&&(a=n[o.cache]||o.to&&o.to(n._rgba)||[],f(o.props,function(t,i){return null!=r[i.idx]?s=r[i.idx]===a[i.idx]:e})),s}),s},_space:function(){var t=[],e=this;return f(c,function(i,s){e[s.cache]&&t.push(i)}),t.pop()},transition:function(t,e){var s=h(t),n=s._space(),o=c[n],a=0===this.alpha()?h("transparent"):this,r=a[o.cache]||o.to(a._rgba),l=r.slice();return s=s[o.cache],f(o.props,function(t,n){var o=n.idx,a=r[o],h=s[o],c=u[n.type]||{};null!==h&&(null===a?l[o]=h:(c.mod&&(h-a>c.mod/2?a+=c.mod:a-h>c.mod/2&&(a-=c.mod)),l[o]=i((h-a)*e+a,n)))}),this[n](l)},blend:function(e){if(1===this._rgba[3])return this;var i=this._rgba.slice(),s=i.pop(),n=h(e)._rgba;return h(t.map(i,function(t,e){return(1-s)*n[e]+s*t}))},toRgbaString:function(){var e="rgba(",i=t.map(this._rgba,function(t,e){return null==t?e>2?1:0:t});return 1===i[3]&&(i.pop(),e="rgb("),e+i.join()+")"},toHslaString:function(){var e="hsla(",i=t.map(this.hsla(),function(t,e){return null==t&&(t=e>2?1:0),e&&3>e&&(t=Math.round(100*t)+"%"),t});return 1===i[3]&&(i.pop(),e="hsl("),e+i.join()+")"},toHexString:function(e){var i=this._rgba.slice(),s=i.pop();return e&&i.push(~~(255*s)),"#"+t.map(i,function(t){return t=(t||0).toString(16),1===t.length?"0"+t:t}).join("")},toString:function(){return 0===this._rgba[3]?"transparent":this.toRgbaString()}}),h.fn.parse.prototype=h.fn,c.hsla.to=function(t){if(null==t[0]||null==t[1]||null==t[2])return[null,null,null,t[3]];var e,i,s=t[0]/255,n=t[1]/255,o=t[2]/255,a=t[3],r=Math.max(s,n,o),l=Math.min(s,n,o),h=r-l,c=r+l,u=.5*c;return e=l===r?0:s===r?60*(n-o)/h+360:n===r?60*(o-s)/h+120:60*(s-n)/h+240,i=0===h?0:.5>=u?h/c:h/(2-c),[Math.round(e)%360,i,u,null==a?1:a]},c.hsla.from=function(t){if(null==t[0]||null==t[1]||null==t[2])return[null,null,null,t[3]];var e=t[0]/360,i=t[1],s=t[2],o=t[3],a=.5>=s?s*(1+i):s+i-s*i,r=2*s-a;return[Math.round(255*n(r,a,e+1/3)),Math.round(255*n(r,a,e)),Math.round(255*n(r,a,e-1/3)),o]},f(c,function(s,n){var o=n.props,a=n.cache,l=n.to,c=n.from;h.fn[s]=function(s){if(l&&!this[a]&&(this[a]=l(this._rgba)),s===e)return this[a].slice();var n,r=t.type(s),u="array"===r||"object"===r?s:arguments,d=this[a].slice();return f(o,function(t,e){var s=u["object"===r?t:e.idx];null==s&&(s=d[e.idx]),d[e.idx]=i(s,e)}),c?(n=h(c(d)),n[a]=d,n):h(d)},f(o,function(e,i){h.fn[e]||(h.fn[e]=function(n){var o,a=t.type(n),l="alpha"===e?this._hsla?"hsla":"rgba":s,h=this[l](),c=h[i.idx];return"undefined"===a?c:("function"===a&&(n=n.call(this,c),a=t.type(n)),null==n&&i.empty?this:("string"===a&&(o=r.exec(n),o&&(n=c+parseFloat(o[2])*("+"===o[1]?1:-1))),h[i.idx]=n,this[l](h)))})})}),h.hook=function(e){var i=e.split(" ");f(i,function(e,i){t.cssHooks[i]={set:function(e,n){var o,a,r="";if("transparent"!==n&&("string"!==t.type(n)||(o=s(n)))){if(n=h(o||n),!d.rgba&&1!==n._rgba[3]){for(a="backgroundColor"===i?e.parentNode:e;(""===r||"transparent"===r)&&a&&a.style;)try{r=t.css(a,"backgroundColor"),a=a.parentNode}catch(l){}n=n.blend(r&&"transparent"!==r?r:"_default")}n=n.toRgbaString()}try{e.style[i]=n}catch(l){}}},t.fx.step[i]=function(e){e.colorInit||(e.start=h(e.elem,i),e.end=h(e.end),e.colorInit=!0),t.cssHooks[i].set(e.elem,e.start.transition(e.end,e.pos))}})},h.hook(a),t.cssHooks.borderColor={expand:function(t){var e={};return f(["Top","Right","Bottom","Left"],function(i,s){e["border"+s+"Color"]=t}),e}},o=t.Color.names={aqua:"#00ffff",black:"#000000",blue:"#0000ff",fuchsia:"#ff00ff",gray:"#808080",green:"#008000",lime:"#00ff00",maroon:"#800000",navy:"#000080",olive:"#808000",purple:"#800080",red:"#ff0000",silver:"#c0c0c0",teal:"#008080",white:"#ffffff",yellow:"#ffff00",transparent:[null,null,null,0],_default:"#ffffff"}}(n),function(){function e(e){var i,s,n=e.ownerDocument.defaultView?e.ownerDocument.defaultView.getComputedStyle(e,null):e.currentStyle,o={};if(n&&n.length&&n[0]&&n[n[0]])for(s=n.length;s--;)i=n[s],"string"==typeof n[i]&&(o[t.camelCase(i)]=n[i]);else for(i in n)"string"==typeof n[i]&&(o[i]=n[i]);return o}function i(e,i){var s,n,a={};for(s in i)n=i[s],e[s]!==n&&(o[s]||(t.fx.step[s]||!isNaN(parseFloat(n)))&&(a[s]=n));return a}var s=["add","remove","toggle"],o={border:1,borderBottom:1,borderColor:1,borderLeft:1,borderRight:1,borderTop:1,borderWidth:1,margin:1,padding:1};t.each(["borderLeftStyle","borderRightStyle","borderBottomStyle","borderTopStyle"],function(e,i){t.fx.step[i]=function(t){("none"!==t.end&&!t.setAttr||1===t.pos&&!t.setAttr)&&(n.style(t.elem,i,t.end),t.setAttr=!0)}}),t.fn.addBack||(t.fn.addBack=function(t){return this.add(null==t?this.prevObject:this.prevObject.filter(t))}),t.effects.animateClass=function(n,o,a,r){var l=t.speed(o,a,r);return this.queue(function(){var o,a=t(this),r=a.attr("class")||"",h=l.children?a.find("*").addBack():a;h=h.map(function(){var i=t(this);return{el:i,start:e(this)}}),o=function(){t.each(s,function(t,e){n[e]&&a[e+"Class"](n[e])})},o(),h=h.map(function(){return this.end=e(this.el[0]),this.diff=i(this.start,this.end),this}),a.attr("class",r),h=h.map(function(){var e=this,i=t.Deferred(),s=t.extend({},l,{queue:!1,complete:function(){i.resolve(e)}});return this.el.animate(this.diff,s),i.promise()}),t.when.apply(t,h.get()).done(function(){o(),t.each(arguments,function(){var e=this.el;t.each(this.diff,function(t){e.css(t,"")})}),l.complete.call(a[0])})})},t.fn.extend({addClass:function(e){return function(i,s,n,o){return s?t.effects.animateClass.call(this,{add:i},s,n,o):e.apply(this,arguments)}}(t.fn.addClass),removeClass:function(e){return function(i,s,n,o){return arguments.length>1?t.effects.animateClass.call(this,{remove:i},s,n,o):e.apply(this,arguments)}}(t.fn.removeClass),toggleClass:function(e){return function(i,s,n,o,a){return"boolean"==typeof s||void 0===s?n?t.effects.animateClass.call(this,s?{add:i}:{remove:i},n,o,a):e.apply(this,arguments):t.effects.animateClass.call(this,{toggle:i},s,n,o)}}(t.fn.toggleClass),switchClass:function(e,i,s,n,o){return t.effects.animateClass.call(this,{add:i,remove:e},s,n,o)}})}(),function(){function n(e,i,s,n){return t.isPlainObject(e)&&(i=e,e=e.effect),e={effect:e},null==i&&(i={}),t.isFunction(i)&&(n=i,s=null,i={}),("number"==typeof i||t.fx.speeds[i])&&(n=s,s=i,i={}),t.isFunction(s)&&(n=s,s=null),i&&t.extend(e,i),s=s||i.duration,e.duration=t.fx.off?0:"number"==typeof s?s:s in t.fx.speeds?t.fx.speeds[s]:t.fx.speeds._default,e.complete=n||i.complete,e}function o(e){return!e||"number"==typeof e||t.fx.speeds[e]?!0:"string"!=typeof e||t.effects.effect[e]?t.isFunction(e)?!0:"object"!=typeof e||e.effect?!1:!0:!0}function a(t,e){var i=e.outerWidth(),s=e.outerHeight(),n=/^rect\((-?\d*\.?\d*px|-?\d+%|auto),?\s*(-?\d*\.?\d*px|-?\d+%|auto),?\s*(-?\d*\.?\d*px|-?\d+%|auto),?\s*(-?\d*\.?\d*px|-?\d+%|auto)\)$/,o=n.exec(t)||["",0,i,s,0];return{top:parseFloat(o[1])||0,right:"auto"===o[2]?i:parseFloat(o[2]),bottom:"auto"===o[3]?s:parseFloat(o[3]),left:parseFloat(o[4])||0}}t.expr&&t.expr.filters&&t.expr.filters.animated&&(t.expr.filters.animated=function(e){return function(i){return!!t(i).data(s)||e(i)}}(t.expr.filters.animated)),t.uiBackCompat!==!1&&t.extend(t.effects,{save:function(t,i){for(var s=0,n=i.length;n>s;s++)null!==i[s]&&t.data(e+i[s],t[0].style[i[s]])},restore:function(t,i){for(var s,n=0,o=i.length;o>n;n++)null!==i[n]&&(s=t.data(e+i[n]),t.css(i[n],s))},setMode:function(t,e){return"toggle"===e&&(e=t.is(":hidden")?"show":"hide"),e},createWrapper:function(e){if(e.parent().is(".ui-effects-wrapper"))return e.parent();var i={width:e.outerWidth(!0),height:e.outerHeight(!0),"float":e.css("float")},s=t("<div></div>").addClass("ui-effects-wrapper").css({fontSize:"100%",background:"transparent",border:"none",margin:0,padding:0}),n={width:e.width(),height:e.height()},o=document.activeElement;try{o.id}catch(a){o=document.body}return e.wrap(s),(e[0]===o||t.contains(e[0],o))&&t(o).trigger("focus"),s=e.parent(),"static"===e.css("position")?(s.css({position:"relative"}),e.css({position:"relative"})):(t.extend(i,{position:e.css("position"),zIndex:e.css("z-index")}),t.each(["top","left","bottom","right"],function(t,s){i[s]=e.css(s),isNaN(parseInt(i[s],10))&&(i[s]="auto")}),e.css({position:"relative",top:0,left:0,right:"auto",bottom:"auto"})),e.css(n),s.css(i).show()},removeWrapper:function(e){var i=document.activeElement;return e.parent().is(".ui-effects-wrapper")&&(e.parent().replaceWith(e),(e[0]===i||t.contains(e[0],i))&&t(i).trigger("focus")),e}}),t.extend(t.effects,{version:"1.12.0",define:function(e,i,s){return s||(s=i,i="effect"),t.effects.effect[e]=s,t.effects.effect[e].mode=i,s},scaledDimensions:function(t,e,i){if(0===e)return{height:0,width:0,outerHeight:0,outerWidth:0};var s="horizontal"!==i?(e||100)/100:1,n="vertical"!==i?(e||100)/100:1;return{height:t.height()*n,width:t.width()*s,outerHeight:t.outerHeight()*n,outerWidth:t.outerWidth()*s}},clipToBox:function(t){return{width:t.clip.right-t.clip.left,height:t.clip.bottom-t.clip.top,left:t.clip.left,top:t.clip.top}},unshift:function(t,e,i){var s=t.queue();e>1&&s.splice.apply(s,[1,0].concat(s.splice(e,i))),t.dequeue()},saveStyle:function(t){t.data(i,t[0].style.cssText)},restoreStyle:function(t){t[0].style.cssText=t.data(i)||"",t.removeData(i)},mode:function(t,e){var i=t.is(":hidden");return"toggle"===e&&(e=i?"show":"hide"),(i?"hide"===e:"show"===e)&&(e="none"),e},getBaseline:function(t,e){var i,s;switch(t[0]){case"top":i=0;break;case"middle":i=.5;break;case"bottom":i=1;break;default:i=t[0]/e.height}switch(t[1]){case"left":s=0;break;case"center":s=.5;break;case"right":s=1;break;default:s=t[1]/e.width}return{x:s,y:i}},createPlaceholder:function(i){var s,n=i.css("position"),o=i.position();return i.css({marginTop:i.css("marginTop"),marginBottom:i.css("marginBottom"),marginLeft:i.css("marginLeft"),marginRight:i.css("marginRight")}).outerWidth(i.outerWidth()).outerHeight(i.outerHeight()),/^(static|relative)/.test(n)&&(n="absolute",s=t("<"+i[0].nodeName+">").insertAfter(i).css({display:/^(inline|ruby)/.test(i.css("display"))?"inline-block":"block",visibility:"hidden",marginTop:i.css("marginTop"),marginBottom:i.css("marginBottom"),marginLeft:i.css("marginLeft"),marginRight:i.css("marginRight"),"float":i.css("float")}).outerWidth(i.outerWidth()).outerHeight(i.outerHeight()).addClass("ui-effects-placeholder"),i.data(e+"placeholder",s)),i.css({position:n,left:o.left,top:o.top}),s},removePlaceholder:function(t){var i=e+"placeholder",s=t.data(i);s&&(s.remove(),t.removeData(i))},cleanUp:function(e){t.effects.restoreStyle(e),t.effects.removePlaceholder(e)},setTransition:function(e,i,s,n){return n=n||{},t.each(i,function(t,i){var o=e.cssUnit(i);o[0]>0&&(n[i]=o[0]*s+o[1])}),n}}),t.fn.extend({effect:function(){function e(e){function n(){l.removeData(s),t.effects.cleanUp(l),"hide"===i.mode&&l.hide(),r()}function r(){t.isFunction(h)&&h.call(l[0]),t.isFunction(e)&&e()}var l=t(this);i.mode=u.shift(),t.uiBackCompat===!1||a?"none"===i.mode?(l[c](),r()):o.call(l[0],i,n):(l.is(":hidden")?"hide"===c:"show"===c)?(l[c](),r()):o.call(l[0],i,r)}var i=n.apply(this,arguments),o=t.effects.effect[i.effect],a=o.mode,r=i.queue,l=r||"fx",h=i.complete,c=i.mode,u=[],d=function(e){var i=t(this),n=t.effects.mode(i,c)||a;i.data(s,!0),u.push(n),a&&("show"===n||n===a&&"hide"===n)&&i.show(),a&&"none"===n||t.effects.saveStyle(i),t.isFunction(e)&&e()};return t.fx.off||!o?c?this[c](i.duration,h):this.each(function(){h&&h.call(this)}):r===!1?this.each(d).each(e):this.queue(l,d).queue(l,e)},show:function(t){return function(e){if(o(e))return t.apply(this,arguments);var i=n.apply(this,arguments);return i.mode="show",this.effect.call(this,i)}}(t.fn.show),hide:function(t){return function(e){if(o(e))return t.apply(this,arguments);var i=n.apply(this,arguments);return i.mode="hide",this.effect.call(this,i)}}(t.fn.hide),toggle:function(t){return function(e){if(o(e)||"boolean"==typeof e)return t.apply(this,arguments);var i=n.apply(this,arguments);return i.mode="toggle",this.effect.call(this,i)}}(t.fn.toggle),cssUnit:function(e){var i=this.css(e),s=[];return t.each(["em","px","%","pt"],function(t,e){i.indexOf(e)>0&&(s=[parseFloat(i),e])}),s},cssClip:function(t){return t?this.css("clip","rect("+t.top+"px "+t.right+"px "+t.bottom+"px "+t.left+"px)"):a(this.css("clip"),this)},transfer:function(e,i){var s=t(this),n=t(e.to),o="fixed"===n.css("position"),a=t("body"),r=o?a.scrollTop():0,l=o?a.scrollLeft():0,h=n.offset(),c={top:h.top-r,left:h.left-l,height:n.innerHeight(),width:n.innerWidth()},u=s.offset(),d=t("<div class='ui-effects-transfer'></div>").appendTo("body").addClass(e.className).css({top:u.top-r,left:u.left-l,height:s.innerHeight(),width:s.innerWidth(),position:o?"fixed":"absolute"}).animate(c,e.duration,e.easing,function(){d.remove(),t.isFunction(i)&&i()})}}),t.fx.step.clip=function(e){e.clipInit||(e.start=t(e.elem).cssClip(),"string"==typeof e.end&&(e.end=a(e.end,e.elem)),e.clipInit=!0),t(e.elem).cssClip({top:e.pos*(e.end.top-e.start.top)+e.start.top,right:e.pos*(e.end.right-e.start.right)+e.start.right,bottom:e.pos*(e.end.bottom-e.start.bottom)+e.start.bottom,left:e.pos*(e.end.left-e.start.left)+e.start.left})}}(),function(){var e={};t.each(["Quad","Cubic","Quart","Quint","Expo"],function(t,i){e[i]=function(e){return Math.pow(e,t+2)}}),t.extend(e,{Sine:function(t){return 1-Math.cos(t*Math.PI/2)},Circ:function(t){return 1-Math.sqrt(1-t*t)},Elastic:function(t){return 0===t||1===t?t:-Math.pow(2,8*(t-1))*Math.sin((80*(t-1)-7.5)*Math.PI/15)},Back:function(t){return t*t*(3*t-2)},Bounce:function(t){for(var e,i=4;((e=Math.pow(2,--i))-1)/11>t;);return 1/Math.pow(4,3-i)-7.5625*Math.pow((3*e-2)/22-t,2)}}),t.each(e,function(e,i){t.easing["easeIn"+e]=i,t.easing["easeOut"+e]=function(t){return 1-i(1-t)},t.easing["easeInOut"+e]=function(t){return.5>t?i(2*t)/2:1-i(-2*t+2)/2}})}(),t.effects});
-
-$(function() {
-  $('a[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: target.offset().top -0
-        }, 1000, 'linear');
-        return false;
-      }
-    }
-  });
-});
+ga('create', 'UA-XXXXX-Y', 'auto');
+ga('send', 'pageview');
 </script>
+<!-- End Google Analytics -->
 
    </body>
 </html>

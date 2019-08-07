@@ -1,13 +1,16 @@
-<manifest alg="2" build="2017.0.2.363" opt="false" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="landingContainer.com" resolutions="1x" timestamp="1564909821526">
+<manifest alg="2" build="2017.0.2.363" opt="false" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="landingContainer.com" resolutions="1x" timestamp="1565028373318">
   <folder name="assets">
     <file name="logo.svg" crc="218083929" seo="true" mt="1564571325000"/>
+    <file name="success.png" crc="3921043281" seo="true" mt="1555955233000"/>
+    <file name="menu.png" crc="109977818" seo="true" mt="1564995907000"/>
+    <file name="close.png" crc="3949454993" seo="true" mt="1564995998000"/>
   </folder>
   <folder name="css">
-    <file name="site_global.css" crc="443350757"/>
-    <file name="index.css" crc="203414985" ref="index"/>
+    <file name="site_global.css" crc="4228014014"/>
+    <file name="index.css" crc="343461299" ref="index"/>
     <file name="master_a-master.css" crc="255203975" ref="index"/>
     <file name="nomq_preview_master_a-master.css" crc="3824530138" ref="index"/>
-    <file name="nomq_index.css" crc="4140397066" ref="index"/>
+    <file name="nomq_index.css" crc="3881865170" ref="index"/>
   </folder>
   <folder name="fonts">
     <file name="btitrbold.woff" crc="389408755"/>
@@ -63,37 +66,85 @@
     <file name="mining_bitcoin-150x150 (1)-u293-fr.png" crc="4281471080" ref="index"/>
     <file name="effizient_bitcoin-150x150 (1)-u316-fr.png" crc="3864047097" ref="index"/>
     <file name="security_bitcoin-150x150-u273-fr.png" crc="4210153757" ref="index"/>
-    <file name="rack_right3 (1)-u405-fr.png" crc="4116540687" ref="index"/>
-    <file name="3_asics-u578-fr.png" crc="74020278" ref="index"/>
-    <file name="minin_pro-u572-fr.png" crc="334833824" ref="index"/>
-    <file name="flashtera-u589-fr.png" crc="241757354" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr.png" crc="228516509" ref="index"/>
+    <file name="3_asics-u578-fr.png" crc="4093402507" ref="index"/>
+    <file name="minin_pro-u572-fr.png" crc="4293341810" ref="index"/>
+    <file name="flashtera-u589-fr.png" crc="366170855" ref="index"/>
     <file name="bitcoin_green-150x150-u283-fr.png" crc="226693395" ref="index"/>
     <file name="bitcoin_flexibility-150x150 (1)-u260-fr.png" crc="21975495" ref="index"/>
     <file name="bitcoin_density-150x150 (1).png" crc="529818641" ref="index">
       <caption webpage="index" alt=""/>
     </file>
     <file name="container_white-1024x576-1024x576 (1)-u178-fr.png" crc="112777462" ref="index"/>
-    <file name="rack_right3 (1)-u405-fr2.png" crc="132506507" ref="index"/>
-    <file name="3_asics-u578-fr2.png" crc="430824629" ref="index"/>
-    <file name="minin_pro-u572-fr2.png" crc="135941677" ref="index"/>
-    <file name="flashtera-u589-fr2.png" crc="4200346760" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr2.png" crc="4116540687" ref="index"/>
+    <file name="3_asics-u578-fr2.png" crc="74020278" ref="index"/>
+    <file name="minin_pro-u572-fr2.png" crc="334833824" ref="index"/>
+    <file name="flashtera-u589-fr2.png" crc="241757354" ref="index"/>
     <file name="bitfury_secure_iceland_hover-u420-fr.jpg" crc="3895652339" ref="index"/>
-    <file name="bitcoin_flexibility-150x150 (1)-u260-fr2.png" crc="403698046" ref="index"/>
-    <file name="container_white-1024x576-1024x576 (1)-u178-fr2.png" crc="478495994" ref="index"/>
-    <file name="mining_bitcoin-150x150 (1)-u293-fr2.png" crc="193023712" ref="index"/>
-    <file name="bitcoin_density-150x150 (1)-u306-fr2.png" crc="3933853124" ref="index"/>
-    <file name="effizient_bitcoin-150x150 (1)-u316-fr2.png" crc="4061833694" ref="index"/>
-    <file name="rack_right3 (1)-u405-fr3.png" crc="138822339" ref="index"/>
-    <file name="security_bitcoin-150x150-u273-fr2.png" crc="312088322" ref="index"/>
-    <file name="3_asics-u578-fr3.png" crc="3897795927" ref="index"/>
-    <file name="minin_pro-u572-fr3.png" crc="275324035" ref="index"/>
-    <file name="flashtera-u589-fr3.png" crc="3766314066" ref="index"/>
-    <file name="5500a9d776d3c764285288da63cb7a9e.jpg" crc="3985985381" ref="index">
+    <file name="bitcoin_flexibility-150x150 (1)-u260-fr2.png" crc="425415282" ref="index"/>
+    <file name="container_white-1024x576-1024x576 (1)-u178-fr2.png" crc="4119720659" ref="index"/>
+    <file name="mining_bitcoin-150x150 (1)-u293-fr2.png" crc="81777811" ref="index"/>
+    <file name="bitcoin_density-150x150 (1)-u306-fr2.png" crc="326335396" ref="index"/>
+    <file name="effizient_bitcoin-150x150 (1)-u316-fr2.png" crc="409875980" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr3.png" crc="132506507" ref="index"/>
+    <file name="security_bitcoin-150x150-u273-fr2.png" crc="3859001499" ref="index"/>
+    <file name="3_asics-u578-fr3.png" crc="430824629" ref="index"/>
+    <file name="minin_pro-u572-fr3.png" crc="135941677" ref="index"/>
+    <file name="flashtera-u589-fr3.png" crc="4200346760" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e.jpg" crc="314990795" ref="index">
       <caption webpage="index" alt=""/>
     </file>
-    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr.jpg" crc="3880266686" ref="index"/>
-    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr2.jpg" crc="409101427" ref="index"/>
-    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr3.jpg" crc="118275304" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr.jpg" crc="455015529" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr2.jpg" crc="3978663680" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr3.jpg" crc="406853111" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr4.jpg" crc="68702169" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr4.png" crc="287227073" ref="index"/>
+    <file name="3_asics-u578-fr4.png" crc="4053414807" ref="index"/>
+    <file name="minin_pro-u572-fr4.png" crc="4253034235" ref="index"/>
+    <file name="flashtera-u589-fr4.png" crc="4056674753" ref="index"/>
+    <file name="bitcoin_green-150x150-u283-fr2.png" crc="3814517783" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr5.jpg" crc="4169783765" ref="index"/>
+    <file name="container_white-1024x576-1024x576 (1)-u178-fr3.png" crc="4073022274" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr5.png" crc="4226671425" ref="index"/>
+    <file name="3_asics-u578-fr5.png" crc="4294120305" ref="index"/>
+    <file name="minin_pro-u572-fr5.png" crc="3867519999" ref="index"/>
+    <file name="flashtera-u589-fr5.png" crc="183945646" ref="index"/>
+    <file name="mining_bitcoin-150x150 (1)-u293-fr3.png" crc="3937886603" ref="index"/>
+    <file name="bitcoin_density-150x150 (1)-u306-fr3.png" crc="4265492447" ref="index"/>
+    <file name="effizient_bitcoin-150x150 (1)-u316-fr3.png" crc="3948226688" ref="index"/>
+    <file name="bitcoin_flexibility-150x150 (1)-u260-fr3.png" crc="323980737" ref="index"/>
+    <file name="bitcoin_green-150x150-u283-fr3.png" crc="489809316" ref="index"/>
+    <file name="security_bitcoin-150x150-u273-fr3.png" crc="4278451826" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr6.jpg" crc="3902901477" ref="index"/>
+    <file name="container_white-1024x576-1024x576 (1)-u178-fr4.png" crc="3975591305" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr6.png" crc="29642366" ref="index"/>
+    <file name="3_asics-u578-fr6.png" crc="4229505265" ref="index"/>
+    <file name="minin_pro-u572-fr6.png" crc="4205371682" ref="index"/>
+    <file name="flashtera-u589-fr6.png" crc="4097701320" ref="index"/>
+    <file name="mining_bitcoin-150x150 (1)-u293-fr4.png" crc="4276458997" ref="index"/>
+    <file name="bitcoin_density-150x150 (1)-u306-fr4.png" crc="4155925589" ref="index"/>
+    <file name="effizient_bitcoin-150x150 (1)-u316-fr4.png" crc="8826287" ref="index"/>
+    <file name="bitcoin_flexibility-150x150 (1)-u260-fr4.png" crc="4289504300" ref="index"/>
+    <file name="bitcoin_green-150x150-u283-fr4.png" crc="391258195" ref="index"/>
+    <file name="security_bitcoin-150x150-u273-fr4.png" crc="410577424" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr7.jpg" crc="4184765550" ref="index"/>
+    <file name="container_white-1024x576-1024x576 (1)-u178-fr5.png" crc="3846055570" ref="index"/>
+    <file name="mining_bitcoin-150x150 (1)-u293-fr5.png" crc="3812547041" ref="index"/>
+    <file name="bitcoin_density-150x150 (1)-u306-fr5.png" crc="146034042" ref="index"/>
+    <file name="effizient_bitcoin-150x150 (1)-u316-fr5.png" crc="3969539329" ref="index"/>
+    <file name="bitcoin_flexibility-150x150 (1)-u260-fr5.png" crc="333900945" ref="index"/>
+    <file name="bitcoin_green-150x150-u283-fr5.png" crc="4074126562" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr7.png" crc="250980392" ref="index"/>
+    <file name="security_bitcoin-150x150-u273-fr5.png" crc="317959318" ref="index"/>
+    <file name="3_asics-u578-fr7.png" crc="99646612" ref="index"/>
+    <file name="minin_pro-u572-fr7.png" crc="440672878" ref="index"/>
+    <file name="flashtera-u589-fr7.png" crc="4266913506" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr8.jpg" crc="152069330" ref="index"/>
+    <file name="container_white-1024x576-1024x576 (1)-u178-fr6.png" crc="4256859744" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr8.png" crc="185414638" ref="index"/>
+    <file name="3_asics-u578-fr8.png" crc="30054734" ref="index"/>
+    <file name="minin_pro-u572-fr8.png" crc="181787164" ref="index"/>
+    <file name="flashtera-u589-fr8.png" crc="3896610320" ref="index"/>
   </folder>
-  <file name="index.html" crc="4009274244" seo="true" mt="1564909812354" redirect="true"/>
+  <file name="index.html" crc="3937411962" seo="true" mt="1565026180025" redirect="true"/>
 </manifest>

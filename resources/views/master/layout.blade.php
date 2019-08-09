@@ -263,27 +263,18 @@
 
 @if(Config::get('app.locale') == 'fa')
 <style type="text/css">
-    #header-navbar-menu {
-        text-align: right;
-    }
-    #header-navbar-menu ul li {
-        padding-right: 10px;
-    }
-    
+
     .flags a {
         float:right
     }
-    
+    .flags a#engUK {
+        margin-left:10px;
+    }
     .flags a#persianFA {
         border-left: 1px solid white;
         margin-left: 10px
     }
 
-    @media screen and (max-width:769px){
-        .flags {
-            margin-left: 95% !important
-        }
-    }
 </style>
 @else
 
@@ -297,10 +288,8 @@
             padding-right: 10px
         }
 
-        @media screen and (max-width:421px){
-            .flags {
-                margin-left: 70% !important
-            }
+        .flags a#engUK {
+            margin-left:10px;
         }
 </style>
 @endif

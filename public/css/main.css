@@ -959,10 +959,7 @@ color: orange;}
             left: -40px !important;
             top: 0vh !important;
         }
-    /*  */
-    body {
-        background-color: #FFFDE8
-    }
+
     header {
         z-index: 2;
     }
@@ -1101,10 +1098,7 @@ color: orange;}
         width: 35px;
     }
 
-    /*  */
-    body {
-        background-color: #FFFDE8
-    }
+  
     header {
         z-index: 2;
         height: 80px;
@@ -1786,9 +1780,6 @@ color: orange;}
 {
     background-color: #FFFDE8;
     margin-top: -100px
-}
-body {
-    background-color: #FFFDE8
 }
 
 /* Header */

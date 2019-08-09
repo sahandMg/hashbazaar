@@ -72,7 +72,7 @@
                 @if(Config::get('app.locale') == 'fa')
                 <li class="navbar-list small1 a1"><a href="{{route('customerService',['locale'=>session('locale')])}}">{{__('FAQ')}}</a></li>
                 <li class="navbar-list small1 a1"><a href="{{route('aboutUs',['locale'=>session('locale')])}}">{{__('About')}}</a></li>
-                <li class="navbar-list small1 a1"><a href="http://blog.hashbazaar.com">{{__('Blog')}}</a></li>
+                <li class="navbar-list small1 a1"><a href="http://hashbazaar.com/blog">{{__('Blog')}}</a></li>
                 <li class="navbar-list small1 a1"><a href="{{url('/collaboration')}}">همکاری سازمانی</a></li>
                 <li class="navbar-list small1 a1"><a href="{{route('index',['locale'=>session('locale')])}}">{{__('Home')}}</a></li>
                 @else
@@ -200,7 +200,7 @@
         text-align: right;
     }
     #header-navbar-menu ul li {
-        padding-right: 20px;
+        padding-right: 10px;
     }
     
     .flags a {

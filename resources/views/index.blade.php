@@ -25,8 +25,7 @@
                         <h3 style="margin: 0px;">{{__('FILL YOUR POCKETS WITH BITCOIN')}}</h3>
                         <a class="btn btn-link btn-circle js-scroll-trigger responsive-circle"
                            style="border-color: red;color: red" role="button"
-                           href="#sharePlan"><i
-                                    class="fa fa-angle-down animated"></i></a></div>
+                           href="#sharePlan"><i class="fa fa-angle-down animated"></i></a></div>
                 </div>
             </div>
         </div>

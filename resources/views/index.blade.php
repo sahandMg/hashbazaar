@@ -29,8 +29,7 @@
                         <h3 style="margin: 0px;">{{__('FILL YOUR POCKETS WITH BITCOIN')}}</h3>
                         <a class="btn btn-link btn-circle js-scroll-trigger responsive-circle"
                            style="border-color: red;color: red" role="button"
-                           href="#sharePlan"><i
-                                    class="fa fa-angle-down animated"></i></a></div>
+                           href="#sharePlan"><i class="fa fa-angle-down animated"></i></a></div>
                 </div>
             </div>
         </div>
@@ -104,7 +103,7 @@
         </div>
     </section>
   @endif
-    <section class="context-section pb-4" style="color:black;">
+    <section class="context-section pb-4 pt-4 pl-4 pr-4" style="color:#696967;">
         <div class="row">
             <div class="col-md-4 col-sm-12">
                 <h5 class="text-center">scalability</h5>
@@ -116,6 +115,23 @@
             </div>
             <div class="col-md-4 col-sm-12">
                 <h5 class="text-center">scalability</h5>
+                <p >we use best tools for mining, because of that we scale easily</p>
+            </div>
+        </div>
+    </section>
+    <section class="context-section pb-4 pt-4 pl-4 pr-4 backgroundGrey text-center" style="color:#696967;">
+        <h3>Our Partners</h3>
+        <div class="row">
+            <div class="col-md-4 col-sm-12">
+                <img src="img/farabi_icon.png" style="height: 80px;" />
+                <p >we use best tools for mining, because of that we scale easily</p>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <img src="img/farabi_icon.png" style="height: 80px;" />
+                <p >we use best tools for mining, because of that we scale easily</p>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <img src="img/farabi_icon.png" style="height: 80px;" />
                 <p >we use best tools for mining, because of that we scale easily</p>
             </div>
         </div>

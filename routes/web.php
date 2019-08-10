@@ -207,6 +207,8 @@ Route::get('language/{locale}', function ($locale) {
 
 })->name('locale');
 
+Route::get('remote','PageController@remoteDataPage');
+
 Route::get('/', function (){
 
     return redirect()->route('index',['locale'=> session()->has('locale')?session('locale'):App::getLocale()]);

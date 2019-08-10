@@ -22,7 +22,7 @@
 </head>
 <body>
     <div class="container">
-    <p>Salam</p>
+
 {!! $post->content_html !!}
 </div>
 </body>

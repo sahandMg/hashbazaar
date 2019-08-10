@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70940062-4a81-404b-aa8d-f571b31b1738" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/public/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/panel/master/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/master/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/panel/referral.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/referral.blade.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,16 +20,30 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/master/auth.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/panel/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="75" column="16" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="22" />
-              <folding>
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="9597">
+              <caret line="457" column="12" selection-start-line="457" selection-start-column="12" selection-end-line="457" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/panel/referral.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/panel/master/layout.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2434">
+              <caret line="306" selection-start-line="306" selection-end-line="306" />
             </state>
           </provider>
         </entry>
@@ -34,11 +51,83 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/master/layout.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="160" column="104" selection-start-line="160" selection-start-column="104" selection-end-line="160" selection-end-column="112" />
+            <state relative-caret-position="254">
+              <caret line="114" column="25" lean-forward="true" selection-start-line="114" selection-start-column="25" selection-end-line="114" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="2221" column="1" lean-forward="true" selection-start-line="2221" selection-start-column="1" selection-end-line="2221" selection-end-column="1" />
               <folding>
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#a#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="e#32#223#0" />
+                <element signature="e#244#448#0" />
+                <element signature="e#470#509#0" />
+                <element signature="e#536#780#0" />
+                <element signature="e#807#1050#0" />
+                <element signature="e#1079#1167#0" />
+                <element signature="e#1180#1485#0" />
+                <element signature="e#1500#1549#0" />
+                <element signature="e#1568#1733#0" />
+                <element signature="e#1754#1997#0" />
+                <element signature="e#2023#2085#0" />
+                <element signature="e#2096#2317#0" />
+                <element signature="e#16594#22298#0" />
+                <element signature="e#22320#28957#0" />
+                <element signature="e#28979#32239#0" />
+                <element signature="e#32261#36307#0" />
+                <element signature="e#40023#40572#0" />
+                <element signature="e#40602#41479#0" />
+                <element signature="e#41509#42194#0" />
+                <element signature="e#42224#43031#0" />
+                <element signature="e#43103#43253#0" />
+                <element signature="e#43266#43406#0" />
+                <element signature="e#43421#43459#0" />
+                <element signature="e#43482#43498#0" />
+                <element signature="e#43530#43663#0" />
+                <element signature="e#43682#43763#0" />
+                <element signature="e#43791#43902#0" />
+                <element signature="e#43937#44036#0" />
+                <element signature="e#44076#44154#0" />
+                <element signature="e#44209#44231#0" />
+                <element signature="e#44254#44334#0" />
+                <element signature="e#44366#44952#0" />
+                <element signature="e#44983#45437#0" />
+                <element signature="e#45468#46724#0" />
+                <element signature="e#46755#47548#0" />
+                <element signature="e#47579#48103#0" />
+                <element signature="e#49634#50504#0" />
+                <element signature="e#50531#52037#0" />
+                <element signature="e#52064#52466#0" />
+                <element signature="e#52493#52829#0" />
+                <element signature="e#52856#54369#0" />
+                <element signature="e#58012#58507#0" />
+                <element signature="e#58511#59044#0" />
+                <element signature="e#59047#59147#0" />
+                <element signature="e#59151#59243#0" />
+                <element signature="e#59246#59343#0" />
+                <element signature="e#59346#59435#0" />
+                <element signature="e#59933#60092#0" />
+                <element signature="e#60116#60347#0" />
+                <element signature="e#60373#60604#0" />
+                <element signature="e#60614#61479#0" />
+                <element signature="e#61494#61738#0" />
+                <element signature="e#61780#61973#0" />
+                <element signature="e#62015#62232#0" />
+                <element signature="e#62274#62454#0" />
+                <element signature="e#62497#62726#0" />
+                <element signature="e#63538#63697#0" />
+                <element signature="e#63715#63835#0" />
+                <element signature="e#63845#64033#0" />
+                <element signature="e#64049#64068#0" />
+                <element signature="e#64100#64236#0" />
+                <element signature="e#64264#64348#0" />
+                <element signature="e#64365#64770#0" />
+                <element signature="e#64787#65641#0" />
+                <element signature="e#65659#65884#0" />
               </folding>
             </state>
           </provider>
@@ -47,15 +136,36 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/theme.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="166" column="20" selection-start-line="166" selection-start-column="20" selection-end-line="166" selection-end-column="20" />
+            <state relative-caret-position="-117">
+              <caret line="150" column="20" lean-forward="true" selection-start-line="150" selection-start-column="20" selection-end-line="150" selection-end-column="20" />
               <folding>
                 <element signature="e#146#511#0" />
                 <element signature="e#519#570#0" />
-                <element signature="e#1670#2844#0" />
-                <element signature="e#2868#4117#0" />
-                <element signature="e#4689#4934#2" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/panel/contact.blade.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/panel/activity.blade.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/panel/settings/setting.blade.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/panel/master/navbar.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="8" selection-start-column="8" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -69,6 +179,7 @@
       <find>flagss</find>
       <find>flags</find>
       <find>lg</find>
+      <find>navbar-toggler-icon</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -79,8 +190,11 @@
       <list>
         <option value="$PROJECT_DIR$/resources/views/panel/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/master/auth.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/master/layout.blade.php" />
         <option value="$PROJECT_DIR$/public/css/theme.css" />
+        <option value="$PROJECT_DIR$/resources/views/master/layout.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/main.css" />
+        <option value="$PROJECT_DIR$/resources/views/panel/referral.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/panel/master/layout.blade.php" />
       </list>
     </option>
   </component>
@@ -245,7 +359,54 @@
             <path>
               <item name="hashbazaar2" type="b2602c69:ProjectViewProjectNode" />
               <item name="hashbazaar2" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hashbazaar2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hashbazaar2" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hashbazaar2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hashbazaar2" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hashbazaar2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hashbazaar2" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hashbazaar2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hashbazaar2" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="master" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hashbazaar2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hashbazaar2" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="panel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hashbazaar2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hashbazaar2" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="panel" type="462c0819:PsiDirectoryNode" />
+              <item name="master" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hashbazaar2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hashbazaar2" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="panel" type="462c0819:PsiDirectoryNode" />
+              <item name="settings" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -299,18 +460,23 @@
       <workItem from="1565188283117" duration="103000" />
       <workItem from="1565191105109" duration="1992000" />
       <workItem from="1565347572216" duration="2561000" />
-      <workItem from="1565354284777" duration="7192000" />
+      <workItem from="1565354284777" duration="7912000" />
+      <workItem from="1565370472463" duration="2409000" />
+      <workItem from="1565417437103" duration="26000" />
+      <workItem from="1565446257941" duration="308000" />
+      <workItem from="1565447682836" duration="29000" />
+      <workItem from="1565447808517" duration="2886000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16773000" />
+    <option name="totallyTimeSpent" value="23151000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15279879" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16187595" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -359,44 +525,145 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/resources/sass/app.scss" />
-    <entry file="file://$PROJECT_DIR$/resources/views/panel/contact.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/panel/settings/setting.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/panel/dashboard.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/panel/master/navbar.blade.php" />
     <entry file="file://$PROJECT_DIR$/resources/sass/_variables.scss" />
     <entry file="file://$PROJECT_DIR$/app/Admin.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/master/auth.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="75" column="16" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/panel/master/sidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-123" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/panel/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9597">
+          <caret line="457" column="12" selection-start-line="457" selection-start-column="12" selection-end-line="457" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/panel/referral.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/panel/contact.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/panel/activity.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/panel/settings/setting.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/panel/master/navbar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/panel/master/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2434">
+          <caret line="306" selection-start-line="306" selection-end-line="306" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/master/layout.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="160" column="104" selection-start-line="160" selection-start-column="104" selection-end-line="160" selection-end-column="112" />
+        <state relative-caret-position="254">
+          <caret line="114" column="25" lean-forward="true" selection-start-line="114" selection-start-column="25" selection-end-line="114" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="2221" column="1" lean-forward="true" selection-start-line="2221" selection-start-column="1" selection-end-line="2221" selection-end-column="1" />
           <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#a#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="e#32#223#0" />
+            <element signature="e#244#448#0" />
+            <element signature="e#470#509#0" />
+            <element signature="e#536#780#0" />
+            <element signature="e#807#1050#0" />
+            <element signature="e#1079#1167#0" />
+            <element signature="e#1180#1485#0" />
+            <element signature="e#1500#1549#0" />
+            <element signature="e#1568#1733#0" />
+            <element signature="e#1754#1997#0" />
+            <element signature="e#2023#2085#0" />
+            <element signature="e#2096#2317#0" />
+            <element signature="e#16594#22298#0" />
+            <element signature="e#22320#28957#0" />
+            <element signature="e#28979#32239#0" />
+            <element signature="e#32261#36307#0" />
+            <element signature="e#40023#40572#0" />
+            <element signature="e#40602#41479#0" />
+            <element signature="e#41509#42194#0" />
+            <element signature="e#42224#43031#0" />
+            <element signature="e#43103#43253#0" />
+            <element signature="e#43266#43406#0" />
+            <element signature="e#43421#43459#0" />
+            <element signature="e#43482#43498#0" />
+            <element signature="e#43530#43663#0" />
+            <element signature="e#43682#43763#0" />
+            <element signature="e#43791#43902#0" />
+            <element signature="e#43937#44036#0" />
+            <element signature="e#44076#44154#0" />
+            <element signature="e#44209#44231#0" />
+            <element signature="e#44254#44334#0" />
+            <element signature="e#44366#44952#0" />
+            <element signature="e#44983#45437#0" />
+            <element signature="e#45468#46724#0" />
+            <element signature="e#46755#47548#0" />
+            <element signature="e#47579#48103#0" />
+            <element signature="e#49634#50504#0" />
+            <element signature="e#50531#52037#0" />
+            <element signature="e#52064#52466#0" />
+            <element signature="e#52493#52829#0" />
+            <element signature="e#52856#54369#0" />
+            <element signature="e#58012#58507#0" />
+            <element signature="e#58511#59044#0" />
+            <element signature="e#59047#59147#0" />
+            <element signature="e#59151#59243#0" />
+            <element signature="e#59246#59343#0" />
+            <element signature="e#59346#59435#0" />
+            <element signature="e#59933#60092#0" />
+            <element signature="e#60116#60347#0" />
+            <element signature="e#60373#60604#0" />
+            <element signature="e#60614#61479#0" />
+            <element signature="e#61494#61738#0" />
+            <element signature="e#61780#61973#0" />
+            <element signature="e#62015#62232#0" />
+            <element signature="e#62274#62454#0" />
+            <element signature="e#62497#62726#0" />
+            <element signature="e#63538#63697#0" />
+            <element signature="e#63715#63835#0" />
+            <element signature="e#63845#64033#0" />
+            <element signature="e#64049#64068#0" />
+            <element signature="e#64100#64236#0" />
+            <element signature="e#64264#64348#0" />
+            <element signature="e#64365#64770#0" />
+            <element signature="e#64787#65641#0" />
+            <element signature="e#65659#65884#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/theme.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="166" column="20" selection-start-line="166" selection-start-column="20" selection-end-line="166" selection-end-column="20" />
+        <state relative-caret-position="-117">
+          <caret line="150" column="20" lean-forward="true" selection-start-line="150" selection-start-column="20" selection-end-line="150" selection-end-column="20" />
           <folding>
             <element signature="e#146#511#0" />
             <element signature="e#519#570#0" />
-            <element signature="e#1670#2844#0" />
-            <element signature="e#2868#4117#0" />
-            <element signature="e#4689#4934#2" expanded="true" />
           </folding>
         </state>
       </provider>

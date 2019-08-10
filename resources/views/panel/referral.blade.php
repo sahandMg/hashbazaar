@@ -30,6 +30,8 @@
             </div>
         </div>
 
+
+
         <blockquote>My Referral ID: </blockquote>
         <p class="myReferralId" id="copyTarget">{{$user->code}}<a class="coppyIcon" style="cursor: pointer;"><img class="icon" src="../img/Copy.svg" alt=""></a></p>
 

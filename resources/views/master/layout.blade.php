@@ -125,7 +125,7 @@
                         <a class="nav-link" href="{{route('aboutUs',['locale'=>session('locale')])}}">{{__('About')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('Blog',['locale'=>session('locale')])}}">{{__('Blog')}}</a>
+                        <a class="nav-link" href="{{route('Blog',['locale'=>session('locale')])}}">{{__('Blog')}}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('/cooperation')}}">همکاری سازمانی</a>

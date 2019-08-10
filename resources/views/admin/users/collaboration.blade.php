@@ -2,7 +2,7 @@
 @section('content')
 
  <?php
-         $user = DB::table('users')->where('id',$id)->first();
+         $user = DB::connection('mysql')->table('users')->where('id',$id)->first();
  ?>
 
  @include('formMessage')

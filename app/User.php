@@ -20,6 +20,7 @@ class User extends Authenticatable implements MustVerifyEmail
 //    protected $encrypts = [
 //        'name','code','email'
 //    ];
+    protected $connection = 'mysql';
     protected $guarded = [];
     protected $fillable = ['plan_id','email','password','ip','country','block','avatar','total_mining','pending','verified'];
     protected $hidden = [

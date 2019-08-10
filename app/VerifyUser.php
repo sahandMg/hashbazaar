@@ -8,7 +8,7 @@ class VerifyUser extends Model
 {
 
     protected $fillable = ['user_id','token'];
-
+    protected $connection = 'mysql';
     public function user(){
 
         return $this->belongsTo(User::class,'user_id');

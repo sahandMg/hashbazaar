@@ -1,6 +1,10 @@
 @extends('master.layout')
 @section('title')
-	<title>{{__("SignUp")}}</title>
+@if(App::getlocale() == 'fa')
+<title>هش بازار | ثبت نام</title>
+@else
+<title>Hashbazaar | Signup</title>
+@endif
 @endsection
 @section('content')
 	<?php
@@ -32,7 +36,7 @@
 						<input class="input100" type="email" name="email" placeholder="{{__("Email")}}" value="{{Request::old('email')}}">
 						<span class="focus-input100"></span>
 					</div>
-                    
+
                     <div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
                             <input class="input100" type="password" name="password" placeholder="{{__("Password")}}">
                             <span class="focus-input100"></span>
@@ -59,10 +63,10 @@
 					</div>
 
 					<div class="container-socialnet1">
-						
+
 						{{-- <a href="https://facebook.com" class="socialnet-flex1" id="fb">
 							<img src="/public/img/facebook.svg" alt=""></a>
-						
+
 						<a href="https://twitter.com" class="socialnet-flex1" id="twttr">
 							<img src="/public/img/twitter.svg" alt=""></a>
 						 --}}
@@ -90,7 +94,7 @@
 		</div>
 	</div>
 	@include('master.footer')
-	
+
 <!--===============================================================================================-->
 	<!-- <script src="vendor/jquery/jquery-3.2.1.min.js"></script> -->
 <!--===============================================================================================-->

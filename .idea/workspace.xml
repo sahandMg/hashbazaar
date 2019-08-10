@@ -2,36 +2,175 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3edef55c-8566-406e-bc8d-6a0d83ad498c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/images/3_asics-u578-fr.png" afterPath="$PROJECT_DIR$/public/collaboration/images/3_asics-u578-fr.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/images/3_asics-u578-fr2.png" afterPath="$PROJECT_DIR$/public/collaboration/images/3_asics-u578-fr2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/images/3_asics-u578-fr3.png" afterPath="$PROJECT_DIR$/public/collaboration/images/3_asics-u578-fr3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr.jpg" afterPath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr2.jpg" afterPath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr2.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr3.jpg" afterPath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr3.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e.jpg" afterPath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_density-150x150 (1)-u306-fr2.png" afterPath="$PROJECT_DIR$/public/collaboration/images/bitcoin_density-150x150 (1)-u306-fr2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_flexibility-150x150 (1)-u260-fr2.png" afterPath="$PROJECT_DIR$/public/collaboration/images/bitcoin_flexibility-150x150 (1)-u260-fr2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/images/container_white-1024x576-1024x576 (1)-u178-fr2.png" afterPath="$PROJECT_DIR$/public/collaboration/images/container_white-1024x576-1024x576 (1)-u178-fr2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/images/effizient_bitcoin-150x150 (1)-u316-fr2.png" afterPath="$PROJECT_DIR$/public/collaboration/images/effizient_bitcoin-150x150 (1)-u316-fr2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/images/flashtera-u589-fr.png" afterPath="$PROJECT_DIR$/public/collaboration/images/flashtera-u589-fr.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/images/flashtera-u589-fr2.png" afterPath="$PROJECT_DIR$/public/collaboration/images/flashtera-u589-fr2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/images/flashtera-u589-fr3.png" afterPath="$PROJECT_DIR$/public/collaboration/images/flashtera-u589-fr3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/images/minin_pro-u572-fr.png" afterPath="$PROJECT_DIR$/public/collaboration/images/minin_pro-u572-fr.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/images/minin_pro-u572-fr2.png" afterPath="$PROJECT_DIR$/public/collaboration/images/minin_pro-u572-fr2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/images/minin_pro-u572-fr3.png" afterPath="$PROJECT_DIR$/public/collaboration/images/minin_pro-u572-fr3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/images/mining_bitcoin-150x150 (1)-u293-fr2.png" afterPath="$PROJECT_DIR$/public/collaboration/images/mining_bitcoin-150x150 (1)-u293-fr2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1)-u405-fr.png" afterPath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1)-u405-fr.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1)-u405-fr2.png" afterPath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1)-u405-fr2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1)-u405-fr3.png" afterPath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1)-u405-fr3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/images/security_bitcoin-150x150-u273-fr2.png" afterPath="$PROJECT_DIR$/public/collaboration/images/security_bitcoin-150x150-u273-fr2.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/assets/close.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/assets/logo.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/assets/menu.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/assets/success.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/css/index.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/css/master_a-master.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/css/nomq_index.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/css/nomq_preview_master_a-master.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/css/site_global.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/fonts/btitrbold.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/fonts/btitrbold.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/fonts/byekan.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/fonts/byekan.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/3_asics-u578-fr.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/3_asics-u578-fr2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/3_asics-u578-fr3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/3_asics-u578-fr4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/3_asics-u578-fr5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/3_asics-u578-fr6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/3_asics-u578-fr7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/3_asics-u578-fr8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/3_asics.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_density-150x150 (1)-u306-fr.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_density-150x150 (1)-u306-fr2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_density-150x150 (1)-u306-fr3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_density-150x150 (1)-u306-fr4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_density-150x150 (1)-u306-fr5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_density-150x150 (1).png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_flexibility-150x150 (1)-u260-fr.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_flexibility-150x150 (1)-u260-fr2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_flexibility-150x150 (1)-u260-fr3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_flexibility-150x150 (1)-u260-fr4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_flexibility-150x150 (1)-u260-fr5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_flexibility-150x150 (1).png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_green-150x150-u283-fr.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_green-150x150-u283-fr2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_green-150x150-u283-fr3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_green-150x150-u283-fr4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_green-150x150-u283-fr5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_green-150x150.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitfury_secure_iceland_hover-u420-fr.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitfury_secure_iceland_hover.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/container_white-1024x576-1024x576 (1)-u178-fr.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/container_white-1024x576-1024x576 (1)-u178-fr2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/container_white-1024x576-1024x576 (1)-u178-fr3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/container_white-1024x576-1024x576 (1)-u178-fr4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/container_white-1024x576-1024x576 (1)-u178-fr5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/container_white-1024x576-1024x576 (1)-u178-fr6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/container_white-1024x576-1024x576 (1).png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/effizient_bitcoin-150x150 (1)-u316-fr.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/effizient_bitcoin-150x150 (1)-u316-fr2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/effizient_bitcoin-150x150 (1)-u316-fr3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/effizient_bitcoin-150x150 (1)-u316-fr4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/effizient_bitcoin-150x150 (1)-u316-fr5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/effizient_bitcoin-150x150 (1).png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/flashtera-u589-fr.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/flashtera-u589-fr2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/flashtera-u589-fr3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/flashtera-u589-fr4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/flashtera-u589-fr5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/flashtera-u589-fr6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/flashtera-u589-fr7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/flashtera-u589-fr8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/flashtera.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/minin_pro-u572-fr.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/minin_pro-u572-fr2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/minin_pro-u572-fr3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/minin_pro-u572-fr4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/minin_pro-u572-fr5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/minin_pro-u572-fr6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/minin_pro-u572-fr7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/minin_pro-u572-fr8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/minin_pro.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/mining_bitcoin-150x150 (1)-u293-fr.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/mining_bitcoin-150x150 (1)-u293-fr2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/mining_bitcoin-150x150 (1)-u293-fr3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/mining_bitcoin-150x150 (1)-u293-fr4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/mining_bitcoin-150x150 (1)-u293-fr5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/mining_bitcoin-150x150 (1).png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1)-u405-fr.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1)-u405-fr2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1)-u405-fr3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1)-u405-fr4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1)-u405-fr5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1)-u405-fr6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1)-u405-fr7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1)-u405-fr8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1).png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/security_bitcoin-150x150-u273-fr.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/security_bitcoin-150x150-u273-fr2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/security_bitcoin-150x150-u273-fr3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/security_bitcoin-150x150-u273-fr4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/security_bitcoin-150x150-u273-fr5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/security_bitcoin-150x150.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/muse_manifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/scripts/jquery-1.8.3.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/scripts/jquery.musepolyfill.bgsize.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/scripts/jquery.museresponsive.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/scripts/jquery.watch.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/scripts/museconfig.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/scripts/museutils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/scripts/require.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/scripts/whatinput.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/sitemap.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor.zip" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/css/index.css" afterPath="$PROJECT_DIR$/public/collaboration/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/css/nomq_index.css" afterPath="$PROJECT_DIR$/public/collaboration/css/nomq_index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/css/site_global.css" afterPath="$PROJECT_DIR$/public/collaboration/css/site_global.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/index.html" afterPath="$PROJECT_DIR$/public/collaboration/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/muse_manifest.xml" afterPath="$PROJECT_DIR$/public/collaboration/muse_manifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collaboration/sitemap.xml" afterPath="$PROJECT_DIR$/public/collaboration/sitemap.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Admin.php" afterPath="$PROJECT_DIR$/app/Admin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/BitCoinPrice.php" afterPath="$PROJECT_DIR$/app/BitCoinPrice.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/BitHash.php" afterPath="$PROJECT_DIR$/app/BitHash.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CoinBaseCharge.php" afterPath="$PROJECT_DIR$/app/CoinBaseCharge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CoinBaseCheckout.php" afterPath="$PROJECT_DIR$/app/CoinBaseCheckout.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Console/Commands/UpdateMinings.php" afterPath="$PROJECT_DIR$/app/Console/Commands/UpdateMinings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CustomCode.php" afterPath="$PROJECT_DIR$/app/CustomCode.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ExpiredCode.php" afterPath="$PROJECT_DIR$/app/ExpiredCode.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/GiftCard.php" afterPath="$PROJECT_DIR$/app/GiftCard.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PanelController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PanelController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Log.php" afterPath="$PROJECT_DIR$/app/Log.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Message.php" afterPath="$PROJECT_DIR$/app/Message.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Mining.php" afterPath="$PROJECT_DIR$/app/Mining.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/MiningReport.php" afterPath="$PROJECT_DIR$/app/MiningReport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PaymentTest.php" afterPath="$PROJECT_DIR$/app/PaymentTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Paystar.php" afterPath="$PROJECT_DIR$/app/Paystar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Period.php" afterPath="$PROJECT_DIR$/app/Period.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Plan.php" afterPath="$PROJECT_DIR$/app/Plan.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Redeem.php" afterPath="$PROJECT_DIR$/app/Redeem.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Referral.php" afterPath="$PROJECT_DIR$/app/Referral.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Setting.php" afterPath="$PROJECT_DIR$/app/Setting.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Sharing.php" afterPath="$PROJECT_DIR$/app/Sharing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Transaction.php" afterPath="$PROJECT_DIR$/app/Transaction.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/VerifyUser.php" afterPath="$PROJECT_DIR$/app/VerifyUser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Wallet.php" afterPath="$PROJECT_DIR$/app/Wallet.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ZarrinPal.php" afterPath="$PROJECT_DIR$/app/ZarrinPal.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/hashRate.php" afterPath="$PROJECT_DIR$/app/hashRate.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.php" afterPath="$PROJECT_DIR$/config/database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/fa.json" afterPath="$PROJECT_DIR$/resources/lang/fa.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/about.blade.php" afterPath="$PROJECT_DIR$/resources/views/about.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/transactions.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/transactions.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/users/checkout.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/users/checkout.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/users/collaboration.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/users/collaboration.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/affiliate.blade.php" afterPath="$PROJECT_DIR$/resources/views/affiliate.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/emailVerification.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/emailVerification.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/signup.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/signup.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/blog/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/blog/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/faq/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/faq/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/master/layout.blade.php" afterPath="$PROJECT_DIR$/resources/views/master/layout.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/panel/activity.blade.php" afterPath="$PROJECT_DIR$/resources/views/panel/activity.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/panel/contact.blade.php" afterPath="$PROJECT_DIR$/resources/views/panel/contact.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/panel/dashboard.blade.php" afterPath="$PROJECT_DIR$/resources/views/panel/dashboard.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/panel/referral.blade.php" afterPath="$PROJECT_DIR$/resources/views/panel/referral.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/panel/settings/setting.blade.php" afterPath="$PROJECT_DIR$/resources/views/panel/settings/setting.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/payment/PaymentCanceled.blade.php" afterPath="$PROJECT_DIR$/resources/views/payment/PaymentCanceled.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/payment/PaymentSuccess.blade.php" afterPath="$PROJECT_DIR$/resources/views/payment/PaymentSuccess.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <ignored path="hashbazaar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,8 +202,8 @@
       <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="209" column="92" selection-start-line="209" selection-start-column="92" selection-end-line="209" selection-end-column="92" />
+            <state relative-caret-position="2745">
+              <caret line="209" column="28" selection-start-line="209" selection-start-column="28" selection-end-line="209" selection-end-column="28" />
               <folding>
                 <element signature="e#391#412#0#PHP" expanded="true" />
               </folding>
@@ -75,7 +214,7 @@
       <file leaf-file-name="PageController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
+            <state relative-caret-position="1110">
               <caret line="85" column="1" selection-start-line="85" selection-start-column="1" selection-end-line="85" selection-end-column="1" />
               <folding>
                 <element signature="e#38#69#0#PHP" expanded="true" />
@@ -84,14 +223,52 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="102" column="61" selection-start-line="102" selection-start-column="61" selection-end-line="102" selection-end-column="61" />
-              <folding>
-                <element signature="e#5335#5355#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="1530">
+              <caret line="102" column="18" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/master/layout.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1020">
+              <caret line="68" column="14" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="emailVerification.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/auth/emailVerification.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="675">
+              <caret line="45" column="62" selection-start-line="45" selection-start-column="62" selection-end-line="45" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DollarPrice.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Console/Commands/DollarPrice.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="823">
+              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fa.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/lang/fa.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2520">
+              <caret line="168" column="30" selection-start-line="168" selection-start-column="30" selection-end-line="168" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -146,7 +323,6 @@
         <option value="$PROJECT_DIR$/resources/views/admin/message.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/redeem.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/setting.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/auth/emailVerification.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/panel/master/sidebar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/panel/master/navbar.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" />
@@ -165,8 +341,6 @@
         <option value="$PROJECT_DIR$/resources/views/panel/master/layout.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/panel/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/panel/contact.blade.php" />
-        <option value="$PROJECT_DIR$/resources/lang/fa.json" />
-        <option value="$PROJECT_DIR$/resources/views/master/layout.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/email/master/footer.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/email/VerifyEmail.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" />
@@ -175,6 +349,9 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/LanguageMiddleware.php" />
         <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/master/layout.blade.php" />
+        <option value="$PROJECT_DIR$/resources/lang/fa.json" />
+        <option value="$PROJECT_DIR$/resources/views/auth/emailVerification.blade.php" />
       </list>
     </option>
   </component>
@@ -186,8 +363,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="width" value="954" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -217,8 +394,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -247,20 +424,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hashbazaar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hashbazaar" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -287,7 +450,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="master" />
+              <option name="myItemId" value="auth" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -302,6 +465,78 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hashbazaar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hashbazaar" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hashbazaar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hashbazaar" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hashbazaar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hashbazaar" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Console" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hashbazaar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hashbazaar" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Console" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Commands" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -441,25 +676,26 @@
       <workItem from="1564430591036" duration="1085000" />
       <workItem from="1564577789514" duration="5282000" />
       <workItem from="1564734659401" duration="7298000" />
-      <workItem from="1564928101526" duration="23866000" />
+      <workItem from="1564928101526" duration="25254000" />
+      <workItem from="1565414933384" duration="595000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="811713000" />
+    <option name="totallyTimeSpent" value="813696000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="954" height="1080" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3" sideWeight="0.50646204" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Floobits" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970297" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2931507" sideWeight="0.49353796" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18578352" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21163167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2931507" sideWeight="0.49353796" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40570176" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43530703" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Reviews" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -474,7 +710,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32876712" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20594059" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20547946" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32673267" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -530,35 +766,18 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/panel/master/navbar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="81" selection-start-line="3" selection-start-column="81" selection-end-line="3" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GiftCardController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="557" column="5" selection-start-line="557" selection-start-column="5" selection-end-line="557" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GiftCardController.php" />
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/AdminMiddleware.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -566,7 +785,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="62" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -574,7 +792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -582,7 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -590,7 +806,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="27" column="74" selection-start-line="27" selection-start-column="74" selection-end-line="27" selection-end-column="74" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -598,7 +813,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -606,7 +820,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
           <caret line="49" column="102" selection-start-line="49" selection-start-column="99" selection-end-line="49" selection-end-column="102" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -614,7 +827,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
           <caret line="66" column="49" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -622,18 +834,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
           <caret line="126" column="48" selection-start-line="126" selection-start-column="48" selection-end-line="126" selection-end-column="48" />
-          <folding>
-            <marker date="1564986082457" expanded="true" signature="4308:4619" ph="..." />
-            <marker date="1564986082457" expanded="true" signature="7727:7971" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/emailVerification.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="75" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -641,7 +841,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="502">
           <caret line="190" column="28" selection-start-line="190" selection-start-column="28" selection-end-line="190" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -649,7 +848,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="155" selection-start-line="9" selection-start-column="152" selection-end-line="9" selection-end-column="155" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -657,23 +855,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="155" selection-start-line="9" selection-start-column="152" selection-end-line="9" selection-end-column="155" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/email/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/email/master.blade.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/email/admin2userReply.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
           <caret line="157" column="0" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -681,7 +870,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
           <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -689,7 +877,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="14" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -697,7 +884,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="14" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -705,7 +891,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="14" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -713,7 +898,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="14" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -721,7 +905,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="14" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -729,7 +912,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="14" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -737,7 +919,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
           <caret line="160" column="31" selection-start-line="160" selection-start-column="31" selection-end-line="160" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -745,7 +926,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
           <caret line="149" column="31" selection-start-line="149" selection-start-column="31" selection-end-line="149" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -753,7 +933,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-102">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -761,11 +940,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
           <caret line="133" column="24" selection-start-line="133" selection-start-column="24" selection-end-line="133" selection-end-column="24" />
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -773,7 +947,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="514">
           <caret line="64" column="29" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -781,7 +954,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="48" column="65" selection-start-line="48" selection-start-column="63" selection-end-line="48" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -789,7 +961,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -797,7 +968,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1290">
           <caret line="86" column="39" selection-start-line="86" selection-start-column="36" selection-end-line="86" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -805,23 +975,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4230">
           <caret line="310" column="51" selection-start-line="310" selection-start-column="51" selection-end-line="310" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/fa.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/master/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="75" column="16" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -829,7 +982,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -837,7 +989,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="447">
           <caret line="142" column="9" selection-start-line="142" selection-start-column="9" selection-end-line="142" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -845,7 +996,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -853,7 +1003,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -877,7 +1026,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
           <caret line="957" column="21" selection-start-line="957" selection-start-column="16" selection-end-line="957" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -885,18 +1033,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="367">
           <caret line="98" column="29" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
-          <folding>
-            <element signature="e#40#56#0#PHP" expanded="true" />
-            <marker date="1565000616638" expanded="true" signature="32980:33231" ph="select payme... crypto_payments" />
-            <marker date="1565000616638" expanded="true" signature="33478:34027" ph="INSERT INTO crypto_payments... " />
-            <marker date="1565000616638" expanded="true" signature="34293:34393" ph="UPDATE crypt... " />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PageController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
+        <state relative-caret-position="1110">
           <caret line="85" column="1" selection-start-line="85" selection-start-column="1" selection-end-line="85" selection-end-column="1" />
           <folding>
             <element signature="e#38#69#0#PHP" expanded="true" />
@@ -908,7 +1050,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -916,14 +1057,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="209" column="92" selection-start-line="209" selection-start-column="92" selection-end-line="209" selection-end-column="92" />
+        <state relative-caret-position="2745">
+          <caret line="209" column="28" selection-start-line="209" selection-start-column="28" selection-end-line="209" selection-end-column="28" />
           <folding>
             <element signature="e#391#412#0#PHP" expanded="true" />
           </folding>
@@ -934,7 +1074,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="534">
           <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -948,16 +1087,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="102" column="61" selection-start-line="102" selection-start-column="61" selection-end-line="102" selection-end-column="61" />
-          <folding>
-            <element signature="e#5335#5355#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="1530">
+          <caret line="102" column="18" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/master/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="68" column="14" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/fa.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2520">
+          <caret line="168" column="30" selection-start-line="168" selection-start-column="30" selection-end-line="168" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/emailVerification.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="62" selection-start-line="45" selection-start-column="62" selection-end-line="45" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/DollarPrice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="823">
+          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
   </component>
   <component name="webServersAuthStorage">
-    <data>AAAAsFSEhnycFP6bn3z8zFgjxLRH5YMi8ZqcuLVnIkWuFQeQmjIrXFO8dazGx4hfwgUNbTV4G8ah9EZHxcAP/TI6KlZysor+bhG5FTpGcibSrGCAodB+L05qqCrIVsN1X5aVthM7nqyZpcoukBcOQ5AywOIdENBMdI+l4rqLtWbR6Tq2667Oggjc0wz7BBurjkfm4KtR367kdD2rwcsVsuJqw6n3Z/FjyaYlur/Ge3lK1GVwh5Rsw/QucpNQ511vb07T8w==</data>
+    <data>AAAAsFoBC0lMjU5lHajQ5FQzdoY2NipZgLOKJrYV9QECz776VMjW3TSZ8dE6Q92M4+q0azCTd8OA+Axg145vOJVk04x6Jr6mi0ZrTcR38Z7BDRvNJGkoyAM5FBFTr49wLP8iuZF25Ys3hUfVJQp94tJNUSEguol8ZqYvOUFkYWOv8Ht/t5uY+kCOZiNeeNNpyNbXdbwDhLqa4TrFT88tSUBqHKFBkN9FeKsApaBWB8msrekr9UH1KHfLgpqnbMbK0hl/7g==</data>
   </component>
 </project>

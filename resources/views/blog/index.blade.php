@@ -1,27 +1,22 @@
 @extends('master.layout')
 @section('title')
-    <title>Blog</title>
+@if(App::getlocale() == 'fa')
+<title>هش بازار | بلاگ</title>
+@else
+<title>Hashbazaar | Blog</title>
+@endif
 @endsection
 @section('content')
-{{--<!DOCTYPE html>--}}
-{{--<html lang="en">--}}
-{{--<head>--}}
-    {{--<meta charset="UTF-8">--}}
-    {{--<meta name="viewport" content="width=device-width, initial-scale=1.0">--}}
-    {{--<meta http-equiv="X-UA-Compatible" content="ie=edge">--}}
-    {{--<link rel="stylesheet" href="css/blog.css">--}}
-
-    {{--<title>Document</title>--}}
-{{--</head>--}}
-{{--<body>--}}
 <div class="blog-container">
     <div class="blog-grid-item one" onclick="rotate(this)" onmouseout="toBack(this)">
-        <img class="blog-image frontside" src="img/swatch.jpg" alt="">
-        <img class="blog-image backside" src="img/funfair-balloons.jpg" alt="">
-
-
+        <img class="blog-image frontside" src="{{URL::asset('img/swatch.jpg')}}" alt="">
+        <img class="blog-image backside" src="{{URL::asset('img/funfair-balloons.jpg')}}" alt="">
     </div>
-
+    <div>
+        @foreach($posts as $post)
+           <a href="{{route('showPost',[session('locale'),$post->slug])}}"> <li>{{$post->title}}</li></a>
+        @endforeach
+    </div>
 
     <div class="blog-grid-item two">
         <a href="#" class="blog-title">Lorem ipsum dolor sit
@@ -36,8 +31,8 @@
 
 
     <div class="blog-grid-item three" onclick="rotate(this)" onmouseout="toBack(this)">
-        <img src="img/minion.jpg" class="blog-image frontside" alt="">
-        <img class="blog-image backside" src="img/champagne-balloons.jpg" alt="">
+        <img src="{{URL::asset('img/minion.jpg')}}" class="blog-image frontside" alt="">
+        <img class="blog-image backside" src="{{URL::asset('img/champagne-balloons.jpg')}}" alt="">
 
     </div>
 

@@ -1,6 +1,10 @@
 @extends('panel.master.layout')
 @section('title')
-    <title>{{__("Settings")}}</title>
+@if(App::getlocale() == 'fa')
+<title>هش بازار | تنطیمات</title>
+@else
+<title>Hashbazaar | Setting</title>
+@endif
 @endsection
 @section('content')
 

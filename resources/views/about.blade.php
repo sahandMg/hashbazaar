@@ -1,6 +1,10 @@
 @extends('master.layout')
 @section('title')
-    <title>{{__("About HashBazaar")}}</title>
+@if(App::getlocale() == 'fa')
+<title>هش بازار | درباره ما</title>
+@else
+<title>Hashbazaar | About</title>
+@endif
 @endsection
 @section('content')
 
@@ -30,7 +34,7 @@
         .about-us-container h1 {
  		  font-size: 1.8rem;
  		  letter-spacing: 0.5px;
- 	    }  
+ 	    }
     }
 
     @media screen and (max-width: 414px) {

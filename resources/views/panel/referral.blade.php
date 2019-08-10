@@ -1,6 +1,6 @@
 @extends('panel.master.layout')
 @section('title')
-    <title>Referrals</title>
+    <title>Hashbazaar | Referral</title>
 @endsection
 @section('content')
 
@@ -8,11 +8,11 @@
     $user = Auth::guard('user')->user();
     $settings = \App\Setting::first();
     $sharings = \App\Sharing::get()->toArray();
-    $total_hash_from_referral = \Illuminate\Support\Facades\DB::table('bit_hashes')
+    $total_hash_from_referral = \Illuminate\Support\Facades\DB::connection('mysql')->table('bit_hashes')
             ->where('referral_code',Auth::guard('user')->user()->code)
             ->where('confirmed',1)
             ->sum('hash');
-    $benefit = \Illuminate\Support\Facades\DB::table('bit_hashes')
+    $benefit = \Illuminate\Support\Facades\DB::connection('mysql')->table('bit_hashes')
             ->where('order_id','referral')->where('user_id',Auth::guard('user')->id())->sum('hash')
     ?>
     <!-- Referral Page -->
@@ -172,15 +172,15 @@
                     <tbody class="text-center" style="font-family:sans-serif">
                     <tr>
                         <td>120x600 </td>
-                        <td><a href="{{route('banner',['name'=>'120_600_hashbazaar'])}}">Download here</a></td>
+                        <td><a href="{{route('banner',['name'=>'120_600_hashbazaar','locale'=>session('locale')])}}">Download here</a></td>
                     </tr>
                     <tr>
                         <td>728x90 </td>
-                        <td><a href="{{route('banner',['name'=>'728_90_hashbazaar'])}}">Download here</a></td>
+                        <td><a href="{{route('banner',['name'=>'728_90_hashbazaar','locale'=>session('locale')])}}">Download here</a></td>
                     </tr>
                     <tr>
                         <td>300x250 </td>
-                        <td><a href="{{route('banner',['name'=>'300_250_hashbazaar'])}}">Download here</a></td>
+                        <td><a href="{{route('banner',['name'=>'300_250_hashbazaar','locale'=>session('locale')])}}">Download here</a></td>
                     </tr>
 
                     </tbody>

@@ -1,7 +1,7 @@
 {
   "Log In":"ورود",
   "Sign Up":"ثبت نام",
-  "Blog":"مجله",
+  "Blog":"بلاگ",
   "Affiliate":"درآمدزایی",
   "About":"درباره ما",
   "FAQ":"سوالات متداول",
@@ -168,7 +168,7 @@
   "Sending ...":"... درحال ارسال",
   "Security Code":"کد امنیتی",
   "Account Verification":"تایید حساب",
-  "Send Verification link":"ارسال مجدد لینک فعال سازی",
+  "Send Verification link Again":"ارسال مجدد لینک فعال سازی",
   "HashBazaar - Cloud Mining Company":"هش بازار - استخراج ابری بیتکوین",
   "About HashBazaar":"درباره هش بازار"
 }

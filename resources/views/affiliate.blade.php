@@ -1,10 +1,15 @@
 @extends('master.layout')
 @section('content')
+@if(App::getlocale() == 'fa')
+<title>هش بازار | تماس با ما</title>
+@else
+<title>Hashbazaar | Affiliate</title>
+@endif
 <div class="container" style="color: black;margin-top: 120px;" >
 	<h2 class="text-center" style="margin-bottom: 2%;">Affiliate program</h2>
 	<p>You can join our affiliate program through different ways. Share your dedicated referral code or link wherever you want.</p>
    <p>Your referral will get a 3% discount on their first purchase, and you will get a free hashpower upgrade as your affiliate reward from Hashbazaar depend on your level as the following table.</p>
-   
+
    <table class="table table-bordered text-center">
       <thead>
          <tr>
@@ -51,7 +56,7 @@
          </tr>
       </tbody>
    </table>
-  </div> 
+  </div>
    <br/>
     <div class="container" style="min-width: 320px;color: black;padding: 0px;">
      <div class="row peymane-container">
@@ -114,7 +119,7 @@
      </div>
    </div>
    <br/>
- <div class="container" style="color: black;">  
+ <div class="container" style="color: black;">
   <p>You can see an example above.</p>
 	<p>For instance if you reach 100 referrals you will get 2.5% of total hash power that is purchased by them as your referral group “C”.</p>
 	<p>If you reach 500 from now on your affiliate reward will be increased to 3.5%. In other words if you reach for instance 800 referrals, you will get 2.5% of total hash power that is purchased by 500 referrals from group “C”  and 3.5% of total hash power that is purchased by 300 referrals from group “B”. </p>
@@ -135,7 +140,7 @@
         }*/
        .circle-output-container {
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
        }
        .circle-output-container p {margin: 0px;padding: 0;font-size: 20px;line-height: 1;}
        .vertical-line  {
@@ -177,7 +182,7 @@
       .horizontal-lines-container {
         width: 60px;
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
         text-align: center;
       }
       .referal-percent {
@@ -207,7 +212,7 @@
         margin-top: 30px;
         font-size: 1.1rem;
         letter-spacing: 0px;
-      } 
+      }
       .referal-left-text {
           display: flex;
         flex-direction: column;
@@ -253,7 +258,7 @@
      }
      .referal-code-text {
        max-width: 90px;
-       text-align: center; 
+       text-align: center;
      }
      @media screen and (max-width: 415px) {
       .referal-code-text {
@@ -284,8 +289,8 @@
      var level3NumCode = 9000; var level4NumCode = 90000; var level5NumCode = 1000;
      var level1Hash = 1000; var level2Hash = 1000;
      var level3Hash = 18000; var level4Hash = 180000; var level5Hash = 2000;
-     var level1Percent = 0.025; var level2Percent = 0.035; var level3Percent = 0.045; 
-     var level4Percent = 0.055; var level5Percent = 0.065; 
+     var level1Percent = 0.025; var level2Percent = 0.035; var level3Percent = 0.045;
+     var level4Percent = 0.055; var level5Percent = 0.065;
      var level1ReferalHash = parseInt(level1Hash*level1Percent);
      var level2ReferalHash = parseInt(level2Hash*level2Percent);
      var level3ReferalHash = parseInt(level3Hash*level3Percent);
@@ -302,7 +307,7 @@
      var offsetForDiv = 30;
      var calculateMargin;
      var height; var offsetForDivTemp;
-     
+
      $(".btn-plus").click(function(){
         referalPeople = referalPeople + 10;
         refresh();
@@ -318,7 +323,7 @@
      function setCircleValue(circleNum, circleValue) {
          $(".circle-"+circleNum+" h3").html(circleValue+"TH");
      }
-     
+
      function level1Full() {
          $(".referal-level-5").append(`<div><h3>`+level1NumCode+`, `+level1Hash+`TH</h3><div>`);
          $(".referal-level-5").css('background-color', '#FFEC19');
@@ -362,7 +367,7 @@
          $(".referal-percent-2").css("font-weight", "700");
          setCircleValue(2, level4ReferalHash);
      }
-     
+
      function refresh() {
       $(".referal-level").empty();
       if(referalPeople <= level1) {
@@ -376,9 +381,9 @@
        $(".referal-number").css( { marginTop : calculateMargin+"px", 'height': height+"px"} );
        $(".referal-number").css('background-color', '#FFEC19');
        $(".line-vertical-5").css('background-color', '#FFEC19');
-       $(".circle-5").css("border", "#FFEC19 solid 2px"); 
-       $(".circle-5").css("color", "black"); 
-       $(".referal-percent-5").css("color", "black"); 
+       $(".circle-5").css("border", "#FFEC19 solid 2px");
+       $(".circle-5").css("color", "black");
+       $(".referal-percent-5").css("color", "black");
        $(".referal-percent-5").css("font-weight", "700");
        setCircleValue(5, level1ReferalHash);
        setCircleValue(6, allReferalHash);
@@ -395,9 +400,9 @@
        $(".referal-number").css('background-color', '#FFC100');
        $(".line-vertical-4").css('background-color', '#FFC100');
        $(".line-top-4").css('background-color', '#FFC100');
-       $(".circle-4").css("border", "#FFC100 solid 2px"); 
-       $(".circle-4").css("color", "black"); 
-       $(".referal-percent-4").css("color", "black"); 
+       $(".circle-4").css("border", "#FFC100 solid 2px");
+       $(".circle-4").css("color", "black");
+       $(".referal-percent-4").css("color", "black");
        $(".referal-percent-4").css("font-weight", "700");
        setCircleValue(4, level2ReferalHash);
        setCircleValue(6, allReferalHash);
@@ -467,8 +472,8 @@
        $(".line-vertical-1").css('background-color', '#dc1c17');
        $(".line-top-1").css('background-color', '#dc1c17');
        $(".circle-1").css("border", "#dc1c17 solid 2px");
-       $(".circle-1").css("color", "black"); 
-       $(".referal-percent-1").css("color", "black"); 
+       $(".circle-1").css("color", "black");
+       $(".referal-percent-1").css("color", "black");
        $(".referal-percent-1").css("font-weight", "700");
           setCircleValue(1, level5ReferalHash);
           setCircleValue(6, allReferalHash);
@@ -476,7 +481,7 @@
 
      }
      refresh();
-    
+
    </script>
 @include('master.footer')
 @endsection

@@ -38,7 +38,7 @@
       })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
 </head>
-  
+
 <body id="page-top" style="background: white">
 @if(Config::get('app.locale') == 'fa')
     <STYLE>
@@ -72,22 +72,22 @@
                 @if(Config::get('app.locale') == 'fa')
                 <li class="navbar-list small1 a1"><a href="{{route('customerService',['locale'=>session('locale')])}}">{{__('FAQ')}}</a></li>
                 <li class="navbar-list small1 a1"><a href="{{route('aboutUs',['locale'=>session('locale')])}}">{{__('About')}}</a></li>
-                <li class="navbar-list small1 a1"><a href="http://blog.hashbazaar.com">{{__('Blog')}}</a></li>
-                <li class="navbar-list small1 a1"><a href="{{url('/collaboration')}}">همکاری سازمانی</a></li>
+                <li class="navbar-list small1 a1"><a href="{{route('Blog',['locale'=>session('locale')])}}">{{__('Blog')}}</a></li>
+                <li class="navbar-list small1 a1"><a href="{{url('/cooperation')}}">همکاری سازمانی</a></li>
                 <li class="navbar-list small1 a1"><a href="{{route('index',['locale'=>session('locale')])}}">{{__('Home')}}</a></li>
                 @else
                 <li class="navbar-list small1 a1"><a href="{{route('index',['locale'=>session('locale')])}}">{{__('Home')}}</a></li>
                 <li class="navbar-list small1 a1"><a href="{{route('aboutUs',['locale'=>session('locale')])}}">{{__('About')}}</a></li>
                 <li class="navbar-list small1 a1"><a href="{{route('customerService',['locale'=>session('locale')])}}">{{__('FAQ')}}</a></li>
                 <li class="navbar-list small1 a1"><a href="{{route('affiliate',['locale'=>session('locale')])}}">{{__('Affiliate')}}</a></li>
-                <li class="navbar-list small1 a1"><a href="http://blog.hashbazaar.com">{{__('Blog')}}</a></li>
+                <li class="navbar-list small1 a1"><a href="{{route('Blog',['locale'=>session('locale')])}}">{{__('Blog')}}</a></li>
                 @endif
                 @if(Auth::guard('user')->check())
                     <li class="navbar-list small1 dashboard"><a href="{{route('dashboard',['locale'=>session('locale')])}}" >{{__('Dashboard')}}</a></li>
                 @else
                 <li class="navbar-list small1 signup"><a href="{{route('signup',['locale'=>session('locale')])}}" id="sg" >{{__('Sign Up')}}</a></li>
                 <li class="navbar-list small1 login"><a href="{{route('login',['locale'=>session('locale')])}}" id="lg" >{{__('Log In')}}</a></li>
-                
+
                 @endif
 
                 <li class="flags">
@@ -97,7 +97,7 @@
                     </div>
                 </li>
             </ul>
-            
+
         </div>
         <div class="navigation-menu">
             <div class="bar1"></div>
@@ -110,13 +110,13 @@
 @yield('content')
 
 @if(Auth::guard('user')->check())
- 
+
 @endif
 
 
 
     <script type="text/javascript">
-        
+
           window.$crisp=[];window.CRISP_WEBSITE_ID="792f282f-edde-46b8-8b02-d38ca5cb92c2";
         (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";
             s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
@@ -148,7 +148,7 @@
                   isOpen =false;
 
                 }
-                
+
             });
             // determine lanuage
              var languageDetection = 'ir';
@@ -186,9 +186,9 @@
                                 window.location = {!! json_encode(request()->route('locale',['locale'=>'en'])) !!};
                         }
                 });
-           
 
-       
+
+
        });
 
 
@@ -202,11 +202,11 @@
     #header-navbar-menu ul li {
         padding-right: 20px;
     }
-    
+
     .flags a {
         float:right
     }
-    
+
     .flags a#persianFA {
         border-left: 1px solid white;
         margin-left: 10px

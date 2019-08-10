@@ -2,175 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3edef55c-8566-406e-bc8d-6a0d83ad498c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/assets/close.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/assets/logo.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/assets/menu.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/assets/success.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/css/index.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/css/master_a-master.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/css/nomq_index.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/css/nomq_preview_master_a-master.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/css/site_global.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/fonts/btitrbold.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/fonts/btitrbold.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/fonts/byekan.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/fonts/byekan.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/3_asics-u578-fr.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/3_asics-u578-fr2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/3_asics-u578-fr3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/3_asics-u578-fr4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/3_asics-u578-fr5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/3_asics-u578-fr6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/3_asics-u578-fr7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/3_asics-u578-fr8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/3_asics.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/5500a9d776d3c764285288da63cb7a9e.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_density-150x150 (1)-u306-fr.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_density-150x150 (1)-u306-fr2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_density-150x150 (1)-u306-fr3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_density-150x150 (1)-u306-fr4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_density-150x150 (1)-u306-fr5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_density-150x150 (1).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_flexibility-150x150 (1)-u260-fr.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_flexibility-150x150 (1)-u260-fr2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_flexibility-150x150 (1)-u260-fr3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_flexibility-150x150 (1)-u260-fr4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_flexibility-150x150 (1)-u260-fr5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_flexibility-150x150 (1).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_green-150x150-u283-fr.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_green-150x150-u283-fr2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_green-150x150-u283-fr3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_green-150x150-u283-fr4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_green-150x150-u283-fr5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitcoin_green-150x150.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitfury_secure_iceland_hover-u420-fr.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/bitfury_secure_iceland_hover.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/container_white-1024x576-1024x576 (1)-u178-fr.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/container_white-1024x576-1024x576 (1)-u178-fr2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/container_white-1024x576-1024x576 (1)-u178-fr3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/container_white-1024x576-1024x576 (1)-u178-fr4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/container_white-1024x576-1024x576 (1)-u178-fr5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/container_white-1024x576-1024x576 (1)-u178-fr6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/container_white-1024x576-1024x576 (1).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/effizient_bitcoin-150x150 (1)-u316-fr.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/effizient_bitcoin-150x150 (1)-u316-fr2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/effizient_bitcoin-150x150 (1)-u316-fr3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/effizient_bitcoin-150x150 (1)-u316-fr4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/effizient_bitcoin-150x150 (1)-u316-fr5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/effizient_bitcoin-150x150 (1).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/flashtera-u589-fr.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/flashtera-u589-fr2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/flashtera-u589-fr3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/flashtera-u589-fr4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/flashtera-u589-fr5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/flashtera-u589-fr6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/flashtera-u589-fr7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/flashtera-u589-fr8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/flashtera.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/minin_pro-u572-fr.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/minin_pro-u572-fr2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/minin_pro-u572-fr3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/minin_pro-u572-fr4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/minin_pro-u572-fr5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/minin_pro-u572-fr6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/minin_pro-u572-fr7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/minin_pro-u572-fr8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/minin_pro.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/mining_bitcoin-150x150 (1)-u293-fr.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/mining_bitcoin-150x150 (1)-u293-fr2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/mining_bitcoin-150x150 (1)-u293-fr3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/mining_bitcoin-150x150 (1)-u293-fr4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/mining_bitcoin-150x150 (1)-u293-fr5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/mining_bitcoin-150x150 (1).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1)-u405-fr.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1)-u405-fr2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1)-u405-fr3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1)-u405-fr4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1)-u405-fr5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1)-u405-fr6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1)-u405-fr7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1)-u405-fr8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/rack_right3 (1).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/security_bitcoin-150x150-u273-fr.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/security_bitcoin-150x150-u273-fr2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/security_bitcoin-150x150-u273-fr3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/security_bitcoin-150x150-u273-fr4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/security_bitcoin-150x150-u273-fr5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/images/security_bitcoin-150x150.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/muse_manifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/scripts/jquery-1.8.3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/scripts/jquery.musepolyfill.bgsize.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/scripts/jquery.museresponsive.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/scripts/jquery.watch.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/scripts/museconfig.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/scripts/museutils.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/scripts/require.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/scripts/whatinput.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/collaboration/sitemap.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor.zip" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Admin.php" afterPath="$PROJECT_DIR$/app/Admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/BitCoinPrice.php" afterPath="$PROJECT_DIR$/app/BitCoinPrice.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/BitHash.php" afterPath="$PROJECT_DIR$/app/BitHash.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CoinBaseCharge.php" afterPath="$PROJECT_DIR$/app/CoinBaseCharge.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CoinBaseCheckout.php" afterPath="$PROJECT_DIR$/app/CoinBaseCheckout.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Console/Commands/UpdateMinings.php" afterPath="$PROJECT_DIR$/app/Console/Commands/UpdateMinings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CustomCode.php" afterPath="$PROJECT_DIR$/app/CustomCode.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ExpiredCode.php" afterPath="$PROJECT_DIR$/app/ExpiredCode.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/GiftCard.php" afterPath="$PROJECT_DIR$/app/GiftCard.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PanelController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PanelController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Log.php" afterPath="$PROJECT_DIR$/app/Log.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Message.php" afterPath="$PROJECT_DIR$/app/Message.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Mining.php" afterPath="$PROJECT_DIR$/app/Mining.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/MiningReport.php" afterPath="$PROJECT_DIR$/app/MiningReport.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PaymentTest.php" afterPath="$PROJECT_DIR$/app/PaymentTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Paystar.php" afterPath="$PROJECT_DIR$/app/Paystar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Period.php" afterPath="$PROJECT_DIR$/app/Period.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Plan.php" afterPath="$PROJECT_DIR$/app/Plan.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Redeem.php" afterPath="$PROJECT_DIR$/app/Redeem.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Referral.php" afterPath="$PROJECT_DIR$/app/Referral.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Setting.php" afterPath="$PROJECT_DIR$/app/Setting.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Sharing.php" afterPath="$PROJECT_DIR$/app/Sharing.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Transaction.php" afterPath="$PROJECT_DIR$/app/Transaction.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/VerifyUser.php" afterPath="$PROJECT_DIR$/app/VerifyUser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Wallet.php" afterPath="$PROJECT_DIR$/app/Wallet.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ZarrinPal.php" afterPath="$PROJECT_DIR$/app/ZarrinPal.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/hashRate.php" afterPath="$PROJECT_DIR$/app/hashRate.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.php" afterPath="$PROJECT_DIR$/config/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/fa.json" afterPath="$PROJECT_DIR$/resources/lang/fa.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/about.blade.php" afterPath="$PROJECT_DIR$/resources/views/about.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/transactions.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/transactions.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/users/checkout.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/users/checkout.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/users/collaboration.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/users/collaboration.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/affiliate.blade.php" afterPath="$PROJECT_DIR$/resources/views/affiliate.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/emailVerification.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/emailVerification.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/signup.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/signup.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/blog/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/blog/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/faq/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/faq/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/master/layout.blade.php" afterPath="$PROJECT_DIR$/resources/views/master/layout.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/panel/activity.blade.php" afterPath="$PROJECT_DIR$/resources/views/panel/activity.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/panel/contact.blade.php" afterPath="$PROJECT_DIR$/resources/views/panel/contact.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/panel/dashboard.blade.php" afterPath="$PROJECT_DIR$/resources/views/panel/dashboard.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/panel/referral.blade.php" afterPath="$PROJECT_DIR$/resources/views/panel/referral.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/panel/settings/setting.blade.php" afterPath="$PROJECT_DIR$/resources/views/panel/settings/setting.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/payment/PaymentCanceled.blade.php" afterPath="$PROJECT_DIR$/resources/views/payment/PaymentCanceled.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/payment/PaymentSuccess.blade.php" afterPath="$PROJECT_DIR$/resources/views/payment/PaymentSuccess.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog" afterPath="$PROJECT_DIR$/public/blog" />
     </list>
     <ignored path="hashbazaar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -226,9 +58,11 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1530">
-              <caret line="102" column="18" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="18" />
-              <folding />
+            <state relative-caret-position="1305">
+              <caret line="87" column="14" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="14" />
+              <folding>
+                <marker date="1565416945397" expanded="true" signature="6024:6159" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -236,9 +70,11 @@
       <file leaf-file-name="layout.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/master/layout.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="68" column="14" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
-              <folding />
+            <state relative-caret-position="300">
+              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+              <folding>
+                <marker date="1565416945398" expanded="true" signature="9108:9118" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -256,7 +92,7 @@
       <file leaf-file-name="DollarPrice.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Console/Commands/DollarPrice.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="823">
+            <state relative-caret-position="846">
               <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
               <folding />
             </state>
@@ -276,8 +112,8 @@
       <file leaf-file-name="footer.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/master/footer.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
+            <state relative-caret-position="255">
+              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -363,7 +199,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="width" value="954" />
+    <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -394,7 +230,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -496,6 +331,20 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hashbazaar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hashbazaar" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -542,6 +391,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -678,14 +528,15 @@
       <workItem from="1564734659401" duration="7298000" />
       <workItem from="1564928101526" duration="25254000" />
       <workItem from="1565414933384" duration="595000" />
+      <workItem from="1565416958577" duration="647000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="813696000" />
+    <option name="totallyTimeSpent" value="814343000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="954" height="1080" extended-state="6" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -693,9 +544,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3" sideWeight="0.50646204" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Floobits" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970297" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2931507" sideWeight="0.49353796" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40570176" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43530703" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2930693" sideWeight="0.49353796" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19808307" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15282215" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Reviews" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1079,25 +930,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/master/footer.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
+        <state relative-caret-position="255">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="102" column="18" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="1305">
+          <caret line="87" column="14" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="14" />
+          <folding>
+            <marker date="1565416945397" expanded="true" signature="6024:6159" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/master/layout.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="68" column="14" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
-          <folding />
+        <state relative-caret-position="300">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+          <folding>
+            <marker date="1565416945398" expanded="true" signature="9108:9118" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1119,7 +974,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Console/Commands/DollarPrice.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="823">
+        <state relative-caret-position="846">
           <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
           <folding />
         </state>
@@ -1127,6 +982,6 @@
     </entry>
   </component>
   <component name="webServersAuthStorage">
-    <data>AAAAsFoBC0lMjU5lHajQ5FQzdoY2NipZgLOKJrYV9QECz776VMjW3TSZ8dE6Q92M4+q0azCTd8OA+Axg145vOJVk04x6Jr6mi0ZrTcR38Z7BDRvNJGkoyAM5FBFTr49wLP8iuZF25Ys3hUfVJQp94tJNUSEguol8ZqYvOUFkYWOv8Ht/t5uY+kCOZiNeeNNpyNbXdbwDhLqa4TrFT88tSUBqHKFBkN9FeKsApaBWB8msrekr9UH1KHfLgpqnbMbK0hl/7g==</data>
+    <data>AAAAsLnDQwS23tEUahOo5BJ4ROfbSpneD17lACtCw/lmMLZzn09CPyZmduwL2wnDUzQ5jAqZC2OMYol9qQ7NgJHvBdF1K1FSOvqAsjRrNaGNP+L3dcFoQzf1zD77cPZ/4VV5p/sFqKvBetI9SWxj5tzECNAIsQuXscYdRqpp6D15u1JGT/ct/zvl6wuGUgxzO0a0df5Uq/+Tjgv8azDk7imuaCOudOfeoRqXMkNYT9SLEP3x0GQlSlDbt6OJXJ7gEfwxTw==</data>
   </component>
 </project>

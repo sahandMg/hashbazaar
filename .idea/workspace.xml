@@ -2,111 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3edef55c-8566-406e-bc8d-6a0d83ad498c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/blog" afterPath="$PROJECT_DIR$/public/blog" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/assets/close.png" afterPath="$PROJECT_DIR$/public/cooperation/assets/close.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/assets/menu.png" afterPath="$PROJECT_DIR$/public/cooperation/assets/menu.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/assets/success.png" afterPath="$PROJECT_DIR$/public/cooperation/assets/success.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/fonts/btitrbold.eot" afterPath="$PROJECT_DIR$/public/cooperation/fonts/btitrbold.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/fonts/btitrbold.woff" afterPath="$PROJECT_DIR$/public/cooperation/fonts/btitrbold.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/3asset 1_poster_.png" afterPath="$PROJECT_DIR$/public/cooperation/images/3asset 1_poster_.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/4asset 2_poster_.png" afterPath="$PROJECT_DIR$/public/cooperation/images/4asset 2_poster_.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr.jpg" afterPath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr10.jpg" afterPath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr10.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr11.jpg" afterPath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr11.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr12.jpg" afterPath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr12.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr13.jpg" afterPath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr13.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr14.jpg" afterPath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr14.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr15.jpg" afterPath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr15.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr2.jpg" afterPath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr2.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr3.jpg" afterPath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr3.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr4.jpg" afterPath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr4.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr5.jpg" afterPath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr5.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr6.jpg" afterPath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr6.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr7.jpg" afterPath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr7.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr8.jpg" afterPath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr8.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr9.jpg" afterPath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e-u2390-fr9.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e.jpg" afterPath="$PROJECT_DIR$/public/cooperation/images/5500a9d776d3c764285288da63cb7a9e.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/5asset 1_poster_.png" afterPath="$PROJECT_DIR$/public/cooperation/images/5asset 1_poster_.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/bitfury_secure_iceland_hover-u420-fr.jpg" afterPath="$PROJECT_DIR$/public/cooperation/images/bitfury_secure_iceland_hover-u420-fr.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/bitfury_secure_iceland_hover-u420-fr2.jpg" afterPath="$PROJECT_DIR$/public/cooperation/images/bitfury_secure_iceland_hover-u420-fr2.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/bitfury_secure_iceland_hover.jpg" afterPath="$PROJECT_DIR$/public/cooperation/images/bitfury_secure_iceland_hover.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/blank.gif" afterPath="$PROJECT_DIR$/public/cooperation/images/blank.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr.png" afterPath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr10.png" afterPath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr10.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr11.png" afterPath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr11.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr12.png" afterPath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr12.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr2.png" afterPath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr3.png" afterPath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr4.png" afterPath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr5.png" afterPath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr6.png" afterPath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr7.png" afterPath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr7.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr8.png" afterPath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr8.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr9.png" afterPath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1)-u178-fr9.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1).png" afterPath="$PROJECT_DIR$/public/cooperation/images/container_white-1024x576-1024x576 (1).png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-asic_poster_u8234.png" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-asic_poster_u8234.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-bit_poster_u9972.png" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-bit_poster_u9972.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-connection_poster_u8100.png" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-connection_poster_u8100.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-contact_poster_u12557.png" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-contact_poster_u12557.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-contin_poster_u8092.png" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-contin_poster_u8092.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-email_poster_u12449.png" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-email_poster_u12449.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-instagram_poster_.png" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-instagram_poster_.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-linkedin_poster_.png" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-linkedin_poster_.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-location_poster_u12505.png" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-location_poster_u12505.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-miner_poster_u8124.png" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-miner_poster_u8124.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-power_poster_u8116.png" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-power_poster_u8116.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-secure_poster_u8108.png" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-secure_poster_u8108.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-th_poster_u8172.png" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-th_poster_u8172.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-twitter_poster_.png" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-twitter_poster_.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/logo_poster_.png" afterPath="$PROJECT_DIR$/public/cooperation/images/logo_poster_.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr.png" afterPath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr10.png" afterPath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr10.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr11.png" afterPath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr11.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr12.png" afterPath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr12.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr13.png" afterPath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr13.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr14.png" afterPath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr14.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr15.png" afterPath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr15.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr2.png" afterPath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr3.png" afterPath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr4.png" afterPath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr5.png" afterPath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr6.png" afterPath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr7.png" afterPath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr7.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr8.png" afterPath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr8.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr9.png" afterPath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1)-u405-fr9.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1).png" afterPath="$PROJECT_DIR$/public/cooperation/images/rack_right3 (1).png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/farabi_icon.png" afterPath="$PROJECT_DIR$/public/img/farabi_icon.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/assets/logo.svg" afterPath="$PROJECT_DIR$/public/cooperation/assets/logo.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/css/nomq_index.css" afterPath="$PROJECT_DIR$/public/cooperation/css/nomq_index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/3asset-1.svg" afterPath="$PROJECT_DIR$/public/cooperation/images/3asset-1.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/4asset-2.svg" afterPath="$PROJECT_DIR$/public/cooperation/images/4asset-2.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/5asset-1.svg" afterPath="$PROJECT_DIR$/public/cooperation/images/5asset-1.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-asic.svg" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-asic.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-bit.svg" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-bit.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-connection.svg" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-connection.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-contact.svg" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-contact.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-contin.svg" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-contin.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-email.svg" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-email.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-instagram.svg" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-instagram.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-linkedin.svg" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-linkedin.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-location.svg" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-location.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-miner.svg" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-miner.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-power.svg" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-power.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-secure.svg" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-secure.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-th.svg" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-th.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-twitter.svg" afterPath="$PROJECT_DIR$/public/cooperation/images/hashbazaar-twitter.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/images/logo.svg" afterPath="$PROJECT_DIR$/public/cooperation/images/logo.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/muse_manifest.xml" afterPath="$PROJECT_DIR$/public/cooperation/muse_manifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/scripts/jquery.musepolyfill.bgsize.js" afterPath="$PROJECT_DIR$/public/cooperation/scripts/jquery.musepolyfill.bgsize.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cooperation/scripts/jquery.museresponsive.js" afterPath="$PROJECT_DIR$/public/cooperation/scripts/jquery.museresponsive.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/blog/post.blade.php" afterPath="$PROJECT_DIR$/resources/views/blog/post.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/email/master/footer.blade.php" afterPath="$PROJECT_DIR$/resources/views/email/master/footer.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/test.blade.php" afterPath="$PROJECT_DIR$/resources/views/test.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/walletRedirection.blade.php" afterPath="$PROJECT_DIR$/resources/views/walletRedirection.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/api.php" afterPath="$PROJECT_DIR$/routes/api.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Browser/LoginTest.php" afterPath="$PROJECT_DIR$/tests/Browser/LoginTest.php" />
     </list>
     <ignored path="hashbazaar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -159,11 +56,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="minersStatus.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="minersStatus.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/minersStatus.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="720">
               <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginTest.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/Browser/LoginTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="497">
+              <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SignUpTest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/Browser/SignUpTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BuyTest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/Browser/BuyTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -209,26 +136,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/master/layout.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="130" column="69" selection-start-line="130" selection-start-column="58" selection-end-line="130" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DollarPrice.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Console/Commands/DollarPrice.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="87" column="0" selection-start-line="73" selection-start-column="27" selection-end-line="87" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -247,7 +154,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Console/Commands/UpdateMinings.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/BlockMiddleware.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/BeforeMiddleware.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/GiftCardController.php" />
@@ -298,6 +204,7 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PageController.php" />
         <option value="$PROJECT_DIR$/resources/views/minersStatus.blade.php" />
+        <option value="$PROJECT_DIR$/tests/Browser/LoginTest.php" />
       </list>
     </option>
   </component>
@@ -369,7 +276,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
+              <option name="myItemId" value="tests" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -383,25 +290,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="tests" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hashbazaar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hashbazaar" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="Browser" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -684,12 +577,12 @@
       <workItem from="1564734659401" duration="7298000" />
       <workItem from="1564928101526" duration="25254000" />
       <workItem from="1565414933384" duration="595000" />
-      <workItem from="1565416958577" duration="5039000" />
+      <workItem from="1565416958577" duration="6857000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="818735000" />
+    <option name="totallyTimeSpent" value="820553000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -701,9 +594,9 @@
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2049505" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Floobits" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970297" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2930693" sideWeight="0.49353796" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2930693" sideWeight="0.49353796" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19808307" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15282215" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15282215" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Reviews" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -773,34 +666,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/EncryptCookies.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="49" column="102" selection-start-line="49" selection-start-column="99" selection-end-line="49" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/signup.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="66" column="49" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/faq/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="126" column="48" selection-start-line="126" selection-start-column="48" selection-end-line="126" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AuthController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="502">
@@ -1149,6 +1014,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Browser/Pages/HomePage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Browser/SignUpTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Browser/BuyTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Browser/LoginTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
           <folding />
         </state>
       </provider>

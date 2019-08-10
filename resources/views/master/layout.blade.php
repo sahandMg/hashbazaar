@@ -38,7 +38,7 @@
       })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
 </head>
-  
+
 <body id="page-top" style="background: white">
 @if(Config::get('app.locale') == 'fa')
     <STYLE>
@@ -117,6 +117,7 @@
         <div class="collapse navbar-collapse w-100" id="navbarNav">
             <ul class="navbar-nav text-center justify-content-between">
                 @if(Config::get('app.locale') == 'fa')
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('customerService',['locale'=>session('locale')])}}">{{__('FAQ')}}</a>
                     </li>
@@ -124,10 +125,10 @@
                         <a class="nav-link" href="{{route('aboutUs',['locale'=>session('locale')])}}">{{__('About')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://blog.hashbazaar.com">{{__('Blog')}}</a>
+                        <a class="nav-link" href="{{route('Blog',['locale'=>session('locale')])}}">{{__('Blog')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('/collaboration')}}">همکاری سازمانی</a>
+                        <a class="nav-link" href="{{url('/cooperation')}}">همکاری سازمانی</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="{{route('index',['locale'=>session('locale')])}}">{{__('Home')}}<span class="sr-only">(current)</span></a>
@@ -146,14 +147,16 @@
                         <a class="nav-link" href="{{route('affiliate',['locale'=>session('locale')])}}">{{__('Affiliate')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://blog.hashbazaar.com">{{__('Blog')}}</a>
+                        <a href="{{route('Blog',['locale'=>session('locale')])}}">{{__('Blog')}}</a>
                     </li>
+
                 @endif
                 @if(Auth::guard('user')->check())
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('dashboard',['locale'=>session('locale')])}}" >{{__('Dashboard')}}</a>
                         </li>
                 @else
+
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('signup',['locale'=>session('locale')])}}" id="sg" >{{__('Sign Up')}}</a>
                         </li>
@@ -170,6 +173,14 @@
                     {{--<li class="nav-item flags">--}}
                     {{--</li>--}}
             </ul>
+
+
+        </div>
+        <div class="navigation-menu">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+
         </div>
     </nav>
 </div>
@@ -177,13 +188,13 @@
 @yield('content')
 
 @if(Auth::guard('user')->check())
- 
+
 @endif
 
 
 
     <script type="text/javascript">
-        
+
           window.$crisp=[];window.CRISP_WEBSITE_ID="792f282f-edde-46b8-8b02-d38ca5cb92c2";
         (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";
             s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
@@ -215,7 +226,7 @@
                   isOpen =false;
 
                 }
-                
+
             });
             // determine lanuage
              var languageDetection = 'ir';
@@ -253,9 +264,9 @@
                                 window.location = {!! json_encode(request()->route('locale',['locale'=>'en'])) !!};
                         }
                 });
-           
 
-       
+
+
        });
 
 
@@ -263,13 +274,21 @@
 
 @if(Config::get('app.locale') == 'fa')
 <style type="text/css">
+    #header-navbar-menu {
+        text-align: right;
+    }
+    #header-navbar-menu ul li {
+        padding-right: 20px;
+    }
 
     .flags a {
         float:right
     }
+
     .flags a#engUK {
         margin-left:10px;
     }
+
     .flags a#persianFA {
         border-left: 1px solid white;
         margin-left: 10px

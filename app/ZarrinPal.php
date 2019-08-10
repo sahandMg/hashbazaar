@@ -21,6 +21,7 @@ class ZarrinPal
     {
         $this->request = $request;
     }
+    protected $connection = 'mysql';
 
     public function create(){
 
@@ -154,7 +155,7 @@ class ZarrinPal
         $mining->update(['block' => 0]);
         $mining->save();
         // update created transaction record
-        DB::table('transactions')->where('code', $orderID)->update([
+        DB::connection('mysql')->table('transactions')->where('code', $orderID)->update([
             'country' => $user->country,
             'status' => 'paid'
         ]);
@@ -173,7 +174,7 @@ class ZarrinPal
             $message->subject('New Payment');
         });
 
-//                $referralUser = DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->first();
+//                $referralUser = DB::connection('mysql')->table('expired_codes')->where('user_id',$user->id)->where('used',0)->first();
         $referralCode = $hashPower->referral_code;
         $referralQuery = Referral::where('code', $referralCode)->first();
         // if any referral code used for hash owner purchasing
@@ -210,7 +211,7 @@ class ZarrinPal
             }
 
             $share_level = $referralQuery->share_level;
-            $share_value = DB::table('sharings')->where('level', $share_level)->first()->value;
+            $share_value = DB::connection('mysql')->table('sharings')->where('level', $share_level)->first()->value;
             $hash = new BitHash();
             $hash->hash = $hashPower->hash * $share_value;
             $hash->user_id = $codeCaller->id;

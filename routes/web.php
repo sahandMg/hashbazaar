@@ -27,6 +27,8 @@ use Morilog\Jalali\Jalalian;
 use Symfony\Component\DomCrawler\Crawler;
 use Psr\Http\Message\ResponseInterface;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
 
 Route::get('job',function(){
 
@@ -109,9 +111,9 @@ Route::get('qr',function(){
 Route::get('test',function (){
 
 
-$btc = new BitCoinPrice();
-        dd($btc->getPrice());
+    $contents = DB::connection('mysql2')->table('rainlab_blog_posts')->get()->pluck('content_html')->toArray();
 
+    return view('test',compact('contents'));
 });
 
 Route::get('redirect',function (){
@@ -205,6 +207,8 @@ Route::get('language/{locale}', function ($locale) {
 
 })->name('locale');
 
+Route::get('remote','PageController@remoteDataPage');
+
 Route::get('/', function (){
 
     return redirect()->route('index',['locale'=> session()->has('locale')?session('locale'):App::getLocale()]);
@@ -221,6 +225,15 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
     Route::get('/', 'PageController@index')->name('index');
 
+    // ============================ Blog Routes ==============================
+
+    Route::group(['prefix'=>'blog'],function(){
+
+        Route::get('/', 'BlogController@index')->name('Blog');
+
+        Route::get('{slug}', 'BlogController@showPost')->name('showPost');
+
+    });
     Route::get('about', 'PageController@aboutUs')->name('aboutUs');
 
     Route::get('affiliate', 'PageController@affiliate')->name('affiliate');
@@ -331,7 +344,7 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
         Route::get('banner/{name?}', ['as' => 'banner', 'uses' => 'PanelController@downloadBanner']);
 
-        Route::get('collaboration', ['as' => 'collaboration', 'uses' => 'PanelController@collaboration']);
+        // Route::get('collaboration', ['as' => 'collaboration', 'uses' => 'PanelController@collaboration']);
 
     });
 

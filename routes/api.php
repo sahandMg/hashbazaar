@@ -26,3 +26,4 @@ Route::any('payment/pending',['as'=>'PaymentPending','uses'=>'PaymentController@
 Route::any('payment/delayed',['as'=>'PaymentDelayed','uses'=>'PaymentController@PaymentDelayed']);
 Route::any('payment/resolved',['as'=>'PaymentResolved','uses'=>'PaymentController@PaymentResolved']);
 Route::post('paystar/callback','PaymentController@PaystarCallback')->name('PaymentCallback');
+Route::post('remote','PageController@remote')->name('remote');

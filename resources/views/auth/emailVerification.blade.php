@@ -43,7 +43,7 @@
 
                     <div class="container-login100-form-btn">
                         <button id="submitBtn" class="login100-form-btn">
-                            {{__("Send Verification link")}}
+                            {{__("Send Verification link Again")}}
                         </button>
                     </div>
                     <br>

@@ -11,7 +11,7 @@ namespace App;
 
 class BitCoinPrice
 {
-
+    protected $connection = 'mysql';
     public function getPrice(){
 
         try{

@@ -1,11 +1,15 @@
 ﻿@extends('master.layout')
 @section('content')
-
+@if(App::getlocale() == 'fa')
+<title>هش بازار | صفحه اصلی</title>
+@else
+<title>Hashbazaar | Home </title>
+@endif
     <!-- class="masthead pb-3" -->
     <?php
-    $settings = DB::table('settings')->first();
+    $settings = DB::connection('mysql')->table('settings')->first();
           if(isset($code)){
-              $user = DB::table('users')->where('code',$code)->first();
+              $user = DB::connection('mysql')->table('users')->where('code',$code)->first();
               if(!is_null($user)){
                   $name = $user->name;
               }
@@ -13,7 +17,7 @@
 
     ?>
     <header id="header" >
-       
+
 
         <div class="intro-body headerTheme">
             <div class="container">
@@ -76,7 +80,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 advantages-detail">
                     <h3>{{__('OTHER ADVANTAGES: ')}}</h3>
                     <ul>
-                    
+
                         <li>
                             <h5>{{__("INSTANT MINING")}}</h5>
                             <p>{{__('Start mining immediately after confirming payment without any concerns and challenges.')}}</p>
@@ -164,7 +168,7 @@
                     </form>
                 </div>
             </div>
-            
+
         </div>
     </section>
    @include('master.footer')
@@ -194,7 +198,7 @@
     </style>
     <script type="text/javascript">
       // console.log("js run");
-        var dollarToToman = parseInt({!! $settings->usd_toman !!}); 
+        var dollarToToman = parseInt({!! $settings->usd_toman !!});
         var sliderValue = {!! \App\Setting::first()->usd_per_hash !!} * dollarToToman;
         var slider = document.getElementById("myRange");
         var output = document.getElementById("demo");

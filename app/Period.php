@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Period extends Model
 {
-    //
+    protected $connection = 'mysql';
 }

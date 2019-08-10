@@ -115,20 +115,20 @@
             </div>
         </div>
     </section>
-    <section class="context-section pb-4 pt-4 pl-4 pr-4 backgroundGrey text-center" style="color:#696967;">
-        <h3>Our Partners</h3>
+    <section class="partners context-section pb-4 pt-4 pl-4 pr-4 backgroundGrey text-center">
+        <h3>همکاران ما</h3>
         <div class="row">
             <div class="col-md-4 col-sm-12">
-                <img src="img/farabi_icon.png" style="height: 80px;" />
-                <p >we use best tools for mining, because of that we scale easily</p>
+                <img src="img/farabi_icon.png"  />
+                <!-- <p >شتاب دهنده فارابی</p> -->
             </div>
             <div class="col-md-4 col-sm-12">
-                <img src="img/farabi_icon.png" style="height: 80px;" />
-                <p >we use best tools for mining, because of that we scale easily</p>
+                <img src="img/tadbir.png" />
+                <!-- <p >کارگزاری تدبیرگران فردا</p> -->
             </div>
             <div class="col-md-4 col-sm-12">
-                <img src="img/farabi_icon.png" style="height: 80px;" />
-                <p >we use best tools for mining, because of that we scale easily</p>
+                <img src="img/rayanHamAfza.png"  />
+                <!-- <p >we use best tools for mining, because of that we scale easily</p> -->
             </div>
         </div>
     </section>
@@ -235,6 +235,9 @@
     </script>
     @endif
     <style type="text/css">
+        .partners {color:#696967;}
+        .partners h3 {margin-bottom: 3%;}
+        .partners img {height: 80px;}
         .advantages h2 {margin-bottom: 3%;}
         .advantages-detail h5 {margin-top: 3%;font-size: 1.1rem;}
        /* .advantages-detail {

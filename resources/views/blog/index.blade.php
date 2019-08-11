@@ -25,9 +25,10 @@
             }
         }
 ?>
-<div class="container">
+<div class="container posts">
   <div class="row">
         @foreach($posts as $key => $post)
+         <div class="col-md-4 col-sm-6">
           <article class="ContentSmallSize" style="background-color: white;">
               <a href="{{route('showPost',[session('locale'),$post->slug])}}">
               <figure>
@@ -41,11 +42,13 @@
               </div>
               </a>
           </article>
+         </div> 
         @endforeach
    </div>
 </div>
 @include('master.footer')
 <style type="text/css">
+    .posts {margin-top: 120px;}
     .ContentSmallSize {
     flex: 0 1 calc(25% - 1em);
     text-align: right;

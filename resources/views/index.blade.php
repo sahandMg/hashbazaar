@@ -149,19 +149,6 @@
             </div>
             <div class="col-md-4 col-sm-12">
                 <img src="{{URL::asset('img/rayanHamAfza.png')}}"  />
-                <!-- <p >we use best tools for mining, because of that we scale easily</p> -->
-
-                <img src="{{URL::asset('img/farabi_icon.png')}}" style="height: 80px;" />
-                <p >we use best tools for mining, because of that we scale easily</p>
-            </div>
-            <div class="col-md-4 col-sm-12">
-                <img src="{{URL::asset('img/farabi_icon.png')}}" style="height: 80px;" />
-                <p >we use best tools for mining, because of that we scale easily</p>
-            </div>
-            <div class="col-md-4 col-sm-12">
-                <img src="{{URL::asset('img/farabi_icon.png')}}" style="height: 80px;" />
-                <p >we use best tools for mining, because of that we scale easily</p>
-
             </div>
         </div>
     </section>

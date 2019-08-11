@@ -43,7 +43,7 @@ class PanelController extends Controller
     public function dashboard(){
 
         $hashes = BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->orderBy('created_at','desc')->get();
-        $unusedCodes = DB::table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('used',0)->first();
+        $unusedCodes = DB::connection('mysql')->table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('used',0)->first();
         if(!is_null($unusedCodes)){
 
             if($unusedCodes->is_custom == 1){
@@ -74,11 +74,11 @@ class PanelController extends Controller
 
         $bitCoinPriceInst = new BitCoinPrice();
         $bitCoinPrice = $bitCoinPriceInst->getPrice();
-        $user = DB::table('users')->where('code',$request->user)->first();
+        $user = DB::connection('mysql')->table('users')->where('code',$request->user)->first();
         if(is_null($user)){
             return 404;
         }
-        $mining = DB::table('minings')->where('user_id',$user->id)->where('block',0)->get();
+        $mining = DB::connection('mysql')->table('minings')->where('user_id',$user->id)->where('block',0)->get();
         if( $mining->isEmpty()) {
             return [0,0];
         }
@@ -93,7 +93,7 @@ class PanelController extends Controller
      */
     public function chartData(Request $request){
 
-        $user = DB::table('users')->where('code',$request->user)->first();
+        $user = DB::connection('mysql')->table('users')->where('code',$request->user)->first();
         $reports = MiningReport::where('user_id',$user->id)->get();
         $btcPriceInst = new BitCoinPrice();
         $btcPrice = $btcPriceInst->getPrice();
@@ -140,8 +140,8 @@ class PanelController extends Controller
 
 
         $code = strtolower($request->referralCode);
-        $referralUser = DB::table('users')->where('code',$code)->where('id','!=',Auth::id())->first();
-        $is_expired = DB::table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('code',$code)->first();
+        $referralUser = DB::connection('mysql')->table('users')->where('code',$code)->where('id','!=',Auth::id())->first();
+        $is_expired = DB::connection('mysql')->table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('code',$code)->first();
         $settings = Setting::first();
         // check if it is a custom code or not
 
@@ -198,7 +198,7 @@ class PanelController extends Controller
             ];
         }
 
-        $is_active_Code = DB::table('expired_codes')
+        $is_active_Code = DB::connection('mysql')->table('expired_codes')
             ->where('user_id',Auth::guard('user')->id())
             ->where('used',0)->count();
 
@@ -314,7 +314,7 @@ class PanelController extends Controller
     public function post_wallet(Request $request){
 
         $this->validate($request,['wallet'=>'required']);
-        $wallet = DB::table('wallets')->where('user_id',Auth::guard('user')->id())->first();
+        $wallet = DB::connection('mysql')->table('wallets')->where('user_id',Auth::guard('user')->id())->first();
         if(is_null($wallet)){
             $wallet = new Wallet();
             $wallet->addr = $request->wallet;
@@ -421,7 +421,7 @@ class PanelController extends Controller
     public function collaboration(){
 
         $hashes = BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->orderBy('created_at','asc')->get();
-        $unusedCodes = DB::table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('used',0)->first();
+        $unusedCodes = DB::connection('mysql')->table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('used',0)->first();
         if(!is_null($unusedCodes)){
 
             if($unusedCodes->is_custom == 1){

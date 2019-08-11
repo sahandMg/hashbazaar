@@ -1,6 +1,10 @@
 @extends('panel.master.layout')
 @section('title')
-    <title>{{__("Settings")}}</title>
+@if(App::getlocale() == 'fa')
+<title>هش بازار | تنطیمات</title>
+@else
+<title>Hashbazaar | Setting</title>
+@endif
 @endsection
 @section('content')
 
@@ -84,7 +88,7 @@
 
         <div class="address">
             @if(!is_null(Auth::guard('user')->user()->wallet))
-                <div class="address-img">{!! QrCode::size(150)->generate(Auth::guard('user')->user()->wallet->addr) !!}</div>
+                <div class="address-img">{!! QrCode::size(150)->backgroundColor(255,253,232)->generate(Auth::guard('user')->user()->wallet->addr) !!}</div>
 
             <div class="address-box">
                 <input type="text" id="copyTarget" value="{{Auth::guard('user')->user()->wallet->addr}}" readonly>

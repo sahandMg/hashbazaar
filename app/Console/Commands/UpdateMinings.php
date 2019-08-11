@@ -111,7 +111,7 @@ class UpdateMinings extends Command
                     if ($hash->remained_day == 0) {
                         $hash->update(['confirmed' => 0]);
                         $hash->save();
-                        DB::table('minings')->where('order_id', $hash->order_id)->update(['block' => 1]);
+                        DB::connection('mysql')->table('minings')->where('order_id', $hash->order_id)->update(['block' => 1]);
                     } else {
                         // 30 70 contracts have no ending
                         if ($user->plan_id == 1) {

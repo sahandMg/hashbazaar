@@ -1,12 +1,16 @@
 @extends('panel.master.layout')
 @section('title')
-    <title>{{__("Activity")}}</title>
+@if(App::getlocale() == 'fa')
+<title>هش بازار | تراکنش ها</title>
+@else
+<title>Hashbazaar | Activities</title>
+@endif
 @endsection
 @section('content')
 <?php
-$settings = DB::table('settings')->first();
+$settings = DB::connection('mysql')->table('settings')->first();
 $hashes = App\BitHash::where('user_id',Auth::guard('user')->id())->where('confirmed',1)->orderBy('created_at','desc')->get();
-$trans = DB::table('transactions')->where('user_id',Auth::guard('user')->id())->orderBy('created_at','desc')->get();
+$trans = DB::connection('mysql')->table('transactions')->where('user_id',Auth::guard('user')->id())->orderBy('created_at','desc')->get();
 foreach ($hashes as $key=> $hash){
 
     if(Auth::guard('user')->user()->plan_id == 1)
@@ -102,18 +106,18 @@ foreach ($hashes as $key=> $hash){
 
                 @endif
                @endforeach
-               </tbody> 
-                
+               </tbody>
+
 
                 @else
                     <h6 id="nopur" style="color: black;"> {{__("NO Purchases")}}</h6>
                 @endif
-                       
-   
+
+
             </table>
         </div>
-        
-    </div> 
+
+    </div>
 
     <div class="purchases">
         <h2>{{__("Transactions")}} </h2>
@@ -238,8 +242,8 @@ foreach ($hashes as $key=> $hash){
        @endif
 
 
-        </div> 
-    </div> 
+        </div>
+    </div>
 </div>
 
 
@@ -253,7 +257,7 @@ foreach ($hashes as $key=> $hash){
         $('.user-img').click(function(){
             $('.list1').toggle(500);
         });
-    
+
                     var activitySecondListNumItems = $('.container .table tr').length;
                     var activityThirdListNumItems = $('#activity-page_thirdList .table tr').length;
 
@@ -274,7 +278,7 @@ foreach ($hashes as $key=> $hash){
                     }
 
 
-                      
+
 
     })
 </script>

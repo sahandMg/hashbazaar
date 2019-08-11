@@ -1,6 +1,10 @@
 @extends('master.layout')
 @section('title')
-    <title>{{__("FAQ")}}</title>
+@if(App::getlocale() == 'fa')
+<title>هش بازار | سوالات متداول</title>
+@else
+<title>Hashbazaar | FAQ</title>
+@endif
 @endsection
 @section('content')
 @if(Config::get('app.locale') == 'fa')
@@ -43,7 +47,7 @@
     }
     .faq-question-list h5 {
          margin-top: 2%;
-    }    
+    }
     .faq-answer li {
         list-style: disc;
      }
@@ -66,7 +70,7 @@
           letter-spacing: 0.8px;
         }
         .faq-section {
-          width: 45%;  
+          width: 45%;
           margin-left: 2.5%;
           margin-right: 2.5%;
           margin-top: 2%;
@@ -113,7 +117,7 @@
          font-size: 0.8rem;
        }
     }
-</style>  
+</style>
                 <div class="container faq-container">
                      <h2 class="text-center">{{__("Frequently asked questions")}}</h2>
                      <!-- customerservice-category  category-button one  -->
@@ -163,7 +167,7 @@
                                   {{__("You can be a trader in bitcoin stock market (Like other stock markets) or invest in setting up a mining farm.")}}
                                  </p>
                                 </div>
-                            </li>                           
+                            </li>
                         </ul>
                     </div>
                     <!-- Mining -->
@@ -194,7 +198,7 @@
                                   {{__("A Cryptocurrency cloud mining service enables you to become a miner without all difficulties that a solo miner has. It means you can remotely be the owner of a  special part of mining farm based on the amount of money that you want to invest.")}}
                                  </p>
                                 </div>
-                            </li> 
+                            </li>
                             <li class="faq-question-list">
                                 <h5 class="faq-question">{{__("What Cryptocurrency cloud mining services are working now?")}}</h5>
                                 <div class="faq-answer">
@@ -202,13 +206,13 @@
                                   {{__("There are many Cryptocurrency cloud mining services working now, like genesis-mining, hashflare and so on.")}}
                                  </p>
                                 </div>
-                            </li> 
+                            </li>
                             <li class="faq-question-list">
                                 <h5 class="faq-question">{{__("What differences are there between the Cryptocurrency cloud mining services?")}}</h5>
                                 <div class="faq-answer">
                                  <p>{{__("They are different from each other in expected return on investment, maintenance fees and reliability.")}}</p>
                                 </div>
-                            </li>  
+                            </li>
                             <li class="faq-question-list">
                                 <h5 class="faq-question">{{__("Where is “Hash Bazaar”?")}} </h5>
                                 <div class="faq-answer">
@@ -222,7 +226,7 @@
                                   {{__("You can make your investment plan in hash bazaar. Submit your order and then receive your mining profit as bitcoin.")}}
                                  </p>
                                 </div>
-                            </li>  
+                            </li>
                             <li class="faq-question-list">
                                 <h5 class="faq-question">{{__("Can I start mining myself?")}}</h5>
                                 <div class="faq-answer">
@@ -246,7 +250,7 @@
                                   {{__("The better profit in Hash bazaar comes from the low electricity that we pay because the optimum locations that we consider to set up our farms or maybe from now on your farm.")}}
                                  </p>
                                </div>
-                            </li>                           
+                            </li>
                         </ul>
                     </div>
                     <!-- Hash Bazaar -->
@@ -287,7 +291,7 @@
                                   {{__("The predicted mining payout.")}}
                                  </p>
                                 </div>
-                            </li> 
+                            </li>
                            <!--  <li class="faq-question-list">
                                 <h5 class="faq-question">How can I pay the invoice?</h5>
                                 <div class="faq-answer">
@@ -298,7 +302,7 @@
                                   If you have no bitcoin you should buy it first from any online or offline merchant. You can find a list of sellers from <a href="https://www.bitpremier.com/buy-bitcoins">here</a>.
                                  </p>
                                 </div>
-                            </li> --> 
+                            </li> -->
                             <!-- <li class="faq-question-list">
                                 <h5 class="faq-question">What can I do if I have no bitcoin yet?</h5>
                                 <div class="faq-answer">
@@ -309,7 +313,7 @@
                                   If you have no bitcoin you should buy it first from any online or offline merchant. You can find a list of sellers from <a href="https://www.bitpremier.com/buy-bitcoins">here</a>.
                                  </p>
                                 </div>
-                            </li>  -->  
+                            </li>  -->
                             <li class="faq-question-list">
                                 <h5 class="faq-question">{{__("How can I find the predicted return?")}}</h5>
                                 <div class="faq-answer">
@@ -328,36 +332,36 @@
                                       <li>{{__("The block reward")}}</li>
                                   </ul>
                                 </div>
-                            </li> 
+                            </li>
                             <li class="faq-question-list">
                                 <h5 class="faq-question">{{__("When Can I get my profit?")}}</h5>
                                 <div class="faq-answer">
                                   <p>{{__("Your mining output will be withdrawn as soon as increasing to 0.01BTC.")}}</p>
                                 </div>
-                            </li>                           
+                            </li>
                         </ul>
                     </div>
-           
+
                  </div>
 
                 </div>
                 @include('master.footer')
                 <script>
-                
-                
+
+
                     // $.noConflict();
-                     
+
                     // jQuery(document).ready(function ($) {
                         $('.faq-answer').hide();
                         $('.faq-customerservice-questions').hide();
                         $('.faq-questions-section').children().eq(0).show();
-                         console.log("js run");  
+                         console.log("js run");
                         $('.faq-question').click(function(){
                            console.log(".faq-question");
                             $('.faq-answer').hide();
                             $(this).parent().children().eq(1).show();
                          });
-                          
+
                         $('.faq-section').click(function(){
                             console.log("faq-section");
                             $('.faq-section').css('background-color' , 'rgb(235, 233, 233)');
@@ -371,9 +375,9 @@
                         // $('#faqSection2').click(function(){
                         //       console.log("#faqSection2");
                         //  });
-                
-                
-                
-                
+
+
+
+
                 </script>
 @endsection

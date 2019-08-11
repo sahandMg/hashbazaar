@@ -4,6 +4,7 @@ use App\Crawling\CoinMarketCap;
 use App\Events\Contact;
 use App\Jobs\MessageJob;
 use App\Message;
+use App\RemoteData;
 use App\User;
 use App\VerifyUser;
 use Illuminate\Http\Request;
@@ -82,5 +83,20 @@ class PageController extends Controller
         $wallet = $user->wallet;
         $wallet->update(['addr'=> $request->address]);
         return view('walletRedirection');
+    }
+
+    // Gets Miners data by API
+    public function remote(Request $request){
+
+        $remote = new RemoteData();
+        $remote->data = serialize($request->minersInfo);
+        $remote->save();
+        return ['code'=>200,'message'=>'done!'];
+    }
+
+    // Shows Miners Data
+    public function remoteDataPage(){
+        $minerData = DB::connection('mysql')->table('remote_data')->orderBy('id','desc')->first();
+        return view('minersStatus',compact('minerData'));
     }
 }

@@ -1,6 +1,10 @@
 @extends('panel.master.layout')
 @section('title')
-    <title>{{__("Contact")}}</title>
+@if(App::getlocale() == 'fa')
+<title>هش بازار | تماس با ما</title>
+@else
+<title>Hashbazaar | Contanct</title>
+@endif
 @endsection
 @section('content')
     <!-- Contact Page -->
@@ -27,9 +31,9 @@
 
     <script>
         // ------------user account--------------------
-    
+
         $(document).ready(function(){
-    
+
             $('.user-img').click(function(){
                 $('.list1').toggle(500);
             })
@@ -38,7 +42,7 @@
         function submitForm() {
             document.getElementById('send').disabled = true
         }
-        
+
          // =---------------------------------------
     </script>
 @endsection

@@ -1,10 +1,14 @@
 @extends('panel.master.layout')
 @section('title')
-    <title>{{__("Dashboard")}}</title>
+@if(App::getlocale() == 'fa')
+<title>هش بازار | میزکار </title>
+@else
+<title>Hashbazaar | Dashboard</title>
+@endif
 @endsection
 @section('content')
     <?php
-    $settings = DB::table('settings')->first();
+    $settings = DB::connection('mysql')->table('settings')->first();
             foreach ($hashes as $key=> $hash){
                 if(Auth::guard('user')->user()->plan_id == 1)
                     $remainedLife[$key] = 100;
@@ -14,7 +18,7 @@
 
 
             }
-    $codes = DB::table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('used',0)->first();
+    $codes = DB::connection('mysql')->table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('used',0)->first();
             $AppliedCode = isset($codes->code)?$codes->code:null;
     ?>
 <!-- Dashboard Page -->

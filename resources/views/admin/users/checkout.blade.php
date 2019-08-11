@@ -145,7 +145,7 @@
 
             },
             created:function () {
-               this.users = {!! DB::table('users')->get() !!}
+               this.users = {!! DB::connection('mysql')->table('users')->get() !!}
 
             },
             methods:{

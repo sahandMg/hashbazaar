@@ -45,7 +45,7 @@ class PaymentController extends Controller
     public $hash_life;
     public function __construct()
     {
-        $settings = DB::table('settings')->first();
+        $settings = DB::connection('mysql')->table('settings')->first();
         $this->apikey = $settings->apikey;
         $this->publickey = $settings->publickey;
         $this->privatekey = $settings->privatekey;
@@ -491,13 +491,13 @@ class PaymentController extends Controller
         $mining->update(['block' => 0]);
         $mining->save();
         // update created transaction record
-        DB::table('transactions')->where('code', $orderID)->update([
+        DB::connection('mysql')->table('transactions')->where('code', $orderID)->update([
             'addr' => $address,
             'country' => $user->country,
             'status' => 'paid'
         ]);
 
-        $trans = DB::table('transactions')->where('code', $orderID)->first();
+        $trans = DB::connection('mysql')->table('transactions')->where('code', $orderID)->first();
 
         Mail::send('email.paymentConfirmed', ['hashPower' => $hashPower, 'trans' => $trans], function ($message) use ($user) {
             $message->from(env('Admin_Mail'));
@@ -505,7 +505,7 @@ class PaymentController extends Controller
             $message->subject('Payment Confirmed');
         });
 
-//                $referralUser = DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->first();
+//                $referralUser = DB::connection('mysql')->table('expired_codes')->where('user_id',$user->id)->where('used',0)->first();
         $referralCode = $hashPower->referral_code;
         $referralQuery = Referral::where('code', $referralCode)->first();
         // if any referral code used for hash owner purchasing
@@ -542,7 +542,7 @@ class PaymentController extends Controller
             }
 
             $share_level = $referralQuery->share_level;
-            $share_value = DB::table('sharings')->where('level', $share_level)->first()->value;
+            $share_value = DB::connection('mysql')->table('sharings')->where('level', $share_level)->first()->value;
             $hash = new BitHash();
             $hash->hash = $hashPower->hash * $share_value;
             $hash->user_id = $codeCaller->id;
@@ -567,9 +567,9 @@ class PaymentController extends Controller
         $event = $request->all();
         $transaction_id = $event['event']['data']['code'];
         $user = CoinBaseCharge::where('transaction_id', $transaction_id)->first()->user;
-        $query = DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->first();
+        $query = DB::connection('mysql')->table('expired_codes')->where('user_id',$user->id)->where('used',0)->first();
         if(!is_null($query)){
-            DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->update(['used'=>1]);
+            DB::connection('mysql')->table('expired_codes')->where('user_id',$user->id)->where('used',0)->update(['used'=>1]);
         }
 
 
@@ -756,7 +756,7 @@ class PaymentController extends Controller
             return 'Cant find transaction !';
         }
 
-        $trans = DB::table('crypto_payments')->where('orderID',$request->orderid)->first();
+        $trans = DB::connection('mysql')->table('crypto_payments')->where('orderID',$request->orderid)->first();
 
         if(is_null($trans)){
 
@@ -794,9 +794,9 @@ class PaymentController extends Controller
         $response = $box->get_json_values();
         if($response['confirmed'] == 1){
 
-            DB::table('crypto_payments')->where('orderID',$request->orderid)->update(['txConfirmed'=>1]);
+            DB::connection('mysql')->table('crypto_payments')->where('orderID',$request->orderid)->update(['txConfirmed'=>1]);
 
-//            DB::table('settings')->update(['available_th'=> DB::table('settings')->first()->total_th - $request->hash]);
+//            DB::connection('mysql')->table('settings')->update(['available_th'=> DB::table('settings')->first()->total_th - $request->hash]);
 
             // send email to user that transaction has been confirmed
             // change transaction status in admin panel
@@ -939,8 +939,8 @@ class PaymentController extends Controller
  */
     public function cryptobox_new_payment($paymentID = 0, $payment_details = array(), $box_status = ""){
 
-        $orderID = DB::table('crypto_payments')->where('PaymentID',$paymentID)->first()->orderID;
-        $paymentBox = DB::table('crypto_payments')->where('PaymentID',$paymentID)->first();
+        $orderID = DB::connection('mysql')->table('crypto_payments')->where('PaymentID',$paymentID)->first()->orderID;
+        $paymentBox = DB::connection('mysql')->table('crypto_payments')->where('PaymentID',$paymentID)->first();
         $hashPower = BitHash::where('order_id',$orderID)->first();
         $mining = Mining::where('order_id',$orderID)->first();
         $settings = Setting::first();
@@ -956,13 +956,13 @@ class PaymentController extends Controller
                 $mining->update(['block' => 0]);
                 $mining->save();
         // update created transaction record
-                 DB::table('transactions')->where('code',$orderID)->update([
+                 DB::connection('mysql')->table('transactions')->where('code',$orderID)->update([
                     'addr'=>$paymentBox->addr,
                     'country'=>$paymentBox->countryID,
                      'status' => 'paid'
                 ]);
 
-                $trans = DB::table('transactions')->where('code',$orderID)->first();
+                $trans = DB::connection('mysql')->table('transactions')->where('code',$orderID)->first();
 
                 Mail::send('email.paymentConfirmed',['hashPower'=>$hashPower,'trans'=>$trans],function($message) use($user){
                     $message->from (env('Admin_Mail'));
@@ -970,7 +970,7 @@ class PaymentController extends Controller
                     $message->subject ('Payment Confirmed');
                 });
 
-//                $referralUser = DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->first();
+//                $referralUser = DB::connection('mysql')->table('expired_codes')->where('user_id',$user->id)->where('used',0)->first();
                 $referralCode = $hashPower->referral_code;
                 $referralQuery = Referral::where('code',$referralCode)->first();
                     // if any referral code used for hash ower purchasing
@@ -1007,7 +1007,7 @@ class PaymentController extends Controller
                         }
 
                         $share_level = $referralQuery->share_level;
-                        $share_value = DB::table('sharings')->where('level',$share_level)->first()->value;
+                        $share_value = DB::connection('mysql')->table('sharings')->where('level',$share_level)->first()->value;
                         $hash = new BitHash();
                         $hash->hash = $hashPower->hash * $share_value;
                         $hash->user_id = $codeCaller->id;
@@ -1029,7 +1029,7 @@ class PaymentController extends Controller
 
                 }else{
 
-                DB::table('expired_codes')->where('user_id',$user->id)->where('used',0)->update(['used'=>1]);
+                DB::connection('mysql')->table('expired_codes')->where('user_id',$user->id)->where('used',0)->update(['used'=>1]);
                 //check if any referral code used
 
                 Mail::send('email.paymentReceived',[],function($message)use($user){
@@ -1109,7 +1109,7 @@ class PaymentController extends Controller
         }
 //        $btcSum = Mining::where('user_id',$user->id)->where('block',0)->sum('mined_btc');
         $btcSum = User::userPending($user);
-        $wallet = DB::table('wallets')->where('user_id',$user->id)->where('active',1)->first();
+        $wallet = DB::connection('mysql')->table('wallets')->where('user_id',$user->id)->where('active',1)->first();
         if(is_null($wallet)){
             return ['type'=>'error','body'=>'wallet not found or is not active'];
         }
@@ -1166,7 +1166,7 @@ class PaymentController extends Controller
 
     public function checkPaymentReceived(Request $request){
 
-        $query = DB::table('crypto_payments')->where('orderID',$request->orderID)->first();
+        $query = DB::connection('mysql')->table('crypto_payments')->where('orderID',$request->orderID)->first();
 
         if(is_null($query)){
             return 404;

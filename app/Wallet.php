@@ -9,7 +9,7 @@ class Wallet extends Model
 {
 
     protected $fillable = ['addr'];
-
+    protected $connection = 'mysql';
 //    protected $encryptable = [
 //        'addr'
 //    ];

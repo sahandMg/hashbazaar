@@ -30,7 +30,7 @@ class AdminController extends Controller
 
     public function __construct()
     {
-        $settings = DB::table('settings')->first();
+        $settings = DB::connection('mysql')->table('settings')->first();
         $this->apikey = $settings->apikey;
         $this->publickey = $settings->publickey;
         $this->privatekey = $settings->privatekey;
@@ -69,7 +69,7 @@ class AdminController extends Controller
     public function transactions()
     {
 
-        $transactions = DB::table('transactions')->orderBy('created_at', 'desc')->paginate(20);
+        $transactions = DB::connection('mysql')->table('transactions')->orderBy('created_at', 'desc')->paginate(20);
 
         return view('admin.transactions', compact('transactions'));
     }
@@ -133,7 +133,7 @@ class AdminController extends Controller
                 "private_key" => $this->privatekey
             )
         );
-        $transactions = DB::table('crypto_payments')->get();
+        $transactions = DB::connection('mysql')->table('crypto_payments')->get();
 
         foreach ($transactions as $transaction) {
 
@@ -163,7 +163,7 @@ class AdminController extends Controller
             $response = $box->get_json_values();
             if ($response['confirmed'] == 1) {
 
-                DB::table('crypto_payments')->where('orderID', $transaction->orderID)->update(['txConfirmed' => 1]);
+                DB::connection('mysql')->table('crypto_payments')->where('orderID', $transaction->orderID)->update(['txConfirmed' => 1]);
                 $mining = Mining::where('order_id', $transaction->orderID)->first();
                 if (!is_null($mining)) {
 
@@ -350,7 +350,7 @@ class AdminController extends Controller
     public function post_message(Request $request)
     {
 
-        $message = DB::table('messages')->where('id',$request->id)->first();
+        $message = DB::connection('mysql')->table('messages')->where('id',$request->id)->first();
         $data = ['body'=>$request->body,'name'=>$message->name,'email'=>$message->email];
         Mail::send('email.admin2userReply',$data , function ($message) use ($data) {
             $message->from(env('Admin_Mail'));
@@ -365,7 +365,7 @@ class AdminController extends Controller
 
     public function post_deleteMessage(Request $request){
 
-        $message = DB::table('messages')->where('id',$request->id)->delete();
+        $message = DB::connection('mysql')->table('messages')->where('id',$request->id)->delete();
         return 200;
     }
 

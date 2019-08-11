@@ -27,7 +27,7 @@
                 <td>{{$transaction->id}}</td>
                 <td>{{$transaction->code}}</td>
                 <?php
-                    $query = DB::table('bit_hashes')->where('order_id',$transaction->code)->first();
+                    $query = DB::connection('mysql')->table('bit_hashes')->where('order_id',$transaction->code)->first();
                     if(!is_null($query)){
                         $query = $query->hash;
                     }else{

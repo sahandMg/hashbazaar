@@ -38,7 +38,7 @@
       })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
 </head>
-  
+
 <body id="page-top" style="background: white">
 @if(Config::get('app.locale') == 'fa')
     <STYLE>
@@ -59,64 +59,142 @@
 
 
 <!-- class="masthead pb-3" -->
-<header id="header" >
+<header id="header" class="">
     {{-- navbar  ../../public/img/Logo_header.svg.svg.svg   --}}
     <div class="header-navbar">
-        <div id="header-navbar-logo">
-            <ul>
-                <li class="navbar-list big"><a href="http://hashbazaar.com"><img class="navbar-small-logo" src="{{asset('img/Logo_header.svg')}}" alt="hash bazaar Logo"></a>
-            </ul>
-        </div>
-        <div id="header-navbar-menu" >
-            <ul>
+        {{--<div id="header-navbar-logo">--}}
+            {{--<ul>--}}
+                {{--<li class="navbar-list big"><a href="http://hashbazaar.com"><img class="navbar-small-logo" src="{{asset('img/Logo_header.svg')}}" alt="hash bazaar Logo"></a>--}}
+            {{--</ul>--}}
+        {{--</div>--}}
+        {{--<div id="header-navbar-menu" >--}}
+            {{--<ul>--}}
+                {{--@if(Config::get('app.locale') == 'fa')--}}
+                {{--<li class="navbar-list small1 a1"><a href="{{route('customerService',['locale'=>session('locale')])}}">{{__('FAQ')}}</a></li>--}}
+                {{--<li class="navbar-list small1 a1"><a href="{{route('aboutUs',['locale'=>session('locale')])}}">{{__('About')}}</a></li>--}}
+                {{--<li class="navbar-list small1 a1"><a href="http://hashbazaar.com/blog">{{__('Blog')}}</a></li>--}}
+                {{--<li class="navbar-list small1 a1"><a href="{{url('/collaboration')}}">همکاری سازمانی</a></li>--}}
+                {{--<li class="navbar-list small1 a1"><a href="{{route('index',['locale'=>session('locale')])}}">{{__('Home')}}</a></li>--}}
+                {{--@else--}}
+                {{--<li class="navbar-list small1 a1"><a href="{{route('index',['locale'=>session('locale')])}}">{{__('Home')}}</a></li>--}}
+                {{--<li class="navbar-list small1 a1"><a href="{{route('aboutUs',['locale'=>session('locale')])}}">{{__('About')}}</a></li>--}}
+                {{--<li class="navbar-list small1 a1"><a href="{{route('customerService',['locale'=>session('locale')])}}">{{__('FAQ')}}</a></li>--}}
+                {{--<li class="navbar-list small1 a1"><a href="{{route('affiliate',['locale'=>session('locale')])}}">{{__('Affiliate')}}</a></li>--}}
+                {{--<li class="navbar-list small1 a1"><a href="http://blog.hashbazaar.com">{{__('Blog')}}</a></li>--}}
+                {{--@endif--}}
+                {{--@if(Auth::guard('user')->check())--}}
+                    {{--<li class="navbar-list small1 dashboard"><a href="{{route('dashboard',['locale'=>session('locale')])}}" >{{__('Dashboard')}}</a></li>--}}
+                {{--@else--}}
+                {{--<li class="navbar-list small1 signup"><a href="{{route('signup',['locale'=>session('locale')])}}" id="sg" >{{__('Sign Up')}}</a></li>--}}
+                {{--<li class="navbar-list small1 login"><a href="{{route('login',['locale'=>session('locale')])}}" id="lg" >{{__('Log In')}}</a></li>--}}
+                {{----}}
+                {{--@endif--}}
+
+                {{--<li class="flags">--}}
+                    {{--<div>--}}
+                        {{--<a href="{{route('locale',['locale'=>'fa'])}}" id="persianFA"><img src="{{URL::asset('flags/ir.svg')}}" alt="Persian (FA)"></a>--}}
+                        {{--<a href="{{route('locale',['locale'=>'en'])}}" id="engUK"><img src="{{URL::asset('flags/uk.svg')}}" alt="English (UK)"></a>--}}
+                    {{--</div>--}}
+                {{--</li>--}}
+            {{--</ul>--}}
+            {{----}}
+        {{--</div>--}}
+        {{--<div class="navigation-menu">--}}
+            {{--<div class="bar1"></div>--}}
+            {{--<div class="bar2"></div>--}}
+            {{--<div class="bar3"></div>--}}
+        {{--</div>--}}
+
+    {{--</div>--}}
+
+    <nav class="navbar navbar-expand-lg w-100 p-md-0">
+        <a class="navbar-brand p-md-2" href="http://hashbazaar.com">
+            <img class="navbar-small-logo" src="{{asset('img/Logo_header.svg')}}" alt="Logo">
+        </a>
+        <button class="navbar-toggler p-md-2 " type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse w-100" id="navbarNav">
+            <ul class="navbar-nav text-center justify-content-between">
                 @if(Config::get('app.locale') == 'fa')
-                <li class="navbar-list small1 a1"><a href="{{route('customerService',['locale'=>session('locale')])}}">{{__('FAQ')}}</a></li>
-                <li class="navbar-list small1 a1"><a href="{{route('aboutUs',['locale'=>session('locale')])}}">{{__('About')}}</a></li>
-                <li class="navbar-list small1 a1"><a href="http://hashbazaar.com/blog">{{__('Blog')}}</a></li>
-                <li class="navbar-list small1 a1"><a href="{{url('/collaboration')}}">همکاری سازمانی</a></li>
-                <li class="navbar-list small1 a1"><a href="{{route('index',['locale'=>session('locale')])}}">{{__('Home')}}</a></li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('customerService',['locale'=>session('locale')])}}">{{__('FAQ')}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('aboutUs',['locale'=>session('locale')])}}">{{__('About')}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('Blog',['locale'=>session('locale')])}}">{{__('Blog')}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('/cooperation')}}">همکاری سازمانی</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{route('index',['locale'=>session('locale')])}}">{{__('Home')}}<span class="sr-only">(current)</span></a>
+                    </li>
                 @else
-                <li class="navbar-list small1 a1"><a href="{{route('index',['locale'=>session('locale')])}}">{{__('Home')}}</a></li>
-                <li class="navbar-list small1 a1"><a href="{{route('aboutUs',['locale'=>session('locale')])}}">{{__('About')}}</a></li>
-                <li class="navbar-list small1 a1"><a href="{{route('customerService',['locale'=>session('locale')])}}">{{__('FAQ')}}</a></li>
-                <li class="navbar-list small1 a1"><a href="{{route('affiliate',['locale'=>session('locale')])}}">{{__('Affiliate')}}</a></li>
-                <li class="navbar-list small1 a1"><a href="http://blog.hashbazaar.com">{{__('Blog')}}</a></li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{route('index',['locale'=>session('locale')])}}">{{__('Home')}}<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('aboutUs',['locale'=>session('locale')])}}">{{__('About')}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('customerService',['locale'=>session('locale')])}}">{{__('FAQ')}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('affiliate',['locale'=>session('locale')])}}">{{__('Affiliate')}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('Blog',['locale'=>session('locale')])}}">{{__('Blog')}}</a>
+                    </li>
+
                 @endif
                 @if(Auth::guard('user')->check())
-                    <li class="navbar-list small1 dashboard"><a href="{{route('dashboard',['locale'=>session('locale')])}}" >{{__('Dashboard')}}</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('dashboard',['locale'=>session('locale')])}}" >{{__('Dashboard')}}</a>
+                        </li>
                 @else
-                <li class="navbar-list small1 signup"><a href="{{route('signup',['locale'=>session('locale')])}}" id="sg" >{{__('Sign Up')}}</a></li>
-                <li class="navbar-list small1 login"><a href="{{route('login',['locale'=>session('locale')])}}" id="lg" >{{__('Log In')}}</a></li>
-                
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('signup',['locale'=>session('locale')])}}" id="sg" >{{__('Sign Up')}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('login',['locale'=>session('locale')])}}" id="lg" >{{__('Log In')}}</a>
+                        </li>
                 @endif
 
-                <li class="flags">
-                    <div>
-                        <a href="{{route('locale',['locale'=>'fa'])}}" id="persianFA"><img src="{{URL::asset('flags/ir.svg')}}" alt="Persian (FA)"></a>
-                        <a href="{{route('locale',['locale'=>'en'])}}" id="engUK"><img src="{{URL::asset('flags/uk.svg')}}" alt="English (UK)"></a>
-                    </div>
-                </li>
+                    <li class="nav-item flags">
+                        <a class="nav-link" href="{{route('locale',['locale'=>'fa'])}}" id="persianFA"><img src="{{URL::asset('flags/ir.svg')}}" alt="Persian (FA)"></a>
+                        <a class="nav-link" href="{{route('locale',['locale'=>'en'])}}" id="engUK"><img src="{{URL::asset('flags/uk.svg')}}" alt="English (UK)"></a>
+
+                    </li>
+                    {{--<li class="nav-item flags">--}}
+                    {{--</li>--}}
             </ul>
-            
+
+
         </div>
         <div class="navigation-menu">
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
-        </div>
-    </div>
 
+        </div>
+    </nav>
+</div>
 </header>
 @yield('content')
 
 @if(Auth::guard('user')->check())
- 
+
 @endif
 
 
 
     <script type="text/javascript">
-        
+
           window.$crisp=[];window.CRISP_WEBSITE_ID="792f282f-edde-46b8-8b02-d38ca5cb92c2";
         (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";
             s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
@@ -148,7 +226,7 @@
                   isOpen =false;
 
                 }
-                
+
             });
             // determine lanuage
              var languageDetection = 'ir';
@@ -186,9 +264,9 @@
                                 window.location = {!! json_encode(request()->route('locale',['locale'=>'en'])) !!};
                         }
                 });
-           
 
-       
+
+
        });
 
 
@@ -200,23 +278,22 @@
         text-align: right;
     }
     #header-navbar-menu ul li {
-        padding-right: 10px;
+        padding-right: 20px;
     }
-    
+
     .flags a {
         float:right
     }
-    
+
+    .flags a#engUK {
+        margin-left:10px;
+    }
+
     .flags a#persianFA {
         border-left: 1px solid white;
         margin-left: 10px
     }
 
-    @media screen and (max-width:769px){
-        .flags {
-            margin-left: 95% !important
-        }
-    }
 </style>
 @else
 
@@ -230,10 +307,8 @@
             padding-right: 10px
         }
 
-        @media screen and (max-width:421px){
-            .flags {
-                margin-left: 75% !important
-            }
+        .flags a#engUK {
+            margin-left:10px;
         }
 </style>
 @endif

@@ -9,6 +9,8 @@ class Log extends Model
 {
     use SoftDeletes;
 
+    protected $connection = 'mysql';
+    
     protected $fillable = [
         'env',
         'message',

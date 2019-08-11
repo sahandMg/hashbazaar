@@ -1,0 +1,253 @@
+<manifest alg="2" build="2017.0.2.363" opt="false" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="landingContainer.com" resolutions="1x" timestamp="1565465317838">
+  <folder name="assets">
+    <file name="logo.svg" crc="218083929" seo="true" mt="1564571325000"/>
+    <file name="success.png" crc="3921043281" seo="true" mt="1555955233000"/>
+    <file name="menu.png" crc="109977818" seo="true" mt="1564995907000"/>
+    <file name="close.png" crc="3949454993" seo="true" mt="1564995998000"/>
+  </folder>
+  <folder name="css">
+    <file name="site_global.css" crc="155373855"/>
+    <file name="index.css" crc="264659863" ref="index"/>
+    <file name="nomq_index.css" crc="3831926170" ref="index"/>
+  </folder>
+  <folder name="fonts">
+    <file name="btitrbold.woff" crc="389408755"/>
+    <file name="btitrbold.eot" crc="4137583099"/>
+    <file name="byekan.woff" crc="315374278"/>
+    <file name="byekan.eot" crc="4054492400"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="209076791" ref="index"/>
+    <file name="museutils.js" crc="4232573551" ref="index"/>
+    <file name="whatinput.js" crc="86476730" ref="index"/>
+    <file name="museconfig.js" crc="3849126041" ref="index"/>
+    <file name="jquery.watch.js" crc="3844535323" ref="index"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="3880853905" ref="index"/>
+    <file name="require.js" crc="4234670167" ref="index"/>
+    <file name="jquery.museresponsive.js" crc="433634197" ref="index"/>
+  </folder>
+  <folder name="images">
+    <file name="container_white-1024x576-1024x576 (1).png" crc="96289759" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="rack_right3 (1).png" crc="228516509" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="bitfury_secure_iceland_hover.jpg" crc="3799765581" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="rack_right3 (1)-u405-fr.png" crc="3767035340" ref="index"/>
+    <file name="container_white-1024x576-1024x576 (1)-u178-fr.png" crc="3778549412" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr2.png" crc="4031309886" ref="index"/>
+    <file name="container_white-1024x576-1024x576 (1)-u178-fr2.png" crc="4048735018" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr3.png" crc="398356696" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e.jpg" crc="314990795" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr.jpg" crc="3872849069" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr2.jpg" crc="455015529" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr3.jpg" crc="3978663680" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr4.jpg" crc="109611084" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr4.png" crc="4084270730" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr5.jpg" crc="406853111" ref="index"/>
+    <file name="container_white-1024x576-1024x576 (1)-u178-fr3.png" crc="147169754" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr5.png" crc="3812482310" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr6.jpg" crc="3928605305" ref="index"/>
+    <file name="container_white-1024x576-1024x576 (1)-u178-fr4.png" crc="59700869" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr6.png" crc="3992464866" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr7.jpg" crc="4019429667" ref="index"/>
+    <file name="container_white-1024x576-1024x576 (1)-u178-fr5.png" crc="505877516" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr7.png" crc="3915677969" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr8.jpg" crc="3799247878" ref="index"/>
+    <file name="container_white-1024x576-1024x576 (1)-u178-fr6.png" crc="3802640577" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr8.png" crc="218934288" ref="index"/>
+    <file name="4asset-2.svg" crc="3936045507" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="4asset 2_poster_.png" crc="3916121643" ref="index"/>
+    <file name="5asset-1.svg" crc="3998529016" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="5asset 1_poster_.png" crc="13319205" ref="index"/>
+    <file name="3asset-1.svg" crc="4057518217" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="3asset 1_poster_.png" crc="525300072" ref="index"/>
+    <file name="blank.gif" crc="4208392903" ref="index"/>
+    <file name="hashbazaar-contin.svg" crc="3948398861" ref="index"/>
+    <file name="hashbazaar-contin_poster_u8092.png" crc="399616393" ref="index"/>
+    <file name="hashbazaar-connection.svg" crc="3828581817" ref="index"/>
+    <file name="hashbazaar-connection_poster_u8100.png" crc="4254329700" ref="index"/>
+    <file name="hashbazaar-power.svg" crc="4027137284" ref="index"/>
+    <file name="hashbazaar-power_poster_u8116.png" crc="440829809" ref="index"/>
+    <file name="hashbazaar-secure.svg" crc="335578403" ref="index"/>
+    <file name="hashbazaar-secure_poster_u8108.png" crc="200784507" ref="index"/>
+    <file name="hashbazaar-miner.svg" crc="4057099919" ref="index"/>
+    <file name="hashbazaar-miner_poster_u8124.png" crc="3802020381" ref="index"/>
+    <file name="hashbazaar-asic.svg" crc="3820841711" ref="index"/>
+    <file name="hashbazaar-asic_poster_u8234.png" crc="3867325348" ref="index"/>
+    <file name="hashbazaar-th.svg" crc="276693821" ref="index"/>
+    <file name="hashbazaar-th_poster_u8172.png" crc="115895363" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr9.jpg" crc="68702169" ref="index"/>
+    <file name="container_white-1024x576-1024x576 (1)-u178-fr7.png" crc="202775419" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr9.png" crc="416739584" ref="index"/>
+    <file name="hashbazaar-bit.svg" crc="161465439" ref="index"/>
+    <file name="hashbazaar-bit_poster_u9972.png" crc="306345427" ref="index"/>
+    <file name="logo.svg" crc="218083929" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="logo_poster_.png" crc="98441013" ref="index"/>
+    <file name="hashbazaar-twitter.svg" crc="3825294094" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="hashbazaar-twitter_poster_.png" crc="191952573" ref="index"/>
+    <file name="hashbazaar-linkedin.svg" crc="464571133" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="hashbazaar-linkedin_poster_.png" crc="4065801677" ref="index"/>
+    <file name="hashbazaar-instagram.svg" crc="388965492" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="hashbazaar-instagram_poster_.png" crc="375801358" ref="index"/>
+    <file name="hashbazaar-contact.svg" crc="516919049" ref="index"/>
+    <file name="hashbazaar-contact_poster_u12557.png" crc="4237193193" ref="index"/>
+    <file name="hashbazaar-email.svg" crc="1384675" ref="index"/>
+    <file name="hashbazaar-email_poster_u12449.png" crc="192586606" ref="index"/>
+    <file name="hashbazaar-location.svg" crc="4087253132" ref="index"/>
+    <file name="hashbazaar-location_poster_u12505.png" crc="49677214" ref="index"/>
+    <file name="bitfury_secure_iceland_hover-u420-fr.jpg" crc="225639454" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr10.jpg" crc="4169783765" ref="index"/>
+    <file name="container_white-1024x576-1024x576 (1)-u178-fr8.png" crc="278514781" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr10.png" crc="4151880065" ref="index"/>
+    <file name="bitfury_secure_iceland_hover-u420-fr2.jpg" crc="4116023755" ref="index"/>
+    <file name="container_white-1024x576-1024x576 (1)-u178-fr9.png" crc="298245663" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr11.jpg" crc="3902901477" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr11.png" crc="3792912029" ref="index"/>
+    <file name="container_white-1024x576-1024x576 (1)-u178-fr10.png" crc="3803469912" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr12.jpg" crc="3850425857" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr12.png" crc="175714055" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr13.jpg" crc="4184765550" ref="index"/>
+    <file name="container_white-1024x576-1024x576 (1)-u178-fr11.png" crc="3901692471" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr13.png" crc="4250013672" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr14.jpg" crc="152069330" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr14.png" crc="3943073361" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr15.jpg" crc="3794320123" ref="index"/>
+    <file name="container_white-1024x576-1024x576 (1)-u178-fr12.png" crc="4294696380" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr15.png" crc="4086738219" ref="index"/>
+    <file name="favicon.ico" crc="389768270" ref="index"/>
+  </folder>
+  <file name="index.html" crc="409643915" seo="true" mt="1565465283558" redirect="true"/>
+</manifest>

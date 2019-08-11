@@ -110,27 +110,27 @@
             <div class="col-md-4 col-sm-12 text-center pb-4">
                 <!-- <h5 class="text-center">scalability</h5> -->
                 <img src="img/8Asset 2.svg"  />
-                <p >we use best tools for mining, because of that we scale easily</p>
+                <p>راه اندازی سریع</p>
             </div>
             <div class="col-md-4 col-sm-12 text-center pb-4">
                 <img src="img/deposit-and-withdrawals.svg"  />
-                <p >we use best tools for mining, because of that we scale easily</p>
+                <p>واریز سریع سود کسب شده</p>
             </div>
             <div class="col-md-4 col-sm-12 text-center pb-4">
                 <img src="img/hashbazaar-asic.svg"  />
-                <p >we use best tools for mining, because of that we scale easily</p>
+                <p >استفاده از جدید ترین سخت افزارها</p>
             </div>
              <div class="col-md-4 col-sm-12 text-center pb-4">
                 <img src="img/security.svg"  />
-                <p >we use best tools for mining, because of that we scale easily</p>
+                <p>تضمین امنیت سرویس های ما</p>
             </div>
              <div class="col-md-4 col-sm-12 text-center pb-4">
                 <img src="img/statistic.svg"  />
-                <p >we use best tools for mining, because of that we scale easily</p>
+                <p >مشاهد سود روزانه در پنل کاربر</p>
             </div>
             <div class="col-md-4 col-sm-12 text-center pb-4">
                 <img src="img/group.svg"  />
-                <p >we use best tools for mining, because of that we scale easily</p>
+                <p>دارای تیم فنی مجرب</p>
             </div>
         </div>
     </section>

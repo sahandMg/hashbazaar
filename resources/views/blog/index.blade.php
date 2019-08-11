@@ -7,20 +7,37 @@
 @endif
 @endsection
 @section('content')
+<?php
 
+        foreach($posts as $key => $post){
+
+                    $src = DB::connection('mysql2')->table('system_files')
+                    ->where('field','featured_images')
+                    ->where('attachment_id',$post->id)->first();
+            if(is_null($src)){
+                $img[$key] = null;
+            }else{
+                $firstDir = substr($src->disk_name,0,3);
+                $secDir = substr($src->disk_name,3,3);
+                $thirdDir = substr($src->disk_name,6,3);
+                $img[$key] = env('BLOG_URL')
+                        .$firstDir.'/'.$secDir.'/'.$thirdDir.'/'.$src->disk_name;
+            }
+        }
+?>
 <div class="container">
   <div class="row">
-        @foreach($posts as $post)
+        @foreach($posts as $key => $post)
           <article class="ContentSmallSize" style="background-color: white;">
               <a href="{{route('showPost',[session('locale'),$post->slug])}}">
               <figure>
-               <img  height="225px" width="100%" src={{ image.path }} alt={{ $post->title }} />
-               <!-- <figcaption style="right: 0">{{ post.title }}</figcaption> -->
+               <img  height="225px" width="100%" src="{{$img[$key]}}" alt="{{ $post->title }}"/>
+               <!-- <figcaption style="right: 0">{{ $post->title }}</figcaption> -->
               </figure>
               <div>
-               <h3 style="color: black;">{{ $post->title }}</h3>
-               <p style="color: black;">{{ $post->summary|raw }}</p>
-               <span style="color: black;"><time>{{ $post->published_at|date('M d, Y') }}</time></span>
+               <h5 style="color: black;">{{ $post->title }}</h5>
+               <p style="color: black;">{{ $post->excerpt }}</p>
+               <span style="color: black;"><time>{{ \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($post->published_at)) }}</time></span>
               </div>
               </a>
           </article>

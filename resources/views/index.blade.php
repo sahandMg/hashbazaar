@@ -138,18 +138,18 @@
         <h3>همکاران ما</h3>
         <div class="row">
             <div class="col-md-4 col-sm-12">
-<!-- <<<<<<< HEAD -->
+
                 <img src="img/farabi_icon.png"  />
                 <!-- <p >شتاب دهنده فارابی</p> -->
             </div>
             <div class="col-md-4 col-sm-12">
-                <img src="img/tadbir.png" />
+                <img src="{{URL::asset('img/tadbir.svg')}}" />
                 <!-- <p >کارگزاری تدبیرگران فردا</p> -->
             </div>
             <div class="col-md-4 col-sm-12">
-                <img src="img/rayanHamAfza.png"  />
+                <img src="{{URL::asset('img/rayanHamAfza.png')}}"  />
                 <!-- <p >we use best tools for mining, because of that we scale easily</p> -->
-<!-- =======
+
                 <img src="{{URL::asset('img/farabi_icon.png')}}" style="height: 80px;" />
                 <p >we use best tools for mining, because of that we scale easily</p>
             </div>
@@ -160,7 +160,7 @@
             <div class="col-md-4 col-sm-12">
                 <img src="{{URL::asset('img/farabi_icon.png')}}" style="height: 80px;" />
                 <p >we use best tools for mining, because of that we scale easily</p>
->>>>>>> 89cdc296cbbb65b3197acc5e98595bcf8330d559 -->
+
             </div>
         </div>
     </section>
@@ -227,6 +227,8 @@
         height: 80px;
       }
     </style>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKHJZWvRnxUssy8NuqB_nuE3bvKkhxHlM&callback=initMap"
+            type="text/javascript"></script>
     <script type="text/javascript">
       // console.log("js run");
         var dollarToToman = parseInt({!! $settings->usd_toman !!});

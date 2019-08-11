@@ -36,6 +36,56 @@
             </div>
         </div>
     </header>
+    <section class="backgroundGrey pt-4 pb-4 " style="padding-top: 4%;color: #707070;">
+       <div class="text-center mb-4">
+            <h3 class="fontTheme">{{__('CHOOSE YOUR INVESTMENT PLAN')}}</h3>
+        </div>
+        <div class="container" style="direction: rtl;">
+          <div class="d-flex justify-content-between">
+            <!-- <div class="col-md-4 col-sm-12"> -->
+              <div class="ContentSmallSize p-4">
+                <h5 class="text-center mb-2">واگذاری دستگاه</h5>
+                <p>بسته به نوع دستگاه بین 30 تا 40 درصد از درآمد بیت کوین حاصله بابت هاستینگ (هزینه برق، نگهداری و سرویس دستگاه) کسر می شود و مابقی به کیف پول شما واریز می گردد.</p>
+                <hr/>
+                <p>تفاوت مذکور در مورد درصد کسر شده با توجه به نسبت توان پردازش دستگاه به میزان مصرف برق آن تعیین می گردد.</p>
+                <div class="text-center mt-1 mb-1">
+                   <button class="btn btn-primary round-button-com" onclick="btnHidden(event)"  type="submit" style="width: 120px">واگذاری دستگاه</button>
+                </div>
+              </div>
+            <!-- </div> -->
+            <!-- <div class="col-md-4 col-sm-12"> -->
+              <div class="ContentSmallSize p-4">
+                <h5 class="text-center mb-2">طرح کلاسیک</h5>
+                <p class="text-center">1 تراهش = 1 ملیون تومان</p>
+                <hr/>
+                <p>هزینه نگهداری: 1050 تومان برای هر روز به ازای هر تراهش</p>
+                <hr/>
+                <p>مدت قرار داد: دو سال </p>
+                <hr/>
+                <p>برای سفارش بیش از 100 تراهش به قسمت <a href="">همکاری سازمانی سایت</a> مراجعه فرمائید.</p>
+                <div class="text-center mt-1 mb-1">
+                  <button class="btn btn-primary round-button-com" onclick="btnHidden(event)"  type="submit" style="width: 120px">خرید</button>
+                </div>
+              </div>
+            <!-- </div> -->
+            <!-- <div class="col-md-4 col-sm-12"> -->
+              <div class="ContentSmallSize p-4">
+                <h5 class="text-center mb-2">طرح کلاسیک صفر</h5>
+                <p class="text-center">1 تراهش = 1 ملیون و 600 هزار تومان</p>
+                <hr/>
+                <p>هزینه نگهداری: صفر تومان</p>
+                <hr/>
+                <p>مدت قرار داد: دو سال </p>
+                <hr/>
+                <p>برای سفارش بیش از 100 تراهش به قسمت <a href="">همکاری سازمانی سایت</a> مراجعه فرمائید.</p>
+                <div class="text-center mt-1 mb-1">
+                  <button class="btn btn-primary round-button-com" onclick="btnHidden(event)"  type="submit" style="width: 120px">خرید</button>
+                </div>
+              </div>
+            <!-- </div> -->
+          </div>
+        </div>
+    </section>
     <section  id="sharePlan" class="text-center" style="padding-top: 4%;color: #707070;">
         <div>
             <h3 class="fontTheme">{{__('CHOOSE YOUR INVESTMENT PLAN')}}</h3>
@@ -204,6 +254,69 @@
         </div>
 
     </div>
+    <style type="text/css">
+    .posts {margin-top: 120px;}
+    .ContentSmallSize {
+    flex: 0 1 calc(25% - 1em);
+    text-align: right;
+    margin-bottom: 1%;
+    background-color: white;
+    color: black;
+}
+
+.ContentSmallSize:hover {
+    top: -2px;
+    /*box-shadow: 0 4px 5px rgba(0,0,0,0.2);*/
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+@media screen and (max-width: 768px) {
+    .ContentSmallSize {
+        flex: 0 1 calc(50% - 1em);
+    }
+}
+@media screen and (max-width: 600px) {
+    .ContentSmallSize {
+        flex: 0 1 calc(100% - 1.5em);
+        margin-bottom: 4%;
+    }
+}
+@media screen and (max-width: 414px) {
+    .ContentSmallSize h3 {
+        font-size: 1.3rem;
+}
+    .ContentSmallSize p {
+        font-size: 1rem;
+    }
+}
+
+.ContentSmallSize figure {
+   position: relative;
+}
+.ContentSmallSize figcaption {
+    position: absolute;
+    top: 180px;
+    color: white;
+    background-color: black;
+    padding: 4px 8px;
+    font-size: 100%;
+    font-weight: 400;
+}
+.ContentSmallSize h3 {
+    color: black;
+}
+.ContentSmallSize span {
+    color: #999999;
+}
+.ContentSmallSize p {
+    color: black;
+}
+.ContentSmallSize div {
+    padding: 1% 2%;
+}
+
+
+</style>
     @if(Config::get('app.locale') == 'fa')
     <style type="text/css">
       .invest-plan {

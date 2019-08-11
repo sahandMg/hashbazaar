@@ -1,7 +1,7 @@
 @extends('panel.master.layout')
 @section('title')
 @if(App::getlocale() == 'fa')
-<title>هش بازار | داشبورد </title>
+<title>هش بازار | میزکار </title>
 @else
 <title>Hashbazaar | Dashboard</title>
 @endif

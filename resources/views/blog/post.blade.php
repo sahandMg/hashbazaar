@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <title></title>
+@extends('master.layout')
+@section('title')
+    @if(App::getlocale() == 'fa')
+        <title>هش بازار |  </title>
+    @else
+        <title>Hashbazaar | Blog</title>
+    @endif
+@endsection
+@section('content')
     <style>
         p {
             font-family: 'Times New Roman', Times, serif;
             font-size:20px;
+            color: #000;
         }
         img {
             width:80%;
@@ -19,11 +19,9 @@
         }
 
     </style>
-</head>
-<body>
     <div class="container">
 
 {!! $post->content_html !!}
 </div>
-</body>
-</html>
+    @include('master.footer')
+@endsection

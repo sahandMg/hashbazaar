@@ -34,17 +34,7 @@ class LoginTest extends DuskTestCase
             ->press('Follow')
             ->pause(2000)
             ->press('Follow')
-            ->pause(2000)
-                ->press('Follow')
-                ->pause(2000)
-                ->press('Follow')
-                ->pause(2000)
-                ->press('Follow')
-                ->pause(2000)
-                ->press('Follow')
-                ->pause(2000)
-                ->press('Follow')
-                ->pause(2000);
+            ->pause(2000);
         });
     }
 

@@ -1,10 +1,12 @@
 ﻿@extends('master.layout')
+@section('title')
+    @if(App::getlocale() == 'fa')
+        <title>هش بازار | صفحه اصلی</title>
+    @else
+        <title>Hashbazaar | Home </title>
+    @endif
+@endsection
 @section('content')
-@if(App::getlocale() == 'fa')
-<title>هش بازار | صفحه اصلی</title>
-@else
-<title>Hashbazaar | Home </title>
-@endif
     <!-- class="masthead pb-3" -->
     <?php
     $settings = DB::connection('mysql')->table('settings')->first();
@@ -23,7 +25,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9 col-md-10 col-sm-11 mx-auto">
-                        <h1 class="text-center">{{__('BITCOIN INVESTMENT')}}</h1><img src="img/LOGO.svg">
+                        <h1 class="text-center">{{__('BITCOIN INVESTMENT')}}</h1><img src="{{URL::asset('img/LOGO.svg')}}">
                         <h3>{{__('JOIN OUR MINING FARMS')}}</h3>
                         <br>
                         <h3 style="margin: 0px;">{{__('FILL YOUR POCKETS WITH BITCOIN')}}</h3>
@@ -66,7 +68,7 @@
     </section>
   @if(Config::get('app.locale') == 'fa')
   <section class="context-section backgroundGrey text-center pt-4 pb-4 advantages" style="color: #707070;padding: 2%;"  >
-    <img id="price" alt="electricity price" src="img/workflow.svg" style="width: 100%;height: auto;">
+    <img id="price" alt="electricity price" src="{{URL::asset('img/workflow.png')}}" style="width: 100%;height: auto;">
   </section>
   @else
     <section class="context-section backgroundGrey text-center pt-4 pb-4 advantages" style="color: #707070"  >
@@ -75,7 +77,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <h3 class="text-center"  style="color: #707070;">Working in the regions in which energy cost is low</h3>
-                    <img id="price" alt="electricity price" src="img/Pricing.jpg" style="width: 100%;height: auto;">
+                    <img id="price" alt="electricity price" src="{{URL::asset('img/Pricing.jpg')}}" style="width: 100%;height: auto;">
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 advantages-detail">
                     <h3>{{__('OTHER ADVANTAGES: ')}}</h3>
@@ -123,15 +125,15 @@
         <h3>Our Partners</h3>
         <div class="row">
             <div class="col-md-4 col-sm-12">
-                <img src="img/farabi_icon.png" style="height: 80px;" />
+                <img src="{{URL::asset('img/farabi_icon.png')}}" style="height: 80px;" />
                 <p >we use best tools for mining, because of that we scale easily</p>
             </div>
             <div class="col-md-4 col-sm-12">
-                <img src="img/farabi_icon.png" style="height: 80px;" />
+                <img src="{{URL::asset('img/farabi_icon.png')}}" style="height: 80px;" />
                 <p >we use best tools for mining, because of that we scale easily</p>
             </div>
             <div class="col-md-4 col-sm-12">
-                <img src="img/farabi_icon.png" style="height: 80px;" />
+                <img src="{{URL::asset('img/farabi_icon.png')}}" style="height: 80px;" />
                 <p >we use best tools for mining, because of that we scale easily</p>
             </div>
         </div>

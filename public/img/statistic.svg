@@ -1,0 +1,40 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 47.778 47.778">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        stroke: #0e2738;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0.1px;
+      }
+
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke-width: 0.25px;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="14.266" y1="23.889" x2="33.512" y2="23.889" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e8a524"/>
+      <stop offset="0.022" stop-color="#e9a823"/>
+      <stop offset="0.254" stop-color="#f2c119"/>
+      <stop offset="0.492" stop-color="#f9d40c"/>
+      <stop offset="0.737" stop-color="#fedf00"/>
+      <stop offset="1" stop-color="#ffe300"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="16.774" y1="23.317" x2="32.313" y2="23.317" xlink:href="#linear-gradient"/>
+  </defs>
+  <title>statistic</title>
+  <polygon class="cls-1" points="14.266 16.692 14.266 31.086 33.512 31.086 33.512 29.778 15.52 29.778 15.52 16.692 14.266 16.692"/>
+  <polygon class="cls-2" points="16.774 28.742 16.774 23.401 20.863 17.891 26.261 23.317 29.859 20.365 32.313 28.742 16.774 28.742"/>
+  <circle class="cls-3" cx="23.889" cy="23.889" r="23.764"/>
+</svg>

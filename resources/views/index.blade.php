@@ -105,18 +105,31 @@
         </div>
     </section>
   @endif
-    <section class="context-section pb-4 pt-4 pl-4 pr-4" style="color:#696967;">
+    <section class="context-section pb-4 pt-4 pl-4 pr-4 our-features" style="color:#696967;">
         <div class="row">
-            <div class="col-md-4 col-sm-12">
-                <h5 class="text-center">scalability</h5>
+            <div class="col-md-4 col-sm-12 text-center pb-4">
+                <!-- <h5 class="text-center">scalability</h5> -->
+                <img src="img/8Asset 2.svg"  />
                 <p >we use best tools for mining, because of that we scale easily</p>
             </div>
-            <div class="col-md-4 col-sm-12">
-                <h5 class="text-center">scalability</h5>
+            <div class="col-md-4 col-sm-12 text-center pb-4">
+                <img src="img/deposit-and-withdrawals.svg"  />
                 <p >we use best tools for mining, because of that we scale easily</p>
             </div>
-            <div class="col-md-4 col-sm-12">
-                <h5 class="text-center">scalability</h5>
+            <div class="col-md-4 col-sm-12 text-center pb-4">
+                <img src="img/hashbazaar-asic.svg"  />
+                <p >we use best tools for mining, because of that we scale easily</p>
+            </div>
+             <div class="col-md-4 col-sm-12 text-center pb-4">
+                <img src="img/security.svg"  />
+                <p >we use best tools for mining, because of that we scale easily</p>
+            </div>
+             <div class="col-md-4 col-sm-12 text-center pb-4">
+                <img src="img/statistic.svg"  />
+                <p >we use best tools for mining, because of that we scale easily</p>
+            </div>
+            <div class="col-md-4 col-sm-12 text-center pb-4">
+                <img src="img/group.svg"  />
                 <p >we use best tools for mining, because of that we scale easily</p>
             </div>
         </div>
@@ -210,6 +223,9 @@
          text-align: right;
       }
       .contact-form {direction: rtl;}
+      .our-features img {
+        height: 80px;
+      }
     </style>
     <script type="text/javascript">
       // console.log("js run");
@@ -234,6 +250,7 @@
       .invest-plan {
          text-align: left;
       }
+
     </style>
     <script type="text/javascript">
       // console.log("js run");

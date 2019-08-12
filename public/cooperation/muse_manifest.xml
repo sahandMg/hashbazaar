@@ -1,4 +1,4 @@
-<manifest alg="2" build="2017.0.2.363" opt="false" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="landingContainer.com" resolutions="1x" timestamp="1565465317838">
+<manifest alg="2" build="2017.0.2.363" opt="false" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="landingContainer.com" resolutions="1x" timestamp="1565610291252">
   <folder name="assets">
     <file name="logo.svg" crc="218083929" seo="true" mt="1564571325000"/>
     <file name="success.png" crc="3921043281" seo="true" mt="1555955233000"/>
@@ -7,8 +7,8 @@
   </folder>
   <folder name="css">
     <file name="site_global.css" crc="155373855"/>
-    <file name="index.css" crc="264659863" ref="index"/>
-    <file name="nomq_index.css" crc="3831926170" ref="index"/>
+    <file name="index.css" crc="4012127098" ref="index"/>
+    <file name="nomq_index.css" crc="303782899" ref="index"/>
   </folder>
   <folder name="fonts">
     <file name="btitrbold.woff" crc="389408755"/>
@@ -52,18 +52,17 @@
     <file name="rack_right3 (1)-u405-fr4.png" crc="4084270730" ref="index"/>
     <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr5.jpg" crc="406853111" ref="index"/>
     <file name="container_white-1024x576-1024x576 (1)-u178-fr3.png" crc="147169754" ref="index"/>
-    <file name="rack_right3 (1)-u405-fr5.png" crc="3812482310" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr5.png" crc="4100754724" ref="index"/>
     <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr6.jpg" crc="3928605305" ref="index"/>
     <file name="container_white-1024x576-1024x576 (1)-u178-fr4.png" crc="59700869" ref="index"/>
-    <file name="rack_right3 (1)-u405-fr6.png" crc="3992464866" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr6.png" crc="4095255338" ref="index"/>
     <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr7.jpg" crc="4019429667" ref="index"/>
     <file name="container_white-1024x576-1024x576 (1)-u178-fr5.png" crc="505877516" ref="index"/>
-    <file name="rack_right3 (1)-u405-fr7.png" crc="3915677969" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr7.png" crc="3946858314" ref="index"/>
     <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr8.jpg" crc="3799247878" ref="index"/>
     <file name="container_white-1024x576-1024x576 (1)-u178-fr6.png" crc="3802640577" ref="index"/>
-    <file name="rack_right3 (1)-u405-fr8.png" crc="218934288" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr8.png" crc="498857393" ref="index"/>
     <file name="4asset-2.svg" crc="3936045507" seo="true" ref="index">
-      <caption webpage="index" alt=""/>
       <caption webpage="index" alt=""/>
       <caption webpage="index" alt=""/>
       <caption webpage="index" alt=""/>
@@ -99,11 +98,9 @@
       <caption webpage="index" alt=""/>
       <caption webpage="index" alt=""/>
       <caption webpage="index" alt=""/>
-      <caption webpage="index" alt=""/>
     </file>
     <file name="5asset 1_poster_.png" crc="13319205" ref="index"/>
     <file name="3asset-1.svg" crc="4057518217" seo="true" ref="index">
-      <caption webpage="index" alt=""/>
       <caption webpage="index" alt=""/>
       <caption webpage="index" alt=""/>
       <caption webpage="index" alt=""/>
@@ -139,11 +136,10 @@
     <file name="hashbazaar-th_poster_u8172.png" crc="115895363" ref="index"/>
     <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr9.jpg" crc="68702169" ref="index"/>
     <file name="container_white-1024x576-1024x576 (1)-u178-fr7.png" crc="202775419" ref="index"/>
-    <file name="rack_right3 (1)-u405-fr9.png" crc="416739584" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr9.png" crc="133109223" ref="index"/>
     <file name="hashbazaar-bit.svg" crc="161465439" ref="index"/>
     <file name="hashbazaar-bit_poster_u9972.png" crc="306345427" ref="index"/>
     <file name="logo.svg" crc="218083929" seo="true" ref="index">
-      <caption webpage="index" alt=""/>
       <caption webpage="index" alt=""/>
       <caption webpage="index" alt=""/>
       <caption webpage="index" alt=""/>
@@ -179,11 +175,9 @@
       <caption webpage="index" alt=""/>
       <caption webpage="index" alt=""/>
       <caption webpage="index" alt=""/>
-      <caption webpage="index" alt=""/>
     </file>
     <file name="hashbazaar-twitter_poster_.png" crc="191952573" ref="index"/>
     <file name="hashbazaar-linkedin.svg" crc="464571133" seo="true" ref="index">
-      <caption webpage="index" alt=""/>
       <caption webpage="index" alt=""/>
       <caption webpage="index" alt=""/>
       <caption webpage="index" alt=""/>
@@ -219,7 +213,6 @@
       <caption webpage="index" alt=""/>
       <caption webpage="index" alt=""/>
       <caption webpage="index" alt=""/>
-      <caption webpage="index" alt=""/>
     </file>
     <file name="hashbazaar-instagram_poster_.png" crc="375801358" ref="index"/>
     <file name="hashbazaar-contact.svg" crc="516919049" ref="index"/>
@@ -228,26 +221,94 @@
     <file name="hashbazaar-email_poster_u12449.png" crc="192586606" ref="index"/>
     <file name="hashbazaar-location.svg" crc="4087253132" ref="index"/>
     <file name="hashbazaar-location_poster_u12505.png" crc="49677214" ref="index"/>
-    <file name="bitfury_secure_iceland_hover-u420-fr.jpg" crc="225639454" ref="index"/>
     <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr10.jpg" crc="4169783765" ref="index"/>
     <file name="container_white-1024x576-1024x576 (1)-u178-fr8.png" crc="278514781" ref="index"/>
-    <file name="rack_right3 (1)-u405-fr10.png" crc="4151880065" ref="index"/>
-    <file name="bitfury_secure_iceland_hover-u420-fr2.jpg" crc="4116023755" ref="index"/>
-    <file name="container_white-1024x576-1024x576 (1)-u178-fr9.png" crc="298245663" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr10.png" crc="531201931" ref="index"/>
+    <file name="container_white-1024x576-1024x576 (1)-u178-fr9.png" crc="3803469912" ref="index"/>
     <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr11.jpg" crc="3902901477" ref="index"/>
-    <file name="rack_right3 (1)-u405-fr11.png" crc="3792912029" ref="index"/>
-    <file name="container_white-1024x576-1024x576 (1)-u178-fr10.png" crc="3803469912" ref="index"/>
-    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr12.jpg" crc="3850425857" ref="index"/>
-    <file name="rack_right3 (1)-u405-fr12.png" crc="175714055" ref="index"/>
-    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr13.jpg" crc="4184765550" ref="index"/>
-    <file name="container_white-1024x576-1024x576 (1)-u178-fr11.png" crc="3901692471" ref="index"/>
-    <file name="rack_right3 (1)-u405-fr13.png" crc="4250013672" ref="index"/>
-    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr14.jpg" crc="152069330" ref="index"/>
-    <file name="rack_right3 (1)-u405-fr14.png" crc="3943073361" ref="index"/>
-    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr15.jpg" crc="3794320123" ref="index"/>
-    <file name="container_white-1024x576-1024x576 (1)-u178-fr12.png" crc="4294696380" ref="index"/>
-    <file name="rack_right3 (1)-u405-fr15.png" crc="4086738219" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr11.png" crc="305033743" ref="index"/>
+    <file name="container_white-1024x576-1024x576 (1)-u178-fr10.png" crc="3901692471" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr12.jpg" crc="4184765550" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr12.png" crc="45285712" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr13.jpg" crc="152069330" ref="index"/>
+    <file name="container_white-1024x576-1024x576 (1)-u178-fr11.png" crc="4294696380" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr13.png" crc="363411687" ref="index"/>
+    <file name="5500a9d776d3c764285288da63cb7a9e-u2390-fr14.jpg" crc="3794320123" ref="index"/>
+    <file name="rack_right3 (1)-u405-fr14.png" crc="4086738219" ref="index"/>
     <file name="favicon.ico" crc="389768270" ref="index"/>
+    <file name="ok8nal0.jpg" crc="452550057" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="rayanhamafza.png" crc="143445760" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="tadbir.svg" crc="3989962882" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="tadbir_poster_.png" crc="471270972" ref="index"/>
+    <file name="farabi_icon.png" crc="3877897947" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="ok8nal0-u19825-fr.jpg" crc="135321146" ref="index"/>
+    <file name="ok8nal0-u19825-fr2.jpg" crc="4069566835" ref="index"/>
+    <file name="farabi_icon-u18889-fr.png" crc="430388291" ref="index"/>
+    <file name="rayanhamafza-u18863-fr.png" crc="3976092549" ref="index"/>
+    <file name="ok8nal0-u19825-fr3.jpg" crc="3889966237" ref="index"/>
+    <file name="rayanhamafza-u18863-fr2.png" crc="7999933" ref="index"/>
+    <file name="ok8nal0-u19825-fr4.jpg" crc="71243917" ref="index"/>
+    <file name="rayanhamafza-u18863-fr3.png" crc="3901540612" ref="index"/>
+    <file name="farabi_icon-u18889-fr2.png" crc="439435884" ref="index"/>
+    <file name="ok8nal0-u19825-fr5.jpg" crc="203659123" ref="index"/>
+    <file name="rayanhamafza-u18863-fr4.png" crc="3794450198" ref="index"/>
+    <file name="farabi_icon-u18889-fr3.png" crc="115652773" ref="index"/>
+    <file name="ok8nal0-u19825-fr6.jpg" crc="396437189" ref="index"/>
+    <file name="rayanhamafza-u18863-fr5.png" crc="439646072" ref="index"/>
+    <file name="farabi_icon-u18889-fr4.png" crc="406812903" ref="index"/>
+    <file name="ok8nal0-u19825-fr7.jpg" crc="4067417615" ref="index"/>
+    <file name="rayanhamafza-u18863-fr6.png" crc="3849683311" ref="index"/>
+    <file name="farabi_icon-u18889-fr5.png" crc="43517612" ref="index"/>
+    <file name="ok8nal0-u19825-fr8.jpg" crc="141531008" ref="index"/>
+    <file name="rayanhamafza-u18863-fr7.png" crc="49566982" ref="index"/>
+    <file name="farabi_icon-u18889-fr6.png" crc="3887947883" ref="index"/>
+    <file name="ok8nal0-u19825-fr9.jpg" crc="222083659" ref="index"/>
+    <file name="rayanhamafza-u18863-fr8.png" crc="15601737" ref="index"/>
+    <file name="farabi_icon-u18889-fr7.png" crc="350317924" ref="index"/>
+    <file name="ok8nal0-u19825-fr10.jpg" crc="3762712956" ref="index"/>
+    <file name="rayanhamafza-u18863-fr9.png" crc="65306237" ref="index"/>
+    <file name="farabi_icon-u18889-fr8.png" crc="3760074738" ref="index"/>
+    <file name="ok8nal0-u19825-fr11.jpg" crc="181995922" ref="index"/>
+    <file name="rayanhamafza-u18863-fr10.png" crc="464629895" ref="index"/>
+    <file name="farabi_icon-u18889-fr9.png" crc="318772785" ref="index"/>
+    <file name="ok8nal0-u19825-fr12.jpg" crc="3797096878" ref="index"/>
+    <file name="rayanhamafza-u18863-fr11.png" crc="283641684" ref="index"/>
+    <file name="farabi_icon-u18889-fr10.png" crc="3921865356" ref="index"/>
+    <file name="ok8nal0-u19825-fr13.jpg" crc="3794246783" ref="index"/>
+    <file name="rayanhamafza-u18863-fr12.png" crc="405231165" ref="index"/>
+    <file name="farabi_icon-u18889-fr11.png" crc="17963077" ref="index"/>
+    <file name="ok8nal0-u19825-fr14.jpg" crc="379719503" ref="index"/>
+    <file name="rayanhamafza-u18863-fr13.png" crc="3901068298" ref="index"/>
+    <file name="farabi_icon-u18889-fr12.png" crc="4230196569" ref="index"/>
+    <file name="ok8nal0-u19825-fr15.jpg" crc="3925943291" ref="index"/>
+    <file name="rayanhamafza-u18863-fr14.png" crc="461497768" ref="index"/>
+    <file name="farabi_icon-u18889-fr13.png" crc="341835580" ref="index"/>
   </folder>
-  <file name="index.html" crc="409643915" seo="true" mt="1565465283558" redirect="true"/>
+  <file name="index.html" crc="292338393" seo="true" mt="1565610207089" redirect="true"/>
 </manifest>

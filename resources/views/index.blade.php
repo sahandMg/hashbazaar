@@ -36,7 +36,7 @@
             </div>
         </div>
     </header>
-    <section class="backgroundGrey pt-4 pb-4 " style="padding-top: 4%;color: #707070;">
+    <section  id="sharePlan" class="backgroundGrey pt-4 pb-4 " style="padding-top: 4%;color: #707070;">
        <div class="text-center mb-4">
             <h3 class="fontTheme">{{__('CHOOSE YOUR INVESTMENT PLAN')}}</h3>
         </div>
@@ -49,11 +49,11 @@
                 <hr/>
                 <p>تفاوت مذکور در مورد درصد کسر شده با توجه به نسبت توان پردازش دستگاه به میزان مصرف برق آن تعیین می گردد.</p>
                 <div class="text-center mt-1 mb-1">
-                   <button class="btn btn-primary round-button-com" onclick="btnHidden(event)"  type="submit" style="width: 120px">واگذاری دستگاه</button>
+                   <button class="btn btn-primary round-button-com" onclick="getDevices(event)"  type="button" style="width: 120px">واگذاری دستگاه</button>
                 </div>
               </div>
-            <!-- </div> -->
-            <!-- <div class="col-md-4 col-sm-12"> -->
+            <!-- </div>
+            <div class="col-md-4 col-sm-12"> -->
               <div class="ContentSmallSize p-4">
                 <h5 class="text-center mb-2">طرح کلاسیک</h5>
                 <p class="text-center">1 تراهش = 1 ملیون تومان</p>
@@ -64,7 +64,7 @@
                 <hr/>
                 <p>برای سفارش بیش از 100 تراهش به قسمت <a href="">همکاری سازمانی سایت</a> مراجعه فرمائید.</p>
                 <div class="text-center mt-1 mb-1">
-                  <button class="btn btn-primary round-button-com" onclick="btnHidden(event)"  type="submit" style="width: 120px">خرید</button>
+                  <a class="btn btn-primary round-button-com"   href="" style="width: 120px">خرید</a>
                 </div>
               </div>
             <!-- </div> -->
@@ -79,14 +79,43 @@
                 <hr/>
                 <p>برای سفارش بیش از 100 تراهش به قسمت <a href="">همکاری سازمانی سایت</a> مراجعه فرمائید.</p>
                 <div class="text-center mt-1 mb-1">
-                  <button class="btn btn-primary round-button-com" onclick="btnHidden(event)"  type="submit" style="width: 120px">خرید</button>
+                  <a class="btn btn-primary round-button-com"  href="" style="width: 120px">خرید</a>
                 </div>
               </div>
             <!-- </div> -->
           </div>
         </div>
     </section>
-    <section  id="sharePlan" class="text-center" style="padding-top: 4%;color: #707070;">
+    <section class="context-section pb-4 pt-4 pl-4 pr-4 our-features" style="color:#696967;">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 text-center pb-4">
+                <!-- <h5 class="text-center">scalability</h5> -->
+                <img src="img/8Asset 2.svg"  />
+                <p>راه اندازی سریع</p>
+            </div>
+            <div class="col-md-4 col-sm-12 text-center pb-4">
+                <img src="img/deposit-and-withdrawals.svg"  />
+                <p>واریز سریع سود کسب شده</p>
+            </div>
+            <div class="col-md-4 col-sm-12 text-center pb-4">
+                <img src="img/hashbazaar-asic.svg"  />
+                <p >استفاده از جدید ترین سخت افزارها</p>
+            </div>
+             <div class="col-md-4 col-sm-12 text-center pb-4">
+                <img src="img/security.svg"  />
+                <p>تضمین امنیت سرویس های ما</p>
+            </div>
+             <div class="col-md-4 col-sm-12 text-center pb-4">
+                <img src="img/statistic.svg"  />
+                <p >مشاهد سود روزانه در پنل کاربر</p>
+            </div>
+            <div class="col-md-4 col-sm-12 text-center pb-4">
+                <img src="img/group.svg"  />
+                <p>دارای تیم فنی مجرب</p>
+            </div>
+        </div>
+    </section>
+    <!-- <section  id="sharePlan" class="text-center" style="padding-top: 4%;color: #707070;">
         <div>
             <h3 class="fontTheme">{{__('CHOOSE YOUR INVESTMENT PLAN')}}</h3>
         </div>
@@ -115,10 +144,10 @@
             </div>
            </form>
         </div>
-    </section>
+    </section> -->
   @if(Config::get('app.locale') == 'fa')
   <section class="context-section backgroundGrey text-center pt-4 pb-4 advantages" style="color: #707070;padding: 2%;"  >
-    <img id="price" alt="electricity price" src="{{URL::asset('img/workflow.png')}}" style="width: 100%;height: auto;">
+    <img id="price" alt="electricity price" src="{{URL::asset('img/workflow.png')}}" style="width: 100%;height: auto;" />
   </section>
   @else
     <section class="context-section backgroundGrey text-center pt-4 pb-4 advantages" style="color: #707070"  >
@@ -155,35 +184,7 @@
         </div>
     </section>
   @endif
-    <section class="context-section pb-4 pt-4 pl-4 pr-4 our-features" style="color:#696967;">
-        <div class="row">
-            <div class="col-md-4 col-sm-12 text-center pb-4">
-                <!-- <h5 class="text-center">scalability</h5> -->
-                <img src="img/8Asset 2.svg"  />
-                <p>راه اندازی سریع</p>
-            </div>
-            <div class="col-md-4 col-sm-12 text-center pb-4">
-                <img src="img/deposit-and-withdrawals.svg"  />
-                <p>واریز سریع سود کسب شده</p>
-            </div>
-            <div class="col-md-4 col-sm-12 text-center pb-4">
-                <img src="img/hashbazaar-asic.svg"  />
-                <p >استفاده از جدید ترین سخت افزارها</p>
-            </div>
-             <div class="col-md-4 col-sm-12 text-center pb-4">
-                <img src="img/security.svg"  />
-                <p>تضمین امنیت سرویس های ما</p>
-            </div>
-             <div class="col-md-4 col-sm-12 text-center pb-4">
-                <img src="img/statistic.svg"  />
-                <p >مشاهد سود روزانه در پنل کاربر</p>
-            </div>
-            <div class="col-md-4 col-sm-12 text-center pb-4">
-                <img src="img/group.svg"  />
-                <p>دارای تیم فنی مجرب</p>
-            </div>
-        </div>
-    </section>
+    
     <section class="partners context-section pb-4 pt-4 pl-4 pr-4 backgroundGrey text-center">
         <h3>همکاران ما</h3>
         <div class="row">
@@ -243,13 +244,33 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <div>
+            <div id="welcomeHashBazaar">
                 <h2 class="text-center">Welcome to Hashbazaar</h2>
                 <br/>
                 <h4 class="text-center">We help you to invest in bitcoin mining.</h4>
                 <br/>
                 <p class="text-center">You are invited by <b> {{isset($name)?$name:'noBody'}}</b> so you can utilize {{$settings->sharing_discount * 100}}% discount for your first order.</p>
                 <p class="text-center">Nice to have you in our cryptocurrency investment community.</p>
+            </div>
+            <div id="hosting" style="direction: rtl;text-align: right;">
+                <h4 class="text-center">لطفا اطلاعات زیر را کامل کنید تا کارشناسان ما در اسرع وقت با شما تماس بگیرند یا با شماره 09371869568 تماس بگیرید.</h4>
+                <form>
+                  <div class="form-group">
+                     <label >نام :</label>
+                     <input type="text" class="form-control" >
+                  </div> 
+                  <div class="form-group">
+                     <label >شماره تلفن :</label>
+                     <input type="text" class="form-control" >
+                  </div> 
+                  <div class="form-group">
+                     <label >نوع و تعداد دستگاه ها :</label>
+                     <textarea class="form-control" rows="4"></textarea>
+                  </div> 
+                  <div class="text-center mt-1 mb-1">
+                     <button class="btn btn-primary round-button-com" type="submit" style="width: 120px">ثبت</button>
+                </div>
+                </form>
             </div>
         </div>
 
@@ -493,7 +514,7 @@
         // blade if for detecting link
 
         if({!! json_encode(isset($name)) !!}){
-
+            $('#hosting').hide();
             modal.style.display = "block";
         }
 
@@ -519,6 +540,12 @@
             if (event.target == modal) {
                 modal.style.display = "none";
             }
+        }
+
+        function getDevices(event) {
+            $('#welcomeHashBazaar').hide();
+            $('#hosting').show();
+            modal.style.display = "block";
         }
         // document.getElementById("registerButton").addEventListener("click", registerButtonFunction);
         // function registerButtonFunction() {

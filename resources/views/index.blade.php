@@ -36,7 +36,86 @@
             </div>
         </div>
     </header>
-    <section  id="sharePlan" class="text-center" style="padding-top: 4%;color: #707070;">
+    <section  id="sharePlan" class="backgroundGrey pt-4 pb-4 " style="padding-top: 4%;color: #707070;">
+       <div class="text-center mb-4">
+            <h3 class="fontTheme">{{__('CHOOSE YOUR INVESTMENT PLAN')}}</h3>
+        </div>
+        <div class="container" style="direction: rtl;">
+          <div class="d-flex justify-content-between">
+            <!-- <div class="col-md-4 col-sm-12"> -->
+              <div class="ContentSmallSize p-4">
+                <h5 class="text-center mb-2">واگذاری دستگاه</h5>
+                <p>بسته به نوع دستگاه بین 30 تا 40 درصد از درآمد بیت کوین حاصله بابت هاستینگ (هزینه برق، نگهداری و سرویس دستگاه) کسر می شود و مابقی به کیف پول شما واریز می گردد.</p>
+                <hr/>
+                <p>تفاوت مذکور در مورد درصد کسر شده با توجه به نسبت توان پردازش دستگاه به میزان مصرف برق آن تعیین می گردد.</p>
+                <div class="text-center mt-1 mb-1">
+                   <button class="btn btn-primary round-button-com" onclick="getDevices(event)"  type="button" style="width: 120px">واگذاری دستگاه</button>
+                </div>
+              </div>
+            <!-- </div>
+            <div class="col-md-4 col-sm-12"> -->
+              <div class="ContentSmallSize p-4">
+                <h5 class="text-center mb-2">طرح کلاسیک</h5>
+                <p class="text-center">1 تراهش = 1 ملیون تومان</p>
+                <hr/>
+                <p>هزینه نگهداری: 1050 تومان برای هر روز به ازای هر تراهش</p>
+                <hr/>
+                <p>مدت قرار داد: دو سال </p>
+                <hr/>
+                <p>برای سفارش بیش از 100 تراهش به قسمت <a href="">همکاری سازمانی سایت</a> مراجعه فرمائید.</p>
+                <div class="text-center mt-1 mb-1">
+                  <a class="btn btn-primary round-button-com"   href="" style="width: 120px">خرید</a>
+                </div>
+              </div>
+            <!-- </div> -->
+            <!-- <div class="col-md-4 col-sm-12"> -->
+              <div class="ContentSmallSize p-4">
+                <h5 class="text-center mb-2">طرح کلاسیک صفر</h5>
+                <p class="text-center">1 تراهش = 1 ملیون و 600 هزار تومان</p>
+                <hr/>
+                <p>هزینه نگهداری: صفر تومان</p>
+                <hr/>
+                <p>مدت قرار داد: دو سال </p>
+                <hr/>
+                <p>برای سفارش بیش از 100 تراهش به قسمت <a href="">همکاری سازمانی سایت</a> مراجعه فرمائید.</p>
+                <div class="text-center mt-1 mb-1">
+                  <a class="btn btn-primary round-button-com"  href="" style="width: 120px">خرید</a>
+                </div>
+              </div>
+            <!-- </div> -->
+          </div>
+        </div>
+    </section>
+    <section class="context-section pb-4 pt-4 pl-4 pr-4 our-features" style="color:#696967;">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 text-center pb-4">
+                <!-- <h5 class="text-center">scalability</h5> -->
+                <img src="img/8Asset 2.svg"  />
+                <p>راه اندازی سریع</p>
+            </div>
+            <div class="col-md-4 col-sm-12 text-center pb-4">
+                <img src="img/deposit-and-withdrawals.svg"  />
+                <p>واریز سریع سود کسب شده</p>
+            </div>
+            <div class="col-md-4 col-sm-12 text-center pb-4">
+                <img src="img/hashbazaar-asic.svg"  />
+                <p >استفاده از جدید ترین سخت افزارها</p>
+            </div>
+             <div class="col-md-4 col-sm-12 text-center pb-4">
+                <img src="img/security.svg"  />
+                <p>تضمین امنیت سرویس های ما</p>
+            </div>
+             <div class="col-md-4 col-sm-12 text-center pb-4">
+                <img src="img/statistic.svg"  />
+                <p >مشاهد سود روزانه در پنل کاربر</p>
+            </div>
+            <div class="col-md-4 col-sm-12 text-center pb-4">
+                <img src="img/group.svg"  />
+                <p>دارای تیم فنی مجرب</p>
+            </div>
+        </div>
+    </section>
+    <!-- <section  id="sharePlan" class="text-center" style="padding-top: 4%;color: #707070;">
         <div>
             <h3 class="fontTheme">{{__('CHOOSE YOUR INVESTMENT PLAN')}}</h3>
         </div>
@@ -65,12 +144,10 @@
             </div>
            </form>
         </div>
-    </section>
+    </section> -->
   @if(Config::get('app.locale') == 'fa')
   <section class="context-section backgroundGrey text-center pt-4 pb-4 advantages" style="color: #707070;padding: 2%;"  >
-    <img id="price" alt="electricity price" src="{{URL::asset('img/workflow.png')}}" style="width: 100%;height: auto;">
-{{--      <img id="price" alt="electricity price" src="{{URL::asset('img/workflow_small.png')}}" style="width: 100%;height: auto;">--}}
-
+    <img id="price" alt="electricity price" src="{{URL::asset('img/workflow.png')}}" style="width: 100%;height: auto;" />
   </section>
   @else
     <section class="context-section backgroundGrey text-center pt-4 pb-4 advantages" style="color: #707070"  >
@@ -107,35 +184,7 @@
         </div>
     </section>
   @endif
-    <section class="context-section pb-4 pt-4 pl-4 pr-4 our-features" style="color:#696967;">
-        <div class="row">
-            <div class="col-md-4 col-sm-12 text-center pb-4">
-                <!-- <h5 class="text-center">scalability</h5> -->
-                <img src="img/8Asset 2.svg"  />
-                <p>راه اندازی سریع</p>
-            </div>
-            <div class="col-md-4 col-sm-12 text-center pb-4">
-                <img src="img/deposit-and-withdrawals.svg"  />
-                <p>واریز سریع سود کسب شده</p>
-            </div>
-            <div class="col-md-4 col-sm-12 text-center pb-4">
-                <img src="img/hashbazaar-asic.svg"  />
-                <p >استفاده از جدید ترین سخت افزارها</p>
-            </div>
-             <div class="col-md-4 col-sm-12 text-center pb-4">
-                <img src="img/security.svg"  />
-                <p>تضمین امنیت سرویس های ما</p>
-            </div>
-             <div class="col-md-4 col-sm-12 text-center pb-4">
-                <img src="img/statistic.svg"  />
-                <p >مشاهد سود روزانه در پنل کاربر</p>
-            </div>
-            <div class="col-md-4 col-sm-12 text-center pb-4">
-                <img src="img/group.svg"  />
-                <p>دارای تیم فنی مجرب</p>
-            </div>
-        </div>
-    </section>
+    
     <section class="partners context-section pb-4 pt-4 pl-4 pr-4 backgroundGrey text-center">
         <h3>همکاران ما</h3>
         <div class="row">
@@ -195,7 +244,7 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <div>
+            <div id="welcomeHashBazaar">
                 <h2 class="text-center">Welcome to Hashbazaar</h2>
                 <br/>
                 <h4 class="text-center">We help you to invest in bitcoin mining.</h4>
@@ -203,9 +252,92 @@
                 <p class="text-center">You are invited by <b> {{isset($name)?$name:'noBody'}}</b> so you can utilize {{$settings->sharing_discount * 100}}% discount for your first order.</p>
                 <p class="text-center">Nice to have you in our cryptocurrency investment community.</p>
             </div>
+            <div id="hosting" style="direction: rtl;text-align: right;">
+                <h4 class="text-center">لطفا اطلاعات زیر را کامل کنید تا کارشناسان ما در اسرع وقت با شما تماس بگیرند یا با شماره 09371869568 تماس بگیرید.</h4>
+                <form>
+                  <div class="form-group">
+                     <label >نام :</label>
+                     <input type="text" class="form-control" >
+                  </div> 
+                  <div class="form-group">
+                     <label >شماره تلفن :</label>
+                     <input type="text" class="form-control" >
+                  </div> 
+                  <div class="form-group">
+                     <label >نوع و تعداد دستگاه ها :</label>
+                     <textarea class="form-control" rows="4"></textarea>
+                  </div> 
+                  <div class="text-center mt-1 mb-1">
+                     <button class="btn btn-primary round-button-com" type="submit" style="width: 120px">ثبت</button>
+                </div>
+                </form>
+            </div>
         </div>
 
     </div>
+    <style type="text/css">
+    .posts {margin-top: 120px;}
+    .ContentSmallSize {
+    flex: 0 1 calc(25% - 1em);
+    text-align: right;
+    margin-bottom: 1%;
+    background-color: white;
+    color: black;
+}
+
+.ContentSmallSize:hover {
+    top: -2px;
+    /*box-shadow: 0 4px 5px rgba(0,0,0,0.2);*/
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+@media screen and (max-width: 768px) {
+    .ContentSmallSize {
+        flex: 0 1 calc(50% - 1em);
+    }
+}
+@media screen and (max-width: 600px) {
+    .ContentSmallSize {
+        flex: 0 1 calc(100% - 1.5em);
+        margin-bottom: 4%;
+    }
+}
+@media screen and (max-width: 414px) {
+    .ContentSmallSize h3 {
+        font-size: 1.3rem;
+}
+    .ContentSmallSize p {
+        font-size: 1rem;
+    }
+}
+
+.ContentSmallSize figure {
+   position: relative;
+}
+.ContentSmallSize figcaption {
+    position: absolute;
+    top: 180px;
+    color: white;
+    background-color: black;
+    padding: 4px 8px;
+    font-size: 100%;
+    font-weight: 400;
+}
+.ContentSmallSize h3 {
+    color: black;
+}
+.ContentSmallSize span {
+    color: #999999;
+}
+.ContentSmallSize p {
+    color: black;
+}
+.ContentSmallSize div {
+    padding: 1% 2%;
+}
+
+
+</style>
     @if(Config::get('app.locale') == 'fa')
     <style type="text/css">
       .invest-plan {
@@ -382,7 +514,7 @@
         // blade if for detecting link
 
         if({!! json_encode(isset($name)) !!}){
-
+            $('#hosting').hide();
             modal.style.display = "block";
         }
 
@@ -408,6 +540,12 @@
             if (event.target == modal) {
                 modal.style.display = "none";
             }
+        }
+
+        function getDevices(event) {
+            $('#welcomeHashBazaar').hide();
+            $('#hosting').show();
+            modal.style.display = "block";
         }
         // document.getElementById("registerButton").addEventListener("click", registerButtonFunction);
         // function registerButtonFunction() {

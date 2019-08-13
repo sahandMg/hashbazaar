@@ -762,7 +762,7 @@ body, html {
 
 /*---------------------------------------------*/
 .limiter a {
-    font-family: Ubuntu-Regular;
+    /*font-family: Ubuntu-Regular;*/
     font-size: 14px;
     line-height: 1.7;
     color: #666666;
@@ -856,21 +856,21 @@ body, html {
 /*//////////////////////////////////////////////////////////////////
 [ Utility ]*/
 .txt1 {
-  font-family: Ubuntu-Regular;
+  /*font-family: Ubuntu-Regular;*/
   font-size: 15px;
   color: #999999;
   line-height: 1.4;
 }
 
 .txt2 {
-  font-family: Ubuntu-Regular;
+  /*font-family: Ubuntu-Regular;*/
   font-size: 15px;
   color: #57b846;
   line-height: 1.4;
 }
 
 .txt3 {
-  font-family: Ubuntu-Bold;
+  /*font-family: Ubuntu-Bold;*/
   font-size: 15px;
   color: #57b846;
   line-height: 1.4;
@@ -940,7 +940,7 @@ body, html {
 }
 
 .login100-form-title {
-  font-family: JosefinSans-Bold;
+  /*font-family: JosefinSans-Bold;*/
   font-size: 30px;
   color: #fff;
   line-height: 1.2;
@@ -968,7 +968,7 @@ body, html {
 }
 
 .input100 {
-  font-family: Ubuntu-Bold;
+  /*font-family: Ubuntu-Bold;*/
   font-size: 15px;
   color: #1b3815;
   line-height: 1.2;

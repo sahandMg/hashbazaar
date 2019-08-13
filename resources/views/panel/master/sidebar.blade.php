@@ -1,5 +1,3 @@
-
-
 <!-- Container -->
 <div class="mainContainer">
 

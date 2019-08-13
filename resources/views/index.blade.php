@@ -191,9 +191,9 @@
     </section>
   @endif
     <section class="context-section invest-comparision text-center pt-4 pb-4 pr-4 pl-4" style="direction: rtl;color: #707070;">
-        <h3>مقایسه سرمایه گذاری در ماینینگ با سایر فرصت های سرمایه گذاری</h3>
-        <div class="row">  
-          <div class="col-md-5 col-sm-12">
+        <h3>مقایسه سرمایه گذاری در ماینینگ با سایر فرصت ها</h3>
+        <div class="row mt-4">  
+          <div class="col-md-5 col-sm-12 ">
               <p>بازده سرمایه گذاری در صنعت ماینینگ علی رغم حیات کوتاه آن نسبت به سایر فرصت های سرمایه گذاری معمول در داخل کشور بسیار قابل توجه است. برای مقایسه ی بازده سرمایه گذاری در این صنعت در مقایسه با سایر فرصت های سرمایه گذاری ، اقدام به جمع آوری داده های مربوطه از بانک مرکزی جمهوری اسلامی ایران و محاسبه ی میانگین نرخ بازده سرمایه گذاری این موارد شده است. نتایج تحلیل این داده ها در جدول زیر در فاصله سال های 1370 تا 1396 ارائه شده است.</p>
           </div>
           <div class="col-md-7 col-sm-12 text-center">
@@ -310,7 +310,7 @@
 .invest-comparision img {
     width: 100%; height: auto;
 }
-
+.invest-comparision p {margin-top: 60px; text-align: justify;}
 @media screen and (max-width: 768px) {
     .ContentSmallSize {
         flex: 0 1 calc(50% - 1em);
@@ -322,7 +322,8 @@
         margin-bottom: 4%;
     }
 }
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 415px) {
+    .invest-comparision p {margin-top: 0px;}
     .ContentSmallSize h3 {
         font-size: 1.3rem;
 }

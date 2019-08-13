@@ -1,0 +1,139 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 522.004 486.639">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-1, .cls-10, .cls-3, .cls-5, .cls-7, .cls-8, .cls-9 {
+        stroke: #000;
+      }
+
+      .cls-1, .cls-10, .cls-3, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        font-size: 22.1px;
+        font-family: MyriadPro-Regular, Myriad Pro;
+      }
+
+      .cls-11, .cls-2, .cls-4 {
+        fill: #231f20;
+      }
+
+      .cls-3 {
+        fill: #f05033;
+      }
+
+      .cls-10, .cls-3, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
+        stroke-width: 0.5px;
+      }
+
+      .cls-4 {
+        font-size: 12px;
+      }
+
+      .cls-11, .cls-4 {
+        font-family: BYekan, B Yekan;
+      }
+
+      .cls-5 {
+        fill: #fee600;
+      }
+
+      .cls-6 {
+        fill: #5ecae8;
+        stroke: #231f20;
+      }
+
+      .cls-7 {
+        fill: #86888a;
+      }
+
+      .cls-8 {
+        fill: #60bb46;
+      }
+
+      .cls-9 {
+        fill: #2b348f;
+      }
+
+      .cls-10 {
+        fill: #fbb040;
+      }
+
+      .cls-11 {
+        font-size: 20px;
+      }
+    </style>
+  </defs>
+  <title>hashbazaar_chart</title>
+  <g>
+    <g>
+      <line class="cls-1" x1="50.04" y1="436.869" x2="521.504" y2="436.869"/>
+      <g>
+        <line class="cls-1" x1="50.04" y1="436.869" x2="50.04" y2="426.278"/>
+        <line class="cls-1" x1="117.392" y1="436.869" x2="117.392" y2="426.278"/>
+        <line class="cls-1" x1="184.744" y1="436.869" x2="184.744" y2="426.278"/>
+        <line class="cls-1" x1="252.096" y1="436.869" x2="252.096" y2="426.278"/>
+        <line class="cls-1" x1="319.448" y1="436.869" x2="319.448" y2="426.278"/>
+        <line class="cls-1" x1="386.8" y1="436.869" x2="386.8" y2="426.278"/>
+        <line class="cls-1" x1="454.152" y1="436.869" x2="454.152" y2="426.278"/>
+        <line class="cls-1" x1="521.504" y1="436.869" x2="521.504" y2="426.278"/>
+      </g>
+    </g>
+    <g>
+      <g>
+        <text class="cls-2" transform="translate(11.337 445.156)">0</text>
+        <text class="cls-2" transform="translate(0 360.429)">10</text>
+        <text class="cls-2" transform="translate(0 275.701)">20</text>
+        <text class="cls-2" transform="translate(0 190.974)">30</text>
+        <text class="cls-2" transform="translate(0 106.246)">40</text>
+        <text class="cls-2" transform="translate(0 21.518)">50</text>
+      </g>
+      <line class="cls-1" x1="50.04" y1="436.869" x2="50.04" y2="13.231"/>
+      <g>
+        <line class="cls-1" x1="50.04" y1="436.869" x2="61.827" y2="436.869"/>
+        <line class="cls-1" x1="50.04" y1="352.141" x2="61.827" y2="352.141"/>
+        <line class="cls-1" x1="50.04" y1="267.413" x2="61.827" y2="267.413"/>
+        <line class="cls-1" x1="50.04" y1="182.686" x2="61.827" y2="182.686"/>
+        <line class="cls-1" x1="50.04" y1="97.958" x2="61.827" y2="97.958"/>
+        <line class="cls-1" x1="50.04" y1="13.231" x2="61.827" y2="13.231"/>
+      </g>
+    </g>
+    <g>
+      <rect class="cls-3" x="130.562" y="191.159" width="48.493" height="245.71"/>
+      <text class="cls-4" transform="translate(128.428 460.385)">لک صخاش<tspan x="8.37" y="14.399"> </tspan><tspan x="11.118" y="14.399">سروب</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-5" x="199.357" y="260.635" width="48.493" height="176.233"/>
+      <text class="cls-4" transform="translate(198.36 460.385)">حرط هکس<tspan x="40.834" y="0"> </tspan><tspan x="8.701" y="14.399">میدق</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-6" x="64.174" y="272.497" width="48.493" height="164.371"/>
+      <text class="cls-4" transform="translate(77.896 460.385)">مروت</text>
+    </g>
+    <g>
+      <rect class="cls-7" x="263.315" y="280.123" width="48.493" height="156.746"/>
+      <text class="cls-4" transform="translate(269.891 460.385)">نکسم</text>
+    </g>
+    <g>
+      <rect class="cls-8" x="329.112" y="311.472" width="48.493" height="125.397"/>
+      <text class="cls-4" transform="translate(344.833 460.385)">رلد</text>
+    </g>
+    <g>
+      <rect class="cls-9" x="396.347" y="354.683" width="48.493" height="82.186"/>
+      <text class="cls-4" transform="translate(406.226 460.385)">هدرپس<tspan x="28.734" y="0"> </tspan><tspan x="2.827" y="14.4">یکناب</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-10" x="463.581" y="13.231" width="48.493" height="423.638"/>
+      <text class="cls-4" transform="translate(469.743 460.385)">گنینیام<tspan x="-0.322" y="14.4">نیوکتیب</tspan></text>
+    </g>
+    <text class="cls-11" transform="translate(25.277 17.6)">%</text>
+    <text class="cls-11" transform="translate(25.277 102.328)">%</text>
+    <text class="cls-11" transform="translate(25.277 187.055)">%</text>
+    <text class="cls-11" transform="translate(25.277 271.783)">%</text>
+    <text class="cls-11" transform="translate(25.277 356.51)">%</text>
+  </g>
+</svg>

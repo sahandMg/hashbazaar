@@ -148,6 +148,7 @@
   @if(Config::get('app.locale') == 'fa')
   <section class="context-section backgroundGrey text-center pt-4 pb-4 advantages" style="color: #707070;padding: 2%;"  >
     <img id="price" alt="electricity price" src="{{URL::asset('img/workflow.png')}}" style="width: 100%;height: auto;" />
+    <img id="workflow_small" alt="electricity price" src="{{URL::asset('img/workflow_small.png')}}" style="width: 100%;height: auto;" />
   </section>
   @else
     <section class="context-section backgroundGrey text-center pt-4 pb-4 advantages" style="color: #707070"  >
@@ -184,7 +185,11 @@
         </div>
     </section>
   @endif
-    
+    <section class="context-section invest-comparision">
+        <div class="text-center">
+            <img src="img/hashbazaar-chart.png">
+        </div>
+    </section>
     <section class="partners context-section pb-4 pt-4 pl-4 pr-4 backgroundGrey text-center">
         <h3>همکاران ما</h3>
         <div class="row">
@@ -289,6 +294,10 @@
     top: -2px;
     /*box-shadow: 0 4px 5px rgba(0,0,0,0.2);*/
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.invest-comparision img {
+    height: 400px;width: auto;
 }
 
 @media screen and (max-width: 768px) {

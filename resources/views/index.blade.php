@@ -41,7 +41,7 @@
             <h3 class="fontTheme">{{__('CHOOSE YOUR INVESTMENT PLAN')}}</h3>
         </div>
         <div class="container" style="direction: rtl;">
-          <div class="d-flex justify-content-between">
+          <div class="d-flex flex-wrap justify-content-between">
             <!-- <div class="col-md-4 col-sm-12"> -->
               <div class="ContentSmallSize p-4">
                 <h5 class="text-center mb-2">واگذاری دستگاه</h5>
@@ -190,9 +190,15 @@
         </div>
     </section>
   @endif
-    <section class="context-section invest-comparision">
-        <div class="text-center">
+    <section class="context-section invest-comparision text-center pt-4 pb-4 pr-4 pl-4" style="direction: rtl;color: #707070;">
+        <h3>مقایسه سرمایه گذاری در ماینینگ با سایر فرصت های سرمایه گذاری</h3>
+        <div class="row">  
+          <div class="col-md-5 col-sm-12">
+              <p>بازده سرمایه گذاری در صنعت ماینینگ علی رغم حیات کوتاه آن نسبت به سایر فرصت های سرمایه گذاری معمول در داخل کشور بسیار قابل توجه است. برای مقایسه ی بازده سرمایه گذاری در این صنعت در مقایسه با سایر فرصت های سرمایه گذاری ، اقدام به جمع آوری داده های مربوطه از بانک مرکزی جمهوری اسلامی ایران و محاسبه ی میانگین نرخ بازده سرمایه گذاری این موارد شده است. نتایج تحلیل این داده ها در جدول زیر در فاصله سال های 1370 تا 1396 ارائه شده است.</p>
+          </div>
+          <div class="col-md-7 col-sm-12 text-center">
             <img src="img/hashbazaar-chart.png">
+          </div>
         </div>
     </section>
     <section class="partners context-section pb-4 pt-4 pl-4 pr-4 backgroundGrey text-center">
@@ -302,7 +308,7 @@
 }
 
 .invest-comparision img {
-    height: 400px;width: auto;
+    width: 100%; height: auto;
 }
 
 @media screen and (max-width: 768px) {

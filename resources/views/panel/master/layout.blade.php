@@ -228,7 +228,10 @@
         <ul class="mainList">
 
             <li class="navbar"> <a href="http://hashbazaar.com"><img class="Logo_In_NavBar" src="{{URL::asset('img/Logo_In_NavBar.svg')}}" alt="Logo_In_NavBar"></a>
-                <a href="" id="welcome">{{Auth::guard('user')->user()->name}}</a> </li>
+                <a href="" id="welcome">{{Auth::guard('user')->user()->name}} <br>
+                    {{Auth::guard('user')->user()->plan->name}}
+                </a> </li>
+
             <li class="{{request()->route()->getName() =='dashboard'?'sub dashboard activeLink':'sub dashboard'}}"> <a href="{{route('dashboard',['locale'=>session('locale')])}}" id="dashboard">{{__("Dashboard")}}</a></li>
             <li class="{{request()->route()->getName() =='activity'?'sub dashboard activeLink':'sub dashboard'}}"> <a href="{{route('activity',['locale'=>session('locale')])}}" id="activity">{{__("Activity")}}</a></li>
         @if(Config::get('app.locale') == 'fa')

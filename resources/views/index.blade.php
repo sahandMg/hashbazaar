@@ -56,30 +56,30 @@
             <div class="col-md-4 col-sm-12"> -->
               <div class="ContentSmallSize p-4">
                 <h5 class="text-center mb-2">طرح کلاسیک</h5>
-                <p class="text-center">1 تراهش = 1 ملیون تومان</p>
+                <p class="text-center">1 تراهش = {{$settings->usd_toman * $settings->usd_per_hash}} تومان</p>
                 <hr/>
-                <p>هزینه نگهداری: 1050 تومان برای هر روز به ازای هر تراهش</p>
+                <p> هزینه نگهداری: {{ round($settings->maintenance_fee_per_th_per_day * $settings->usd_toman)}} تومان برای هر روز به ازای هر تراهش</p>
                 <hr/>
-                <p>مدت قرار داد: دو سال </p>
+                <p>مدت قرار داد: {{$settings->hash_life}} سال </p>
                 <hr/>
-                <p>برای سفارش بیش از 100 تراهش به قسمت <a href="">همکاری سازمانی سایت</a> مراجعه فرمائید.</p>
+                <p>برای سفارش بیش از 100 تراهش به قسمت <a href="{{url('/cooperation')}}">همکاری سازمانی سایت</a> مراجعه فرمائید.</p>
                 <div class="text-center mt-1 mb-1">
-                  <a class="btn btn-primary round-button-com"   href="" style="width: 120px">خرید</a>
+                  <a class="btn btn-primary round-button-com"   href="{{route('signup',['locale'=>session('locale')]).'?plan=classic'}}" style="width: 120px">خرید</a>
                 </div>
               </div>
             <!-- </div> -->
             <!-- <div class="col-md-4 col-sm-12"> -->
               <div class="ContentSmallSize p-4">
                 <h5 class="text-center mb-2">طرح کلاسیک صفر</h5>
-                <p class="text-center">1 تراهش = 1 ملیون و 600 هزار تومان</p>
+                <p class="text-center">1 تراهش = {{$settings->usd_toman * $settings->usd_per_hash + round($settings->maintenance_fee_per_th_per_day * $settings->usd_toman * env('contractDays'))}} تومان</p>
                 <hr/>
                 <p>هزینه نگهداری: صفر تومان</p>
                 <hr/>
-                <p>مدت قرار داد: دو سال </p>
+                <p>مدت قرار داد: {{$settings->hash_life}} سال </p>
                 <hr/>
-                <p>برای سفارش بیش از 100 تراهش به قسمت <a href="">همکاری سازمانی سایت</a> مراجعه فرمائید.</p>
+                <p>برای سفارش بیش از 100 تراهش به قسمت <a href="{{url('/cooperation')}}">همکاری سازمانی سایت</a> مراجعه فرمائید.</p>
                 <div class="text-center mt-1 mb-1">
-                  <a class="btn btn-primary round-button-com"  href="" style="width: 120px">خرید</a>
+                  <a class="btn btn-primary round-button-com"  href="{{route('signup',['locale'=>session('locale')]).'?plan=classic0'}}" style="width: 120px">خرید</a>
                 </div>
               </div>
             <!-- </div> -->

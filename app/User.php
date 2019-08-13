@@ -62,4 +62,9 @@ class User extends Authenticatable implements MustVerifyEmail
         $pendingBtc = $AuthUser->minings->sum('mined_btc') - $AuthUser->transactions->where('user_id',$AuthUser->id)->where('status','paid')->where('checkout','in')->sum('amount_btc');
         return number_format($pendingBtc,8);
     }
+
+    public function plan(){
+
+        return $this->belongsTo(Plan::class);
+    }
 }

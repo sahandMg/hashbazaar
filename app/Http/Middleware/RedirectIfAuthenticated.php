@@ -20,12 +20,12 @@ class RedirectIfAuthenticated
 
 
         if (Auth::guard($guard)->check()) {
-            return redirect()->route('dashboard');
+            return redirect()->route('dashboard',['locale'=>session('locale')]);
         }
 
         if(Auth::guard('admin')->check()){
 
-            return redirect()->route('adminHome');
+            return redirect()->route('adminHome',['locale'=>session('locale')]);
         }
 
         return $next($request);

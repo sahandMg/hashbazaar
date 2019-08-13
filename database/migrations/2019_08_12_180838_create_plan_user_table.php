@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRemoteDataTable extends Migration
+class CreatePlanUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateRemoteDataTable extends Migration
      */
     public function up()
     {
-        Schema::create('remote_data', function (Blueprint $table) {
+        Schema::create('plan_user', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('data')->nullable();
+            $table->unsignedInteger('plan_id');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('plan_id')->references('id')->on('plans')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreateRemoteDataTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('remote_data');
+        Schema::dropIfExists('plan_user');
     }
 }

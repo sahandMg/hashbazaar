@@ -160,13 +160,18 @@
     <!-- <form class="dashboard-page" method="post" action="{{route('payment',['locale'=>session('locale')])}}"> -->
     <!-- <input type="hidden" name="_token" value="{{csrf_token()}}"> -->
     <input type="hidden" id="thpricew" value="50">
-    <input type="range" min="1" max="{{$settings->available_th}}" value="{{isset($hashPower)?$hashPower:$settings->available_th/2}}" name="hash" class="slider" id="myRange">
+    <input type="range" min="1" max="100" value="{{isset($hashPower)?$hashPower:$settings->available_th/2}}" name="hash" class="slider" id="myRange">
     <div class="buy-hashpower-text" style="font-weight: 700;padding-bottom:10px">
       <p style="color:black">{{__("Hash allocation cost :")}} <span id="cost"></span> {{__("dollar")}}
           <span id="doReferalCode" style="animation-iteration-count:infinite;padding:2px"></span>
       </p>
     @if(Config::get('app.locale') == 'fa')
-      <p style="color:black">{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day}} دلار ({{ $settings->maintenance_fee_per_th_per_day*$settings->usd_toman}} تومان) {{__('dollar per Th/day')}}</p>
+        @if(Auth::guard('user')->user()->plan->id == 2)
+
+                <p style="color:black">{{__('Maintenance fee')}}:  ({{ round($settings->maintenance_fee_per_th_per_day*$settings->usd_toman)}} تومان) {{__('dollar per Th/day')}}</p>
+
+        @endif
+
     @else
      <p style="color:black">{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day}} {{__('dollar per Th/day')}}</p>
     @endif
@@ -754,8 +759,13 @@
                         }
                     });
                 };
-                 output.innerHTML = slider.value+' Th';
-                cost.innerHTML = dollarToToman * slider.value * thPrice ;
+                var planType = {!! Auth::guard('user')->user()->plan->id!!}
+                output.innerHTML = slider.value+' Th';
+                if(planType == 3){
+                    cost.innerHTML = dollarToToman * slider.value * thPrice + parseInt({!! $settings->maintenance_fee_per_th_per_day*$settings->usd_toman * env('contractDays') !!});
+                }else if(planType == 2){
+                    cost.innerHTML = dollarToToman * slider.value * thPrice
+                }
                     if(activateDiscount == 1){
                         $('#doReferalCode').show()
                         // check if custom code applied or not
@@ -791,7 +801,11 @@
                             }
 
                         }
-                        cost.innerHTML = dollarToToman * slider.value  * thPrice;
+                        if(planType == 3){
+                            cost.innerHTML = dollarToToman * slider.value * thPrice + parseInt({!! $settings->maintenance_fee_per_th_per_day*$settings->usd_toman * env('contractDays') !!});
+                        }else if(planType == 2){
+                            cost.innerHTML = dollarToToman * slider.value * thPrice
+                        }
                         };
 
                   // for geting total earn

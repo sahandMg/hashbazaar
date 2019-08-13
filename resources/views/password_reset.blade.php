@@ -1,6 +1,17 @@
 @extends('master.layout')
 @section('content')
-
+@if(App::getlocale() == 'fa')
+<title>هش بازار | ثبت نام</title>
+<style type="text/css">
+	input {direction: rtl;}
+	.wrap-input100 {text-align: right;}
+</style>
+@else
+<style type="text/css">
+	input {font-family: Ubuntu-Regular;}
+	a {font-family: Ubuntu-Regular;}
+</style> 
+@endif
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">

@@ -81,7 +81,7 @@
             </div>
           </div>
           <div class="contact-us col-lg-5 col-md-4 col-sm-12" style="text-align: right;">
-              <h6 class="text-center">تماس با ما</h6> 
+              <h5 class="text-center">تماس با ما</h5> 
               <div class="tell">
                    <a href="tel:+989371869568" style="color:white; cursor:pointer">
                          0937 186 9568 &nbsp;<i class="fa fa-phone" aria-hidden="true"></i> 

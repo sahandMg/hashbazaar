@@ -12,6 +12,7 @@
             /*font-family: 'Times New Roman', Times, serif;*/
             font-size:20px;
             color: #000;
+            text-align: justify;
         }
         img {
             width:80%;

@@ -25,6 +25,7 @@
     <script  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" ></script>
     <script src="{{URL::asset('js/jquery-3.3.1.js')}}"></script>
     <script src="{{URL::asset('js/jquery.animate-colors.js')}}"></script>
+    <script src="{{URL::asset('js/main.js')}}"></script>
 
     <!-- Hotjar Tracking Code for http://hashbazaar.com/ -->
    <script>
@@ -118,41 +119,41 @@
             <ul class="navbar-nav text-center justify-content-between">
                 @if(Config::get('app.locale') == 'fa')
 
-                    <li class="nav-item">
+                    <li class="nav-item navHover">
                         <a class="nav-link" href="{{route('customerService',['locale'=>session('locale')])}}">{{__('FAQ')}}</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item navHover">
                         <a class="nav-link" href="{{route('aboutUs',['locale'=>session('locale')])}}">{{__('About')}}</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item navHover">
                         <a class="nav-link" href="{{route('Blog',['locale'=>session('locale')])}}">{{__('Blog')}}</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item navHover">
                         <a class="nav-link" href="{{url('/cooperation')}}">همکاری سازمانی</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item active navHover">
                         <a class="nav-link" href="{{route('index',['locale'=>session('locale')])}}">{{__('Home')}}<span class="sr-only">(current)</span></a>
                     </li>
                 @else
-                    <li class="nav-item active">
+                    <li class="nav-item active navHover">
                         <a class="nav-link" href="{{route('index',['locale'=>session('locale')])}}">{{__('Home')}}<span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item navHover">
                         <a class="nav-link" href="{{route('aboutUs',['locale'=>session('locale')])}}">{{__('About')}}</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item navHover">
                         <a class="nav-link" href="{{route('customerService',['locale'=>session('locale')])}}">{{__('FAQ')}}</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item navHover">
                         <a class="nav-link" href="{{route('affiliate',['locale'=>session('locale')])}}">{{__('Affiliate')}}</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{route('Blog',['locale'=>session('locale')])}}">{{__('Blog')}}</a>
+                    <li class="nav-item navHover">
+                        <a class="nav-link" href="{{route('Blog',['locale'=>session('locale')])}}">{{__('Blog')}}</a>
                     </li>
 
                 @endif
                 @if(Auth::guard('user')->check())
-                        <li class="nav-item">
+                        <li class="nav-item navHover">
                             <a class="nav-link" href="{{route('dashboard',['locale'=>session('locale')])}}" >{{__('Dashboard')}}</a>
                         </li>
                 @else

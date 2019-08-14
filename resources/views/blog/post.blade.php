@@ -8,7 +8,7 @@
 @endsection
 @section('content')
     <style>
-        p {
+        .blog-detail p {
             /*font-family: 'Times New Roman', Times, serif;*/
             font-size:20px;
             color: #000;
@@ -30,7 +30,7 @@
            }
            .blog-detail h1{font-size: 1.2rem;}
            .blog-detail h3 { font-size: 0.9rem; margin-bottom: 4px;}
-           p {font-size: 0.8rem;}
+           .blog-detail p {font-size: 0.8rem;}
         }
     </style>
     <div class="container blog-detail">

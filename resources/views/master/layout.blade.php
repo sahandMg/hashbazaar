@@ -177,12 +177,12 @@
 
 
         </div>
-        <div class="navigation-menu">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
+        {{--<div class="navigation-menu">--}}
+            {{--<div class="bar1"></div>--}}
+            {{--<div class="bar2"></div>--}}
+            {{--<div class="bar3"></div>--}}
 
-        </div>
+        {{--</div>--}}
     </nav>
 </div>
 </header>
@@ -212,8 +212,9 @@
 
         $(document).ready(function(){
 
-             $('.navigation-menu').click(function(){
+             $('.navbar-toggler').click(function(){
                 console.log("navigation test");
+                $('.navbar-collapse').toggle();
                 if(flag == 0) {
                   flag = 1 ;
                   $('#header-navbar-menu').show();

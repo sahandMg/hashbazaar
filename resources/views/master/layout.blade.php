@@ -4,10 +4,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="keywords"
+    @if(Config::get('app.locale') == 'fa')
+      <meta name="keywords"
+          content="ماینینگ بیت کوین، ماینینگ ابری بیت کوین، هاستینگ ماینر، هش بازار، اجاره فارم، فروش ماینر، خرید ماینر، ارز دیجیتال،  "/>
+       <meta name="description"
+          content="هش بازار سرویس ارائه خدمات ماینینگ ابری ( ماینینگ از راه دور ) است.هش بازار اقدام به بهرهبرداری از مزارع ماینینگ، در کانتینرهای امن، قابل حمل در مکان های مناسب و با اشغال فضای کمتر و چگالی دستگاه بیشتر نسبت به مزارع ماینینگ در زمینهای صنعتی و کشاورزی مینماید."/>
+    @else
+        <meta name="keywords"
           content="Bitcoin mining, scrypt mining, cloud mining, hosted mining, Hash Bazaar"/>
-    <meta name="description"
+       <meta name="description"
           content="Bitcoin is the digital gold of the future & HashBazaar is the most cost effective cloud mining company on the market. Mine bitcoin through the cloud, get started today!"/>
+    @endif
+    
     <meta name="google-site-verification" content="roNqWp-CmbNsSN2R6ggCv2ubJwFNikEs_WJ7E2P3WDw" />
     @if(request()->path() === '/')
         <title>{{__('HashBazaar - Cloud Mining Company')}}</title>

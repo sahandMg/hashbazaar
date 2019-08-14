@@ -2,8 +2,15 @@
 @section('title')
 @if(App::getlocale() == 'fa')
 <title>هش بازار | ورود</title>
+<style type="text/css">
+	input {direction: rtl;}
+</style>
 @else
 <title>Hashbazaar | Login</title>
+<style type="text/css">
+	input {font-family: Ubuntu-Regular;}
+	a {font-family: Ubuntu-Regular;}
+</style>    
 @endif
 @endsection
 @section('content')

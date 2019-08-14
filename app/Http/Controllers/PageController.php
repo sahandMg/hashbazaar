@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Mail;
 class PageController extends Controller
 {
     public function index(Request $request){
-        // Artisan::call('crypto:update');
+
         if($request->has('code')){
             $code = $request->code;
             return view('index',compact('code'));
@@ -96,7 +96,7 @@ class PageController extends Controller
 
     // Shows Miners Data
     public function remoteDataPage(){
-        $statuses = DB::connection('mysql')->table('remote_data')->get()->toArray();
-        return view('minersStatus',compact('statuses'));
+        $minerData = DB::connection('mysql')->table('remote_data')->orderBy('id','desc')->first();
+        return view('minersStatus',compact('minerData'));
     }
 }

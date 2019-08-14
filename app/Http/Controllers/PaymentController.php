@@ -34,7 +34,7 @@ use Illuminate\Support\Facades\Mail;
 use Stevebauman\Location\Facades\Location;
 use App\Http\Helpers;
 
-require_once(app_path()."/CryptoBox/lib/cryptobox.class.php" );
+//require_once(app_path()."/CryptoBox/lib/cryptobox.class.php" );
 
 class PaymentController extends Controller
 {
@@ -45,6 +45,7 @@ class PaymentController extends Controller
     public $hash_life;
     public function __construct()
     {
+
         $settings = DB::connection('mysql')->table('settings')->first();
         $this->apikey = $settings->apikey;
         $this->publickey = $settings->publickey;
@@ -55,7 +56,6 @@ class PaymentController extends Controller
 
 
     public function ZarrinPalPaying(Request $request){
-
         $zarrin = new ZarrinPal($request);
         $result = $zarrin->create();
         if($result != 404){

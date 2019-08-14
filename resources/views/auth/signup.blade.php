@@ -2,8 +2,15 @@
 @section('title')
 @if(App::getlocale() == 'fa')
 <title>هش بازار | ثبت نام</title>
+<style type="text/css">
+	input {direction: rtl;}
+</style>
 @else
 <title>Hashbazaar | Signup</title>
+<style type="text/css">
+	input {font-family: Ubuntu-Regular;}
+	a {font-family: Ubuntu-Regular;}
+</style> 
 @endif
 @endsection
 @section('content')
@@ -22,7 +29,8 @@
 						@endforeach
 					</ul>
 				<input type="hidden" name="_token" value="{{csrf_token()}}">
-					<input type="hidden" name="hashPower" value="{{isset($_GET['hashPower'])?$_GET['hashPower']:null}}">
+					{{--<input type="hidden" name="hashPower" value="{{isset($_GET['hashPower'])?$_GET['hashPower']:null}}">--}}
+					<input type="hidden" name="plan" value="{{isset($_GET['plan'])?$_GET['plan']:null}}">
 					<span class="login100-form-title">
 						{{__("SignUp")}}
 					</span>
@@ -70,9 +78,14 @@
 						<a href="https://twitter.com" class="socialnet-flex1" id="twttr">
 							<img src="/public/img/twitter.svg" alt=""></a>
 						 --}}
+					@if(isset($_GET['plan']))
+							<a href="{{route('redirectToProvider',['locale'=>session('locale')]).'?plan='.$_GET['plan']}}" class="socialnet-flex1" id="gp">
+								<img src="{{URL::asset('img/icons/googleicon.png')}}" alt="Google Login"></a>
+					@else
+							<a href="{{route('redirectToProvider',['locale'=>session('locale')])}}" class="socialnet-flex1" id="gp">
+								<img src="{{URL::asset('img/icons/googleicon.png')}}" alt="Google Login"></a>
+					@endif
 
-						<a href="{{route('redirectToProvider',['locale'=>session('locale')])}}" class="socialnet-flex1" id="gp">
-							<img src="{{URL::asset('img/icons/googleicon.png')}}" alt="Google Login"></a>
 						{{-- alt="Join With Google Account" --}}
 
 					</div>

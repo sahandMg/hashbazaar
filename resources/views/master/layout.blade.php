@@ -50,7 +50,7 @@
       * {
         font-family: BYekanFont;
       }
-      h1, h2, h3, h4, h5, h6 {
+      h1, h2, h3, h4, h5, h6, div {
         font-family: BYekanFont;
       }
       th, a, p, input, button, legend, label {font-family: BYekanFont;}

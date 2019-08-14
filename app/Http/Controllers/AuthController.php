@@ -98,18 +98,33 @@ class AuthController extends Controller
 
         $this->validate($request,[
             'name' => 'required',
-            'email'=>'required|email|unique:users',
+            'email'=>"required|email|unique:mysql.users",
             'password'=> 'required',
             'confirm_password' => 'required|same:password',
             'captcha'=>'required|captcha'
 
         ]);
+
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
         $user->ip = Helpers::userIP();
         $user->total_mining = 0;
         $user->pending = 0;
+        if($request->has('plan')){
+            $plans = DB::connection('mysql')->table('plans')->get()->pluck('name')->toArray();
+            if(in_array($request->plan,$plans)){
+                // +1 because it begins from zero
+                $plan_id = array_search($request->plan,$plans)+1;
+                $user->plan_id = $plan_id;
+            }else{
+                return 'Invalid Plan!';
+            }
+
+        }else{
+            return 'No plan on request!';
+        }
+
         try{
 
             $user->country = strtolower(Location::get(Helpers::userIP())->countryCode);
@@ -271,9 +286,22 @@ class AuthController extends Controller
      * Google Login Apis
      */
 
-    public function redirectToProvider()
+    public function redirectToProvider(Request $request)
     {
-//
+
+        if($request->has('plan')){
+            $plans = DB::connection('mysql')->table('plans')->get()->pluck('name')->toArray();
+            if(in_array($request->plan,$plans)){
+                // +1 because it begins from zero
+                $plan_id = array_search($request->plan,$plans)+1;
+                session(['planId'=> $plan_id]);
+            }else{
+                return 'Invalid Plan!';
+            }
+
+        }else{
+            return 'No plan on request!';
+        }
         return Socialite::driver('google')->redirect();
     }
 
@@ -302,7 +330,7 @@ class AuthController extends Controller
             }catch (\Exception $exception){
                 $user->country = 'fr';
             }
-
+            $user->plan_id = session('planId');
             $user->save();
 
             Auth::guard('user')->login($user);

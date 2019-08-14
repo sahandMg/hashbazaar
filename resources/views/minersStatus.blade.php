@@ -19,7 +19,7 @@
 <body>
 
     <div class="container">
-
+        <h2><td style="font-weight:bold ">{{\Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($minerData->created_at))}}</td></h2>
         <table class="table table-bordered">
             <thead>
             <tr>
@@ -30,10 +30,7 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($statuses as $minerData)
-                <tr>
-                    <td style="font-weight:bold ">{{\Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($minerData->created_at))}}</td>
-                </tr>
+
                 @for($i=0;$i<count(unserialize($minerData->data));$i++)
                     <tr>
                         <td>{{unserialize($minerData->data)[$i]['ip']}}</td>
@@ -43,7 +40,7 @@
                     </tr>
                 @endfor
 
-            @endforeach
+
             </tbody>
         </table>
 

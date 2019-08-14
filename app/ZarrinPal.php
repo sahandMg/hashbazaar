@@ -25,12 +25,18 @@ class ZarrinPal
 
     public function create(){
 
-
         $settings = Setting::first();
         $dollarPriceInToman = $settings->usd_toman;
         $discount = $this->request['discount'];
         $hash = $this->request['hash'];
-        $amount = $settings->usd_per_hash * $hash * (1- $discount) * $dollarPriceInToman;
+
+        if(Auth::guard('user')->user()->plan->id == 3){
+
+            $amount = ($settings->usd_per_hash * $hash * (1- $discount)  + env('contractDays') * $settings->maintenance_fee_per_th_per_day) * $dollarPriceInToman;
+        }else if(Auth::guard('user')->user()->plan->id == 2){
+
+            $amount = $settings->usd_per_hash * $hash * (1- $discount) * $dollarPriceInToman;
+        }
         $referralCode = $this->request['code'];
 
         $data = array('MerchantID' => $settings->zarrin_pin,
@@ -110,7 +116,7 @@ class ZarrinPal
         }
         $settings = Setting::first();
 
-        $data = array('MerchantID' => $settings->zarrin_pin, 'Authority' => $transactionId, 'Amount'=>$trans->amoun_toman);
+        $data = array('MerchantID' => $settings->zarrin_pin, 'Authority' => $transactionId, 'Amount'=>$trans->amount_toman);
 
         $jsonData = json_encode($data);
         $ch = curl_init('https://www.zarinpal.com/pg/rest/WebGate/PaymentVerification.json');

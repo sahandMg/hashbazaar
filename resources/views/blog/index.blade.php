@@ -7,52 +7,109 @@
 @endif
 @endsection
 @section('content')
-<div class="blog-container">
-    <div class="blog-grid-item one" onclick="rotate(this)" onmouseout="toBack(this)">
-        <img class="blog-image frontside" src="{{URL::asset('img/swatch.jpg')}}" alt="">
-        <img class="blog-image backside" src="{{URL::asset('img/funfair-balloons.jpg')}}" alt="">
-    </div>
-    <div>
-        @foreach($posts as $post)
-           <a href="{{route('showPost',[session('locale'),$post->slug])}}"> <li>{{$post->title}}</li></a>
+<?php
+
+        foreach($posts as $key => $post){
+
+                    $src = DB::connection('mysql2')->table('system_files')
+                    ->where('field','featured_images')
+                    ->where('attachment_id',$post->id)->first();
+            if(is_null($src)){
+                $img[$key] = null;
+            }else{
+                $firstDir = substr($src->disk_name,0,3);
+                $secDir = substr($src->disk_name,3,3);
+                $thirdDir = substr($src->disk_name,6,3);
+                $img[$key] = env('BLOG_URL')
+                        .$firstDir.'/'.$secDir.'/'.$thirdDir.'/'.$src->disk_name;
+            }
+        }
+?>
+<div class="container posts">
+  <div class="row">
+        @foreach($posts as $key => $post)
+         <div class="col-md-4 col-sm-6">
+          <article class="ContentSmallSize" style="background-color: white;">
+              <a href="{{route('showPost',[session('locale'),$post->slug])}}">
+              <figure>
+               <img  height="225px" width="100%" src="{{$img[$key]}}" alt="{{ $post->title }}"/>
+               <!-- <figcaption style="right: 0">{{ $post->title }}</figcaption> -->
+              </figure>
+              <div>
+               <h5 style="color: black;">{{ $post->title }}</h5>
+               <p style="color: black;">{{ $post->excerpt }}</p>
+               <span style="color: black;"><time>{{ \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($post->published_at)) }}</time></span>
+              </div>
+              </a>
+          </article>
+         </div> 
         @endforeach
-    </div>
-
-    <div class="blog-grid-item two">
-        <a href="#" class="blog-title">Lorem ipsum dolor sit
-            Quam, ab vero atque minus nemo</a>
-        <p><a class="blog-category">Category/.....</a> <br>
-            <span class="blog-date">sep 2018</span></p>
-        <p class="blog-post">
-            ae dolor velit, rerum exercitationem molestias dolores, quae tempora. Eum dolore,
-            labore iure laudantium officia corporis, excepturi perferendis aliquid maiores
-            similique in magllitia?</p>
-        <a class="blog-readmore">Read more...</a></div>
-
-
-    <div class="blog-grid-item three" onclick="rotate(this)" onmouseout="toBack(this)">
-        <img src="{{URL::asset('img/minion.jpg')}}" class="blog-image frontside" alt="">
-        <img class="blog-image backside" src="{{URL::asset('img/champagne-balloons.jpg')}}" alt="">
-
-    </div>
-
-
-    <div class="blog-grid-item four">
-        <a href="#" class="blog-title">Lorem ipsum dolor sit
-            Quam, ab vero atque minus nemo
-        </a>
-        <p><a class="blog-category">Category/.....</a> <br>
-            <span class="blog-date">sep 2018</span></p>
-        <p class="blog-post">
-            ae dolor velit, rerum exercitationem molestias dolores, quae tempora. Eum dolore,
-            labore iure laudantium officia corporis, excepturi perferendis aliquid maiores
-            similique in magllitia?
-        </p>
-        <a class="blog-readmore">Read more...</a></div>
-
+   </div>
 </div>
 @include('master.footer')
+<style type="text/css">
+    .posts {margin-top: 120px;}
+    .ContentSmallSize {
+    flex: 0 1 calc(25% - 1em);
+    text-align: right;
+    margin-bottom: 1%;
+    background-color: white;
+    color: black;
+}
 
+.ContentSmallSize:hover {
+    top: -2px;
+    /*box-shadow: 0 4px 5px rgba(0,0,0,0.2);*/
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+@media screen and (max-width: 768px) {
+    .ContentSmallSize {
+        flex: 0 1 calc(50% - 1em);
+    }
+}
+@media screen and (max-width: 600px) {
+    .ContentSmallSize {
+        flex: 0 1 calc(100% - 1.5em);
+        margin-bottom: 4%;
+    }
+}
+@media screen and (max-width: 414px) {
+    .ContentSmallSize h3 {
+        font-size: 1.3rem;
+}
+    .ContentSmallSize p {
+        font-size: 1rem;
+    }
+}
+
+.ContentSmallSize figure {
+   position: relative;
+}
+.ContentSmallSize figcaption {
+    position: absolute;
+    top: 180px;
+    color: white;
+    background-color: black;
+    padding: 4px 8px;
+    font-size: 100%;
+    font-weight: 400;
+}
+.ContentSmallSize h3 {
+    color: black;
+}
+.ContentSmallSize span {
+    color: #999999;
+}
+.ContentSmallSize p {
+    color: black;
+}
+.ContentSmallSize div {
+    padding: 1% 2%;
+}
+
+
+</style>
 <script>
 
     function rotate(obj) {

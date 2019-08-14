@@ -111,7 +111,8 @@ Route::get('qr',function(){
 Route::get('test',function (){
 
 
-    $contents = DB::connection('mysql2')->table('rainlab_blog_posts')->get()->pluck('content_html')->toArray();
+    $arr = ['sa','dsa','fsg'];
+    dd($arr[array_search('sa',$arr)]);
 
     return view('test',compact('contents'));
 });
@@ -254,7 +255,7 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
     Route::get('google/login/callback', 'AuthController@handleProviderCallback')->name('handleProviderCallback');
 
-    Route::get('signup/{hashpower?}', 'AuthController@signup')->name('signup')->middleware('guest');
+    Route::get('signup', 'AuthController@signup')->name('signup')->middleware('guest');
 
     Route::get('password-reset', 'AuthController@passwordReset')->name('passwordReset');
 

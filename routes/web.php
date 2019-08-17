@@ -24,12 +24,19 @@ use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Morilog\Jalali\Jalalian;
+use Spatie\Sitemap\SitemapGenerator;
 use Symfony\Component\DomCrawler\Crawler;
 use Psr\Http\Message\ResponseInterface;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 
+
+Route::get('sitemap',function(){
+
+    SitemapGenerator::create('https://hashbazaar.com')->writeToFile(storage_path('app/sitemap.xml'));
+
+});
 Route::get('job',function(){
 
     $url = 'http://ip-api.com/php/192.119.12.118';

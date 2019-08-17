@@ -158,7 +158,7 @@
                 @else
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('signup',['locale'=>session('locale')])}}" id="sg" >{{__('Sign Up')}}</a>
+                            <a class="nav-link" href="{{route('signup',['locale'=>session('locale')]).'?plan=classic'}}" id="sg" >{{__('Sign Up')}}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('login',['locale'=>session('locale')])}}" id="lg" >{{__('Log In')}}</a>

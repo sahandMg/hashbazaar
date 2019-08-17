@@ -76,9 +76,9 @@ class DollarPrice extends Command
         $englishNumbersOnly = str_replace($arabic, $num, $convertedPersianNums);
         $toman = floatval(str_replace(',','',$englishNumbersOnly))/10;
         $settings = Setting::first();
-        if($toman <= 10){
+        if($toman <= 10 || is_null($toman)){
 
-            $settings->update(['usd_toman'=> 13000]);
+            $settings->update(['usd_toman'=> 11800]);
         }
 
         $settings->update(['usd_toman'=>$toman]);

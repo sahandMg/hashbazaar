@@ -38,7 +38,7 @@
               <div>
                <h5 style="color: black;">{{ $post->title }}</h5>
                <p style="color: black;">{{ $post->excerpt }}</p>
-               <span style="color: black;"><time>{{ \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($post->published_at)) }}</time></span>
+               <span style="color: black;"><time>{{ \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($post->published_at))->format('%B %d، %Y') }}</time></span>
               </div>
               </a>
           </article>

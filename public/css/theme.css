@@ -35,7 +35,27 @@ a {
     width:11rem;
     height:auto;
 }
-
+.navHover {
+    transition: all 0.5s;
+}
+.navHover:hover:after {
+    width: 100%;
+}
+.navHover:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: orange;
+    margin: auto;
+    transition: all .5s ease;
+}
+.navHover:hover:after {
+    width: 100%;
+}
+.active {
+    border-bottom: 2px solid orange !important;
+}
 .navbar .navbar-brand img {
     width:100%;
     height:auto;

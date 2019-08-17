@@ -4,10 +4,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="keywords"
+    @if(Config::get('app.locale') == 'fa')
+      <meta name="keywords"
+          content="ماینینگ بیت کوین، ماینینگ ابری بیت کوین، هاستینگ ماینر، هش بازار، اجاره فارم، فروش ماینر، خرید ماینر، ارز دیجیتال،  "/>
+       <meta name="description"
+          content="هش بازار سرویس ارائه خدمات ماینینگ ابری ( ماینینگ از راه دور ) است.هش بازار اقدام به بهرهبرداری از مزارع ماینینگ، در کانتینرهای امن، قابل حمل در مکان های مناسب و با اشغال فضای کمتر و چگالی دستگاه بیشتر نسبت به مزارع ماینینگ در زمینهای صنعتی و کشاورزی مینماید."/>
+    @else
+        <meta name="keywords"
           content="Bitcoin mining, scrypt mining, cloud mining, hosted mining, Hash Bazaar"/>
-    <meta name="description"
+       <meta name="description"
           content="Bitcoin is the digital gold of the future & HashBazaar is the most cost effective cloud mining company on the market. Mine bitcoin through the cloud, get started today!"/>
+    @endif
+    
     <meta name="google-site-verification" content="roNqWp-CmbNsSN2R6ggCv2ubJwFNikEs_WJ7E2P3WDw" />
     @if(request()->path() === '/')
         <title>{{__('HashBazaar - Cloud Mining Company')}}</title>
@@ -25,6 +33,7 @@
     <script  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" ></script>
     <script src="{{URL::asset('js/jquery-3.3.1.js')}}"></script>
     <script src="{{URL::asset('js/jquery.animate-colors.js')}}"></script>
+    <script src="{{URL::asset('js/main.js')}}"></script>
 
     <!-- Hotjar Tracking Code for http://hashbazaar.com/ -->
    <script>
@@ -118,41 +127,41 @@
             <ul class="navbar-nav text-center justify-content-between">
                 @if(Config::get('app.locale') == 'fa')
 
-                    <li class="nav-item">
+                    <li class="nav-item navHover">
                         <a class="nav-link" href="{{route('customerService',['locale'=>session('locale')])}}">{{__('FAQ')}}</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item navHover">
                         <a class="nav-link" href="{{route('aboutUs',['locale'=>session('locale')])}}">{{__('About')}}</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item navHover">
                         <a class="nav-link" href="{{route('Blog',['locale'=>session('locale')])}}">{{__('Blog')}}</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item navHover">
                         <a class="nav-link" href="{{url('/cooperation')}}">همکاری سازمانی</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item active navHover">
                         <a class="nav-link" href="{{route('index',['locale'=>session('locale')])}}">{{__('Home')}}<span class="sr-only">(current)</span></a>
                     </li>
                 @else
-                    <li class="nav-item active">
+                    <li class="nav-item active navHover">
                         <a class="nav-link" href="{{route('index',['locale'=>session('locale')])}}">{{__('Home')}}<span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item navHover">
                         <a class="nav-link" href="{{route('aboutUs',['locale'=>session('locale')])}}">{{__('About')}}</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item navHover">
                         <a class="nav-link" href="{{route('customerService',['locale'=>session('locale')])}}">{{__('FAQ')}}</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item navHover">
                         <a class="nav-link" href="{{route('affiliate',['locale'=>session('locale')])}}">{{__('Affiliate')}}</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{route('Blog',['locale'=>session('locale')])}}">{{__('Blog')}}</a>
+                    <li class="nav-item navHover">
+                        <a class="nav-link" href="{{route('Blog',['locale'=>session('locale')])}}">{{__('Blog')}}</a>
                     </li>
 
                 @endif
                 @if(Auth::guard('user')->check())
-                        <li class="nav-item">
+                        <li class="nav-item navHover">
                             <a class="nav-link" href="{{route('dashboard',['locale'=>session('locale')])}}" >{{__('Dashboard')}}</a>
                         </li>
                 @else
@@ -176,12 +185,12 @@
 
 
         </div>
-        <div class="navigation-menu">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
+        {{--<div class="navigation-menu">--}}
+            {{--<div class="bar1"></div>--}}
+            {{--<div class="bar2"></div>--}}
+            {{--<div class="bar3"></div>--}}
 
-        </div>
+        {{--</div>--}}
     </nav>
 </div>
 </header>
@@ -211,8 +220,9 @@
 
         $(document).ready(function(){
 
-             $('.navigation-menu').click(function(){
+             $('.navbar-toggler').click(function(){
                 console.log("navigation test");
+                $('.navbar-collapse').toggle();
                 if(flag == 0) {
                   flag = 1 ;
                   $('#header-navbar-menu').show();

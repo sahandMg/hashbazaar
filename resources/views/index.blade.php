@@ -291,7 +291,10 @@
         </div>
 
     </div>
-    <style type="text/css">
+<style type="text/css">
+     .partners {color:#696967;}
+        .partners h3 {margin-bottom: 3%;}
+        .partners img {height: 80px;}
     .posts {margin-top: 120px;}
     .ContentSmallSize {
     flex: 0 1 calc(25% - 1em);
@@ -322,11 +325,12 @@
         margin-bottom: 4%;
     }
 }
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 420px) {
+    .partners img {height: 60px; margin-top: 5px;}
     .invest-comparision p {margin-top: 0px;}
     .ContentSmallSize h3 {
         font-size: 1.3rem;
-}
+    }
     .ContentSmallSize p {
         font-size: 1rem;
     }
@@ -415,9 +419,7 @@
     </script>
     @endif
     <style type="text/css">
-        .partners {color:#696967;}
-        .partners h3 {margin-bottom: 3%;}
-        .partners img {height: 80px;}
+       
         .advantages h2 {margin-bottom: 3%;}
         .advantages-detail h5 {margin-top: 3%;font-size: 1.1rem;}
        /* .advantages-detail {

@@ -6,8 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="{{URL::asset('bootstrap/css/bootstrap.min.css')}}"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <title>Miners Status</title>
 
@@ -19,16 +19,19 @@
 <body>
 
 <div class="container">
-    <h2><td style="font-weight:bold ">{{\Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($minerData->created_at))}}</td></h2>
-    <table class="table table-bordered">
+    <h2>{{\Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($minerData->created_at))}}</h2>
+    <br/>
+  <div class="table-responsive">  
+    <table class="table table-striped">
         <thead>
         <tr>
-            <td>Ip</td>
-            <td>Type</td>
-            <td>Temp2</td>
-            <td>Temp1</td>
-            <td>Fan Speed</td>
-            <td>Total Th</td>
+            <th>Ip</th>
+            <th>Type</th>
+            <th>Temp2</th>
+            <th>Temp1</th>
+            <th>Fan Speed</th>
+            <th>Total Th</th>
+            <th>Up time</th>
         </tr>
         </thead>
         <tbody>
@@ -47,7 +50,7 @@
 
         </tbody>
     </table>
-
+  </div>
 </div>
 
 </body>

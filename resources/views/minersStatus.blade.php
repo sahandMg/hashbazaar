@@ -7,44 +7,48 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <title>Miners Status</title>
 
-        <?php
+    <?php
 
 
-        ?>
+    ?>
 </head>
 <body>
 
-    <div class="container">
-        <h2><td style="font-weight:bold ">{{\Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($minerData->created_at))}}</td></h2>
-        <table class="table table-bordered">
-            <thead>
+<div class="container">
+    <h2><td style="font-weight:bold ">{{\Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($minerData->created_at))}}</td></h2>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <td>Ip</td>
+            <td>Type</td>
+            <td>Temp2</td>
+            <td>Temp1</td>
+            <td>Fan Speed</td>
+            <td>Total Th</td>
+        </tr>
+        </thead>
+        <tbody>
+
+        @for($i=0;$i<count(unserialize($minerData->data));$i++)
             <tr>
-                <td>Ip</td>
-                <td>Type</td>
-                <td>Temp2</td>
-                <td>Temp1</td>
+                <td>{{unserialize($minerData->data)[$i]['ip']}}</td>
+                <td>{{unserialize($minerData->data)[$i]['minerName']}}</td>
+                <td>{{implode( ", ", unserialize($minerData->data)[$i]['temp2'])}}</td>
+                <td>{{implode( ", ", unserialize($minerData->data)[$i]['temp1'])}}</td>
+                <td>{{implode( ", ", unserialize($minerData->data)[$i]['fanSpeeds'])}}</td>
+                <td>{{unserialize($minerData->data)[$i]['totalHashrate']}}</td>
             </tr>
-            </thead>
-            <tbody>
-
-                @for($i=0;$i<count(unserialize($minerData->data));$i++)
-                    <tr>
-                        <td>{{unserialize($minerData->data)[$i]['ip']}}</td>
-                        <td>{{unserialize($minerData->data)[$i]['minerName']}}</td>
-                        <td>{{implode( ", ", unserialize($minerData->data)[$i]['temp2'])}}</td>
-                        <td>{{implode( ", ", unserialize($minerData->data)[$i]['temp1'])}}</td>
-                    </tr>
-                @endfor
+        @endfor
 
 
-            </tbody>
-        </table>
+        </tbody>
+    </table>
 
-    </div>
+</div>
 
 </body>
 </html>

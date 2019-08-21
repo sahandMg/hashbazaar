@@ -51,7 +51,7 @@
                         <ul class="collapse list-unstyled" id="homeSubmenu">
 
                             <li>
-                                <a href="{{route('adminHome')}}">داشبورد</a>
+                                <a href="{{route('adminHome',['locale'=>session('locale')])}}">داشبورد</a>
                             </li>
 
                         </ul>
@@ -69,7 +69,7 @@
                 </a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li>
-                        <a href="{{route('adminGetUsersList')}}">لیست کاربران</a>
+                        <a href="{{route('adminGetUsersList',['locale'=>session('locale')])}}">لیست کاربران</a>
                     </li>
                     <li>
                         <a href="#">Page 3</a>
@@ -84,7 +84,7 @@
             @else
                 <li>
             @endif
-                <a href="{{route('adminTransactions')}}">
+                <a href="{{route('adminTransactions',['locale'=>session('locale')])}}">
                     <i  class="fab fa-bitcoin" style='font-size:20px'></i>
                     <span style="padding-left: 20px">تراکنش ها</span>
                 </a>
@@ -96,7 +96,7 @@
             @else
                 <li>
             @endif
-                <a href="{{route('adminRedeems')}}">
+                <a href="{{route('adminRedeems',['locale'=>session('locale')])}}">
                     <i class="fas fa-money-check-alt"></i>
                     <span style="padding-left: 20px">پرداخت شده به کاربر</span>
                 </a>
@@ -108,7 +108,7 @@
             @else
                 <li>
                     @endif
-                    <a href="{{route('adminCheckout')}}">
+                    <a href="{{route('adminCheckout',['locale'=>session('locale')])}}">
                         <i class='fas fa-money-check' style='font-size:20px'></i>
                         <span style="padding-left: 20px">تسویه با کاربر</span>
                     </a>
@@ -119,7 +119,7 @@
             @else
                 <li>
                     @endif
-                    <a href="{{route('siteSetting')}}">
+                    <a href="{{route('siteSetting',['locale'=>session('locale')])}}">
                         <i class="fas fa-pencil-alt" style='font-size:20px'></i>
                         <span style="padding-left: 20px">تنظیمات</span>
                     </a>
@@ -130,7 +130,7 @@
                 @else
                     <li>
                         @endif
-                        <a href="{{route('AdminMessage')}}">
+                        <a href="{{route('AdminMessage',['locale'=>session('locale')])}}">
                             <i class="far fa-comment-dots" style='font-size:20px'></i>
                             <span style="padding-left: 20px">پیام ها</span>
                         </a>
@@ -141,7 +141,7 @@
                 @else
                     <li>
                         @endif
-                        <a href="{{route('adminLogout')}}">
+                        <a href="{{route('adminLogout',['locale'=>session('locale')])}}">
                             <i class="far fa-share-square" style='font-size:20px'></i>
                             <span style="padding-left: 20px">خروج</span>
                         </a>

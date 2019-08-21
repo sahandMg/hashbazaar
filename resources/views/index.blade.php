@@ -373,8 +373,8 @@
         height: 80px;
       }
     </style>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKHJZWvRnxUssy8NuqB_nuE3bvKkhxHlM&callback=initMap"
-            type="text/javascript"></script>
+    {{--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKHJZWvRnxUssy8NuqB_nuE3bvKkhxHlM&callback=initMap"--}}
+            {{--type="text/javascript"></script>--}}
     <script type="text/javascript">
       // console.log("js run");
         var dollarToToman = parseInt({!! $settings->usd_toman !!});

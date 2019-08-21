@@ -1,7 +1,7 @@
 @extends('master.layout')
 @section('title')
     @if(App::getlocale() == 'fa')
-        <title>هش بازار |  </title>
+        <title> هش بازار | {{$post->title}} </title>
     @else
         <title>Hashbazaar | Blog</title>
     @endif

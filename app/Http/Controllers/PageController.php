@@ -91,12 +91,13 @@ class PageController extends Controller
         $remote = new RemoteData();
         $remote->data = serialize($request->minersInfo);
         $remote->save();
-        return ['code'=>200,'message'=>'done!'];
+        return ['code'=>200,'message'=> $request->minersInfo];
     }
 
     // Shows Miners Data
     public function remoteDataPage(){
         $minerData = DB::connection('mysql')->table('remote_data')->orderBy('id','desc')->first();
+        dd($minerData);
         return view('minersStatus',compact('minerData'));
     }
 }

@@ -32,9 +32,9 @@ use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 
 
-Route::get('sitemap',function(){
+Route::get('create-sitemap',function(){
 
-    SitemapGenerator::create('https://hashbazaar.com')->writeToFile(storage_path('app/sitemap.xml'));
+    SitemapGenerator::create('https://hashbazaar.com')->writeToFile(public_path('sitemap.xml'));
 
 });
 Route::get('job',function(){

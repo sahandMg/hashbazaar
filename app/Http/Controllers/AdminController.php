@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
-require_once(app_path()."/CryptoBox/lib/cryptobox.class.php" );
 
 class AdminController extends Controller
 {

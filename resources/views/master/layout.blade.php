@@ -133,9 +133,10 @@
                     <li class="{{Request::route()->getName() == 'aboutUs'?'nav-item active navHover':'nav-item navHover'}}">
                         <a class="nav-link" href="{{route('aboutUs',['locale'=>session('locale')])}}">{{__('About')}}</a>
                     </li>
-                    <li class="{{Request::route()->getName() == 'Blog'?'nav-item active navHover':'nav-item navHover'}}">
+                    <li class="{{Request::route()->getName() == 'Blog'||Request::route()->getName() == 'showPost'?'nav-item active navHover':'nav-item navHover'}}">
                         <a class="nav-link" href="{{route('Blog',['locale'=>session('locale')])}}">{{__('Blog')}}</a>
                     </li>
+
                     <li class="nav-item navHover">
                         <a class="nav-link" href="{{url('/cooperation')}}">همکاری سازمانی</a>
                     </li>
@@ -143,6 +144,7 @@
                     <li class="{{Request::route()->getName() == 'index'?'nav-item active navHover':'nav-item navHover'}}">
                         <a class="nav-link" href="{{route('index',['locale'=>session('locale')])}}">{{__('Home')}}<span class="sr-only">(current)</span></a>
                     </li>
+
                 @else
                     <li class="{{Request::route()->getName() == 'index'?'nav-item active navHover':'nav-item navHover'}}">
                         <a class="nav-link" href="{{route('index',['locale'=>session('locale')])}}">{{__('Home')}}<span class="sr-only">(current)</span></a>
@@ -157,6 +159,9 @@
                         <a class="nav-link" href="{{route('affiliate',['locale'=>session('locale')])}}">{{__('Affiliate')}}</a>
                     </li>
                     <li class="{{Request::route()->getName() == 'Blog'?'nav-item active navHover':'nav-item navHover'}}">
+                        <a class="nav-link" href="{{route('Blog',['locale'=>session('locale')])}}">{{__('Blog')}}</a>
+                    </li>
+                    <li class="{{Request::route()->getName() == 'showPost'?'nav-item active navHover':'nav-item navHover'}}">
                         <a class="nav-link" href="{{route('Blog',['locale'=>session('locale')])}}">{{__('Blog')}}</a>
                     </li>
 

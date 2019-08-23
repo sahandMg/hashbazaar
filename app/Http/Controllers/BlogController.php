@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class BlogController extends Controller
 {
     public function index(){
-        $posts = DB::connection('mysql2')->table('rainlab_blog_posts')->get();
+        $posts = DB::connection('mysql2')->table('rainlab_blog_posts')->orderBy('id','desc')->get();
         return view('blog.index',compact('posts'));
 
     }
@@ -19,9 +19,6 @@ class BlogController extends Controller
             abort(404);
         }
 
-//        if($post->title != $post->slug){
-//            $post = DB::connection('mysql2')->table('rainlab_blog_posts')->where('slug',$slug)->update(['slug'=>'title']);
-//        }
         return view('blog.post',compact('post'));
     }
 }

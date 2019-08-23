@@ -52,7 +52,7 @@ class AdminController extends Controller
 
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
 
-            return redirect()->route('adminHome');
+            return redirect()->route('adminHome',['locale'=>session('locale')]);
         } else {
 
             return redirect()->back()->with(['error' => 'wrong email or password']);
@@ -197,7 +197,7 @@ class AdminController extends Controller
         $user = User::where('email', $params['email'])->first();
         Auth::guard('admin')->logout();
         Auth::guard('user')->login($user);
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard',['locale'=>session('locale')]);
 
     }
 
@@ -270,7 +270,7 @@ class AdminController extends Controller
     {
 
         Auth::guard('admin')->logout();
-        return redirect()->route('index');
+        return redirect()->route('index',['locale'=>session('locale')]);
     }
 
     public function userSetting($id)
@@ -358,7 +358,7 @@ class AdminController extends Controller
 
         });
 
-        return redirect()->route('AdminMessage')->with(['message'=>'Message Sent']);
+        return redirect()->route('AdminMessage',['locale'=>session('locale')])->with(['message'=>'Message Sent']);
 
     }
 

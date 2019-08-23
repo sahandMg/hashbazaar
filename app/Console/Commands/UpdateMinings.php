@@ -2,15 +2,18 @@
 
 namespace App\Console\Commands;
 
+use App\Antpool;
 use App\BitCoinPrice;
 use App\BitHash;
 use App\Events\Sms;
+use App\F2pool;
 use App\Mining;
 use App\MiningReport;
 use App\Setting;
 use App\Transaction;
 use App\User;
 use GuzzleHttp\Client as GuzzleClient;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Cache;
 use Morilog\Jalali\Jalalian;
 use Psr\Http\Message\ResponseInterface;
@@ -35,6 +38,7 @@ class UpdateMinings extends Command
      */
     protected $description = 'Update User Mining';
 
+
     /**
      * Create a new command instance.
      *
@@ -54,6 +58,39 @@ class UpdateMinings extends Command
      */
     public function handle()
     {
+
+// getting total minings from antpool
+//
+//        $instance = new Antpool();
+//        $resp = $instance->run();
+
+//  Getting minings from f2pool
+
+        $instance = new F2pool();
+        $resp = $instance->run();
+        if($resp['code'] != 200){
+            if(!Cache::has('poolError')){
+                Cache::forever('poolError',0);
+            }else{
+                Cache::forever('poolError',Cache::get('poolError') + 1);
+            }
+            if(Cache::get('poolError') >= 3){
+
+             $message =" خطای پول".$resp['message'];
+            Sms::dispatch($message);
+
+            }else{
+                echo Cache::get('poolError');
+                Artisan::call('mining:update');
+            }
+        }else{
+            Cache::forever('poolError',0);
+            $this->balances($resp['message']);
+        }
+    }
+
+    private function balances($f2poolResp){
+
         // getting realtime bitcoin price
         $settings = Setting::first();
 //        $options = array('http' => array('method' => 'GET'));
@@ -65,33 +102,6 @@ class UpdateMinings extends Command
 //
 //            return 'bitcoin api failed';
 //        }
-// getting total minings from antpool
-//        $userId = '13741374';
-//        $apiKey = '7b07bc4b507b4d7584770f8ddddd02f1';
-//        $nonce = rand(0, 1000);
-//        $secret = '0585329bf8eb48509b1ad13b709d9390';
-//        $url = 'https://antpool.com/api/account.htm';
-//        $signature = strtoupper(hash_hmac('sha256', $userId . $apiKey . $nonce, $secret, false));
-//        $ch = curl_init();
-//        curl_setopt($ch, CURLOPT_URL, "$url?key=$apiKey&nonce=$nonce&signature=$signature&coin=BTC");
-//        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-//        $result = curl_exec($ch);
-//        curl_close($ch);
-//        $mining24 = json_decode($result)->data->earn24Hours;
-
-//  Getting minings from f2pool
-        $url = 'https://api.f2pool.com/bitcoin/mvs1995';
-//        $client = new GuzzleClient();
-//        $promise1 = $client->requestAsync('GET',$url)->then(function (ResponseInterface $response) {
-//            return $response->getBody()->getContents();
-//        });
-//        $resp = $promise1->wait();
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $resp = curl_exec($ch);
-        curl_close($ch);
-        $f2poolResp = json_decode($resp, true);
         $users = User::all();
         $mainTHash = $settings->total_th;
         $RealTHash = number_format($f2poolResp['hashes_last_day'] / 86400 / pow(10, 12), 3);
@@ -128,7 +138,7 @@ class UpdateMinings extends Command
                         if ($mining24 != 0) {
                             // keeps extra bitcoins for hashbazaar
                             if ($todayTHash >= $mainTHash) {
-                               // update hashbazaar benefit
+                                // update hashbazaar benefit
                                 if($updateFlag == 0){
 
                                     $settings->update(['total_benefit'=> $settings->total_benefit +

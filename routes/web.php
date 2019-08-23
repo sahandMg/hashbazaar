@@ -118,10 +118,23 @@ Route::get('qr',function(){
 Route::get('test',function (){
 
 
-    $arr = ['sa','dsa','fsg'];
-    dd($arr[array_search('sa',$arr)]);
+    $url = 'https://f2pool.com/bitcoin/mvs1995';
+//      $url = 'http://api.f2pool.com/bitcoin/mvs1995';
+    $client = new GuzzleClient();
+    try{
+        $promise1 = $client->requestAsync('GET',$url)->then(function (ResponseInterface $response) {
+            return $response->getBody()->getContents();
+        });
+        $resp = $promise1->wait();
+    }catch (\Exception $exception){
 
-    return view('test',compact('contents'));
+        dd($exception->getCode());
+    }
+
+    $f2poolResp = json_decode($resp, true);
+    dd($f2poolResp);
+
+
 });
 
 Route::get('redirect',function (){

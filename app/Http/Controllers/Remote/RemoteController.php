@@ -33,14 +33,20 @@ class RemoteController extends Controller
         $remote = new RemoteData();
         $remote->data = serialize($request->minersInfo);
         $data = $request->all();
-        $remote->remote_id = $data['id'];
-        $remote->save();
+        $user = DB::connection('mysql')->table('remote_users')->where('code',$data['token'])->first();
+        if(is_null($user)){
+            return ['error'=> 404 ,'body'=>'Incorrect Token'];
+        }else{
+            $remote->remote_id = $user->id;
+            $remote->save();
+        }
+
         return ['code'=>200,'message'=> 'done'];
     }
 
     // Shows Miners Data
     public function remoteDataPage(){
-        $minerData = DB::connection('mysql')->table('remote_data')->orderBy('id','desc')->first();
+        $minerData = DB::connection('mysql')->table('remote_data')->orderBy('id','desc')->where('remote_id',Auth::guard('remote')->id())->first();
         return view('remote.minersStatus',compact('minerData'));
     }
 

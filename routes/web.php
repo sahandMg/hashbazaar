@@ -228,7 +228,7 @@ Route::get('language/{locale}', function ($locale) {
 
 })->name('locale');
 
-Route::get('remote','PageController@remoteDataPage');
+
 
 Route::get('/', function (){
 
@@ -242,7 +242,7 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
         $captcha = \Mews\Captcha\Facades\Captcha::create();
         return Captcha::src();
 
-    });
+    })->name('refreshCaptcha');
 
     Route::get('/', 'PageController@index')->name('index');
 
@@ -423,4 +423,38 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
     });
 
     Route::post('send-code', 'PanelController@postDashboard')->name('SendCode');
+
+    // ========================== Remote Pages Routes ===========================
+    Route::group(['prefix'=>'remote'],function(){
+
+        Route::get('dashboard','Remote\RemoteController@remoteDataPage')->name('remoteDashboard');
+
+        Route::group(['middleware'=>'guest'],function(){
+
+            Route::get('login', 'Remote\AuthController@login')->name('RemoteLogin');
+
+            Route::post('login', 'Remote\AuthController@post_login')->name('RemoteLogin');
+
+            Route::get('verify/{token}', 'Remote\AuthController@VerifyUser')->name('VerifyRemoteUser');
+
+            Route::post('resend-verification', 'Remote\AuthController@ResendVerification')->name('RemoteResendVerification');
+
+            Route::get('email-verify', 'Remote\AuthController@VerifyUserPage')->name('RemoteVerifyUserPage');
+
+            Route::get('google/login', 'Remote\AuthController@redirectToProvider')->name('RemoteRedirectToProvider');
+
+            Route::get('google/login/callback', 'Remote\AuthController@handleProviderCallback')->name('handleProviderCallbackRemote');
+
+            Route::get('signup', 'Remote\AuthController@signup')->name('RemoteSignup');
+
+            Route::post('signup', 'Remote\AuthController@post_signup')->name('RemoteSignup');
+
+            Route::get('password-reset', 'Remote\AuthController@passwordReset')->name('passwordResetRemote');
+
+        });
+
+        Route::get('logout', ['as' => 'logout', 'uses' => 'Remote\AuthController@logout']);
+
+    });
+
 });

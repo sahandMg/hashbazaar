@@ -53,6 +53,10 @@ return [
         'admin' => [
             'driver' => 'session',
             'provider' => 'admins'
+        ],
+        'remote' => [
+            'driver' => 'session',
+            'provider' => 'remotes'
         ]
     ],
 
@@ -81,6 +85,11 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Admin::class,
+        ],
+
+        'remotes' => [
+            'driver' => 'eloquent',
+            'model' => App\RemoteUser::class,
         ],
 
         // 'users' => [

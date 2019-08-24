@@ -11,17 +11,16 @@
 
     <title>Miners Status</title>
 
-    <?php
-
-
-    ?>
 </head>
 <body>
 
 <div class="container">
-    <h2>{{\Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($minerData->created_at))}}</h2>
-    <br/>
-  <div class="table-responsive">  
+    @if(is_null($minerData))
+        <h1> No Data Available</h1>
+    @else
+        <h2>{{\Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($minerData->created_at))}}</h2>
+        <br/>
+         <div class="table-responsive">
     <table class="table table-striped">
         <thead>
         <tr>
@@ -51,6 +50,7 @@
         </tbody>
     </table>
   </div>
+    @endif
 </div>
 
 </body>

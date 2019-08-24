@@ -16,6 +16,8 @@ class CreateRemoteDataTable extends Migration
         Schema::create('remote_data', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('data')->nullable();
+            $table->unsignedInteger('remote_id');
+            $table->foreign('remote_id')->references('id')->on('remote_users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -28,6 +28,11 @@ class RedirectIfAuthenticated
             return redirect()->route('adminHome',['locale'=>session('locale')]);
         }
 
+        if(Auth::guard('remote')->check()){
+
+            return redirect()->route('remoteDashboard',['locale'=>session('locale')]);
+        }
+
         return $next($request);
     }
 }

@@ -51,7 +51,7 @@
                         <ul class="collapse list-unstyled" id="homeSubmenu">
 
                             <li>
-                                <a href="{{route('adminHome',['locale'=>session('locale')])}}">داشبورد</a>
+{{--                                <a href="{{route('adminHome',['locale'=>session('locale')])}}">داشبورد</a>--}}
                             </li>
 
                         </ul>

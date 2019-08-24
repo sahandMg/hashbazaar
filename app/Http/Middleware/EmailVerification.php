@@ -24,7 +24,15 @@ class EmailVerification
                 Session::put('userToken', $user->verifyUser->token);
                 return redirect()->route('VerifyUserPage');
             }
-        }else{
+        }elseif (Auth::guard('remote')){
+            $user = Auth::guard('remote')->user();
+            if($user->verified == 0){
+                Session::flash('message', 'ایمیل فعال سازی حساب ارسال شد. درصورت دریافت نکردن ایمیل رو ارسال مجدد کلیک کنید');
+                Session::put('userToken', $user->verifyUser->token);
+                return redirect()->route('RemoteVerifyUserPage');
+            }
+        }
+        else{
             return redirect()->route('login',['locale'=>session('locale')]);
         }
         return $next($request);

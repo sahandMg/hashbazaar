@@ -139,7 +139,7 @@
     @if(\Illuminate\Support\Facades\Config::get('app.locale') == 'fa')
         <h1> به هش بازار خوش آمدید </h1>
         <p style="text-align: center;">با تشکر از عضویت شما در هش بازار. برای فعال سازی حساب خود رو دکمه فعال سازی کلیک کنید</p>
-        <a href="{{route('userVerify',['locale'=>session('locale'),'token'=>$user->verifyUser->token])}}"><button style="cursor: pointer;margin: 10px;display:inline-block; font-size: 15px;color:white;background: orange;padding: 10px;border-radius:10px">فعال سازی</button></a>
+        <a href="{{route($route,['locale'=>session('locale'),'token'=>$user->verifyUser->token])}}"><button style="cursor: pointer;margin: 10px;display:inline-block; font-size: 15px;color:white;background: orange;padding: 10px;border-radius:10px">فعال سازی</button></a>
     @else
         <h1> Welcome to Hash Bazaar </h1>
         <p style="text-align: center;">Thanks for your registration. From now on you join our community.</p>

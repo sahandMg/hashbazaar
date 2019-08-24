@@ -102,7 +102,7 @@
     color: #999999;
 }
 .ContentSmallSize p {
-    color: black;
+    color: black; direction: rtl;
 }
 .ContentSmallSize div {
     padding: 1% 2%;

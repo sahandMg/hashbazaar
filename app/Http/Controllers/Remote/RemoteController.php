@@ -24,7 +24,7 @@ class RemoteController extends Controller
 
     public function __construct()
     {
-        $this->middleware('remoteAuth');
+        $this->middleware('remoteAuth')->except('remoteApi');
     }
 
     // Gets Miners data by API
@@ -32,6 +32,8 @@ class RemoteController extends Controller
 
         $remote = new RemoteData();
         $remote->data = serialize($request->minersInfo);
+        $data = $request->all();
+        $remote->remote_id = $data['id'];
         $remote->save();
         return ['code'=>200,'message'=> 'done'];
     }

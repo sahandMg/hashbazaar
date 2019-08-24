@@ -327,10 +327,10 @@ class AuthController extends Controller
 
     public function userData(Request $request){
 
-        if(!$request->has('token')){
+        if(!$request->has('id')){
             return ['error'=> 500 ,'body'=>'Token not provided'];
         }else{
-            $user = RemoteUser::where('code',$request->token)->first();
+            $user = RemoteUser::where('id',$request->id)->first();
             if(is_null($user)){
                 return ['error'=> 404 ,'body'=>'Incorrect Token'];
             }else{

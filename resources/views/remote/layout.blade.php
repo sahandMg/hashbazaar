@@ -196,27 +196,27 @@
                                 </li>
                             </ul> -->
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="chart.html">
                                 <i class="fas fa-chart-bar"></i>Charts</a>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <a href="table.html">
                                 <i class="fas fa-table"></i>Tables</a>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="form.html">
-                                <i class="far fa-check-square"></i>Forms</a>
+                                <i class="far fa-check-square"></i>اشتراک</a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="#">
                                 <i class="fas fa-calendar-alt"></i>Calendar</a>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <a href="map.html">
                                 <i class="fas fa-map-marker-alt"></i>Maps</a>
-                        </li>
-                        <li class="has-sub">
+                        </li> -->
+                      <!--   <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-copy"></i>Pages</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
@@ -230,8 +230,8 @@
                                     <a href="forget-pass.html">Forget Password</a>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="has-sub">
+                        </li> -->
+                        <!-- <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-desktop"></i>UI Elements</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
@@ -269,7 +269,7 @@
                                     <a href="typo.html">Typography</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
                 </nav>
             </div>

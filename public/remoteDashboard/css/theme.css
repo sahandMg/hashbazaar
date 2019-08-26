@@ -1220,8 +1220,9 @@ section {
 
 @media (max-width: 991px) {
     .logo {
-        text-align: center;
+        text-align: left;
     }
+    .logo img { max-width: 80%; }
 }
 
 .header-wrap {

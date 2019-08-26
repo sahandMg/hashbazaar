@@ -7,8 +7,54 @@
 </head>
 <body style="background-color: white;background-image: url({{asset('img/mining.jpg')}});">
   <div class="container">
-  	
+  	<div class="myCard">
+		<div class="d-flex justify-content-center">
+			<button class="btnTab" id="signupBtn">sign up</button>
+			<button class="btnTab" id="loginBtn">logins</button>
+		</div>
+		<div id="signupForm">
+			<form action="/action_page.php">
+				<div class="form-group">
+					<label for="email">Email address:</label>
+					<input type="email" class="form-control" id="email">
+				</div>
+				<div class="form-group">
+					<label for="pwd">Password:</label>
+					<input type="password"  name="password" placeholder="{{__("Password")}}" class="form-control" id="pwd">
+				</div>
+				<div class="form-group">
+					<label for="pwd2">Password:</label>
+					<input type="password" class="form-control" id="pwd2"  name="confirm_password" placeholder="{{__("Confirm password")}}">
+				</div>
+				<button type="submit" class="btn btn-success">Submit</button>
+			</form>
+		</div>
+		<div id="loginForm">
+			<form action="/action_page.php">
+				<div class="form-group">
+					<label for="email">Email address:</label>
+					<input type="email" class="form-control" id="email">
+				</div>
+				<div class="form-group">
+					<label for="pwd">Password:</label>
+					<input type="password"  name="password" placeholder="{{__("Password")}}" class="form-control" id="pwd">
+				</div>
+				<div class="form-group">
+					<label for="pwd2">Password:</label>
+					<input type="password" class="form-control" id="pwd2"  name="confirm_password" placeholder="{{__("Confirm password")}}">
+				</div>
+				<button type="submit" class="btn btn-success">Submit</button>
+			</form>
+		</div>
+	</div>
   </div>
+  <style>
+	  .btnTab {
+		  border-bottom: 1px solid;
+		  width: 150px;
+		  text-align: center;
+	  }
+  </style>
   <div>
 	<div class="limiter">
 		<div class="container-login100">
@@ -93,7 +139,8 @@
    </div>
 <!--===============================================================================================-->
 	<!-- <script src="vendor/jquery/jquery-3.2.1.min.js"></script> -->
-<!--===============================================================================================-->
+  <script src="{{URL::asset('js/jquery-3.3.1.js')}}"></script>
+  <!--===============================================================================================-->
     <script src="{{URL::asset('vendor/animsition/js/animsition.min.js')}}"></script>
 	<!--===============================================================================================-->
 	<script src="{{URL::asset('vendor/bootstrap/js/popper.js')}}"></script>
@@ -118,6 +165,20 @@
 
 			});
 		}
+
+		$(document).ready(function() {
+
+			$('#signupBtn').click(function () {
+                console.log("sign up btn");
+				$('#signupForm').show();
+				$('#loginForm').hide();
+			});
+			$('#loginBtn').click(function () {
+				console.log("log in btn");
+				$('#signupForm').hide();
+				$('#loginForm').show();
+			});
+		});
 	</script>
   </body>
 </html>

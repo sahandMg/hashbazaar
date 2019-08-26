@@ -22,12 +22,22 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
 
-    public function signup(){
+    public function authorizing(){
 
         return view('remote.auth.authorizing');
     }
 
-    public function post_signup(Request $request){
+    public function post_authorizing(Request $request){
+
+        if($request->action == 'login'){
+
+            return $this->post_login($request);
+        }else{
+
+            return $this->post_signup($request);
+        }
+    }
+    private function post_signup($request){
 
         $this->validate($request,[
             'name' => 'required',
@@ -156,7 +166,7 @@ class AuthController extends Controller
         return view('remote.auth.login');
     }
 
-    public function post_login(Request $request){
+    private function post_login($request){
 
         $this->validate($request,[
             'email'=> 'required|email',

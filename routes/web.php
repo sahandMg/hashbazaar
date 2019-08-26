@@ -419,7 +419,7 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
         Route::group(['middleware'=>'guest'],function(){
 
-            Route::get('login', 'Remote\AuthController@login')->name('RemoteLogin');
+//            Route::get('authorizing', 'Remote\AuthController@login')->name('RemoteLogin');
 
             Route::post('login', 'Remote\AuthController@post_login')->name('RemoteLogin');
 
@@ -433,9 +433,9 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
             Route::get('google/login/callback', 'Remote\AuthController@handleProviderCallback')->name('handleProviderCallbackRemote');
 
-            Route::get('signup', 'Remote\AuthController@signup')->name('RemoteSignup');
+            Route::get('authorizing', 'Remote\AuthController@authorizing')->name('authorizing');
 
-            Route::post('signup', 'Remote\AuthController@post_signup')->name('RemoteSignup');
+            Route::post('authorizing', 'Remote\AuthController@post_authorizing')->name('RemoteSignup');
 
             Route::get('password-reset', 'Remote\AuthController@passwordReset')->name('passwordResetRemote');
 

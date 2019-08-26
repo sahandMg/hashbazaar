@@ -19,6 +19,11 @@
       .btn {font-family: BYekanFont;}
     </STYLE>
  @endif
+
+	         <script  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" ></script>
+	             <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
 </head>
 <body>
   <div class="container" style="direction: rtl;">
@@ -30,11 +35,18 @@
 		<div id="signupForm">
 			<form method="post" action="{{route('RemoteSignup',['locale'=>App::getLocale()])}}">
 			   @foreach($errors->all() as $error)
-			      <div class="alert alert-success">{{$error}}</div>
+			      <div class="alert alert-danger">{{$error}}</div>
 			   @endforeach
-				<div class="form-group">
+				   <input type="hidden" name="action" value="signup">
+				   <input type="hidden" name="_token" value="{{csrf_token()}}">
+
+			   <div class="form-group">
+						 	<lable for="name">نام و نام خانوادگی</lable>
+					      <input class="form-control" pattern='[a-zA-Z0-9 آ ا ب پ ت ث ج چ ح خ د ذ ر ز ژ س ش ص ض ط ظ ع غ ف ق ک گ ل م ن و ه ی]+'  type="text" name="name"  value="{{Request::old('name')}}">
+			   </div>
+			   <div class="form-group">
 					<label for="email">ایمیل:</label>
-					<input type="email" class="form-control" id="email">
+					<input type="email" class="form-control"  name="email" id="email">
 				</div>
 				<div class="form-group">
 					<label for="pwd">رمز:</label>
@@ -80,7 +92,7 @@
 						<p style="color: green;text-align: right">{{session('message')}}</p>
 					@endif
 			        <input type="hidden" name="_token" value="{{csrf_token()}}">
-                    <input type="hidden" name="hashPower" value="{{isset($_GET['hashPower'])?$_GET['hashPower']:null}}">
+			        <input type="hidden" name="action" value="login">
 				<div class="form-group">
 					<label for="email">ایمیل:</label>
 					<input type="email" name="email" class="form-control" id="email" value="{{Request::old('email')}}">
@@ -243,6 +255,7 @@
 			document.getElementById('submitBtn').disabled = true
 		}
 		function refreshCaptcha(e){
+
 			var element = e;
 			axios.get('{{route('refreshCaptcha',['locale'=>App::getLocale()])}}').then(function(response){
 				element.target.src = response.data

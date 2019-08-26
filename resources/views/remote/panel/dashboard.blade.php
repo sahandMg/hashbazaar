@@ -83,6 +83,94 @@
                         </div>
 
    <br/>
-   
+   <div class="au-card text-right" style="direction: rtl;">
+     <h3>با دادن اطلاعان Pool ، API خود می توانید وضعیت استخراج را در این جا مشاهد کنید و همچنین در صورت قطع شدن ماینرها، ایمیل و پیامک هشدار دریافت کنید.</h3>
+     <br/>
+     <div class="form-group text-center col-lg-3 col-md-4 col-sm-10 mx-auto">
+       <label for="sel1">انتخاب POOL</label>
+       <select class="form-control" id="selectPool">
+         <option value="Antpool">Antpool</option>
+         <option value="F2Pool">F2Pool</option>
+         <option value="SlushPool">SlushPool</option>
+       </select>
+     </div>
+     <hr/>
+     <div id="Antpool">
+        <form class="poolForm col-lg-4 col-md-5 col-sm-11 mx-auto">
+          <div class="form-group">
+           <label>user id:</label>
+           <input type="text" class="form-control">
+          </div>
+          <div class="form-group">
+           <label>API key:</label>
+           <input type="text" class="form-control">
+          </div>
+          <div class="form-group">
+           <label>nonce:</label>
+           <input type="text" class="form-control">
+          </div>
+          <div class="form-group">
+           <label>secret:</label>
+           <input type="text" class="form-control">
+          </div>
+          <div class="text-center"> 
+            <button class="btn btn-success">ثبت</button>
+          </div>
+        </form>
+     </div>
+     <div id="F2Pool">
+        <form class="poolForm col-lg-4 col-md-5 col-sm-11 mx-auto">
+          <div class="form-group">
+           <label>user name:</label>
+           <input type="text" class="form-control">
+          </div>
+          <div class="text-center"> 
+            <button class="btn btn-success">ثبت</button>
+          </div>
+        </form>
+     </div>
+     <div id="SlushPool">
+        <form class="poolForm col-lg-4 col-md-5 col-sm-11 mx-auto">
+          <div class="form-group">
+           <label>Token:</label>
+           <input type="text" class="form-control">
+          </div>
+          <div class="text-center"> 
+            <button class="btn btn-success">ثبت</button>
+          </div>
+        </form>
+     </div>
+   </div>
+<style type="text/css">
+  .poolForm {
+     
+  }
+</style>
+
    @include('remote/scripts')
+   <script type="text/javascript">
+     function hideAllForms() {
+      $('#Antpool').hide();$('#F2Pool').hide();$('#SlushPool').hide();
+     }
+
+var selectPool = document.getElementById("selectPool");
+
+// activities.addEventListener("click", function() {
+//     var options = activities.querySelectorAll("option");
+//     var count = options.length;
+//     if(typeof(count) === "undefined" || count < 2)
+//     {
+//         addActivityItem();
+//     }
+// });
+hideAllForms();
+$('#Antpool').show();
+
+selectPool.addEventListener("change", function() {
+  // console.log("")
+  hideAllForms();
+  $('#'+selectPool.value).show();
+});
+      
+   </script>
 @endsection

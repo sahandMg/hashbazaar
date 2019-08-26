@@ -33,7 +33,7 @@
 			<button class="btnTab" id="loginBtn">ورود</button>
 		</div>
 		<div id="signupForm">
-			<form method="post" action="{{route('RemoteSignup',['locale'=>App::getLocale()])}}">
+			<form method="post" action="{{route('Authorizing',['locale'=>App::getLocale()])}}">
 			   @foreach($errors->all() as $error)
 			      <div class="alert alert-danger">{{$error}}</div>
 			   @endforeach
@@ -81,7 +81,7 @@
 			</form>
 		</div>
 		<div id="loginForm">
-			<form  method="post" action="{{route('RemoteLogin',['locale'=>App::getLocale()])}}">
+			<form  method="post" action="{{route('Authorizing',['locale'=>App::getLocale()])}}">
 			    @foreach($errors->all() as $error)
 			      <div class="alert alert-success">{{$error}}</div>
 			   @endforeach
@@ -162,12 +162,6 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 
-				<form method="post" action="{{route('RemoteSignup',['locale'=>App::getLocale()])}}" class="login100-form validate-form p-l-55 p-r-55 p-t-148">
-
-					<ul>
-						@foreach($errors->all() as $error)
-							<li style="color: red;margin-bottom: 1%;">{{$error}}</li>
-						@endforeach
 					</ul>
 				<input type="hidden" name="_token" value="{{csrf_token()}}">
 					<span class="login100-form-title">

@@ -421,7 +421,7 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
 //            Route::get('authorizing', 'Remote\AuthController@login')->name('RemoteLogin');
 
-            Route::post('login', 'Remote\AuthController@post_login')->name('RemoteLogin');
+//            Route::post('login', 'Remote\AuthController@post_login')->name('RemoteLogin');
 
             Route::get('verify/{token}', 'Remote\AuthController@VerifyUser')->name('VerifyRemoteUser');
 
@@ -435,7 +435,7 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
             Route::get('authorizing', 'Remote\AuthController@authorizing')->name('authorizing');
 
-            Route::post('authorizing', 'Remote\AuthController@post_authorizing')->name('RemoteSignup');
+            Route::post('authorizing', 'Remote\AuthController@post_authorizing')->name('Authorizing');
 
             Route::get('password-reset', 'Remote\AuthController@passwordReset')->name('passwordResetRemote');
 

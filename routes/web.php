@@ -13,6 +13,7 @@
 
 use App\BitCoinPrice;
 use App\BitHash;
+use App\RemoteData;
 use App\Transaction;
 use Carbon\Carbon;
 use Illuminate\Http\Response;
@@ -118,21 +119,7 @@ Route::get('qr',function(){
 Route::get('test',function (){
 
 
-    $url = 'https://f2pool.com/bitcoin/mvs1995';
-//      $url = 'http://api.f2pool.com/bitcoin/mvs1995';
-    $client = new GuzzleClient();
-    try{
-        $promise1 = $client->requestAsync('GET',$url)->then(function (ResponseInterface $response) {
-            return $response->getBody()->getContents();
-        });
-        $resp = $promise1->wait();
-    }catch (\Exception $exception){
 
-        dd($exception->getCode());
-    }
-
-    $f2poolResp = json_decode($resp, true);
-    dd($f2poolResp);
 
 
 });
@@ -199,7 +186,7 @@ Route::get('ReceiveCallbackUrl',function (\Illuminate\Http\Request $request) {
 
 });
 
-
+Route::get('export-data','PageController@export')->name('export');
 
 Route::get('change-language','PageController@ChangeLanguage')->name('changeLanguage');
 

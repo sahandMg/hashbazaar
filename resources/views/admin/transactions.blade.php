@@ -37,7 +37,7 @@
                 <td> {{$query}} </td>
 
                 <td> {{$users->find($transaction->user_id)->name}} / {{$transaction->user_id}} </td>
-                <td><img width="25" height="20" src="../flags/{{strtolower(substr($transaction->country,0,2))}}.svg" alt="{{$transaction->country}}"></td>
+                <td><img width="25" height="20" src="{{URL::asset('flags/'.strtolower(substr($transaction->country,0,2)).'.svg')}}" alt="{{$transaction->country}}"></td>
                 @if(is_null($transaction->amount_btc)) <td>--</td> @else <td>{{$transaction->amount_btc}}</td> @endif
                 @if(is_null($transaction->amount_toman)) <td>--</td> @else <td>{{$transaction->amount_toman}}</td> @endif
                 <td>{{$transaction->status}}</td>

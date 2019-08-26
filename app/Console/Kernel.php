@@ -15,7 +15,8 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         'App\Console\Commands\Crypto',
         'App\Console\Commands\UpdateMinings',
-        'App\Console\Commands\DeleteTh'
+        'App\Console\Commands\DeleteTh',
+        'App\Console\Commands\ExportData'
     ];
 
     /**

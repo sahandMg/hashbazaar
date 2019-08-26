@@ -70,6 +70,15 @@ class hashRateCheck extends Command
 
         }
 
+        if($hashRate == 0 || round($hashRate / pow(10,12)) < 0.85 * $setting->total_th){
+
+            if(!Cache::has('power_off')){
+                Cache::forever('power_off',0);
+            }else{
+                Cache::forever('power_off',1);
+            }
+        }
+
     if($setting->alarms == 1){
 
         if($hashRate == 0){

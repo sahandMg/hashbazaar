@@ -103,13 +103,20 @@ class UpdateMinings extends Command
 //            return 'bitcoin api failed';
 //        }
         $users = User::all();
-        $mainTHash = $settings->total_th;
-        $RealTHash = number_format($f2poolResp['hashes_last_day'] / 86400 / pow(10, 12), 3);
+        $todayTHash = number_format($f2poolResp['hashes_last_day'] / 86400 / pow(10, 12), 3);
         // ============================
-        $todayTHash = $RealTHash ;
+//        $todayTHash = $RealTHash - 16 in case of Babak miner added ;
+//        $todayTHash = $RealTHash ;
         // ============================
+
+        if(Cache::get('power_off') == 1){
+            $mainTHash = $todayTHash;
+        }else{
+            $mainTHash = $settings->total_th;
+        }
+
         $miningValue = number_format($f2poolResp['value_last_day'], 8);
-        $mining24 = $miningValue * $todayTHash / $RealTHash;
+        $mining24 = $miningValue;
         $updateFlag = 0;
         $todayProfit = 0;
 
@@ -161,16 +168,41 @@ class UpdateMinings extends Command
                                 // boost real mining value up when main th is more than today th
                                 $mining24 = $mining24 + $compensationValue;
                             }
-                            // apply 30 70 contracts conditions
-                            if ($user->plan_id == 1) {
-                                $userEarn[$item] = $mining24 * ($hashPower[$item] / $mainTHash) * 0.7;
-                            } elseif ($user->plan_id == 2) {
+                            if(Cache::get('power_off') == 1){
 
-                                $userEarn[$item] = $mining24 * ($hashPower[$item] / $mainTHash) - $maintenance_inBTC;
-                            } elseif ($user->plan_id == 3) {
+                                // apply 30 70 contracts conditions
+                                if ($user->plan_id == 1) {
 
-                                $userEarn[$item] = $mining24 * ($hashPower[$item] / $mainTHash);
+                                    $userEarn[$item] = $mining24 * ( ($hashPower[$item] / $settings->total_th)) * 0.7;
+                                } elseif ($user->plan_id == 2) {
+
+                                    $userEarn[$item] = $mining24 * (($hashPower[$item] / $settings->total_th)) - $maintenance_inBTC;
+                                } elseif ($user->plan_id == 3) {
+
+                                    $userEarn[$item] = $mining24 * (($hashPower[$item] / $settings->total_th));
+                                }elseif ($user->plan_id == 4) {
+
+                                    $userEarn[$item] = $mining24 * (($hashPower[$item] / $settings->total_th));
+                                }
+
+                            }else{
+
+                                // apply 30 70 contracts conditions
+                                if ($user->plan_id == 1) {
+                                    $userEarn[$item] = $mining24 * ($hashPower[$item] / $mainTHash) * 0.7;
+
+                                } elseif ($user->plan_id == 2) {
+
+                                    $userEarn[$item] = $mining24 * ($hashPower[$item] / $mainTHash) - $maintenance_inBTC;
+                                } elseif ($user->plan_id == 3) {
+
+                                    $userEarn[$item] = $mining24 * ($hashPower[$item] / $mainTHash);
+                                }elseif ($user->plan_id == 4) {
+
+                                    $userEarn[$item] = $mining24 * ($hashPower[$item] / $mainTHash);
+                                }
                             }
+
                         }
                     }
 
@@ -227,8 +259,9 @@ class UpdateMinings extends Command
         $settings->update(['total_mining'=> $settings->total_mining + $miningValue]);
 
 // -------------------------
-        // resetting alarm counter every day
+        // resetting alarm counter and power off check, every day
         Cache::forever('alarmNumber',0);
+        Cache::forever('power_off',0);
 
         $message = $message = "گزارش استخراج " . Jalalian::forge(Carbon::now())->toString()
             . ' ماینینگ' . $hashRate->mined_btc

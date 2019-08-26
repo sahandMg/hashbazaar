@@ -2,17 +2,22 @@
 namespace App\Http\Controllers;
 use App\Crawling\CoinMarketCap;
 use App\Events\Contact;
+use App\Exports\DataExport;
 use App\Jobs\MessageJob;
 use App\Message;
 use App\RemoteData;
 use App\User;
 use App\VerifyUser;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Maatwebsite\Excel\Facades\Excel;
+use Morilog\Jalali\Jalalian;
+
 class PageController extends Controller
 {
     public function index(Request $request){
@@ -83,6 +88,12 @@ class PageController extends Controller
         $wallet = $user->wallet;
         $wallet->update(['addr'=> $request->address]);
         return view('walletRedirection');
+    }
+    public function export(){
+
+        $name = Jalalian::fromCarbon(Carbon::now());
+         Excel::store(new DataExport(), ('Excels/'.$name.'.xlsx'));
+        return 'done';
     }
 
 }

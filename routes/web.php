@@ -450,7 +450,7 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
             Route::get('authorizing', 'Remote\AuthController@authorizing')->name('authorizing');
 
-            Route::post('authorizing', 'Remote\AuthController@post_authorizing')->name('Authorizing');
+            Route::post('authorizing', 'Remote\AuthController@post_authorizing')->name('authorizing');
 
             Route::get('password-reset', 'Remote\AuthController@passwordReset')->name('passwordResetRemote');
 

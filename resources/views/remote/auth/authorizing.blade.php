@@ -33,7 +33,7 @@
 			<button class="btnTab" id="loginBtn">ورود</button>
 		</div>
 		<div id="signupForm">
-			<form method="post" action="{{route('Authorizing',['locale'=>App::getLocale()])}}">
+			<form method="post" action="{{route('authorizing',['locale'=>App::getLocale()])}}">
 			   @foreach($errors->all() as $error)
 			      <div class="alert alert-danger">{{$error}}</div>
 			   @endforeach
@@ -81,7 +81,7 @@
 			</form>
 		</div>
 		<div id="loginForm">
-			<form  method="post" action="{{route('Authorizing',['locale'=>App::getLocale()])}}">
+			<form  method="post" action="{{route('authorizing',['locale'=>App::getLocale()])}}">
 			    @foreach($errors->all() as $error)
 			      <div class="alert alert-success">{{$error}}</div>
 			   @endforeach

@@ -18,7 +18,7 @@ class remoteAuthMiddleware
     {
         if(!Auth::guard('remote')->check()){
 
-            return redirect()->route('RemoteLogin',['locale'=>session('locale')]);
+            return redirect()->route('authorizing',['locale'=>session('locale')]);
         }else{
 
             return $next($request);

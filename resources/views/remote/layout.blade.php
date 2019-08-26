@@ -181,7 +181,7 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li class="{{Request::route()->getName() == 'remoteDashboard'?'active has-sub':null}}">
-                            <a class="js-arrow" href="#">
+                            <a class="js-arrow" href="{{route('dashboard',['locale'=>App::getLocale()])}}">
                                 <i class="fas fa-tachometer-alt"></i> پنل</a>
                         <!--     <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>

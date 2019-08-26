@@ -419,9 +419,7 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
         Route::group(['middleware'=>'guest'],function(){
 
-//            Route::get('authorizing', 'Remote\AuthController@login')->name('RemoteLogin');
-
-//            Route::post('login', 'Remote\AuthController@post_login')->name('RemoteLogin');
+            Route::get('subscription','Remote\SubscriptionController@index')->name('remoteSubscription');
 
             Route::get('verify/{token}', 'Remote\AuthController@VerifyUser')->name('VerifyRemoteUser');
 

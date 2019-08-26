@@ -7,7 +7,9 @@
 </head>
 <body style="background-color: white;background-image: url("{{URL::asset('img/mining.jpg')}}");">
   <div class="container">
-  	
+  	<div class="myCard">
+  		
+  	</div>
   </div>
   <div>
 	<div class="limiter">
@@ -91,22 +93,7 @@
 		</div>
 	</div>
    </div>
-<!--===============================================================================================-->
-	<!-- <script src="vendor/jquery/jquery-3.2.1.min.js"></script> -->
-<!--===============================================================================================-->
-    <script src="{{URL::asset('vendor/animsition/js/animsition.min.js')}}"></script>
-	<!--===============================================================================================-->
-	<script src="{{URL::asset('vendor/bootstrap/js/popper.js')}}"></script>
-	<!-- <script src="vendor/bootstrap/js/bootstrap.min.js"></script> -->
-	<!--===============================================================================================-->
-	<script src="{{URL::asset('vendor/select2/select2.min.js')}}"></script>
-	<!--===============================================================================================-->
-	<script src="{{URL::asset('vendor/daterangepicker/moment.min.js')}}"></script>
-	<script src="{{URL::asset('vendor/daterangepicker/daterangepicker.js')}}"></script>
-	<!--===============================================================================================-->
-	<script src="{{URL::asset('vendor/countdowntime/countdowntime.js')}}"></script>
-	<!--===============================================================================================-->
-	<script src="{{URL::asset('js/main.js')}}"></script>
+	<script src="{{URL::asset('js/jquery-3.3.1.js')}}"></script>
 	<script>
 		function submitForm(){
 			document.getElementById('submitBtn').disabled = true

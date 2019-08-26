@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="{{URL::asset('bootstrap/css/bootstrap.min.css')}}">
 
 </head>
-<body style="background-color: white;background-image: url("{{URL::asset('img/mining.jpg')}}");">
+<body style="background-color: white;background-image: url({{asset('img/mining.jpg')}});">
   <div class="container">
   	
   </div>
@@ -71,7 +71,7 @@
 						 --}}
 
 							<a href="{{route('redirectToProvider',['locale'=>App::getLocale()])}}" class="socialnet-flex1" id="gp">
-								<img src="{{URL::asset('img/icons/googleicon.png')}}" alt="Google Login"></a>
+								<img src="{{URL::asset('img/icons/googleicon.svg')}}" alt="Google Login"></a>
 
 
 						{{-- alt="Join With Google Account" --}}

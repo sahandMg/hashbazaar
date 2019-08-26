@@ -5,6 +5,7 @@ use App\Http\Helpers;
 use App\RemoteTransaction;
 use App\Setting;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -50,7 +51,7 @@ class ZarrinPal
             if ($result["Status"] == '100' ) {
 
                 $trans = new RemoteTransaction();
-                $trans->code = strtoupper(uniqid());
+                $trans->code = 'Zarrin_'.strtoupper(uniqid());
                 $trans->status = 'unpaid';
                 $trans->amount = $this->request->amount;
                 $trans->country = $country;
@@ -97,11 +98,11 @@ class ZarrinPal
 
                 $this->ZarrinPaymentConfirm($trans);
 
-                return redirect()->route('RemotePaymentSuccess');
+                return redirect()->route('RemotePaymentSuccess',['locale'=>App::getLocale()]);
 
             } else {
 
-                return redirect()->route('RemotePaymentCanceled', ['transid' => $trans->code]);
+                return redirect()->route('RemotePaymentCanceled', ['locale'=>App::getLocale(),'transid' => $trans->code]);
             }
         }
     }

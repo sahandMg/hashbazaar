@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Remote;
 
+use App\RemotePaymentGate\Paystar;
 use App\ZarrinPal;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -34,5 +35,27 @@ class TransactionController extends Controller
         $zarrin = new ZarrinPal($request);
 
         return $zarrin->verify();
+    }
+
+    public function PaystarPaying(Request $request){
+
+        $payStar = new Paystar($request);
+        $result = $payStar->create();
+        if($payStar->create() != 404){
+            $request->session()->save();
+
+            return redirect()->to('https://paystar.ir/paying/'.$result);
+        }else{
+            return 'مشکلی در پرداخت پیش آمده';
+        }
+    }
+
+
+    public function PaystarCallback(Request $request){
+
+        $payStar = new Paystar($request);
+
+        return $payStar->verify();
+
     }
 }

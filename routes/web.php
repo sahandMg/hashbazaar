@@ -416,6 +416,7 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
     Route::group(['prefix'=>'remote'],function(){
 
         Route::get('dashboard','Remote\RemoteController@remoteDataPage')->name('remoteDashboard');
+
         Route::get('subscription','Remote\SubscriptionController@index')->name('remoteSubscription');
 
         Route::group(['middleware'=>'guest'],function(){
@@ -437,16 +438,19 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
             Route::get('password-reset', 'Remote\AuthController@passwordReset')->name('passwordResetRemote');
 
-            Route::get('zarrin/paying', 'Remote\TransactionController@ZarrinPalPaying')->name('RemoteZarrinPalPaying');
-
-            Route::get('zarrin/callback', 'Remote\TransactionController@ZarrinCallback')->name('RemoteZarrinCallback');
-
-            Route::get('payment/success',['as'=>'RemotePaymentSuccess','uses'=>'Remote\TransactionController@successPayment']);
-
-            Route::get('payment/failed',['as'=>'RemotePaymentFailed','uses'=>'Remote\TransactionController@FailedPayment']);
         });
 
-        Route::get('logout', ['as' => 'logout', 'uses' => 'Remote\AuthController@logout']);
+        Route::get('zarrin/paying', 'Remote\TransactionController@ZarrinPalPaying')->name('RemoteZarrinPalPaying');
+
+        Route::get('zarrin/callback', 'Remote\TransactionController@ZarrinCallback')->name('RemoteZarrinCallback');
+
+        Route::get('paystar/paying', 'Remote\TransactionController@PaystarPaying')->name('RemotePaystarPaying');
+
+        Route::get('payment/success',['as'=>'RemotePaymentSuccess','uses'=>'Remote\TransactionController@successPayment']);
+
+        Route::get('payment/failed',['as'=>'RemotePaymentFailed','uses'=>'Remote\TransactionController@FailedPayment']);
+
+        Route::get('logout', ['as' => 'remoteLogout', 'uses' => 'Remote\AuthController@logout']);
 
     });
 

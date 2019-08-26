@@ -212,7 +212,7 @@
                             <a href="#">
                                 <i class="fas fa-calendar-alt"></i>Calendar</a>
                         </li> -->
-                        <li><a href="#"><i class="zmdi zmdi-power"></i>خروج</a></li>
+                        <li><a href="{{route('remoteLogout')}}"><i class="zmdi zmdi-power"></i>خروج</a></li>
                         <!-- <li>
                             <a href="map.html">
                                 <i class="fas fa-map-marker-alt"></i>Maps</a>
@@ -439,7 +439,7 @@
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="#">
+                                                <a href="{{route('remoteLogout')}}">
                                                     <i class="zmdi zmdi-power"></i>خروج</a>
                                             </div>
                                         </div>

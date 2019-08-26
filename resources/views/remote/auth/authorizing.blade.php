@@ -19,6 +19,11 @@
       .btn {font-family: BYekanFont;}
     </STYLE>
  @endif
+
+	         <script  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" ></script>
+	             <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
 </head>
 <body>
   <div class="container" style="direction: rtl;">
@@ -28,13 +33,20 @@
 			<button class="btnTab" id="loginBtn">ورود</button>
 		</div>
 		<div id="signupForm">
-			<form method="post" action="{{route('RemoteSignup',['locale'=>App::getLocale()])}}">
+			<form method="post" action="{{route('Authorizing',['locale'=>App::getLocale()])}}">
 			   @foreach($errors->all() as $error)
-			      <div class="alert alert-success">{{$error}}</div>
+			      <div class="alert alert-danger">{{$error}}</div>
 			   @endforeach
-				<div class="form-group">
+				   <input type="hidden" name="action" value="signup">
+				   <input type="hidden" name="_token" value="{{csrf_token()}}">
+
+			   <div class="form-group">
+						 	<lable for="name">نام و نام خانوادگی</lable>
+					      <input class="form-control" pattern='[a-zA-Z0-9 آ ا ب پ ت ث ج چ ح خ د ذ ر ز ژ س ش ص ض ط ظ ع غ ف ق ک گ ل م ن و ه ی]+'  type="text" name="name"  value="{{Request::old('name')}}">
+			   </div>
+			   <div class="form-group">
 					<label for="email">ایمیل:</label>
-					<input type="email" class="form-control" id="email">
+					<input type="email" class="form-control"  name="email" id="email">
 				</div>
 				<div class="form-group">
 					<label for="pwd">رمز:</label>
@@ -69,7 +81,7 @@
 			</form>
 		</div>
 		<div id="loginForm">
-			<form  method="post" action="{{route('RemoteLogin',['locale'=>App::getLocale()])}}">
+			<form  method="post" action="{{route('Authorizing',['locale'=>App::getLocale()])}}">
 			    @foreach($errors->all() as $error)
 			      <div class="alert alert-success">{{$error}}</div>
 			   @endforeach
@@ -80,7 +92,7 @@
 						<p style="color: green;text-align: right">{{session('message')}}</p>
 					@endif
 			        <input type="hidden" name="_token" value="{{csrf_token()}}">
-                    <input type="hidden" name="hashPower" value="{{isset($_GET['hashPower'])?$_GET['hashPower']:null}}">
+			        <input type="hidden" name="action" value="login">
 				<div class="form-group">
 					<label for="email">ایمیل:</label>
 					<input type="email" name="email" class="form-control" id="email" value="{{Request::old('email')}}">
@@ -150,12 +162,6 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 
-				<form method="post" action="{{route('RemoteSignup',['locale'=>App::getLocale()])}}" class="login100-form validate-form p-l-55 p-r-55 p-t-148">
-
-					<ul>
-						@foreach($errors->all() as $error)
-							<li style="color: red;margin-bottom: 1%;">{{$error}}</li>
-						@endforeach
 					</ul>
 				<input type="hidden" name="_token" value="{{csrf_token()}}">
 					<span class="login100-form-title">
@@ -243,6 +249,7 @@
 			document.getElementById('submitBtn').disabled = true
 		}
 		function refreshCaptcha(e){
+
 			var element = e;
 			axios.get('{{route('refreshCaptcha',['locale'=>App::getLocale()])}}').then(function(response){
 				element.target.src = response.data

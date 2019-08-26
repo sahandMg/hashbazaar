@@ -205,7 +205,7 @@
                                 <i class="fas fa-table"></i>Tables</a>
                         </li> -->
                         <li>
-                            <a href="form.html">
+                            <a href="{{route('remoteSubscription',['locale'=>App::getLocale()])}}">
                                 <i class="far fa-check-square"></i>اشتراک</a>
                         </li>
                         <!-- <li>

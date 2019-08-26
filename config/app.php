@@ -163,6 +163,8 @@ return [
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
         Delatbabel\Elocrypt\ElocryptServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+
         /*
          * Package Service Providers...
          */
@@ -228,6 +230,7 @@ return [
         'Location' => Stevebauman\Location\Facades\Location::class,
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
 
     ],

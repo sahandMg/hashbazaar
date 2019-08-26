@@ -212,6 +212,7 @@
                             <a href="#">
                                 <i class="fas fa-calendar-alt"></i>Calendar</a>
                         </li> -->
+                        <li><a href="#"><i class="zmdi zmdi-power"></i>خروج</a></li>
                         <!-- <li>
                             <a href="map.html">
                                 <i class="fas fa-map-marker-alt"></i>Maps</a>

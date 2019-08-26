@@ -286,7 +286,7 @@ section {
     .page-container {
         position: relative;
         top: 88px;
-        padding-left: 0;
+        padding-right: 0;
     }
 }
 

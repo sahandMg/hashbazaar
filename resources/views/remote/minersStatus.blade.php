@@ -8,7 +8,7 @@
     @else
         <!-- <br/> -->
 <div class="row">
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
                                 <h2>{{\Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($minerData->created_at))}}</h2>
                                 <h2 class="title-1 m-b-25 text-right" style="direction: rtl;">وضعیت دستگاه های ماینر</h2>
                                 <div class="table-responsive table--no-card m-b-40">
@@ -125,4 +125,7 @@
           </div>
        </form>
    </div>
+   <script type="text/javascript">
+       
+   </script>
 @endsection

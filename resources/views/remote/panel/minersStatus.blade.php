@@ -112,7 +112,17 @@
         </table>
   </div>
    <br/>
-   <div class="au-card">
-       
+   <div class="au-card text-right" style="direction: rtl;">
+       <h2 class="title-1 m-b-25 text-right">مدت زمان و تعداد دستگاه های خود را انتخاب کنید.</h2>
+       <form action="/action_page.php" class="was-validated" >
+          <label for="customRange">تعداد دستگاه ها : <span id="customRange">12</span></label>
+          <input type="range" class="custom-range" id="customRange" name="devices">
+          <label for="customRange2">تعداد ماه ها : <span id="customRange">10 ماه</span></label>
+          <input type="range" class="custom-range" id="customRange2" name="times">
+          <br/><br/><br/>
+          <div class="text-center">
+              <button class="btn btn-success">خرید</button>
+          </div>
+       </form>
    </div>
 @endsection

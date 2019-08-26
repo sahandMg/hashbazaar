@@ -35,15 +35,15 @@
         </thead>
         <tbody>
 
-        @for($i=0;$i<count($data);$i++)
+        @for($i=0;$i< count(unserialize($minerData->data));$i++)
             <tr>
-                <td>{{$data[$i]['ip']}}</td>
-                <td>{{$data[$i]['minerName']}}</td>
-                <td>{{implode( ", ", $data[$i]['temp2'])}}</td>
-                <td>{{implode( ", ", $data[$i]['temp1'])}}</td>
-                <td>{{implode( ", ", $data[$i]['fanSpeeds'])}}</td>
-                <td>{{$data[$i]['totalHashrate']}}</td>
-                <td>{{$data[$i]['upTime']}}</td>
+                <td>{{unserialize($minerData->data)[$i]['ip']}}</td>
+                <td>{{unserialize($minerData->data)[$i]['minerName']}}</td>
+                <td>{{implode( ", ", unserialize($minerData->data)[$i]['temp2'])}}</td>
+                <td>{{implode( ", ", unserialize($minerData->data)[$i]['temp1'])}}</td>
+                <td>{{implode( ", ", unserialize($minerData->data)[$i]['fanSpeeds'])}}</td>
+                <td>{{unserialize($minerData->data)[$i]['totalHashrate']}}</td>
+                <td>{{unserialize($minerData->data)[$i]['upTime']}}</td>
             </tr>
         @endfor
 

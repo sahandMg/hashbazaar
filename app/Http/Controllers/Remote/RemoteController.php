@@ -76,8 +76,7 @@ class RemoteController extends Controller
     // Shows Miners Data
     public function remoteDataPage(){
         $minerData = DB::connection('mysql')->table('remote_data')->orderBy('id','desc')->where('remote_id',Auth::guard('remote')->id())->first();
-        $data = unserialize($minerData->data);
-        return view('remote.minersStatus',compact('minerData','data'));
+        return view('remote.minersStatus',compact('minerData'));
     }
 
 

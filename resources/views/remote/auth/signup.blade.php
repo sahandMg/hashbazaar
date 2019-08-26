@@ -85,7 +85,7 @@
 				</div>
 				<div class="form-group">
 					<label for="pwd">رمز:</label>
-					<input type="password"  name="password" name="password" placeholder="{{__("Password")}}" class="form-control" id="pwd">
+					<input type="password"  name="password" placeholder="{{__("Password")}}" class="form-control" id="pwd">
 				</div>
 				<!-- captcha -->
 				<div class="d-flex justify-content-center" style="margin-bottom: 5%;">

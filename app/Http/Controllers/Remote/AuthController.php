@@ -24,7 +24,7 @@ class AuthController extends Controller
 
     public function signup(){
 
-        return view('remote.auth.signup');
+        return view('remote.auth.authorizing');
     }
 
     public function post_signup(Request $request){

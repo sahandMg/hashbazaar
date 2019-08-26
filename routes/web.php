@@ -412,6 +412,7 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
     Route::post('send-code', 'PanelController@postDashboard')->name('SendCode');
 
     // ========================== Remote Pages Routes ===========================
+
     Route::group(['prefix'=>'remote'],function(){
 
         Route::get('dashboard','Remote\RemoteController@remoteDataPage')->name('remoteDashboard');
@@ -437,6 +438,8 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
             Route::post('signup', 'Remote\AuthController@post_signup')->name('RemoteSignup');
 
             Route::get('password-reset', 'Remote\AuthController@passwordReset')->name('passwordResetRemote');
+
+            Route::get('zarrin/paying', 'Remote\TransactionController@ZarrinPalPaying')->name('RemoteZarrinPalPaying');
 
             Route::get('zarrin/callback', 'Remote\TransactionController@ZarrinCallback')->name('RemoteZarrinCallback');
 

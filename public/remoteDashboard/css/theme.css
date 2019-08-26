@@ -1742,6 +1742,11 @@ section {
     background: #f8f8f8;
 }
 
+.navbar-mobile__list li {
+    text-align: right;
+    direction: rtl;
+}
+
 .header-mobile .navbar-mobile .navbar-mobile__list > li > a {
     padding-left: 15px !important;
 }
@@ -1762,7 +1767,7 @@ section {
 }
 
 .header-mobile .navbar-mobile .navbar-mobile__list li a > i {
-    margin-right: 19px;
+    margin-left: 19px;
 }
 
 .header-mobile .navbar-mobile .navbar-mobile__list li.has-dropdown > a:after {

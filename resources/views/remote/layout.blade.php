@@ -70,7 +70,7 @@
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
-                            <a class="js-arrow" href="#">
+                            <a class="js-arrow" href="{{route('remoteDashboard',['locale'=>App::getLocale()])}}">
                                 <i class="fas fa-tachometer-alt"></i>پنل</a>
                             <!-- <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
@@ -179,7 +179,7 @@
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                        <li class="active has-sub">
+                        <li class="{{Request::route()->getName() == 'remoteDashboard'?'active has-sub':null}}">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-tachometer-alt"></i> پنل</a>
                         <!--     <ul class="list-unstyled navbar__sub-list js-sub-list">
@@ -205,7 +205,7 @@
                             <a href="table.html">
                                 <i class="fas fa-table"></i>Tables</a>
                         </li> -->
-                        <li>
+                        <li class="{{Request::route()->getName() == 'remoteSubscription'?'active has-sub':null}}">
                             <a href="{{route('remoteSubscription',['locale'=>App::getLocale()])}}">
                                 <i class="far fa-check-square"></i>اشتراک</a>
                         </li>
@@ -213,7 +213,10 @@
                             <a href="#">
                                 <i class="fas fa-calendar-alt"></i>Calendar</a>
                         </li> -->
-                        <li><a href="{{route('remoteLogout')}}"><i class="zmdi zmdi-power"></i>خروج</a></li>
+                        <li>
+                            <a href="{{route('remoteLogout',['locale'=>App::getLocale()])}}">
+                                <i class="zmdi zmdi-power"></i>خروج</a>
+                        </li>
                         <!-- <li>
                             <a href="map.html">
                                 <i class="fas fa-map-marker-alt"></i>Maps</a>
@@ -440,7 +443,7 @@
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="{{route('remoteLogout')}}">
+                                                <a href="{{route('remoteLogout',['locale'=>App::getLocale()])}}">
                                                     <i class="zmdi zmdi-power"></i>خروج</a>
                                             </div>
                                         </div>

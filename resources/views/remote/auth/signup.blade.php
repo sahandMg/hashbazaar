@@ -45,7 +45,8 @@
 					<input type="password" class="form-control" id="pwd2"  name="confirm_password" placeholder="{{__("Confirm password")}}">
 				</div>
 				<!-- captcha -->
-				<div class="d-flex justify-content-center" style="margin-bottom: 5%;">
+				<div id="signupCaptcha">
+				  <div class="d-flex justify-content-center" style="margin-bottom: 5%;">
 				    <div class="wrap-input100 validate-input pass m-b-5"  style="margin-left: 5%;" data-validate = "Please enter password">
 						<input required class="form-control" type="text" pattern="[a-zA-Z0-9]+"  name="captcha" placeholder="{{__("Security Code")}}">
 						<span class="focus-input100"></span>
@@ -54,6 +55,7 @@
 					<div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
 						<a onclick="refreshCaptcha(event)" style="cursor: pointer;">{{Captcha::img()}}</a>
 					</div>
+				  </div>
 				</div>
 				 <!-- ************** -->
 				 <div class="text-center">
@@ -88,7 +90,8 @@
 					<input type="password"  name="password" placeholder="{{__("Password")}}" class="form-control" id="pwd">
 				</div>
 				<!-- captcha -->
-				<div class="d-flex justify-content-center" style="margin-bottom: 5%;">
+				<div id="loginCaptcha">
+				  <!-- <div class="d-flex justify-content-center" style="margin-bottom: 5%;">
 				    <div class="wrap-input100 validate-input pass m-b-5"  style="margin-left: 5%;" data-validate = "Please enter password">
 						<input required class="form-control" type="text" pattern="[a-zA-Z0-9]+"  name="captcha" placeholder="{{__("Security Code")}}">
 						<span class="focus-input100"></span>
@@ -97,6 +100,7 @@
 					<div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
 						<a onclick="refreshCaptcha(event)" style="cursor: pointer;">{{Captcha::img()}}</a>
 					</div>
+				  </div> -->
 				</div>
                 <div class="text-center">
 				   <button type="submit" class="btn btn-success">ورود</button>
@@ -247,7 +251,8 @@
 		}
 
 		$(document).ready(function() {
-                 $('#signupForm').show();
+		        document.getElementById('loginCaptcha').innerHTML  = document.getElementById('signupCaptcha').innerHTML ;
+                $('#signupForm').show();
 				$('#loginForm').hide();
 				$('#signupBtn').addClass('borderBottom');
 				$('#loginBtn').removeClass('borderBottom');

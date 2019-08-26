@@ -1,22 +1,15 @@
-@extends('master.layout')
-@section('title')
-@if(App::getlocale() == 'fa')
-<title>هش بازار | ثبت نام</title>
-<style type="text/css">
-	input {direction: rtl;}
-</style>
-@else
-<title>Hashbazaar | Signup</title>
-<style type="text/css">
-	input {font-family: Ubuntu-Regular;}
-	a {font-family: Ubuntu-Regular;}
-</style>
-@endif
-@endsection
-@section('content')
-	<?php
+<!DOCTYPE html>
+<html>
+<head>
+	<title>مدیریت</title>
+	<link rel="stylesheet" href="{{URL::asset('bootstrap/css/bootstrap.min.css')}}">
 
-			?>
+</head>
+<body style="background-color: white;background-image: url("{{URL::asset('img/mining.jpg')}}");">
+  <div class="container">
+  	
+  </div>
+  <div>
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
@@ -97,12 +90,11 @@
 			</div>
 		</div>
 	</div>
-	@include('master.footer')
-
+   </div>
 <!--===============================================================================================-->
 	<!-- <script src="vendor/jquery/jquery-3.2.1.min.js"></script> -->
 <!--===============================================================================================-->
-<script src="{{URL::asset('vendor/animsition/js/animsition.min.js')}}"></script>
+    <script src="{{URL::asset('vendor/animsition/js/animsition.min.js')}}"></script>
 	<!--===============================================================================================-->
 	<script src="{{URL::asset('vendor/bootstrap/js/popper.js')}}"></script>
 	<!-- <script src="vendor/bootstrap/js/bootstrap.min.js"></script> -->
@@ -127,5 +119,5 @@
 			});
 		}
 	</script>
-
-@endsection
+  </body>
+</html>

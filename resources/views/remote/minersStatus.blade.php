@@ -14,19 +14,19 @@
                                 <div class="table-responsive table--no-card m-b-40">
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
-                                            <tr>
+                                            <tr  class="text-center">
                                                 <th>Ip</th>
                                                 <th>Type</th>
                                                 <th>Temp2</th>
-                                                <th class="text-right">Temp1</th>
-                                                <th class="text-right">Fan Speed</th>
-                                                <th class="text-right">Total Th</th>
-                                                <th class="text-right">Up time</th>
+                                                <th>Temp1</th>
+                                                <th>Fan Speed</th>
+                                                <th>Total Th</th>
+                                                <th>Up time</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                              @for($i=0;$i< count(unserialize($minerData->data));$i++)
-             <tr>
+             <tr class="text-center">
                 <td>{{unserialize($minerData->data)[$i]['ip']}}</td>
                 <td>{{unserialize($minerData->data)[$i]['minerName']}}</td>
                 <td>{{implode( ", ", unserialize($minerData->data)[$i]['temp2'])}}</td>
@@ -86,27 +86,33 @@
                                 </div>
                             </div> -->
                         </div>        
-  <!--        <div class="table-responsive">
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>Ip</th>
-            <th>Type</th>
-            <th>Temp2</th>
-            <th>Temp1</th>
-            <th>Fan Speed</th>
-            <th>Total Th</th>
-            <th>Up time</th>
-        </tr>
-        </thead>
-        <tbody>
-
-       
-
-
-        </tbody>
-    </table>
-  </div> -->
     @endif
-
+   <br/>
+   <div class="table-responsive table--no-card m-b-40" style="direction: rtl;">
+       <h2 class="title-1 m-b-25 text-right" style="direction: rtl;">لیست خرید اشتراک ها</h2>
+        <table class="table table-borderless table-striped table-earning">
+            <thead>
+                <tr class="text-center">
+                    <th>تاریخ</th>
+                    <th>تعداد دستگاه</th>
+                    <th>مدت زمان</th>
+                    <th>مبلغ پرداختی</th>
+                    <th>مدت زمان باقی مانده</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center">
+                  <td>1398/5/30</td>
+                  <td>25</td>
+                  <td>3 ماه</td>
+                  <td>150 هزار تومان</td>
+                  <td>یک ماه 12 روز</td>
+                </tr>
+            </tbody>
+        </table>
+  </div>
+   <br/>
+   <div class="au-card">
+       
+   </div>
 @endsection

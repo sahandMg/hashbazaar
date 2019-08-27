@@ -67,7 +67,7 @@ class Paystar
 
         }
         $trans = new RemoteTransaction();
-        $trans->code = 'Paystar_'.strtoupper(uniqid());
+        $trans->code = $result;
         $trans->status = 'unpaid';
         $trans->amount = $amount;
         $trans->country = $country;
@@ -106,11 +106,11 @@ class Paystar
 
             $this->PaystarPaymentConfirm($trans);
 
-            return redirect()->route('RemotePaymentSuccess',['locale'=> App::getLocale()]);
+        return redirect()->route('RemotePaymentSuccess',['locale'=>App::getLocale(),'transid'=>$trans->code]);
 
         }else{
 
-            return redirect()->route('RemotePaymentCanceled',['locale'=> App::getLocale(),'transid'=>$transactionId]);
+            return redirect()->route('RemotePaymentCanceled',['locale'=> App::getLocale(),'transid'=>$trans->code]);
         }
     }
     private function PaystarPaymentConfirm($trans){
@@ -131,17 +131,17 @@ class Paystar
         $remotePlan->devices = Session::get('devices');
         $remotePlan->save();
         // TODO payment paystar mail page
-//        Mail::send('email.paymentConfirmed', ['hashPower' => $hashPower, 'trans' => $trans], function ($message) use ($user) {
-//            $message->from('Admin@HashBazaar');
-//            $message->to($user->email);
-//            $message->subject('Payment Confirmed');
-//        });
 //
-//        Mail::send('email.newTrans', [], function ($message) use ($user) {
-//            $message->from('Admin@HashBazaar');
-//            $message->to('Admin@HashBazaar');
-//            $message->subject('New Payment');
-//        });
+        Mail::send('email.remote.paymentConfirmed', ['plan' => $remotePlan, 'trans' => $trans], function ($message) use ($user) {
+            $message->from(env('Sales_Mail'));
+            $message->to($user->email);
+            $message->subject('Payment Confirmed');
+        });
 
+        Mail::send('email.newTrans', [], function ($message) use ($user) {
+            $message->from(env('Sales_Mail'));
+            $message->to(env('Admin_Mail'));
+            $message->subject('New Payment');
+        });
     }
 }

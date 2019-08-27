@@ -428,9 +428,9 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
         Route::get('paystar/paying', 'Remote\TransactionController@PaystarPaying')->name('RemotePaystarPaying');
 
-        Route::get('payment/success',['as'=>'RemotePaymentSuccess','uses'=>'Remote\TransactionController@successPayment']);
+        Route::get('payment/success/{transid}',['as'=>'RemotePaymentSuccess','uses'=>'Remote\TransactionController@successPayment']);
 
-        Route::get('payment/canceled/{transid?}',['as'=>'RemotePaymentFailed','uses'=>'Remote\TransactionController@FailedPayment']);
+        Route::get('payment/canceled/{transid}',['as'=>'RemotePaymentFailed','uses'=>'Remote\TransactionController@FailedPayment']);
 
         Route::get('hardware','Remote\RemoteController@hardware')->name('hardware');
 

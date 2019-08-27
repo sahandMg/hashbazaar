@@ -19,7 +19,6 @@ class TestController extends Controller
         $zarrin = new ZarrinPalTest($request);
         $result = $zarrin->create();
         if($result != 404){
-            $request->session()->save();
             return $this->ZarrinCallback($request);
         }else{
             return 'مشکلی در پرداخت پیش آمده';

@@ -8,8 +8,13 @@ class RemoteUser extends Authenticatable implements MustVerifyEmail
 {
     protected $connection = 'mysql';
     protected $fillable = ['email','password','ip','country','block','avatar','verified'];
+
     public function verifyUser(){
         return $this->hasOne(VerifyUser::class);
     }
 
+    public function data(){
+
+        return $this->hasMany(RemoteData::class,'remote_id');
+    }
 }

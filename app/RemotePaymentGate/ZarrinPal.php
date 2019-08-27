@@ -107,7 +107,7 @@ class ZarrinPal
 
                 $this->ZarrinPaymentConfirm($trans);
 
-                return redirect()->route('RemotePaymentSuccess',['locale'=>App::getLocale()]);
+                return redirect()->route('RemotePaymentSuccess',['locale'=>App::getLocale(),'transid'=>$trans->code]);
 
             } else {
 
@@ -133,17 +133,18 @@ class ZarrinPal
         $remotePlan->save();
 
         // TODO Transaction Mail
-//        Mail::send('email.paymentConfirmed', ['hashPower' => $hashPower, 'trans' => $trans], function ($message) use ($user) {
-//            $message->from('Admin@HashBazaar');
-//            $message->to($user->email);
-//            $message->subject('Payment Confirmed');
-//        });
-//
-//        Mail::send('email.newTrans', [], function ($message) use ($user) {
-//            $message->from('Admin@HashBazaar');
-//            $message->to('Admin@HashBazaar');
-//            $message->subject('New Payment');
-//        });
+        Mail::send('email.remote.paymentConfirmed', ['plan' => $remotePlan, 'trans' => $trans], function ($message) use ($user) {
+            $message->from(env('Sales_Mail'));
+            $message->to($user->email);
+            $message->subject('Payment Confirmed');
+        });
+
+        Mail::send('email.newTrans', [], function ($message) use ($user) {
+            $message->from(env('Sales_Mail'));
+            $message->to(env('Admin_Mail'));
+            $message->subject('New Payment');
+        });
+
     }
 
 }

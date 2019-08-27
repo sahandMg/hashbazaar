@@ -27,7 +27,7 @@ class RemoteController extends Controller
     public function __construct()
     {
 
-        $this->middleware('remoteAuth')->except('remoteApi');
+        $this->middleware('remoteAuth')->except('remoteApi','minerDataApi');
     }
 
     // Gets Miners data by API
@@ -92,6 +92,24 @@ class RemoteController extends Controller
     public function tutorials(){
 
         return view('remote.panel.tutorials');
+    }
+
+    public function minerDataApi(Request $request){
+
+        if(!$request->has('id')){
+
+            return ['error'=>500,'message'=>'provide an id'];
+        }else{
+
+            $token = $request->id;
+            $user = RemoteUser::where('code',$token)->first();
+            if(is_null($user)){
+                return ['error'=>500,'message'=>'incorrect id'];
+            }
+            $data = RemoteUser::where('code',$token)->orderBy('remote_data.id','desc')->join('remote_data','remote_users.id','=','remote_data.remote_id')
+               ->first()->data;
+            return unserialize($data);
+        }
     }
 
 }

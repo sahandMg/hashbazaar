@@ -6,17 +6,26 @@ use App\RemotePaymentGate\Paystar;
 use App\RemotePaymentGate\ZarrinPal;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class TransactionController extends Controller
 {
-    public function successPayment(){
-
-        return view('remote.payment.success');
+    public function successPayment($lang,$id){
+        $trans = DB::connection('mysql')->table('remote_transactions')->where('code',$id)->first();
+        if(is_null($trans)){
+            return 'تراکنش نامعتبر';
+        }
+        $code = $trans->code;
+        return view('remote.payment.success',compact('code'));
     }
 
-    public function failedPayment(){
-
-        return view('remote.payment.failed');
+    public function failedPayment($lang,$id){
+        $trans = DB::connection('mysql')->table('remote_transactions')->where('code',$id)->first();
+        if(is_null($trans)){
+            return 'تراکنش نامعتبر';
+        }
+        $code = $trans->code;
+        return view('remote.payment.failed',compact('code'));
     }
 
     public function ZarrinPalPaying(Request $request){

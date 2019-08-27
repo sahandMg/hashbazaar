@@ -39,7 +39,8 @@ class ZarrinPalTest
                 $trans->status = 'unpaid';
                 $trans->amount = $amount;
                 $trans->country = $country;
-                $trans->authority = "TEST__000000000000000000210312000000";
+                $trans->authority = "TEST__000000000000000000210312000000".rand(0,100);
+                session(['authority'=> $trans->authority]);
                 $trans->user_id = Auth::guard('remote')->id();
                 $trans->save();
                 Session::put('months',$this->request->months);
@@ -50,46 +51,44 @@ class ZarrinPalTest
 
     public function verify(){
 
-        $transactionId = 'TEST__000000000000000000210312000000';
+        $transactionId = session('authority');
         $trans = RemoteTransaction::where('authority',$transactionId)->first();
         if(is_null($trans)){
             return 'کد تراکنش نادرست است';
         }
                 $this->ZarrinPaymentConfirm($trans);
 
-                return redirect()->route('RemotePaymentSuccess',['locale'=>App::getLocale()]);
+                return redirect()->route('RemotePaymentSuccess',['locale'=>App::getLocale(),'transid'=>$trans->code]);
 
 //                return redirect()->route('RemotePaymentCanceled', ['locale'=>App::getLocale(),'transid' => $trans->code]);
     }
     private function ZarrinPaymentConfirm($trans)
     {
-
         $transactionId = $trans->code;
         $orderID = $transactionId;
         // update created transaction record
         DB::connection('mysql')->table('remote_transactions')->where('code', $orderID)->update([
             'status' => 'paid'
         ]);
-
         $remotePlan = new RemotePlan();
         $remotePlan->trans_id = $trans->id;
         $remotePlan->user_id = Auth::guard('remote')->id();
         $remotePlan->months = Session::get('months');
         $remotePlan->devices = Session::get('devices');
         $remotePlan->save();
-
         // TODO Transaction Mail
-//        Mail::send('email.paymentConfirmed', ['hashPower' => $hashPower, 'trans' => $trans], function ($message) use ($user) {
-//            $message->from('Admin@HashBazaar');
-//            $message->to($user->email);
-//            $message->subject('Payment Confirmed');
-//        });
-//
-//        Mail::send('email.newTrans', [], function ($message) use ($user) {
-//            $message->from('Admin@HashBazaar');
-//            $message->to('Admin@HashBazaar');
-//            $message->subject('New Payment');
-//        });
+        Mail::send('email.remote.paymentConfirmed', ['plan' => $remotePlan, 'trans' => $trans], function ($message) use ($user) {
+            $message->from(env('Sales_Mail'));
+            $message->to($user->email);
+            $message->subject('Payment Confirmed');
+        });
+
+        Mail::send('email.newTrans', [], function ($message) use ($user) {
+            $message->from(env('Sales_Mail'));
+            $message->to(env('Admin_Mail'));
+            $message->subject('New Payment');
+        });
+
     }
 
 }

@@ -7,7 +7,7 @@
    <div class="au-card text-right" style="direction: rtl;">
        <div class="alert alert-success">
          <p>پرداخت شما با موفقیعت انجام شد.</p>
-         <p>شماره فاکتور: <strong>12564875</strong></p> 
+         <p>شماره فاکتور: <strong>{{$code}}</strong></p>
        </div>
    </div>
    <br/><br/>

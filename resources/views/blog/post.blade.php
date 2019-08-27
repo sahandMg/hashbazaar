@@ -32,6 +32,8 @@
            .blog-detail h3 { font-size: 0.9rem; margin-bottom: 4px;}
            .blog-detail p {font-size: 0.8rem;}
         }
+
+        td {color: black;}
     </style>
     <div class="container blog-detail">
        <h1 class="text-center">{{ $post->title }}</h1>

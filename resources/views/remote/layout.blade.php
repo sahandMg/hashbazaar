@@ -88,6 +88,10 @@
                                 </li>
                             </ul> -->
                         </li>
+                        <li class="{{Request::route()->getName() == 'minerStatus'?'active has-sub':null}}">
+                            <a class="js-arrow" href="{{route('minerStatus',['locale'=>App::getLocale()])}}">
+                                <i class="fas fa-table"></i> وضعیت ماینرها</a>
+                        </li>
                         <!-- <li>
                             <a href="chart.html">
                                 <i class="fas fa-chart-bar"></i>Charts</a>
@@ -212,7 +216,7 @@
 
                         <li class="{{Request::route()->getName() == 'minerStatus'?'active has-sub':null}}">
                             <a class="js-arrow" href="{{route('minerStatus',['locale'=>App::getLocale()])}}">
-                                <i class="fas fa-tachometer-alt"></i> وضعیت ماینرها</a>
+                                <i class="fas fa-table"></i> وضعیت ماینرها</a>
                             <!--     <ul class="list-unstyled navbar__sub-list js-sub-list">
                                     <li>
                                         <a href="index.html">Dashboard 1</a>
@@ -450,7 +454,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="{{URL::asset('remoteDashboard/images/icon/avatar-01.jpg')}}" alt="John Doe" />
+                                            <img src="{{URL::asset('remoteDashboard/images/avatar.png')}}" alt="John Doe" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">محمد وطن دوست</a>
@@ -459,7 +463,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="{{URL::asset('remoteDashboard/images/icon/avatar-01.jpg')}}" alt="John Doe" />
+                                                        <img src="{{URL::asset('remoteDashboard/images/avatar.png')}}" alt="John Doe" />
                                                     </a>
                                                 </div>
                                                 <div class="content">

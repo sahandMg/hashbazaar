@@ -84,6 +84,33 @@
 
    <br/>
    <div class="au-card text-right" style="direction: rtl;">
+     <form>
+      <div class="d-flex flex-wrap justify-content-center new-farm">
+        <label style="margin-top: 5px;">نام فارم جدید:</label>
+        <input type="text" class="form-control" style="margin-right: 1%;">
+        <button class="btn btn-success" style="margin-right: 2%;">ایجاد</button>
+       </div>
+      </form> 
+      <br/>
+      <h3 class="text-center">فارم های ماینینگ شما</h3>
+      <br/>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+           <th>نام</th>
+           <th>شناسه</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+           <td>فارم یک</td>
+           <td>asd564sagfdg6</td>
+        </tr>
+       </tbody>
+      </table> 
+   </div>
+   <br/>
+   <div class="au-card text-right" style="direction: rtl;">
      <h3>با دادن اطلاعان Pool ، API خود می توانید وضعیت استخراج را در این جا مشاهد کنید و همچنین در صورت قطع شدن ماینرها، ایمیل و پیامک هشدار دریافت کنید.</h3>
      <br/>
      <div class="form-group text-center col-lg-3 col-md-4 col-sm-10 mx-auto">
@@ -145,6 +172,12 @@
 <style type="text/css">
   .poolForm {
      
+  }
+  .new-farm label{width: 100px;}
+  .new-farm input{width: 200px;}
+  @media (max-width: 420px) {
+    .new-farm label{font-size: 18px;}
+    h3 {    font-size: 19px;}
   }
 </style>
 

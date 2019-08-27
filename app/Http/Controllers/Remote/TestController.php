@@ -2,30 +2,25 @@
 
 namespace App\Http\Controllers\Remote;
 
-use App\RemotePaymentGate\Paystar;
-use App\RemotePaymentGate\ZarrinPal;
+use App\RemotePaymentGate\PaystarTest;
+use App\RemotePaymentGate\ZarrinPalTest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class TransactionController extends Controller
+class TestController extends Controller
 {
-    public function successPayment(){
+    public function gateTest(){
 
-        return view('remote.payment.success');
-    }
-
-    public function failedPayment(){
-
-        return view('remote.payment.failed');
+        return view('remote.test.GateTest');
     }
 
     public function ZarrinPalPaying(Request $request){
 
-        $zarrin = new ZarrinPal($request);
+        $zarrin = new ZarrinPalTest($request);
         $result = $zarrin->create();
         if($result != 404){
             $request->session()->save();
-            return redirect()->to('https://www.zarinpal.com/pg/StartPay/' . $result["Authority"]);
+            return $this->ZarrinCallback($request);
         }else{
             return 'مشکلی در پرداخت پیش آمده';
         }
@@ -33,19 +28,19 @@ class TransactionController extends Controller
 
     public function ZarrinCallback(Request $request){
 
-        $zarrin = new ZarrinPal($request);
+        $zarrin = new ZarrinPalTest($request);
 
         return $zarrin->verify();
     }
 
     public function PaystarPaying(Request $request){
 
-        $payStar = new Paystar($request);
+        $payStar = new PaystarTest($request);
         $result = $payStar->create();
         if($result != 404){
             $request->session()->save();
 
-            return redirect()->to('https://paystar.ir/paying/'.$result);
+            return $this->PaystarCallback($request);
         }else{
             return 'مشکلی در پرداخت پیش آمده';
         }
@@ -54,7 +49,7 @@ class TransactionController extends Controller
 
     public function PaystarCallback(Request $request){
 
-        $payStar = new Paystar($request);
+        $payStar = new PaystarTest($request);
 
         return $payStar->verify();
 

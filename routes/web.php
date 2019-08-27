@@ -430,15 +430,23 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
         Route::get('payment/success',['as'=>'RemotePaymentSuccess','uses'=>'Remote\TransactionController@successPayment']);
 
-        Route::get('payment/failed',['as'=>'RemotePaymentFailed','uses'=>'Remote\TransactionController@FailedPayment']);
+        Route::get('payment/canceled/{transid?}',['as'=>'RemotePaymentFailed','uses'=>'Remote\TransactionController@FailedPayment']);
 
         Route::get('hardware','Remote\RemoteController@hardware')->name('hardware');
 
         Route::get('tutorials','Remote\RemoteController@tutorials')->name('tutorials');
 
         Route::get('logout', ['as' => 'remoteLogout', 'uses' => 'Remote\AuthController@logout']);
+        // ====================== Remote Test Routes =====================
 
+        Route::group(['prefix'=>'test'],function(){
 
+            Route::get('gate','Remote\TestController@gateTest')->name('gateTest');
+
+            Route::post('zarrin-paying','Remote\TestController@ZarrinPalPaying')->name('RemoteZarrinPalPayingTest');
+
+            Route::post('paystar-paying','Remote\TestController@PaystarPaying')->name('RemotePaystarPayingTest');
+        });
         // -----> unauthorized remote routes
 
         Route::group(['middleware'=>'guest'],function(){

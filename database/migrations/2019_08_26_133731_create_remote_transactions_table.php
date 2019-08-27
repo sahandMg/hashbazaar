@@ -17,9 +17,10 @@ class CreateRemoteTransactionsTable extends Migration
             $table->increments('id');
             $table->string('code');
             $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('remote_users')->onDelete('cascade');
             $table->string('status')->nullable();
             $table->string('amount')->nullable();
+            $table->string('country')->nullable();
             $table->text('authority')->nullable();
             $table->timestamps();
         });

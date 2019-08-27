@@ -26,7 +26,12 @@ class ZarrinPal
     public function create(){
 
         $settings = Setting::first();
-        $country = strtolower(Location::get(Helpers::userIP())->countryCode);
+        try{
+
+            $country = strtolower(Location::get(Helpers::userIP())->countryCode);
+        }catch (\Exception $ex){
+            $country = 'ir';
+        }
         $amount = $settings->remote_fee * $this->request->months * $this->request->devices;
         $data = array('MerchantID' => $settings->zarrin_pin,
             'Amount' => $amount,

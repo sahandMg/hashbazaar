@@ -30,7 +30,12 @@ class Paystar
    * Paystar Api
    */
         $settings = Setting::first();
-        $country = strtolower(Location::get(Helpers::userIP())->countryCode);
+        try{
+
+            $country = strtolower(Location::get(Helpers::userIP())->countryCode);
+        }catch (\Exception $ex){
+            $country = 'ir';
+        }
 
         if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
             $ip = $_SERVER['HTTP_CLIENT_IP'];
@@ -66,6 +71,7 @@ class Paystar
         $trans->status = 'unpaid';
         $trans->amount = $amount;
         $trans->country = $country;
+        $trans->user_id = Auth::guard('remote')->id();
         $trans->save();
         Session::put('months',$this->request->months);
         Session::put('devices',$this->request->devices);

@@ -21,7 +21,7 @@ class CreateRemotePlansTable extends Migration
             $table->foreign('user_id')->references('id')->on('remote_users')->onDelete('cascade');
             $table->unsignedInteger('trans_id');
             $table->foreign('trans_id')->references('id')->on('remote_transactions')->onDelete('cascade');
-            $table->boolean('expired')->default('false');
+            $table->boolean('expired')->default(false);
             $table->timestamps();
         });
     }

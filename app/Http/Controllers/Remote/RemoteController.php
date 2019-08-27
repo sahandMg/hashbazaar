@@ -84,5 +84,14 @@ class RemoteController extends Controller
         return view('remote.panel.minerStatus',compact('minerData'));
     }
 
+    public function hardware(){
+
+        return view('remote.panel.hardware');
+    }
+
+    public function tutorials(){
+
+        return view('remote.panel.tutorials');
+    }
 
 }

@@ -162,7 +162,18 @@
                                 </li>
                             </ul>
                         </li> -->
-                        <li><a href="#"><i class="zmdi zmdi-power"></i>خروج</a></li>
+
+                        <li class="{{Request::route()->getName() == 'hardware'?'active has-sub':null}}">
+                            <a href="{{route('hardware',['locale'=>App::getLocale()])}}">
+                                <i class="far fa-check-square"></i>خرید سخت افزار</a>
+                        </li>
+
+                        <li class="{{Request::route()->getName() == 'tutorials'?'active has-sub':null}}">
+                            <a href="{{route('tutorials',['locale'=>App::getLocale()])}}">
+                                <i class="far fa-check-square"></i>آموزش ها</a>
+                        </li>
+
+                        <li><a href="{{route('logout',['locale'=>App::getLocale()])}}"><i class="zmdi zmdi-power"></i>خروج</a></li>
                     </ul>
                 </div>
             </nav>
@@ -228,6 +239,16 @@
                         <li class="{{Request::route()->getName() == 'remoteSubscription'?'active has-sub':null}}">
                             <a href="{{route('remoteSubscription',['locale'=>App::getLocale()])}}">
                                 <i class="far fa-check-square"></i>اشتراک</a>
+                        </li>
+
+                        <li class="{{Request::route()->getName() == 'hardware'?'active has-sub':null}}">
+                            <a href="{{route('hardware',['locale'=>App::getLocale()])}}">
+                                <i class="far fa-check-square"></i>خرید سخت افزار</a>
+                        </li>
+
+                        <li class="{{Request::route()->getName() == 'tutorials'?'active has-sub':null}}">
+                            <a href="{{route('tutorials',['locale'=>App::getLocale()])}}">
+                                <i class="far fa-check-square"></i>آموزش ها</a>
                         </li>
                         <!-- <li>
                             <a href="#">

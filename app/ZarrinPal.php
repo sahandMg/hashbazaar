@@ -10,6 +10,7 @@ namespace App;
 
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -139,11 +140,11 @@ class ZarrinPal
 
                 $this->ZarrinPaymentConfirm($trans);
 
-                return redirect()->route('PaymentSuccess');
+                return redirect()->route('PaymentSuccess',['locale'=>App::getLocale()]);
 
             } else {
 
-                return redirect()->route('PaymentCanceled', ['transid' => $trans->code]);
+                return redirect()->route('PaymentCanceled', ['locale'=>App::getLocale(),'transid' => $trans->code]);
             }
         }
     }

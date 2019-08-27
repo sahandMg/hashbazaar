@@ -2,6 +2,7 @@
 namespace App\RemotePaymentGate;
 
 use App\Http\Helpers;
+use App\RemotePlan;
 use App\RemoteTransaction;
 use App\Setting;
 use Carbon\Carbon;
@@ -9,6 +10,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 use Stevebauman\Location\Facades\Location;
 
 class ZarrinPal
@@ -25,9 +27,9 @@ class ZarrinPal
 
         $settings = Setting::first();
         $country = strtolower(Location::get(Helpers::userIP())->countryCode);
-
+        $amount = $settings->remote_fee * $this->request->months * $this->request->devices;
         $data = array('MerchantID' => $settings->zarrin_pin,
-            'Amount' => $this->request->amount,
+            'Amount' => $amount,
             'Email' =>  Auth::guard('remote')->user()->email,
             'CallbackURL' => env('Zarrin_Remote_Callback'),
             'Description' => 'فروشگاه اینترنتی قطعات الکترونیکی');
@@ -53,11 +55,13 @@ class ZarrinPal
                 $trans = new RemoteTransaction();
                 $trans->code = 'Zarrin_'.strtoupper(uniqid());
                 $trans->status = 'unpaid';
-                $trans->amount = $this->request->amount;
+                $trans->amount = $amount;
                 $trans->country = $country;
                 $trans->authority = $result['Authority'];
+                $trans->user_id = Auth::guard('remote')->id();
                 $trans->save();
-
+                Session::put('months',$this->request->months);
+                Session::put('devices',$this->request->devices);
                 return $result;
             } else {
                 return 404;
@@ -115,6 +119,14 @@ class ZarrinPal
         DB::connection('mysql')->table('remote_transactions')->where('code', $orderID)->update([
             'status' => 'paid'
         ]);
+
+        $remotePlan = new RemotePlan();
+        $remotePlan->trans_id = $trans->id;
+        $remotePlan->user_id = Auth::guard('remote')->id();
+        $remotePlan->months = Session::get('months');
+        $remotePlan->devices = Session::get('devices');
+        $remotePlan->save();
+
         // TODO Transaction Mail
 //        Mail::send('email.paymentConfirmed', ['hashPower' => $hashPower, 'trans' => $trans], function ($message) use ($user) {
 //            $message->from('Admin@HashBazaar');

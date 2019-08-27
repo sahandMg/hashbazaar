@@ -432,8 +432,14 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
         Route::get('payment/failed',['as'=>'RemotePaymentFailed','uses'=>'Remote\TransactionController@FailedPayment']);
 
+        Route::get('hardware','Remote\RemoteController@hardware')->name('hardware');
+
+        Route::get('tutorials','Remote\RemoteController@tutorials')->name('tutorials');
+
         Route::get('logout', ['as' => 'remoteLogout', 'uses' => 'Remote\AuthController@logout']);
 
+
+        // -----> unauthorized remote routes
 
         Route::group(['middleware'=>'guest'],function(){
 

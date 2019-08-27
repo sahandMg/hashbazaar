@@ -4,6 +4,7 @@ namespace App\RemotePaymentGate;
 
 use App\Crawling\Dolar;
 use App\Http\Helpers;
+use App\RemotePlan;
 use App\RemoteTransaction;
 use App\Setting;
 use Carbon\Carbon;
@@ -11,6 +12,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 use Stevebauman\Location\Facades\Location;
 
 class Paystar
@@ -37,8 +39,9 @@ class Paystar
         } else {
             $ip = $_SERVER['REMOTE_ADDR'];
         }
+        $amount = $settings->remote_fee * $this->request->months * $this->request->devices;
         $fields = array(
-            'amount' => $this->request->amount,
+            'amount' => $amount,
             'pin' => $settings->paystar_pin,
             'description' => 'هاستینگ ارز دیجیتال HashBazaar',
             'callback' => 'https://hashbazaar.com/api/remote/paystar/callback',
@@ -58,14 +61,14 @@ class Paystar
             return 404;
 
         }
-
         $trans = new RemoteTransaction();
         $trans->code = 'Paystar_'.strtoupper(uniqid());
         $trans->status = 'unpaid';
-        $trans->amount = $this->request->amount;
+        $trans->amount = $amount;
         $trans->country = $country;
         $trans->save();
-
+        Session::put('months',$this->request->months);
+        Session::put('devices',$this->request->devices);
         return $result;
     }
 
@@ -115,7 +118,12 @@ class Paystar
             'country' => $user->country,
             'status' => 'paid'
         ]);
-
+        $remotePlan = new RemotePlan();
+        $remotePlan->trans_id = $trans->id;
+        $remotePlan->user_id = Auth::guard('remote')->id();
+        $remotePlan->months = Session::get('months');
+        $remotePlan->devices = Session::get('devices');
+        $remotePlan->save();
         // TODO payment paystar mail page
 //        Mail::send('email.paymentConfirmed', ['hashPower' => $hashPower, 'trans' => $trans], function ($message) use ($user) {
 //            $message->from('Admin@HashBazaar');

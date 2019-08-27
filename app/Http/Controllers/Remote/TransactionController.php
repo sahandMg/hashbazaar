@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Remote;
 
 use App\RemotePaymentGate\Paystar;
-use App\ZarrinPal;
+use App\RemotePaymentGate\ZarrinPal;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 

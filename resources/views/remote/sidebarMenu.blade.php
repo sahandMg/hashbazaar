@@ -60,12 +60,12 @@
 
                         <li class="{{Request::route()->getName() == 'hardware'?'active has-sub':null}}">
                             <a href="{{route('hardware',['locale'=>App::getLocale()])}}">
-                                <i class="far fa-check-square"></i>خرید سخت افزار</a>
+                                <i class="zmdi zmdi-shopping-basket"></i>خرید سخت افزار</a>
                         </li>
 
                         <li class="{{Request::route()->getName() == 'tutorials'?'active has-sub':null}}">
                             <a href="{{route('tutorials',['locale'=>App::getLocale()])}}">
-                                <i class="far fa-check-square"></i>آموزش ها</a>
+                                <i class="zmdi zmdi-book"></i>آموزش ها</a>
                         </li>
                         <!-- <li>
                             <a href="#">

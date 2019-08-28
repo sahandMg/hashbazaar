@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Remote;
 use App\Http\Helpers;
 use App\Jobs\subscriptionMailJob;
 use App\RemoteData;
+use App\RemoteId;
 use App\RemoteUser;
 use App\User;
 use App\VerifyUser;
@@ -62,11 +63,11 @@ class RemoteController extends Controller
         // =======
         $remote = new RemoteData();
         $remote->data = serialize($data);
-        $user = DB::connection('mysql')->table('remote_users')->where('code',$id)->first();
-        if(is_null($user)){
+        $farmData = DB::connection('mysql')->table('remote_ids')->where('code',$id)->first();
+        if(is_null($farmData)){
             return ['error'=> 404 ,'body'=>'Incorrect Id'];
         }else{
-            $remote->remote_id = $user->id;
+            $remote->remote_id = $farmData->user_id;
             $remote->save();
         }
 
@@ -74,9 +75,9 @@ class RemoteController extends Controller
     }
 
     // Shows Miners Data
-    public function generalData(){
-
-        return view('remote.panel.dashboard');
+    public function dashboard(){
+        $farms = DB::connection('mysql')->table('remote_ids')->where('user_id',Auth::guard('remote')->id())->get();
+        return view('remote.panel.dashboard',compact('farms'));
     }
 
     public function minerStatus(){
@@ -102,14 +103,25 @@ class RemoteController extends Controller
         }else{
 
             $token = $request->id;
-            $user = RemoteUser::where('code',$token)->first();
-            if(is_null($user)){
+            $farmData = RemoteId::where('code',$token)->first();
+            if(is_null($farmData)){
                 return ['error'=>500,'message'=>'incorrect id'];
             }
-            $data = RemoteUser::where('code',$token)->orderBy('remote_data.id','desc')->join('remote_data','remote_users.id','=','remote_data.remote_id')
-               ->first()->data;
+
+            $data = RemoteData::where('remote_id',$farmData->user_id)->orderBy('id','desc')->first()->data;
             return unserialize($data);
         }
+    }
+
+    public function RegisterFarm(Request $request){
+
+        $this->validate($request,['name'=> 'required|alpha_num']);
+        $remoteId = new RemoteId();
+        $remoteId->name = $request->name;
+        $remoteId->code = strtoupper(uniqid());
+        $remoteId->user_id = Auth::guard('remote')->id();
+        $remoteId->save();
+        return redirect()->route('remoteDashboard',['locale'=>App::getLocale()]);
     }
 
 }

@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Remote;
+namespace App\Http\Controllers\Remote\Test;
+
 
 use App\RemotePaymentGate\PaystarTest;
 use App\RemotePaymentGate\ZarrinPalTest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
 
 class TestController extends Controller
 {
@@ -53,4 +55,7 @@ class TestController extends Controller
         return $payStar->verify();
 
     }
+
+
+
 }

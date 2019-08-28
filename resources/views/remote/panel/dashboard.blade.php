@@ -84,30 +84,35 @@
 
    <br/>
    <div class="au-card text-right" style="direction: rtl;">
-     <form>
+     <form method="post" action="{{route('RegisterFarm',['locale'=> App::getLocale()])}}">
+         <input type="hidden" name="_token" value="{{csrf_token()}}">
       <div class="d-flex flex-wrap justify-content-center new-farm">
         <label style="margin-top: 5px;">نام فارم جدید:</label>
-        <input type="text" class="form-control" style="margin-right: 1%;">
+        <input type="text" name="name" class="form-control" style="margin-right: 1%;">
         <button class="btn btn-success" style="margin-right: 2%;">ایجاد</button>
        </div>
       </form> 
       <br/>
-      <h3 class="text-center">فارم های ماینینگ شما</h3>
-      <br/>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-           <th>نام</th>
-           <th>شناسه</th>
-         </tr>
-        </thead>
-        <tbody>
-         <tr>
-           <td>فارم یک</td>
-           <td>asd564sagfdg6</td>
-        </tr>
-       </tbody>
-      </table> 
+       @if(count($farms) > 0)
+           <h3 class="text-center">فارم های ماینینگ شما</h3>
+           <br/>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+               <th>نام</th>
+               <th>شناسه</th>
+             </tr>
+            </thead>
+            <tbody>
+            @foreach($farms as $farm)
+             <tr>
+               <td>{{$farm->name}}</td>
+               <td>{{$farm->code}}</td>
+            </tr>
+            @endforeach
+           </tbody>
+          </table>
+         @endif
    </div>
    <br/>
    <div class="au-card text-right" style="direction: rtl;">

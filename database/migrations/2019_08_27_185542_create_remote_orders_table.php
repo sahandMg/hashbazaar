@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRemoteIdsTable extends Migration
+class CreateRemoteOrdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,17 @@ class CreateRemoteIdsTable extends Migration
      */
     public function up()
     {
-        Schema::create('remote_ids', function (Blueprint $table) {
+        Schema::create('remote_orders', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->text('address');
+            $table->string('phone');
+            $table->string('post');
             $table->string('code');
             $table->unsignedInteger('user_id');
-            $table->string('name')->nullable();
-            $table->foreign('user_id')->references('id')->on('remote_users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('remote_users');
+            $table->unsignedInteger('trans_id');
+            $table->foreign('trans_id')->references('id')->on('remote_transactions');
             $table->timestamps();
         });
     }
@@ -30,6 +35,6 @@ class CreateRemoteIdsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('remote_ids');
+        Schema::dropIfExists('remote_orders');
     }
 }

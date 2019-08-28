@@ -22,6 +22,8 @@ class CreateSettingsTable extends Migration
             $table->double('total_benefit',12,8)->nullable();
             $table->float('usd_per_hash')->nullable();
             $table->float('usd_toman')->nullable();
+            $table->integer('hardware_fee')->nullable();
+            $table->integer('remote_fee')->nullable();
             $table->double('maintenance_fee_per_th_per_day',8,3)->nullable();
             $table->double('bitcoin_income_per_month_per_th',8,8)->nullable();
             $table->float('available_th')->nullable();

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Helpers;
 use App\Jobs\subscriptionMailJob;
 use App\RemoteData;
+use App\RemoteId;
 use App\RemoteUser;
 use App\User;
 use App\VerifyUser;
@@ -62,6 +63,7 @@ class AuthController extends Controller
         $user->code = strtoupper(uniqid());
         $user->password = Hash::make($request->password);
         $user->save();
+
         $data = [
             'code'=> $user->code,
             'email'=>$user->email

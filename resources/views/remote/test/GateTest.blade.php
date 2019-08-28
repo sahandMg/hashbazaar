@@ -45,6 +45,57 @@
         <button type="submit" class="btn btn-success">تراکنش موفق پی استار </button>
 
     </form>
+
+
+    <form style="padding: 20px;" method="POST" action="{{route('RemoteHardwareZarrinPalPayingTest',['locale'=>App::getLocale()])}}">
+        <input type="hidden" name="_token" value="{{csrf_token()}}">
+        <div class="form-group">
+
+            <input name="name" type="hidden" value="1" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="نام کاربری خود را وارد کنید">
+        </div>
+
+        <div class="form-group">
+            <input name="phone" type="hidden" class="form-control" value="10" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ایمیل خود را وارد کنید">
+        </div>
+
+        <div class="form-group">
+            <input name="address" type="hidden" class="form-control" value="10" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ایمیل خود را وارد کنید">
+        </div>
+
+        <div class="form-group">
+            <input name="post" type="hidden" class="form-control" value="10" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ایمیل خود را وارد کنید">
+        </div>
+
+        <button type="submit" class="btn btn-success">تراکنش موفق زرین پال سخت </button>
+
+    </form>
+
+
+
+    <form style="padding: 20px;" method="POST" action="{{route('RemoteHardwarePaystarPayingTest',['locale'=>App::getLocale()])}}">
+        <input type="hidden" name="_token" value="{{csrf_token()}}">
+        <div class="form-group">
+
+            <input name="name" type="hidden" value="1" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="نام کاربری خود را وارد کنید">
+        </div>
+
+        <div class="form-group">
+            <input name="phone" type="hidden" class="form-control" value="10" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ایمیل خود را وارد کنید">
+        </div>
+
+        <div class="form-group">
+            <input name="address" type="hidden" class="form-control" value="10" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ایمیل خود را وارد کنید">
+        </div>
+
+        <div class="form-group">
+            <input name="post" type="hidden" class="form-control" value="10" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ایمیل خود را وارد کنید">
+        </div>
+
+
+        <button type="submit" class="btn btn-success">تراکنش موفق پی استار سخت </button>
+
+    </form>
+
 </div>
 </body>
 </html>

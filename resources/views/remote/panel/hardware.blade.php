@@ -14,22 +14,24 @@
        <p>زمان دریافت برای مشتریان تهران 3 روز کاری و برای شهرستان ها 4 روز کاری است.</p>
        <br/>
        <h4 class="text-center">برای ثبت سفارش فرم زیر را پر کنید.</h4>
-       <form action="/action_page.php" class="was-validated" >
+       <form action="{{route('RemoteOrderZarrinPalPaying',['locale'=>App::getLocale()])}}" method="post" class="was-validated" >
+           @include('formError')
+           <input type="hidden" name="_token" value="{{csrf_token()}}">
           <div class="form-group">
            <label>نام :</label>
-           <input type="text" class="form-control">
+           <input type="text" name="name" required class="form-control">
           </div>
           <div class="form-group">
            <label>شماره تلفن :</label>
-           <input type="text" class="form-control">
+           <input type="text" name="phone" required class="form-control">
           </div>
           <div class="form-group">
            <label>آدرس :</label>
-           <input type="text" class="form-control">
+           <input type="text" name="address" required class="form-control">
           </div>
           <div class="form-group">
            <label>کد پستی :</label>
-           <input type="text" class="form-control">
+           <input type="text" name="post" required class="form-control">
           </div>
           <div class="text-center"> 
             <button class="btn btn-success">خرید</button>

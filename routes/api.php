@@ -29,6 +29,8 @@ Route::post('paystar/callback','PaymentController@PaystarCallback')->name('Payme
 
 Route::post('remote/paystar/callback','Remote\TransactionController@PaystarCallback')->name('RemotePaystarCallback');
 
+Route::post('remote/hardware/paystar/callback','Remote\RemoteOrderController@PaystarCallback')->name('RemoteOrderPaystarCallback');
+
 Route::post('miner-data','Remote\RemoteController@minerDataApi')->name('minerData');
 
 Route::post('remote','Remote\RemoteController@remoteApi')->name('remote');

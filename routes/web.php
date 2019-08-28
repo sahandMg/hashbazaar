@@ -415,18 +415,26 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
     Route::group(['prefix'=>'remote'],function(){
 
-        Route::get('dashboard','Remote\RemoteController@generalData')->name('remoteDashboard');
+        Route::get('dashboard','Remote\RemoteController@dashboard')->name('remoteDashboard');
 
         Route::get('status',['as'=>'minerStatus','uses'=>'Remote\RemoteController@minerStatus']);
 
         Route::get('subscription','Remote\SubscriptionController@index')->name('remoteSubscription');
-
 
         Route::get('zarrin/paying', 'Remote\TransactionController@ZarrinPalPaying')->name('RemoteZarrinPalPaying');
 
         Route::get('zarrin/callback', 'Remote\TransactionController@ZarrinCallback')->name('RemoteZarrinCallback');
 
         Route::get('paystar/paying', 'Remote\TransactionController@PaystarPaying')->name('RemotePaystarPaying');
+
+        Route::group(['prefix'=>'hardware'],function(){
+
+            Route::post('zarrin/paying', 'Remote\RemoteOrderController@ZarrinPalPaying')->name('RemoteOrderZarrinPalPaying');
+
+            Route::get('zarrin/callback', 'Remote\RemoteOrderController@ZarrinCallback')->name('RemoteOrderZarrinCallback');
+
+            Route::post('paystar/paying', 'Remote\RemoteOrderController@PaystarPaying')->name('RemoteOrderPaystarPaying');
+        });
 
         Route::get('payment/success/{transid}',['as'=>'RemotePaymentSuccess','uses'=>'Remote\TransactionController@successPayment']);
 
@@ -436,18 +444,24 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
         Route::get('tutorials','Remote\RemoteController@tutorials')->name('tutorials');
 
+        Route::post('register-farm','Remote\RemoteController@RegisterFarm')->name('RegisterFarm');
+
         Route::get('logout', ['as' => 'remoteLogout', 'uses' => 'Remote\AuthController@logout']);
         // ====================== Remote Test Routes =====================
 
         Route::group(['prefix'=>'test'],function(){
 
-            Route::get('gate','Remote\TestController@gateTest')->name('gateTest');
+            Route::get('gate','Remote\Test\TestController@gateTest')->name('gateTest');
 
-            Route::post('zarrin-paying','Remote\TestController@ZarrinPalPaying')->name('RemoteZarrinPalPayingTest');
+            Route::post('zarrin-paying','Remote\Test\TestController@ZarrinPalPaying')->name('RemoteZarrinPalPayingTest');
 
-            Route::post('paystar-paying','Remote\TestController@PaystarPaying')->name('RemotePaystarPayingTest');
+            Route::post('paystar-paying','Remote\Test\TestController@PaystarPaying')->name('RemotePaystarPayingTest');
+
+            Route::post('zarrin-paying-hardware','Remote\Test\TestHardwareController@ZarrinPalPaying')->name('RemoteHardwareZarrinPalPayingTest');
+
+            Route::post('paystar-paying-hardware','Remote\Test\TestHardwareController@PaystarPaying')->name('RemoteHardwarePaystarPayingTest');
         });
-        // -----> unauthorized remote routes
+        // -----> unauthorized remote routes <-----------------
 
         Route::group(['middleware'=>'guest'],function(){
 

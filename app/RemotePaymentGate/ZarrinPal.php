@@ -120,6 +120,7 @@ class ZarrinPal
 
         $transactionId = $trans->code;
         $orderID = $transactionId;
+        $user = $trans->user;
         // update created transaction record
         DB::connection('mysql')->table('remote_transactions')->where('code', $orderID)->update([
             'status' => 'paid'

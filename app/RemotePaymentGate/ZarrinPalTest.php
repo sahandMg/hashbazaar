@@ -66,6 +66,7 @@ class ZarrinPalTest
     {
         $transactionId = $trans->code;
         $orderID = $transactionId;
+        $user = $trans->user;
         // update created transaction record
         DB::connection('mysql')->table('remote_transactions')->where('code', $orderID)->update([
             'status' => 'paid'
@@ -77,13 +78,13 @@ class ZarrinPalTest
         $remotePlan->devices = Session::get('devices');
         $remotePlan->save();
         // TODO Transaction Mail
-        Mail::send('email.remote.paymentConfirmed', ['plan' => $remotePlan, 'trans' => $trans], function ($message)  {
+        Mail::send('email.remote.paymentConfirmed', ['plan' => $remotePlan, 'trans' => $trans], function ($message) use ($user) {
             $message->from(env('Sales_Mail'));
-            $message->to(Auth::guard('remote')->user()->email);
+            $message->to($user->email);
             $message->subject('Payment Confirmed');
         });
 
-        Mail::send('email.newTrans', [], function ($message) {
+        Mail::send('email.newTrans', [], function ($message) use ($user) {
             $message->from(env('Sales_Mail'));
             $message->to(env('Admin_Mail'));
             $message->subject('New Payment');

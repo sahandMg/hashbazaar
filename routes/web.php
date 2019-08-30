@@ -445,7 +445,7 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
         Route::get('payment/success/{transid}',['as'=>'RemotePaymentSuccess','uses'=>'Remote\TransactionController@successPayment']);
 
-        Route::get('payment/canceled/{transid}',['as'=>'RemotePaymentFailed','uses'=>'Remote\TransactionController@FailedPayment']);
+        Route::get('payment/canceled/{transid}',['as'=>'RemotePaymentCanceled','uses'=>'Remote\TransactionController@FailedPayment']);
 
         Route::get('hardware','Remote\RemoteController@hardware')->name('hardware');
 

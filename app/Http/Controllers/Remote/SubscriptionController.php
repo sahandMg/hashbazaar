@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers\Remote;
 
+use App\RemotePlan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class SubscriptionController extends Controller
 {
     public function index(){
-
-        return view('remote.panel.subscription');
+      $orders = RemotePlan::where('user_id',Auth::guard('remote')->id())->get();
+        return view('remote.panel.subscription',compact('orders'));
     }
 }

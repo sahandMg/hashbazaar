@@ -16,7 +16,7 @@ class CreateAntPoolsTable extends Migration
         Schema::create('ant_pools', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nonce');
-            $table->string('user_id');
+            $table->text('user_id');
             $table->text('api_key');
             $table->text('secret');
             $table->unsignedInteger('remote_id');

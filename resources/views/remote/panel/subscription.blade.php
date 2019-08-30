@@ -7,6 +7,7 @@ $setting = App\Setting::first();
 ?>
 @section('content')
 <h2 class="title-1 m-b-25 text-right" style="direction: rtl;">لیست خرید اشتراک ها</h2>
+@if(count($orders) > 0)
 <div class="table-responsive table--no-card m-b-40" style="direction: rtl;">
         <table class="table table-borderless table-striped table-earning">
             <thead>
@@ -19,16 +20,20 @@ $setting = App\Setting::first();
                 </tr>
             </thead>
             <tbody>
+            @foreach($orders as $order)
                 <tr class="text-center">
-                  <td>1398/5/30</td>
-                  <td>25</td>
-                  <td>3 ماه</td>
-                  <td>150 هزار تومان</td>
-                  <td>یک ماه 12 روز</td>
+                    <td>{{\Morilog\Jalali\Jalalian::fromCarbon(Carbon\Carbon::parse($order->created_at))->format('d m Y')}}</td>
+                  <td>{{$order->devices}}</td>
+                  <td> {{$order->months}}</td>
+                  <td>{{$order->transaction->amount}}</td>
+                    <?php $days = (Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($order->created_at)->addMonths($order->months))) ?>
+                  <td> {{$days > 30?("۱ ماه ".($days - 30)):$days}} روز</td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
   </div>
+@endif
    <br/>
    <div class="au-card text-right" style="direction: rtl;">
        <h3 class="m-b-25 text-right">مدت زمان و تعداد دستگاه های خود را انتخاب کنید.</h3>

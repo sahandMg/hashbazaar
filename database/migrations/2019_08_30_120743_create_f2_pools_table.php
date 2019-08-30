@@ -15,7 +15,7 @@ class CreateF2PoolsTable extends Migration
     {
         Schema::create('f2_pools', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('username');
+            $table->text('username');
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('remote_users')->onDelete('cascade');
             $table->timestamps();

@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers\Remote;
 
+use App\AntPool;
+use App\F2Pool;
 use App\Http\Helpers;
 use App\Jobs\subscriptionMailJob;
 use App\RemoteData;
 use App\RemoteId;
+use App\RemoteTransaction;
 use App\RemoteUser;
+use App\SlushPool;
 use App\User;
 use App\VerifyUser;
 use Carbon\Carbon;
@@ -77,11 +81,30 @@ class RemoteController extends Controller
     // Shows Miners Data
     public function dashboard(){
         $farms = DB::connection('mysql')->table('remote_ids')->where('user_id',Auth::guard('remote')->id())->get();
-        return view('remote.panel.dashboard',compact('farms'));
+        $farmDetail = DB::connection('mysql')->table('remote_data')->where('remote_id',Auth::guard('remote')->id())->orderBy('id','desc')->first();
+        if(is_null($farmDetail)){
+
+            $total_devices = 0;
+            $active_devices = 0;
+            $total_th = 0;
+        }else{
+
+            $data = unserialize($farmDetail->data);
+            $total_th = 0;
+            for($i=0;$i<count($data);$i++){
+                $data[$i]['totalHashrate'] =  str_replace(',','',$data[$i]['totalHashrate']);
+                $hash = (number_format($data[$i]['totalHashrate']/1000,4));
+                $total_th = $total_th + $hash;
+            }
+            $active_devices = count($data);
+        }
+        return view('remote.panel.dashboard',compact('farms','active_devices','total_th'));
     }
 
     public function minerStatus(){
         $minerData = DB::connection('mysql')->table('remote_data')->orderBy('id','desc')->where('remote_id',Auth::guard('remote')->id())->first();
+        $modifiedData = $this->modifyTh(unserialize($minerData->data));
+        $minerData->data = serialize($modifiedData);
         return view('remote.panel.minerStatus',compact('minerData'));
     }
 
@@ -109,8 +132,19 @@ class RemoteController extends Controller
             }
 
             $data = RemoteData::where('remote_id',$farmData->user_id)->orderBy('id','desc')->first()->data;
-            return unserialize($data);
+
+            $modifiedData = $this->modifyTh(unserialize($data));
+            return unserialize($modifiedData);
         }
+    }
+
+    private function modifyTh($data){
+
+        for($i=0;$i<count($data);$i++){
+            $data[$i]['totalHashrate'] =  str_replace(',','',$data[$i]['totalHashrate']);
+            $data[$i]['totalHashrate'] = number_format($data[$i]['totalHashrate']/1000,4);
+        }
+        return $data;
     }
 
     public function RegisterFarm(Request $request){
@@ -123,5 +157,49 @@ class RemoteController extends Controller
         $remoteId->save();
         return redirect()->route('remoteDashboard',['locale'=>App::getLocale()]);
     }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function PoolRegister(Request $request){
+
+        if($request->pool == 'antpool'){
+
+           $this->validate($request,['api_key'=>'required','secret'=>'required','user_id'=>'required']);
+            $antpool = new Antpool();
+            $antpool->user_id = encrypt($request->user_id);
+            $antpool->nonce = rand(0,1000);
+            $antpool->api_key = encrypt($request->api_key);
+            $antpool->secret = encrypt($request->secret);
+            $antpool->remote_id = Auth::guard('remote')->id();
+            $antpool->save();
+        }
+        if($request->pool == 'f2pool'){
+            $this->validate($request,['username'=>'required']);
+            $f2pool = new F2pool();
+            $f2pool->username = encrypt($request->username);
+            $f2pool->user_id = Auth::guard('remote')->id();
+            $f2pool->save();
+        }
+        if($request->pool == 'slushpool'){
+            $this->validate($request,['token'=>'required']);
+            $slushpool = new SlushPool();
+            $slushpool->token = encrypt($request->token);
+            $slushpool->user_id = Auth::guard('remote')->id();
+            $slushpool->save();
+        }
+
+        Session::flash('message','اطلاعات استخر ثبت شد');
+        return redirect()->route('remoteDashboard',['locale'=>App::getLocale()]);
+  }
+
+  public function Transactions(){
+
+      $transactions = RemoteTransaction::where('user_id',Auth::guard('remote')->id())->where('status','paid')->get();
+
+      return view('remote.payment.list',compact('transactions'));
+  }
+
 
 }

@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use App\BitCoinPrice;
 use App\Crawling\CoinMarketCap;
 use App\Events\Contact;
 use App\Exports\DataExport;
@@ -94,6 +95,45 @@ class PageController extends Controller
         $name = Jalalian::fromCarbon(Carbon::now());
          Excel::store(new DataExport(), ('Excels/'.$name.'.xlsx'));
         return 'done';
+    }
+
+    public function shareOrder(Request $request){
+        $this->validate($request,[
+                'name'=>'required',
+                'phone'=>'required|numeric',
+                'body'=>'required',
+                'email'=>'required|email',
+        ]);
+        $message = new Message();
+        $message->name = $request->name;
+        $message->message = $request->body;
+        $message->phone = $request->phone;
+        $message->email = $request->email;
+        $message->save();
+        $data = [
+            'UserMessage'=> $request->body,
+            'email'=> $request->email,
+            'name' => $request->name,
+            'phone' => $request->phone,
+        ];
+
+        Mail::send('email.shareOrderMailPage',$data,function($message) use($data){
+            $message->from ($data['email']);
+            $message->to (env('Cooperation_Mail'));
+            $message->subject ('Message From User');
+        });
+
+        Mail::send('email.replyMessageMailPage',$data,function($message) use($data){
+            $message->from (env('Cooperation_Mail'));
+            $message->to ($data['email']);
+            $message->subject ('Reply From HashBazaar');
+        });
+        return redirect()->back()->with(['message'=>'Your message has been sent!']);
+    }
+
+    public function btcPrice(BitCoinPrice $bitCoinPrice){
+
+        return ['code'=>200,'message'=>$bitCoinPrice->getPrice()];
     }
 
 }

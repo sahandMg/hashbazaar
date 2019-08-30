@@ -13,4 +13,14 @@ class RemoteTransaction extends Model
 
         return $this->belongsTo(RemoteUser::class);
     }
+
+    public function subscription(){
+
+        return $this->hasOne(RemotePlan::class,'trans_id');
+    }
+
+    public function hardware(){
+
+        return $this->hasOne(RemoteOrder::class,'trans_id');
+    }
 }

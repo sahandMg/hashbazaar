@@ -77,13 +77,13 @@ class ZarrinPalTest
         $remotePlan->devices = Session::get('devices');
         $remotePlan->save();
         // TODO Transaction Mail
-        Mail::send('email.remote.paymentConfirmed', ['plan' => $remotePlan, 'trans' => $trans], function ($message) use ($user) {
+        Mail::send('email.remote.paymentConfirmed', ['plan' => $remotePlan, 'trans' => $trans], function ($message)  {
             $message->from(env('Sales_Mail'));
-            $message->to($user->email);
+            $message->to(Auth::guard('remote')->user()->email);
             $message->subject('Payment Confirmed');
         });
 
-        Mail::send('email.newTrans', [], function ($message) use ($user) {
+        Mail::send('email.newTrans', [], function ($message) {
             $message->from(env('Sales_Mail'));
             $message->to(env('Admin_Mail'));
             $message->subject('New Payment');

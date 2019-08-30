@@ -10,7 +10,7 @@
                     <ul class="list-unstyled navbar__list">
                         <li class="{{Request::route()->getName() == 'remoteDashboard'?'active has-sub':null}}">
                             <a class="js-arrow" href="{{route('dashboard',['locale'=>App::getLocale()])}}">
-                                <i class="fas fa-tachometer-alt"></i> پنل</a>
+                                <i class="fas fa-tachometer-alt"></i> داشبورد</a>
                         <!--     <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
                                     <a href="index.html">Dashboard 1</a>
@@ -29,7 +29,7 @@
 
                         <li class="{{Request::route()->getName() == 'minerStatus'?'active has-sub':null}}">
                             <a class="js-arrow" href="{{route('minerStatus',['locale'=>App::getLocale()])}}">
-                                <i class="fas fa-table"></i> وضعیت ماینرها</a>
+                                <i class="fas fa-table"></i>مانیتورینگ وضعیت ماینرها</a>
                             <!--     <ul class="list-unstyled navbar__sub-list js-sub-list">
                                     <li>
                                         <a href="index.html">Dashboard 1</a>
@@ -55,7 +55,7 @@
                         </li> -->
                         <li class="{{Request::route()->getName() == 'remoteSubscription'?'active has-sub':null}}">
                             <a href="{{route('remoteSubscription',['locale'=>App::getLocale()])}}">
-                                <i class="far fa-check-square"></i>اشتراک</a>
+                                <i class="far fa-check-square"></i> خرید اشتراک</a>
                         </li>
 
                         <li class="{{Request::route()->getName() == 'hardware'?'active has-sub':null}}">

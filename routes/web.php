@@ -15,6 +15,7 @@ use App\BitCoinPrice;
 use App\BitHash;
 use App\RemoteData;
 use App\Transaction;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\App;
@@ -119,8 +120,7 @@ Route::get('qr',function(){
 Route::get('test',function (){
 
 
-
-
+    dd($_SERVER);
 
 });
 
@@ -190,6 +190,8 @@ Route::get('export-data','PageController@export')->name('export');
 
 Route::get('change-language','PageController@ChangeLanguage')->name('changeLanguage');
 
+Route::get('btc-price','PageController@btcPrice')->name('btcPrice');
+
 Route::post('charge/create','PaymentController@createCharge')->name('chargeCreate');
 Route::get('charge/show/{id?}','PaymentController@getCharges');
 Route::get('charge/list','PaymentController@listCharges');
@@ -232,6 +234,7 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
     })->name('refreshCaptcha');
 
     Route::get('/', 'PageController@index')->name('index');
+    Route::post('shared-order','PageController@shareOrder')->name('shareOrder');
 
     // ============================ Blog Routes ==============================
 
@@ -435,6 +438,10 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
             Route::post('paystar/paying', 'Remote\RemoteOrderController@PaystarPaying')->name('RemoteOrderPaystarPaying');
         });
+
+        Route::get('transactios','Remote\RemoteController@Transactions')->name('TransactionsList');
+
+        Route::post('register-pool','Remote\RemoteController@PoolRegister')->name('PoolRegister');
 
         Route::get('payment/success/{transid}',['as'=>'RemotePaymentSuccess','uses'=>'Remote\TransactionController@successPayment']);
 

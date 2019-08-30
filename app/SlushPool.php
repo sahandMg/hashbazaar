@@ -2,10 +2,11 @@
 
 namespace App;
 
+
+use Delatbabel\Elocrypt\Elocrypt;
 use Illuminate\Database\Eloquent\Model;
 
-class RemoteOrder extends Model
+class SlushPool extends Model
 {
-    protected $fillable = ['trans_id'];
     protected $connection = 'mysql';
 }

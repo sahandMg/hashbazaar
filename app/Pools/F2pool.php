@@ -6,7 +6,7 @@
  * Time: 5:05 PM
  */
 
-namespace App;
+namespace App\Pools;
 use GuzzleHttp\Client as GuzzleClient;
 use Psr\Http\Message\ResponseInterface;
 

@@ -85,7 +85,7 @@ class PanelController extends Controller
         else{
             $total_paid_btc = Transaction::where('user_id',$user->id)->where('status','paid')->where('checkout','in')->sum('amount_btc');
             $pending =  $mining->sum('mined_btc') - $total_paid_btc;
-            return $userEarn = [$mining->sum('mined_btc') ,$bitCoinPrice * $mining->sum('mined_btc'),floatval($pending)];
+            return $userEarn = [$mining->sum('mined_btc') ,$bitCoinPrice * $mining->sum('mined_btc'),floatval(number_format($pending,8))];
         }
     }
     /*

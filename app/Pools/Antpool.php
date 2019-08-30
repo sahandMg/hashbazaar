@@ -6,7 +6,7 @@
  * Time: 5:06 PM
  */
 
-namespace App;
+namespace App\Pools;
 
 
 class Antpool

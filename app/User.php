@@ -1,5 +1,6 @@
 <?php
 namespace App;
+use App\Pools\Antpool;
 use Delatbabel\Elocrypt\Elocrypt;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
@@ -40,7 +41,14 @@ class User extends Authenticatable implements MustVerifyEmail
 
         return $this->hasMany(Transaction::class);
     }
+    public function bithashes(){
 
+        return $this->hasMany(BitHash::class);
+    }
+    public function pools(){
+
+        return $this->hasMany(Antpool::class,'remote_id');
+    }
     /**
      * The attributes that should be hidden for arrays.
      *

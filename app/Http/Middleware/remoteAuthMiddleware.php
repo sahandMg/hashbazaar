@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 
 class remoteAuthMiddleware
@@ -18,7 +19,7 @@ class remoteAuthMiddleware
     {
         if(!Auth::guard('remote')->check()){
 
-            return redirect()->route('authorizing',['locale'=>session('locale')]);
+            return redirect()->route('authorizing',['locale'=>App::getLocale()]);
         }else{
 
             return $next($request);

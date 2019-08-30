@@ -270,18 +270,24 @@
             </div>
             <div id="hosting" style="direction: rtl;text-align: right;">
                 <h4 class="text-center">لطفا اطلاعات زیر را کامل کنید تا کارشناسان ما در اسرع وقت با شما تماس بگیرند یا با شماره 09371869568 تماس بگیرید.</h4>
-                <form>
+                <form method="post" action="{{route('shareOrder',['locale'=>App::getLocale()])}}">
+                    @include('formError')
+                    <input type="hidden" name="_token" value="{{csrf_token()}}">
                   <div class="form-group">
                      <label >نام :</label>
-                     <input type="text" class="form-control" >
-                  </div> 
-                  <div class="form-group">
+                     <input type="text" class="form-control" required name="name">
+                  </div>
+                    <div class="form-group">
+                        <label >ایمیل</label>
+                        <input type="text" class="form-control" required name="email">
+                    </div>
+                    <div class="form-group">
                      <label >شماره تلفن :</label>
-                     <input type="text" class="form-control" >
+                     <input type="text" class="form-control" required name="phone">
                   </div> 
                   <div class="form-group">
                      <label >نوع و تعداد دستگاه ها :</label>
-                     <textarea class="form-control" rows="4"></textarea>
+                     <textarea class="form-control" rows="4" required name="body"></textarea>
                   </div> 
                   <div class="text-center mt-1 mb-1">
                      <button class="btn btn-primary round-button-com" type="submit" style="width: 120px">ثبت</button>
@@ -292,7 +298,7 @@
 
     </div>
 <style type="text/css">
-     .partners {color:#696967;}
+
         .partners h3 {margin-bottom: 3%;}
         .partners img {height: 80px;}
     .posts {margin-top: 120px;}

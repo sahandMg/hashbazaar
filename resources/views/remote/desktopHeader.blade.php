@@ -140,12 +140,12 @@
                                                     <h5 class="name">
                                                         <a href="{{route('remoteDashboard',['locale'=>App::getLocale()])}}">{{Auth::guard('remote')->user()->name}}</a>
                                                     </h5>
-                                                    <span class="email">example@example.com</span>
+                                                    <span class="email">{{Auth::guard('remote')->user()->email}}</span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="#">
+                                                    <a href="{{route('remoteDashboard',['locale'=>App::getLocale()])}}">
                                                         <i class="zmdi zmdi-account"></i>حساب کاربری</a>
                                                 </div>
                                                <!--  <div class="account-dropdown__item">
@@ -153,7 +153,7 @@
                                                         <i class="zmdi zmdi-settings"></i>Setting</a>
                                                 </div> -->
                                                 <div class="account-dropdown__item">
-                                                    <a href="#">
+                                                    <a href="{{route('TransactionsList',['locale'=>App::getLocale()])}}">
                                                         <i class="zmdi zmdi-money-box"></i>پرداخت ها</a>
                                                 </div>
                                             </div>

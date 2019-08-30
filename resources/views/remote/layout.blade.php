@@ -12,6 +12,8 @@
     <!-- Title Page-->
     <title>HashBazaar</title>
 
+     <script  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" ></script>
+     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- Fontfaces CSS-->
     <!-- <link href="css/font-face.css" rel="stylesheet" media="all"> -->
     <link href="{{URL::asset('remoteDashboard/vendor/font-awesome-4.7/css/font-awesome.css')}}" rel="stylesheet" media="all">

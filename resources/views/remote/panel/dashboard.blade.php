@@ -30,7 +30,7 @@
                                                 <i class="zmdi zmdi-receipt"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>121.5 TH</h2>
+                                                <h2>{{$total_th}} TH</h2>
                                                 <span>مجموع کل نرخ هش</span>
                                             </div>
                                         </div>
@@ -49,7 +49,7 @@
                                                 <i class="zmdi zmdi-money"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>105</h2>
+                                                <h2>{{$active_devices}}</h2>
                                                 <span>تعداد دستگاه های فعال</span>
                                             </div>
                                         </div>
@@ -69,7 +69,7 @@
                                                 <img src="{{URL::asset('remoteDashboard/images/bitcoin.svg')}}" style="height: 60px;">
                                             </div>
                                             <div class="text">
-                                                <h2 style="direction: rtl;">10250 دلار</h2>
+                                                <h2 id="btcPrice" style="direction: rtl;"></h2>
                                                 <span>قیمت بیت کوین</span>
                                             </div>
                                         </div>
@@ -127,23 +127,23 @@
        </select>
      </div>
      <hr/>
+       @include('formError')
+       @include('formMessage')
      <div id="Antpool">
-        <form class="poolForm col-lg-4 col-md-5 col-sm-11 mx-auto">
+        <form class="poolForm col-lg-4 col-md-5 col-sm-11 mx-auto" method="post" action="{{route('PoolRegister',['locale'=>App::getLocale()])}}">
+            <input type="hidden" name="_token" value="{{csrf_token()}}">
+            <input type="hidden" name="pool" value="antpool">
           <div class="form-group">
            <label>user id:</label>
-           <input type="text" class="form-control">
+           <input type="text" name="user_id" required class="form-control">
           </div>
           <div class="form-group">
            <label>API key:</label>
-           <input type="text" class="form-control">
-          </div>
-          <div class="form-group">
-           <label>nonce:</label>
-           <input type="text" class="form-control">
+           <input type="text" name="api_key" required class="form-control">
           </div>
           <div class="form-group">
            <label>secret:</label>
-           <input type="text" class="form-control">
+           <input type="text" name="secret" required class="form-control">
           </div>
           <div class="text-center"> 
             <button class="btn btn-success">ثبت</button>
@@ -151,10 +151,12 @@
         </form>
      </div>
      <div id="F2Pool">
-        <form class="poolForm col-lg-4 col-md-5 col-sm-11 mx-auto">
+        <form class="poolForm col-lg-4 col-md-5 col-sm-11 mx-auto" method="post" action="{{route('PoolRegister',['locale'=>App::getLocale()])}}">
+            <input type="hidden" name="_token" value="{{csrf_token()}}">
+            <input type="hidden" name="pool" value="f2pool">
           <div class="form-group">
            <label>user name:</label>
-           <input type="text" class="form-control">
+           <input type="text" name="username" required class="form-control">
           </div>
           <div class="text-center"> 
             <button class="btn btn-success">ثبت</button>
@@ -162,10 +164,12 @@
         </form>
      </div>
      <div id="SlushPool">
-        <form class="poolForm col-lg-4 col-md-5 col-sm-11 mx-auto">
+        <form class="poolForm col-lg-4 col-md-5 col-sm-11 mx-auto" method="post" action="{{route('PoolRegister',['locale'=>App::getLocale()])}}">
+            <input type="hidden" name="_token" value="{{csrf_token()}}">
+            <input type="hidden" name="pool" value="slushpool">
           <div class="form-group">
            <label>Token:</label>
-           <input type="text" class="form-control">
+           <input type="text" name="token" required class="form-control">
           </div>
           <div class="text-center"> 
             <button class="btn btn-success">ثبت</button>
@@ -204,12 +208,20 @@ var selectPool = document.getElementById("selectPool");
 // });
 hideAllForms();
 $('#Antpool').show();
-
+$('#btcPrice').html('<img src="{{URL::asset('img/ajax-loader.gif')}}">');
 selectPool.addEventListener("change", function() {
   // console.log("")
   hideAllForms();
   $('#'+selectPool.value).show();
 });
-      
+       axios.get('{{route('btcPrice')}}').then(function (response) {
+
+           console.log(response.data['message']);
+           if(response.data['code'] == 200){
+
+               $('#btcPrice').html('$'+ response.data['message'].toFixed(0));
+           }
+
+       })
    </script>
 @endsection

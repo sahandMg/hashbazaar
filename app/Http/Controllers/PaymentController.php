@@ -1121,7 +1121,7 @@ class PaymentController extends Controller
 
             $trans->country = strtolower(Location::get(Helpers::userIP())->countryCode);
         }catch (\Exception $exception){
-            $trans->country = 'fr';
+            $trans->country = 'ir';
         }
         $trans->amount_btc = $btcSum;
         $trans->status = 'paid';

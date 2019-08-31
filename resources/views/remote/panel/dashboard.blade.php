@@ -11,7 +11,9 @@
                                                 <i class="zmdi zmdi-select-all"></i>
                                             </div>
                                             <div class="text">
+
                                                 <h2>{{$active_devices}}</h2>
+
                                                 <span>تعداد دستگاه ها</span>
                                             </div>
                                         </div>
@@ -30,7 +32,7 @@
                                                 <i class="zmdi zmdi-receipt"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>{{$total_th}} TH</h2>
+                                                <h2 class="englishFont">{{$total_th}} TH</h2>
                                                 <span>مجموع کل نرخ هش</span>
                                             </div>
                                         </div>
@@ -49,7 +51,7 @@
                                                 <i class="zmdi zmdi-money"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>{{$active_devices}}</h2>
+                                                <h2 class="englishFont">{{$active_devices}}</h2>
                                                 <span>تعداد دستگاه های فعال</span>
                                             </div>
                                         </div>
@@ -69,7 +71,7 @@
                                                 <img src="{{URL::asset('remoteDashboard/images/bitcoin.svg')}}" style="height: 60px;">
                                             </div>
                                             <div class="text">
-                                                <h2 id="btcPrice" style="direction: rtl;"></h2>
+                                                <h2  class="englishFont" id="btcPrice" style="direction: rtl;"></h2>
                                                 <span>قیمت بیت کوین</span>
                                             </div>
                                         </div>

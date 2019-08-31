@@ -48,15 +48,22 @@
       @font-face {
         font-family: BYekanFont;
         src: url({{asset('fonts/BYekan.ttf')}});
+        /*unicode-range: U+0025-00FF;*/
+        /*unicode-range: U+30-39;*/
       }
+      /*@font-face {
+        font-family: sans-serif;
+        src: url({{asset('fonts/BYekan.ttf')}});
+      }*/
       * {
-        font-family: BYekanFont;
+        font-family: sans-serif, BYekanFont;
       }
       h1, h2, h3, h4, h5, h6, div {
         font-family: BYekanFont;
       }
-      th, a, p, input, button, legend, label {font-family: BYekanFont;}
-      .btn {font-family: BYekanFont;}
+      th, a, p, input, button, legend, label, span {font-family: BYekanFont;}
+      /*.btn {font-family: sans-serif, BYekanFont;}*/
+      .englishFont {font-family: sans-serif;}
     </STYLE>
 </head>
 

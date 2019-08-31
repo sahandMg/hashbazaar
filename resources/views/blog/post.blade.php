@@ -34,6 +34,8 @@
         }
 
         td {color: black;}
+        table {color: black;}
+        th {color: black;}
     </style>
     <div class="container blog-detail">
        <h1 class="text-center">{{ $post->title }}</h1>

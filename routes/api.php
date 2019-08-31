@@ -36,3 +36,5 @@ Route::post('miner-data','Remote\RemoteController@minerDataApi')->name('minerDat
 Route::post('remote','Remote\RemoteController@remoteApi')->name('remote');
 
 Route::post('user-data','Remote\AuthController@userData')->name('userData');
+
+Route::post('btc-price','PageController@btcPrice')->name('btcPrice');

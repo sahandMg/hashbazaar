@@ -411,4 +411,13 @@ class AdminController extends Controller
         return $data;
     }
 
+    public function getLogs(){
+
+        $logs = DB::connection('mysql')->table('logs')->orderBy('id','desc')->where(function($query){
+            $query->where('message','!=','');
+        })->paginate(20);
+
+        return view('admin.logs',compact('logs'));
+    }
+
 }

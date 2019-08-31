@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\DB;
 
 class TransactionController extends Controller
 {
+    public function __construct()
+    {
+
+        $this->middleware('remoteAuth');
+    }
     public function successPayment($lang,$id){
         $trans = DB::connection('mysql')->table('remote_transactions')->where('code',$id)->first();
         if(is_null($trans)){

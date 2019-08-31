@@ -169,8 +169,11 @@
                         <li class="nav-item navHover">
                             <a class="nav-link" href="{{route('dashboard',['locale'=>session('locale')])}}" >{{__('Dashboard')}}</a>
                         </li>
+                @elseif(Auth::guard('remote')->check())
+                        <li class="nav-item navHover">
+                            <a class="nav-link" href="{{route('remoteDashboard',['locale'=>session('locale')])}}" >{{__('Dashboard')}}</a>
+                        </li>
                 @else
-
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('signup',['locale'=>session('locale')]).'?plan=classic'}}" id="sg" >{{__('Sign Up')}}</a>
                         </li>

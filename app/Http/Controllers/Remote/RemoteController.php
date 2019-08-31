@@ -134,7 +134,7 @@ class RemoteController extends Controller
             $data = RemoteData::where('remote_id',$farmData->user_id)->orderBy('id','desc')->first()->data;
 
             $modifiedData = $this->modifyTh(unserialize($data));
-            return unserialize($modifiedData);
+            return $modifiedData;
         }
     }
 

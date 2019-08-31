@@ -30,10 +30,12 @@ $setting = App\Setting::first();
                 <td>{{$transaction->amount}} تومان</td>
                 @if(!is_null($transaction->hardware))
                 <td>خرید سخت افزار</td>
+                    <td>{{$transaction->hardware->code}}</td>
                  @elseif(!is_null($transaction->subscription))
                 <td>خرید اشتراک</td>
+                    <td>{{$transaction->code}}</td>
                   @endif
-                <td>کد پیگیری</td>
+
             </tr>
                 @endforeach
             </tbody>

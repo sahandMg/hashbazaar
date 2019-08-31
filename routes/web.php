@@ -409,6 +409,8 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
         Route::get('chartData-profit', ['as' => 'chartDataProfit', 'uses' => 'AdminController@chartDataProfit']);
 
+        Route::get('get-logs', ['as' => 'getLogs', 'uses' => 'AdminController@getLogs']);
+
 //   Voyager::routes();
     });
 
@@ -439,7 +441,7 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
             Route::post('paystar/paying', 'Remote\RemoteOrderController@PaystarPaying')->name('RemoteOrderPaystarPaying');
         });
 
-        Route::get('transactios','Remote\RemoteController@Transactions')->name('TransactionsList');
+        Route::get('transactions','Remote\RemoteController@Transactions')->name('TransactionsList');
 
         Route::post('register-pool','Remote\RemoteController@PoolRegister')->name('PoolRegister');
 

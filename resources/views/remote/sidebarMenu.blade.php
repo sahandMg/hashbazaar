@@ -1,6 +1,6 @@
 <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
-                <a href="#">
+                <a href="{{route('index',['locale'=>App::getLocale()])}}">
                     <!-- <img src="{{URL::asset('remoteDashboard/images/icon/logo.png')}}" alt="Cool Admin" /> -->
                     <img src="{{URL::asset('img/Logo_footer.png')}}" alt="HashBazaar" />
                 </a>

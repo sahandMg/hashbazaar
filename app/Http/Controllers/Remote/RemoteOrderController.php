@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\Auth;
 class RemoteOrderController extends Controller
 {
 
+    public function __construct()
+    {
+
+        $this->middleware('remoteAuth');
+    }
+
     public function ZarrinPalPaying(Request $request){
 
         $this->validate($request,[

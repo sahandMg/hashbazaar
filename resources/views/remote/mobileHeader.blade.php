@@ -18,7 +18,7 @@
                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
                             <a class="js-arrow" href="{{route('remoteDashboard',['locale'=>App::getLocale()])}}">
-                                <i class="fas fa-tachometer-alt"></i>پنل</a>
+                                <i class="fas fa-tachometer-alt"></i>داشبورد</a>
 
                             <!-- <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
@@ -37,7 +37,7 @@
                         </li>
                         <li class="{{Request::route()->getName() == 'minerStatus'?'active has-sub':null}}">
                             <a class="js-arrow" href="{{route('minerStatus',['locale'=>App::getLocale()])}}">
-                                <i class="fas fa-table"></i> وضعیت ماینرها</a>
+                                <i class="fas fa-table"></i>مانیتورینگ وضعیت ماینرها</a>
                         </li>
                         <!-- <li>
                             <a href="chart.html">
@@ -49,7 +49,7 @@
                         </li> -->
                         <li>
                             <a href="{{route('remoteSubscription',['locale'=>App::getLocale()])}}">
-                                <i class="far fa-check-square"></i>اشتراک</a>
+                                <i class="far fa-check-square"></i>خرید اشتراک</a>
                         </li>
                        <!--  <li>
                             <a href="#">
@@ -122,6 +122,11 @@
                         <li class="{{Request::route()->getName() == 'tutorials'?'active has-sub':null}}">
                             <a href="{{route('tutorials',['locale'=>App::getLocale()])}}">
                                 <i class="far fa-check-square"></i>آموزش ها</a>
+                        </li>
+
+                        <li class="{{Request::route()->getName() == 'tutorials'?'active has-sub':null}}">
+                            <a href="{{route('TransactionsList',['locale'=>App::getLocale()])}}">
+                                <i class="far fa-check-square"></i>پرداخت ها</a>
                         </li>
 
                         <li><a href="{{route('logout',['locale'=>App::getLocale()])}}"><i class="zmdi zmdi-power"></i>خروج</a></li>

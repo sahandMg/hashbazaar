@@ -125,6 +125,16 @@
                     </a>
                 </li>
 
+                @if(Request::route()->getName() == ' getLogs')
+                    <li  class="active">
+                @else
+                    <li>
+                        @endif
+                        <a href="{{route('getLogs',['locale'=>session('locale')])}}">
+                            <i class="fas fa-pencil-alt" style='font-size:20px'></i>
+                            <span style="padding-left: 20px">لاگ</span>
+                        </a>
+                    </li>
                 @if(Request::route()->getName() == 'AdminMessage')
                     <li  class="active">
                 @else

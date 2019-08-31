@@ -4,4 +4,7 @@
 @endsection
 
 @section('content')
+
+@include('remote/scripts')
+ 
 @endsection

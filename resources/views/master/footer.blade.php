@@ -114,8 +114,7 @@
 
                                 <div class="" style="direction:rtl">
                                         <i class="fa fa-map-marker" aria-hidden="true"></i>
-
-                                    تهران، میدان ونک، خیابان ملاصدرا، خیابان پردیس، پلاک ۷
+                                    تهران، ولنجک، دانشگاه شهید بهشتی، پارک علم و فناوری ، شرکت آوانس
                                 </div>
                             </div>
                     </div>

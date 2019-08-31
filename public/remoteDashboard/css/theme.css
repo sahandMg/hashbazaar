@@ -3180,6 +3180,12 @@ section {
     background-image: -ms-linear-gradient(90deg, #45b649 0%, #dce35b 100%);
 }
 
+.overview-item--c5 {
+    background-image: -moz-linear-gradient(90deg, #4dd2ff 0%, #78c1eb 100%);
+    background-image: -webkit-linear-gradient(90deg, #4dd2ff 0%, #78c1eb 100%);
+    background-image: -ms-linear-gradient(90deg, #4dd2ff 0%, #78c1eb 100%);
+}
+
 .overview-box .icon {
     display: inline-block;
     vertical-align: top;
@@ -3221,7 +3227,7 @@ section {
 }
 
 .overview-box .text span {
-    font-size: 18px;
+    font-size: 19px;
     color: rgba(255, 255, 255, 0.6);
 }
 
@@ -3236,7 +3242,7 @@ section {
     }
 
     .overview-box .text span {
-        font-size: 14px;
+        font-size: 16px;
     }
 }
 
@@ -3246,7 +3252,7 @@ section {
     }
 
     .overview-box .text span {
-        font-size: 15px;
+        font-size: 16px;
     }
 }
 

@@ -1,0 +1,23 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 62.056 113.557">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke-miterlimit: 10;
+        stroke: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="62.056" y1="56.778" x2="0" y2="56.778" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e8a423"/>
+      <stop offset="0.022" stop-color="#e9a721"/>
+      <stop offset="0.254" stop-color="#f3c113"/>
+      <stop offset="0.492" stop-color="#fad408"/>
+      <stop offset="0.737" stop-color="#fedf02"/>
+      <stop offset="1" stop-color="#ffe300"/>
+    </linearGradient>
+  </defs>
+  <title>hashbazaar-hashrate</title>
+  <g id="Layer_1-2" data-name="Layer 1-2">
+    <polygon class="cls-1" points="0.922 1.669 33.604 0.511 61.288 60.755 37.331 61.604 58.219 110.878 4.913 49.938 31.494 46.688 0.922 1.669"/>
+  </g>
+</svg>

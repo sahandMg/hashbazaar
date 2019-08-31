@@ -39,7 +39,7 @@
        </form>
    </div>
    <br/><br/>
-   <div class="au-card text-right" style="direction: rtl;">
+   <!-- <div class="au-card text-right" style="direction: rtl;">
      <h3 class="m-b-25 text-center">پیگیری سفارش ها</h3>
      <p class="text-center m-t-2 m-b-2">سفارشی تا حالا ثبت نکردید.</p>
      <div class="table-responsive">
@@ -63,7 +63,7 @@
       </table>
       </div> 
    </div>
-   <br/><br/>
+   <br/><br/> -->
  @include('remote/scripts')
    <script type="text/javascript">
     

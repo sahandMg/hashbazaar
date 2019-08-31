@@ -1,13 +1,8 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+@extends('remote.layout')
+@section('title')
+
+@endsection
+@section('content')
 
 
 <?php
@@ -25,6 +20,7 @@ $setting = App\Setting::first();
                 {{--<th>مدت زمان</th>--}}
                 <th>مبلغ پرداختی</th>
                 <th>نوع</th>
+                <th>کد پیگیری</th>
             </tr>
             </thead>
             <tbody>
@@ -37,6 +33,7 @@ $setting = App\Setting::first();
                  @elseif(!is_null($transaction->subscription))
                 <td>خرید اشتراک</td>
                   @endif
+                <td>کد پیگیری</td>
             </tr>
                 @endforeach
             </tbody>
@@ -46,5 +43,7 @@ $setting = App\Setting::first();
 
         <h2 class="title-1 m-b-25 text-right" style="direction: rtl;">تراکنشی موجود نیست</h2>
     @endif
-</body>
-</html>
+
+    @include('remote/scripts')
+
+@endsection

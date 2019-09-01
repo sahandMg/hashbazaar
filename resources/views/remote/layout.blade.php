@@ -56,7 +56,7 @@
         src: url({{asset('fonts/BYekan.ttf')}});
       }*/
       * {
-        font-family: sans-serif, BYekanFont;
+        font-family: BYekanFont;
       }
       h1, h2, h3, h4, h5, h6, div {
         font-family: BYekanFont;

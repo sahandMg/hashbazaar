@@ -20,20 +20,32 @@
     </div>
   </div>
   <div class="contant">
-    <a class="tab-custom" href="#no2">Amir Sohel  <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+    <a class="tab-custom" href="#no2">وضعیت ماینرها<i class="fa fa-angle-down" aria-hidden="true"></i></a>
     
     
     <div class="text-custom" id="no2" >
-       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus rerum corrupti, cumque quasi quae perspiciatis quo sit reprehenderit itaque dicta. Unde nobis ullam saepe, odit porro. Dicta beatae, nobis quasi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus rerum corrupti, cumque quasi quae perspiciatis quo sit reprehenderit itaque dicta. Unde nobis ullam saepe, odit porro. Dicta beatae, nobis quasi.</p>
+       <br/>
+       <img src="{{URL::asset('remoteDashboard/images/readmeImage.jpg')}}" style="width: 95%;display: block;margin: auto;">
+       <p>تاریخ و ساعت : زمان آخرین بروز رسانی</p>
+       <!-- <p>Type: مدل دستگاه ماینر</p> -->
+       <p>دمای یک و دمای دو : دمای هش بردها و چیپ ها. بسته به مدل دستگاه تعداد دمای متفاوتی مشاهده می کنید. شرکت سازنده بازه ی دمای مناسب برای هر مدل را مشخص می کند. </p>
+       <!-- <p>Fan speed : سرعت فن های دستگاه</p> -->
+       <!-- <p>Total TH : میانگین تراهش در 5 ساعت اخیر</p> -->
+       <!-- <p>Up time: زمان کارکرد پیوسته</p> -->
+       <br/>
     </div>
   </div>
     
     
     
   <div class="contant">
-    <a class="tab-custom" href="#no3">Amit Agarwal <i class="fa fa-angle-down" aria-hidden="true"></i> </a>
+    <a class="tab-custom" href="#no3">اطلاعات Pool API <i class="fa fa-angle-down" aria-hidden="true"></i> </a>
     <div class="text-custom" id="no3" >
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus rerum corrupti, cumque quasi quae perspiciatis quo sit reprehenderit itaque dicta. Unde nobis ullam saepe, odit porro. Dicta beatae, nobis quasi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus rerum corrupti, cumque quasi quae perspiciatis quo sit reprehenderit itaque dicta. Unde nobis ullam saepe, odit porro. Dicta beatae, nobis quasi.</p>
+        <p>از قسمت dashboard، تب API را انتخاب کنید، بر روی Generate key کلیک کنید. از جدول پایین key و secret را در زیر وارد کنید، سپس بر روی آیکون تیک در قسمت options کلیک کنید.</p>
+        <img src="{{URL::asset('remoteDashboard/images/antpool-help1.jpg')}}" style="width: 95%;display: block;margin: auto;">
+        <br/>
+        <img src="{{URL::asset('remoteDashboard/images/antpool-help2.jpg')}}" style="width: 95%;display: block;margin: auto;">
+        <br/>
     </div>
   </div>
   <div class="contant">

@@ -195,7 +195,7 @@
             @foreach($farms as $farm)
              <tr>
                <td>{{$farm->name}}</td>
-               <td>{{$farm->code}}</td>
+               <td class="englishFont">{{$farm->code}}</td>
             </tr>
             @endforeach
            </tbody>
@@ -209,8 +209,8 @@
      <div class="form-group text-center col-lg-3 col-md-4 col-sm-10 mx-auto">
        <label for="sel1">انتخاب POOL</label>
        <select class="form-control" id="selectPool">
+         <option class="englishFont" value="F2Pool"><span class="englishFont">F2Pool</span></option>
          <option class="englishFont" value="Antpool">Antpool</option>
-         <option class="englishFont" value="F2Pool">F2Pool</option>
          <option class="englishFont" value="SlushPool">SlushPool</option>
        </select>
      </div>
@@ -218,19 +218,22 @@
        @include('formError')
        @include('formMessage')
      <div id="Antpool">
+     <p>از قسمت dashboard، تب API را انتخاب کنید، بر روی Generate key کلیک کنید. از جدول پایین key و secret را در زیر وارد کنید، سپس بر روی آیکون تیک در قسمت options کلیک کنید.</p>
+     <p>اگر نیاز به راهنمایی بیشتر دارید به قسمت آموزش ها بروید.</p>
         <form class="poolForm col-lg-4 col-md-5 col-sm-11 mx-auto" method="post" action="{{route('PoolRegister',['locale'=>App::getLocale()])}}">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <input type="hidden" name="pool" value="antpool">
-          <div class="form-group">
-           <label>user id:</label>
+          <!-- <div class="form-group">
+           <label>نام کاربری :</label>
            <input type="text" name="user_id" required class="form-control">
-          </div>
+          </div> -->
+
           <div class="form-group">
-           <label>API key:</label>
+           <label>Key :</label>
            <input type="text" name="api_key" required class="form-control">
           </div>
           <div class="form-group">
-           <label>secret:</label>
+           <label>Secret :</label>
            <input type="text" name="secret" required class="form-control">
           </div>
           <div class="text-center"> 
@@ -243,7 +246,7 @@
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <input type="hidden" name="pool" value="f2pool">
           <div class="form-group">
-           <label>user name:</label>
+           <label>نام کاربری در سایت <span class="englishFont">F2pool</span> را وارد کنید.</label>
            <input type="text" name="username" required class="form-control">
           </div>
           <div class="text-center"> 
@@ -295,7 +298,7 @@ var selectPool = document.getElementById("selectPool");
 //     }
 // });
 hideAllForms();
-$('#Antpool').show();
+$('#F2Pool').show();
 $('#btcPrice').html('<img src="{{URL::asset('img/ajax-loader.gif')}}">');
 selectPool.addEventListener("change", function() {
   // console.log("")

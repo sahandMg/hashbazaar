@@ -120,8 +120,9 @@ class RemoteController extends Controller
                 $f2poolInst->value_last_day = $miningData['message']['value_last_day'];
                 $f2poolInst->balance = $miningData['message']['balance'];
                 $f2poolInst->hashes_last_day = number_format($miningData['message']['hashes_last_day'] / 86400 / pow(10, 12), 3);
-                $f2poolInst->hash_rate = number_format($miningData['message']['hashrate'] / 86400 / pow(10, 12), 3);
+                $f2poolInst->hash_rate = number_format($miningData['message']['hashrate'] / 86400 / pow(10, 7), 3);
                 $f2poolInst->paid = $miningData['message']['paid'];
+                $f2poolInst->value = $miningData['message']['value'];
                 $f2poolInst->user_id = Auth::guard('remote')->id();
                 $f2poolInst->save();
             }
@@ -137,7 +138,7 @@ class RemoteController extends Controller
                 $antpoolInst = new AntPoolData();
                 $antpoolInst->balance = $miningData['data']['balance'];
                 $antpoolInst->value_last_day = $miningData['data']['earn24Hours'];
-                $antpoolInst->earnTotal = $miningData['data']['earnTotal'];
+                $antpoolInst->value = $miningData['data']['earnTotal'];
                 $antpoolInst->paid = $miningData['data']['paidOut'];
                 $antpoolInst->settleTime = $miningData['data']['settleTime'];
                 $antpoolInst->hashes_last_day = number_format($hashRateData['data']['last1d'] / pow(10, 6), 1);

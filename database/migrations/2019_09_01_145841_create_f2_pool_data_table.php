@@ -20,6 +20,7 @@ class CreateF2PoolDataTable extends Migration
             $table->string('balance');
             $table->string('hash_rate');
             $table->string('paid');
+            $table->string('value');
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('remote_users');
             $table->timestamps();

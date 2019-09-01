@@ -251,7 +251,7 @@ section {
 }
 
 .section__content--p30 {
-    padding: 0 30px;
+    padding: 0 23px;
 }
 
 @media (max-width: 991px) {
@@ -1627,7 +1627,7 @@ section {
 .navbar-sidebar .navbar__list li a {
     display: block;
     color: #555;
-    font-size: 16px;
+    font-size: 18px;
     padding: 15px 0;
 }
 

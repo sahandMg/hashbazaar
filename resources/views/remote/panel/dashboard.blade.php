@@ -85,91 +85,9 @@
         </div>
     </div>
 
-
-    <h2 class="text-center englishFont">F2Pool</h2>
-    <div class="row m-t-25">
-        <div class="col-sm-6 col-lg-3 dash-item">
-            <div class="overview-item overview-item--c5">
-                <div class="overview__inner">
-                    <div class="overview-box clearfix">
-                        <div class="icon">
-                            <!-- <i class="zmdi zmdi-select-all"></i> -->
-                            <img src="{{URL::asset('remoteDashboard/images/24-payment.svg')}}">
-                        </div>
-                        <div class="text">
-                            <h2 class="englishFont">{{$active_devices}}</h2>
-                            <span> ساعت 24</span>
-                        </div>
-                    </div>
-                    <br/>
-                    <!-- <div class="overview-chart">
-                        <canvas id="widgetChart1"></canvas>
-                    </div> -->
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 dash-item">
-            <div class="overview-item overview-item--c5">
-                <div class="overview__inner">
-                    <div class="overview-box clearfix">
-                        <div class="icon">
-                            <!-- <i class="zmdi zmdi-receipt"></i> -->
-                            <img src="{{URL::asset('remoteDashboard/images/cashin.svg')}}">
-                        </div>
-                        <div class="text">
-                            <h2 class="englishFont">{{$total_th}} TH</h2>
-                            <span>پرداخت نشده</span>
-                        </div>
-                    </div>
-                    <br/>
-                    <!-- <div class="overview-chart">
-                        <canvas id="widgetChart2"></canvas>
-                    </div> -->
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 dash-item">
-            <div class="overview-item overview-item--c5">
-                <div class="overview__inner">
-                    <div class="overview-box clearfix">
-                        <div class="icon">
-                            <!-- <i class="zmdi zmdi-money"></i> -->
-                            <img src="{{URL::asset('remoteDashboard/images/cashout.svg')}}">
-                        </div>
-                        <div class="text">
-                            <h2 class="englishFont">{{$active_devices}}</h2>
-                            <span>پرداخت شده</span>
-                        </div>
-                    </div>
-                    <br/>
-                    <!-- <div class="overview-chart">
-                        <canvas id="widgetChart4"></canvas>
-                    </div> -->
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 dash-item">
-            <div class="overview-item overview-item--c5">
-                <div class="overview__inner">
-                    <div class="overview-box clearfix">
-                        <div class="icon">
-                            <!-- <i class="fa fa-address-book"></i> -->
-                            <img src="{{URL::asset('remoteDashboard/images/kollang.svg')}}">
-                        </div>
-                        <div class="text">
-                            <h2 class="englishFont" id="btcPrice" style="direction: rtl;"></h2>
-                            <span>استخراج شده</span>
-                        </div>
-                    </div>
-                    <br/>
-                    <!-- <div class="overview-chart">
-                        <canvas id="widgetChart3"></canvas>
-                    </div> -->
-                </div>
-            </div>
-        </div>
-    </div>
-
+   <div id="pools">
+    
+   </div>
 
    <br/>
    <div class="au-card text-right" style="direction: rtl;">
@@ -318,11 +236,98 @@ selectPool.addEventListener("change", function() {
 
         });
 
+
         axios.post('{{route('getPoolData',['locale'=>App::getLocale()])}}').then(function (response) {
-
-            console.log(response.data['message']);
+            console.log("axios message")
+            
             if(response.data['code'] == 200){
-
+              console.log(response.data['message']);
+               var data = response.data['message'];
+               for(var i=0; i<data.length; i++) {
+                  $('#btcPrice').append(`<h2 class="text-center englishFont">`+data[i].type.toUpperCase()+`</h2>
+    <div class="row m-t-25">
+        <div class="col-sm-6 col-lg-3 dash-item">
+            <div class="overview-item overview-item--c5">
+                <div class="overview__inner">
+                    <div class="overview-box clearfix">
+                        <div class="icon">
+                            <!-- <i class="zmdi zmdi-select-all"></i> -->
+                            <img src="{{URL::asset('remoteDashboard/images/24-payment.svg')}}">
+                        </div>
+                        <div class="text">
+                            <h2 class="englishFont">{{$active_devices}}</h2>
+                            <span> ساعت 24</span>
+                        </div>
+                    </div>
+                    <br/>
+                    <!-- <div class="overview-chart">
+                        <canvas id="widgetChart1"></canvas>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 dash-item">
+            <div class="overview-item overview-item--c5">
+                <div class="overview__inner">
+                    <div class="overview-box clearfix">
+                        <div class="icon">
+                            <!-- <i class="zmdi zmdi-receipt"></i> -->
+                            <img src="{{URL::asset('remoteDashboard/images/cashin.svg')}}">
+                        </div>
+                        <div class="text">
+                            <h2 class="englishFont">{{$total_th}} TH</h2>
+                            <span>پرداخت نشده</span>
+                        </div>
+                    </div>
+                    <br/>
+                    <!-- <div class="overview-chart">
+                        <canvas id="widgetChart2"></canvas>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 dash-item">
+            <div class="overview-item overview-item--c5">
+                <div class="overview__inner">
+                    <div class="overview-box clearfix">
+                        <div class="icon">
+                            <!-- <i class="zmdi zmdi-money"></i> -->
+                            <img src="{{URL::asset('remoteDashboard/images/cashout.svg')}}">
+                        </div>
+                        <div class="text">
+                            <h2 class="englishFont">{{$active_devices}}</h2>
+                            <span>پرداخت شده</span>
+                        </div>
+                    </div>
+                    <br/>
+                    <!-- <div class="overview-chart">
+                        <canvas id="widgetChart4"></canvas>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 dash-item">
+            <div class="overview-item overview-item--c5">
+                <div class="overview__inner">
+                    <div class="overview-box clearfix">
+                        <div class="icon">
+                            <!-- <i class="fa fa-address-book"></i> -->
+                            <img src="{{URL::asset('remoteDashboard/images/kollang.svg')}}">
+                        </div>
+                        <div class="text">
+                            <h2 class="englishFont" id="btcPrice" style="direction: rtl;"></h2>
+                            <span>استخراج شده</span>
+                        </div>
+                    </div>
+                    <br/>
+                    <!-- <div class="overview-chart">
+                        <canvas id="widgetChart3"></canvas>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>`);
+               }
             }
 
         })

@@ -3151,8 +3151,8 @@ section {
 
 @media (min-width: 992px) and (max-width: 1519px) {
     .overview-item {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 
@@ -3197,6 +3197,10 @@ section {
     color: #fff;
 }
 
+.dash-item img {
+    height: 60px;
+}
+
 @media (min-width: 992px) and (max-width: 1199px) {
     .overview-box .icon {
         margin-right: 3px;
@@ -3204,6 +3208,11 @@ section {
 
     .overview-box .icon i {
         font-size: 30px;
+    }
+    .dash-item {padding-right: 10px; padding-left: 10px;}
+
+    .dash-item img {
+       height: 40px;
     }
 }
 
@@ -3237,12 +3246,12 @@ section {
     }
 
     .overview-box .text h2 {
-        font-size: 20px;
+        font-size: 18px;
         margin-bottom: 0;
     }
 
     .overview-box .text span {
-        font-size: 16px;
+        font-size: 13px;
     }
 }
 
@@ -3253,6 +3262,12 @@ section {
 
     .overview-box .text span {
         font-size: 16px;
+    }
+}
+
+@media (max-width: 769px) {
+    .overview-box .text span {
+        font-size: 21px;
     }
 }
 

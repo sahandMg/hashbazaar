@@ -3,7 +3,7 @@
 
     
 <div class="row m-t-25">
-                            <div class="col-sm-6 col-lg-3">
+                            <div class="col-sm-6 col-lg-3 dash-item">
                                 <div class="overview-item overview-item--c1">
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
@@ -24,7 +24,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-lg-3">
+                            <div class="col-sm-6 col-lg-3 dash-item">
                                 <div class="overview-item overview-item--c2">
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
@@ -33,7 +33,7 @@
                                             </div>
                                             <div class="text">
                                                 <h2 class="englishFont">{{$total_th}} TH</h2>
-                                                <span>مجموع کل نرخ هش</span>
+                                                <span>کل نرخ هش</span>
                                             </div>
                                         </div>
                                         <br/>
@@ -43,17 +43,17 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-lg-3">
+                            <div class="col-sm-6 col-lg-3 dash-item">
                                 <div class="overview-item overview-item--c4">
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon">
                                                 <!-- <i class="zmdi zmdi-money"></i> -->
-                                                <img src="{{URL::asset('remoteDashboard/images/hashbazaar-mine.svg')}}" style="height: 60px;">
+                                                <img src="{{URL::asset('remoteDashboard/images/hashbazaar-mine.svg')}}">
                                             </div>
                                             <div class="text">
                                                 <h2 class="englishFont">{{$active_devices}}</h2>
-                                                <span>تعداد دستگاه های فعال</span>
+                                                <span>دستگاه های فعال</span>
                                             </div>
                                         </div>
                                         <br/>
@@ -63,13 +63,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-lg-3">
+                            <div class="col-sm-6 col-lg-3 dash-item">
                                 <div class="overview-item overview-item--c3">
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon">
                                                 <!-- <i class="fa fa-address-book"></i> -->
-                                                <img src="{{URL::asset('remoteDashboard/images/bitcoin.svg')}}" style="height: 60px;">
+                                                <img src="{{URL::asset('remoteDashboard/images/bitcoin.svg')}}">
                                             </div>
                                             <div class="text">
                                                 <h2  class="englishFont" id="btcPrice" style="direction: rtl;"></h2>
@@ -88,13 +88,13 @@
 
   <h2 class="text-center englishFont">F2Pool</h2>
 <div class="row m-t-25">
-    <div class="col-sm-6 col-lg-3">
+    <div class="col-sm-6 col-lg-3 dash-item">
         <div class="overview-item overview-item--c5">
             <div class="overview__inner">
                 <div class="overview-box clearfix">
                     <div class="icon">
                         <!-- <i class="zmdi zmdi-select-all"></i> -->
-                        <img src="{{URL::asset('remoteDashboard/images/24-payment.svg')}}" style="height: 60px;">
+                        <img src="{{URL::asset('remoteDashboard/images/24-payment.svg')}}">
                     </div>
                     <div class="text">
                         <h2 class="englishFont">{{$active_devices}}</h2>
@@ -108,13 +108,13 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-6 col-lg-3">
+    <div class="col-sm-6 col-lg-3 dash-item">
         <div class="overview-item overview-item--c5">
             <div class="overview__inner">
                 <div class="overview-box clearfix">
                     <div class="icon">
                         <!-- <i class="zmdi zmdi-receipt"></i> -->
-                        <img src="{{URL::asset('remoteDashboard/images/cashin.svg')}}" style="height: 60px;">
+                        <img src="{{URL::asset('remoteDashboard/images/cashin.svg')}}">
                     </div>
                     <div class="text">
                         <h2 class="englishFont">{{$total_th}} TH</h2>
@@ -128,13 +128,13 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-6 col-lg-3">
+    <div class="col-sm-6 col-lg-3 dash-item">
         <div class="overview-item overview-item--c5">
             <div class="overview__inner">
                 <div class="overview-box clearfix">
                     <div class="icon">
                         <!-- <i class="zmdi zmdi-money"></i> -->
-                        <img src="{{URL::asset('remoteDashboard/images/cashout.svg')}}" style="height: 60px;">
+                        <img src="{{URL::asset('remoteDashboard/images/cashout.svg')}}">
                     </div>
                     <div class="text">
                         <h2 class="englishFont">{{$active_devices}}</h2>
@@ -148,13 +148,13 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-6 col-lg-3">
+    <div class="col-sm-6 col-lg-3 dash-item">
         <div class="overview-item overview-item--c5">
             <div class="overview__inner">
                 <div class="overview-box clearfix">
                     <div class="icon">
                         <!-- <i class="fa fa-address-book"></i> -->
-                        <img src="{{URL::asset('remoteDashboard/images/kollang.svg')}}" style="height: 60px;">
+                        <img src="{{URL::asset('remoteDashboard/images/kollang.svg')}}">
                     </div>
                     <div class="text">
                         <h2 class="englishFont" id="btcPrice" style="direction: rtl;"></h2>

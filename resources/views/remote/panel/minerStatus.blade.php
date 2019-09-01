@@ -16,14 +16,14 @@
                                 <div class="table-responsive table--no-card m-b-40">
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
-                                            <tr  class="text-center">
+                                            <tr class="text-center">
                                                 <th>Ip</th>
-                                                <th>Type</th>
-                                                <th>Temp2</th>
-                                                <th>Temp1</th>
-                                                <th>Fan Speed</th>
-                                                <th>Total Th</th>
-                                                <th>Up time</th>
+                                                <th>مدل</th>
+                                                <th>دمای یک</th>
+                                                <th>دمای دو</th>
+                                                <th>سرعت فن ها</th>
+                                                <th>میانگین تراهش 5 ساعت اخیر</th>
+                                                <th>زمان کارکرد پیوسته</th>
                                             </tr>
                                         </thead>
                                         <tbody>

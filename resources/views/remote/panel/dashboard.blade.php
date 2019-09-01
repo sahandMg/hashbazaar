@@ -196,7 +196,7 @@
             @foreach($farms as $farm)
              <tr>
                <td>{{$farm->name}}</td>
-               <td>{{$farm->code}}</td>
+               <td class="englishFont">{{$farm->code}}</td>
             </tr>
             @endforeach
            </tbody>
@@ -210,8 +210,8 @@
      <div class="form-group text-center col-lg-3 col-md-4 col-sm-10 mx-auto">
        <label for="sel1">انتخاب POOL</label>
        <select class="form-control" id="selectPool">
+         <option class="englishFont" value="F2Pool"><span class="englishFont">F2Pool</span></option>
          <option class="englishFont" value="Antpool">Antpool</option>
-         <option class="englishFont" value="F2Pool">F2Pool</option>
          <option class="englishFont" value="SlushPool">SlushPool</option>
        </select>
      </div>
@@ -219,19 +219,22 @@
        @include('formError')
        @include('formMessage')
      <div id="Antpool">
+     <p>از قسمت dashboard، تب API را انتخاب کنید، بر روی Generate key کلیک کنید. از جدول پایین key و secret را در زیر وارد کنید، سپس بر روی آیکون تیک در قسمت options کلیک کنید.</p>
+     <p>اگر نیاز به راهنمایی بیشتر دارید به قسمت آموزش ها بروید.</p>
         <form class="poolForm col-lg-4 col-md-5 col-sm-11 mx-auto" method="post" action="{{route('PoolRegister',['locale'=>App::getLocale()])}}">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <input type="hidden" name="pool" value="antpool">
-          <div class="form-group">
-           <label>user id:</label>
+          <!-- <div class="form-group">
+           <label>نام کاربری :</label>
            <input type="text" name="user_id" required class="form-control">
-          </div>
+          </div> -->
+
           <div class="form-group">
-           <label>API key:</label>
+           <label>Key :</label>
            <input type="text" name="api_key" required class="form-control">
           </div>
           <div class="form-group">
-           <label>secret:</label>
+           <label>Secret :</label>
            <input type="text" name="secret" required class="form-control">
           </div>
           <div class="text-center"> 
@@ -244,7 +247,7 @@
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <input type="hidden" name="pool" value="f2pool">
           <div class="form-group">
-           <label>user name:</label>
+           <label>نام کاربری در سایت <span class="englishFont">F2pool</span> را وارد کنید.</label>
            <input type="text" name="username" required class="form-control">
           </div>
           <div class="text-center"> 
@@ -254,86 +257,6 @@
      </div>
      <div id="SlushPool">
         <form class="poolForm col-lg-4 col-md-5 col-sm-11 mx-auto" method="post" action="{{route('PoolRegister',['locale'=>App::getLocale()])}}">
-            <input type="hidden" name="_token" value="{{csrf_token()}}">
-            <div class="d-flex flex-wrap justify-content-center new-farm">
-                <label style="margin-top: 5px;">نام فارم جدید:</label>
-                <input type="text" name="name" class="form-control" style="margin-right: 1%;">
-                <button class="btn btn-success" style="margin-right: 2%;">ایجاد</button>
-            </div>
-        </form>
-        <br/>
-        @if(count($farms) > 0)
-            <h3 class="text-center">فارم های ماینینگ شما</h3>
-            <br/>
-            <table class="table table-bordered">
-                <thead>
-                <tr>
-                    <th>نام</th>
-                    <th>شناسه</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($farms as $farm)
-                    <tr>
-                        <td>{{$farm->name}}</td>
-                        <td>{{$farm->code}}</td>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
-        @endif
-    </div>
-    <br/>
-    <div class="au-card text-right" style="direction: rtl;">
-        <h3>با دادن اطلاعات Pool ، API خود می توانید وضعیت استخراج را در این جا مشاهد کنید و همچنین در صورت قطع شدن ماینرها، ایمیل و پیامک هشدار دریافت کنید.</h3>
-        <br/>
-        <div class="form-group text-center col-lg-3 col-md-4 col-sm-10 mx-auto">
-            <label for="sel1">انتخاب POOL</label>
-            <select class="form-control" id="selectPool">
-                <option class="englishFont" value="Antpool">Antpool</option>
-                <option class="englishFont" value="F2Pool">F2Pool</option>
-                <option class="englishFont" value="SlushPool">SlushPool</option>
-            </select>
-        </div>
-        <hr/>
-        @include('formError')
-        @include('formMessage')
-        <div id="Antpool">
-            <form class="poolForm col-lg-4 col-md-5 col-sm-11 mx-auto" method="post" action="{{route('PoolRegister',['locale'=>App::getLocale()])}}">
-                <input type="hidden" name="_token" value="{{csrf_token()}}">
-                <input type="hidden" name="pool" value="antpool">
-                <div class="form-group">
-                    <label>user id:</label>
-                    <input type="text" name="user_id" required class="form-control">
-                </div>
-                <div class="form-group">
-                    <label>API key:</label>
-                    <input type="text" name="api_key" required class="form-control">
-                </div>
-                <div class="form-group">
-                    <label>secret:</label>
-                    <input type="text" name="secret" required class="form-control">
-                </div>
-                <div class="text-center">
-                    <button class="btn btn-success">ثبت</button>
-                </div>
-            </form>
-        </div>
-        <div id="F2Pool">
-            <form class="poolForm col-lg-4 col-md-5 col-sm-11 mx-auto" method="post" action="{{route('PoolRegister',['locale'=>App::getLocale()])}}">
-                <input type="hidden" name="_token" value="{{csrf_token()}}">
-                <input type="hidden" name="pool" value="f2pool">
-                <div class="form-group">
-                    <label>user name:</label>
-                    <input type="text" name="username" required class="form-control">
-                </div>
-                <div class="text-center">
-                    <button class="btn btn-success">ثبت</button>
-                </div>
-            </form>
-        </div>
-        <div id="SlushPool">
-            <form class="poolForm col-lg-4 col-md-5 col-sm-11 mx-auto" method="post" action="{{route('PoolRegister',['locale'=>App::getLocale()])}}">
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <input type="hidden" name="pool" value="slushpool">
                 <div class="form-group">
@@ -344,9 +267,12 @@
                     <button class="btn btn-success">ثبت</button>
                 </div>
             </form>
-        </div>
+        <br/>
+        
     </div>
-    <br/><br/><br/>
+   </div> 
+    <br/>
+   <br/><br/>
     <style type="text/css">
         .poolForm {
 
@@ -366,24 +292,23 @@
         }
 
         var selectPool = document.getElementById("selectPool");
-
-        // activities.addEventListener("click", function() {
-        //     var options = activities.querySelectorAll("option");
-        //     var count = options.length;
-        //     if(typeof(count) === "undefined" || count < 2)
-        //     {
-        //         addActivityItem();
-        //     }
-        // });
-        hideAllForms();
-        $('#Antpool').show();
-        $('#btcPrice').html('<img src="{{URL::asset('img/ajax-loader.gif')}}">');
-        selectPool.addEventListener("change", function() {
-            // console.log("")
-            hideAllForms();
-            $('#'+selectPool.value).show();
-        });
-        axios.get('{{route('btcPrice')}}').then(function (response) {
+// activities.addEventListener("click", function() {
+//     var options = activities.querySelectorAll("option");
+//     var count = options.length;
+//     if(typeof(count) === "undefined" || count < 2)
+//     {
+//         addActivityItem();
+//     }
+// });
+hideAllForms();
+$('#F2Pool').show();
+$('#btcPrice').html('<img src="{{URL::asset('img/ajax-loader.gif')}}">');
+selectPool.addEventListener("change", function() {
+  // console.log("")
+  hideAllForms();
+  $('#'+selectPool.value).show();
+});
+       axios.get('{{route('btcPrice')}}').then(function (response) {
 
             console.log(response.data['message']);
             if(response.data['code'] == 200){

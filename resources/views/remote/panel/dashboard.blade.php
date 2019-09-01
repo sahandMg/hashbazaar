@@ -244,7 +244,7 @@ selectPool.addEventListener("change", function() {
               console.log(response.data['message']);
                var data = response.data['message'];
                for(var i=0; i<data.length; i++) {
-                  $('#btcPrice').append(`<h2 class="text-center englishFont">`+data[i].type.toUpperCase()+`</h2>
+                  $('#pools').append(`<h2 class="text-center englishFont">`+data[i].type.toUpperCase()+`</h2>
     <div class="row m-t-25">
         <div class="col-sm-6 col-lg-3 dash-item">
             <div class="overview-item overview-item--c5">
@@ -255,7 +255,7 @@ selectPool.addEventListener("change", function() {
                             <img src="{{URL::asset('remoteDashboard/images/24-payment.svg')}}">
                         </div>
                         <div class="text">
-                            <h2 class="englishFont">{{$active_devices}}</h2>
+                            <h2 class="englishFont">`+parseFloat(data[i].value_last_day).toFixed(6)+`</h2>
                             <span> ساعت 24</span>
                         </div>
                     </div>
@@ -275,7 +275,7 @@ selectPool.addEventListener("change", function() {
                             <img src="{{URL::asset('remoteDashboard/images/cashin.svg')}}">
                         </div>
                         <div class="text">
-                            <h2 class="englishFont">{{$total_th}} TH</h2>
+                            <h2 class="englishFont">`+parseFloat(data[i].balance).toFixed(6)+`</h2>
                             <span>پرداخت نشده</span>
                         </div>
                     </div>
@@ -295,7 +295,7 @@ selectPool.addEventListener("change", function() {
                             <img src="{{URL::asset('remoteDashboard/images/cashout.svg')}}">
                         </div>
                         <div class="text">
-                            <h2 class="englishFont">{{$active_devices}}</h2>
+                            <h2 class="englishFont">`+parseFloat(data[i].paid).toFixed(6)+`</h2>
                             <span>پرداخت شده</span>
                         </div>
                     </div>
@@ -315,7 +315,7 @@ selectPool.addEventListener("change", function() {
                             <img src="{{URL::asset('remoteDashboard/images/kollang.svg')}}">
                         </div>
                         <div class="text">
-                            <h2 class="englishFont" id="btcPrice" style="direction: rtl;"></h2>
+                            <h2 class="englishFont" id="btcPrice" style="direction: rtl;">`+parseFloat(data[i].value).toFixed(6)+`</h2>
                             <span>استخراج شده</span>
                         </div>
                     </div>

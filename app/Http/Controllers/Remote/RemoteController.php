@@ -126,6 +126,7 @@ class RemoteController extends Controller
                 $f2poolInst->save();
             }
             $f2_pool_data = DB::connection('mysql')->table('f2_pool_data')->orderBy('id','desc')->first();
+            $f2_pool_data->type = 'f2pool';
             array_push($pools,$f2_pool_data);
         }
         if (!$antpools->isEmpty()) {
@@ -144,6 +145,7 @@ class RemoteController extends Controller
                 $antpoolInst->save();
             }
             $ant_pool_data = DB::connection('mysql')->table('ant_pool_data')->orderBy('id','desc')->first();
+            $ant_pool_data->type = 'antpool';
             array_push($pools,$ant_pool_data);
         }
 

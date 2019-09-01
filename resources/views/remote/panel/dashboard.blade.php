@@ -204,14 +204,14 @@
    </div>
    <br/>
    <div class="au-card text-right" style="direction: rtl;">
-     <h3>با دادن اطلاعان Pool ، API خود می توانید وضعیت استخراج را در این جا مشاهد کنید و همچنین در صورت قطع شدن ماینرها، ایمیل و پیامک هشدار دریافت کنید.</h3>
+     <h3>با دادن اطلاعات Pool ، API خود می توانید وضعیت استخراج را در این جا مشاهد کنید و همچنین در صورت قطع شدن ماینرها، ایمیل و پیامک هشدار دریافت کنید.</h3>
      <br/>
      <div class="form-group text-center col-lg-3 col-md-4 col-sm-10 mx-auto">
        <label for="sel1">انتخاب POOL</label>
        <select class="form-control" id="selectPool">
-         <option value="Antpool">Antpool</option>
-         <option value="F2Pool">F2Pool</option>
-         <option value="SlushPool">SlushPool</option>
+         <option class="englishFont" value="Antpool">Antpool</option>
+         <option class="englishFont" value="F2Pool">F2Pool</option>
+         <option class="englishFont" value="SlushPool">SlushPool</option>
        </select>
      </div>
      <hr/>

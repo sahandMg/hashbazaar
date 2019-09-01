@@ -15,12 +15,12 @@ class CreateAntPoolDataTable extends Migration
     {
         Schema::create('ant_pool_data', function (Blueprint $table) {
             $table->increments('id');
-            $table->double('earn24Hours',10,8);
+            $table->double('value_last_day',10,8);
             $table->double('earnTotal',10,8);
-            $table->double('paidOut',10,8);
+            $table->double('paid',10,8);
             $table->double('balance',10,8);
             $table->string('settleTime');
-            $table->string('hash_rate');
+            $table->string('hashes_last_day');
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('remote_users');
             $table->timestamps();

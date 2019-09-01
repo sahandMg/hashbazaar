@@ -136,11 +136,11 @@ class RemoteController extends Controller
                 $hashRateData = $antpoolInst->hashRate();
                 $antpoolInst = new AntPoolData();
                 $antpoolInst->balance = $miningData['data']['balance'];
-                $antpoolInst->earn24Hours = $miningData['data']['earn24Hours'];
+                $antpoolInst->value_last_day = $miningData['data']['earn24Hours'];
                 $antpoolInst->earnTotal = $miningData['data']['earnTotal'];
-                $antpoolInst->paidOut = $miningData['data']['paidOut'];
+                $antpoolInst->paid = $miningData['data']['paidOut'];
                 $antpoolInst->settleTime = $miningData['data']['settleTime'];
-                $antpoolInst->hash_rate = number_format($hashRateData['data']['last1d'] / pow(10, 6), 1);
+                $antpoolInst->hashes_last_day = number_format($hashRateData['data']['last1d'] / pow(10, 6), 1);
                 $antpoolInst->user_id = Auth::guard('remote')->id();
                 $antpoolInst->save();
             }

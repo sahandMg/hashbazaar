@@ -4,7 +4,7 @@
 	 viewBox="0 0 949.9 981.2" style="enable-background:new 0 0 949.9 981.2;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#FFFFFF;stroke:url(#SVGID_1_);stroke-miterlimit:10;}
-	.st1{fill:none;stroke:url(#SVGID_2_);stroke-miterlimit:10;}
+	.st1{fill:#FFFFFF;}
 </style>
 <title>cashin</title>
 <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="379.0622" y1="341.9872" x2="1328.9379" y2="341.9872" gradientTransform="matrix(-1 0 0 1 1328.938 148.6102)">
@@ -18,15 +18,6 @@
 <path class="st0" d="M204.2,523.2v-343h541.4v343h203L474.9,980.5L1.2,523.2H204.2z M835.8,568.9H700.5v-343H249.3v343H114
 	l360.9,343L835.8,568.9z M204.2,91.7h541.4v45.6H204.2V91.7z M204.2,0.5h541.4v45.6H204.2V0.5z"/>
 <g id="Layer_1-2-2">
-	
-		<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="365.8711" y1="479.8878" x2="662.6896" y2="479.8878" gradientTransform="matrix(1 0 0 -1 -53.624 970.3898)">
-		<stop  offset="0" style="stop-color:#E8A423"/>
-		<stop  offset="2.200000e-02" style="stop-color:#E9A721"/>
-		<stop  offset="0.254" style="stop-color:#F3C113"/>
-		<stop  offset="0.492" style="stop-color:#FAD408"/>
-		<stop  offset="0.737" style="stop-color:#FEDF02"/>
-		<stop  offset="1" style="stop-color:#FFE300"/>
-	</linearGradient>
 	<path class="st1" d="M605.4,524.8c-3.7-8.2-8.7-15.6-15-22c-10.5-10.3-23.5-17.6-37.7-21.1c13.4-7.2,24.5-18.1,31.9-31.4
 		c8-18.1,7.9-38.9-0.5-56.9c-3.8-8.3-8.9-16-15.1-22.7c-11.1-9.9-24.9-16.3-39.6-18.2c-11.5-1.2-23.1-1.7-34.6-1.4v-46.9h-37v46.8
 		h-32.5v-46.8h-37.6V352l-74.8-0.8v41.9c10-0.7,20.1-0.5,30.1,0.4c8.6,1.5,15.5,7.4,17.7,15.2c0.7,5.6,0.8,11.3,0.2,17v143.9

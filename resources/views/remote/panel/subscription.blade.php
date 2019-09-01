@@ -26,8 +26,8 @@ $setting = App\Setting::first();
                   <td>{{$order->devices}}</td>
                   <td> {{$order->months}}</td>
                   <td>{{$order->transaction->amount}}</td>
-                    w
-                  <td> {{$days > 30?("۱ ماه ".($days - 30)):$days}} روز</td>
+                <?php $days = (Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($order->created_at)->addMonths($order->months))) ?>
+                    <td> {{$days > 30?("1 ماه ".($days - 30)):$days}} روز</td>
                 </tr>
                 @endforeach
             </tbody>

@@ -48,18 +48,18 @@
         <br/>
     </div>
   </div>
-  <div class="contant">
+ <!--  <div class="contant">
     <a class="tab-custom" href="#no4">Puneet Sharma <i class="fa fa-angle-down" aria-hidden="true"></i> </a>
     <div class="text-custom" id="no4" >
        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus rerum corrupti, cumque quasi quae perspiciatis quo sit reprehenderit itaque dicta. Unde nobis ullam saepe, odit porro. Dicta beatae, nobis quasi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus rerum corrupti, cumque quasi quae perspiciatis quo sit reprehenderit itaque dicta. Unde nobis ullam saepe, odit porro. Dicta beatae, nobis quasi.</p>
     </div>
-  </div>
-  <div class="contant">
+  </div> -->
+<!--   <div class="contant">
     <a class="tab-custom" href="#no5">Mahesh Sharma <i class="fa fa-angle-down" aria-hidden="true"></i> </a>
     <div class="text-custom" id="no5" >
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus rerum corrupti, cumque quasi quae perspiciatis quo sit reprehenderit itaque dicta. Unde nobis ullam saepe, odit porro. Dicta beatae, nobis quasi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus rerum corrupti, cumque quasi quae perspiciatis quo sit reprehenderit itaque dicta. Unde nobis ullam saepe, odit porro. Dicta beatae, nobis quasi.</p>
     </div>
-  </div>
+  </div> -->
   
 </div>
 

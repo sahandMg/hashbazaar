@@ -110,7 +110,7 @@ Route::get('antpool',function (){
 
     $antpool = new \App\Pools\Antpool();
 
-    dd($antpool->run());
+    dd($antpool->hashRate());
 
 });
 

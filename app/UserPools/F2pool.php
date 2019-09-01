@@ -20,7 +20,7 @@ class F2pool
         $this->username = decrypt($f2pool->username);
     }
 
-    public function run(){
+    public function mining(){
 
      $url = 'http://api.f2pool.com/bitcoin/'.$this->username;
 //     $url = 'http://api.f2pool.com/bitcoin/mvs1995';

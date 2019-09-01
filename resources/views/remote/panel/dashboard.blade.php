@@ -391,6 +391,15 @@
                 $('#btcPrice').html('$'+ response.data['message'].toFixed(0));
             }
 
+        });
+
+        axios.post('{{route('getPoolData',['locale'=>App::getLocale()])}}').then(function (response) {
+
+            console.log(response.data['message']);
+            if(response.data['code'] == 200){
+
+            }
+
         })
     </script>
 @endsection

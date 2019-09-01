@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Remote;
 
 use App\AntPool;
+use App\AntPoolData;
 use App\F2Pool;
+use App\F2PoolData;
 use App\Http\Helpers;
 use App\Jobs\subscriptionMailJob;
 use App\RemoteData;
@@ -107,15 +109,56 @@ class RemoteController extends Controller
         $antpools = Auth::guard('remote')->user()->antpools;
         $f2pools = Auth::guard('remote')->user()->f2pools;
         $slushpools = Auth::guard('remote')->user()->slushpools;
+        $pools = [];
+    try {
 
-        if(!is_null($f2pools)){
-           foreach ($f2pools as $key => $f2pool)
-            $f2pool[$key] = new \App\UserPools\F2pool($f2pool);
+        if (!$f2pools->isEmpty()) {
+            foreach ($f2pools as $key => $f2pool) {
+                $f2poolInst = new \App\UserPools\F2pool($f2pool);
+                $miningData = $f2poolInst->mining();
+                $f2poolInst = new F2PoolData();
+                $f2poolInst->value_last_day = $miningData['message']['value_last_day'];
+                $f2poolInst->balance = $miningData['message']['balance'];
+                $f2poolInst->hashes_last_day = number_format($miningData['message']['hashes_last_day'] / 86400 / pow(10, 12), 3);
+                $f2poolInst->hash_rate = number_format($miningData['message']['hashrate'] / 86400 / pow(10, 12), 3);
+                $f2poolInst->paid = $miningData['message']['paid'];
+                $f2poolInst->user_id = Auth::guard('remote')->id();
+                $f2poolInst->save();
+            }
+            $f2_pool_data = DB::connection('mysql')->table('f2_pool_data')->get();
+            array_push($pools,$f2_pool_data);
         }
-        if(!is_null($antpools)){
-            foreach ($antpools as $key => $antpool)
-                $antpool[$key] = new \App\UserPools\Antpool($antpool);
+        if (!$antpools->isEmpty()) {
+            foreach ($antpools as $key => $antpool) {
+                $antpoolInst = new \App\UserPools\Antpool($antpool);
+                $miningData = $antpoolInst->mining();
+                $hashRateData = $antpoolInst->hashRate();
+                $antpoolInst = new AntPoolData();
+                $antpoolInst->balance = $miningData['data']['balance'];
+                $antpoolInst->earn24Hours = $miningData['data']['earn24Hours'];
+                $antpoolInst->earnTotal = $miningData['data']['earnTotal'];
+                $antpoolInst->paidOut = $miningData['data']['paidOut'];
+                $antpoolInst->settleTime = $miningData['data']['settleTime'];
+                $antpoolInst->hash_rate = number_format($hashRateData['data']['last1d'] / pow(10, 6), 1);
+                $antpoolInst->user_id = Auth::guard('remote')->id();
+                $antpoolInst->save();
+            }
+            $ant_pool_data = DB::connection('mysql')->table('ant_pool_data')->get();
+            array_push($pools,$ant_pool_data);
         }
+
+        if (!$slushpools->isEmpty()) {
+            foreach ($slushpools as $key => $slushpool){
+
+//                $slushpool[$key] = new \App\UserPools\Antpool($slushpool);
+            }
+        }
+
+        return ['code' => 200, 'message' => $pools];
+
+    }catch (\Exception $exception){
+        return ['code' => 500, 'message' => $exception->getMessage()];
+    }
     }
 
     public function minerStatus(){

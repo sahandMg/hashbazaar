@@ -125,7 +125,7 @@ class RemoteController extends Controller
                 $f2poolInst->user_id = Auth::guard('remote')->id();
                 $f2poolInst->save();
             }
-            $f2_pool_data = DB::connection('mysql')->table('f2_pool_data')->get();
+            $f2_pool_data = DB::connection('mysql')->table('f2_pool_data')->orderBy('id','desc')->first();
             array_push($pools,$f2_pool_data);
         }
         if (!$antpools->isEmpty()) {
@@ -143,7 +143,7 @@ class RemoteController extends Controller
                 $antpoolInst->user_id = Auth::guard('remote')->id();
                 $antpoolInst->save();
             }
-            $ant_pool_data = DB::connection('mysql')->table('ant_pool_data')->get();
+            $ant_pool_data = DB::connection('mysql')->table('ant_pool_data')->orderBy('id','desc')->first();
             array_push($pools,$ant_pool_data);
         }
 
@@ -202,7 +202,7 @@ class RemoteController extends Controller
 
         for($i=0;$i<count($data);$i++){
             $data[$i]['totalHashrate'] =  str_replace(',','',$data[$i]['totalHashrate']);
-            $data[$i]['totalHashrate'] = number_format($data[$i]['totalHashrate']/1000,4);
+            $data[$i]['totalHashrate'] = number_format($data[$i]['totalHashrate']/1000,1);
         }
         return $data;
     }

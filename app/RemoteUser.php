@@ -22,4 +22,17 @@ class RemoteUser extends Authenticatable implements MustVerifyEmail
 
         return $this->hasMany(RemoteId::class,'user_id');
     }
+
+    public function antpools(){
+
+        return $this->hasMany(AntPool::class,'remote_id');
+    }
+    public function f2pools(){
+
+        return $this->hasMany(F2Pool::class,'user_id');
+    }
+    public function slushpools(){
+
+        return $this->hasMany(SlushPool::class,'user_id');
+    }
 }

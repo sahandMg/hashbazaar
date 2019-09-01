@@ -98,7 +98,24 @@ class RemoteController extends Controller
             }
             $active_devices = count($data);
         }
+
         return view('remote.panel.dashboard',compact('farms','active_devices','total_th'));
+    }
+
+    public function getPoolData(){
+
+        $antpools = Auth::guard('remote')->user()->antpools;
+        $f2pools = Auth::guard('remote')->user()->f2pools;
+        $slushpools = Auth::guard('remote')->user()->slushpools;
+
+        if(!is_null($f2pools)){
+           foreach ($f2pools as $key => $f2pool)
+            $f2pool[$key] = new \App\UserPools\F2pool($f2pool);
+        }
+        if(!is_null($antpools)){
+            foreach ($antpools as $key => $antpool)
+                $antpool[$key] = new \App\UserPools\Antpool($antpool);
+        }
     }
 
     public function minerStatus(){

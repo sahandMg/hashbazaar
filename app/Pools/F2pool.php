@@ -15,7 +15,6 @@ class F2pool
 
     public function run(){
 
-
      $url = 'http://api.f2pool.com/bitcoin/mvs1995';
         $client = new GuzzleClient();
         try{

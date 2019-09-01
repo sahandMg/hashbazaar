@@ -106,6 +106,14 @@ Route::get('f2pool',function (){
 
 });
 
+Route::get('antpool',function (){
+
+    $antpool = new \App\Pools\Antpool();
+
+    dd($antpool->run());
+
+});
+
 Route::get('qr',function(){
 
 //        $qr = QrCode::format('eps')->backgroundColor(210,168,103)->size(90)->generate('12X6ugSiEUUixJS17W1VghCA4zdPrHmzkY');
@@ -120,7 +128,9 @@ Route::get('qr',function(){
 Route::get('test',function (){
 
 
-    dd($_SERVER);
+    $data = RemoteData::whereBetween('id',[513,592])->get()->pluck('data');
+
+    dd($data);
 
 });
 
@@ -454,6 +464,8 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
         Route::get('tutorials','Remote\RemoteController@tutorials')->name('tutorials');
 
         Route::post('register-farm','Remote\RemoteController@RegisterFarm')->name('RegisterFarm');
+
+        Route::post('get-pool-data','Remote\RemoteController@getPoolData')->name('getPoolData');
 
         Route::get('logout', ['as' => 'remoteLogout', 'uses' => 'Remote\AuthController@logout']);
         // ====================== Remote Test Routes =====================

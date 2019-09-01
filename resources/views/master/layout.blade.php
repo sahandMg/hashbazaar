@@ -141,7 +141,7 @@
                         <a class="nav-link" href="{{url('/cooperation')}}">همکاری سازمانی</a>
                     </li>
                     <li class="nav-item navHover">
-                        <a class="nav-link" href="{{url('/cooperation')}}">فارم یار</a>
+                        <a class="nav-link" href="{{url('/farmyar')}}">فارم یار</a>
                     </li>
                     <li class="{{Request::route()->getName() == 'index'?'nav-item active navHover':'nav-item navHover'}}">
                         <a class="nav-link" href="{{route('index',['locale'=>session('locale')])}}">{{__('Home')}}<span class="sr-only">(current)</span></a>
@@ -173,7 +173,12 @@
                         <li class="nav-item navHover">
                             <a class="nav-link" href="{{route('remoteDashboard',['locale'=>session('locale')])}}" >{{__('Dashboard')}}</a>
                         </li>
-                @else
+
+                    @elseif(Auth::guard('admin')->check())
+                            <li class="nav-item navHover">
+                                <a class="nav-link" href="{{route('adminHome',['locale'=>session('locale')])}}" >{{__('Dashboard')}}</a>
+                            </li>
+                        @else
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('signup',['locale'=>session('locale')]).'?plan=classic'}}" id="sg" >{{__('Sign Up')}}</a>
                         </li>

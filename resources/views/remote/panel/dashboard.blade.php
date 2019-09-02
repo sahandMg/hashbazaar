@@ -8,7 +8,8 @@
                 <div class="overview__inner">
                     <div class="overview-box clearfix">
                         <div class="icon">
-                            <i class="zmdi zmdi-select-all"></i>
+
+                            <img src="{{URL::asset('remoteDashboard/images/hashbazaar-miners.svg')}}">
                         </div>
                         <div class="text">
 
@@ -29,7 +30,9 @@
                 <div class="overview__inner">
                     <div class="overview-box clearfix">
                         <div class="icon">
-                            <i class="zmdi zmdi-receipt"></i>
+                            {{--<i class="zmdi zmdi-receipt"></i>--}}
+
+                            <img src="{{URL::asset('remoteDashboard/images/hashbazaar-hashrate.svg')}}">
                         </div>
                         <div class="text">
                             <h2 class="englishFont">{{$total_th}} TH</h2>
@@ -272,11 +275,11 @@ selectPool.addEventListener("change", function() {
                     <div class="overview-box clearfix">
                         <div class="icon">
                             <!-- <i class="zmdi zmdi-receipt"></i> -->
-                            <img src="{{URL::asset('remoteDashboard/images/cashin.svg')}}">
+                            <img src="{{URL::asset('remoteDashboard/images/hashbazaar-unpaid.svg')}}">
                         </div>
                         <div class="text">
                             <h2 class="englishFont">`+parseFloat(data[i].balance).toFixed(6)+`</h2>
-                            <span>پرداخت نشده</span>
+                            <span>واریز نشده</span>
                         </div>
                     </div>
                     <br/>

@@ -34,7 +34,7 @@ class RemoteController extends Controller
     public function __construct()
     {
 
-        $this->middleware('remoteAuth')->except('remoteApi','minerDataApi');
+        $this->middleware('remoteAuth')->except('remoteApi','minerDataApi','getPoolDataApi');
     }
 
     // Gets Miners data by API
@@ -95,7 +95,7 @@ class RemoteController extends Controller
             $total_th = 0;
             for($i=0;$i<count($data);$i++){
                 $data[$i]['totalHashrate'] =  str_replace(',','',$data[$i]['totalHashrate']);
-                $hash = (number_format($data[$i]['totalHashrate']/1000,4));
+                $hash = (number_format($data[$i]['totalHashrate']/1000,1));
                 $total_th = $total_th + $hash;
             }
             $active_devices = count($data);
@@ -162,6 +162,72 @@ class RemoteController extends Controller
     }catch (\Exception $exception){
         return ['code' => 500, 'message' => $exception->getMessage()];
     }
+    }
+
+    public function getPoolDataApi(Request $request){
+
+        if(!$request->has('id')){
+
+            return ['code'=>500,'message'=>'provide an id'];
+        }else{
+            $id = $request->id;
+            $antpools = RemoteUser::where('id',$id)->first()->antpools;
+            $f2pools = RemoteUser::where('id',$id)->first()->f2pools;
+            $slushpools = RemoteUser::where('id',$id)->first()->slushpools;
+            $pools = [];
+            try {
+
+                if (!$f2pools->isEmpty()) {
+                    foreach ($f2pools as $key => $f2pool) {
+                        $f2poolInst = new \App\UserPools\F2pool($f2pool);
+                        $miningData = $f2poolInst->mining();
+                        $f2poolInst = new F2PoolData();
+                        $f2poolInst->value_last_day = $miningData['message']['value_last_day'];
+                        $f2poolInst->balance = $miningData['message']['balance'];
+                        $f2poolInst->hashes_last_day = number_format($miningData['message']['hashes_last_day'] / 86400 / pow(10, 12), 3);
+                        $f2poolInst->hash_rate = number_format($miningData['message']['hashrate'] / 86400 / pow(10, 7), 3);
+                        $f2poolInst->paid = $miningData['message']['paid'];
+                        $f2poolInst->value = $miningData['message']['value'];
+                        $f2poolInst->user_id = $id;
+                        $f2poolInst->save();
+                    }
+                    $f2_pool_data = DB::connection('mysql')->table('f2_pool_data')->orderBy('id','desc')->first();
+                    $f2_pool_data->type = 'f2pool';
+                    array_push($pools,$f2_pool_data);
+                }
+                if (!$antpools->isEmpty()) {
+                    foreach ($antpools as $key => $antpool) {
+                        $antpoolInst = new \App\UserPools\Antpool($antpool);
+                        $miningData = $antpoolInst->mining();
+                        $hashRateData = $antpoolInst->hashRate();
+                        $antpoolInst = new AntPoolData();
+                        $antpoolInst->balance = $miningData['data']['balance'];
+                        $antpoolInst->value_last_day = $miningData['data']['earn24Hours'];
+                        $antpoolInst->value = $miningData['data']['earnTotal'];
+                        $antpoolInst->paid = $miningData['data']['paidOut'];
+                        $antpoolInst->settleTime = $miningData['data']['settleTime'];
+                        $antpoolInst->hashes_last_day = number_format($hashRateData['data']['last1d'] / pow(10, 6), 1);
+                        $antpoolInst->user_id = $id;
+                        $antpoolInst->save();
+                    }
+                    $ant_pool_data = DB::connection('mysql')->table('ant_pool_data')->orderBy('id','desc')->first();
+                    $ant_pool_data->type = 'antpool';
+                    array_push($pools,$ant_pool_data);
+                }
+
+                if (!$slushpools->isEmpty()) {
+                    foreach ($slushpools as $key => $slushpool){
+
+//                $slushpool[$key] = new \App\UserPools\Antpool($slushpool);
+                    }
+                }
+
+                return ['code' => 200, 'message' => $pools];
+
+            }catch (\Exception $exception){
+                return ['code' => 500, 'message' => $exception->getMessage()];
+            }
+        }
     }
 
     public function minerStatus(){

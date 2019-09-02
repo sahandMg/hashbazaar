@@ -38,3 +38,5 @@ Route::post('remote','Remote\RemoteController@remoteApi')->name('remote');
 Route::post('user-data','Remote\AuthController@userData')->name('userData');
 
 Route::post('btc-price','PageController@btcPrice')->name('btcPrice');
+
+Route::post('get-pool-data','Remote\RemoteController@getPoolDataApi')->name('getPoolDataApi');

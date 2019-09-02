@@ -127,10 +127,7 @@ Route::get('qr',function(){
 
 Route::get('test',function (){
 
-
-    $data = RemoteData::whereBetween('id',[513,592])->get()->pluck('data');
-
-    dd($data);
+    dd('salam');
 
 });
 
@@ -418,6 +415,8 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
         Route::get('chartData', ['as' => 'chartDataAdmin', 'uses' => 'AdminController@chartData']);
 
         Route::get('chartData-profit', ['as' => 'chartDataProfit', 'uses' => 'AdminController@chartDataProfit']);
+
+        Route::get('hardware-order','AdminController@hardwareOrders')->name('hardwareOrders');
 
         Route::get('get-logs', ['as' => 'getLogs', 'uses' => 'AdminController@getLogs']);
 

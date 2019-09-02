@@ -419,5 +419,9 @@ class AdminController extends Controller
 
         return view('admin.logs',compact('logs'));
     }
+    public function hardwareOrders(){
 
+        $orders = DB::connection('mysql')->table('remote_orders')->orderBy('id','desc')->get();
+        return view('admin.users.hardwareOrders',compact('orders'));
+    }
 }

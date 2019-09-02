@@ -2,7 +2,7 @@
   <defs>
     <style>
       .cls-1 {
-        fill: none;
+        fill: #fff;
         stroke-miterlimit: 10;
         stroke: url(#linear-gradient);
       }
@@ -16,7 +16,7 @@
       <stop offset="1" stop-color="#ffe300"/>
     </linearGradient>
   </defs>
-  <title>hashbazaar-hashrate</title>
+  <title>hashbazaar-power</title>
   <g id="Layer_1-2" data-name="Layer 1-2">
     <polygon class="cls-1" points="0.922 1.669 33.604 0.511 61.288 60.755 37.331 61.604 58.219 110.878 4.913 49.938 31.494 46.688 0.922 1.669"/>
   </g>

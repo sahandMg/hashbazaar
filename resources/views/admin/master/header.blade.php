@@ -124,7 +124,16 @@
                         <span style="padding-left: 20px">تنظیمات</span>
                     </a>
                 </li>
-
+                @if(Request::route()->getName() == 'hardwareOrders')
+                    <li  class="active">
+                @else
+                    <li>
+                        @endif
+                        <a href="{{route('hardwareOrders',['locale'=>session('locale')])}}">
+                            <i class="fas fa-pencil-alt" style='font-size:20px'></i>
+                            <span style="padding-left: 20px">سفارش سخت افزار</span>
+                        </a>
+                    </li>
                 @if(Request::route()->getName() == ' getLogs')
                     <li  class="active">
                 @else

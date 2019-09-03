@@ -145,8 +145,14 @@
     <h3 class="dashboard-title">{{__("Buy Hash Power")}}</h3>
     <hr class="dashboard-hr"/>
   </div>
-  <h5 id="demo"></h5>
-  <div class="slidecontainer">
+ <div> 
+  <div class="d-flex justify-content-center" style="margin-bottom: 5%;">
+      <button class="btnTab" id="planClassicBtn">طرح کلاسیک</button>
+      <button class="btnTab" id="planClassicZeroBtn">طرح کلاسیک صفر</button>
+  </div>
+  <div>
+   <h5 id="demo"></h5>
+   <div class="slidecontainer">
     @if(count($errors->all()) > 0)
     <ul>
       @foreach($errors as $error)
@@ -159,6 +165,7 @@
 
     <!-- <form class="dashboard-page" method="post" action="{{route('payment',['locale'=>session('locale')])}}"> -->
     <!-- <input type="hidden" name="_token" value="{{csrf_token()}}"> -->
+    <input type="hidden" id="plankind" value="1">
     <input type="hidden" id="thpricew" value="50">
     <input type="range" min="1" max="100" value="{{isset($hashPower)?$hashPower:$settings->available_th/2}}" name="hash" class="slider" id="myRange">
     <div class="buy-hashpower-text" style="font-weight: 700;padding-bottom:10px">
@@ -169,9 +176,9 @@
         @if(Auth::guard('user')->user()->plan->id == 2)
 
                 <p style="color:black">{{__('Maintenance fee')}}:  ({{ round($settings->maintenance_fee_per_th_per_day*$settings->usd_toman)}} تومان) {{__('dollar per Th/day')}}</p>
-
         @endif
-
+         <p class="planClassic" style="color:black">هزینه نگهداری: 1200 تومان برای هر روز به ازای هر تراهش</p>
+         <p class="planClassicZero" style="color:black">هزینه نگهداری: 0 تومان برای هر روز به ازای هر تراهش</p>
     @else
      <p style="color:black">{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day}} {{__('dollar per Th/day')}}</p>
     @endif
@@ -220,7 +227,9 @@
 
 
     @endif
+   </div>
   </div>
+ </div>
   <!-- Mining History -->
   <div class="title-flex">
     <hr class="dashboard-hr" >
@@ -294,18 +303,18 @@
 
 
 
-        var span2 = document.getElementsByClassName("close")[1];
+        // var span2 = document.getElementById("close");
 
-        span2.onclick = function() {
-            modalFirstTime.style.display = "none";
-        }
+        // span2.onclick = function() {
+        //     modalFirstTime.style.display = "none";
+        // }
 
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
+            // if (event.target == modal) {
+            //     modal.style.display = "none";
+            // }
             if (event.target == modalFirstTime) {
                 modalFirstTime.style.display = "none";
             }
@@ -313,6 +322,20 @@
 </script>
 @if(Config::get('app.locale') == 'fa')
     <style type="text/css">
+      .btnTab {
+        border: 0px;
+      width: 50%;
+      text-align: center;
+      /*background-color: white;*/
+      background-color: transparent;
+       cursor: pointer;
+      font-weight: 700;
+      font-size: 1.5rem;
+      padding-bottom: 5px;
+    }
+    .borderBottom { border-bottom: 2px solid;}
+    .btnTab:focus {outline:0;}
+
       .buy-hashpower-text small{
         font-size: 1.1rem !important;
       }
@@ -785,8 +808,12 @@
 //                console.log(document.getElementById('discount').value)
                     slider.oninput = function() {
 //                        console.log(resp)
-                        hiddenRange.value = this.value;
-                        output.innerHTML = this.value+' Th';
+                        refershThPrice();
+                     };
+
+                     function refershThPrice() {
+                      hiddenRange.value = slider.value; //this.value;
+                        output.innerHTML = slider.value+' Th'; //this.value+' Th';
                         if(activateDiscount == 1){
 
                             if({!! json_encode($discount == 0) !!}){
@@ -806,7 +833,7 @@
                         }else if(planType == 2){
                             cost.innerHTML = dollarToToman * slider.value * thPrice
                         }
-                        };
+                     }
 
                   // for geting total earn
 
@@ -829,7 +856,7 @@
                         document.getElementById('miningDollar2').innerHTML = userPendingUsd.toFixed(8);
                         var minimum_redeem = {!! json_encode($settings->minimum_redeem) !!}
                         if(response.data[0] >= minimum_redeem){
-                            document.getElementById('redeem').disabled = false;
+                            // document.getElementById('redeem').disabled = false;
                         }
                     }
 
@@ -837,7 +864,7 @@
 
                     //    ==================================chart==============
                 var dateFormat = 'YYYY DD MMMM';
-                var date = moment('April 01 2017', dateFormat);
+                // var date = moment('April 01 2017', dateFormat);
                 var dateTime = [];
                 var data = [];
                 var labels = [];
@@ -874,6 +901,35 @@
                     showArea: true
                 });
             });
+
+                 // for chossing plan
+        $('.planClassic').show();
+        $('.planClassicZero').hide();
+        $('#planClassicBtn').addClass('borderBottom');
+        $('#planClassicZeroBtn').removeClass('borderBottom');
+        $('#plankind').val(1); // one for plan classic
+        console.log("thprice");console.log(thPrice);
+       $('#planClassicBtn').click(function () {
+         console.log("planClassicBtn");
+         $('.planClassic').show();
+         $('.planClassicZero').hide();
+         $('#planClassicBtn').addClass('borderBottom');
+         $('#planClassicZeroBtn').removeClass('borderBottom');
+         $('#plankind').val(1);// one for plan classic
+         thPrice = 70;
+         refershThPrice();
+      });
+
+      $('#planClassicZeroBtn').click(function () {
+        console.log("planClassicZeroBtn");
+        $('.planClassicZero').show();
+        $('.planClassic').hide();
+        $('#planClassicZeroBtn').addClass('borderBottom');
+        $('#planClassicBtn').removeClass('borderBottom');
+        $('#plankind').val(2);// one for plan classic
+        thPrice = 104;
+        refershThPrice();
+      });
 </script>
 @else
 <script>
@@ -969,7 +1025,7 @@
 
                         }
                         cost.innerHTML = slider.value  * thPrice;
-                        };
+                     };
 
                   // for geting total earn
 

@@ -244,7 +244,7 @@ class AuthController extends Controller
         $this->validate($request,[
             'email'=> 'required|email',
             'password'=>'required|min:6',
-            'captcha'=>'required|captcha'
+//            'captcha'=>'required|captcha'
         ]);
 
         if(Auth::guard('user')->attempt(['email'=>$request->email,'password'=>$request->password],true)){

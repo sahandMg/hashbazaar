@@ -13,7 +13,7 @@
                         </div>
                         <div class="text">
 
-                            <h2>{{$active_devices}}</h2>
+                            <h2 class="englishFont">{{$active_devices}}</h2>
 
                             <span>تعداد دستگاه ها</span>
                         </div>

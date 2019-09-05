@@ -24,10 +24,14 @@ foreach ($hashes as $key=> $hash){
 ?>
 
 <div  class="panel-container activity-container"  onclick="hideMe()">
-    <h2 class="text-center">{{__("Recent Activities")}}</h2>
+    <!-- <h2 class="text-center">{{__("Recent Activities")}}</h2> -->
     <div class="purchases">
-        <h2>{{__("Purchases")}}</h2>
-        <br>
+     <div class="d-flex justify-content-center  title-container">
+       <hr class="flex-grow-1" />
+       <h3 class="px-2">{{__("Purchases")}}</h3>
+       <hr class="flex-grow-1" />
+     </div>
+    <br>
       <div class="container pur">
         <table class="table custom-table" style="color: black;">
                 @if(!$hashes->isEmpty())
@@ -120,7 +124,11 @@ foreach ($hashes as $key=> $hash){
     </div>
 
     <div class="purchases">
-        <h2>{{__("Transactions")}} </h2>
+      <div class="d-flex justify-content-center  title-container">
+        <hr class="flex-grow-1" />
+        <h3 class="px-2">{{__("Transactions")}}</h3>
+        <hr class="flex-grow-1" />
+       </div>
         @if(!is_null($trans))
             <div class="container">
 
@@ -245,10 +253,6 @@ foreach ($hashes as $key=> $hash){
         </div>
     </div>
 </div>
-
-
-<!-- Container -->
-{{-- @include('panel.master.sidebar') --}}
 
 
 <script>// ------------user account--------------------

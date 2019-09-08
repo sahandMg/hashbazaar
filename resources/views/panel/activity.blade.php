@@ -23,7 +23,7 @@ foreach ($hashes as $key=> $hash){
 
 ?>
 
-<div  class="panel-container activity-container"  onclick="hideMe()">
+<div  class="panel-container activity-container" style="direction: rtl;">
     <!-- <h2 class="text-center">{{__("Recent Activities")}}</h2> -->
     <div class="purchases">
      <div class="d-flex justify-content-center  title-container">
@@ -32,7 +32,7 @@ foreach ($hashes as $key=> $hash){
        <hr class="flex-grow-1" />
      </div>
     <br>
-      <div class="container pur">
+      <div class="container pur"  id="activity-page_secondList">
         <table class="table custom-table" style="color: black;">
                 @if(!$hashes->isEmpty())
               <thead>
@@ -49,17 +49,17 @@ foreach ($hashes as $key=> $hash){
                 <tr>
                     <td>
 
-                            <span>{{$hash->hash}}TH/S</span>
+                            <span>{{$hash->hash}} تراهش</span>
 
                     </td>
                     <td>
 
-                        <span>  {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($hash->created_at))->format('Y m d')}}   </span>
+                        <span>  {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($hash->created_at))->format('Y/m/d')}}   </span>
 
                     </td>
                     <td>
 
-                        <span>  {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($hash->created_at)->addYears(2))->format('Y m d')}}  </span>
+                        <span>  {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($hash->created_at)->addYears(2))->format('Y/m/d')}}  </span>
 
                     </td>
 
@@ -85,12 +85,12 @@ foreach ($hashes as $key=> $hash){
                            </td>
                            <td>
 
-                               <span>  {{  \Carbon\Carbon::parse($hash->created_at)->format('Y m d')}}   </span>
+                               <span>  {{  \Carbon\Carbon::parse($hash->created_at)->format('Y/m/d')}}   </span>
 
                            </td>
                            <td>
 
-                               <span>  {{  \Carbon\Carbon::parse($hash->created_at)->format('Y m d')}}  </span>
+                               <span>  {{  \Carbon\Carbon::parse($hash->created_at)->format('Y/m/d')}}  </span>
 
                            </td>
 
@@ -130,7 +130,7 @@ foreach ($hashes as $key=> $hash){
         <hr class="flex-grow-1" />
        </div>
         @if(!is_null($trans))
-            <div class="container">
+            <div class="container" id="activity-page_thirdList">
 
                 <table  class="table custom-table" style="color: black;">
                     <thead  style="font-weight:bold">
@@ -164,7 +164,7 @@ foreach ($hashes as $key=> $hash){
                                     {{$item->code}}
                                 </td>
                                 <td>
-                                    {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($item->created_at))->format('Y m d')}}
+                                    {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($item->created_at))->format('Y/m/d')}}
                                 </td>
 
                                 <td>
@@ -203,7 +203,7 @@ foreach ($hashes as $key=> $hash){
                                 </td>
 
                                 <td>
-                                    {{\Carbon\Carbon::parse($item->created_at)->format('M d Y')}}
+                                    {{\Carbon\Carbon::parse($item->created_at)->format('M/d/Y')}}
                                 </td>
 
                                 <td>
@@ -253,7 +253,7 @@ foreach ($hashes as $key=> $hash){
         </div>
     </div>
 </div>
-
+<br/><br/><br/>
 
 <script>// ------------user account--------------------
     $(document).ready(function(){
@@ -261,23 +261,27 @@ foreach ($hashes as $key=> $hash){
         $('.user-img').click(function(){
             $('.list1').toggle(500);
         });
-
-                    var activitySecondListNumItems = $('.container .table tr').length;
+                  
+                    var activitySecondListNumItems = $('#activity-page_secondList .table tr').length;
                     var activityThirdListNumItems = $('#activity-page_thirdList .table tr').length;
-
+                    console.log("activitySecondListNumItems");console.log(activitySecondListNumItems);
+                    console.log("activityThirdListNumItems");console.log(activityThirdListNumItems);
                     if( activitySecondListNumItems > 4){
-                        $('.container').css('overflow-y' , "scroll")
+                        $('#activity-page_secondList').css('overflow-y' , "scroll")
+                        console.log("activitySecondListNumItems scroll");
                     }
                     else {
-                        $('.container').css('overflow-y' , "hidden")
-
+                        $('#activity-page_secondList').css('overflow-y' , "hidden")
+                        console.log("activitySecondListNumItems hidden");
                     };
 
                     if( activityThirdListNumItems > 3){
-                        $('#activity-page_thirdList').css('overflow-y' , "scroll")
+                        $('#activity-page_thirdList').css('overflow-y' , "scroll");
+                        console.log("activityThirdListNumItems scroll");
                     }
                     else {
-                        $('#activity-page_thirdList').css('overflow-y' , "hidden")
+                        $('#activity-page_thirdList').css('overflow-y' , "hidden");
+                        console.log("activityThirdListNumItems hidden");
 
                     }
 

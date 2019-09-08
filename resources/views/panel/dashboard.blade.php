@@ -82,7 +82,7 @@
                 @if(Config::get('app.locale') == 'fa')
             <tr>
               <td>
-                <span>{{$hash->hash}}TH/S</span>
+                <span>{{$hash->hash}} تراهش </span>
                 @if($hash->order_id == 'referral')
                 <div class="box reward"></div>
                 @endif
@@ -90,13 +90,13 @@
 
           <td>
 
-              <span>  {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($hash->created_at))->format('Y m d')}}  </span>
+              <span>  {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($hash->created_at))->format('Y/m/d')}}  </span>
 
             </td>
 
             <td>
 
-                <span>  {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($hash->created_at)->addYears(2))->format('Y m d')}}  </span>
+                <span>  {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($hash->created_at)->addYears(2))->format('Y/m/d')}}  </span>
 
             </td>
 

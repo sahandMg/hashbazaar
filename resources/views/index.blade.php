@@ -41,10 +41,10 @@
             <h3 class="fontTheme">{{__('CHOOSE YOUR INVESTMENT PLAN')}}</h3>
         </div>
         <div class="container" style="direction: rtl;">
-          <div class="d-flex flex-wrap justify-content-between">
+          <div class="d-flex flex-wrap invest-plan">
             <!-- <div class="col-md-4 col-sm-12"> -->
               <div class="ContentSmallSize p-4">
-                <h5 class="text-center mb-2">واگذاری دستگاه</h5>
+                <h4 class="text-center mb-2">واگذاری دستگاه</h4>
                 <p>بسته به نوع دستگاه بین 30 تا 40 درصد از درآمد بیت کوین حاصله بابت هاستینگ (هزینه برق، نگهداری و سرویس دستگاه) کسر می شود و مابقی به کیف پول شما واریز می گردد.</p>
                 <hr/>
                 <p>تفاوت مذکور در مورد درصد کسر شده با توجه به نسبت توان پردازش دستگاه به میزان مصرف برق آن تعیین می گردد.</p>
@@ -54,23 +54,35 @@
               </div>
             <!-- </div>
             <div class="col-md-4 col-sm-12"> -->
-              <div class="ContentSmallSize p-4">
-                <h5 class="text-center mb-2">طرح کلاسیک</h5>
-                <p class="text-center">1 تراهش = {{$settings->usd_toman * $settings->usd_per_hash}} تومان</p>
+              <div class="ContentSmallSize py-2">
+                <h4 class="text-center mb-2">طرح کلاسیک</h4>
+                <div class="p-3" style="background-color: #ff9100;color: white">
+                  <h5 class="text-center"><strong>{{$settings->usd_toman * $settings->usd_per_hash}} تومان</strong></h6>
+                </div>
+                <h6 class="text-center mt-2">برای یک تراهش</h6>
+                <!-- <p class="text-center">1 تراهش = </p> -->
                 <hr/>
-                <p> هزینه نگهداری: {{ round($settings->maintenance_fee_per_th_per_day * $settings->usd_toman)}} تومان برای هر روز به ازای هر تراهش</p>
+                <h6 class="text-center mb-2">هزینه نگهداری</h6>
+                <div class="p-3" style="background-color: #ff9100;color: white">
+                  <h5 class="text-center"><strong>{{ round($settings->maintenance_fee_per_th_per_day * $settings->usd_toman)}} تومان</strong></h5>
+                </div>
+                <h6 class="text-center mt-2">برای هر روز به ازای هر تراهش</h6>
                 <hr/>
-                <p>مدت قرار داد: {{$settings->hash_life}} سال </p>
+                <h6 class="text-center mb-2">مدت قرار داد</h6>
+                <!-- <p>:  </p> -->
+                <div class="p-3" style="background-color: #ff9100;color: white">
+                  <h5 class="text-center"><strong>{{$settings->hash_life}} سال</strong></h5>
+                </div>
                 <hr/>
-                <p>برای سفارش بیش از 100 تراهش به قسمت <a href="{{url('/cooperation')}}">همکاری سازمانی سایت</a> مراجعه فرمائید.</p>
+                <p class="px-2">برای سفارش بیش از 100 تراهش به قسمت <a href="{{url('/cooperation')}}" style="color: #ff9100;">همکاری سازمانی سایت</a> مراجعه فرمائید.</p>
                 <div class="text-center mt-1 mb-1">
-                  <a class="btn btn-primary round-button-com"   href="{{route('signup',['locale'=>session('locale')]).'?plan=classic'}}" style="width: 120px">خرید</a>
+                  <a class="btn btn-primary round-button-com"   href="{{route('signup',['locale'=>session('locale')]).'?plan=classic'}}" style="width: 120px;background-color: #ff9100;color: white;">خرید</a>
                 </div>
               </div>
             <!-- </div> -->
             <!-- <div class="col-md-4 col-sm-12"> -->
               <div class="ContentSmallSize p-4">
-                <h5 class="text-center mb-2">طرح کلاسیک صفر</h5>
+                <h4 class="text-center mb-2">طرح کلاسیک صفر</h4>
                 <p class="text-center">1 تراهش = {{$settings->usd_toman * $settings->usd_per_hash + round($settings->maintenance_fee_per_th_per_day * $settings->usd_toman * env('contractDays'))}} تومان</p>
                 <hr/>
                 <p>هزینه نگهداری: صفر تومان</p>
@@ -303,7 +315,7 @@
         .partners img {height: 80px;}
     .posts {margin-top: 120px;}
     .ContentSmallSize {
-    flex: 0 1 calc(25% - 1em);
+    flex: 0 1 calc(30% - 1em);
     text-align: right;
     margin-bottom: 1%;
     background-color: white;
@@ -315,6 +327,10 @@
     /*box-shadow: 0 4px 5px rgba(0,0,0,0.2);*/
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
+ .invest-plan {
+    -ms-flex-pack: justify!important;
+    justify-content: space-between!important;
+  }
 
 .invest-comparision img {
     width: 100%; height: auto;
@@ -339,6 +355,9 @@
     }
     .ContentSmallSize p {
         font-size: 1rem;
+    }
+    .invest-plan {
+      justify-content: center!important;
     }
 }
 

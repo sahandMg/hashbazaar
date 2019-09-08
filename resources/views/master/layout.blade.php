@@ -187,11 +187,11 @@
                         </li>
                 @endif
 
-                    <li class="nav-item flags">
+                    <!-- <li class="nav-item flags">
                         <a class="nav-link" href="{{route('locale',['locale'=>'fa'])}}" id="persianFA"><img src="{{URL::asset('flags/ir.svg')}}" alt="Persian (FA)"></a>
                         <a class="nav-link" href="{{route('locale',['locale'=>'en'])}}" id="engUK"><img src="{{URL::asset('flags/uk.svg')}}" alt="English (UK)"></a>
 
-                    </li>
+                    </li> -->
                     {{--<li class="nav-item flags">--}}
                     {{--</li>--}}
             </ul>

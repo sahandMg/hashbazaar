@@ -25,7 +25,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9 col-md-10 col-sm-11 mx-auto">
-                        <h1 class="text-center">{{__('BITCOIN INVESTMENT')}}</h1><img src="{{URL::asset('img/LOGO.svg')}}">
+                        <h1 class="text-center">{{__('BITCOIN INVESTMENT')}}</h1><img src="{{URL::asset('img/LOGO_transparent.svg')}}">
                         <h3>{{__('JOIN OUR MINING FARMS')}}</h3>
                         <br>
                         <h3 style="margin: 0px;">{{__('FILL YOUR POCKETS WITH BITCOIN')}}</h3>
@@ -36,6 +36,7 @@
             </div>
         </div>
     </header>
+    @include('landing/howItWorks')
     <section  id="sharePlan" class="backgroundGrey pt-4 pb-4 " style="padding-top: 4%;color: #707070;">
        <div class="text-center mb-4">
             <h3 class="fontTheme">{{__('CHOOSE YOUR INVESTMENT PLAN')}}</h3>

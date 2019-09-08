@@ -52,11 +52,11 @@
 @if(Config::get('app.locale') == 'fa')
   <footer class="backgroundMoreGrey" style="padding: 0px;">
       <div class="row pl-5 pr-5 pt-2">
-          <div class="col-lg-5 col-md-5 col-sm-12">
+          <div class="col-lg-5 col-md-5 col-sm-12 my-3">
              <h5 class="text-center my-1">درباره ما</h5> 
              <p style="direction: rtl;text-align: justify;">هش بازار سرویس ارائه خدمات ماینینگ ابری ( ماینینگ از راه دور ) است که کاربران آن قادرند بدون درگیری با چالش هایی نظیر هزینه های فرآیند واردات تجهیزات، تاخیرهای زمانی دریافت تجهیزات، راه اندازی سختافزار، صدای سرسام آور ماینینگ، گرمای قابل توجه ایجاد شده در اطراف تجهیزات و همچنین کندی، خرابی یا از کار افتادن دستگاه های ماینینگ، در صنعت ماینینگ وارد شوند و شروع به ماین کردن نمایند.</p>
           </div>
-          <div class="col-lg-3 col-md-3 col-sm-12" style="text-align: right;color: white;">
+          <div class="col-lg-3 col-md-3 col-sm-12 my-3" style="text-align: right;color: white;">
             <h5 class="text-center my-1">لینک های مهم</h5> 
             <div class="important-links row">
                 <div class="col-md-5 col-sm-6" style="display: flex;flex-direction: column;">
@@ -70,7 +70,7 @@
                 </div>
             </div>
           </div>
-          <div class="contact-us col-lg-4 col-md-4 col-sm-12" style="text-align: right;">
+          <div class="contact-us col-lg-4 col-md-4 col-sm-12 my-3" style="text-align: right;">
               <h5 class="text-center my-1">تماس با ما</h5> 
               <div class="tell">
                    <a href="tel:+989371869568" style="color:white; cursor:pointer">

@@ -1,3 +1,94 @@
+@if(Auth::guard('user')->check())
+<header class="navbar-header">
+    <div class="d-flex justify-content-between header-top">
+        <div class="pl-4 mt-3" style="text-align: left;">
+            <span class="mt-4" style="color: black;"><strong>021-44232569</strong></span>
+        </div>
+        <div class="d-flex justify-content-between pr-4 py-2">
+          @if(Auth::guard('user')->check())
+            <a class="btn-auth" href="{{route('remoteDashboard',['locale'=>session('locale')])}}" >{{__('Dashboard')}}</a>
+          @else
+            <a href="{{route('signup',['locale'=>session('locale')]).'?plan=classic'}}" class="btn-auth">تبت نام</a>
+            <a href="{{route('login',['locale'=>session('locale')]).'?plan=classic'}}" class="btn-auth">ورود</a>
+          @endif
+        </div>
+    </div>
+    <div class="d-flex justify-content-between header-bottom">
+      <a class="pl-4 py-2" href="http://hashbazaar.com">
+         <img class="hashbazaar-logo" src="{{asset('img/Logo_header.svg')}}" alt="Logo">
+      </a>
+      <div class="pr-4">
+        <ul class="d-flex justify-content-center">
+            <li class="{{Request::route()->getName() == 'customerService'?'navbar-item navbar-active':'navbar-item'}}">
+                <a href="{{route('customerService',['locale'=>session('locale')])}}">{{__('FAQ')}}</a>
+            </li>
+            <li class="{{Request::route()->getName() == 'aboutUs'?'navbar-item navbar-active':'navbar-item'}}">
+                <a  href="{{route('aboutUs',['locale'=>session('locale')])}}">{{__('About')}}</a>
+            </li>
+            <li class="{{Request::route()->getName() == 'Blog'||Request::route()->getName() == 'showPost'?'navbar-item navbar-active':'navbar-item'}}">
+                <a href="{{route('Blog',['locale'=>session('locale')])}}">{{__('Blog')}}</a>
+            </li>
+            <li class="navbar-item">
+                <a href="{{url('/cooperation')}}">همکاری سازمانی</a>
+            </li>
+            <li class="navbar-item">
+                <a href="{{url('/farmyar')}}">فارم یار</a>
+            </li>
+            <li class="{{Request::route()->getName() == 'index'?'navbar-item navbar-active':'navbar-item'}}">
+                <a href="{{route('index',['locale'=>session('locale')])}}">{{__('Home')}}<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+       </div> 
+    </div>
+</header>
+<style type="text/css">
+    .navbar-header {background-color: black;}
+    .hashbazaar-logo {
+        height: 40px;
+    }
+    .header-top {
+        background-color: #8B8B8B;
+        background-color: white;
+        /*color: white;*/
+    }
+    /*.header-bottom {
+        background-color: #8B8B8B;
+    }*/
+    .header-bottom ul{
+        margin-bottom: 0px;
+    }
+    .navbar-item {
+        color: black;
+        padding: 16px 16px;
+        margin-left: 5px;
+    }
+    .navbar-item a{
+        color: white;
+    }
+    .navbar-item:hover {
+        background-color: #ff9100;
+        color: white;
+    }
+    .navbar-active {
+       background-color: #ff9100;   
+       color: white;
+    }
+    .btn-auth {
+        height: 40px;
+        background-color: #e8ad2c;
+        cursor: pointer;
+        border-radius: 20px;
+        color: white;
+        padding: 8px 32px;
+        margin-left: 4px;
+    }
+
+    .btn-auth:hover {
+        background-color: #815903;
+        color: white;
+    }
+</style>
+@else
 <header class="navbar-header">
     <div class="d-flex justify-content-between header-top">
         <a class="pl-4 py-2" href="http://hashbazaar.com">
@@ -82,6 +173,7 @@
         color: white;
     }
 </style>
+@endif
 
 <!-- <header id="header" class="">
     <div class="header-navbar">

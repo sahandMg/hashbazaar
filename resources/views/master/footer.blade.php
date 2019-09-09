@@ -51,7 +51,8 @@
 @endif
 @if(Config::get('app.locale') == 'fa')
   <footer class="backgroundMoreGrey" style="padding: 0px;">
-      <div class="row pl-5 pr-5 pt-2">
+    <div class="container">
+      <div class="row pt-2">
           <div class="col-lg-5 col-md-5 col-sm-12 my-3">
              <h5 class="text-center my-1">درباره ما</h5> 
              <p style="direction: rtl;text-align: justify;">هش بازار سرویس ارائه خدمات ماینینگ ابری ( ماینینگ از راه دور ) است که کاربران آن قادرند بدون درگیری با چالش هایی نظیر هزینه های فرآیند واردات تجهیزات، تاخیرهای زمانی دریافت تجهیزات، راه اندازی سختافزار، صدای سرسام آور ماینینگ، گرمای قابل توجه ایجاد شده در اطراف تجهیزات و همچنین کندی، خرابی یا از کار افتادن دستگاه های ماینینگ، در صنعت ماینینگ وارد شوند و شروع به ماین کردن نمایند.</p>
@@ -83,6 +84,7 @@
                </div>
           </div>
       </div>
+     </div> 
        <h6 class="text-center my-2">ما را در شبکه های اجتماعی دنبال کنید</h6> 
        <div class="d-flex justify-content-around mx-auto col-lg-2 col-md-3 col-sm-6 mt-1">
           <a href="https://www.linkedin.com/company/hashbazaar" class="socialnet-flex">

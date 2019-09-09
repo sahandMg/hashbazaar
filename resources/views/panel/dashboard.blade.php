@@ -27,36 +27,36 @@
 <div class="container" style="direction: rtl;">
  <!-- Circle -->
   <div class="d-flex justify-content-around flex-wrap">
-    <div class="col-lg-5 col-md-5 col-sm-11">
+    <div class="col-lg-6 col-md-6 col-sm-11">
       <div class="circle-container">
-        <h2 class="text-center">{{__("Total Earn")}}</h2>
+        <h2 class="text-center mb-2">{{__("Total Earn")}}</h2>
         <div class="text-center ajax-loader">
           <img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40">
         </div>  
-        <div class="text-center"><span id="miningBTC"></span><span style="color: orange;">BTC</span></div>
+        <div class="text-center" style="direction: ltr;"><span class="englishFont" id="miningBTC"></span><span style="color: orange;"> BTC </span></div>
         <div class="text-center mx-auto col-lg-9 col-md-10 col-sm-11">
           <hr/>
         </div>
         <div class="text-center ajax-loader">
           <img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40">
         </div>
-        <div class="text-center"><span id="miningDollar"></span> <span style="color: #0BDB83;">USD</span></div>
+        <div class="text-center" style="direction: ltr;"><span id="miningDollar" class="englishFont"></span><span style="color: #0BDB83;"> USD </span></div>
       </div>
     </div>
-    <div class="col-lg-5 col-md-5 col-sm-11">
+    <div class="col-lg-6 col-md-6 col-sm-11">
       <div class="circle-container">
-        <h2 class="text-center">{{__("Pending Payment")}}</h2>
+        <h2 class="text-center mb-2">{{__("Pending Payment")}}</h2>
         <div class="text-center ajax-loader">
           <img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40">
         </div>
-        <p class="text-center">&nbsp;<span id="miningBTC2"></span> <span style="color: orange;">BTC</span></p>
+        <div class="text-center" style="direction: ltr;">&nbsp;<span class="englishFont" id="miningBTC2"></span> <span style="color: orange;">BTC</span></div>
         <div class="text-center mx-auto col-lg-9 col-md-10 col-sm-11">
           <hr/>
         </div>
         <div class="text-center ajax-loader">
           <img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40">
         </div>
-        <p class="text-center"><span id="miningDollar2"></span> <span style="color: #0BDB83;">USD</span></p>
+        <div class="text-center" style="direction: ltr;"><span class="englishFont" id="miningDollar2"></span> <span style="color: #0BDB83;">USD</span></div>
       </div>
     </div>
   </div>

@@ -2,6 +2,7 @@
  <div class="container">
  <h3 class="text-center my-2">شروع ماینینگ و کسب درآمد</h3>
  <p class="text-center mb-4">برای سرمایه گذاری در صنعت ماینینگ و کسب درآمد از آن سه مرحله ی زیر را طی کنید</p>
+ <div class="container"> 
   <div class="row">
   	<div class="col-lg-4 col-md-4 col-sm-12 p2">
   		<div class="row">
@@ -21,6 +22,7 @@
   		</div>
   		<p style="text-align: justify;">به محض تایید پرداختی شما،ماینینگ در محل فارم ما آغاز میگردد.از طریق پنل خود اقدام به وارد کردن مشخصات کیف پول خود نمایید تا درآمد حاصله به حسابتان واریز گردد.</p>
   	</div>
+  </div>
   </div>
  </div> 
 </section>

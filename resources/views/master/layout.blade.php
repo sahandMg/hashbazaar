@@ -48,7 +48,7 @@
     </script>
 </head>
 
-<body id="page-top" style="background: white">
+<body id="page-top" style="background: white;display: flex;flex-direction: column;">
 @if(Config::get('app.locale') == 'fa')
     <STYLE>
       @font-face {
@@ -65,103 +65,7 @@
       .btn {font-family: BYekanFont;}
     </STYLE>
  @endif
-
-
-<!-- class="masthead pb-3" -->
-<header id="header" class="">
-    <div class="header-navbar">
-     <nav class="navbar navbar-expand-lg w-100 p-md-0">
-        <a class="navbar-brand p-md-2" href="http://hashbazaar.com">
-            <img class="navbar-small-logo" src="{{asset('img/Logo_header.svg')}}" alt="Logo">
-        </a>
-        <button class="navbar-toggler p-md-2 " type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse w-100" id="navbarNav">
-            <ul class="navbar-nav text-center justify-content-between">
-                @if(Config::get('app.locale') == 'fa')
-
-                    <li class="{{Request::route()->getName() == 'customerService'?'nav-item active navHover':'nav-item navHover'}}">
-                        <a class="nav-link" href="{{route('customerService',['locale'=>session('locale')])}}">{{__('FAQ')}}</a>
-                    </li>
-                    <li class="{{Request::route()->getName() == 'aboutUs'?'nav-item active navHover':'nav-item navHover'}}">
-                        <a class="nav-link" href="{{route('aboutUs',['locale'=>session('locale')])}}">{{__('About')}}</a>
-                    </li>
-                    <li class="{{Request::route()->getName() == 'Blog'||Request::route()->getName() == 'showPost'?'nav-item active navHover':'nav-item navHover'}}">
-                        <a class="nav-link" href="{{route('Blog',['locale'=>session('locale')])}}">{{__('Blog')}}</a>
-                    </li>
-
-                    <li class="nav-item navHover">
-                        <a class="nav-link" href="{{url('/cooperation')}}">همکاری سازمانی</a>
-                    </li>
-                    <li class="nav-item navHover">
-                        <a class="nav-link" href="{{url('/farmyar')}}">فارم یار</a>
-                    </li>
-                    <li class="{{Request::route()->getName() == 'index'?'nav-item active navHover':'nav-item navHover'}}">
-                        <a class="nav-link" href="{{route('index',['locale'=>session('locale')])}}">{{__('Home')}}<span class="sr-only">(current)</span></a>
-                    </li>
-
-                @else
-                    <li class="{{Request::route()->getName() == 'index'?'nav-item active navHover':'nav-item navHover'}}">
-                        <a class="nav-link" href="{{route('index',['locale'=>session('locale')])}}">{{__('Home')}}<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="{{Request::route()->getName() == 'aboutUs'?'nav-item active navHover':'nav-item navHover'}}">
-                        <a class="nav-link" href="{{route('aboutUs',['locale'=>session('locale')])}}">{{__('About')}}</a>
-                    </li>
-                    <li class="{{Request::route()->getName() == 'customerService'?'nav-item active navHover':'nav-item navHover'}}">
-                        <a class="nav-link" href="{{route('customerService',['locale'=>session('locale')])}}">{{__('FAQ')}}</a>
-                    </li>
-                    <li class="{{Request::route()->getName() == 'affiliate'?'nav-item active navHover':'nav-item navHover'}}">
-                        <a class="nav-link" href="{{route('affiliate',['locale'=>session('locale')])}}">{{__('Affiliate')}}</a>
-                    </li>
-                    <li class="{{Request::route()->getName() == 'Blog'?'nav-item active navHover':'nav-item navHover'}}">
-                        <a class="nav-link" href="{{route('Blog',['locale'=>session('locale')])}}">{{__('Blog')}}</a>
-                    </li>
-
-                @endif
-                @if(Auth::guard('user')->check())
-                        <li class="nav-item navHover">
-                            <a class="nav-link" href="{{route('dashboard',['locale'=>session('locale')])}}" >{{__('Dashboard')}}</a>
-                        </li>
-                @elseif(Auth::guard('remote')->check())
-                        <li class="nav-item navHover">
-                            <a class="nav-link" href="{{route('remoteDashboard',['locale'=>session('locale')])}}" >{{__('Dashboard')}}</a>
-                        </li>
-
-                    @elseif(Auth::guard('admin')->check())
-                            <li class="nav-item navHover">
-                                <a class="nav-link" href="{{route('adminHome',['locale'=>session('locale')])}}" >{{__('Dashboard')}}</a>
-                            </li>
-                        @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('signup',['locale'=>session('locale')]).'?plan=classic'}}" id="sg" >{{__('Sign Up')}}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('login',['locale'=>session('locale')])}}" id="lg" >{{__('Log In')}}</a>
-                        </li>
-                @endif
-
-                    <!-- <li class="nav-item flags">
-                        <a class="nav-link" href="{{route('locale',['locale'=>'fa'])}}" id="persianFA"><img src="{{URL::asset('flags/ir.svg')}}" alt="Persian (FA)"></a>
-                        <a class="nav-link" href="{{route('locale',['locale'=>'en'])}}" id="engUK"><img src="{{URL::asset('flags/uk.svg')}}" alt="English (UK)"></a>
-
-                    </li> -->
-                    {{--<li class="nav-item flags">--}}
-                    {{--</li>--}}
-            </ul>
-
-
-        </div>
-
-        {{--<div class="navigation-menu">--}}
-            {{--<div class="bar1"></div>--}}
-            {{--<div class="bar2"></div>--}}
-            {{--<div class="bar3"></div>--}}
-
-        {{--</div>--}}
-    </nav>
-</div>
-</header>
+@include('master/navbar')
 @yield('content')
 
 @if(Auth::guard('user')->check())

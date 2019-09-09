@@ -192,11 +192,11 @@
           <p style="color:black">{{__('Income : At this time We predict')}} {{$settings->bitcoin_income_per_month_per_th}} {{__('BTC/month per Th')}}</p>
           <small  style="color: #707070;">{{__("(May be changed depends on bitcoin price and bitcoin network difficulty)")}}</small>
         </div>
-        <div id="referralDiv">
+        <!-- <div id="referralDiv">
              <label id="referralLabel" for="referralCode">کد ارجاع:</label>
              <input required id='referralCode' type="text" placeholder="{{$AppliedCode}}" name="referralCode" style="margin-top:5px" class="aplybtn1text"/>
              <button id="code" type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> درخواست </button>
-        </div>
+        </div> -->
             @if($settings->paystar_active == 1)
                 <form onsubmit="order()" class="dashboard-page" method="post" action="{{route('PaystarPaying',['locale'=>session('locale')])}}">
             @elseif($settings->zarrin_active == 1)

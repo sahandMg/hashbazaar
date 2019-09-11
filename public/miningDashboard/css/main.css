@@ -1,9 +1,16 @@
 .circle-container {
-	border: 15px solid #ff9100;
+	  border: 15px solid #ff9100;
     border-radius: 50%;
     border-collapse: 2px solid #727272;
-    padding: 7vh 0;
+    padding: 9vh 0;
     margin: 0 65px;
+}
+
+@media screen and (max-width:1300px){
+  .circle-container {
+    padding: 10vh 0;
+    margin: 0;
+   }
 }
 
 @media screen and (max-width:1025px){

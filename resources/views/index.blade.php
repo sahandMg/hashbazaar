@@ -25,7 +25,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9 col-md-10 col-sm-11 mx-auto">
-                        <h1 class="text-center">{{__('BITCOIN INVESTMENT')}}</h1><img src="{{URL::asset('img/LOGO.svg')}}">
+                        <h1 class="text-center">{{__('BITCOIN INVESTMENT')}}</h1><img src="{{URL::asset('img/LOGO_transparent.svg')}}">
                         <h3>{{__('JOIN OUR MINING FARMS')}}</h3>
                         <br>
                         <h3 style="margin: 0px;">{{__('FILL YOUR POCKETS WITH BITCOIN')}}</h3>
@@ -36,189 +36,14 @@
             </div>
         </div>
     </header>
-    <section  id="sharePlan" class="backgroundGrey pt-4 pb-4 " style="padding-top: 4%;color: #707070;">
-       <div class="text-center mb-4">
-            <h3 class="fontTheme">{{__('CHOOSE YOUR INVESTMENT PLAN')}}</h3>
-        </div>
-        <div class="container" style="direction: rtl;">
-          <div class="d-flex flex-wrap justify-content-between">
-            <!-- <div class="col-md-4 col-sm-12"> -->
-              <div class="ContentSmallSize p-4">
-                <h5 class="text-center mb-2">واگذاری دستگاه</h5>
-                <p>بسته به نوع دستگاه بین 30 تا 40 درصد از درآمد بیت کوین حاصله بابت هاستینگ (هزینه برق، نگهداری و سرویس دستگاه) کسر می شود و مابقی به کیف پول شما واریز می گردد.</p>
-                <hr/>
-                <p>تفاوت مذکور در مورد درصد کسر شده با توجه به نسبت توان پردازش دستگاه به میزان مصرف برق آن تعیین می گردد.</p>
-                <div class="text-center mt-1 mb-1">
-                   <button class="btn btn-primary round-button-com" onclick="getDevices(event)"  type="button" style="width: 120px">واگذاری دستگاه</button>
-                </div>
-              </div>
-            <!-- </div>
-            <div class="col-md-4 col-sm-12"> -->
-              <div class="ContentSmallSize p-4">
-                <h5 class="text-center mb-2">طرح کلاسیک</h5>
-                <p class="text-center">1 تراهش = {{$settings->usd_toman * $settings->usd_per_hash}} تومان</p>
-                <hr/>
-                <p> هزینه نگهداری: {{ round($settings->maintenance_fee_per_th_per_day * $settings->usd_toman)}} تومان برای هر روز به ازای هر تراهش</p>
-                <hr/>
-                <p>مدت قرار داد: {{$settings->hash_life}} سال </p>
-                <hr/>
-                <p>برای سفارش بیش از 100 تراهش به قسمت <a href="{{url('/cooperation')}}">همکاری سازمانی سایت</a> مراجعه فرمائید.</p>
-                <div class="text-center mt-1 mb-1">
-                  <a class="btn btn-primary round-button-com"   href="{{route('signup',['locale'=>session('locale')]).'?plan=classic'}}" style="width: 120px">خرید</a>
-                </div>
-              </div>
-            <!-- </div> -->
-            <!-- <div class="col-md-4 col-sm-12"> -->
-              <div class="ContentSmallSize p-4">
-                <h5 class="text-center mb-2">طرح کلاسیک صفر</h5>
-                <p class="text-center">1 تراهش = {{$settings->usd_toman * $settings->usd_per_hash + round($settings->maintenance_fee_per_th_per_day * $settings->usd_toman * env('contractDays'))}} تومان</p>
-                <hr/>
-                <p>هزینه نگهداری: صفر تومان</p>
-                <hr/>
-                <p>مدت قرار داد: {{$settings->hash_life}} سال </p>
-                <hr/>
-                <p>برای سفارش بیش از 100 تراهش به قسمت <a href="{{url('/cooperation')}}">همکاری سازمانی سایت</a> مراجعه فرمائید.</p>
-                <div class="text-center mt-1 mb-1">
-                  <a class="btn btn-primary round-button-com"  href="{{route('signup',['locale'=>session('locale')]).'?plan=classic0'}}" style="width: 120px">خرید</a>
-                </div>
-              </div>
-            <!-- </div> -->
-          </div>
-        </div>
-    </section>
-    <section class="context-section pb-4 pt-4 pl-4 pr-4 our-features" style="color:#696967;">
-        <div class="row">
-            <div class="col-md-4 col-sm-12 text-center pb-4">
-                <!-- <h5 class="text-center">scalability</h5> -->
-                <img src="img/8Asset 2.svg"  />
-                <p>راه اندازی سریع</p>
-            </div>
-            <div class="col-md-4 col-sm-12 text-center pb-4">
-                <img src="img/deposit-and-withdrawals.svg"  />
-                <p>واریز سریع سود کسب شده</p>
-            </div>
-            <div class="col-md-4 col-sm-12 text-center pb-4">
-                <img src="img/hashbazaar-asic.svg"  />
-                <p >استفاده از جدید ترین سخت افزارها</p>
-            </div>
-             <div class="col-md-4 col-sm-12 text-center pb-4">
-                <img src="img/security.svg"  />
-                <p>تضمین امنیت سرویس های ما</p>
-            </div>
-             <div class="col-md-4 col-sm-12 text-center pb-4">
-                <img src="img/statistic.svg"  />
-                <p >مشاهد سود روزانه در پنل کاربر</p>
-            </div>
-            <div class="col-md-4 col-sm-12 text-center pb-4">
-                <img src="img/group.svg"  />
-                <p>دارای تیم فنی مجرب</p>
-            </div>
-        </div>
-    </section>
-    <!-- <section  id="sharePlan" class="text-center" style="padding-top: 4%;color: #707070;">
-        <div>
-            <h3 class="fontTheme">{{__('CHOOSE YOUR INVESTMENT PLAN')}}</h3>
-        </div>
-        <div class="container">
-          <form action="{{route('signup',['locale'=>session('locale')])}}" method="get">
-            <h5 id="demo"></h5>
-            <div class="slidecontainer">
-                <input name="hashPower" type="range" min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" class="slider" id="myRange">
-            </div>
-            <div class="invest-plan" style="font-weight: 700;">
-                <p>{{__("Hash allocation cost :")}} <span id="cost"></span> {{__("dollar")}} </p>
-
-                @if(Config::get('app.locale') == 'fa')
-                    <p >{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day}} دلار ({{ $settings->maintenance_fee_per_th_per_day*$settings->usd_toman}} تومان) {{__('dollar per Th/day')}}</p>
-                @else
-                    <p >{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day}} {{__('dollar per Th/day')}}</p>
-                @endif
-
-                <small>{{__("(include all electricity, cooling, development, and servicing costs )")}}</small>
-                <p>{{__('Income : At this time We predict')}} {{$settings->bitcoin_income_per_month_per_th}} {{__('BTC/month per Th')}}</p>
-                <small>{{__("(May be changed depends on bitcoin price and bitcoin network difficulty)")}}</small>
-            </div>
-            <div class="form-group fontTheme" style="margin-top: 2%;">
-                <button class="btn btn-primary round-button-com" onclick="btnHidden(event)"  type="submit" style="width: 120px">{{__('BUY')}}</button>
-                <button id="sending" class="btn btn-primary round-button-com"  hidden  type="button" style="width: 120px">{{__('Sending ...')}}</button>
-            </div>
-           </form>
-        </div>
-    </section> -->
-  @if(Config::get('app.locale') == 'fa')
-  <section class="context-section backgroundGrey text-center pt-4 pb-4 advantages" style="color: #707070;padding: 2%;"  >
-
-    @if(strpos($_SERVER['HTTP_USER_AGENT'],'Mobile')== false)
-      <img id="price" alt="electricity price" src="{{URL::asset('img/workflow.png')}}" style="width: 100%;height: auto;" />
-    @else
-          <img id="price" alt="electricity price" src="{{URL::asset('img/workflow_small.png')}}" style="width: 100%;height: auto;" />
-    @endif
-
-  </section>
-  @else
-    <section class="context-section backgroundGrey text-center pt-4 pb-4 advantages" style="color: #707070"  >
-        <h2>Our Advantages</h2>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <h3 class="text-center"  style="color: #707070;">Working in the regions in which energy cost is low</h3>
-                    <img id="price" alt="electricity price" src="{{URL::asset('img/Pricing.jpg')}}" style="width: 100%;height: auto;">
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 advantages-detail">
-                    <h3>{{__('OTHER ADVANTAGES: ')}}</h3>
-                    <ul>
-
-                        <li>
-                            <h5>{{__("INSTANT MINING")}}</h5>
-                            <p>{{__('Start mining immediately after confirming payment without any concerns and challenges.')}}</p>
-                        </li>
-                        <li>
-                            <h5>{{__('DAILY WITHDRAWAL')}}</h5>
-                            <p>{{__("Your mining output will be withdrawn as soon as increasing to 0.01 BTC.")}}</p>
-                        </li>
-                        <li>
-                            <h5>{{__("ACTIVITY REPORT")}}</h5>
-                            <p>{{__("Keep track of your transaction from your panel.")}}</p>
-                        </li>
-                        <li>
-                            <h5>{{(__('STATISTICAL DETAILS'))}}</h5>
-                            <p>{{__("Track your real time mining output at any point from any location.")}}</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-  @endif
-    <section class="context-section invest-comparision text-center pt-4 pb-4 pr-4 pl-4" style="direction: rtl;color: #707070;">
-        <h3>مقایسه سرمایه گذاری در ماینینگ با سایر فرصت ها</h3>
-        <div class="row mt-4">  
-          <div class="col-md-5 col-sm-12 ">
-              <p>بازده سرمایه گذاری در صنعت ماینینگ علی رغم حیات کوتاه آن نسبت به سایر فرصت های سرمایه گذاری معمول در داخل کشور بسیار قابل توجه است. برای مقایسه ی بازده سرمایه گذاری در این صنعت در مقایسه با سایر فرصت های سرمایه گذاری ، اقدام به جمع آوری داده های مربوطه از بانک مرکزی جمهوری اسلامی ایران و محاسبه ی میانگین نرخ بازده سرمایه گذاری این موارد شده است. نتایج تحلیل این داده ها در نمودار رو به رو در فاصله سال های 1370 تا 1396 ارائه شده است.</p>
-          </div>
-          <div class="col-md-7 col-sm-12 text-center">
-            <img src="img/hashbazaar-chart.png">
-          </div>
-        </div>
-    </section>
-    <section class="partners context-section pb-4 pt-4 pl-4 pr-4 backgroundGrey text-center">
-        <h3>همکاران ما</h3>
-        <div class="row">
-            <div class="col-md-4 col-sm-12">
-
-                <img src="img/farabi_icon.png"  />
-                <!-- <p >شتاب دهنده فارابی</p> -->
-            </div>
-            <div class="col-md-4 col-sm-12">
-                <img src="{{URL::asset('img/tadbir.svg')}}" />
-                <!-- <p >کارگزاری تدبیرگران فردا</p> -->
-            </div>
-            <div class="col-md-4 col-sm-12">
-                <img src="{{URL::asset('img/rayanHamAfza.png')}}"  />
-            </div>
-        </div>
-    </section>
-    <section id="contact" class="text-center backgroundGrey" >
+    @include('landing/howItWorks')
+    @include('landing/investPlan')
+    @include('landing/meitananceDiscription')
+    @include('landing/features')
+    @include('landing/whyHashBazaar') 
+    @include('landing/ourPartners')
+    
+    <!-- <section id="contact" class="text-center backgroundGrey" >
         <div class="" style="background: white;padding-bottom:1px">
             <div class="col-lg-8 mx-auto">
                 <h2 class="fontTheme m-3">{{__('LET US KNOW YOUR QUESTIONS')}}</h2>
@@ -252,7 +77,7 @@
             </div>
 
         </div>
-    </section>
+    </section> -->
    @include('master.footer')
     <!-- The Modal -->
     <div id="myModal" class="modal" style="color: black;">
@@ -303,7 +128,7 @@
         .partners img {height: 80px;}
     .posts {margin-top: 120px;}
     .ContentSmallSize {
-    flex: 0 1 calc(25% - 1em);
+    flex: 0 1 calc(30% - 1em);
     text-align: right;
     margin-bottom: 1%;
     background-color: white;
@@ -315,6 +140,10 @@
     /*box-shadow: 0 4px 5px rgba(0,0,0,0.2);*/
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
+ .invest-plan {
+    -ms-flex-pack: justify!important;
+    justify-content: space-between!important;
+  }
 
 .invest-comparision img {
     width: 100%; height: auto;
@@ -339,6 +168,9 @@
     }
     .ContentSmallSize p {
         font-size: 1rem;
+    }
+    .invest-plan {
+      justify-content: center!important;
     }
 }
 
@@ -369,6 +201,19 @@
 
 
 </style>
+<script type="text/javascript">
+$(function() {
+  $('#meitenanceFeeClick').click(function() {
+      var offsetTop = $('#meitenanceFee').offset().top;
+      if (offsetTop) {
+        $('html,body').animate({
+          scrollTop: offsetTop
+        }, 1000);
+        return false;
+      }
+  });
+});
+</script>
     @if(Config::get('app.locale') == 'fa')
     <style type="text/css">
       .invest-plan {

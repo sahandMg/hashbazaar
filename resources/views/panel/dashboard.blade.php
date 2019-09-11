@@ -27,36 +27,36 @@
 <div class="container" style="direction: rtl;">
  <!-- Circle -->
   <div class="d-flex justify-content-around flex-wrap">
-    <div class="col-lg-5 col-md-5 col-sm-11">
+    <div class="col-lg-6 col-md-6 col-sm-11">
       <div class="circle-container">
-        <h2 class="text-center">{{__("Total Earn")}}</h2>
+        <h2 class="text-center mb-2">{{__("Total Earn")}}</h2>
         <div class="text-center ajax-loader">
           <img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40">
         </div>  
-        <div class="text-center"><span id="miningBTC"></span><span style="color: orange;">BTC</span></div>
+        <div class="text-center" style="direction: ltr;"><span class="englishFont" id="miningBTC"></span><span style="color: orange;"> BTC </span></div>
         <div class="text-center mx-auto col-lg-9 col-md-10 col-sm-11">
           <hr/>
         </div>
         <div class="text-center ajax-loader">
           <img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40">
         </div>
-        <div class="text-center"><span id="miningDollar"></span> <span style="color: #0BDB83;">USD</span></div>
+        <div class="text-center" style="direction: ltr;"><span id="miningDollar" class="englishFont"></span><span style="color: #0BDB83;"> USD </span></div>
       </div>
     </div>
-    <div class="col-lg-5 col-md-5 col-sm-11">
+    <div class="col-lg-6 col-md-6 col-sm-11">
       <div class="circle-container">
-        <h2 class="text-center">{{__("Pending Payment")}}</h2>
+        <h2 class="text-center mb-2">{{__("Pending Payment")}}</h2>
         <div class="text-center ajax-loader">
           <img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40">
         </div>
-        <p class="text-center">&nbsp;<span id="miningBTC2"></span> <span style="color: orange;">BTC</span></p>
+        <div class="text-center" style="direction: ltr;">&nbsp;<span class="englishFont" id="miningBTC2"></span> <span style="color: orange;">BTC</span></div>
         <div class="text-center mx-auto col-lg-9 col-md-10 col-sm-11">
           <hr/>
         </div>
         <div class="text-center ajax-loader">
           <img src="{{URL::asset('/img/ajax-loader.gif')}}" height="40" width="40">
         </div>
-        <p class="text-center"><span id="miningDollar2"></span> <span style="color: #0BDB83;">USD</span></p>
+        <div class="text-center" style="direction: ltr;"><span class="englishFont" id="miningDollar2"></span> <span style="color: #0BDB83;">USD</span></div>
       </div>
     </div>
   </div>
@@ -82,7 +82,7 @@
                 @if(Config::get('app.locale') == 'fa')
             <tr>
               <td>
-                <span>{{$hash->hash}}TH/S</span>
+                <span>{{$hash->hash}} تراهش </span>
                 @if($hash->order_id == 'referral')
                 <div class="box reward"></div>
                 @endif
@@ -90,13 +90,13 @@
 
           <td>
 
-              <span>  {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($hash->created_at))->format('Y m d')}}  </span>
+              <span>  {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($hash->created_at))->format('Y/m/d')}}  </span>
 
             </td>
 
             <td>
 
-                <span>  {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($hash->created_at)->addYears(2))->format('Y m d')}}  </span>
+                <span>  {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($hash->created_at)->addYears(2))->format('Y/m/d')}}  </span>
 
             </td>
 
@@ -192,11 +192,11 @@
           <p style="color:black">{{__('Income : At this time We predict')}} {{$settings->bitcoin_income_per_month_per_th}} {{__('BTC/month per Th')}}</p>
           <small  style="color: #707070;">{{__("(May be changed depends on bitcoin price and bitcoin network difficulty)")}}</small>
         </div>
-        <div id="referralDiv">
+        <!-- <div id="referralDiv">
              <label id="referralLabel" for="referralCode">کد ارجاع:</label>
              <input required id='referralCode' type="text" placeholder="{{$AppliedCode}}" name="referralCode" style="margin-top:5px" class="aplybtn1text"/>
              <button id="code" type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> درخواست </button>
-        </div>
+        </div> -->
             @if($settings->paystar_active == 1)
                 <form onsubmit="order()" class="dashboard-page" method="post" action="{{route('PaystarPaying',['locale'=>session('locale')])}}">
             @elseif($settings->zarrin_active == 1)

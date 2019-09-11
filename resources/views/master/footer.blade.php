@@ -14,7 +14,7 @@
         footer a {
             color: white;
         }
-        .copy-right {margin-top: 2%;direction: rtl; font-size: 1rem;}
+        .copy-right {padding: 1% 0;direction: rtl; font-size: 1rem;}
 
         @media screen and (max-width:769px){
           .followUs img {
@@ -37,7 +37,7 @@
                  text-align: center;
 
              }
-             .copy-right {margin-top: 5%; font-size: 0.8rem;}
+             .copy-right {padding: 3% 0; font-size: 0.8rem;}
              .contact-us {margin-top: 5%;}
              .important-links div{
                 width: 50%;text-align: center;
@@ -50,24 +50,15 @@
     </style>
 @endif
 @if(Config::get('app.locale') == 'fa')
-  <footer class="backgroundMoreGrey pl-5 pr-5">
-      <div class="row">
-          <div class="followUs col-lg-3 col-md-3 col-sm-12">
-             <h6 class="text-center">ما را در شبکه های اجتماعی دنبال کنید</h6>     
-             <!-- <div class="network-flex"> -->
-                    <div class="d-flex justify-content-around">
-                        <a href="https://www.linkedin.com/company/hashbazaar" class="socialnet-flex">
-                            <img src="{{URL::asset('img/icons/hashbazaar-linkedin.svg')}}" alt="linkedin"></a>
-
-                        <a href="https://www.instagram.com/hashbazaar/" target="_blank" class="socialnet-flex">
-                            <img src="{{URL::asset('img/icons/hashbazaar-instagram.svg')}}" alt="hashbazaar instagram"></a>
-      
-                        <a href="https://twitter.com/Hashbazaar_CMC" class="socialnet-flex" >
-                            <img src="{{URL::asset('img/icons/hashbazaar-twitter.svg')}}" alt="Twitter"></a>
-                    </div>
-            <!-- </div> -->
+  <footer class="backgroundMoreGrey" style="padding: 0px;">
+    <div class="container">
+      <div class="row pt-2">
+          <div class="col-lg-5 col-md-5 col-sm-12 my-3">
+             <h5 class="text-center my-1">درباره ما</h5> 
+             <p style="direction: rtl;text-align: justify;">هش بازار سرویس ارائه خدمات ماینینگ ابری ( ماینینگ از راه دور ) است که کاربران آن قادرند بدون درگیری با چالش هایی نظیر هزینه های فرآیند واردات تجهیزات، تاخیرهای زمانی دریافت تجهیزات، راه اندازی سختافزار، صدای سرسام آور ماینینگ، گرمای قابل توجه ایجاد شده در اطراف تجهیزات و همچنین کندی، خرابی یا از کار افتادن دستگاه های ماینینگ، در صنعت ماینینگ وارد شوند و شروع به ماین کردن نمایند.</p>
           </div>
-          <div class="col-lg-4 col-md-5 col-sm-12" style="text-align: right;color: white;">
+          <div class="col-lg-3 col-md-3 col-sm-12 my-3" style="text-align: right;color: white;">
+            <h5 class="text-center my-1">لینک های مهم</h5> 
             <div class="important-links row">
                 <div class="col-md-5 col-sm-6" style="display: flex;flex-direction: column;">
                     <a href="{{route('aboutUs',['locale'=>session('locale')])}}">{{__('About')}}</a>
@@ -80,8 +71,8 @@
                 </div>
             </div>
           </div>
-          <div class="contact-us col-lg-5 col-md-4 col-sm-12" style="text-align: right;">
-              <h5 class="text-center">تماس با ما</h5> 
+          <div class="contact-us col-lg-4 col-md-4 col-sm-12 my-3" style="text-align: right;">
+              <h5 class="text-center my-1">تماس با ما</h5> 
               <div class="tell">
                    <a href="tel:+989371869568" style="color:white; cursor:pointer">
                          0937 186 9568 &nbsp;<i class="fa fa-phone" aria-hidden="true"></i> 
@@ -93,7 +84,20 @@
                </div>
           </div>
       </div>
-      <div class="container text-center copy-right">
+     </div> 
+       <h6 class="text-center my-2">ما را در شبکه های اجتماعی دنبال کنید</h6> 
+       <div class="d-flex justify-content-around mx-auto col-lg-2 col-md-3 col-sm-6 mt-1">
+          <a href="https://www.linkedin.com/company/hashbazaar" class="socialnet-flex">
+             <img src="{{URL::asset('img/icons/hashbazaar-linkedin.svg')}}" alt="linkedin" style="height: 40px;">
+          </a>
+          <a href="https://www.instagram.com/hashbazaar/" target="_blank" class="socialnet-flex">
+             <img src="{{URL::asset('img/icons/hashbazaar-instagram.svg')}}" alt="hashbazaar instagram" style="height: 40px;">
+           </a>
+          <a href="https://twitter.com/Hashbazaar_CMC" class="socialnet-flex" >
+             <img src="{{URL::asset('img/icons/hashbazaar-twitter.svg')}}" alt="Twitter" style="height: 40px;">
+          </a>
+      </div>
+      <div class="text-center copy-right mt-2" style="background-color: black;">
          <p>تمام حقوق مادی و معنوی آثار متعلق به هش بازار می باشد.</p>
       </div>
   </footer>

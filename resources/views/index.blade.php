@@ -21,11 +21,11 @@
     <header id="header" >
 
 
-        <div class="intro-body headerTheme">
+        {{--<div class="intro-body headerTheme">--}}
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9 col-md-10 col-sm-11 mx-auto">
-                        <h1 class="text-center">{{__('BITCOIN INVESTMENT')}}</h1><img src="{{URL::asset('img/LOGO_transparent.svg')}}">
+                        <h1 class="text-center">{{__('BITCOIN INVESTMENT')}}</h1><img src="{{URL::asset('img/LOGO_transparent.png')}}">
                         <h3>{{__('JOIN OUR MINING FARMS')}}</h3>
                         <br>
                         <h3 style="margin: 0px;">{{__('FILL YOUR POCKETS WITH BITCOIN')}}</h3>
@@ -34,7 +34,7 @@
                            href="#sharePlan"><i class="fa fa-angle-down animated"></i></a></div>
                 </div>
             </div>
-        </div>
+        {{--</div>--}}
     </header>
     @include('landing/howItWorks')
     @include('landing/investPlan')

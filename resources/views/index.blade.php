@@ -38,9 +38,9 @@
     </header>
     @include('landing/howItWorks')
     @include('landing/investPlan')
+    @include('landing/meitananceDiscription')
     @include('landing/features')
-    @include('landing/whyHashBazaar')
-  
+    @include('landing/whyHashBazaar') 
     @include('landing/ourPartners')
     
     <!-- <section id="contact" class="text-center backgroundGrey" >
@@ -201,6 +201,19 @@
 
 
 </style>
+<script type="text/javascript">
+$(function() {
+  $('#meitenanceFeeClick').click(function() {
+      var offsetTop = $('#meitenanceFee').offset().top;
+      if (offsetTop) {
+        $('html,body').animate({
+          scrollTop: offsetTop
+        }, 1000);
+        return false;
+      }
+  });
+});
+</script>
     @if(Config::get('app.locale') == 'fa')
     <style type="text/css">
       .invest-plan {

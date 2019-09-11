@@ -24,7 +24,7 @@
                 <h6 class="text-center mt-2">برای یک تراهش</h6>
                 <!-- <p class="text-center">1 تراهش = </p> -->
                 <hr/>
-                <h6 class="text-center mb-2">هزینه نگهداری</h6>
+                <h6 class="text-center mb-2"><a href="#meitenanceFee" id="meitenanceFeeClick" style="color: #ff9100;">هزینه نگهداری</a></h6>
                 <div class="p-3" style="background-color: #ff9100;color: white">
                   <h5 class="text-center"><strong>{{ round($settings->maintenance_fee_per_th_per_day * $settings->usd_toman)}} تومان</strong></h5>
                 </div>

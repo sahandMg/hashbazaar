@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Decryption;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 class AppServiceProvider extends ServiceProvider
@@ -16,6 +17,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+//        if(config('app.env') === 'production' || config('app.env') === 'local') {
+//            URL::forceScheme('https');
+//        }
     }
 
     /**
@@ -25,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+
 //        $this->app->bind('\App\Encryption',function($app){
 //
 //            return new \App\Encryption($app->make('Encryption'));

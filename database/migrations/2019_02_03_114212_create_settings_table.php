@@ -16,7 +16,6 @@ class CreateSettingsTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->increments('id');
-            $table->float('total_th')->nullable();
             $table->double('total_th',12,8)->nullable();
             $table->float('collab_benefit')->nullable();
             $table->double('total_benefit',12,8)->nullable();

@@ -301,9 +301,10 @@ class AuthController extends Controller
                 return 'Invalid Plan!';
             }
 
-        }else{
-            return 'No plan on request!';
         }
+//        else{
+//            return 'No plan on request!';
+//        }
         return Socialite::driver('google')->redirect();
     }
 
@@ -332,7 +333,7 @@ class AuthController extends Controller
             }catch (\Exception $exception){
                 $user->country = 'fr';
             }
-            $user->plan_id = session('planId');
+//            $user->plan_id = session('planId');
             $user->save();
 
             Auth::guard('user')->login($user);

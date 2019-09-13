@@ -164,6 +164,7 @@ return [
         Mews\Captcha\CaptchaServiceProvider::class,
         Delatbabel\Elocrypt\ElocryptServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        Jenssegers\Agent\AgentServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -231,6 +232,7 @@ return [
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Agent' => Jenssegers\Agent\Facades\Agent::class,
 
 
     ],

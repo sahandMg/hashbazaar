@@ -211,7 +211,7 @@
 </style>
 <script type="text/javascript">
 $(function() {
-  $('#meitenanceFeeClick').click(function() {
+  $('.meitenanceFeeClick').click(function() {
       var offsetTop = $('#meitenanceFee').offset().top;
       if (offsetTop) {
         $('html,body').animate({

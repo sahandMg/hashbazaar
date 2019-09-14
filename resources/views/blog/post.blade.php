@@ -19,14 +19,14 @@
             margin-left:10%
         }
         .blog-detail {
-            margin-top: 150px;direction: rtl;text-align: right;
+            margin-top: 100px;direction: rtl;text-align: right;
         }
         .blog-detail h1{color: black;}
         .blog-detail h3{color: black;font-size: 1.8rem;margin-bottom: 5px;}
         .blog-detail img {    margin: auto;display: block;}
         @media screen and (max-width:420px){
            .blog-detail {
-             margin-top: 120px;
+             margin-top: 40px;
            }
            .blog-detail h1{font-size: 1.2rem;}
            .blog-detail h3 { font-size: 0.9rem; margin-bottom: 4px;}

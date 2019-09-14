@@ -1,5 +1,5 @@
 <section class="partners context-section pb-4 pt-4 pl-4 pr-4 backgroundGrey text-center">
-        <h3>همکاران ما</h3>
+        <h3 style="color: #696967;">همکاران ما</h3>
         <div class="row">
             <div class="col-md-4 col-sm-12">
 

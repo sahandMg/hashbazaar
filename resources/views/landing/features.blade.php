@@ -3,27 +3,27 @@
             <div class="col-md-4 col-sm-12 text-center pb-4">
                 <!-- <h5 class="text-center">scalability</h5> -->
                 <img src="img/8Asset 2.svg"  />
-                <p>راه اندازی سریع</p>
+                <p>راه اندازی سریع و شروع ماینینگ</p>
             </div>
             <div class="col-md-4 col-sm-12 text-center pb-4">
                 <img src="img/deposit-and-withdrawals.svg"  />
-                <p>واریز سریع سود کسب شده</p>
+                <p>امکان دریافت درآمد حاصله در مقاطع زمانی دلخواه</p>
             </div>
             <div class="col-md-4 col-sm-12 text-center pb-4">
                 <img src="img/hashbazaar-asic.svg"  />
-                <p >استفاده از جدید ترین سخت افزارها</p>
+                <p >استفاده از دستگاه های به روز</p>
             </div>
              <div class="col-md-4 col-sm-12 text-center pb-4">
                 <img src="img/security.svg"  />
-                <p>تضمین امنیت سرویس های ما</p>
+                <p>تضمین امنیت و کارکرد بهینه دستگاه ها</p>
             </div>
              <div class="col-md-4 col-sm-12 text-center pb-4">
                 <img src="img/statistic.svg"  />
-                <p >مشاهد سود روزانه در پنل کاربر</p>
+                <p >امکان کنترل شبانه روزی دستگاه ها از طریق پنل کاربری</p>
             </div>
             <div class="col-md-4 col-sm-12 text-center pb-4">
                 <img src="img/group.svg"  />
-                <p>دارای تیم فنی مجرب</p>
+                <p>بهره مندی از تیم فنی مجرب</p>
             </div>
         </div>
     </section>

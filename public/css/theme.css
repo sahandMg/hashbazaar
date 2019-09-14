@@ -482,7 +482,7 @@ header h3 {margin: 0;}
 @media only screen and (max-width: 420px) {
     header img { height: 60px; margin-left: 10px;}
     header h1 { font-size: 20px; }
-     h3 { font-size: 15px; }
+     /*h3 { font-size: 15px; }*/
     
      #contact h2 {
       font-size: 15px;

@@ -10,7 +10,7 @@
                 <p style="text-align: justify;">بسته به نوع دستگاه بین 30 تا 40 درصد از درآمد بیت کوین حاصله بابت هاستینگ (هزینه برق، نگهداری و سرویس دستگاه) کسر می شود و مابقی به کیف پول شما واریز می گردد.</p>
                 <hr/>
                 <p style="text-align: justify;">تفاوت مذکور در مورد درصد کسر شده با توجه به نسبت توان پردازش دستگاه به میزان مصرف برق آن تعیین می گردد.</p>
-                <div class="text-center mt-1 mb-1">
+                <div class="text-center mt-3 mb-1">
                    <button class="btn btn-primary round-button-com" onclick="getDevices(event)"  type="button"  style="width: 120px;background-color: #ff9100;color: white;">واگذاری دستگاه</button>
                 </div>
               </div>
@@ -54,6 +54,7 @@
                 <div class="p-3" style="background-color: #ff9100;color: white">
                   <h5 class="text-center"><strong>صفر تومان</strong></h5>
                 </div>
+                <h6 class="text-center mt-2">برای هر روز به ازای هر تراهش</h6>
                 <hr/>
                 <h6 class="text-center mb-2">مدت قرار داد</h6>
                 <div class="p-3" style="background-color: #ff9100;color: white">

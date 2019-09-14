@@ -41,5 +41,33 @@
        <h1 class="text-center">{{ $post->title }}</h1>
        {!! $post->content_html !!}
     </div>
+    
+<!--     <script type="application/ld+json">
+{ "@context": "https://schema.org", 
+ "@type": "Article",
+ "headline": `{{ $post->title }}`,
+ "image": 'Sahand',
+ "author": "Hashbazaar", 
+ "keywords": `{{ $post->title }}`, 
+"publisher": {
+    "@type": "Organization",
+    "name": "Hashbazaar",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "Sahand - https://google.com/logo.jpg" 
+    }
+  },
+ "url": "http://www.example.com",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.hashbazaar.com"
+  },
+ "datePublished": "Sahand - 2015-09-20",
+ "dateCreated": "Sahand - 2015-09-20",
+ "dateModified": "Sahand - 2015-09-20",
+ "description": `{{ $post->excerpt }}`,
+ "articleBody": `{{ $post->excerpt }}`
+ }
+</script> -->
     @include('master.footer')
 @endsection

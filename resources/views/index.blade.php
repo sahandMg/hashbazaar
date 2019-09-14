@@ -34,12 +34,19 @@
                 <!-- </div> -->
             </div>
     <!-- </header> -->
+    <!-- <hr/> -->
     @include('landing/howItWorks')
+    <!-- <hr/> -->
     @include('landing/dashboardImage')
+    <!-- <hr/> -->
     @include('landing/investPlan')
+    <!-- <hr/> -->
     @include('landing/meitananceDiscription')
+    <!-- <hr/> -->
     @include('landing/features')
+    <!-- <hr/> -->
     @include('landing/whyHashBazaar') 
+    <!-- <hr/> -->
     @include('landing/ourPartners')
           <!--   <a class="btn btn-link btn-circle js-scroll-trigger responsive-circle"
                            style="border-color: red;color: red" role="button"

@@ -1,4 +1,4 @@
-<section  class="pt-4 pb-4 " style="padding-top: 4%;color: #707070;direction: rtl;">
+<section  class="backgroundGrey pt-4 pb-4 " style="padding-top: 4%;color: #707070;direction: rtl;">
  <div class="container">
  <h3 class="text-center my-2">شروع ماینینگ و کسب درآمد</h3>
  <p class="text-center mb-4">برای سرمایه گذاری در صنعت ماینینگ و کسب درآمد از آن سه مرحله ی زیر را طی کنید</p>

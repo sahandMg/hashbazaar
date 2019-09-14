@@ -1,4 +1,4 @@
- <section class="context-section pb-4 pt-4 pl-4 pr-4 our-features" style="color:#696967;">
+ <section class="backgroundGrey context-section pb-4 pt-4 pl-4 pr-4 our-features" style="color:#696967;">
         <div class="row">
             <div class="col-md-4 col-sm-12 text-center pb-4">
                 <!-- <h5 class="text-center">scalability</h5> -->

@@ -231,6 +231,20 @@
     </div>
   </div>
 </div>
+<style type="text/css">
+   .ct-series-a .ct-area, .ct-series-a .ct-slice-donut-solid, .ct-series-a .ct-slice-pie {
+      fill: #ff9100;
+  }
+  .ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point, .ct-series-a .ct-slice-donut {
+      stroke: #ff9100;
+  }
+  .ct-label { color: black; }
+  
+  .ct-area {
+    stroke: none;
+    fill-opacity: .1;
+  }
+</style>
   @include('panel/dashboardScripts')                
 @else
 

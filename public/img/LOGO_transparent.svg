@@ -1,68 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 940.2 175.1" style="enable-background:new 0 0 940.2 175.1;" xml:space="preserve">
+	 viewBox="0 0 804.5 144.6" style="enable-background:new 0 0 804.5 144.6;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:none;}
-	.st1{fill:url(#SVGID_1_);stroke:#000000;stroke-width:0.6022;stroke-miterlimit:10;}
-	.st2{fill:url(#SVGID_2_);stroke:#000000;stroke-width:0.6804;stroke-miterlimit:10;}
-	.st3{fill:url(#SVGID_3_);stroke:#000000;stroke-width:0.6337;stroke-miterlimit:10;}
-	.st4{fill:url(#SVGID_4_);stroke:#000000;stroke-width:0.6337;stroke-miterlimit:10;}
-	.st5{fill:url(#SVGID_5_);stroke:#000000;stroke-width:0.6337;stroke-miterlimit:10;}
-	.st6{fill:url(#SVGID_6_);stroke:#000000;stroke-width:0.6712;stroke-miterlimit:10;}
-	.st7{fill:url(#SVGID_7_);stroke:#000000;stroke-width:0.5751;stroke-miterlimit:10;}
+	.st1{fill:url(#SVGID_1_);stroke:#000000;stroke-width:0.5167;stroke-miterlimit:10;}
+	.st2{fill:url(#SVGID_2_);stroke:#000000;stroke-width:0.5838;stroke-miterlimit:10;}
+	.st3{fill:url(#SVGID_3_);stroke:#000000;stroke-width:0.5438;stroke-miterlimit:10;}
+	.st4{fill:url(#SVGID_4_);stroke:#000000;stroke-width:0.5438;stroke-miterlimit:10;}
+	.st5{fill:url(#SVGID_5_);stroke:#000000;stroke-width:0.5438;stroke-miterlimit:10;}
+	.st6{fill:url(#SVGID_6_);stroke:#000000;stroke-width:0.576;stroke-miterlimit:10;}
+	.st7{fill:url(#SVGID_7_);stroke:#000000;stroke-width:0.8581;stroke-miterlimit:10;}
 </style>
-<pattern  x="107.7" y="189.6" width="316.3" height="316.3" patternUnits="userSpaceOnUse" id="New_Pattern" viewBox="0 -395.4 316.3 316.3" style="overflow:visible;">
+<pattern  x="27.5" y="175" width="314.6" height="314.6" patternUnits="userSpaceOnUse" id="New_Pattern" viewBox="315.5 -393.7 314.6 314.6" style="overflow:visible;">
 	<g>
-		<rect y="-395.4" class="st0" width="316.3" height="316.3"/>
+		<rect x="315.5" y="-393.7" class="st0" width="314.6" height="314.6"/>
+		
+			<image style="overflow:visible;" width="860" height="430" xlink:href="mining-farm.jpg"  transform="matrix(0.3678 0 0 0.3678 629.2913 -158.1617)">
+		</image>
+		
+			<image style="overflow:visible;" width="860" height="430" xlink:href="mining-farm.jpg"  transform="matrix(0.3678 0 0 0.3678 314.6457 -158.1617)">
+		</image>
 		
 			<image style="overflow:visible;" width="860" height="430" xlink:href="mining-farm.jpg"  transform="matrix(0.3678 0 0 0.3678 0 -158.1617)">
 		</image>
 		
-			<image style="overflow:visible;" width="860" height="430" xlink:href="mining-farm.jpg"  transform="matrix(0.3678 0 0 0.3678 0 -316.3234)">
+			<image style="overflow:visible;" width="860" height="430" xlink:href="mining-farm.jpg"  transform="matrix(0.3678 0 0 0.3678 629.2913 -315.4845)">
 		</image>
 		
-			<image style="overflow:visible;" width="860" height="430" xlink:href="mining-farm.jpg"  transform="matrix(0.3678 0 0 0.3678 0 -474.4851)">
+			<image style="overflow:visible;" width="860" height="430" xlink:href="mining-farm.jpg"  transform="matrix(0.3678 0 0 0.3678 314.6457 -315.4845)">
+		</image>
+		
+			<image style="overflow:visible;" width="860" height="430" xlink:href="mining-farm.jpg"  transform="matrix(0.3678 0 0 0.3678 0 -315.4845)">
+		</image>
+		
+			<image style="overflow:visible;" width="860" height="430" xlink:href="mining-farm.jpg"  transform="matrix(0.3678 0 0 0.3678 629.2913 -472.8073)">
+		</image>
+		
+			<image style="overflow:visible;" width="860" height="430" xlink:href="mining-farm.jpg"  transform="matrix(0.3678 0 0 0.3678 314.6457 -472.8073)">
+		</image>
+		
+			<image style="overflow:visible;" width="860" height="430" xlink:href="mining-farm.jpg"  transform="matrix(0.3678 0 0 0.3678 0 -472.8073)">
 		</image>
 	</g>
 </pattern>
-<pattern  id="SVGID_1_" xlink:href="#New_Pattern" patternTransform="matrix(1 0 0 1 0 7.1712)">
+<pattern  id="SVGID_1_" xlink:href="#New_Pattern" patternTransform="matrix(0.8581 0 0 0.8581 -706.506 -880.0392)">
 </pattern>
-<path class="st1" d="M335.5,93c-5.1-4.5-11.5-7.7-18.6-9.3c0,0,12.1-5.8,15.7-13.8c0,0,7-13.1-0.3-24.9c-2.2-3.6-4-7-7.4-10
-	c-5.2-4.6-12.5-6.9-19.5-7.9c-1.4-0.2-17-1.1-17-0.6V5.9h-18.2v20.5h-16V5.9h-18.6v20.9l-36.8-0.3v18.3c0-0.4,13.5-0.1,14.8,0.2
-	c3.9,0.7,7.8,3,8.7,6.7c0.6,2.2,0.1,5,0.1,7.4v63.1c0,4.6-4.4,7.5-9,8.5c-1.7,0.3-14.7,0.3-14.7,0.2V149h37v20.2H255V149h14.8v20.2
-	h18.9v-20.1c0,0,20.4,0,29.3-3c0,0,13.1-1.3,21-14.1c1.2-1.7,1.9-3.5,2.6-5.3c1.9-7.3,4.7-17.3,1.3-24.2
-	C341.1,99,338.6,95.8,335.5,93z M254.4,44.3c10,0,20.1,0,30.1,0c11.3,0,15.3,14.3,12.8,22.4c-1.2,4.2-4.2,7.9-8.3,10.5
-	c-3.1,1.8-6.7,1.3-10.2,1.3h-24.4V44.3z M308,112.8c-1.3,9.6-9.1,16.4-19.8,17.6c-7,0.7-14.4,0.1-21.4,0.1h-12.3V95.1h22.3
-	c10.2,0,21.1,0,27.6,8.6C306.2,105.9,308.4,109.9,308,112.8z"/>
-<pattern  id="SVGID_2_" xlink:href="#New_Pattern" patternTransform="matrix(1 0 0 1 0 -0.3386)">
+<path class="st1" d="M285.6,76.1c-4.3-3.8-9.9-6.6-15.9-8c0,0,10.4-5,13.5-11.8c0,0,6-11.2-0.2-21.4c-1.9-3.1-3.5-6-6.3-8.5
+	c-4.5-3.9-10.7-5.9-16.7-6.8c-1.2-0.2-14.6-1-14.6-0.5V1.4h-15.6v17.6H216V1.4h-15.9v17.9L168.5,19v15.7c0-0.4,11.6-0.1,12.7,0.2
+	c3.3,0.6,6.7,2.6,7.5,5.8c0.6,1.9,0.1,4.3,0.1,6.3v54.1c0,3.9-3.8,6.4-7.7,7.3c-1.4,0.3-12.6,0.3-12.6,0.2v15.5h31.7v17.4h16.3
+	v-17.4h12.7v17.4h16.3v-17.3c0,0,17.5,0,25.2-2.6c0,0,11.2-1.2,18-12.1c1-1.4,1.7-3,2.2-4.5c1.7-6.2,4-14.9,1.1-20.7
+	C290.4,81.3,288.3,78.5,285.6,76.1z M216,34.4c8.6,0,17.3,0,25.8,0c9.7,0,13.1,12.3,11,19.2c-1,3.6-3.6,6.8-7.1,9
+	c-2.7,1.5-5.8,1.2-8.8,1.2H216V34.4z M262,93.1c-1.1,8.3-7.8,14.1-17,15.1c-6,0.6-12.4,0.1-18.4,0.1H216V77.9h19.1
+	c8.8,0,18.1,0,23.7,7.4C260.4,87.2,262.3,90.6,262,93.1z"/>
+<pattern  id="SVGID_2_" xlink:href="#New_Pattern" patternTransform="matrix(0.8581 0 0 0.8581 -706.506 -886.4834)">
 </pattern>
-<polygon class="st2" points="576.1,35.8 576,21.5 467.9,21.5 467.9,39.3 545.1,39.3 467.3,138.9 467.4,153.6 578.7,153.6 
-	578.7,135.8 498.3,135.8 "/>
-<pattern  id="SVGID_3_" xlink:href="#New_Pattern" patternTransform="matrix(1 0 0 1 0 -0.7978)">
+<polygon class="st2" points="492,27.1 491.9,14.7 399.2,14.7 399.2,30.1 465.4,30.1 398.6,115.5 398.8,128.2 494.2,128.2 
+	494.2,112.8 425.3,112.8 "/>
+<pattern  id="SVGID_3_" xlink:href="#New_Pattern" patternTransform="matrix(0.8581 0 0 0.8581 -706.506 -886.8774)">
 </pattern>
-<path class="st3" d="M754.7,22.6L709,152.5l24,0l9.6-30.2l43.9,0l9.5,30.2l23.9,0L775.1,22.6L754.7,22.6z M748.4,104l16.3-50.9
-	l15.9,50.9L748.4,104z"/>
-<pattern  id="SVGID_4_" xlink:href="#New_Pattern" patternTransform="matrix(1 0 0 1 0 -0.7978)">
+<path class="st3" d="M645.2,15.7l-39.1,111.5l20.6,0l8.3-25.9l37.7,0l8.1,25.9l20.5,0L662.8,15.7L645.2,15.7z M639.9,85.6l14-43.7
+	l13.7,43.7L639.9,85.6z"/>
+<pattern  id="SVGID_4_" xlink:href="#New_Pattern" patternTransform="matrix(0.8581 0 0 0.8581 -706.506 -886.8774)">
 </pattern>
-<path class="st4" d="M635.2,22.6l-45.6,129.9l24,0l9.6-30.2l43.9,0l9.5,30.2l23.9,0L655.6,22.6L635.2,22.6z M629,104l16.3-50.9
-	l15.9,50.9L629,104z"/>
-<pattern  id="SVGID_5_" xlink:href="#New_Pattern" patternTransform="matrix(1 0 0 1 0 -0.7978)">
+<path class="st4" d="M542.7,15.7l-39.1,111.5l20.6,0l8.3-25.9l37.7,0l8.1,25.9l20.5,0L560.3,15.7L542.7,15.7z M537.4,85.6l14-43.7
+	l13.7,43.7L537.4,85.6z"/>
+<pattern  id="SVGID_5_" xlink:href="#New_Pattern" patternTransform="matrix(0.8581 0 0 0.8581 -706.506 -886.8774)">
 </pattern>
-<path class="st5" d="M391.1,22.6l-45.6,129.9l24,0l9.6-30.2l43.9,0l9.5,30.2l23.9,0L411.6,22.6L391.1,22.6z M384.9,104l16.3-50.9
-	l15.9,50.9L384.9,104z"/>
-<pattern  id="SVGID_6_" xlink:href="#New_Pattern" patternTransform="matrix(1 0 0 1 0 -0.1415)">
+<path class="st5" d="M333.3,15.7l-39.1,111.5l20.6,0l8.3-25.9l37.7,0l8.1,25.9l20.5,0L350.8,15.7L333.3,15.7z M328,85.6l14-43.7
+	l13.7,43.7L328,85.6z"/>
+<pattern  id="SVGID_6_" xlink:href="#New_Pattern" patternTransform="matrix(0.8581 0 0 0.8581 -706.506 -886.3143)">
 </pattern>
-<path class="st6" d="M906.1,96.8c4.3-1.6,8.2-3.4,11.8-5.5c3.6-2.2,6.7-4.7,9.3-7.6s4.5-6,6-9.6c1.3-3.6,2.1-7.6,2.1-11.9
-	c0-6.5-1.3-12.2-4.2-17c-2.7-4.8-6.6-8.8-11.7-12.1s-11.1-5.7-17.9-7.2c-6.9-1.7-14.4-2.5-22.6-2.5h-50.4v128.5h26.3v-50.1h26.8
-	l30.2,50.3h28.1v-1.1L906.1,96.8z M900.6,78.7c-2.5,1.9-5.8,3.4-9.4,4.3c-3.7,1-7.8,1.4-12.1,1.4h-24.2l0.1-44.2H879
-	c4.5,0.1,8.7,0.6,12.4,1.6c3.7,1.1,6.9,2.4,9.4,4.3c2.5,1.9,4.6,4.2,6,7c1.3,2.8,2.1,5.9,2.1,9.5c0,3.5-0.7,6.6-2.2,9.3
-	C905.3,74.6,903.3,76.9,900.6,78.7z"/>
-<pattern  id="SVGID_7_" xlink:href="#New_Pattern" patternTransform="matrix(1 0 0 1 0 -4.2978)">
+<path class="st6" d="M775.2,79.4c3.7-1.3,7.1-2.9,10.1-4.8s5.8-4,8-6.5c2.2-2.5,3.8-5.2,5.1-8.3c1.2-3.1,1.8-6.5,1.8-10.2
+	c0-5.6-1.2-10.4-3.6-14.6c-2.3-4.1-5.6-7.5-10-10.3c-4.4-2.8-9.5-4.9-15.4-6.2c-5.9-1.4-12.3-2.2-19.4-2.2h-43.2v110.2h22.6v-43h23
+	l25.9,43.1h24.1v-0.9L775.2,79.4z M770.4,63.8c-2.2,1.7-5,2.9-8.1,3.7c-3.2,0.8-6.7,1.2-10.4,1.2h-20.8l0.1-38H752
+	c3.8,0.1,7.4,0.5,10.6,1.3c3.2,0.9,5.9,2.1,8.1,3.7c2.2,1.7,4,3.6,5.1,6c1.2,2.4,1.8,5.1,1.8,8.2c0,3-0.6,5.7-1.9,8
+	C774.6,60.3,772.8,62.3,770.4,63.8z"/>
+<pattern  id="SVGID_7_" xlink:href="#New_Pattern" patternTransform="matrix(0.6467 0 0 0.6467 -2280.8281 -2766.8936)">
 </pattern>
-<path class="st7" d="M174.1,68.4c5.9,0,10.6-4.5,10.6-10.1s-4.7-10.1-10.6-10.1h-33.5V10.4c0-5.6-4.7-10.1-10.6-10.1
-	c-5.9,0-10.6,4.5-10.6,10.1v37.9H78.2V10.4c0-5.6-4.7-10.1-10.6-10.1S56.9,4.8,56.9,10.4v37.9h-46C5,48.3,0.3,52.8,0.3,58.4
-	S5,68.4,10.9,68.4h46v36.9h-46c-5.9,0-10.6,4.5-10.6,10.1s4.7,10.1,10.6,10.1h46v39.3c0,5.6,4.7,10.1,10.6,10.1s10.6-4.5,10.6-10.1
-	v-39.3h41.1v39.3c0,5.6,4.7,10.1,10.6,10.1c5.9,0,10.6-4.5,10.6-10.1v-39.3h33.5c5.9,0,10.6-4.5,10.6-10.1s-4.7-10.1-10.6-10.1
-	h-33.5V68.4H174.1z M119.4,105.3H78.2V68.4h41.1V105.3z"/>
+<path class="st7" d="M145.5,58.9c4.1,0,7.4-3.3,7.4-7.4V40.7c0-4.1-3.3-7.4-7.4-7.4h-29.4V7.9c0-4.1-3.3-7.4-7.4-7.4H97.8
+	c-4.1,0-7.4,3.3-7.4,7.4v25.4h-23V7.9c0-4.1-3.3-7.4-7.4-7.4H49.2c-4.1,0-7.4,3.3-7.4,7.4v25.4H7.9c-4.1,0-7.4,3.3-7.4,7.4v10.8
+	c0,4.1,3.3,7.4,7.4,7.4h33.9v18.5H7.9c-4.1,0-7.4,3.3-7.4,7.4v10.8c0,4.1,3.3,7.4,7.4,7.4h33.9v33.6c0,4.1,3.3,7.4,7.4,7.4H60
+	c4.1,0,7.4-3.3,7.4-7.4v-33.6h23v33.6c0,4.1,3.3,7.4,7.4,7.4h10.8c4.1,0,7.4-3.3,7.4-7.4v-33.6h29.4c4.1,0,7.4-3.3,7.4-7.4V84.9
+	c0-4.1-3.3-7.4-7.4-7.4h-29.4V58.9H145.5z M90.4,77.4h-23V58.9h23V77.4z"/>
 </svg>

@@ -56,6 +56,7 @@ class PaymentController extends Controller
 
 
     public function ZarrinPalPaying(Request $request){
+
         $zarrin = new ZarrinPal($request);
         $result = $zarrin->create();
         if($result != 404){

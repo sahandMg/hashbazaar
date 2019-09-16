@@ -29,7 +29,7 @@
                         <br>
                         <h3 style="margin: 0px;">{{__('FILL YOUR POCKETS WITH BITCOIN')}}</h3>
                 
-                           <a href="{{route('signup',['locale'=>session('locale')]).'?plan=classic'}}" class="btn-auth mt-4 mx-auto" style="width: 200px;">شروع کنید</a>
+                           <a href="{{route('signup',['locale'=>session('locale')])}}" class="btn-auth mt-4 mx-auto" style="width: 200px;">شروع کنید</a>
                     <!-- </div> -->
                 <!-- </div> -->
             </div>

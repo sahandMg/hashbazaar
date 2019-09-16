@@ -291,17 +291,17 @@ class AuthController extends Controller
     public function redirectToProvider(Request $request)
     {
 
-        if($request->has('plan')){
-            $plans = DB::connection('mysql')->table('plans')->get()->pluck('name')->toArray();
-            if(in_array($request->plan,$plans)){
-                // +1 because it begins from zero
-                $plan_id = array_search($request->plan,$plans)+1;
-                session(['planId'=> $plan_id]);
-            }else{
-                return 'Invalid Plan!';
-            }
-
-        }
+//        if($request->has('plan')){
+//            $plans = DB::connection('mysql')->table('plans')->get()->pluck('name')->toArray();
+//            if(in_array($request->plan,$plans)){
+//                // +1 because it begins from zero
+//                $plan_id = array_search($request->plan,$plans)+1;
+//                session(['planId'=> $plan_id]);
+//            }else{
+//                return 'Invalid Plan!';
+//            }
+//
+//        }
 //        else{
 //            return 'No plan on request!';
 //        }

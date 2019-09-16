@@ -30,11 +30,12 @@ class ZarrinPal
         $dollarPriceInToman = $settings->usd_toman;
         $discount = $this->request['discount'];
         $hash = $this->request['hash'];
+        $plan = $this->request['plan'];
 
-        if(Auth::guard('user')->user()->plan->id == 3){
+        if($plan == 3){
 
             $amount = ($settings->usd_per_hash * $hash * (1- $discount)  + env('contractDays') * $settings->maintenance_fee_per_th_per_day) * $dollarPriceInToman;
-        }else if(Auth::guard('user')->user()->plan->id == 2){
+        }else if($plan == 2){
 
             $amount = $settings->usd_per_hash * $hash * (1- $discount) * $dollarPriceInToman;
         }

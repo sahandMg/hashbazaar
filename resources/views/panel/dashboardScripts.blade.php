@@ -126,7 +126,7 @@
 
                             if({!! json_encode($discount == 0) !!}){
 
-                                thPriceAfterCode = dollarToToman *  {!! $settings->usd_per_hash !!} *  (1 - resp['discount'] );;
+                                thPriceAfterCode = dollarToToman *  {!! $settings->usd_per_hash !!} *  (1 - resp['discount'] );
                                 costAfterCode.innerHTML =   " - "+ (dollarToToman * slider.value * (thPrice-thPriceAfterCode) ) + " dollar" + " = " +( dollarToToman * slider.value * thPriceAfterCode) + "dollar" ;
 
                             } else {
@@ -153,6 +153,7 @@
         console.log("thprice");console.log(thPrice);
        $('#planClassicBtn').click(function () {
          console.log("planClassicBtn");
+           $('#planType').val('2');
          $('.planClassic').show();
          $('.planClassicZero').hide();
          $('#planClassicBtn').addClass('borderBottom');
@@ -164,6 +165,7 @@
 
       $('#planClassicZeroBtn').click(function () {
         console.log("planClassicZeroBtn");
+          $('#planType').val('3');
         $('.planClassicZero').show();
         $('.planClassic').hide();
         $('#planClassicZeroBtn').addClass('borderBottom');

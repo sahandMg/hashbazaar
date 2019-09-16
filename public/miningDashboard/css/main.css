@@ -142,6 +142,11 @@
     margin-top: 3%;
     cursor: pointer;
 }
+
+.pandel-button:hover {
+    background-color: #cc7400;
+    border-color: #cc7400;
+ }
  
  .aplybtn1text {
     display: inline-block !important;

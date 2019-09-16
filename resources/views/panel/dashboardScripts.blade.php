@@ -91,7 +91,7 @@
                     });
                 };
                 var planType = {!! Auth::guard('user')->user()->plan->id!!}
-                output.innerHTML = slider.value+' Th';
+                output.innerHTML = slider.value+' تراهش';
                 if(planType == 3){
                     cost.innerHTML = dollarToToman * slider.value * thPrice + parseInt({!! $settings->maintenance_fee_per_th_per_day*$settings->usd_toman * env('contractDays') !!});
                 }else if(planType == 2){
@@ -121,7 +121,7 @@
 
                      function refershThPrice() {
                       hiddenRange.value = slider.value; //this.value;
-                        output.innerHTML = slider.value+' Th'; //this.value+' Th';
+                        output.innerHTML = slider.value+' تراهش'; //this.value+' Th';
                         if(activateDiscount == 1){
 
                             if({!! json_encode($discount == 0) !!}){

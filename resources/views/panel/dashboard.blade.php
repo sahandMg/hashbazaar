@@ -169,7 +169,7 @@
       <button class="btnTab" id="planClassicZeroBtn">طرح کلاسیک صفر</button>
   </div>
   <div>
-    <h5 id="demo"></h5>
+    <h5 id="demo" class="text-center"></h5>
     <div class="slidecontainer">
        @if(count($errors->all()) > 0)
          <ul>@foreach($errors as $error)<li>{{$error}}</li>@endforeach</ul>
@@ -239,7 +239,7 @@
       stroke: #ff9100;
   }
   .ct-label { color: black; }
-  
+
   .ct-area {
     stroke: none;
     fill-opacity: .1;

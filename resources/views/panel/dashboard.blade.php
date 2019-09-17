@@ -169,7 +169,7 @@
       <button class="btnTab" id="planClassicZeroBtn">طرح کلاسیک صفر</button>
   </div>
   <div>
-    <h5 id="demo"></h5>
+    <h5 id="demo" class="text-center"></h5>
     <div class="slidecontainer">
        @if(count($errors->all()) > 0)
          <ul>@foreach($errors as $error)<li>{{$error}}</li>@endforeach</ul>
@@ -232,6 +232,21 @@
     </div>
   </div>
 </div>
+
+<style type="text/css">
+   .ct-series-a .ct-area, .ct-series-a .ct-slice-donut-solid, .ct-series-a .ct-slice-pie {
+      fill: #ff9100;
+  }
+  .ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point, .ct-series-a .ct-slice-donut {
+      stroke: #ff9100;
+  }
+  .ct-label { color: black; }
+
+  .ct-area {
+    stroke: none;
+    fill-opacity: .1;
+  }
+</style>
   @include('panel/dashboardScripts')
 @else
 

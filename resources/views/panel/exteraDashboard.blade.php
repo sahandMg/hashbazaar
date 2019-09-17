@@ -694,6 +694,7 @@
       stroke: #ff9100;
   }
   .ct-label { color: black; }
+  
 </style>
 
 @if(Config::get('app.locale') == 'fa')

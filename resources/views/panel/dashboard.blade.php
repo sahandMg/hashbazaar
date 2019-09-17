@@ -18,10 +18,10 @@
                     $remainedLife[$key] = floor((\Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($hash->created_at)->addYears($hash->life)))/($hash->life * 365) * 100) ;
                 }
 
-
             }
     $codes = DB::connection('mysql')->table('expired_codes')->where('user_id',Auth::guard('user')->id())->where('used',0)->first();
             $AppliedCode = isset($codes->code)?$codes->code:null;
+    $planIds = Auth::guard('user')->user()->plans->pluck('plan_id')->toArray();
     ?>
 <!-- Dashboard Page dashboard-page -->
 <div class="container" style="direction: rtl;">
@@ -183,10 +183,10 @@
               <p style="color:black">{{__("Hash allocation cost :")}} <span id="cost"></span> {{__("dollar")}}
                <span id="doReferalCode" style="animation-iteration-count:infinite;padding:2px"></span>
               </p>
-              @if(Auth::guard('user')->user()->plan->id == 2)
-                    <p style="color:black">{{__('Maintenance fee')}}:  ({{ round($settings->maintenance_fee_per_th_per_day*$settings->usd_toman)}} تومان) {{__('dollar per Th/day')}}</p>
+
+              @if(in_array('2',$planIds))
+                    <p class="planClassic" style="color:black">{{__('Maintenance fee')}}:  {{ round($settings->maintenance_fee_per_th_per_day*$settings->usd_toman)}} تومان {{__('dollar per Th/day')}}</p>
               @endif
-              <p class="planClassic" style="color:black">هزینه نگهداری: 1200 تومان برای هر روز به ازای هر تراهش</p>
               <p class="planClassicZero" style="color:black">هزینه نگهداری: 0 تومان برای هر روز به ازای هر تراهش</p>
               <small style="color: #707070;">{{__("(include all electricity, cooling, development, and servicing costs )")}}</small>
               <p style="color:black">{{__('Income : At this time We predict')}} {{$settings->bitcoin_income_per_month_per_th}} {{__('BTC/month per Th')}}</p>

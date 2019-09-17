@@ -96,14 +96,34 @@ class AuthController extends Controller
 
     public function post_signup(Request $request){
 
-        $this->validate($request,[
-            'name' => 'required',
-            'email'=>"required|email|unique:mysql.users",
-            'password'=> 'required',
-            'confirm_password' => 'required|same:password',
-            'captcha'=>'required|captcha'
+        if(!Session::has('captchaCounter')){
 
-        ]);
+            Session::put('captchaCounter',1);
+        }else{
+
+            Session::put('captchaCounter', Session::get('captchaCounter',1) + 1 );
+        }
+
+        if(Session::get('captchaCounter') > 3){
+
+            $this->validate($request,[
+                'name' => 'required',
+                'email'=>"required|email|unique:mysql.users",
+                'password'=> 'required',
+                'confirm_password' => 'required|same:password',
+                'captcha'=>'required|captcha'
+
+            ]);
+        }else{
+            $this->validate($request,[
+                'name' => 'required',
+                'email'=>"required|email|unique:mysql.users",
+                'password'=> 'required',
+                'confirm_password' => 'required|same:password',
+            ]);
+        }
+
+
 
         $user = new User();
         $user->name = $request->name;
@@ -241,11 +261,28 @@ class AuthController extends Controller
 
     public function post_login(Request $request){
 
-        $this->validate($request,[
-            'email'=> 'required|email',
-            'password'=>'required|min:6',
-//            'captcha'=>'required|captcha'
-        ]);
+
+        if(!Session::has('captchaCounter')){
+
+            Session::put('captchaCounter',1);
+        }else{
+
+            Session::put('captchaCounter', Session::get('captchaCounter',1) + 1 );
+        }
+
+        if(Session::get('captchaCounter') > 3){
+
+            $this->validate($request,[
+                'email'=> 'required|email',
+                'password'=>'required|min:6',
+                'captcha'=>'required'
+            ]);
+        }else{
+            $this->validate($request,[
+                'email'=> 'required|email',
+                'password'=>'required|min:6',
+            ]);
+        }
 
         if(Auth::guard('user')->attempt(['email'=>$request->email,'password'=>$request->password],true)){
 

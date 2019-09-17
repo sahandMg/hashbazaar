@@ -90,7 +90,8 @@
                         }
                     });
                 };
-                var planType = {!! Auth::guard('user')->user()->plan->id!!}
+
+                var planType = 2
                 output.innerHTML = slider.value+' تراهش';
                 if(planType == 3){
                     cost.innerHTML = dollarToToman * slider.value * thPrice + parseInt({!! $settings->maintenance_fee_per_th_per_day*$settings->usd_toman * env('contractDays') !!});

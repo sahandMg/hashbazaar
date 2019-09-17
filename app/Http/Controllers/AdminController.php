@@ -217,6 +217,7 @@ class AdminController extends Controller
         $hashRecord->order_id = '30_70_' . strtoupper(uniqid());
         $hashRecord->confirmed = 1;
         $hashRecord->life = 2;
+        $hashRecord->plan_id = 1;
         $hashRecord->remained_day = 720 - intval($request->remainedDay);
         $hashRecord->created_at = Carbon::now()->subDays(intval($request->remainedDay));
         $hashRecord->save();

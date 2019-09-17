@@ -31,6 +31,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 use Stevebauman\Location\Facades\Location;
 use App\Http\Helpers;
 
@@ -57,7 +58,10 @@ class PaymentController extends Controller
 
     public function ZarrinPalPaying(Request $request){
 
+        Session::put('planId',$request->plan);
+
         $zarrin = new ZarrinPal($request);
+
         $result = $zarrin->create();
         if($result != 404){
             $request->session()->save();

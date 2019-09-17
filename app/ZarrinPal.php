@@ -46,7 +46,7 @@ class ZarrinPal
             'Amount' => $amount,
             'Email' => Auth::guard('user')->user()->email,
             'CallbackURL' => 'https://hashbazaar.com/fa/zarrin/callback',
-            'Description' => 'فروشگاه اینترنتی قطعات الکترونیکی');
+            'Description' => 'هش بازار، استخراج ابری بیتکوین');
         $jsonData = json_encode($data);
         $ch = curl_init('https://www.zarinpal.com/pg/rest/WebGate/PaymentRequest.json');
         curl_setopt($ch, CURLOPT_USERAGENT, 'ZarinPal Rest Api v1');

@@ -131,19 +131,19 @@ class AuthController extends Controller
         $user->ip = Helpers::userIP();
         $user->total_mining = 0;
         $user->pending = 0;
-        if($request->has('plan')){
-            $plans = DB::connection('mysql')->table('plans')->get()->pluck('name')->toArray();
-            if(in_array($request->plan,$plans)){
-                // +1 because it begins from zero
-                $plan_id = array_search($request->plan,$plans)+1;
-                $user->plan_id = $plan_id;
-            }else{
-                return 'Invalid Plan!';
-            }
-
-        }else{
-            return 'No plan on request!';
-        }
+//        if($request->has('plan')){
+//            $plans = DB::connection('mysql')->table('plans')->get()->pluck('name')->toArray();
+//            if(in_array($request->plan,$plans)){
+//                // +1 because it begins from zero
+//                $plan_id = array_search($request->plan,$plans)+1;
+//                $user->plan_id = $plan_id;
+//            }else{
+//                return 'Invalid Plan!';
+//            }
+//
+//        }else{
+//            return 'No plan on request!';
+//        }
 
         try{
 

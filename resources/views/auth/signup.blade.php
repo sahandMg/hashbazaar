@@ -54,18 +54,7 @@
                             <input class="input100 englishFont" type="password" name="confirm_password" placeholder="{{__("Confirm password")}}">
                             <span class="focus-input100"></span>
                     </div>
-<<<<<<< HEAD
 
-					<div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
-						<input required class="input100 englishFont" type="text" pattern="[a-zA-Z0-9]+"  name="captcha" placeholder="{{__("Security Code")}}">
-						<span class="focus-input100"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
-						<a onclick="refreshCaptcha(event)" style="cursor: pointer;">{{Captcha::img()}}</a>
-					</div>
-
-=======
 					@if(session('captchaCounter') > 3)
 						<div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
 							<input required class="input100" type="text" pattern="[a-zA-Z0-9]+"  name="captcha" placeholder="{{__("Security Code")}}">
@@ -76,7 +65,7 @@
 							<a onclick="refreshCaptcha(event)" style="cursor: pointer;">{{Captcha::img()}}</a>
 						</div>
 					@endif
->>>>>>> 5722756b967ed56f2644769d9b29ffc230173f2e
+
 					<div class="container-login100-form-btn">
 						<button id="submitBtn" class="login100-form-btn">
                             {{__("SignUp")}}

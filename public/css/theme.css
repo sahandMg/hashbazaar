@@ -1082,7 +1082,7 @@ body, html {
   background-color: #e8ad2c;
   border-radius: 25px;
 
-  font-family: Ubuntu-Bold;
+  /*font-family: Ubuntu-Bold;*/
   font-size: 15px;
   color: #fff;
   line-height: 1.2;

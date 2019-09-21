@@ -63,6 +63,7 @@
       }
       th, a, p, input, button, legend, label {font-family: BYekanFont;}
       .btn {font-family: BYekanFont;}
+      .englishFont {font-family: sans-serif;}
     </STYLE>
  @endif
 @include('master/navbar')

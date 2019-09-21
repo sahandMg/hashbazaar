@@ -36,27 +36,27 @@
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-10" data-validate="Please enter your name">
-						<input class="input100" pattern='[a-zA-Z0-9 آ ا ب پ ت ث ج چ ح خ د ذ ر ز ژ س ش ص ض ط ظ ع غ ف ق ک گ ل م ن و ه ی]+'  type="text" name="name" placeholder="{{__("Username")}}" value="{{Request::old('name')}}">
+						<input class="input100 englishFont" pattern='[a-zA-Z0-9 آ ا ب پ ت ث ج چ ح خ د ذ ر ز ژ س ش ص ض ط ظ ع غ ف ق ک گ ل م ن و ه ی]+'  type="text" name="name" placeholder="{{__("Username")}}" value="{{Request::old('name')}}">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input email m-b-10" data-validate = "Please enter email" >
-						<input class="input100" type="email" name="email" placeholder="{{__("Email")}}" value="{{Request::old('email')}}">
+						<input class="input100 englishFont" type="email" name="email" placeholder="{{__("Email")}}" value="{{Request::old('email')}}">
 						<span class="focus-input100"></span>
 					</div>
 
                     <div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
-                            <input class="input100" type="password" name="password" placeholder="{{__("Password")}}">
+                            <input class="input100 englishFont" type="password" name="password" placeholder="{{__("Password")}}">
                             <span class="focus-input100"></span>
                     </div>
 
                     <div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
-                            <input class="input100" type="password" name="confirm_password" placeholder="{{__("Confirm password")}}">
+                            <input class="input100 englishFont" type="password" name="confirm_password" placeholder="{{__("Confirm password")}}">
                             <span class="focus-input100"></span>
                     </div>
 
 					<div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
-						<input required class="input100" type="text" pattern="[a-zA-Z0-9]+"  name="captcha" placeholder="{{__("Security Code")}}">
+						<input required class="input100 englishFont" type="text" pattern="[a-zA-Z0-9]+"  name="captcha" placeholder="{{__("Security Code")}}">
 						<span class="focus-input100"></span>
 					</div>
 

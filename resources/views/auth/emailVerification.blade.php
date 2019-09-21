@@ -31,7 +31,7 @@
 
 						</span>
                         <div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
-                            <input class="input100" type="text" pattern="[a-zA-Z0-9]+" required name="captcha" placeholder="{{__("Security Code")}}">
+                            <input class="input100 englishFont" type="text" pattern="[a-zA-Z0-9]+" required name="captcha" placeholder="{{__("Security Code")}}">
                             <span class="focus-input100"></span>
                         </div>
 

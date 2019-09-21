@@ -7,7 +7,7 @@
           @if(Auth::guard('user')->check())
             <a class="btn-auth" href="{{route('remoteDashboard',['locale'=>session('locale')])}}" >{{__('Dashboard')}}</a>
           @else
-            <a href="{{route('signup',['locale'=>session('locale')])}}" class="btn-auth">تبت نام</a>
+            <a href="{{route('signup',['locale'=>session('locale')])}}" class="btn-auth">ثبت نام</a>
             <a href="{{route('login',['locale'=>session('locale')])}}" class="btn-auth">ورود</a>
           @endif
         </div>

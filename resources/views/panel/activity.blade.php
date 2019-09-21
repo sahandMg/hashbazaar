@@ -114,7 +114,7 @@ foreach ($hashes as $key=> $hash){
 
 
                 @else
-                    <h6 id="nopur" style="color: black;"> {{__("NO Purchases")}}</h6>
+                    <h6 id="nopur" class="text-center" style="color: black;"> {{__("NO Purchases")}}</h6>
                 @endif
 
 

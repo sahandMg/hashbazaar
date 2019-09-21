@@ -37,7 +37,7 @@
                     <a class="coppyIcon" style="cursor: pointer;"><img class="icon" src="{{URL::asset('img/Copy.svg')}}" alt="Copy Link"></a>
                 </div>
             </div> -->
-               <h6 class="text-center">dsfksjdafjdfladkflsdafsdft</h6>
+               <h4 class="text-center englishFont" style="font-size: 1.5rem;">{{Auth::guard('user')->user()->wallet->addr}}</h4>
             
            <!--  <div class="change-address">
 
@@ -63,10 +63,10 @@
 
         <!-- enter wallet -->
         <div id="enterWallet">
-          <h4>کیف پول ندارید؟ <a href="">اینجا</a> کلیک کنید.</h4>
+         <!--  <h4>کیف پول ندارید؟ <a href="https://blockchain.info/">اینجا</a> کلیک کنید.</h4>
           <h1 class="my-4"><strong>یا</strong></h1>
           <h4 class="text-center" style="color:black">{{__("Submit Your Wallet Address")}}</h4>
-          <br/>
+          <br/> -->
          <form onsubmit="submitForm(event)"  id="setting-wallet" class="text-center" method="post" action="{{route('wallet',['locale'=>session('locale')])}}">
             <input class="text-center" type="hidden" name="_token" value="{{csrf_token()}}">
             <input required   class="input-borderBottom text-center" type="text" id="textwallet" name="wallet">
@@ -92,7 +92,7 @@
 
         <!-- enter wallet -->
         <div id="enterWallet">
-          <h4>کیف پول ندارید؟ <a href="">اینجا</a> کلیک کنید.</h4>
+          <h4>کیف پول ندارید؟ <a href="https://blockchain.info/">اینجا</a> کلیک کنید.</h4>
           <h1 class="my-4"><strong>یا</strong></h1>
           <h4 class="text-center" style="color:black">{{__("Submit Your Wallet Address")}}</h4>
           <br/>

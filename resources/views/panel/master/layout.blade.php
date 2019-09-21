@@ -11,6 +11,7 @@
             color:white !important;
         }
     </style>
+    <link rel="icon" href="{{URL::asset('img/favicon.ico')}}" type="image/x-icon"/>
 </head>
 
 <body class="animsition">

@@ -32,7 +32,7 @@
                     </div>
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
-                        <input class="input100" name="email" type="email"  value="{{Request::old('email')}}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{__("Email Address")}}">
+                        <input class="input100" name="email" type="email"  required value="{{Request::old('email')}}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{__("Email Address")}}">
 						<span class="focus-input100"></span>
 					</div>
 

@@ -1,7 +1,5 @@
 <?php
-
-namespace App\Console\Commands;
-
+namespace App\Http\Controllers\Test;
 use App\Pools\Antpool;
 use App\BitCoinPrice;
 use App\BitHash;
@@ -21,41 +19,12 @@ use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
-class UpdateMinings extends Command
+class UpdateMining extends Controller
+
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
-    protected $signature = 'mining:update';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
-    protected $description = 'Update User Mining';
-
-
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    /**
-     * Execute the console command.
-     *
-     * @return mixed
-     *
-     * This Command update mining histories & hashPower life
-     */
     public function handle()
     {
 
@@ -76,8 +45,8 @@ class UpdateMinings extends Command
             }
             if(Cache::get('poolError') >= 3){
 
-             $message =" خطای پول".$resp['message'];
-            Sms::dispatch($message);
+                $message =" خطای پول".$resp['message'];
+                Sms::dispatch($message);
 
             }else{
                 echo Cache::get('poolError');
@@ -151,53 +120,53 @@ class UpdateMinings extends Command
                     if(count($user->plans->toArray()) > 0 ){
 //                        foreach($plans as $key => $plan){
 
-                        if($hashRate->plan->id == 1){
+                            if($hashRate->plan->id == 1){
 
-                            $userEarn[$index] = $userPortion * $mining24 * 0.7;
-                        }
-                        if($hashRate->plan->id == 2){
-                            $maintenance_inBTC = $settings->maintenance_fee_per_th_per_day / $bitCoinPrice * $hashRate->hash;
-
-                            $userEarn[$index] = $mining24 * $userPortion - $maintenance_inBTC;
-                        }
-                        if($hashRate->plan->id == 3 ){
-
-                            $userEarn[$index] = $mining24 * $userPortion;
-                        }
-                        if($hashRate->plan->id == 4 ){
-
-                            $userEarn[$index] = $mining24 * $userPortion;
-                        }
-
-                        try{
-                            $mining = Mining::where('order_id', $hashRate->order_id)->where('block', 0)->first();
-                            if (!is_null($mining)) {
-                                if ($mining->block == 0) {
-                                    $userEarn[$index] = number_format($userEarn[$index], 8);
-                                    $miningReport = new MiningReport();
-                                    $miningReport->order_id = $mining->order_id;
-                                    $miningReport->mined_btc = $userEarn[$index];
-                                    $miningReport->mined_usd = $userEarn[$index] * $bitCoinPrice;
-                                    $miningReport->user_id = $user->id;
-                                    $miningReport->created_at = Carbon::now()->subDay(1);
-                                    $miningReport->updated_at = Carbon::now()->subDay(1);
-                                    $miningReport->save();
-                                    $mining->update(['mined_btc' => $userEarn[$index] + $mining->mined_btc, 'mined_usd' => $mining->mined_usd + $userEarn[$index] * $bitCoinPrice]);
-                                    $mining->save();
-                                    // creating new record in database for tomorrow mining record
-                                }
+                                $userEarn[$index] = $userPortion * $mining24 * 0.7;
                             }
-                            $total_paid_btc = Transaction::where('user_id', $user->id)->where('status', 'paid')->where('checkout', 'in')->sum('amount_btc');
-                            $user->update(['total_mining' => number_format($user->total_mining + $userEarn[$index],8), 'pending' => number_format($user->total_mining + $userEarn[$index] - $total_paid_btc,8)]);
-                            $user->save();
-                        }catch (\Exception $exception){
+                            if($hashRate->plan->id == 2){
+                                $maintenance_inBTC = $settings->maintenance_fee_per_th_per_day / $bitCoinPrice * $hashRate->hash;
 
+                                $userEarn[$index] = $mining24 * $userPortion - $maintenance_inBTC;
+                            }
+                            if($hashRate->plan->id == 3 ){
+
+                                $userEarn[$index] = $mining24 * $userPortion;
+                            }
+                            if($hashRate->plan->id == 4 ){
+
+                                $userEarn[$index] = $mining24 * $userPortion;
+                            }
+
+                            try{
+                                $mining = Mining::where('order_id', $hashRate->order_id)->where('block', 0)->first();
+                                if (!is_null($mining)) {
+                                    if ($mining->block == 0) {
+                                        $userEarn[$index] = number_format($userEarn[$index], 8);
+                                        $miningReport = new MiningReport();
+                                        $miningReport->order_id = $mining->order_id;
+                                        $miningReport->mined_btc = $userEarn[$index];
+                                        $miningReport->mined_usd = $userEarn[$index] * $bitCoinPrice;
+                                        $miningReport->user_id = $user->id;
+                                        $miningReport->created_at = Carbon::now()->subDay(1);
+                                        $miningReport->updated_at = Carbon::now()->subDay(1);
+                                        $miningReport->save();
+                                        $mining->update(['mined_btc' => $userEarn[$index] + $mining->mined_btc, 'mined_usd' => $mining->mined_usd + $userEarn[$index] * $bitCoinPrice]);
+                                        $mining->save();
+                                        // creating new record in database for tomorrow mining record
+                                    }
+                                }
+                                $total_paid_btc = Transaction::where('user_id', $user->id)->where('status', 'paid')->where('checkout', 'in')->sum('amount_btc');
+                                $user->update(['total_mining' => number_format($user->total_mining + $userEarn[$index],8), 'pending' => number_format($user->total_mining + $userEarn[$index] - $total_paid_btc,8)]);
+                                $user->save();
+                            }catch (\Exception $exception){
+
+                            }
                         }
                     }
-                }
 
+                }
             }
-        }
 //        }
 
         /*
@@ -233,6 +202,6 @@ class UpdateMinings extends Command
             .' میانگین تراهش '. $todayTHash
             . ' سود امروز '.$todayProfit
             . ' سود کل '.number_format($settings->total_benefit,8) ;
-        Sms::dispatch($message);
+//        Sms::dispatch($message);
     }
 }

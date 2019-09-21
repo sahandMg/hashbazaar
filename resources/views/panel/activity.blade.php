@@ -188,7 +188,7 @@ foreach ($hashes as $key=> $hash){
                                     @if($item->checkout == 'in')
                                         <span style="color: green">دریافتی</span>
                                     @else
-                                        <span style="color: red">پرداختی</span>
+                                        <span style="color: deepskyblue">پرداختی</span>
                                     @endif
                                 </td>
 

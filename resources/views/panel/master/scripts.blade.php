@@ -19,7 +19,7 @@
     <script src="{{URL::asset('miningDashboard/vendor/chartjs/Chart.bundle.min.js')}}"></script>
     <script src="{{URL::asset('miningDashboard/vendor/select2/select2.min.js')}}">
     </script>
-    <script src="{{URL::asset('js/chartist.min.js')}}"></script> 
+    <script src="{{URL::asset('js/chartist.min.js')}}"></script>
     <!-- Main JS-->
     <script src="{{URL::asset('miningDashboard/js/main.js')}}"></script>
 

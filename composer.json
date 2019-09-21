@@ -23,6 +23,7 @@
         "mews/captcha": "^2.2",
         "morilog/jalali": "^3.1",
         "pragmarx/google2fa-laravel": "^1.0",
+        "renatomarinho/laravel-page-speed": "^1.8",
         "simplesoftwareio/simple-qrcode": "^2.0",
         "spatie/laravel-sitemap": "^5.3",
         "stevebauman/location": "^3.0",

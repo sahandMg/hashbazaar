@@ -19,20 +19,22 @@
     $agent = new Jenssegers\Agent\Agent();
     ?>
     <!-- <header id="header" > -->
+      <div class="container">
             <div class="d-flex flex-column introduction text-center p-4  justify-content-center mx-auto">
                 <!-- <div class="row"> -->
                     <!-- <div class="col-lg-9 col-md-10 col-sm-11 mx-auto"> -->
                         <h1 class="text-center">{{__('BITCOIN INVESTMENT')}}</h1>
-                        <img src="{{URL::asset('img/LOGO_transparent.png')}}">
+                        <img class="img-fluid mx-auto" src="{{URL::asset('img/LOGO_transparent.png')}}">
                         <br>
                         <h3>{{__('JOIN OUR MINING FARMS')}}</h3>
                         <br>
                         <h3 style="margin: 0px;">{{__('FILL YOUR POCKETS WITH BITCOIN')}}</h3>
                 
-                           <a href="{{route('signup',['locale'=>session('locale')]).'?plan=classic'}}" class="btn-auth mt-4 mx-auto" style="width: 200px;">شروع کنید</a>
+                           <a href="{{route('signup',['locale'=>session('locale')])}}" class="btn-auth mt-4 mx-auto" style="width: 200px;">شروع کنید</a>
                     <!-- </div> -->
                 <!-- </div> -->
             </div>
+      </div>
     <!-- </header> -->
     <!-- <hr/> -->
     @include('landing/howItWorks')

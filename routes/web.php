@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use GuzzleHttp\Client as GuzzleClient;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Morilog\Jalali\Jalalian;
@@ -39,59 +40,7 @@ Route::get('create-sitemap',function(){
     SitemapGenerator::create('https://hashbazaar.com')->writeToFile(public_path('sitemap.xml'));
 
 });
-Route::get('job',function(){
 
-    $url = 'http://ip-api.com/php/192.119.12.118';
-    unserialize(file_get_contents($url))['countryCode'];
-    $ch = curl_init($url); // such as http://example.com/example.xml
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    $data = curl_exec($ch);
-    curl_close($ch);
-    dd($data);
-    $cryptoName = [];
-    $url = 'https://pay98.cash/%D9%82%DB%8C%D9%85%D8%AA-%D8%A7%D8%B1%D8%B2%D9%87%D8%A7%DB%8C-%D8%AF%DB%8C%D8%AC%DB%8C%D8%AA%D8%A7%D9%84';
-    $config = [
-        'referer' => true,
-         'headers' => [
-             'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-             'Accept-Encoding' => 'gzip, deflate, br',
-],
-];
-    $client = new GuzzleClient();
-    $promise1 = $client->requestAsync('GET',$url,$config)->then(function (ResponseInterface $response) {
-        $this->resp = $response->getBody()->getContents();
-        return $this->resp;
-    });
-    $promise1->wait();
-    $crawler = new Crawler($this->resp);
-    $coinNames = $crawler->filterXPath('//p[contains(@class,"nametop1")]');
-    // $coins = str_replace(' ', '', $coins);
-    // $coins = str_replace("\n", '', $coins);
-    // $coins = str_replace("\r", '', $coins);
-
-    $crawledCoins = $coinNames->each(
-        function (Crawler $node, $i) {
-            $first = $node->children()->eq(1)->text();
-            return $first;
-        });
-
-    $coinPrices = $crawler->filterXPath('//b[contains(@class,"ltr")]');
-
-//    Gets Just Crypto Names
-    $crawledPrices = $coinPrices->each(
-        function (Crawler $node, $i) {
-            // $first = $node->eq(4)->text();
-            return $node->text();
-        });
-
-        array_shift($crawledPrices);
-        array_shift($crawledPrices);
-        array_shift($crawledPrices);
-
-    $CryptoCrawl = array_combine($crawledCoins,$crawledPrices);
-    return view('cryptoMailPage',compact('CryptoCrawl'));
-});
 
 Route::get('f2pool',function (){
 
@@ -127,7 +76,13 @@ Route::get('qr',function(){
 
 Route::get('test',function (){
 
-    dd('salam');
+    $bits = BitHash::all();
+    foreach ($bits as $bit){
+        DB::connection('mysql')->table('plan_user')->insert([
+            'user_id'=>$bit->user_id,
+            'plan_id'=>3
+        ]);
+    }
 
 });
 
@@ -469,18 +424,18 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
         Route::get('logout', ['as' => 'remoteLogout', 'uses' => 'Remote\AuthController@logout']);
         // ====================== Remote Test Routes =====================
 
-        Route::group(['prefix'=>'test'],function(){
+//        Route::group(['prefix'=>'test'],function(){
 
-            Route::get('gate','Remote\Test\TestController@gateTest')->name('gateTest');
-
-            Route::post('zarrin-paying','Remote\Test\TestController@ZarrinPalPaying')->name('RemoteZarrinPalPayingTest');
-
-            Route::post('paystar-paying','Remote\Test\TestController@PaystarPaying')->name('RemotePaystarPayingTest');
-
-            Route::post('zarrin-paying-hardware','Remote\Test\TestHardwareController@ZarrinPalPaying')->name('RemoteHardwareZarrinPalPayingTest');
-
-            Route::post('paystar-paying-hardware','Remote\Test\TestHardwareController@PaystarPaying')->name('RemoteHardwarePaystarPayingTest');
-        });
+//            Route::get('gate','Remote\Test\TestController@gateTest')->name('gateTest');
+//
+//            Route::post('zarrin-paying','Remote\Test\TestController@ZarrinPalPaying')->name('RemoteZarrinPalPayingTest');
+//
+//            Route::post('paystar-paying','Remote\Test\TestController@PaystarPaying')->name('RemotePaystarPayingTest');
+//
+//            Route::post('zarrin-paying-hardware','Remote\Test\TestHardwareController@ZarrinPalPaying')->name('RemoteHardwareZarrinPalPayingTest');
+//
+//            Route::post('paystar-paying-hardware','Remote\Test\TestHardwareController@PaystarPaying')->name('RemoteHardwarePaystarPayingTest');
+//        });
         // -----> unauthorized remote routes <-----------------
 
         Route::group(['middleware'=>'guest'],function(){
@@ -507,4 +462,23 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
     });
 
+    // ==================== Test Routes =============================
+
+    Route::group(['prefix'=>'test'],function(){
+
+        Route::get('gate','Test\HashPaymentTest\TestController@gateTest')->name('hashGateTest');
+
+        Route::post('zarrin-paying-hash','Test\HashPaymentTest\TestController@ZarrinPalPaying')->name('zarrinHashGate');
+
+        Route::get('update-mining','Test\UpdateMining@handle');
+//            Route::get('gate','Remote\Test\TestController@gateTest')->name('gateTest');
+//
+//            Route::post('zarrin-paying','Remote\Test\TestController@ZarrinPalPaying')->name('RemoteZarrinPalPayingTest');
+//
+//            Route::post('paystar-paying','Remote\Test\TestController@PaystarPaying')->name('RemotePaystarPayingTest');
+//
+//            Route::post('zarrin-paying-hardware','Remote\Test\TestHardwareController@ZarrinPalPaying')->name('RemoteHardwareZarrinPalPayingTest');
+//
+//            Route::post('paystar-paying-hardware','Remote\Test\TestHardwareController@PaystarPaying')->name('RemoteHardwarePaystarPayingTest');
+    });
 });

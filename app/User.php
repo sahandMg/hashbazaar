@@ -71,8 +71,8 @@ class User extends Authenticatable implements MustVerifyEmail
         return number_format($pendingBtc,8);
     }
 
-    public function plan(){
+    public function plans(){
 
-        return $this->belongsTo(Plan::class);
+        return $this->hasMany(PlanUser::class);
     }
 }

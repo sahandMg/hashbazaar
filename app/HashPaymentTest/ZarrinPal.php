@@ -6,9 +6,17 @@
  * Time: 4:58 PM
  */
 
-namespace App;
+namespace App\HashPaymentTest;
 
 
+use App\BitHash;
+use App\CustomCode;
+use App\Mining;
+use App\Referral;
+use App\Setting;
+use App\Sharing;
+use App\Transaction;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
@@ -42,29 +50,6 @@ class ZarrinPal
         }
         $referralCode = $this->request['code'];
 
-        $data = array('MerchantID' => $settings->zarrin_pin,
-            'Amount' => $amount,
-            'Email' => Auth::guard('user')->user()->email,
-            'CallbackURL' => 'https://hashbazaar.com/fa/zarrin/callback',
-            'Description' => 'هش بازار، استخراج ابری بیتکوین');
-        $jsonData = json_encode($data);
-        $ch = curl_init('https://www.zarinpal.com/pg/rest/WebGate/PaymentRequest.json');
-        curl_setopt($ch, CURLOPT_USERAGENT, 'ZarinPal Rest Api v1');
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Content-Type: application/json',
-            'Content-Length: ' . strlen($jsonData)
-        ));
-        $result = curl_exec($ch);
-        $err = curl_error($ch);
-        $result = json_decode($result, true);
-        curl_close($ch);
-        if ($err) {
-            return 404;
-        } else {
-            if ($result["Status"] == '100' ) {
 
                 // create database record
                 $custom_code = CustomCode::where('code',$referralCode)->first();
@@ -72,7 +57,6 @@ class ZarrinPal
                 $hashRecord->hash = $hash;
                 $hashRecord->user_id = Auth::guard('user')->id();
                 $hashRecord->order_id = strtoupper('zarrin_'.str_random(8));
-                $hashRecord->plan_id = $plan;
                 $hashRecord->confirmed = 0;
                 // a custom code is not involved in affiliate
                 if(isset($custom_code)){
@@ -100,56 +84,28 @@ class ZarrinPal
                 $trans->user_id = Auth::guard('user')->id();
                 $trans->checkout = 'out';
                 $trans->country = Auth::guard('user')->user()->country;
-                $trans->authority = $result['Authority'];
+                $trans->authority = "TEST__000000000000000000210312000000".rand(0,100);
                 $trans->save();
+                session(['authority'=> $trans->authority]);
+                return 200;
 
-                return $result;
-            } else {
-                return 404;
-            }
-        }
+
 
     }
 
     public function verify(){
 
-        $transactionId = $this->request->Authority;
+        $transactionId = session('authority');
         $trans = Transaction::where('authority',$transactionId)->first();
         if(is_null($trans)){
             return 'کد تراکنش نادرست است';
         }
         $settings = Setting::first();
 
-        $data = array('MerchantID' => $settings->zarrin_pin, 'Authority' => $transactionId, 'Amount'=>$trans->amount_toman);
+        $this->ZarrinPaymentConfirm($trans);
 
-        $jsonData = json_encode($data);
-        $ch = curl_init('https://www.zarinpal.com/pg/rest/WebGate/PaymentVerification.json');
-        curl_setopt($ch, CURLOPT_USERAGENT, 'ZarinPal Rest Api v1');
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Content-Type: application/json',
-            'Content-Length: ' . strlen($jsonData)
-        ));
-        $result = curl_exec($ch);
-        $err = curl_error($ch);
-        curl_close($ch);
-        $result = json_decode($result, true);
-        if ($err) {
-            return "cURL Error #:" . $err;
-        } else {
-            if ($result['Status'] == '100') {
+        return redirect()->route('RemotePaymentSuccess',['locale'=>App::getLocale(),'transid'=>$trans->code]);
 
-                $this->ZarrinPaymentConfirm($trans);
-
-                return redirect()->route('PaymentSuccess',['locale'=>App::getLocale()]);
-
-            } else {
-
-                return redirect()->route('PaymentCanceled', ['locale'=>App::getLocale(),'transid' => $trans->code]);
-            }
-        }
     }
     private function ZarrinPaymentConfirm($trans)
     {
@@ -232,14 +188,14 @@ class ZarrinPal
         }
 
         Mail::send('email.paymentConfirmed', ['hashPower' => $hashPower, 'trans' => $trans], function ($message) use ($user) {
-            $message->from(env('Admin_Mail'));
+            $message->from('Admin@HashBazaar');
             $message->to($user->email);
             $message->subject('Payment Confirmed');
         });
 
         Mail::send('email.newTrans', [], function ($message) use ($user) {
-            $message->from(env('Admin_Mail'));
-            $message->to(env('Admin_Mail'));
+            $message->from('Admin@HashBazaar');
+            $message->to('Admin@HashBazaar');
             $message->subject('New Payment');
         });
     }

@@ -11,6 +11,6 @@ class Plan extends Model
 
     public function users(){
 
-        return $this->hasMany(User::class);
+        return $this->hasMany(PlanUser::class);
     }
 }

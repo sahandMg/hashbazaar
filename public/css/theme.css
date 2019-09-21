@@ -4,6 +4,7 @@
 }
 .introduction img {
   height: 90px;
+    /*width: auto;*/
 }
 
 @media screen and (max-width:420px){

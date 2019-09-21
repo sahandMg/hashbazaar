@@ -77,7 +77,6 @@ class Paystar
         $hashRecord->hash = $hash;
         $hashRecord->user_id = Auth::guard('user')->id();
         $hashRecord->order_id = $result;
-        $hashRecord->plan_id = $plan;
         $hashRecord->confirmed = 0;
         // a custom code is not involved in affiliate
         if(isset($custom_code)){

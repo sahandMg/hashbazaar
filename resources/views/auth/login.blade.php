@@ -52,6 +52,7 @@
 						<span class="txt1">
 
 						</span>
+						@if(session('captchaCounter') > 3)
 						<div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
 							<input class="input100 englishFont" type="text" pattern="[a-zA-Z0-9]+" required name="captcha" placeholder="{{__("Security Code")}}">
 							<span class="focus-input100"></span>
@@ -60,7 +61,7 @@
 						<div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
 							<a onclick="refreshCaptcha(event)" style="cursor: pointer;">{{Captcha::img()}}</a>
 						</div>
-
+					@endif
 						<a href="{{route('passwordReset',['locale'=>session('locale')])}}" class="txt2">
 							{{__("Forgot Password?")}}
 						</a>

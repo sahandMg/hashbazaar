@@ -31,7 +31,7 @@
                                                         <i class="zmdi zmdi-account"></i>حساب کاربری</a>
                                                 </div>
                                                 <div class="account-dropdown__item">
-                                                    <a href="{{route('dashboard',['locale'=>App::getLocale()])}}">
+                                                    <a href="{{route('activity',['locale'=>App::getLocale()])}}">
                                                         <i class="zmdi zmdi-money-box"></i>پرداخت ها</a>
                                                 </div>
                                             </div>

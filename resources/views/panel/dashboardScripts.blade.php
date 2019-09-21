@@ -18,18 +18,20 @@
                         document.getElementById('miningDollar').innerHTML = miningDollar;
                         document.getElementById('miningBTC2').innerHTML = userPendingBtc;
                         document.getElementById('miningDollar2').innerHTML = userPendingUsd.toFixed(8);
-                        var minimum_redeem = {!! json_encode($settings->minimum_redeem) !!}
+                        var minimum_redeem = {!! json_encode($settings->minimum_redeem) !!};
                         if(response.data[0] >= minimum_redeem){
                             // document.getElementById('redeem').disabled = false;
                         }
                     }
+
      });
+
 </script>
 <!-- buy hash power part -->
 <script type="text/javascript">
 
     function order(){
-        document.getElementById('orderBtn').disabled = true
+        document.getElementById('orderBtn').disabled = true;
     }
   // console.log("**** price toman *******");
   var dollarToToman = parseInt({!! $settings->usd_toman !!});
@@ -50,15 +52,15 @@
                     }
                 });
                 // for get profit
-                var user = {!! json_encode(\Illuminate\Support\Facades\Auth::guard('user')->user()->code) !!}
+                var user = {!! json_encode(\Illuminate\Support\Facades\Auth::guard('user')->user()->code) !!};
                 function redeem(id) {
                     axios.get('{{route('redeem',['locale'=>session('locale')])}}'+'?user='+user).then(function (response) {
 //                        console.log(response.data)
-                    })
-                };
+                    });
+                }
                  // referal code
                 var activateDiscount = {!! $apply_discount !!};// $apply_discount == 0 Or 1
-                var discount = {!! $discount !!}
+                var discount = {!! $discount !!};
                 var thPrice = {!! $settings->usd_per_hash !!};
                 var thPriceAfterCode ;
                 var slider = document.getElementById("myRange");
@@ -77,7 +79,7 @@
                          resp = response.data;
                         if(resp['type'] == 'error'){
                             alertify.error(resp['body']);
-                            $('#doReferalCode').hide()
+                            $('#doReferalCode').hide();
                         }else{
                             alertify.success(resp['body']);
                             document.getElementById('hiddenCodeValue').value = code;
@@ -86,20 +88,20 @@
                             costAfterCode.innerHTML =   " - "+ (slider.value * (thPrice-thPriceAfterCode ) ) + " dollar" + " = " +(slider.value * thPriceAfterCode) + "dollar" ;
 //                            console.log(thPrice);
                             activateDiscount = 1;
-                            $('#doReferalCode').show()
+                            $('#doReferalCode').show();
                         }
                     });
                 };
 
-                var planType = 2
+                var planType = 2;
                 output.innerHTML = slider.value+' تراهش';
                 if(planType == 3){
                     cost.innerHTML = dollarToToman * slider.value * thPrice + parseInt({!! $settings->maintenance_fee_per_th_per_day*$settings->usd_toman * env('contractDays') !!});
                 }else if(planType == 2){
-                    cost.innerHTML = dollarToToman * slider.value * thPrice
+                    cost.innerHTML = dollarToToman * slider.value * thPrice;
                 }
                     if(activateDiscount == 1){
-                        $('#doReferalCode').show()
+                        $('#doReferalCode').show();
                         // check if custom code applied or not
                         if({!! json_encode($discount == 0) !!}){
                             thPriceAfterCode = dollarToToman * {!! $settings->usd_per_hash !!} * (1 - resp['discount'] );
@@ -111,7 +113,7 @@
                         }
                     }
                     else
-                    $('#doReferalCode').hide()
+                    $('#doReferalCode').hide();
 
                     // Display the default slider value
 //                console.log(document.getElementById('discount').value)
@@ -140,11 +142,11 @@
                         if(planType == 3){
                             cost.innerHTML = dollarToToman * slider.value * thPrice + parseInt({!! $settings->maintenance_fee_per_th_per_day*$settings->usd_toman * env('contractDays') !!});
                         }else if(planType == 2){
-                            cost.innerHTML = dollarToToman * slider.value * thPrice
+                            cost.innerHTML = dollarToToman * slider.value * thPrice;
                         }
                      }
 
-            
+
 	 // for chossing plan
         $('.planClassic').show();
         $('.planClassicZero').hide();

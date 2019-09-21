@@ -176,9 +176,9 @@
        @endif
        @include('sessionError')
        @if($settings->available_th > 0)
-           <input type="hidden" id="plankind" value="1">
-           <input type="hidden" id="thpricew" value="50">
-           <input type="range" min="1" max="100" value="{{isset($hashPower)?$hashPower:$settings->available_th/2}}" name="hash" class="slider" id="myRange">
+           <input type="hidden" id="plankind" value="1"/>
+           <input type="hidden" id="thpricew" value="50"/>
+           <input type="range" min="1" max="100" value="{{isset($hashPower)?$hashPower:$settings->available_th/2}}" name="hash" class="slider" id="myRange"/>
            <div class="buy-hashpower-text" style="font-weight: 700;padding-bottom:10px">
               <p style="color:black">{{__("Hash allocation cost :")}} <span id="cost"></span> {{__("dollar")}}
                <span id="doReferalCode" style="animation-iteration-count:infinite;padding:2px"></span>
@@ -202,17 +202,17 @@
                 @elseif($settings->zarrin_active == 1)
                     <form onsubmit="order()" class="dashboard-page" method="post" action="{{route('ZarrinPalPaying',['locale'=>session('locale')])}}">
                 @endif
-                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                        <input type="hidden" name="_token" value="{{csrf_token()}}"/>
               @if($apply_discount == 1)
 
-                      <input id="discount" type="hidden" name="discount" value="{{$discount}}">
+                      <input id="discount" type="hidden" name="discount" value="{{$discount}}"/>
 
               @else
-                      <input id="discount" type="hidden" name="discount" value="0">
+                      <input id="discount" type="hidden" name="discount" value="0"/>
               @endif
-                <input id='hiddenCodeValue' type="hidden" name="code" style="margin-top:5px" value="{{$AppliedCode}}" >
-                <input type="range" hidden min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="hiddenRange">
-                    <input type="hidden" name="plan" value="2" id="planType">
+                <input id='hiddenCodeValue' type="hidden" name="code" style="margin-top:5px" value="{{$AppliedCode}}" />
+                <input type="range" hidden min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="hiddenRange"/>
+                    <input type="hidden" name="plan" value="2" id="planType"/>
                 <button id="orderBtn" class="pandel-button" type="submit">{{__("Order")}}</button>
                     </form>
         @else

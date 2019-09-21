@@ -47,7 +47,7 @@
   
     <script type="text/javascript">
         if(screen.width<920) {
-           $('.header-desktop').hide(); 
+           $('.header-desktop').hide();
         }
     </script>
  </body>

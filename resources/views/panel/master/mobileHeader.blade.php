@@ -32,7 +32,7 @@
                             <a href="{{route('contact',['locale'=>App::getLocale()])}}">
                                 <img src="{{URL::asset('img/contact.svg')}}">{{__("Contact")}}</a>
                         </li>
-<!-- 
+<!--
                         <li class="{{Request::route()->getName() == 'tutorials'?'active has-sub':null}}">
                             <a href="{{route('tutorials',['locale'=>App::getLocale()])}}">
                                 <i class="far fa-check-square"></i>آموزش ها</a>

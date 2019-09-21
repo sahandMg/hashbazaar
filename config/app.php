@@ -165,7 +165,7 @@ return [
         Delatbabel\Elocrypt\ElocryptServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Jenssegers\Agent\AgentServiceProvider::class,
-
+        RenatoMarinho\LaravelPageSpeed\ServiceProvider::class,
         /*
          * Package Service Providers...
          */

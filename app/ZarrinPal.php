@@ -232,14 +232,14 @@ class ZarrinPal
         }
 
         Mail::send('email.paymentConfirmed', ['hashPower' => $hashPower, 'trans' => $trans], function ($message) use ($user) {
-            $message->from('Admin@HashBazaar');
+            $message->from(env('Admin_Mail'));
             $message->to($user->email);
             $message->subject('Payment Confirmed');
         });
 
         Mail::send('email.newTrans', [], function ($message) use ($user) {
-            $message->from('Admin@HashBazaar');
-            $message->to('Admin@HashBazaar');
+            $message->from(env('Admin_Mail'));
+            $message->to(env('Admin_Mail'));
             $message->subject('New Payment');
         });
     }

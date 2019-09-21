@@ -185,12 +185,13 @@
               </p>
 
 {{--              @if(in_array('2',$planIds))--}}
-                    <p class="planClassic" style="color:black">{{__('Maintenance fee')}}:  {{ round($settings->maintenance_fee_per_th_per_day*$settings->usd_toman)}} تومان {{__('dollar per Th/day')}}</p>
+                    <!-- <p class="planClassic" style="color:black">{{__('Maintenance fee')}}:  {{ round($settings->maintenance_fee_per_th_per_day*$settings->usd_toman)}} تومان {{__('dollar per Th/day')}}</p> -->
+                    <p class="planClassic" style="color:black">{{__('Maintenance fee')}}: 30 درصد از درآمد کسر می شود. </p>
               {{--@endif--}}
               <p class="planClassicZero" style="color:black">هزینه نگهداری: 0 تومان برای هر روز به ازای هر تراهش</p>
               <small style="color: #707070;">{{__("(include all electricity, cooling, development, and servicing costs )")}}</small>
-              <p style="color:black">{{__('Income : At this time We predict')}} {{$settings->bitcoin_income_per_month_per_th}} {{__('BTC/month per Th')}}</p>
-              <small  style="color: #707070;">{{__("(May be changed depends on bitcoin price and bitcoin network difficulty)")}}</small>
+              <!-- <p style="color:black">{{__('Income : At this time We predict')}} {{$settings->bitcoin_income_per_month_per_th}} {{__('BTC/month per Th')}}</p>
+              <small  style="color: #707070;">{{__("(May be changed depends on bitcoin price and bitcoin network difficulty)")}}</small> -->
             </div>
             <!-- <div id="referralDiv">
                  <label id="referralLabel" for="referralCode">کد ارجاع:</label>

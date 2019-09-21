@@ -109,10 +109,10 @@
     <!-- changePassword -->
      <div class="text-center" id="changePassword">
         <form onsubmit="submitForm(event)"  name="profile" action="{{route('setting',['locale'=>session('locale')])}}" method="post">
-
+             
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <legend>{{__("Change Password")}}</legend>
-
+             @include('formError')
             <!-- <label>{{__("Current Password")}}</label> -->
             <input required class="input-borderBottom text-center my-2" type="password" name="password" placeholder="{{__("Current Password")}}"> 
             
@@ -142,12 +142,8 @@
         $('#plankind').val(1); // one for plan classic
 
        $('#changePasswordTab').click(function () {
-         console.log("planClassicBtn");
-         $('#changePassword').show();
-         $('#wallet').hide();
-         $('#changePasswordTab').addClass('active-tab');
-         $('#walletTab').removeClass('active-tab');
-      });
+         passwordTab();
+       });
 
       $('#walletTab').click(function () {
         console.log("planClassicZeroBtn");
@@ -156,6 +152,22 @@
         $('#walletTab').addClass('active-tab');
         $('#changePasswordTab').removeClass('active-tab');
       });
+
+      function passwordTab() {
+        console.log("planClassicBtn");
+         $('#changePassword').show();
+         $('#wallet').hide();
+         $('#changePasswordTab').addClass('active-tab');
+         $('#walletTab').removeClass('active-tab');
+      }
 </script>
+@if(count($errors->all()) > 0 )
+<script type="text/javascript">
+         $('#changePassword').show();
+         $('#wallet').hide();
+         $('#changePasswordTab').addClass('active-tab');
+         $('#walletTab').removeClass('active-tab');
+</script>
+@endif
 <br/><br/><br/>
 @endsection

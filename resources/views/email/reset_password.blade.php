@@ -131,7 +131,7 @@
     <header>
         <div class="logo-header"><img src="{{asset('img/Logo_header.svg')}}" alt="logo_header"></div>
     </header>
-    <div class="container">
+    <div class="container" style="direction: rtl">
         @if(\Illuminate\Support\Facades\Config::get('app.locale') == 'fa')
 
             <h1>بازیابی کلمه عبور</h1>

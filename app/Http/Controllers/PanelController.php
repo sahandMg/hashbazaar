@@ -298,9 +298,10 @@ class PanelController extends Controller
                 ]);
                 $user->update(['password' => bcrypt($input['newpass'])]);
             }
-            return redirect()->back()->with(['message'=>'Password changed']);
+            return redirect()->back()->with(['message'=>'کلمه عبور بروزرسانی شد']);
         }else{
-            return redirect()->back()->with(['error'=>'current password is wrong']);
+
+            return redirect()->back()->with(['error'=>'کلمه عبور فعلی نادرست است']);
         }
 
     }

@@ -235,13 +235,15 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
     Route::get('received/{orderID?}', 'PaymentController@checkPaymentReceived')->name('checkPaymentReceived');
 
-    Route::get('payment/canceled/{transid?}', 'PaymentController@PaymentCanceled')->name('PaymentCanceled')->middleware('auth');
+    Route::get('payment/canceled/{transid?}', 'PaymentController@PaymentCanceled')->name('PaymentCanceled')->middleware('auth:user');
 
-    Route::get('payment/success', 'PaymentController@PaymentSuccess')->name('PaymentSuccess')->middleware('auth');
+    Route::get('payment/success', 'PaymentController@PaymentSuccess')->name('PaymentSuccess')->middleware('auth:user');
 
     Route::get('wallet-redirect', 'PageController@RedirectWallet')->name('RedirectWallet');
 
     Route::get('zarrin/callback', 'PaymentController@ZarrinCallback')->name('ZarrinCallback');
+
+    Route::post('zarrin/paying', 'PaymentController@ZarrinPalPaying')->name('ZarrinPalPaying')->middleware('auth:user');
 
     Route::post('subscription', 'AuthController@post_subscription')->name('subscription');
 
@@ -251,13 +253,11 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
     Route::post('password-reset', 'AuthController@post_passwordReset')->name('passwordReset');
 
-    Route::post('paystar/paying', 'PaymentController@PaystarPaying')->name('PaystarPaying')->middleware('auth');
+    Route::post('paystar/paying', 'PaymentController@PaystarPaying')->name('PaystarPaying')->middleware('auth:user');
 
     Route::post('message', 'PageController@message')->name('message');
 
-    Route::post('zarrin/paying', 'PaymentController@ZarrinPalPaying')->name('ZarrinPalPaying')->middleware('auth');
-
-    Route::post('payment/test', 'PaymentController@TestPayment')->name('TestPayment')->middleware('auth');
+    Route::post('payment/test', 'PaymentController@TestPayment')->name('TestPayment')->middleware('auth:user');
 
 
 

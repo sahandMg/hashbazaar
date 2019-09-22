@@ -146,7 +146,6 @@ class ZarrinPal
                 return redirect()->route('PaymentSuccess',['locale'=>App::getLocale()]);
 
             } else {
-
                 return redirect()->route('PaymentCanceled', ['locale'=>App::getLocale(),'transid' => $trans->code]);
             }
         }

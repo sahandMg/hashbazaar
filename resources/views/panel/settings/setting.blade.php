@@ -112,6 +112,8 @@
              
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <legend>{{__("Change Password")}}</legend>
+             @include('sessionError')
+             @include('formMessage')
              @include('formError')
             <!-- <label>{{__("Current Password")}}</label> -->
             <input required class="input-borderBottom text-center my-2" type="password" name="password" placeholder="{{__("Current Password")}}"> 
@@ -161,7 +163,7 @@
          $('#walletTab').removeClass('active-tab');
       }
 </script>
-@if(count($errors->all()) > 0 )
+@if(session()->has('error') || session()->has('message') || count($errors->all())>0 )
 <script type="text/javascript">
          $('#changePassword').show();
          $('#wallet').hide();

@@ -274,13 +274,13 @@ class AuthController extends Controller
 
             $this->validate($request,[
                 'email'=> 'required|email',
-                'password'=>'required|min:6',
+//                'password'=>'required|min:6',
                 'captcha'=>'required'
             ]);
         }else{
             $this->validate($request,[
                 'email'=> 'required|email',
-                'password'=>'required|min:6',
+//                'password'=>'required|min:6',
             ]);
         }
 
@@ -317,7 +317,7 @@ class AuthController extends Controller
                 }
         }else{
 
-            return redirect()->back()->with(['error'=>'Wrong email or password']);
+            return redirect()->back()->with(['error'=>'کلمه عبور یا ایمیل اشتباه است']);
         }
 
     }
@@ -441,7 +441,7 @@ class AuthController extends Controller
             $message->subject ('Password Reset');
         });
 
-        return redirect()->route('login',['locale'=>session('locale')])->with(['message'=>'An Email with a new password has been sent to your email address']);
+        return redirect()->route('login',['locale'=>session('locale')])->with(['message'=>'یک ایمیل به همراه کلمه عبور جدید برای شما ارسال شد ']);
 
     }
 

@@ -25,7 +25,7 @@
             }
         }
 ?>
-<div class="container posts">
+<div class="container posts" style="direction: rtl;">
   <div class="row">
         @foreach($posts as $key => $post)
          <div class="col-md-4 col-sm-6">

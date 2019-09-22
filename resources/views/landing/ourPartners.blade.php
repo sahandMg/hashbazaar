@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-4 col-sm-12">
 
-                <img src="img/farabi_icon.png"  />
+                <img src="{{URL::asset('img/farabi_icon.png')}}"  />
                 <!-- <p >شتاب دهنده فارابی</p> -->
             </div>
             <div class="col-md-4 col-sm-12">

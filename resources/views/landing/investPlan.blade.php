@@ -21,7 +21,7 @@
                 <h4 class="text-center mb-2">ماینینگ ابری بیت کوین</h4>
                 <h5 class="text-center mb-2">طرح کلاسیک</h5>
                 <div class="p-3" style="background-color: #ff9100;color: white">
-                  <h5 class="text-center"><strong>{{$settings->usd_toman * $settings->usd_per_hash}} تومان</strong></h6>
+                  <h5 class="text-center"><strong>{{env('hash_toman_classic')}} تومان</strong></h6>
                 </div>
                 <h6 class="text-center mt-2">برای هر تراهش</h6>
                 <!-- <p class="text-center">1 تراهش = </p> -->
@@ -29,19 +29,19 @@
                 <h6 class="text-center mb-2"><a href="#meitenanceFee" class="meitenanceFeeClick" style="color: #ff9100;">هزینه نگهداری</a></h6>
                 <div class="p-3" style="background-color: #ff9100;color: white">
                  <!--  <h5 class="text-center"><strong>{{ round($settings->maintenance_fee_per_th_per_day * $settings->usd_toman)}} تومان</strong></h5> -->
-                 <h5 class="text-center"><strong>30 درصد درآمد</strong></h5>
+                 <h5 class="text-center"><strong>30 درصد درآمد روزانه</strong></h5>
                 </div>
                 <!-- <h6 class="text-center mt-2">برای هر روز به ازای هر تراهش</h6> -->
                 <hr/>
                 <h6 class="text-center mb-2">مدت قرار داد</h6>
                 <!-- <p>:  </p> -->
                 <div class="p-3" style="background-color: #ff9100;color: white">
-                  <h5 class="text-center"><strong>{{$settings->hash_life}} ماه</strong></h5>
+                  <h5 class="text-center"><strong>{{env('contract_time')}} ماه</strong></h5>
                 </div>
                 <hr/>
                 <p class="px-2">برای سفارش بیش از 100 تراهش به قسمت <a href="{{url('/cooperation')}}" style="color: #ff9100;">همکاری سازمانی سایت</a> مراجعه فرمائید.</p>
                 <div class="text-center mt-1 mb-1">
-                  <a class="btn btn-primary round-button-com"   href="{{route('signup',['locale'=>session('locale')]).'?plan=classic'}}" style="width: 120px;background-color: #ff9100;color: white;">خرید</a>
+                  <a class="btn btn-primary round-button-com"   href="{{route('signup',['locale'=>session('locale')])}}" style="width: 120px;background-color: #ff9100;color: white;">خرید</a>
                 </div>
               </div>
             <!-- </div> -->
@@ -50,7 +50,7 @@
                 <h4 class="text-center mb-2">ماینینگ ابری بیت کوین</h4>
                 <h5 class="text-center mb-2">طرح کلاسیک صفر</h5>
                 <div class="p-3" style="background-color: #ff9100;color: white">
-                  <h5 class="text-center"><strong>{{$settings->usd_toman * $settings->usd_per_hash + round($settings->maintenance_fee_per_th_per_day * $settings->usd_toman * env('contractDays'))}} تومان</strong></h6>
+                  <h5 class="text-center"><strong>{{env('hash_toman_zero')}} تومان</strong></h6>
                 </div>
                 <h6 class="text-center mt-2">برای هر تراهش</h6>
                 <hr/>
@@ -62,12 +62,12 @@
                 <hr/>
                 <h6 class="text-center mb-2">مدت قرار داد</h6>
                 <div class="p-3" style="background-color: #ff9100;color: white">
-                  <h5 class="text-center"><strong>{{$settings->hash_life}} ماه</strong></h5>
+                  <h5 class="text-center"><strong>{{env('contract_time')}} ماه</strong></h5>
                 </div>
                 <hr/>
                 <p class="px-2">برای سفارش بیش از 100 تراهش به قسمت <a href="{{url('/cooperation')}}"  style="color: #ff9100;">همکاری سازمانی سایت</a> مراجعه فرمائید.</p>
                 <div class="text-center mt-1 mb-1">
-                  <a class="btn btn-primary round-button-com"  href="{{route('signup',['locale'=>session('locale')]).'?plan=classic0'}}" style="width: 120px;background-color: #ff9100;color: white;">خرید</a>
+                  <a class="btn btn-primary round-button-com"  href="{{route('signup',['locale'=>session('locale')]).''}}" style="width: 120px;background-color: #ff9100;color: white;">خرید</a>
                 </div>
               </div>
             <!-- </div> -->

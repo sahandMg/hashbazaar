@@ -2,7 +2,7 @@
         <div class="row">
             <div class="col-md-4 col-sm-12 text-center pb-4">
                 <!-- <h5 class="text-center">scalability</h5> -->
-                <img src="img/8Asset 2.svg"  />
+                <img src="img/8Asset.svg"  />
                 <p>راه اندازی سریع و شروع ماینینگ</p>
             </div>
             <div class="col-md-4 col-sm-12 text-center pb-4">

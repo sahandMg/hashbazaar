@@ -128,7 +128,7 @@ class PanelController extends Controller
         $user->password = $request->password;
         $user->save();
 
-        return redirect()->back()->with(['message'=>'New password has been set!']);
+        return redirect()->back()->with(['message'=>'کلمه عبور جدید ارسال شد']);
 
     }
 
@@ -298,10 +298,10 @@ class PanelController extends Controller
                 ]);
                 $user->update(['password' => bcrypt($input['newpass'])]);
             }
-            return redirect()->back()->with(['message'=>'کلمه عبور بروزرسانی شد']);
+            return redirect()->back()->with(['message'=>'کلمه عبور بروزرسانی شد','tab'=>'second']);
         }else{
 
-            return redirect()->back()->with(['error'=>'کلمه عبور فعلی نادرست است']);
+            return redirect()->back()->with(['error'=>'کلمه عبور فعلی نادرست است','tab'=>'second']);
         }
 
     }
@@ -324,7 +324,7 @@ class PanelController extends Controller
             $wallet->save();
             return redirect()->route('setting',['locale'=>session('locale')]);
         }else{
-            return redirect()->back()->with(['error'=>'You have entered a wallet address before']);
+            return redirect()->back()->with(['error'=>'پیش از این آدرس کیف پول خود را وارد کرده اید','tab'=>'first']);
         }
 
 
@@ -350,7 +350,7 @@ class PanelController extends Controller
                 $message->from(env('Support_Mail'));
                 $message->subject('Confirm new wallet address');
             });
-        return redirect()->back()->with(['message'=>'Check Confirmation Email']);
+        return redirect()->back()->with(['message'=>'جهت بروز رسانی آدرس کیف پول، ایمیل خود را چک کنید','tab'=>'first']);
     }
 
     public function confirmWallet(Request $request){
@@ -366,7 +366,7 @@ class PanelController extends Controller
         $user = $tokenQuery->user;
         $wallet = $user->wallet;
         $wallet->update(['addr'=> $request->address]);
-        return redirect()->back()->with(['message'=>'New wallet address saved']);
+        return redirect()->back()->with(['message'=>'آدرس کیف پول ذخیره شد','tab'=>'first']);
     }
 
     public function referral(){
@@ -400,7 +400,7 @@ class PanelController extends Controller
 
         event(new Contact($data));
 
-        return redirect()->back()->with(['message'=>'Your message has been sent!']);
+        return redirect()->back()->with(['message'=>'پیام شما ارسال شد']);
     }
 
     public function downloadBanner($name = null){

@@ -16,6 +16,9 @@
     <!-- wallet -->
     <div class="text-center" id="wallet">
      @if(!is_null(Auth::guard('user')->user()->wallet))
+         @include('sessionError')
+         @include('formMessage')
+         @include('formError')
       <!--  current wallet -->
       <div id="walletAdress">
         
@@ -49,7 +52,7 @@
 
             </div> -->
                 <button id="changeWalletBtn" type="submit" class="pandel-button">تغییر آدرس</button>
-               
+
         </div><!-- address -->
 
        </div>
@@ -67,9 +70,10 @@
           <h1 class="my-4"><strong>یا</strong></h1>
           <h4 class="text-center" style="color:black">{{__("Submit Your Wallet Address")}}</h4>
           <br/> -->
-         <form onsubmit="submitForm(event)"  id="setting-wallet" class="text-center" method="post" action="{{route('wallet',['locale'=>session('locale')])}}">
+         <form onsubmit="submitForm(event)"  id="setting-wallet" class="text-center" method="post" action="{{route('editWallet',['locale'=>session('locale')])}}">
+
             <input class="text-center" type="hidden" name="_token" value="{{csrf_token()}}">
-            <input required   class="input-borderBottom text-center" type="text" id="textwallet" name="wallet">
+            <input required   class="input-borderBottom text-center" type="text" id="textwallet" name="address">
             <button id="wallet" type="submit" class="pandel-button">{{__("Submit")}}</button>
           </form>
         </div>   
@@ -98,7 +102,10 @@
           <br/>
          <form onsubmit="submitForm(event)"  id="setting-wallet" class="text-center" method="post" action="{{route('wallet',['locale'=>session('locale')])}}">
             <input class="text-center" type="hidden" name="_token" value="{{csrf_token()}}">
-            <input required   class="input-borderBottom text-center" type="text" id="textwallet" name="wallet">
+             @include('sessionError')
+             @include('formMessage')
+             @include('formError')
+             <input required   class="input-borderBottom text-center" type="text" id="textwallet" name="wallet">
             <button id="wallet" type="submit" class="pandel-button">{{__("Submit")}}</button>
           </form>
         </div>   
@@ -163,7 +170,7 @@
          $('#walletTab').removeClass('active-tab');
       }
 </script>
-@if(session()->has('error') || session()->has('message') || count($errors->all())>0 )
+@if(session('tab') == 'second' || count($errors->all())>0 )
 <script type="text/javascript">
          $('#changePassword').show();
          $('#wallet').hide();

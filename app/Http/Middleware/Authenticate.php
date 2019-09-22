@@ -14,7 +14,6 @@ class Authenticate extends Middleware
      */
     protected function redirectTo($request)
     {
-        dd(\Auth::guard('user')->check());
         if (! $request->expectsJson()) {
             return route('login',['locale'=>session('locale')]);
         }

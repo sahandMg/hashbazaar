@@ -28,14 +28,15 @@
                 <hr/>
                 <h6 class="text-center mb-2"><a href="#meitenanceFee" class="meitenanceFeeClick" style="color: #ff9100;">هزینه نگهداری</a></h6>
                 <div class="p-3" style="background-color: #ff9100;color: white">
-                  <h5 class="text-center"><strong>{{ round($settings->maintenance_fee_per_th_per_day * $settings->usd_toman)}} تومان</strong></h5>
+                 <!--  <h5 class="text-center"><strong>{{ round($settings->maintenance_fee_per_th_per_day * $settings->usd_toman)}} تومان</strong></h5> -->
+                 <h5 class="text-center"><strong>30 درصد درآمد</strong></h5>
                 </div>
-                <h6 class="text-center mt-2">برای هر روز به ازای هر تراهش</h6>
+                <!-- <h6 class="text-center mt-2">برای هر روز به ازای هر تراهش</h6> -->
                 <hr/>
                 <h6 class="text-center mb-2">مدت قرار داد</h6>
                 <!-- <p>:  </p> -->
                 <div class="p-3" style="background-color: #ff9100;color: white">
-                  <h5 class="text-center"><strong>{{$settings->hash_life}} سال</strong></h5>
+                  <h5 class="text-center"><strong>{{$settings->hash_life}} ماه</strong></h5>
                 </div>
                 <hr/>
                 <p class="px-2">برای سفارش بیش از 100 تراهش به قسمت <a href="{{url('/cooperation')}}" style="color: #ff9100;">همکاری سازمانی سایت</a> مراجعه فرمائید.</p>
@@ -57,11 +58,11 @@
                 <div class="p-3" style="background-color: #ff9100;color: white">
                   <h5 class="text-center"><strong>صفر تومان</strong></h5>
                 </div>
-                <h6 class="text-center mt-2">برای هر روز به ازای هر تراهش</h6>
+                <!-- <h6 class="text-center mt-2">برای هر روز به ازای هر تراهش</h6> -->
                 <hr/>
                 <h6 class="text-center mb-2">مدت قرار داد</h6>
                 <div class="p-3" style="background-color: #ff9100;color: white">
-                  <h5 class="text-center"><strong>{{$settings->hash_life}} سال</strong></h5>
+                  <h5 class="text-center"><strong>{{$settings->hash_life}} ماه</strong></h5>
                 </div>
                 <hr/>
                 <p class="px-2">برای سفارش بیش از 100 تراهش به قسمت <a href="{{url('/cooperation')}}"  style="color: #ff9100;">همکاری سازمانی سایت</a> مراجعه فرمائید.</p>

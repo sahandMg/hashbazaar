@@ -133,7 +133,7 @@
 </header>
 <div class="container">
     <h1 style="text-align: center;">آدرس کیف پول شما تغییر یافت</h1>
-    <h5 style="text-align: center;"><a href="{{route('dashboard',['locale'=>session('locale')])}}">بازگشت</a></h5>
+    <h5 style="text-align: center;"><a href="{{route('setting',['locale'=>session('locale')])}}">بازگشت</a></h5>
 </div>
 <footer>
 

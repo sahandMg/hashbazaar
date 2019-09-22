@@ -35,10 +35,12 @@ class ZarrinPal
 
         if($plan == 3){
 
-            $amount = ($settings->usd_per_hash * $hash * (1- $discount)  + env('contractDays') * $settings->maintenance_fee_per_th_per_day) * $dollarPriceInToman;
+//            $amount = ($settings->usd_per_hash * $hash * (1- $discount)  + env('contractDays') * $settings->maintenance_fee_per_th_per_day) * $dollarPriceInToman;
+            $amount = str_replace(',','',env('hash_toman_classic')) * $hash * (1- $discount);
         }else if($plan == 2){
 
-            $amount = $settings->usd_per_hash * $hash * (1- $discount) * $dollarPriceInToman;
+//            $amount = $settings->usd_per_hash * $hash * (1- $discount) * $dollarPriceInToman;
+            $amount = str_replace(',','',env('hash_toman_zero')) * $hash * (1- $discount);
         }
         $referralCode = $this->request['code'];
 

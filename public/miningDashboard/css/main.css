@@ -24,6 +24,9 @@
   .circle-container {
     margin-bottom: 4%;
    }
+   .circle-container h2 {
+     font-size: 25px;
+   }
 }
 
 .progress1 {    border: 1px #ff9100;}
@@ -218,6 +221,7 @@
       }
 
       @media screen and (max-width: 420px) {
+        .btnTab { font-size: 1rem; margin-top: 10px; }
         #referralDiv {
             direction: rtl !important
         }
@@ -288,6 +292,10 @@
 }
 
 @media screen and (max-width: 420px){
+         .title-container h3 {
+            font-size: 22px;
+            padding: 0 4%;
+         }  
          .input-borderBottom {
          	width: 95%;
          }

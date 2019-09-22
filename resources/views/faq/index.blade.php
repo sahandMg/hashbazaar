@@ -122,7 +122,7 @@
                      <h2 class="text-center">{{__("Frequently asked questions")}}</h2>
                      <!-- customerservice-category  category-button one  -->
                     <div class="row">
-                        <div class="col-lg-3 col-md-3 faq-section" id="faqSection1" style="background-color: #e8ad2c;">
+                        <div class="col-lg-3 col-md-3 faq-section" id="faqSection1">
                           <h4>{{__("Bitcoin")}}</h4>
                           <img src="{{URL::asset('img/bitcoin-faq.svg')}}" />
                         </div>
@@ -130,7 +130,7 @@
                            <h4>{{__("Mining")}}</h4>
                            <img src="{{URL::asset('img/mining-faq.svg')}}" />
                         </div>
-                        <div class="col-lg-3 col-md-3 faq-section" id="faqSection3">
+                        <div class="col-lg-3 col-md-3 faq-section" id="faqSection3"  style="background-color: #e8ad2c;">
 
                           <h4>{{__("Hash Bazaar")}}</h4>
                           <img src="{{URL::asset('img/BitcoinWallet.svg')}}" />
@@ -343,7 +343,7 @@
                     </div>
 
                  </div>
-
+                <br/><br/><br/>
                 </div>
                 @include('master.footer')
                 <script>
@@ -354,7 +354,8 @@
                     // jQuery(document).ready(function ($) {
                         $('.faq-answer').hide();
                         $('.faq-customerservice-questions').hide();
-                        $('.faq-questions-section').children().eq(0).show();
+                        $('.faq-questions-section').show();
+                        $('.faq-questions-section').children().eq(2).show();
                          console.log("js run");
                         $('.faq-question').click(function(){
                            console.log(".faq-question");

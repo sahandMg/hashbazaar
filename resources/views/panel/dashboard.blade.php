@@ -71,10 +71,10 @@
     @if(!$hashes->isEmpty())
           <thead>
             <tr style="font-weight:bold">
-              <th>{{__("Hash Power")}}</th>
-              <th>{{__("Started at")}}</th>
-              <th>{{__("Ends at")}}</th>
-              <th>{{__("Remain")}}</th>
+              <th style="min-width: 150px;">{{__("Hash Power")}}</th>
+              <th style="min-width: 150px;">{{__("Started at")}}</th>
+              <th style="min-width: 150px;">{{__("Ends at")}}</th>
+              <th style="min-width: 150px;">{{__("Remain")}}</th>
             </tr>
           </thead>
           <tbody >

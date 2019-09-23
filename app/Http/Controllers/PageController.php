@@ -136,4 +136,9 @@ class PageController extends Controller
         return ['code'=>200,'message'=>$bitCoinPrice->getPrice()];
     }
 
+    public function terms(){
+
+        return view('terms');
+    }
+
 }

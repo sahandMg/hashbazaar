@@ -83,11 +83,14 @@
     }
     .navbar-item {
         color: black;
-        padding: 16px 16px;
+        
         margin-left: 5px;
     }
     .navbar-item a{
         color: white;
+        display: block;
+        padding: 16px 16px;
+        height: 100%; /* Missing from other answers */
     }
     .navbar-item:hover {
         background-color: #ff9100;

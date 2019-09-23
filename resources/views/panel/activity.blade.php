@@ -23,24 +23,26 @@ foreach ($hashes as $key=> $hash){
 
 ?>
 
-<div  class="panel-container activity-container" style="direction: rtl;">
+<!-- <div  class="panel-container activity-container" style="direction: rtl;"> -->
+<div class="container text-center" style="direction: rtl;">
     <!-- <h2 class="text-center">{{__("Recent Activities")}}</h2> -->
-    <div class="purchases">
+    <!-- <div class="container"> -->
      <div class="d-flex justify-content-center  title-container">
        <hr class="flex-grow-1" />
        <h3 class="px-2">{{__("Purchases")}}</h3>
        <hr class="flex-grow-1" />
      </div>
-    <br>
-      <div class="container pur"  id="activity-page_secondList">
-        <table class="table custom-table" style="color: black;">
+
+    <!-- <br> -->
+      <div class="table-responsive"  id="activity-page_secondList">
+        <table class="table" style="color: black;">
                 @if(!$hashes->isEmpty())
               <thead>
-                <tr  style="height:70px !important">
-                    <th>{{__("Hash Power")}}</th>
-                    <th>{{__("Started at")}}</th>
-                    <th>{{__("Ends at")}}</th>
-                    <th>{{__("Remain")}}</th>
+                <tr>
+                    <th style="min-width: 150px;">{{__("Hash Power")}}</th>
+                    <th style="min-width: 150px;">{{__("Started at")}}</th>
+                    <th style="min-width: 150px;">{{__("Ends at")}}</th>
+                    <th style="min-width: 200px;">{{__("Remain")}}</th>
                  </tr>
                </thead>
                <tbody>
@@ -121,7 +123,7 @@ foreach ($hashes as $key=> $hash){
             </table>
         </div>
 
-    </div>
+    <!-- </div> -->
 
     <div class="purchases">
       <div class="d-flex justify-content-center  title-container">
@@ -135,23 +137,23 @@ foreach ($hashes as $key=> $hash){
                 <table  class="table custom-table" style="color: black;">
                     <thead  style="font-weight:bold">
                     @if(Config::get('app.locale')== 'fa')
-                        <tr  style="height:90px !important">
-                            <th class="Transactions_column"> {{__("TransId")}} </th>
-                            <th class="Transactions_column"> {{__("Date")}} </th>
-                            <th class="Transactions_column"> مبلغ </th>
-                            <th class="Transactions_column">{{__("Status")}}</th>
-                            <th class="Transactions_column">{{__("in/out")}}</th>
+                        <tr>
+                            <th class="Transactions_column" style="min-width: 150px;"> {{__("TransId")}} </th>
+                            <th class="Transactions_column" style="min-width: 150px;"> {{__("Date")}} </th>
+                            <th class="Transactions_column" style="min-width: 150px;"> مبلغ </th>
+                            <th class="Transactions_column" style="min-width: 150px;">{{__("Status")}}</th>
+                            <th class="Transactions_column" style="min-width: 150px;">{{__("in/out")}}</th>
 
                         </tr>
                     @else
 
-                        <tr  style="height:90px !important">
-                            <th class="Transactions_column"> {{__("TransId")}} </th>
-                            <th class="Transactions_column"> {{__("Date")}} </th>
-                            <th class="Transactions_column"> BTC </th>
-                            <th class="Transactions_column">{{__("Address")}}</th>
-                            <th class="Transactions_column">{{__("Status")}}</th>
-                            <th class="Transactions_column">{{__("in/out")}}</th>
+                        <tr>
+                            <th class="Transactions_column" style="min-width: 150px;"> {{__("TransId")}} </th>
+                            <th class="Transactions_column" style="min-width: 150px;"> {{__("Date")}} </th>
+                            <th class="Transactions_column" style="min-width: 150px;"> BTC </th>
+                            <th class="Transactions_column" style="min-width: 150px;">{{__("Address")}}</th>
+                            <th class="Transactions_column" style="min-width: 150px;">{{__("Status")}}</th>
+                            <th class="Transactions_column" style="min-width: 150px;">{{__("in/out")}}</th>
 
                         </tr>
                     @endif

@@ -21,7 +21,7 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 
-				<form method="post" action="{{route('signup',['locale'=>session('locale')])}}" class="login100-form validate-form p-l-55 p-r-55 p-t-148">
+				<form method="post" action="{{route('signup',['locale'=>session('locale')])}}" class="login100-form validate-form p-t-148" style="padding-left: 5%;padding-right: 5%;">
 
 					<ul>
 						@foreach($errors->all() as $error)
@@ -35,33 +35,37 @@
 						{{__("SignUp")}}
 					</span>
 
-					<div class="wrap-input100 validate-input m-b-10" data-validate="Please enter your name">
+					<div class="wrap-input100 validate-input m-b-10" data-validate="لطفا نام کاربری خود را وارد کنید.">
 						<input class="input100 englishFont" pattern='[a-zA-Z0-9 آ ا ب پ ت ث ج چ ح خ د ذ ر ز ژ س ش ص ض ط ظ ع غ ف ق ک گ ل م ن و ه ی]+'  type="text" name="name" placeholder="{{__("Username")}}" value="{{Request::old('name')}}">
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input email m-b-10" data-validate = "Please enter email" >
+					<div class="wrap-input100 validate-input email m-b-10" data-validate = "لطفا ایمیل خود را وارد کنید" >
 						<input class="input100 englishFont" type="email" name="email" placeholder="{{__("Email")}}" value="{{Request::old('email')}}">
 						<span class="focus-input100"></span>
 					</div>
 
-                    <div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
+                    <div class="wrap-input100 validate-input pass m-b-10" data-validate = "لطفا کلمه عبور را وارد کنید">
                             <input class="input100 englishFont" type="password" name="password" placeholder="{{__("Password")}}">
                             <span class="focus-input100"></span>
                     </div>
 
-                    <div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
+                    <div class="wrap-input100 validate-input pass m-b-10" data-validate = "لطفا کلمه عبور را وارد کنید">
                             <input class="input100 englishFont" type="password" name="confirm_password" placeholder="{{__("Confirm password")}}">
                             <span class="focus-input100"></span>
                     </div>
-
+                    <div class="form-check text-center mb-2" style="color: black;direction: rtl;">
+                       <label class="form-check-label">
+                         در صورت ثبت نام، <a href="{{route('terms',['locale'=>session('locale')])}}" required style="color: #ff9100;font-weight: 700;"  target="_blank">شرایط استفاده</a> را خوانده و می پذیرم.
+                       </label>
+                    </div>
 					@if(session('captchaCounter') > 3)
-						<div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
+						<div class="wrap-input100 validate-input pass m-b-10" data-validate = "لطفا کد داخل عکس را وارد کنید.">
 							<input required class="input100" type="text" pattern="[a-zA-Z0-9]+"  name="captcha" placeholder="{{__("Security Code")}}">
 							<span class="focus-input100"></span>
 						</div>
 
-						<div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
+						<div class="wrap-input100 validate-input pass m-b-10">
 							<a onclick="refreshCaptcha(event)" style="cursor: pointer;">{{Captcha::img()}}</a>
 						</div>
 					@endif

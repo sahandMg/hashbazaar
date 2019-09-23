@@ -207,6 +207,9 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
         Route::get('{slug}', 'BlogController@showPost')->name('showPost');
 
     });
+
+    Route::get('terms','PageController@terms')->name('terms');
+
     Route::get('about', 'PageController@aboutUs')->name('aboutUs');
 
     Route::get('affiliate', 'PageController@affiliate')->name('affiliate');

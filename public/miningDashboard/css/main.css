@@ -20,12 +20,25 @@
    }
 }
 
+@media screen and (max-width: 769px){
+  .circle-container {
+    padding: 5vh 0;
+   }
+}
+
 @media screen and (max-width: 421px){
   .circle-container {
     margin-bottom: 4%;
+    padding: 6vh 0;
    }
    .circle-container h2 {
      font-size: 25px;
+   }
+}
+
+@media screen and (max-width: 321px){
+  .circle-container {
+    padding: 5vh 0;
    }
 }
 

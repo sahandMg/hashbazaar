@@ -8,7 +8,7 @@
 @endsection
 @section('content')
 
-  <div class="container about-us-container" >
+  <div class="container about-us-container mb-4" >
   	 <h1 class="text-center">{{__("About us")}}</h1>
   	 <p>{{__("Hash Bazaar is a profitable bazaar for purchasing your favorite amount of hash power.")}}</p>
   	 <p>{{__("It is a Cryptocurrency cloud mining service that enables you to become a miner in our mining farms without facing complex Challenges like Shipping costs, custom duties, delivery times, hardware setup, software setup, and considerable loud voice of mining and generated heat, hardware crash, slow down or completely breaks.")}}</p>
@@ -16,6 +16,7 @@
   	<!--  <p>{{__("Your share of profit from mining is estimated according to some parameters. You can find it from “Hash Bazaar” home page or from your panel. You could join us by purchasing just one therra hash power or more.")}}</p> -->
   	  <p>{{__("We have some advantages about what we are offering you, the most important one is our ROI (Return on investment) suggestion. This profitable plan is made in the places where the electricity cost is low. Since the optimum locations we have considered to set up our mining farms.")}}</p>
   </div>
+  <br/><br/>
   @if(Config::get('app.locale') == 'fa')
     <style type="text/css">
       .about-us-container {direction: rtl;}

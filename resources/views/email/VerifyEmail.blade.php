@@ -135,7 +135,7 @@
 <header>
     <div class="logo-header"><img src="{{asset('img/Logo_header.svg')}}" alt="logo_header"></div>
 </header>
-<div class="container">
+<div class="container" style="text-align: center;">
     @if(\Illuminate\Support\Facades\Config::get('app.locale') == 'fa')
         <h1> به هش بازار خوش آمدید </h1>
         <p style="text-align: center;">با تشکر از عضویت شما در هش بازار. برای فعال سازی حساب خود رو دکمه فعال سازی کلیک کنید</p>

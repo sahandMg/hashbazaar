@@ -223,20 +223,20 @@
                                  </p>
                                 </div>
                             </li>
-                            <li class="faq-question-list">
+                         <!--    <li class="faq-question-list">
                                 <h5 class="faq-question">{{__("What Cryptocurrency cloud mining services are working now?")}}</h5>
                                 <div class="faq-answer">
                                  <p>
                                   {{__("There are many Cryptocurrency cloud mining services working now, like genesis-mining, hashflare and so on.")}}
                                  </p>
                                 </div>
-                            </li>
-                            <li class="faq-question-list">
+                            </li> -->
+                    <!--         <li class="faq-question-list">
                                 <h5 class="faq-question">{{__("What differences are there between the Cryptocurrency cloud mining services?")}}</h5>
                                 <div class="faq-answer">
                                  <p>{{__("They are different from each other in expected return on investment, maintenance fees and reliability.")}}</p>
                                 </div>
-                            </li>
+                            </li> -->
                             <li class="faq-question-list">
                                 <h5 class="faq-question">{{__("Where is “Hash Bazaar”?")}} </h5>
                                 <div class="faq-answer">

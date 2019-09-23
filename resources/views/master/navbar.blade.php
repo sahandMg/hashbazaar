@@ -33,9 +33,9 @@
             <li class="navbar-item">
                 <a href="{{url('/cooperation')}}">همکاری سازمانی</a>
             </li>
-            <li class="navbar-item">
+           <!--  <li class="navbar-item">
                 <a href="https://farmyarapp.ir/landing/">فارم یار</a>
-            </li>
+            </li> -->
             <li class="{{Request::route()->getName() == 'index'?'navbar-item navbar-active':'navbar-item'}}">
                 <a href="{{route('index',['locale'=>session('locale')])}}">{{__('Home')}}<span class="sr-only">(current)</span></a>
             </li>
@@ -59,9 +59,9 @@
             <li class="navbar-item">
                 <a href="{{url('/cooperation')}}">همکاری سازمانی</a>
             </li>
-            <li class="navbar-item">
+          <!--   <li class="navbar-item">
                 <a href="https://farmyarapp.ir/landing/">فارم یار</a>
-            </li>
+            </li> -->
         </ul>
     </div>
 </header>

@@ -25,7 +25,7 @@
 
 					<ul>
 						@foreach($errors->all() as $error)
-							<li style="color: red;margin-bottom: 1%;">{{$error}}</li>
+							<li style=" color: red;margin-bottom: 1%; direction: rtl">{{$error}}</li>
 						@endforeach
 					</ul>
 				<input type="hidden" name="_token" value="{{csrf_token()}}">

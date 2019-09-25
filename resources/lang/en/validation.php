@@ -136,13 +136,16 @@ return [
         'newpass' => [
             'required' => 'کلمه عبور جدید را وارد کنید'
         ],
-        'confirm' => [
+        'confirm_password' => [
             'required' => 'تایید کلمه عبور را وارد کنید',
             'same'  => 'کلمه عبور نادرست تکرار شده'
         ],
         'captcha' => [
             'required' => 'کد امنیتی را وارد کنید',
             'captcha' => 'کد امنیتی نادرست است'
+        ],
+        'email' => [
+            'unique'=>'آدرس ایمیل قبلا ثبت شده'
         ]
     ],
 
@@ -157,6 +160,8 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'email'=>'ایمیل'
+    ],
 
 ];

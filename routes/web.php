@@ -239,7 +239,7 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
     Route::get('wallet-redirect', 'PageController@RedirectWallet')->name('RedirectWallet');
 
-    Route::get('zarrin/callback', 'PaymentController@ZarrinCallback')->name('ZarrinCallback');
+    Route::get('zarrin/callback', 'PaymentController@ZarrinCallback')->name('ZarrinCallback')->middleware('checkLogin');
 
     Route::post('zarrin/paying', 'PaymentController@ZarrinPalPaying')->name('ZarrinPalPaying')->middleware('auth:user');
 

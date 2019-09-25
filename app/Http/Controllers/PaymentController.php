@@ -77,12 +77,6 @@ class PaymentController extends Controller
 
     public function ZarrinCallback(Request $request){
 
-        $query = VerifyUser::where('token',$request->token)->first();
-        if(is_null($query)){
-            return 'شناسه نادرست';
-        }else{
-            Auth::guard('user')->login($query->user);
-        }
 
         $zarrin = new ZarrinPal($request);
 

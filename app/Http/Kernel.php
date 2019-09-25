@@ -65,8 +65,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \App\Http\Middleware\AuthMiddleware::class,
-//        'auth' => \App\Http\Middleware\Authenticate::class,
+//        'auth' => \App\Http\Middleware\AuthMiddleware::class,
+        'auth' => \App\Http\Middleware\Authenticate::class,
         'remoteAuth' => \App\Http\Middleware\remoteAuthMiddleware::class,
         'block' =>  \App\Http\Middleware\BlockMiddleware::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
@@ -79,6 +79,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'admin'  => \App\Http\Middleware\AdminMiddleware::class,
         'lang'=>\App\Http\Middleware\LanguageMiddleware::class,
+        'checkLogin'=>\App\Http\Middleware\checkLogin::class,
 //        'verifiedEmail' => \App\Http\Middleware\EmailVerificationMiddleware::class,
     ];
 

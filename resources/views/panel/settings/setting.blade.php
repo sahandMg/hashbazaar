@@ -100,12 +100,12 @@
           <h1 class="my-4"><strong>یا</strong></h1>
           <h4 class="text-center" style="color:black">{{__("Submit Your Wallet Address")}}</h4>
           <br/>
-         <form onsubmit="submitForm(event)"  id="setting-wallet" class="text-center" method="post" action="{{route('wallet',['locale'=>session('locale')])}}">
+         <form onsubmit="submitForm(event)"  id="setting-wallet" class="text-center" method="post" action="{{route('editWallet',['locale'=>session('locale')])}}">
             <input class="text-center" type="hidden" name="_token" value="{{csrf_token()}}">
              @include('sessionError')
              @include('formMessage')
              @include('formError')
-             <input required   class="input-borderBottom text-center" type="text" id="textwallet" name="wallet">
+             <input required   class="input-borderBottom text-center" type="text" id="textwallet" name="address">
             <button id="wallet" type="submit" class="pandel-button">{{__("Submit")}}</button>
           </form>
         </div>   

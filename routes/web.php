@@ -76,8 +76,6 @@ Route::get('qr',function(){
 
 Route::get('test',function (){
 
-    session()->put('_token','sahand');
-    dd(session()->all());
 
 });
 

@@ -33,21 +33,21 @@ class ZarrinPal
         $hash = $this->request['hash'];
         $plan = $this->request['plan'];
 
-        if($plan == 3){
+        if($plan == 2){
 
 //            $amount = ($settings->usd_per_hash * $hash * (1- $discount)  + env('contractDays') * $settings->maintenance_fee_per_th_per_day) * $dollarPriceInToman;
-            $amount = str_replace(',','',env('hash_toman_zero')) * $hash * (1- $discount);
-        }else if($plan == 2){
+            $amount = str_replace(',','',env('hash_toman_classic')) * $hash * (1- $discount);
+        }else if($plan == 3){
 
 //            $amount = $settings->usd_per_hash * $hash * (1- $discount) * $dollarPriceInToman;
-            $amount = str_replace(',','',env('hash_toman_classic')) * $hash * (1- $discount);
+            $amount = str_replace(',','',env('hash_toman_zero')) * $hash * (1- $discount);
         }
         $referralCode = $this->request['code'];
 
         $data = array('MerchantID' => $settings->zarrin_pin,
             'Amount' => $amount,
             'Email' => Auth::guard('user')->user()->email,
-            'CallbackURL' => 'https://hashbazaar.com/fa/zarrin/callback',
+            'CallbackURL' => 'https://hashbazaar.com/fa/zarrin/callback?token='.Auth::guard('user')->user()->verifyUser->token,
             'Description' => 'هش بازار، استخراج ابری بیتکوین');
         $jsonData = json_encode($data);
         $ch = curl_init('https://www.zarinpal.com/pg/rest/WebGate/PaymentRequest.json');
@@ -178,7 +178,8 @@ class ZarrinPal
         $referralQuery = Referral::where('code', $referralCode)->first();
         DB::connection('mysql')->table('plan_user')->insert([
             'user_id'=> Auth::guard('user')->id(),
-            'plan_id'=> Session::get('planId')
+            'plan_id'=> Session::get('planId'),
+            'created_at'=>Carbon::now()
         ]);
         // if any referral code used for hash owner purchasing
         if (!is_null($referralCode)) {

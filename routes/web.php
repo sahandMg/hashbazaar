@@ -76,13 +76,8 @@ Route::get('qr',function(){
 
 Route::get('test',function (){
 
-    $bits = BitHash::all();
-    foreach ($bits as $bit){
-        DB::connection('mysql')->table('plan_user')->insert([
-            'user_id'=>$bit->user_id,
-            'plan_id'=>3
-        ]);
-    }
+    session()->put('_token','sahand');
+    dd(session()->all());
 
 });
 

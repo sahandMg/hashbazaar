@@ -22,6 +22,7 @@ use App\Setting;
 use App\Sharing;
 use App\Transaction;
 use App\User;
+use App\VerifyUser;
 use App\ZarrinPal;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -75,6 +76,13 @@ class PaymentController extends Controller
     // paystar sends transactionID
 
     public function ZarrinCallback(Request $request){
+
+        $query = VerifyUser::where('token',$request->token)->first();
+        if(is_null($query)){
+            return 'شناسه نادرست';
+        }else{
+            Auth::guard('user')->login($query->user);
+        }
 
         $zarrin = new ZarrinPal($request);
 

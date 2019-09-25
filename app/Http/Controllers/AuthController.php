@@ -284,6 +284,24 @@ class AuthController extends Controller
             ]);
         }
 
+
+//        $user = User::where([
+//            ['email' , '=' , $request->email]
+//        ])->first();
+//        if (Hash::check($request->password, $user->password)){
+//            auth()->login($user);
+//            if(!is_null($request->hashPower)){
+//                $hashPower = $request->hashPower;
+//                return redirect()->route('dashboard',['locale'=>session('locale')])->with(['hashPower'=>$hashPower]);
+//            }
+//
+//            return redirect()->route('dashboard',['locale'=>session('locale')]);
+//
+//
+//        }
+//
+//        return redirect()->back()->with(['error'=>'کلمه عبور یا ایمیل اشتباه است']);
+
         if(Auth::guard('user')->attempt(['email'=>$request->email,'password'=>$request->password],true)){
 
             if(Auth::guard('user')->user()->verified == 0){

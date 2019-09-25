@@ -152,7 +152,7 @@
       </tbody>
 
       @else
-        <h6 id="no-hash" > {{__("NO Hash History")}}</h6>
+        <h6 id="no-hash" class="text-center" > {{__("NO Hash History")}}</h6>
       @endif
 
     </table>

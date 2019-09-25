@@ -96,7 +96,7 @@
 
         <!-- enter wallet -->
         <div id="enterWallet">
-          <h4>کیف پول ندارید؟ <a href="https://blockchain.info/">اینجا</a> کلیک کنید.</h4>
+          <h4>کیف پول ندارید؟ <a href="https://blockchain.info/" target="_blank">اینجا</a> کلیک کنید.</h4>
           <h1 class="my-4"><strong>یا</strong></h1>
           <h4 class="text-center" style="color:black">{{__("Submit Your Wallet Address")}}</h4>
           <br/>

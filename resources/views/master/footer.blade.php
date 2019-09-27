@@ -80,7 +80,7 @@
               <h5 class="text-center my-1">تماس با ما</h5> 
               <div class="tell">
                    <a href="tel:+989371869568" style="color:white; cursor:pointer">
-                         0937 186 9568 &nbsp;<i class="fa fa-phone" aria-hidden="true"></i> 
+                         021-22410477 &nbsp;<i class="fa fa-phone" aria-hidden="true"></i> 
                    </a>
               </div>
               <div class="" style="direction:rtl">

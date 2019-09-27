@@ -49,6 +49,10 @@ class User extends Authenticatable implements MustVerifyEmail
 
         return $this->hasMany(Antpool::class,'remote_id');
     }
+    public function shares(){
+
+        return $this->hasMany(UserShare::class,'user_id');
+    }
     /**
      * The attributes that should be hidden for arrays.
      *

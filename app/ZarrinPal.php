@@ -181,6 +181,12 @@ class ZarrinPal
             'plan_id'=> Session::get('planId'),
             'created_at'=>Carbon::now()
         ]);
+        DB::connection('mysql')->table('user_shares')->insert([
+            'user_id'=> Auth::guard('user')->id(),
+            'plan_id'=> Session::get('planId'),
+            'share'=> 30,
+            'created_at'=>Carbon::now()
+        ]);
         // if any referral code used for hash owner purchasing
         if (!is_null($referralCode)) {
 

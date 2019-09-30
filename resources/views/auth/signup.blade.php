@@ -23,7 +23,7 @@
 
 				<form method="post" action="{{route('signup',['locale'=>session('locale')])}}" class="login100-form validate-form p-t-148" style="padding-left: 5%;padding-right: 5%;">
 
-					<ul>
+					<ul style="text-align: right;">
 						@foreach($errors->all() as $error)
 							<li style=" color: red;margin-bottom: 1%; direction: rtl">{{$error}}</li>
 						@endforeach

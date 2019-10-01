@@ -183,8 +183,8 @@ class ZarrinPal
         ]);
         DB::connection('mysql')->table('user_shares')->insert([
             'user_id'=> Auth::guard('user')->id(),
-            'plan_id'=> Session::get('planId'),
             'share'=> 30,
+            'code'=>$hashPower->order_id,
             'created_at'=>Carbon::now()
         ]);
         // if any referral code used for hash owner purchasing

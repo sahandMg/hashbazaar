@@ -18,6 +18,9 @@ class CreateUserSharesTable extends Migration
             $table->unsignedInteger('plan_id');
             $table->unsignedInteger('user_id');
             $table->integer('share');
+            $table->string('code');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('plan_id')->references('id')->on('plans')->onDelete('cascade');
             $table->timestamps();
         });
     }

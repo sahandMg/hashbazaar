@@ -75,7 +75,7 @@ class hashRateCheck extends Command
             if(!Cache::has('power_off')){
                 Cache::forever('power_off',0);
             }else{
-                Cache::forever('power_off',1);
+                Cache::forever('power_off',$setting->power_off);
             }
         }
 

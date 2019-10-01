@@ -12,6 +12,7 @@ use App\MiningReport;
 use App\Setting;
 use App\Transaction;
 use App\User;
+use App\UserShare;
 use GuzzleHttp\Client as GuzzleClient;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Cache;
@@ -252,8 +253,14 @@ class UpdateMinings extends Command
             // keep extra mining for hashbazaar
             $portion =  $mainTh / $todayTHash;
             $extraProfit = $miningValue * (1 -  $portion);
-            $profit = 0.3 * $portion * $miningValue;
-
+            $shareObjs = UserShare::all();
+            $profit = 0;
+            foreach ($shareObjs as $shareObj){
+                $userBoughtHash = DB::connection('mysql')->table('bit_hashes')->where('order_id',$shareObj->code)->first()->hash;
+                $userPortion = $userBoughtHash/$mainTh;
+                $profit = $profit + $shareObj->share * $userPortion * $miningValue;
+            }
+//            $profit = 0.3 * $portion * $miningValue;
             $todayProfit = number_format($extraProfit + $profit,8);
             $settings->update(['total_benefit'=> $todayProfit + $settings->total_benefit ]);
             $mining24 = number_format($miningValue * $portion,8);
@@ -261,7 +268,14 @@ class UpdateMinings extends Command
 
             $portion =  $mainTh / $todayTHash;
             $damage = $miningValue * (1 -  $portion);
-            $todayProfit = number_format(0.3 *  $miningValue + $damage,8);
+            $todayProfit = 0;
+            $shareObjs = UserShare::where('plan_id',1)->get();
+            foreach ($shareObjs as $shareObj){
+                $userBoughtHash = DB::connection('mysql')->table('bit_hashes')->where('order_id',$shareObj->code)->first()->hash;
+                $userPortion = $userBoughtHash/$mainTh;
+                $todayProfit = $todayProfit + number_format($shareObj->share * $userPortion * $miningValue + $damage ,8);
+            }
+
             $settings->update(['total_benefit'=> $todayProfit + $settings->total_benefit ]);
             $mining24 = number_format($miningValue * $portion,8);
         }
@@ -299,12 +313,14 @@ class UpdateMinings extends Command
 //                        foreach($plans as $key => $plan){
 
                         if($hashRate->plan->id == 1){
-
-                            $userEarn[$index] = $userPortion * $mining24 * 0.7;
+                                $share = DB::connection('mysql')->table('user_shares')
+                                    ->where('code',$hashRate->order_id)->first()->share;
+                            $userEarn[$index] = $userPortion * $mining24 * (1 - $share);
                         }
                         if($hashRate->plan->id == 2){
-
-                            $maintenance_inBTC = $mining24 * $userPortion * 0.3;
+                            $share = DB::connection('mysql')->table('user_shares')
+                                ->where('code',$hashRate->order_id)->first()->share;
+                            $maintenance_inBTC = $mining24 * $userPortion * $share;
 
                             $userEarn[$index] = $mining24 * $userPortion - $maintenance_inBTC;
                         }
@@ -381,6 +397,6 @@ class UpdateMinings extends Command
             .' میانگین تراهش '. $todayTHash
             . ' سود امروز '.$todayProfit
             . ' سود کل '.number_format($settings->total_benefit,8) ;
-        Sms::dispatch($message);
+//        Sms::dispatch($message);
     }
 }

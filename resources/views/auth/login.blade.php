@@ -18,7 +18,7 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<form onsubmit="submitForm()" method="post" action="{{route('login',['locale'=>session('locale')])}}" class="login100-form validate-form p-l-55 p-r-55 p-t-178">
-				    <ul>
+				    <ul style="text-align: right;">
 						@foreach($errors->all() as $error)
 							<li style="color: red;margin-bottom: 1%;">{{$error}}</li>
 						@endforeach

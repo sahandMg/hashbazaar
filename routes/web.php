@@ -240,6 +240,10 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
     Route::post('zarrin/paying', 'PaymentController@ZarrinPalPaying')->name('ZarrinPalPaying')->middleware('auth:user');
 
+    Route::get('zibal/callback', 'PaymentController@ZibalCallback')->name('ZibalCallback')->middleware('checkLogin');
+
+    Route::post('zibal/paying', 'PaymentController@ZibalPaying')->name('ZibalPaying')->middleware('auth:user');
+
     Route::post('subscription', 'AuthController@post_subscription')->name('subscription');
 
     Route::post('subscribe', 'AuthController@subscribe')->name('subscribe');

@@ -24,6 +24,7 @@ use App\Transaction;
 use App\User;
 use App\VerifyUser;
 use App\ZarrinPal;
+use App\Zibal;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\CryptpBox\lib\Cryptobox;
@@ -81,6 +82,24 @@ class PaymentController extends Controller
         $zarrin = new ZarrinPal($request);
 
         return $zarrin->verify();
+    }
+
+    public function ZibalPaying(Request $request){
+
+        Session::put('planId',$request->plan);
+
+        $zarrin = new Zibal($request);
+
+        $result = $zarrin->create();
+        if($result != 404){
+            $request->session()->save();
+            return redirect()->to('https://gateway.zibal.ir/start/' . $result["trackId"].'/direct');
+        }else{
+            return 'مشکلی در پرداخت پیش آمده';
+        }
+    }
+    public function ZibalCallback(Request $request){
+
     }
 
     public function PaystarPaying(Request $request){

@@ -23,6 +23,8 @@ class CreateTransactionsTable extends Migration
             $table->text('authority')->nullable();
             $table->string('code')->nullable();
             $table->string('checkout')->nullable();
+            $table->string('card_num')->nullable();
+            $table->string('ref_num')->nullable();
             $table->unsignedInteger('user_id')->nullable();
             $table->timestamps();
         });

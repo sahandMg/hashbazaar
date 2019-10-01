@@ -202,6 +202,8 @@
                     <form onsubmit="order()" class="dashboard-page" method="post" action="{{route('PaystarPaying',['locale'=>session('locale')])}}">
                 @elseif($settings->zarrin_active == 1)
                     <form onsubmit="order()" class="dashboard-page" method="post" action="{{route('ZarrinPalPaying',['locale'=>session('locale')])}}">
+                @elseif($settings->zibal_active == 1)
+                            <form onsubmit="order()" class="dashboard-page" method="post" action="{{route('ZibalPaying',['locale'=>session('locale')])}}">
                 @endif
                         <input type="hidden" name="_token" value="{{csrf_token()}}"/>
               @if($apply_discount == 1)

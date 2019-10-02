@@ -441,9 +441,27 @@ class AuthController extends Controller
 
     public function post_passwordReset(Request $request){
 
-        $this->validate($request,[
-            'email'=> 'required|email'
-        ]);
+
+        if(!Session::has('captchaCounter')){
+
+            Session::put('captchaCounter',1);
+        }else{
+
+            Session::put('captchaCounter', Session::get('captchaCounter',1) + 1 );
+        }
+
+        if(Session::get('captchaCounter') > 3){
+
+            $this->validate($request,[
+                'email'=>"required|email",
+                'captcha'=>'required|captcha'
+            ]);
+        }else{
+            $this->validate($request,[
+                'email'=>"required|email"
+            ]);
+        }
+
 
         $user = User::where('email',$request->email)->first();
         if(is_null($user)){
@@ -466,10 +484,9 @@ class AuthController extends Controller
     public function logout(){
 
         Session::flush();
-        while (Auth::guard('user')->check() == true){
 
-            Auth::guard('user')->logout();
-        }
+        Auth::guard('user')->logout();
+
         return redirect()->route('index',['locale'=> App::getLocale()]);
     }
 }

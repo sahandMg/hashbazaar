@@ -10,18 +10,19 @@
 <style type="text/css">
 	input {font-family: Ubuntu-Regular;}
 	a {font-family: Ubuntu-Regular;}
-</style> 
+</style>
 @endif
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
+
+				<div style="text-align: center">
+					@include('formError')
+					@include('sessionError')
+				</div>
+
 				<form method="post" action="{{route('passwordReset',['locale'=>session('locale')])}}" class="login100-form validate-form p-l-55 p-r-55 p-t-178">
-				    <ul>
-						@foreach($errors->all() as $error)
-							<li style="color: red;margin-bottom: 1%;">{{$error}}</li>
-						@endforeach
-						@include('sessionError')
-					</ul>
+
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
 						<span class="login100-form-title">
 						{{__("Reset Password")}}
@@ -35,8 +36,16 @@
                         <input class="input100" name="email" type="email"  required value="{{Request::old('email')}}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{__("Email Address")}}">
 						<span class="focus-input100"></span>
 					</div>
+					@if(session('captchaCounter') > 3)
+					<div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
+						<input class="input100 englishFont" type="text" pattern="[a-zA-Z0-9]+" required name="captcha" placeholder="{{__("Security Code")}}">
+						<span class="focus-input100"></span>
+					</div>
 
-					
+					<div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
+						<a onclick="refreshCaptcha(event)" style="cursor: pointer;">{{Captcha::img()}}</a>
+					</div>
+					@endif
 
 					<div class="container-login100-form-btn p-t-5 p-b-36">
 						<button class="login100-form-btn">
@@ -59,4 +68,14 @@
 	</div>
 
 @include('master.footer')
+
+<script>
+	function refreshCaptcha(e){
+		var element = e;
+		axios.get('captcha-refresh').then(function(response){
+			element.target.src = response.data
+
+		});
+	}
+</script>
 @endsection

@@ -86,6 +86,7 @@ class PaymentController extends Controller
 
     public function ZibalPaying(Request $request){
 
+
         Session::put('planId',$request->plan);
 
         $zarrin = new Zibal($request);
@@ -100,6 +101,9 @@ class PaymentController extends Controller
     }
     public function ZibalCallback(Request $request){
 
+        $zarrin = new Zibal($request);
+
+        return $zarrin->verify();
     }
 
     public function PaystarPaying(Request $request){

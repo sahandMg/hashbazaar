@@ -466,7 +466,10 @@ class AuthController extends Controller
     public function logout(){
 
         Session::flush();
-        Auth::guard('user')->logout();
+        while (Auth::guard('user')->check() == true){
+
+            Auth::guard('user')->logout();
+        }
         return redirect()->route('index',['locale'=> App::getLocale()]);
     }
 }

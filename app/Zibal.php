@@ -36,20 +36,20 @@ class Zibal
         if($plan == 2){
 
 //            $amount = ($settings->usd_per_hash * $hash * (1- $discount)  + env('contractDays') * $settings->maintenance_fee_per_th_per_day) * $dollarPriceInToman;
-            $amount = str_replace(',','',env('hash_toman_classic')) * $hash * (1- $discount);
+            $amount = str_replace(',','',env('hash_toman_classic')) * $hash * (1- $discount) * 10;
         }else if($plan == 3){
 
 //            $amount = $settings->usd_per_hash * $hash * (1- $discount) * $dollarPriceInToman;
-            $amount = str_replace(',','',env('hash_toman_zero')) * $hash * (1- $discount);
+            $amount = str_replace(',','',env('hash_toman_zero')) * $hash * (1- $discount) * 10;
         }
         $referralCode = $this->request['code'];
 
         $data = array(
-            'merchant' => 'zibal',
-//            'merchant' => $settings->zibal_pin,
+//            'merchant' => 'zibal',
+            'merchant' => $settings->zibal_pin,
             'amount' => $amount,
 //            'Email' => Auth::guard('user')->user()->email,
-            'callbackUrl' => 'https://hashbazaar.com/fa/zibal/callback?token='.Auth::guard('user')->user()->verifyUser->token,
+            'callbackUrl' => 'https://hashbazaar.com/fa/zibal/callback?token='.Auth::guard('user')->user()->verifyUser->token.'&plan='.$plan,
             'Description' => 'هش بازار، استخراج ابری بیتکوین');
         $jsonData = json_encode($data);
         $ch = curl_init('https://gateway.zibal.ir/v1/request');
@@ -100,13 +100,12 @@ class Zibal
                 $trans = new Transaction();
                 $trans->code = $hashRecord->order_id;
                 $trans->status = 'unpaid';
-                $trans->amount_toman = $amount;
+                $trans->amount_toman = $amount/10;
                 $trans->user_id = Auth::guard('user')->id();
                 $trans->checkout = 'out';
                 $trans->country = Auth::guard('user')->user()->country;
                 $trans->authority = $result['trackId'];
                 $trans->save();
-
                 return $result;
             } else {
                 return 404;
@@ -126,8 +125,8 @@ class Zibal
         }
         $settings = Setting::first();
 
-        $data = array('merchant' => 'zibal', 'trackId' => $transactionId);
-//        $data = array('merchant' => $settings->zibal_pin, 'trackId' => $transactionId);
+//        $data = array('merchant' => 'zibal', 'trackId' => $transactionId);
+        $data = array('merchant' => $settings->zibal_pin, 'trackId' => $transactionId);
 
         $jsonData = json_encode($data);
         $ch = curl_init('https://gateway.zibal.ir/v1/verify');
@@ -145,16 +144,14 @@ class Zibal
         if ($err) {
             return "cURL Error #:" . $err;
         } else {
-            if ($result['status'] == '100') {
+            if ($result['result'] == '100') {
 
                 $this->ZibalPaymentConfirm($trans,$result);
 
                 return redirect()->route('PaymentSuccess',['locale'=>App::getLocale()]);
 
             } else {
-                $trans->update([
-                    'ref_num'=>$result['refNumber']
-                ]);
+
                 return redirect()->route('PaymentCanceled', ['locale'=>App::getLocale(),'transid' => $trans->code]);
             }
         }
@@ -185,15 +182,17 @@ class Zibal
 //                $referralUser = DB::connection('mysql')->table('expired_codes')->where('user_id',$user->id)->where('used',0)->first();
         $referralCode = $hashPower->referral_code;
         $referralQuery = Referral::where('code', $referralCode)->first();
+
         DB::connection('mysql')->table('plan_user')->insert([
             'user_id'=> Auth::guard('user')->id(),
-            'plan_id'=> Session::get('planId'),
+            'plan_id'=> $this->request->plan,
             'created_at'=>Carbon::now()
         ]);
         DB::connection('mysql')->table('user_shares')->insert([
             'user_id'=> Auth::guard('user')->id(),
             'share'=> 30,
             'code'=>$hashPower->order_id,
+            'plan_id'=> $this->request->plan,
             'created_at'=>Carbon::now()
         ]);
         // if any referral code used for hash owner purchasing

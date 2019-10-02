@@ -31,15 +31,15 @@ class SendEmail
         $data = $event->data;
 
         Mail::send('email.messageMailPage',$data,function($message) use($data){
-            $message->from ($data['email']);
-            $message->to (env('Admin_Mail'));
+            $message->from ('support@hashbazaar.com');
+            $message->to ('info@hashbazaar.com');
             $message->subject ('Message From User');
         });
 
-        Mail::send('email.replyMessageMailPage',$data,function($message) use($data){
-            $message->from (env('Admin_Mail'));
-            $message->to ($data['email']);
-            $message->subject ('Reply From HashBazaar');
-        });
+//        Mail::send('email.replyMessageMailPage',$data,function($message) use($data){
+//            $message->from (env('Support_Mail'));
+//            $message->to ($data['email']);
+//            $message->subject ('Reply From HashBazaar');
+//        });
     }
 }

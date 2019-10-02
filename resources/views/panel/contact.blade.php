@@ -11,6 +11,7 @@
     <div class="container"  onclick="hideMe()">
         <h2 class="panel-header text-center"> {{__("LET US KNOW YOUR QUESTIONS")}}</h2>
         <br/>
+        <div class="text-center" style="direction: rtl;"> @include('formMessage')</div>
         <form class="col-lg-8 col-md-9 col-sm-11 mx-auto" style="direction: rtl;" onsubmit="submitForm()" method="post" action="{{route('contact',['locale'=>session('locale')])}}">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <input type="hidden" name="name" id="Name" value="{{Auth::guard('user')->user()->name}}">

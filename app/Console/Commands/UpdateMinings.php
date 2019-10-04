@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\hashRate;
 use App\Pools\Antpool;
 use App\BitCoinPrice;
 use App\BitHash;
@@ -237,13 +238,21 @@ class UpdateMinings extends Command
         Sms::dispatch($message);
     }
 // use this for regular bitcoin as mining plan
-    private function balances3($f2poolResp){
+    private function balances($f2poolResp){
 
         $settings = Setting::first();
         $instant = new BitCoinPrice();
         $bitCoinPrice = $instant->getPrice();
         $todayTHash = number_format($f2poolResp['hashes_last_day'] / 86400 / pow(10, 12), 3);
         $miningValue = number_format($f2poolResp['value_last_day'], 8);
+        // when miners are off due to tech problems
+        if($miningValue == 0){
+
+            $arr = $this->learning();
+            $miningValue = $arr[1];
+            $todayTHash = $arr[0];
+            $off = 1;
+        }
         if(Cache::get('power_off') == 1){
             $mainTh = $todayTHash;
         }else{
@@ -266,18 +275,31 @@ class UpdateMinings extends Command
             $mining24 = number_format($miningValue * $portion,8);
         }else{
 
-            $portion =  $mainTh / $todayTHash;
-            $damage = $miningValue * (1 -  $portion);
-            $todayProfit = 0;
-            $shareObjs = UserShare::where('plan_id',1)->get();
-            foreach ($shareObjs as $shareObj){
-                $userBoughtHash = DB::connection('mysql')->table('bit_hashes')->where('order_id',$shareObj->code)->first()->hash;
-                $userPortion = $userBoughtHash/$mainTh;
-                $todayProfit = $todayProfit + number_format($shareObj->share * $userPortion * $miningValue + $damage ,8);
+            if(isset($off)){
+
+                $portion =  $mainTh / $todayTHash;
+                $todayProfit = number_format(-$miningValue,8);
+                $settings->update(['total_benefit'=> $todayProfit + $settings->total_benefit ]);
+                $mining24 = number_format($miningValue * $portion,8);
+
+            }else{
+
+                $portion =  $mainTh / $todayTHash;
+                $damage = $miningValue * (1 -  $portion);
+                $todayProfit = 0;
+                $shareObjs = UserShare::where('plan_id',1)->get();
+                foreach ($shareObjs as $shareObj){
+                    $userBoughtHash = DB::connection('mysql')->table('bit_hashes')->where('order_id',$shareObj->code)->first()->hash;
+                    $userPortion = $userBoughtHash/$mainTh;
+                    $todayProfit = $todayProfit + number_format($shareObj->share * $userPortion * $miningValue ,8);
+                }
+                $todayProfit = $todayProfit + $damage;
+
+                $settings->update(['total_benefit'=> $todayProfit + $settings->total_benefit ]);
+                $mining24 = number_format($miningValue * $portion,8);
             }
 
-            $settings->update(['total_benefit'=> $todayProfit + $settings->total_benefit ]);
-            $mining24 = number_format($miningValue * $portion,8);
+
         }
         $users = User::where('block',0)->get();
         foreach ($users as $key => $user ){
@@ -301,7 +323,7 @@ class UpdateMinings extends Command
 //                            $hashRate->update(['remained_day' => $remainedDay]);
 //                            $hashRate->save();
 //                        }
-                        $remainedDay = Carbon::now()->diffInDays(Carbon::parse($hashRate->created_at)->addYears($hashRate->life));
+                        $remainedDay = Carbon::now()->diffInDays(Carbon::parse($hashRate->created_at)->addDays(env('contract_time')));
                         $hashRate->update(['remained_day' => $remainedDay]);
                         $hashRate->save();
                     }
@@ -315,44 +337,44 @@ class UpdateMinings extends Command
                         if($hashRate->plan->id == 1){
                                 $share = DB::connection('mysql')->table('user_shares')
                                     ->where('code',$hashRate->order_id)->first()->share;
-                            $userEarn[$index] = $userPortion * $mining24 * (1 - $share);
+                            $userEarn = $userPortion * $mining24 * (1 - $share);
                         }
                         if($hashRate->plan->id == 2){
                             $share = DB::connection('mysql')->table('user_shares')
                                 ->where('code',$hashRate->order_id)->first()->share;
                             $maintenance_inBTC = $mining24 * $userPortion * $share;
 
-                            $userEarn[$index] = $mining24 * $userPortion - $maintenance_inBTC;
+                            $userEarn= $mining24 * $userPortion - $maintenance_inBTC;
                         }
                         if($hashRate->plan->id == 3 ){
 
-                            $userEarn[$index] = $mining24 * $userPortion;
+                            $userEarn = $mining24 * $userPortion;
                         }
                         if($hashRate->plan->id == 4 ){
 
-                            $userEarn[$index] = $mining24 * $userPortion;
+                            $userEarn = $mining24 * $userPortion;
                         }
 
                         try{
                             $mining = Mining::where('order_id', $hashRate->order_id)->where('block', 0)->first();
                             if (!is_null($mining)) {
                                 if ($mining->block == 0) {
-                                    $userEarn[$index] = number_format($userEarn[$index], 8);
+                                    $userEarn = number_format($userEarn, 8);
                                     $miningReport = new MiningReport();
                                     $miningReport->order_id = $mining->order_id;
-                                    $miningReport->mined_btc = $userEarn[$index];
-                                    $miningReport->mined_usd = $userEarn[$index] * $bitCoinPrice;
+                                    $miningReport->mined_btc = $userEarn;
+                                    $miningReport->mined_usd = $userEarn * $bitCoinPrice;
                                     $miningReport->user_id = $user->id;
                                     $miningReport->created_at = Carbon::now()->subDay(1);
                                     $miningReport->updated_at = Carbon::now()->subDay(1);
                                     $miningReport->save();
-                                    $mining->update(['mined_btc' => $userEarn[$index] + $mining->mined_btc, 'mined_usd' => $mining->mined_usd + $userEarn[$index] * $bitCoinPrice]);
+                                    $mining->update(['mined_btc' => $userEarn + $mining->mined_btc, 'mined_usd' => $mining->mined_usd + $userEarn * $bitCoinPrice]);
                                     $mining->save();
                                     // creating new record in database for tomorrow mining record
                                 }
                             }
                             $total_paid_btc = Transaction::where('user_id', $user->id)->where('status', 'paid')->where('checkout', 'in')->sum('amount_btc');
-                            $user->update(['total_mining' => number_format($user->total_mining + $userEarn[$index],8), 'pending' => number_format($user->total_mining + $userEarn[$index] - $total_paid_btc,8)]);
+                            $user->update(['total_mining' => number_format($user->total_mining + $userEarn,8), 'pending' => number_format($user->total_mining + $userEarn - $total_paid_btc,8)]);
                             $user->save();
                         }catch (\Exception $exception){
 
@@ -367,7 +389,6 @@ class UpdateMinings extends Command
         /*
       * Stores last day hash rate & mined btc + blockchain difficulty & block reward
       */
-
         $url = "https://api-r.bitcoinchain.com/v1/status?_ga=2.23156472.371952348.1559114831-275280855.1559114831";
         $client = new GuzzleClient();
         $promise1 = $client->requestAsync('GET', $url)->then(function (ResponseInterface $response) {
@@ -376,16 +397,27 @@ class UpdateMinings extends Command
         $resp = $promise1->wait();
         $newResp = json_decode($resp, true);
         $hashRate = new \App\hashRate();
-        $hashRate->mined_btc = $miningValue;
-        $hashRate->difficulty = intval($newResp['difficulty'] / (pow(10, 9)));
-        $hashRate->block_reward = $newResp['reward'];
-        $hashRate->hash_rate = $todayTHash;
-        $hashRate->today_benefit = $todayProfit;
-        $hashRate->created_at = Carbon::createFromTimestamp($newResp['time'])->addDay(-1)->toDateTimeString();
-        $hashRate->save();
 
-        $settings->update(['total_mining'=> $settings->total_mining + $miningValue]);
+        if(isset($off)){
+            $hashRate->mined_btc = 0;
+            $hashRate->hash_rate = 0;
+            $hashRate->today_benefit = $todayProfit;
+            $hashRate->difficulty = intval($newResp['difficulty'] / (pow(10, 9)));
+            $hashRate->block_reward = $newResp['reward'];
+            $hashRate->created_at = Carbon::createFromTimestamp($newResp['time'])->addDay(-1)->toDateTimeString();
+            $hashRate->save();
+            $settings->update(['total_mining'=> $settings->total_mining + 0]);
+        }else{
+            $hashRate->mined_btc = $miningValue;
+            $hashRate->difficulty = intval($newResp['difficulty'] / (pow(10, 9)));
+            $hashRate->block_reward = $newResp['reward'];
+            $hashRate->hash_rate = $todayTHash;
+            $hashRate->today_benefit = $todayProfit;
+            $hashRate->created_at = Carbon::createFromTimestamp($newResp['time'])->addDay(-1)->toDateTimeString();
+            $hashRate->save();
+            $settings->update(['total_mining'=> $settings->total_mining + $miningValue]);
 
+        }
 // -------------------------
         // resetting alarm counter and power off check, every day
         Cache::forever('alarmNumber',0);
@@ -400,13 +432,20 @@ class UpdateMinings extends Command
 //        Sms::dispatch($message);
     }
 
-    private function balances($f2poolResp){
+    private function balances4($f2poolResp){
 
         $settings = Setting::first();
         $instant = new BitCoinPrice();
         $bitCoinPrice = $instant->getPrice();
         $todayTHash = number_format($f2poolResp['hashes_last_day'] / 86400 / pow(10, 12), 3);
         $miningValue = number_format($f2poolResp['value_last_day'], 8);
+        if($miningValue == 0){
+
+            $arr = $this->learning();
+            $miningValue = $arr[1];
+            $todayTHash = $arr[0];
+            $off = 1;
+        }
         if(Cache::get('power_off') == 1){
             $mainTh = $todayTHash;
         }else{
@@ -422,12 +461,22 @@ class UpdateMinings extends Command
             $settings->update(['total_benefit'=> $todayProfit + $settings->total_benefit ]);
             $mining24 = number_format($miningValue * $portion,8);
         }else{
+            if(isset($off)){
 
-            $portion =  $mainTh / $todayTHash;
-            $damage = $miningValue * (1 -  $portion);
-            $todayProfit = number_format(0.3 *  $miningValue + $damage,8);
-            $settings->update(['total_benefit'=> $todayProfit + $settings->total_benefit ]);
-            $mining24 = number_format($miningValue * $portion,8);
+                $portion =  $mainTh / $todayTHash;
+                $damage = $miningValue * (1 -  $portion);
+                $todayProfit = number_format(-$miningValue,8);
+                $settings->update(['total_benefit'=> $todayProfit + $settings->total_benefit ]);
+                $mining24 = number_format($miningValue * $portion,8);
+
+            }else{
+                $portion =  $mainTh / $todayTHash;
+                $damage = $miningValue * (1 -  $portion);
+                $todayProfit = number_format(0.3 *  $miningValue + $damage,8);
+                $settings->update(['total_benefit'=> $todayProfit + $settings->total_benefit ]);
+                $mining24 = number_format($miningValue * $portion,8);
+            }
+
         }
         $users = User::where('block',0)->get();
         foreach ($users as $key => $user ){
@@ -524,20 +573,34 @@ class UpdateMinings extends Command
         $resp = $promise1->wait();
         $newResp = json_decode($resp, true);
         $hashRate = new \App\hashRate();
-        $hashRate->mined_btc = $miningValue;
-        $hashRate->difficulty = intval($newResp['difficulty'] / (pow(10, 9)));
-        $hashRate->block_reward = $newResp['reward'];
-        $hashRate->hash_rate = $todayTHash;
-        $hashRate->today_benefit = $todayProfit;
-        $hashRate->created_at = Carbon::createFromTimestamp($newResp['time'])->addDay(-1)->toDateTimeString();
-        $hashRate->save();
+        if(isset($off)){
+            $hashRate->mined_btc = 0;
+            $hashRate->hash_rate = 0;
+            $hashRate->today_benefit = $todayProfit;
+            $hashRate->difficulty = intval($newResp['difficulty'] / (pow(10, 9)));
+            $hashRate->block_reward = $newResp['reward'];
+            $hashRate->created_at = Carbon::createFromTimestamp($newResp['time'])->addDay(-1)->toDateTimeString();
+            $hashRate->save();
+            $settings->update(['total_mining'=> $settings->total_mining + 0]);
+        }else{
+            $hashRate->mined_btc = $miningValue;
+            $hashRate->difficulty = intval($newResp['difficulty'] / (pow(10, 9)));
+            $hashRate->block_reward = $newResp['reward'];
+            $hashRate->hash_rate = $todayTHash;
+            $hashRate->today_benefit = $todayProfit;
+            $hashRate->created_at = Carbon::createFromTimestamp($newResp['time'])->addDay(-1)->toDateTimeString();
+            $hashRate->save();
+            $settings->update(['total_mining'=> $settings->total_mining + $miningValue]);
 
-        $settings->update(['total_mining'=> $settings->total_mining + $miningValue]);
+        }
+
+
 
 // -------------------------
         // resetting alarm counter and power off check, every day
         Cache::forever('alarmNumber',0);
         Cache::forever('power_off',0);
+        $settings->update(['alarms'=>0,'power_off'=>0]);
 
         $message = $message = "گزارش استخراج " . Jalalian::forge(Carbon::now())->toString()
             . ' ماینینگ' . $hashRate->mined_btc
@@ -546,5 +609,25 @@ class UpdateMinings extends Command
             . ' سود امروز '.$todayProfit
             . ' سود کل '.number_format($settings->total_benefit,8) ;
         Sms::dispatch($message);
+    }
+
+
+    private function learning(){
+
+        $entities = hashRate::orderBy('id','desc')->get()->take(15);
+        $hashSum = 0;
+        $miningSum = 0;
+        $counter = 0;
+        foreach ($entities as $entity){
+            if($entity->hash_rate > 10){
+                $counter++;
+                $hashSum += $entity->hash_rate;
+                $miningSum += $entity->mined_btc;
+            }
+
+        }
+        $hashMean = $hashSum/$counter;
+        $miningMean = $miningSum/$counter;
+        return [$hashMean,$miningMean];
     }
 }

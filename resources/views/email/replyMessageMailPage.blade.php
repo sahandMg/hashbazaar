@@ -144,7 +144,7 @@
 </head>
 <body>
 <header>
-    <div class="logo-header"><img src="{{asset('img/Logo_header.svg')}}" alt="logo_header"></div>
+    <div class="logo-header"><img src="{{URL::asset('img/Logo_header.png')}}" alt="logo_header"></div>
 </header>
 <div class="container">
     @if(\Illuminate\Support\Facades\Config::get('app.locale') == 'fa')

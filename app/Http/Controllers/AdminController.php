@@ -214,7 +214,7 @@ class AdminController extends Controller
         $hashRecord = new BitHash();
         $hashRecord->hash = $request->th;
         $hashRecord->user_id = $user->id;
-        $hashRecord->order_id = '30_70_' . strtoupper(uniqid());
+        $hashRecord->order_id = 'collab_' . strtoupper(uniqid());
         $hashRecord->confirmed = 1;
         $hashRecord->life = 2;
         $hashRecord->plan_id = 1;
@@ -241,7 +241,18 @@ class AdminController extends Controller
         $trans->save();
 
 
-        $user->update(['plan_id' => 1]);
+        DB::connection('mysql')->table('plan_user')->insert([
+            'user_id'=> $user->id,
+            'plan_id'=> 1,
+            'created_at'=>Carbon::now()
+        ]);
+        DB::connection('mysql')->table('user_shares')->insert([
+            'user_id'=> $user->id,
+            'share'=> env('default_profit'),
+            'code'=>$hashRecord->order_id,
+            'plan_id'=> 1,
+            'created_at'=>Carbon::now()
+        ]);
 
         $data = ['trans'=>$trans,'hashPower'=>$hashRecord,'email'=>$user->email];
         Mail::send('email.paymentConfirmed',$data , function ($message) use ($data) {

@@ -59,7 +59,7 @@
                          در صورت ثبت نام، <a href="{{route('terms',['locale'=>session('locale')])}}" required style="color: #ff9100;font-weight: 700;"  target="_blank">شرایط استفاده</a> را خوانده و می پذیرم.
                        </label>
                     </div>
-					@if(session('captchaCounter') > 3)
+					@if(session('captchaCounter') >= env('captchaTry'))
 						<div class="wrap-input100 validate-input pass m-b-10" data-validate = "لطفا کد داخل عکس را وارد کنید.">
 							<input required class="input100" type="text" pattern="[a-zA-Z0-9]+"  name="captcha" placeholder="{{__("Security Code")}}">
 							<span class="focus-input100"></span>

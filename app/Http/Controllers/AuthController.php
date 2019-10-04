@@ -216,13 +216,15 @@ class AuthController extends Controller
             'code'=> $user->code,
             'email'=>$user->email
         ];
-
-        Mail::send('email.thanks',$data,function($message) use($data){
-            $message->from (env('Admin_Mail'));
-            $message->to ($data['email']);
-            $message->subject ('Subscription Email');
-        });
+        if($user->verified == 0){
+            Mail::send('email.thanks',$data,function($message) use($data){
+                $message->from (env('Admin_Mail'));
+                $message->to ($data['email']);
+                $message->subject ('Subscription Email');
+            });
+        }
         Auth::guard('user')->login($user);
+
         session(['pop'=>1]);
         return redirect()->route('dashboard',['locale'=>session('locale')]);
     }
@@ -472,7 +474,7 @@ class AuthController extends Controller
         $user->password = bcrypt($pass);
         $user->save();
         Mail::send('email.reset_password',['pass'=>$pass,'user'=>$user],function($message) use($user){
-            $message->from (env('Admin_Mail'));
+            $message->from (env('Support_Mail'));
             $message->to ($user->email);
             $message->subject ('Password Reset');
         });

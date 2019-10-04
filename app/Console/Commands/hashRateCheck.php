@@ -93,7 +93,7 @@ class hashRateCheck extends Command
 
             Mail::send('email.hashRateCheck',[],function($message){
                 $message->to(env('Admin_Mail'));
-                $message->from(env('Tech_Mail'));
+                $message->from(env('Info_Mail'));
                 $message->subject('Hash Rate Alllleeerrrrtttttt!!!!');
             });
 

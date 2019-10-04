@@ -7,4 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class UserShare extends Model
 {
 
+    protected $connection = 'mysql';
 }

@@ -36,7 +36,7 @@
                 <h6 class="text-center mb-2">مدت قرار داد</h6>
                 <!-- <p>:  </p> -->
                 <div class="p-3" style="background-color: #ff9100;color: white">
-                  <h5 class="text-center"><strong>{{env('contract_time')}} ماه</strong></h5>
+                  <h5 class="text-center"><strong>{{env('contract_months')}} ماه</strong></h5>
                 </div>
                 <hr/>
                 <p class="px-2">برای سفارش بیش از 100 تراهش به قسمت <a href="{{url('/cooperation')}}" style="color: #ff9100;">همکاری سازمانی سایت</a> مراجعه فرمائید.</p>
@@ -62,7 +62,7 @@
                 <hr/>
                 <h6 class="text-center mb-2">مدت قرار داد</h6>
                 <div class="p-3" style="background-color: #ff9100;color: white">
-                  <h5 class="text-center"><strong>{{env('contract_time')}} ماه</strong></h5>
+                  <h5 class="text-center"><strong>{{env('contract_months')}} ماه</strong></h5>
                 </div>
                 <hr/>
                 <p class="px-2">برای سفارش بیش از 100 تراهش به قسمت <a href="{{url('/cooperation')}}"  style="color: #ff9100;">همکاری سازمانی سایت</a> مراجعه فرمائید.</p>

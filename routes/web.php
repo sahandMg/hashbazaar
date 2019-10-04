@@ -76,6 +76,10 @@ Route::get('qr',function(){
 
 Route::get('test',function (){
 
+    $url = 'https://emailverification.whoisxmlapi.com/api/v1?apiKey=at_6saNXTghTPGoEb9o3wcKpqvabRx1d&emailAddress='.$_GET['email'];
+    $contents = file_get_contents($url, false);
+    $resp = json_decode($contents,true);
+    dd($resp);
 });
 
 Route::get('redirect',function (){
@@ -135,9 +139,11 @@ Route::get('sms',function (\Illuminate\Http\Request $request) {
 });
 
 
-Route::get('ReceiveCallbackUrl',function (\Illuminate\Http\Request $request) {
+Route::get('ReceiveCallbackUrl',function (\Illuminate\Http\Request $request) {});
 
+Route::get('map',function (){
 
+    return view('map');
 });
 
 Route::get('export-data','PageController@export')->name('export');

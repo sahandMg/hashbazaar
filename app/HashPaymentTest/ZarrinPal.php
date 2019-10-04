@@ -40,7 +40,6 @@ class ZarrinPal
         $discount = $this->request['discount'];
         $hash = $this->request['hash'];
         $plan = $this->request['plan'];
-
         if($plan == 3){
 
             $amount = ($settings->usd_per_hash * $hash * (1- $discount)  + env('contractDays') * $settings->maintenance_fee_per_th_per_day) * $dollarPriceInToman;
@@ -58,6 +57,7 @@ class ZarrinPal
                 $hashRecord->user_id = Auth::guard('user')->id();
                 $hashRecord->order_id = strtoupper('zarrin_'.str_random(8));
                 $hashRecord->confirmed = 0;
+                $hashRecord->plan_id = $plan;
                 // a custom code is not involved in affiliate
                 if(isset($custom_code)){
                     $hashRecord->referral_code = null;
@@ -133,7 +133,15 @@ class ZarrinPal
         $referralQuery = Referral::where('code', $referralCode)->first();
         DB::connection('mysql')->table('plan_user')->insert([
             'user_id'=> Auth::guard('user')->id(),
-            'plan_id'=> Session::get('planId')
+            'plan_id'=> $this->request->plan,
+            'created_at'=>Carbon::now()
+        ]);
+        DB::connection('mysql')->table('user_shares')->insert([
+            'user_id'=> Auth::guard('user')->id(),
+            'share'=> 0.3,
+            'code'=>$hashPower->order_id,
+            'plan_id'=> $this->request->plan,
+            'created_at'=>Carbon::now()
         ]);
         // if any referral code used for hash owner purchasing
         if (!is_null($referralCode)) {

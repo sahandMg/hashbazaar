@@ -12,10 +12,10 @@
 <?php
     $settings = DB::connection('mysql')->table('settings')->first();
             foreach ($hashes as $key=> $hash){
-                if(Auth::guard('user')->user()->plan_id == 1)
+                if($hash->plan_id == 1)
                     $remainedLife[$key] = 100;
                 else{
-                    $remainedLife[$key] = floor((\Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($hash->created_at)->addYears($hash->life)))/($hash->life * 365) * 100) ;
+                    $remainedLife[$key] = floor((\Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($hash->created_at)->addDays(env('contract_time'))))/(env('contract_time')) * 100) ;
                 }
 
             }
@@ -96,7 +96,7 @@
 
             <td>
 
-                <span>  {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($hash->created_at)->addYears(2))->format('Y/m/d')}}  </span>
+                <span>  {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($hash->created_at)->addDays(env('contract_time')))->format('Y/m/d')}}  </span>
 
             </td>
 
@@ -130,7 +130,7 @@
 
                         <td>
 
-                            <span>{{\Carbon\Carbon::parse($hash->created_at)->addYears(2)->format('M d Y')}}   </span>
+                            <span>{{\Carbon\Carbon::parse($hash->created_at)->addMonths(env('contract_time'))->format('M d Y')}}   </span>
 
                         </td>
 

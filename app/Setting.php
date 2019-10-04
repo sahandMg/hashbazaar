@@ -10,7 +10,7 @@ class Setting extends Model
     protected $fillable = ['available_th','usd_toman','total_th','usd_per_hash',
         'maintenance_fee_per_th_per_day','bitcoin_income_per_month_per_th',
         'available_th','sharing_discount','hash_life','minimum_redeem','zarrin_active','paystar_active','alarms',
-        'total_mining','total_benefit'
+        'total_mining','total_benefit','power_off','alarms'
     ];
 //    protected $encryptable = [
 //

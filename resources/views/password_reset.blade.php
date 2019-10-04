@@ -16,10 +16,6 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 
-				<div style="text-align: center">
-					@include('formError')
-					@include('sessionError')
-				</div>
 
 				<form method="post" action="{{route('passwordReset',['locale'=>session('locale')])}}" class="login100-form validate-form p-l-55 p-r-55 p-t-178">
 
@@ -27,6 +23,11 @@
 						<span class="login100-form-title">
 						{{__("Reset Password")}}
 					</span>
+
+					<div style="text-align: center">
+						@include('formError')
+						@include('sessionError')
+					</div>
 
                     <div class="wrap-input100 validate-input m-b-26 login100" style="color: black">
                            <span>{{__("Please enter your email to send password")}}</span>
@@ -36,7 +37,7 @@
                         <input class="input100" name="email" type="email"  required value="{{Request::old('email')}}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{__("Email Address")}}">
 						<span class="focus-input100"></span>
 					</div>
-					@if(session('captchaCounter') > 3)
+					@if(session('captchaCounter') >= env('captchaTry'))
 					<div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
 						<input class="input100 englishFont" type="text" pattern="[a-zA-Z0-9]+" required name="captcha" placeholder="{{__("Security Code")}}">
 						<span class="focus-input100"></span>

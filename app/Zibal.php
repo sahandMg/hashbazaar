@@ -84,8 +84,8 @@ class Zibal
                 }else{
                     $hashRecord->referral_code = $referralCode;
                 }
-                $hashRecord->life = $settings->hash_life;
-                $hashRecord->remained_day = Carbon::now()->diffInDays(Carbon::now()->addYears($hashRecord->life));
+                $hashRecord->life = env('contract_time');
+                $hashRecord->remained_day = Carbon::now()->diffInDays(Carbon::now()->addMonths($hashRecord->life));
                 $hashRecord->save();
 
 
@@ -190,7 +190,7 @@ class Zibal
         ]);
         DB::connection('mysql')->table('user_shares')->insert([
             'user_id'=> Auth::guard('user')->id(),
-            'share'=> 30,
+            'share'=> env('default_profit'),
             'code'=>$hashPower->order_id,
             'plan_id'=> $this->request->plan,
             'created_at'=>Carbon::now()

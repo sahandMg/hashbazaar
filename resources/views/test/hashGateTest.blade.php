@@ -21,7 +21,7 @@
         <div class="form-group">
 
             <input name="plan" type="hidden" value="2" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="نام کاربری خود را وارد کنید">
-            <input name="hash" type="hidden" value="1" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="نام کاربری خود را وارد کنید">
+            <input name="hash" type="hidden" value="10" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="نام کاربری خود را وارد کنید">
             <input name="discount" type="hidden" value="0" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="نام کاربری خود را وارد کنید">
             <input name="code" type="hidden"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="نام کاربری خود را وارد کنید">
         </div>

@@ -183,7 +183,7 @@ class ZarrinPal
         ]);
         DB::connection('mysql')->table('user_shares')->insert([
             'user_id'=> Auth::guard('user')->id(),
-            'share'=> 30,
+            'share'=> env('default_profit'),
             'code'=>$hashPower->order_id,
             'created_at'=>Carbon::now()
         ]);

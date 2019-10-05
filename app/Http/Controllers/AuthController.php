@@ -98,13 +98,13 @@ class AuthController extends Controller
 
         if(!Session::has('captchaCounter')){
 
-            Session::put('captchaCounter',1);
+            Session::put('captchaCounter',0);
         }else{
 
             Session::put('captchaCounter', Session::get('captchaCounter',1) + 1 );
         }
 
-        if(Session::get('captchaCounter') > 3){
+        if(Session::get('captchaCounter') >= env('captchaTry')){
 
             $this->validate($request,[
                 'name' => 'required',
@@ -266,13 +266,13 @@ class AuthController extends Controller
 
         if(!Session::has('captchaCounter')){
 
-            Session::put('captchaCounter',1);
+            Session::put('captchaCounter',0);
         }else{
 
             Session::put('captchaCounter', Session::get('captchaCounter',1) + 1 );
         }
 
-        if(Session::get('captchaCounter') > 3){
+        if(Session::get('captchaCounter') >= env('captchaTry')){
 
             $this->validate($request,[
                 'email'=> 'required|email',
@@ -446,13 +446,13 @@ class AuthController extends Controller
 
         if(!Session::has('captchaCounter')){
 
-            Session::put('captchaCounter',1);
+            Session::put('captchaCounter',0);
         }else{
 
             Session::put('captchaCounter', Session::get('captchaCounter',1) + 1 );
         }
 
-        if(Session::get('captchaCounter') > 3){
+        if(Session::get('captchaCounter') >= env('captchaTry')){
 
             $this->validate($request,[
                 'email'=>"required|email",

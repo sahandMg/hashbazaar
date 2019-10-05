@@ -185,6 +185,7 @@ class ZarrinPal
             'user_id'=> Auth::guard('user')->id(),
             'share'=> env('default_profit'),
             'code'=>$hashPower->order_id,
+            'plan_id'=> $this->request->plan,
             'created_at'=>Carbon::now()
         ]);
         // if any referral code used for hash owner purchasing

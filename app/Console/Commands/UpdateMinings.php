@@ -313,19 +313,16 @@ class UpdateMinings extends Command
                         DB::connection('mysql')->table('minings')->where('order_id', $hashRate->order_id)->update(['block' => 1]);
                     } else {
                         // 30 70 contracts have no ending
-//                        if ($user->plan_id == 1) {
-//                            $remainedDay = 720;
-//                            $hashRate->update(['remained_day' => $remainedDay]);
-//                            $hashRate->save();
-//                        } else {
-//
-//                            $remainedDay = Carbon::now()->diffInDays(Carbon::parse($hashRate->created_at)->addYears($hashRate->life));
-//                            $hashRate->update(['remained_day' => $remainedDay]);
-//                            $hashRate->save();
-//                        }
-                        $remainedDay = Carbon::now()->diffInDays(Carbon::parse($hashRate->created_at)->addDays(env('contract_time')));
-                        $hashRate->update(['remained_day' => $remainedDay]);
-                        $hashRate->save();
+                        if ($hashRate->plan_id == 1) {
+                            $remainedDay = Carbon::now()->diffInDays(Carbon::parse($hashRate->created_at)->addDays(env('contract_time')));
+                            $hashRate->update(['remained_day' => $remainedDay]);
+                            $hashRate->save();
+                        }else{
+
+                            $remainedDay = Carbon::now()->diffInDays(Carbon::parse($hashRate->created_at)->addDays(env('contract_time')));
+                            $hashRate->update(['remained_day' => $remainedDay]);
+                            $hashRate->save();
+                        }
                     }
 
                     $userPortion = $hashRate->hash/ $settings->total_th;

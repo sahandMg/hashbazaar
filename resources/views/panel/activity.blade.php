@@ -60,7 +60,12 @@ foreach ($hashes as $key=> $hash){
                     </td>
                     <td>
 
-                        <span>  {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($hash->created_at)->addDays(env('contract_time')))->format('Y/m/d')}}  </span>
+{{--                        @if($hash->plan_id == 1)--}}
+
+                            {{--<span>  {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($hash->created_at)->addDays(env('contractDays')))->format('Y/m/d')}}  </span>--}}
+                        {{--@else--}}
+                            <span>  {{  \Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($hash->created_at)->addDays(env('contract_time')))->format('Y/m/d')}}  </span>
+                        {{--@endif--}}
 
                     </td>
 

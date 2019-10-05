@@ -927,7 +927,7 @@ body, html {
 .limiter {
   width: 100%;
   margin: 0 auto;
-  margin-top:7% !important
+  /*margin-top:7% !important*/
 }
 
 .container-login100 {

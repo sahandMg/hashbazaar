@@ -29,7 +29,7 @@
                 <h6 class="text-center mb-2"><a href="#meitenanceFee" class="meitenanceFeeClick" style="color: #ff9100;">هزینه نگهداری</a></h6>
                 <div class="p-3" style="background-color: #ff9100;color: white">
                  <!--  <h5 class="text-center"><strong>{{ round($settings->maintenance_fee_per_th_per_day * $settings->usd_toman)}} تومان</strong></h5> -->
-                 <h5 class="text-center"><strong>30 درصد درآمد روزانه</strong></h5>
+                 <h5 class="text-center"><strong>{{env('default_profit') * 100}} درصد درآمد روزانه</strong></h5>
                 </div>
                 <!-- <h6 class="text-center mt-2">برای هر روز به ازای هر تراهش</h6> -->
                 <hr/>

@@ -21,6 +21,7 @@
                             <td>Pending Amount(BTC)</td>
                             <td>Status</td>
                             <td>Checkout</td>
+
                         </tr>
                         </thead>
 
@@ -84,6 +85,7 @@
                                 @else
                                     <td> <button disabled id={{$user->code}} onclick="pay()" class="btn btn-success"> Pay </button> </td>
                                 @endif
+
 
                             </tr>
 
@@ -185,7 +187,8 @@
 
 //
                     })
-                }
+                },
+
             },
 
         })

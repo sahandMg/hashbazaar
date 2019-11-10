@@ -18,7 +18,7 @@
     <ul>
         <li>User Name : {{$name}}</li>
         <li>User Email : {{$email}}</li>
-        <li>User Email : {{$phone}}</li>
+        <li>User Phone : {{$phone}}</li>
         <li>User Message : </li>
 
     </ul>

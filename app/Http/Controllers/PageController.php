@@ -114,6 +114,7 @@ class PageController extends Controller
                 'phone'=>'required|numeric',
                 'body'=>'required',
                 'email'=>'required|email',
+                'captcha'=>'required|captcha'
         ]);
         $message = new Message();
         $message->name = $request->name;

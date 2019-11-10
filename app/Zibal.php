@@ -85,7 +85,7 @@ class Zibal
                     $hashRecord->referral_code = $referralCode;
                 }
                 $hashRecord->life = env('contract_time');
-                $hashRecord->remained_day = Carbon::now()->diffInDays(Carbon::now()->addMonths($hashRecord->life));
+                $hashRecord->remained_day = Carbon::now()->diffInDays(Carbon::now()->addDays($hashRecord->life));
                 $hashRecord->save();
 
 

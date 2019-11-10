@@ -17,6 +17,7 @@
             <th>Authority</th>
             <th>Type</th>
             <th>Record Created</th>
+            <th>Stop Mining</th>
 
         </tr>
         </thead>
@@ -27,9 +28,9 @@
                 <td>{{$transaction->id}}</td>
                 <td>{{$transaction->code}}</td>
                 <?php
-                    $query = DB::connection('mysql')->table('bit_hashes')->where('order_id',$transaction->code)->first();
-                    if(!is_null($query)){
-                        $query = $query->hash;
+                    $record = DB::connection('mysql')->table('bit_hashes')->where('order_id',$transaction->code)->first();
+                    if(!is_null($record)){
+                        $query = $record->hash;
                     }else{
                         $query ='--';
                     }
@@ -44,6 +45,16 @@
                 <td>{{$transaction->authority}}</td>
                 <td>{{$transaction->checkout}}</td>
                 <td>{{\Morilog\Jalali\Jalalian::fromCarbon(\Carbon\Carbon::parse($transaction->created_at))}}</td>
+                @if(!is_null($record))
+                    @if($record->confirmed == 1)
+                        <td> <button  id={{$transaction->code}} @click="stopMining" class="btn btn-success"> Active </button> </td>
+                    @else
+                        <td> <button  id={{$transaction->code}} @click="stopMining" class="btn btn-danger"> Blocked </button> </td>
+                    @endif
+
+                @else
+                    <td></td>
+                @endif
             </tr>
         @endforeach
         {{--<tr v-for="(transaction, index) in transactions">--}}
@@ -83,6 +94,29 @@
                 readFlag: function (country) {
 
                     this.flag = '../flags/'+country.substr(0,2).toLowerCase()+'.svg'
+
+                },
+                stopMining:function (e) {
+
+                    var code = e.target.id;
+                    axios.post('{{route('stopMining',['locale'=>session('locale')])}}',{'code':code}).then(function (response) {
+
+                        var resp = response.data;
+                        if(resp['type'] != 'error'){
+                            if(resp['val'] == 1){
+                                e.target.innerHTML = 'Active';
+                                e.target.className = 'btn btn-success';
+                            }else{
+                                e.target.innerHTML = 'Blocked';
+                                e.target.className = 'btn btn-danger';
+                            }
+
+
+                        }else{
+                            alert(resp['body'])
+                        }
+
+                    })
 
                 }
             },

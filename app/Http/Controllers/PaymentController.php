@@ -265,8 +265,8 @@ class PaymentController extends Controller
         }else{
             $hashRecord->referral_code = $referralCode;
         }
-        $hashRecord->life = $this->hash_life;
-        $hashRecord->remained_day = Carbon::now()->diffInDays(Carbon::now()->addYears($hashRecord->life));
+        $hashRecord->life = env('contract_time');
+        $hashRecord->remained_day = Carbon::now()->diffInDays(Carbon::now()->addMonths($hashRecord->life));
         $hashRecord->save();
 
 

@@ -123,7 +123,17 @@
                   <div class="form-group">
                      <label >نوع و تعداد دستگاه ها :</label>
                      <textarea class="form-control" rows="4" required name="body"></textarea>
-                  </div> 
+                  </div>
+                    <div class="form-group">
+                        <input class="form-group" type="text" pattern="[a-zA-Z0-9]+" required name="captcha" placeholder="{{__("Security Code")}}">
+                        <span class="focus-input100"></span>
+
+
+                        <div class="wrap-input100 validate-input pass m-b-10" data-validate = "Please enter password">
+                            <a onclick="refreshCaptcha(event)" style="cursor: pointer;">{{Captcha::img()}}</a>
+                        </div>
+                    </div>
+
                   <div class="text-center mt-1 mb-1">
                      <button class="btn btn-primary round-button-com" type="submit" style="width: 120px">ثبت</button>
                 </div>

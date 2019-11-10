@@ -380,6 +380,8 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
         Route::get('get-logs', ['as' => 'getLogs', 'uses' => 'AdminController@getLogs']);
 
+        Route::post('stop-mining',['as'=>'stopMining','uses'=>'AdminController@stopMining']);
+
 //   Voyager::routes();
     });
 

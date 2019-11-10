@@ -78,8 +78,8 @@ class UpdateMinings extends Command
             }
             if(Cache::get('poolError') >= 3){
 
-             $message =" خطای پول".$resp['message'];
-            Sms::dispatch($message);
+                $message =" خطای پول".$resp['message'];
+                Sms::dispatch($message);
 
             }else{
                 echo Cache::get('poolError');
@@ -253,10 +253,12 @@ class UpdateMinings extends Command
             $todayTHash = $arr[0];
             $off = 1;
         }
-        if(Cache::get('power_off') == 1){
+        if($settings->power_off == 1){
             $mainTh = $todayTHash;
+            $realTh = $settings->total_th;
         }else{
             $mainTh = $settings->total_th;
+            $realTh = $mainTh;
         }
         if($todayTHash >= $mainTh){
             // keep extra mining for hashbazaar
@@ -265,9 +267,13 @@ class UpdateMinings extends Command
             $shareObjs = UserShare::all();
             $profit = 0;
             foreach ($shareObjs as $shareObj){
-                $userBoughtHash = DB::connection('mysql')->table('bit_hashes')->where('order_id',$shareObj->code)->first()->hash;
-                $userPortion = $userBoughtHash/$mainTh;
-                $profit = $profit + $shareObj->share * $userPortion * $miningValue;
+                $userBitHash = DB::connection('mysql')->table('bit_hashes')->where('order_id',$shareObj->code)->first();
+                $userBoughtHash = $userBitHash->hash;
+                $isConfirmed = $userBitHash->confirmed;
+                if($shareObj->plan_id != 4 && $isConfirmed == 1){
+                    $userPortion = $userBoughtHash/$realTh;
+                    $profit = $profit + $shareObj->share * $userPortion * $miningValue;
+                }
             }
 //            $profit = 0.3 * $portion * $miningValue;
             $todayProfit = number_format($extraProfit + $profit,8);
@@ -289,10 +295,15 @@ class UpdateMinings extends Command
                 $todayProfit = 0;
                 $shareObjs = UserShare::where('plan_id',1)->get();
                 foreach ($shareObjs as $shareObj){
-                    $userBoughtHash = DB::connection('mysql')->table('bit_hashes')->where('order_id',$shareObj->code)->first()->hash;
-                    $userPortion = $userBoughtHash/$mainTh;
-                    $todayProfit = $todayProfit + number_format($shareObj->share * $userPortion * $miningValue ,8);
+                    $userBitHash = DB::connection('mysql')->table('bit_hashes')->where('order_id',$shareObj->code)->first();
+                    $userBoughtHash = $userBitHash->hash;
+                    $isConfirmed = $userBitHash->confirmed;
+                    if($shareObj->plan_id != 4 && $isConfirmed == 1) {
+                        $userPortion = $userBoughtHash/$mainTh;
+                        $todayProfit = $todayProfit + number_format($shareObj->share * $userPortion * $miningValue, 8);
+                    }
                 }
+
                 $todayProfit = $todayProfit + $damage;
 
                 $settings->update(['total_benefit'=> $todayProfit + $settings->total_benefit ]);
@@ -301,6 +312,7 @@ class UpdateMinings extends Command
 
 
         }
+
         $users = User::where('block',0)->get();
         foreach ($users as $key => $user ){
             if(count($user->bithashes->all()) > 0){
@@ -332,8 +344,8 @@ class UpdateMinings extends Command
 //                        foreach($plans as $key => $plan){
 
                         if($hashRate->plan->id == 1){
-                                $share = DB::connection('mysql')->table('user_shares')
-                                    ->where('code',$hashRate->order_id)->first()->share;
+                            $share = DB::connection('mysql')->table('user_shares')
+                                ->where('code',$hashRate->order_id)->first()->share;
                             $userEarn = $userPortion * $mining24 * (1 - $share);
                         }
                         if($hashRate->plan->id == 2){
@@ -401,7 +413,6 @@ class UpdateMinings extends Command
             $hashRate->today_benefit = $todayProfit;
             $hashRate->difficulty = intval($newResp['difficulty'] / (pow(10, 9)));
             $hashRate->block_reward = $newResp['reward'];
-            $hashRate->created_at = Carbon::createFromTimestamp($newResp['time'])->addDay(-1)->toDateTimeString();
             $hashRate->save();
             $settings->update(['total_mining'=> $settings->total_mining + 0]);
         }else{
@@ -410,7 +421,6 @@ class UpdateMinings extends Command
             $hashRate->block_reward = $newResp['reward'];
             $hashRate->hash_rate = $todayTHash;
             $hashRate->today_benefit = $todayProfit;
-            $hashRate->created_at = Carbon::createFromTimestamp($newResp['time'])->addDay(-1)->toDateTimeString();
             $hashRate->save();
             $settings->update(['total_mining'=> $settings->total_mining + $miningValue]);
 
@@ -419,14 +429,14 @@ class UpdateMinings extends Command
         // resetting alarm counter and power off check, every day
         Cache::forever('alarmNumber',0);
         Cache::forever('power_off',0);
-
+        $settings->update(['alarms'=>1,'power_off'=>0]);
         $message = $message = "گزارش استخراج " . Jalalian::forge(Carbon::now())->toString()
             . ' ماینینگ' . $hashRate->mined_btc
             . ' سختی ' . $hashRate->difficulty
             .' میانگین تراهش '. $todayTHash
             . ' سود امروز '.$todayProfit
             . ' سود کل '.number_format($settings->total_benefit,8) ;
-//        Sms::dispatch($message);
+        // Sms::dispatch($message);
     }
 
     private function balances4($f2poolResp){

@@ -436,4 +436,19 @@ class AdminController extends Controller
         $orders = DB::connection('mysql')->table('remote_orders')->orderBy('id','desc')->get();
         return view('admin.users.hardwareOrders',compact('orders'));
     }
+
+    public function stopMining(Request $request){
+
+        try{
+            $bithash = BitHash::where('order_id',$request->code)->first();
+            $bithash->update(['confirmed'=> !$bithash->confirmed]);
+            $mining = Mining::where('order_id',$request->code)->first();
+            $mining->update(['block'=> !$mining->block]);
+
+        }catch (\Exception $exception){
+            return ['type'=>'error','body'=>$exception->getMessage()];
+        }
+
+        return ['type'=>'message','body'=>200,'val'=>$bithash->confirmed];
+    }
 }

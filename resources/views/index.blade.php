@@ -104,7 +104,7 @@
                 <p class="text-center">Nice to have you in our cryptocurrency investment community.</p>
             </div>
             <div id="hosting" style="direction: rtl;text-align: right;">
-                <h4 class="text-center">لطفا اطلاعات زیر را کامل کنید تا کارشناسان ما در اسرع وقت با شما تماس بگیرند یا با شماره 09371869568 تماس بگیرید.</h4>
+                <h4 class="text-center">لطفا اطلاعات زیر را کامل کنید تا کارشناسان ما در اسرع وقت با شما تماس بگیرند یا با شماره <span style="display: inline-block">{{env('Phone_Number')}}</span> تماس بگیرید.</h4>
                 <form method="post" action="{{route('shareOrder',['locale'=>App::getLocale()])}}">
                     @include('formError')
                     <input type="hidden" name="_token" value="{{csrf_token()}}">

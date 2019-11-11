@@ -382,6 +382,9 @@ Route::group(['middleware'=>'lang','prefix'=> '{lang}'],function() {
 
         Route::post('stop-mining',['as'=>'stopMining','uses'=>'AdminController@stopMining']);
 
+        Route::get('newsletter',['as'=>'sendNewsLetter','uses'=>'AdminController@sendNewsLetter']);
+
+        Route::post('newsletter',['as'=>'sendNewsLetter','uses'=>'AdminController@post_sendNewsLetter']);
 //   Voyager::routes();
     });
 

@@ -155,6 +155,17 @@
                         </a>
                     </li>
 
+                @if(Request::route()->getName() == 'sendNewsLetter')
+                    <li  class="active">
+                @else
+                    <li>
+                        @endif
+                        <a href="{{route('sendNewsLetter',['locale'=>session('locale')])}}">
+                            <i class="far fa-file-alt" style='font-size:20px'></i>
+                            <span style="padding-left: 20px">ارسال خبرنامه</span>
+                        </a>
+                    </li>
+
                 @if(Request::route()->getName() == 'adminLogout')
                     <li  class="active">
                 @else

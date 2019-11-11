@@ -285,9 +285,8 @@ class AdminController extends Controller
         return redirect()->route('index',['locale'=>session('locale')]);
     }
 
-    public function userSetting($id)
+    public function userSetting($locale,$id)
     {
-
         $user = User::find($id);
         return view('admin.users.setting', compact('user'));
     }
@@ -450,5 +449,25 @@ class AdminController extends Controller
         }
 
         return ['type'=>'message','body'=>200,'val'=>$bithash->confirmed];
+    }
+
+    public function sendNewsLetter(){
+
+        return view('admin.sendNewsletter');
+    }
+    public function post_sendNewsLetter(){
+
+        $emails = User::all()->pluck('email')->toArray();
+        for($i=0;$i<count($emails);$i++){
+        Mail::send([],'newsletters.newsletter',function ($message)use($emails,$i){
+            $message->to($emails[$i]);
+            $message->from(env('Info_Mail'));
+            $message->subject('پلن های جدید هش بازار!');
+        });
+
+            sleep(20);
+        }
+
+        return 200;
     }
 }

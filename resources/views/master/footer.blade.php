@@ -113,8 +113,8 @@
                     <div class="row footerrow">
                             <div class="col-md-5 col-sm-12">
                                 <div class="tell">
-                                    <a href="tel:+989371869568" style="color:white; cursor:pointer">
-                                             021-22410477 &nbsp;<i class="fa fa-phone" aria-hidden="true"></i>
+                                    <a href="tel:+989387728916" style="color:white; cursor:pointer">
+                                             09387728916 &nbsp;<i class="fa fa-phone" aria-hidden="true"></i>
                                     </a>
                                 </div>
                             </div>

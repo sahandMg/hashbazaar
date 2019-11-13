@@ -136,9 +136,9 @@
     <div class="logo-header"><img src="{{asset('img/Logo_header.png')}}" alt="logo_header"></div>
 </header>
 <div class="container" style="text-align: center;">
-        <h1> محمد عزیز</h1>
-        <p style="text-align: center;">طرح های سرمایه گذاری به روز رسانی شده است.</p>
-        <a href="{{route($route,['locale'=>session('locale'),'token'=>$user->verifyUser->token])}}"><button style="cursor: pointer;margin: 10px;display:inline-block; font-size: 15px;color:white;background: orange;padding: 10px;border-radius:10px">مشاهده طرح ها</button></a>
+        <h1 style="direction: rtl">  {{$name}} عزیز</h1>
+        <p style="text-align: center;direction: rtl;">طرح های سرمایه گذاری به روز رسانی شده است.</p>
+        <a href="{{route('index',['locale'=>session('locale')])}}"><button style="cursor: pointer;margin: 10px;display:inline-block; font-size: 15px;color:white;background: orange;padding: 10px;border-radius:10px">مشاهده طرح ها</button></a>
 </div>
 
 @include('email.master.footer')

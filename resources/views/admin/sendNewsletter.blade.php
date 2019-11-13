@@ -18,15 +18,16 @@
 <div class="contain">
     <h1 style="text-align: center">Send Newsletter</h1>
     <div class="btn_added">
-        <button onclick="send()" class="btn btn-primary btn-lg">Send To All</button>
+        <button id="btn" onclick="send()" class="btn btn-primary btn-lg">Send To All</button>
     </div>
 </div>
 
 <script>
     function send() {
+        document.getElementById('btn').innerHTML = 'Sending';
         axios.post("{!! route('sendNewsLetter',['locale'=>App::getLocale()]) !!}").then(function (response) {
-            if(response == 200){
-
+            if(response.data == 200){
+                document.getElementById('btn').innerHTML = 'Send To All';
                 alert('done')
             }
         })

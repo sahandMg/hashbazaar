@@ -76,10 +76,8 @@ Route::get('qr',function(){
 
 Route::get('test',function (){
 
-    $url = 'https://emailverification.whoisxmlapi.com/api/v1?apiKey=at_6saNXTghTPGoEb9o3wcKpqvabRx1d&emailAddress='.$_GET['email'];
-    $contents = file_get_contents($url, false);
-    $resp = json_decode($contents,true);
-    dd($resp);
+    $name = User::find(67)->name;
+   return view('email.newPlan',compact('name'));
 });
 
 Route::get('redirect',function (){

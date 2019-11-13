@@ -457,15 +457,16 @@ class AdminController extends Controller
     }
     public function post_sendNewsLetter(){
 
-        $emails = User::all()->pluck('email')->toArray();
-        for($i=0;$i<count($emails);$i++){
-        Mail::send([],'newsletters.newsletter',function ($message)use($emails,$i){
-            $message->to($emails[$i]);
+//        $users = User::where('id','1')->get();
+        $users = User::where('country','ir')->get();
+        foreach($users as $user){
+        Mail::send('email.newPlan',['name'=>$user->name],function ($message)use($user){
+            $message->to($user->email);
             $message->from(env('Info_Mail'));
-            $message->subject('پلن های جدید هش بازار!');
+            $message->subject('پلن های جدید هش بازار');
         });
 
-            sleep(20);
+            sleep(10);
         }
 
         return 200;

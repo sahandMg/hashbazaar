@@ -79,9 +79,9 @@
           <div class="contact-us col-lg-3 col-md-3 col-sm-12 my-3" style="text-align: right;">
               <h5 class="text-center my-1">تماس با ما</h5> 
               <div class="tell">
-                   <a href="tel:+989371869568" style="color:white; cursor:pointer">
-                         {{env('Phone_Number')}} &nbsp;<i class="fa fa-phone" aria-hidden="true"></i>
-                   </a>
+                  <a href="tel:+{{env('Phone_Number')}}" style="color:white; cursor:pointer">
+                      {{env('Phone_Number')}} &nbsp;<i class="fa fa-phone" aria-hidden="true"></i>
+                  </a>
               </div>
               <div class="" style="direction:rtl">
                    <i class="fa fa-map-marker" aria-hidden="true"></i>
@@ -113,8 +113,8 @@
                     <div class="row footerrow">
                             <div class="col-md-5 col-sm-12">
                                 <div class="tell">
-                                    <a href="tel:+989387728916" style="color:white; cursor:pointer">
-                                             09387728916 &nbsp;<i class="fa fa-phone" aria-hidden="true"></i>
+                                    <a href="tel:+{{env('Phone_Number')}}" style="color:white; cursor:pointer">
+                                        {{env('Phone_Number')}} &nbsp;<i class="fa fa-phone" aria-hidden="true"></i>
                                     </a>
                                 </div>
                             </div>
